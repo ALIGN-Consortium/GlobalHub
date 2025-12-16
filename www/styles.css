@@ -1,0 +1,302 @@
+:root{
+  --brand-primary: #012169;   /* ALGIN: Primary Blue */
+  --brand-accent: #00539B;    /* ALGIN: Light Blue */
+  --brand-light: #ffffff;    /* Page background */
+  --text-dark: #2F2F2F;      /* ALGIN: Dark Gray */
+  --text-light: #2F2F2F;     /* ALGIN: Dark Gray */
+  --card-bg: #ffffff;        /* White cards */
+  --card-border: #BFBBBB;    /* ALGIN: Light Gray */
+  --card-shadow: rgba(0, 0, 0, 0.05);
+
+  --success-color: #228B22; /* ALGIN: Green */
+  --error-color: #DC143C;   /* ALGIN: Crimson Red */
+  --highlight-color: #FFD700; /* ALGIN: Golden Yellow */
+}
+
+/* General text and body styling */
+body {
+  font-family: 'Inter', sans-serif;
+  color: var(--text-dark);
+  background-color: var(--brand-light);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Inter Tight', sans-serif;
+  color: var(--text-dark);
+  margin-top: 1rem;
+  margin-bottom: 0.5rem;
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 0.5rem;
+}
+
+/* Navbar */
+.navbar {
+  background-color: var(--brand-primary) !important;
+  box-shadow: 0 2px 4px var(--card-shadow);
+  padding: 0.75rem 1rem;
+}
+.navbar .navbar-brand, .navbar .nav-link {
+  color: var(--brand-light) !important;
+}
+.navbar .nav-link.active, .navbar .nav-link:focus, .navbar .nav-link:hover {
+  color: var(--brand-light) !important;
+  border-bottom: 2px solid var(--brand-accent);
+}
+/* ===== Navbar brand + logo ===== */
+.navbar .navbar-brand{
+  display:flex; align-items:center; gap:.5rem;
+  margin-right:1.25rem; padding-right:1.25rem;
+  border-right: none;
+  font-size: 1.75rem !important;
+  background-color: white; /* Add white background */
+  padding: 0.25rem 0.75rem; /* Reduced padding */
+  border-radius: 0.25rem; /* Slightly rounded corners for aesthetics */
+}
+
+/* Larger, crisp logo; remove baseline gap with display:block */
+.brand-logo{
+  height: 100px;       /* was 26px */
+  width: auto;
+  display: block;     /* avoids extra baseline space */
+}
+
+@media (min-width: 1200px){
+  .brand-logo{ height: 70px; }
+}
+
+/* Title next to the logo */
+.brand-title{
+  color: var(--brand-light); font-weight: 600;
+  font-size: 1.35rem; line-height: 1;   /* keep tight and vertically centered */
+  letter-spacing: .2px;
+}
+
+/* ===== Navbar links — center vertically and match rhythm ===== */
+.navbar{ background-color: var(--brand-primary) !important; }
+.navbar-nav{ gap: 1rem; align-items: center; }   /* center the pill row */
+.navbar .nav-link{
+  color: var(--brand-light) !important;
+  padding: .5rem .75rem;                 /* balanced vertical padding */
+}
+.navbar .nav-link.active,
+.navbar .nav-link:focus,
+.navbar .nav-link:hover{
+  color: var(--brand-light) !important;
+  border-bottom: 2px solid var(--brand-accent);
+}
+
+/* Optional: reduce the tall default navbar height on large screens */
+@media (min-width: 992px){
+  .navbar{ min-height: 56px; }
+}
+
+/* Ensure equal height for columns in g-3 rows */
+.row.g-3 {
+  display: flex;
+  flex-wrap: wrap;
+}
+.row.g-3 > [class*="col-"] {
+  display: flex;
+  flex-direction: column;
+}
+.row.g-3 > [class*="col-"] > .card {
+  flex-grow: 1;
+}
+
+/* Accents */
+.hero-section { background-color: var(--brand-primary); }
+.hero-gradient { background: linear-gradient(135deg, var(--brand-primary) 0%, var(--brand-accent) 100%); }
+.card-title, .value-box .value { color: var(--brand-primary); }
+.progress-bar, .mini-fill { background-color: var(--brand-accent); } /* Use accent for progress */
+
+/* Cards */
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.5rem;
+  box-shadow: 0 4px 8px var(--card-shadow);
+  margin-bottom: 1.5rem;
+}
+.card-header {
+  background-color: var(--card-bg);
+  border-bottom: 1px solid var(--card-border);
+  font-weight: 600;
+  padding: 1rem 1.5rem;
+}
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Value Boxes */
+.value-box {
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border);
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px var(--card-shadow);
+  padding: 1.25rem;
+  text-align: center;
+}
+.value-box .value {
+  font-size: 2.25rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+.value-box .label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+.value-box i {
+  font-size: 1.5rem;
+  color: var(--brand-accent);
+  margin-bottom: 0.5rem;
+}
+
+/* Make the 'Analytics' pill bar visible and responsive */
+  /* Case 1: modern Shiny/bslib structure */
+  ul.nav[data-tabsetid='impact_tabs'] {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: .25rem .5rem;
+    overflow: visible !important;
+    align-items: center;
+  }
+  ul.nav[data-tabsetid='impact_tabs'] .nav-link { white-space: nowrap; }
+
+  /* Case 2: older structure where the UL is a child of the container with the id */
+  #impact_tabs > ul.nav.nav-pills {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: .25rem .5rem;
+    overflow: visible !important;
+    align-items: center;
+  }
+  #impact_tabs > ul.nav.nav-pills .nav-link { white-space: nowrap; }
+
+  /* Safety: never hide the nav bar via overflow rules on the container */
+  #impact_tabs { overflow: visible !important; }
+
+  /* Optional: give the bar a bit of breathing room so it won't collapse visually */
+  #impact_tabs > ul.nav.nav-pills,
+  ul.nav[data-tabsetid='impact_tabs'] { min-height: 40px; }
+analytics-row > [class*='col-'] { min-width: 0 !important; }
+
+/* 2) Contain widget widths to their parent */
+.card .html-widget,
+.card .echarts4r,
+.card .plotly,
+.card canvas,
+.card svg {
+  max-width: 100% !important;
+}
+
+/* Optional: if the pills still act weird, keep the UL visible and wrapping */
+#impact_tabs .nav.nav-pills,
+ul.nav[data-tabsetid='impact_tabs'] {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  align-items: center;
+  gap: .25rem .5rem;
+}
+.indicator-card{
+  background:var(--brand-light);border:1px solid var(--card-border);border-radius:12px;padding:12px 16px;
+}
+.indicator-row{display:flex;align-items:center;gap:.5rem;}
+.indicator-row + .indicator-row{margin-top:10px;}
+.indicator-row i{font-size:1.05rem;line-height:1;}
+.indicator-row i.yes{color:var(--success-color);}   /* green */
+.indicator-row i.no{color:var(--error-color);}    /* red   */
+.indicator-label{font-size:.98rem;}
+
+.subdomain-header { display:flex; align-items:center; gap:.75rem; margin: .25rem 0 .5rem; }
+
+.badge-round {
+  margin-left:auto;
+  background:#e9ecef; color:var(--text-dark); border-radius:9999px;
+  padding:.25rem .55rem; font-weight:600; font-size:.85rem;
+}
+.subdomain-card { margin-bottom:1rem; }
+
+/* tighter subdomain spacing */
+.subdomain-block { margin: 8px 0 14px; }
+.subdomain-title { margin: 2px 0 6px; }
+
+/* compact badge */
+.badge-round{
+  background:#e9ecef; color:var(--text-dark); border-radius:9999px;
+  padding:.2rem .5rem; font-weight:600; font-size:.82rem; line-height:1;
+}
+
+/* tighten the checklist card and rows */
+.indicator-card{ background:var(--brand-light); border:1px solid var(--card-border);
+  border-radius:12px; padding:10px 12px; }
+.indicator-row + .indicator-row{ margin-top:8px; } /* Increased margin */
+.indicator-row i{ font-size:.95rem; line-height:1; }
+.indicator-label{ font-size:.97rem; line-height:1.4; } /* Increased line-height */
+
+/* remove extra space that h5 would add if used elsewhere */
+#domain_bars h5{ margin:0; }
+
+.readiness-row { margin-bottom: 14px; }
+.readiness-row .lbl { font-weight: 600; }
+.progress { height: 8px; border-radius: 8px; background-color:#e9ecef; }
+.progress-bar { border-radius: 8px; background-color:var(--brand-accent); }
+.overall .progress { height: 10px; }
+
+.domain-summary-vertical .mini-row { margin-bottom: 12px; }
+.domain-summary-vertical .mini-label { font-weight: 600; color:var(--text-dark); }
+.domain-summary-vertical .mini-pct   { font-weight: 600; color:var(--text-dark); }
+.domain-summary-vertical .mini-track {
+  height: 8px; border-radius: 9999px; background:#e9ecef; overflow:hidden;
+}
+.domain-summary-vertical .mini-fill  {
+  height: 100%; border-radius: 9999px; background: var(--brand-accent);
+}
+
+#impact_tabs.nav-pills {
+flex-wrap: wrap !important;
+}
+#impact_tabs .nav-link {
+white-space: nowrap;
+}
+
+.readiness-row{ margin-bottom:14px; }
+.readiness-row .lbl{ font-weight:600; }
+.progress{ height:8px; border-radius:8px; background:#e9ecef; }
+.progress-bar{ height: 100%; border-radius:8px; background:var(--brand-accent); }
+
+.mini-row { margin-bottom: 10px; }
+.mini-label { font-weight: 600; color:var(--text-dark); }
+.mini-pct   { font-weight: 600; color:var(--text-dark); }
+.mini-track { height: 8px; border-radius:9999px; background:#e9ecef; overflow:hidden; }
+.mini-fill  { height: 100%; border-radius:9999px; background:var(--brand-accent); }
+
+.subdomain-card + .subdomain-card { margin-top: 1rem; }
+
+#pipeline_tbl .shiny-datagrid {
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.hero-highlight-text {
+  color: #ffffff !important;
+}
+
+/* Custom Tab Styling */
+.nav-pills .nav-link {
+  background-color: var(--card-border);
+  color: var(--text-dark);
+}
+
+.nav-pills .nav-link:hover {
+  background-color: var(--brand-accent);
+  color: #ffffff;
+}
+
+.nav-pills .nav-link.active {
+  background-color: var(--brand-accent);
+  color: #ffffff;
+}

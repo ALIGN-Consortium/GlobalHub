@@ -1,0 +1,1 @@
+web: shiny run --port $PORT app.py

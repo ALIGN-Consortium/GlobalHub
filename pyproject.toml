@@ -1,0 +1,16 @@
+[project]
+name = "dashboard-template"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "ipywidgets>=8.1.8",
+    "libsass>=0.23.0",
+    "pandas>=2.3.3",
+    "plotly>=6.4.0",
+    "pyecharts>=2.0.9",
+    "rsconnect-python>=1.28.0",
+    "shiny>=1.5.0",
+    "shinywidgets>=0.7.0",
+]

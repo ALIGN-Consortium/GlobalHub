@@ -1,0 +1,1206 @@
+Innovation,Alternative Names,Category,Disease,Indication,Stage,trial_completion_date,TargetPop,is_on_fda,dates_fda,records_fda,time_to_regulatory_approval,time_approval_to_first_launch,time_launch_to_20lmic,time_to_market,expected_date_of_regulatory_approval,expected_date_of_first_launch,expected_date_of_market,Readiness,LeadOrg,Impact Score,Country,Impact Potential,Disease Burden,Epidemiological impact,Alignment with goals,Cost-effectiveness,Budget Impact,Resource optimization,Introduction Readiness,Financing,Policy,Uptake/Delivery,Probability of technical and regulatory success,Procurement model,Regulatory approvals,Policy readiness,Social context,Guidelines and training,Policy implemented,Advance launch and planning/timeline,Demand forecasting and generation,Potential supply chain,Delivery model
+Placebo,Molecule Z,Drug,Malaria,Malaria,Phase 4,2022-06-01,"Sex: ALL; Age: >8 Days; Criteria: Inclusion Criteria:
+
+* Between 8 days and 59 months old
+* Primary residence within catchment area of study site
+* Available for full 6 month study
+* No known allergy to macrolides/azalides
+* Appropria...",No,2022-10-27,FDA-31883,0.56,0.15,3.5,4.21,2022-12-22,2023-02-15,2026-08-16,34,GSK,36,Kenya,46.83333333,87,12,56,7,50,69,27,0,2,1,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE
+Artemether-lumefantrine,AltName B,Drug,Malaria,Malaria,Phase 4,2021-08-31,"Sex: ALL; Age: >6 Months; Criteria: Inclusion Criteria:
+
+1, All participants:
+
+1. Residency within 60 km of the study clinics either at TDH or at MGH
+2. Agreement to come to clinic for all follow-up clinical and PK evaluations
+3. Provis...",Yes,2022-03-15,FDA-41498,0.56,0.15,3.5,4.21,2022-03-23,2022-05-17,2025-11-15,3,Bayer,23,Overall,48.66666667,93,83,2,70,15,29,55,1,3,2,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE
+Primaquine,Product Alpha,Drug,Malaria,Malaria,Phase 4,2015-03-01,"Sex: ALL; Age: >12 Months; Criteria: Inclusion Criteria:
+
+* Age ³ 12 months
+* P. vivax or P. falciparum monoinfection or P.v. / P.f. mixed infection
+* Presence of axillary temperature ³ 37.5¡C or history of fever during the past 24 hrs
+*...",Yes,2015-04-13,FDA-88023,0.56,0.15,3.5,4.21,2015-09-21,2015-11-15,2019-05-16,84,Sanofi,87,Overall,59.33333333,35,71,23,79,68,80,45,0,4,1,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE
+Artemether-lumefantrine combination,Product Alpha,Drug,Malaria,Malaria,Phase 4,2015-03-01,"Sex: ALL; Age: >12 Months; Criteria: Inclusion Criteria:
+
+* Age ³ 12 months
+* P. vivax or P. falciparum monoinfection or P.v. / P.f. mixed infection
+* Presence of axillary temperature ³ 37.5¡C or history of fever during the past 24 hrs
+*...",No,2015-07-29,FDA-57908,0.56,0.15,3.5,4.21,2015-09-21,2015-11-15,2019-05-16,78,Bayer,68,Kenya,47.5,69,24,66,9,37,80,73,2,4,2,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE
+chloroquine,Molecule Z,Drug,Malaria,Malaria,Phase 4,2015-03-01,"Sex: ALL; Age: >12 Months; Criteria: Inclusion Criteria:
+
+* Age ³ 12 months
+* P. vivax or P. falciparum monoinfection or P.v. / P.f. mixed infection
+* Presence of axillary temperature ³ 37.5¡C or history of fever during the past 24 hrs
+*...",No,2015-08-05,FDA-90865,0.56,0.15,3.5,4.21,2015-09-21,2015-11-15,2019-05-16,86,Pfizer,62,Overall,63.83333333,52,56,83,63,92,37,45,1,2,2,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE
+Artesunate-mefloquine,Comp Beta,Drug,Malaria,Malaria,Phase 4,2008-11-01,"Sex: ALL; Age: >12 Years; Criteria: Inclusion Criteria
+
+* 12 years of age or older
+* Accepts Healthy Volunteers
+* P. falciparum parasitemia between 1,000 and 100,000 parasites/_l
+* History of fever or presence of fever (temperature ³ 37...",Yes,2009-08-14,FDA-31643,0.56,0.15,3.5,4.21,2009-05-24,2009-07-18,2013-01-16,88,Bayer,90,Senegal,56.66666667,19,99,12,70,90,50,27,1,1,1,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Azithromycin,AltName B,Drug,Malaria,Malaria,Phase 4,2022-06-01,"Sex: ALL; Age: >8 Days; Criteria: Inclusion Criteria:
+
+* Between 8 days and 59 months old
+* Primary residence within catchment area of study site
+* Available for full 6 month study
+* No known allergy to macrolides/azalides
+* Appropria...",No,2023-04-05,FDA-92577,0.56,0.15,3.5,4.21,2022-12-22,2023-02-15,2026-08-16,76,Sanofi,37,Kenya,38.33333333,19,75,42,48,12,34,55,1,2,3,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE
+COA566,GenName Y,Drug,Malaria,Malaria,Phase 4,2012-07-01,"Sex: ALL; Criteria: Inclusion:
+
+* Subjects who were diagnosed as Asymptomatic Carrier (AC) by Rapid Diagnostic Test (RDT).
+* Subjects who were diagnosed with a Symptomatic malaria episode, RDT-confirmed (SMRC)
+
+Exclusion...",No,2013-04-25,FDA-91778,0.56,0.15,3.5,4.21,2013-01-21,2013-03-17,2016-09-15,1,Bayer,11,Kenya,46.83333333,15,11,68,91,25,71,55,1,3,2,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE
+Atovaquone-proguanil,GenName Y,Drug,Malaria,Malaria,Phase 4,2008-11-01,"Sex: ALL; Age: >12 Years; Criteria: Inclusion Criteria
+
+* 12 years of age or older
+* Accepts Healthy Volunteers
+* P. falciparum parasitemia between 1,000 and 100,000 parasites/_l
+* History of fever or presence of fever (temperature ³ 37...",No,2008-12-27,FDA-10272,0.56,0.15,3.5,4.21,2009-05-24,2009-07-18,2013-01-16,57,J&J,92,Overall,42.33333333,68,18,58,21,9,80,55,1,3,2,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE
+Proguanil Oral Tablet,AltName B,Drug,Malaria,Malaria,Phase 4,2020-12-16,"Sex: ALL; Age: >1 Year; Criteria: Inclusion Criteria:
+
+* Age greater than 12 months and less than 10 years at enrollment;
+* Current attendance at or willingness to attend the study SCA clinic at HBCH;
+* Residence in either Homa Bay Co...",Yes,2021-02-13,FDA-37872,0.56,0.15,3.5,4.21,2021-07-08,2021-09-01,2025-03-02,22,Merck,59,Senegal,37,63,71,79,3,0,6,55,1,3,2,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE
+primaquine,Comp Beta,Drug,Malaria,Malaria,Phase 4,2018-10-21,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Previous G6PD test at Shoklo Malaria Research Unit (SMRU) clinic with one of following results: 1) G6PD homozygous wildtype females (G6PD genotype normal) 2) G6PD heterozygous f...",No,2019-06-04,FDA-33807,0.56,0.15,3.5,4.21,2019-05-13,2019-07-07,2023-01-05,56,GSK,84,South Africa,45.16666667,21,40,38,27,99,46,64,1,4,2,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE
+chloroquine + primaquine,AltName B,Drug,Malaria,Malaria,Phase 4,2018-10-21,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Previous G6PD test at Shoklo Malaria Research Unit (SMRU) clinic with one of following results: 1) G6PD homozygous wildtype females (G6PD genotype normal) 2) G6PD heterozygous f...",No,2018-12-10,FDA-77404,0.56,0.15,3.5,4.21,2019-05-13,2019-07-07,2023-01-05,39,Gilead,9,Overall,59.66666667,12,38,95,77,77,59,55,1,2,3,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE
+Sulfadoxine/Pyrimethanine-Amodiaquine (SP-AQ),TradeName X,Drug,Malaria,Malaria,Phase 4,2020-12-16,"Sex: ALL; Age: >1 Year; Criteria: Inclusion Criteria:
+
+* Age greater than 12 months and less than 10 years at enrollment;
+* Current attendance at or willingness to attend the study SCA clinic at HBCH;
+* Residence in either Homa Bay Co...",Yes,2021-11-22,FDA-73983,0.56,0.15,3.5,4.21,2021-07-08,2021-09-01,2025-03-02,37,Gilead,8,South Africa,74.83333333,61,72,70,82,70,94,36,1,1,2,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE
+Dihydroartemisinin-Piperaquine (DP),Product Alpha,Drug,Malaria,Malaria,Phase 4,2020-12-16,"Sex: ALL; Age: >1 Year; Criteria: Inclusion Criteria:
+
+* Age greater than 12 months and less than 10 years at enrollment;
+* Current attendance at or willingness to attend the study SCA clinic at HBCH;
+* Residence in either Homa Bay Co...",Yes,2021-05-22,FDA-97530,0.56,0.15,3.5,4.21,2021-07-08,2021-09-01,2025-03-02,45,Novartis,21,Kenya,70.83333333,28,91,75,94,85,52,45,1,2,2,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE
+Dihydroartemisinin-piperaquine,Molecule Z,Drug,Malaria,Malaria,Phase 4,2022-04-11,"Sex: ALL; Age: >3 Years; Criteria: Inclusion Criteria:
+
+All participants:
+
+* Agreement to come to clinic for all follow-up PK and safety evaluations
+* Provision of informed consent.
+
+HIV-infected participants:
+
+* Residency within 30km ...",No,2022-09-05,FDA-31303,0.56,0.15,3.5,4.21,2022-11-01,2022-12-26,2026-06-26,62,Novartis,72,Overall,56.5,31,64,28,94,78,44,55,1,5,0,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+"RTS,S/AS01",Comp Beta,Biological,Malaria,Malaria,Phase 3,2022-03-31,"Sex: ALL; Age: >3 Years; Criteria: Inclusion Criteria:
+
+* The child had been enrolled in the initial phase of the trial of seasonal vaccination with the RTS,S/AS01 vaccine
+* A parent or legally recognised guardian provides informed con...",No,2023-01-20,FDA-19051,2.62,0.32,5,7.94,2024-11-11,2025-03-08,2030-03-09,80,Novartis,91,South Africa,44.5,30,50,30,48,89,20,64,1,3,3,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE
+SMC placebo,Molecule Z,Drug,Malaria,Malaria,Phase 3,2022-03-31,"Sex: ALL; Age: >3 Years; Criteria: Inclusion Criteria:
+
+* The child had been enrolled in the initial phase of the trial of seasonal vaccination with the RTS,S/AS01 vaccine
+* A parent or legally recognised guardian provides informed con...",Yes,2022-11-27,FDA-72531,2.62,0.32,5,7.94,2024-11-11,2025-03-08,2030-03-09,49,Sanofi,68,Kenya,39.33333333,50,63,11,84,14,14,55,1,4,1,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE
+SMC with SP+AQ,Comp Beta,Drug,Malaria,Malaria,Phase 3,2022-03-31,"Sex: ALL; Age: >3 Years; Criteria: Inclusion Criteria:
+
+* The child had been enrolled in the initial phase of the trial of seasonal vaccination with the RTS,S/AS01 vaccine
+* A parent or legally recognised guardian provides informed con...",No,2022-11-26,FDA-16866,2.62,0.32,5,7.94,2024-11-11,2025-03-08,2030-03-09,30,Bayer,70,Kenya,51,62,83,25,40,63,33,82,2,4,3,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE
+Artefenomel 800mg: piperaquine 640mg,GenName Y,Drug,Malaria,Malaria,Phase 3,2015-11-01,"Sex: ALL; Age: >6 Months; Criteria: Inclusion Criteria:
+
+1. Male or female patient age \>6 months \<70 years.
+2. Body weight \>5 kg \<90 kg.
+3. Presence of mono-infection of P. falciparum with:
+
+   1. Fever, as defined by axillary tempe...",No,2016-01-13,FDA-98292,2.62,0.32,5,7.94,2018-06-14,2018-10-09,2023-10-10,45,AstraZeneca,90,South Africa,59,25,57,81,40,67,84,73,2,3,3,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE
+Artefenomel 800mg: piperaquine 960mg,Comp Beta,Drug,Malaria,Malaria,Phase 3,2015-11-01,"Sex: ALL; Age: >6 Months; Criteria: Inclusion Criteria:
+
+1. Male or female patient age \>6 months \<70 years.
+2. Body weight \>5 kg \<90 kg.
+3. Presence of mono-infection of P. falciparum with:
+
+   1. Fever, as defined by axillary tempe...",No,2016-07-18,FDA-40516,2.62,0.32,5,7.94,2018-06-14,2018-10-09,2023-10-10,38,AstraZeneca,13,Overall,55.5,86,34,26,66,65,56,45,2,2,1,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+Coartem¨ (artemether lumefantrine),Molecule Z,Drug,Malaria,Malaria,Phase 3,2008-05-01,"Sex: ALL; Age: >3 Years; Criteria: Inclusion Criteria:
+
+* Male or female patients between the age of 3 and 60 years, inclusive.
+* Body weight between 20 kg and 90 kg with no clinical evidence of severe malnutrition.
+* Presence of acute...",No,2008-08-04,FDA-94396,2.62,0.32,5,7.94,2010-12-13,2011-04-09,2016-04-09,3,Sanofi,2,South Africa,45,20,81,49,15,92,13,27,0,2,1,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+Artefenomel 800mg: piperaquine 1440mg,Comp Beta,Drug,Malaria,Malaria,Phase 3,2015-11-01,"Sex: ALL; Age: >6 Months; Criteria: Inclusion Criteria:
+
+1. Male or female patient age \>6 months \<70 years.
+2. Body weight \>5 kg \<90 kg.
+3. Presence of mono-infection of P. falciparum with:
+
+   1. Fever, as defined by axillary tempe...",Yes,2016-01-05,FDA-82200,2.62,0.32,5,7.94,2018-06-14,2018-10-09,2023-10-10,19,Bayer,70,Kenya,48.5,34,90,25,12,76,54,45,1,2,2,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE
+Tetanus/diphtheria toxoids,AltName A,Biological,Malaria,Malaria,Phase 3,2022-03-31,"Sex: ALL; Age: >3 Years; Criteria: Inclusion Criteria:
+
+* The child had been enrolled in the initial phase of the trial of seasonal vaccination with the RTS,S/AS01 vaccine
+* A parent or legally recognised guardian provides informed con...",Yes,2022-06-02,FDA-31754,2.62,0.32,5,7.94,2024-11-11,2025-03-08,2030-03-09,73,GSK,39,Overall,34.83333333,73,0,69,41,14,12,55,1,3,2,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE
+arthemeter lumefantrine,AltName A,Drug,Malaria,Malaria,Phase 3,2008-11-01,"Sex: ALL; Criteria: Inclusion Criteria:
+
+1. Male or female patients ²12 years of age.
+2. Body weight ³ 5 kg and \< 25 kg with no clinical evidence of severe malnutrition (defined as a child whose weight-for-height is bel...",No,2009-07-01,FDA-81667,2.62,0.32,5,7.94,2011-06-15,2011-10-10,2016-10-10,94,Sanofi,10,Senegal,43.33333333,30,75,29,41,5,80,45,1,3,1,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE
+Pyronaridine artesunate,Molecule Z,Drug,Malaria,Malaria,Phase 3,2008-05-01,"Sex: ALL; Age: >3 Years; Criteria: Inclusion Criteria:
+
+* Male or female patients between the age of 3 and 60 years, inclusive.
+* Body weight between 20 kg and 90 kg with no clinical evidence of severe malnutrition.
+* Presence of acute...",No,2008-11-13,FDA-33795,2.62,0.32,5,7.94,2010-12-13,2011-04-09,2016-04-09,38,AstraZeneca,64,Overall,65,88,23,73,94,13,99,55,1,2,3,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE
+RABIPUR¨,GenName Y,Biological,Malaria,Malaria,Phase 3,2020-03-31,"Sex: ALL; Age: >5 Months; Criteria: Inclusion Criteria:
+
+* The child is a permanent resident of the study area and likely to remain a resident for the duration of the trial
+* The child is 5 - 17 months of age at the time of first vaccin...",No,2020-05-14,FDA-43229,2.62,0.32,5,7.94,2022-11-12,2023-03-09,2028-03-09,85,Sanofi,47,Overall,60.33333333,28,92,70,88,69,15,55,1,3,2,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE
+Dihydroartemisinin-piperaquine (DP),Comp Beta,Drug,Malaria,Malaria,Phase 3,2024-07-28,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Viable singleton pregnancy confirmed by ultrasound
+2. Estimated gestational age between 12-20 weeks
+3. Confirmed to be HIV- uninfected by rapid test
+4. 16 years of age or older...",Yes,2025-04-15,FDA-79227,2.62,0.32,5,7.94,2027-03-11,2027-07-06,2032-07-06,14,Gilead,86,South Africa,47.66666667,51,50,59,29,35,62,64,2,3,2,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE
+Sulfadoxine-pyrimethamine (SP),Comp Beta,Drug,Malaria,Malaria,Phase 3,2024-07-28,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Viable singleton pregnancy confirmed by ultrasound
+2. Estimated gestational age between 12-20 weeks
+3. Confirmed to be HIV- uninfected by rapid test
+4. 16 years of age or older...",Yes,2025-07-17,FDA-14894,2.62,0.32,5,7.94,2027-03-11,2027-07-06,2032-07-06,64,GSK,37,Kenya,53,94,38,23,83,0,80,36,0,2,2,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE
+Matched-Placebo for Tafenoquine,Molecule Z,Drug,Malaria,Malaria,Phase 3,2019-08-19,"Sex: MALE; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Male subjects \>=18 years at the time of signing the informed consent.
+* The subject has a positive Giemsa smear for P. vivax (mixed infection with P.falciparum is acceptable).
+...",No,2019-10-09,FDA-26481,2.62,0.32,5,7.94,2022-04-01,2022-07-27,2027-07-28,77,GSK,95,South Africa,51.33333333,11,93,22,71,64,47,55,1,1,4,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE
+pyronaridine artesunate,GenName Y,Drug,Malaria,Malaria,Phase 3,2008-11-01,"Sex: ALL; Criteria: Inclusion Criteria:
+
+1. Male or female patients ²12 years of age.
+2. Body weight ³ 5 kg and \< 25 kg with no clinical evidence of severe malnutrition (defined as a child whose weight-for-height is bel...",Yes,2009-03-28,FDA-25523,2.62,0.32,5,7.94,2011-06-15,2011-10-10,2016-10-10,51,GSK,62,South Africa,45.33333333,44,10,77,100,38,3,45,2,2,1,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE
+Quinine,Product Alpha,Drug,Malaria,Malaria,Phase 3,2012-09-01,"Sex: ALL; Criteria: Inclusion Criteria:
+
+1. The patient's legally acceptable representative has provided informed consent and the patient has assented (where relevant) to participation in the trial
+2. The patient is a ch...",Yes,2013-02-09,FDA-88396,2.62,0.32,5,7.94,2015-04-15,2015-08-10,2020-08-10,6,Sanofi,100,Overall,53.16666667,62,64,15,2,87,89,36,1,2,1,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+Artemether Sublingual Spray,AltName A,Drug,Malaria,Malaria,Phase 3,2012-09-01,"Sex: ALL; Criteria: Inclusion Criteria:
+
+1. The patient's legally acceptable representative has provided informed consent and the patient has assented (where relevant) to participation in the trial
+2. The patient is a ch...",Yes,2013-03-28,FDA-21074,2.62,0.32,5,7.94,2015-04-15,2015-08-10,2020-08-10,99,Novartis,27,Kenya,43.83333333,73,7,8,77,84,14,45,1,2,2,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE
+artemether:lumefantrine (2.5 mg:30 mg),TradeName X,Drug,Malaria,Malaria,Phase 3,2024-05-10,"Sex: ALL; Criteria: Inclusion Criteria:
+
+1. Male or female neonates/infants
+2. Body weight \<5 kg but ³ 2 kg
+3. In Cohort 1, infants aged \>28 days; in Cohort 2, neonates aged 1 to ²28 days (3 subgroups: 1-7 days; 8-14 d...",Yes,2025-01-01,FDA-79653,2.62,0.32,5,7.94,2026-12-22,2027-04-18,2032-04-18,98,J&J,70,Overall,48,10,8,66,89,35,80,55,1,2,3,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE
+Chloroquine,Product Alpha,Drug,Malaria,Malaria,Phase 3,2010-11-15,"Sex: ALL; Age: >3 Years; Criteria: Inclusion Criteria:
+
+1. Male or female patients between the age of 3 and 60 years, inclusive.
+2. Body weight between 20 kg and 90 kg with no clinical evidence of severe malnutrition.
+3. Presence of ac...",Yes,2011-01-30,FDA-52064,2.62,0.32,5,7.94,2013-06-28,2013-10-23,2018-10-24,39,Novartis,91,South Africa,47.66666667,48,47,8,85,33,65,64,1,3,3,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE
+Pyronaridine - artesunate,Molecule Z,Drug,Malaria,Malaria,Phase 3,2010-11-15,"Sex: ALL; Age: >3 Years; Criteria: Inclusion Criteria:
+
+1. Male or female patients between the age of 3 and 60 years, inclusive.
+2. Body weight between 20 kg and 90 kg with no clinical evidence of severe malnutrition.
+3. Presence of ac...",No,2011-11-10,FDA-89769,2.62,0.32,5,7.94,2013-06-28,2013-10-23,2018-10-24,5,J&J,48,Overall,67.5,78,93,40,68,82,44,45,1,2,2,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE
+Tafenoquine,Molecule Z,Drug,Malaria,Malaria,Phase 3,2019-08-19,"Sex: MALE; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Male subjects \>=18 years at the time of signing the informed consent.
+* The subject has a positive Giemsa smear for P. vivax (mixed infection with P.falciparum is acceptable).
+...",No,2020-05-26,FDA-85614,2.62,0.32,5,7.94,2022-04-01,2022-07-27,2027-07-28,40,J&J,95,Senegal,47,74,40,84,51,19,14,55,1,4,1,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE
+Dihydroartemisinin-piperaquine (DHA-PQP),Comp Beta,Drug,Malaria,Malaria,Phase 3,2019-08-19,"Sex: MALE; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Male subjects \>=18 years at the time of signing the informed consent.
+* The subject has a positive Giemsa smear for P. vivax (mixed infection with P.falciparum is acceptable).
+...",No,2019-10-26,FDA-85373,2.62,0.32,5,7.94,2022-04-01,2022-07-27,2027-07-28,0,GSK,46,South Africa,32.16666667,29,36,39,26,56,7,27,0,1,2,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Matched-Placebo for Primaquine,Comp Beta,Drug,Malaria,Malaria,Phase 3,2019-08-19,"Sex: MALE; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Male subjects \>=18 years at the time of signing the informed consent.
+* The subject has a positive Giemsa smear for P. vivax (mixed infection with P.falciparum is acceptable).
+...",No,2020-01-06,FDA-75781,2.62,0.32,5,7.94,2022-04-01,2022-07-27,2027-07-28,40,Gilead,16,Kenya,54.33333333,70,94,77,2,26,57,64,1,3,3,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE
+TACT,AltName B,Drug,Malaria,Malaria,Phase 3,2020-03-04,"Sex: ALL; Age: >2 Years; Criteria: Inclusion Criteria:
+
+* Male or female, aged from 2 years to 65 years old
+* Acute uncomplicated P. falciparum malaria, confirmed by positive blood smear with asexual forms of P. falciparum (or mixed wi...",Yes,2020-07-06,FDA-73630,2.62,0.32,5,7.94,2022-10-16,2023-02-10,2028-02-11,67,Gilead,80,Kenya,69.16666667,89,89,28,76,78,55,55,1,2,3,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE
+Lopinavir/Ritonavir (LPV/r),GenName Y,Drug,Malaria,Malaria,Phase 3,2013-01-01,"Sex: ALL; Age: >2 Months; Criteria: Inclusion criteria:
+
+1. Age 2 months to \< 11 years
+2. Confirmed HIV diagnosis. i. Children \> 18 months: Documentation of HIV status must come from two assays. Assays include DNA PCR, HIV RNA, Wester...",Yes,2013-09-19,FDA-37044,2.62,0.32,5,7.94,2015-08-15,2015-12-10,2020-12-10,51,Sanofi,98,Senegal,56.66666667,57,94,66,11,55,57,45,1,3,1,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+Nevirapine (NVP),Comp Beta,Drug,Malaria,Malaria,Phase 3,2013-01-01,"Sex: ALL; Age: >2 Months; Criteria: Inclusion criteria:
+
+1. Age 2 months to \< 11 years
+2. Confirmed HIV diagnosis. i. Children \> 18 months: Documentation of HIV status must come from two assays. Assays include DNA PCR, HIV RNA, Wester...",Yes,2013-12-10,FDA-73160,2.62,0.32,5,7.94,2015-08-15,2015-12-10,2020-12-10,43,J&J,56,Senegal,55.5,55,92,39,2,95,50,36,1,3,0,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Efavirenz (EFV),AltName B,Drug,Malaria,Malaria,Phase 3,2013-01-01,"Sex: ALL; Age: >2 Months; Criteria: Inclusion criteria:
+
+1. Age 2 months to \< 11 years
+2. Confirmed HIV diagnosis. i. Children \> 18 months: Documentation of HIV status must come from two assays. Assays include DNA PCR, HIV RNA, Wester...",No,2013-09-20,FDA-82006,2.62,0.32,5,7.94,2015-08-15,2015-12-10,2020-12-10,40,Merck,70,Overall,49.5,11,80,13,30,69,94,55,1,3,2,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE
+2 nucleoside reverse transcriptase inhibitor (NRTI),GenName Y,Drug,Malaria,Malaria,Phase 3,2013-01-01,"Sex: ALL; Age: >2 Months; Criteria: Inclusion criteria:
+
+1. Age 2 months to \< 11 years
+2. Confirmed HIV diagnosis. i. Children \> 18 months: Documentation of HIV status must come from two assays. Assays include DNA PCR, HIV RNA, Wester...",No,2013-03-25,FDA-96524,2.62,0.32,5,7.94,2015-08-15,2015-12-10,2020-12-10,89,Novartis,17,Senegal,68,54,100,80,75,57,42,64,2,3,2,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE
+Ivermectin,Product Alpha,Drug,Malaria,Malaria,Phase 3,2015-12-01,"Sex: ALL; Criteria: Inclusion Criteria:
+
+* Residence in the study site
+* Able to understand the information and willing to give consent and assent (parent or guardian consent if study participant age is \< 18 years)
+
+Exc...",Yes,2016-05-06,FDA-19311,2.62,0.32,5,7.94,2018-07-14,2018-11-08,2023-11-09,57,Bayer,6,Kenya,42.83333333,25,43,88,4,2,95,45,0,3,2,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE
+Albendazole,GenName Y,Drug,Malaria,Malaria,Phase 3,2015-12-01,"Sex: ALL; Criteria: Inclusion Criteria:
+
+* Residence in the study site
+* Able to understand the information and willing to give consent and assent (parent or guardian consent if study participant age is \< 18 years)
+
+Exc...",Yes,2016-06-03,FDA-34352,2.62,0.32,5,7.94,2018-07-14,2018-11-08,2023-11-09,1,Sanofi,49,Kenya,47.66666667,54,23,31,93,17,68,55,2,3,1,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE
+Monthly dihydroartemisinin-piperaquine (DP) + daily trimethoprim/sulfamethoxazole (TS),GenName Y,Drug,Malaria,Malaria,Phase 3,2016-05-26,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Intrauterine pregnancy confirmed by ultrasound
+2. Estimated gestational age between 12-28 weeks
+3. Confirmed to be HIV-infected by Uganda country standard rapid HIV test
+4. 16 ...",Yes,2017-05-23,FDA-60977,2.62,0.32,5,7.94,2019-01-07,2019-05-04,2024-05-04,72,Sanofi,30,South Africa,55.66666667,18,38,26,94,74,84,64,1,3,3,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE
+Monthly placebo + daily trimethoprim/sulfamethoxazole (TS),AltName A,Drug,Malaria,Malaria,Phase 3,2016-05-26,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Intrauterine pregnancy confirmed by ultrasound
+2. Estimated gestational age between 12-28 weeks
+3. Confirmed to be HIV-infected by Uganda country standard rapid HIV test
+4. 16 ...",Yes,2017-04-02,FDA-54387,2.62,0.32,5,7.94,2019-01-07,2019-05-04,2024-05-04,74,J&J,17,Kenya,27.33333333,43,38,15,17,45,6,36,0,2,2,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE
+sulfadoxine-pyrimethamine,Product Alpha,Drug,Malaria,Malaria,Phase 3,2008-06-01,"Sex: ALL; Age: >8 Years; Criteria: Inclusion Criteria:
+
+* Age ³ 8 to \< 14 years (boys), ³ 8 to \< 12 years (girls)
+* Student enrolled at participating school in classes 3-7
+* Provision of informed consent from parent or guardian
+* Pro...",No,2009-05-02,FDA-10312,2.62,0.32,5,7.94,2011-01-13,2011-05-10,2016-05-10,65,J&J,23,South Africa,51,53,94,34,21,20,84,55,1,1,4,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE
+amodiaquine + sulfadoxine-pyrimethamine,GenName Y,Drug,Malaria,Malaria,Phase 3,2008-06-01,"Sex: ALL; Age: >8 Years; Criteria: Inclusion Criteria:
+
+* Age ³ 8 to \< 14 years (boys), ³ 8 to \< 12 years (girls)
+* Student enrolled at participating school in classes 3-7
+* Provision of informed consent from parent or guardian
+* Pro...",Yes,2009-04-07,FDA-56460,2.62,0.32,5,7.94,2011-01-13,2011-05-10,2016-05-10,61,Pfizer,95,Overall,40.33333333,0,52,29,1,65,95,64,1,3,3,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE
+dihydroartemisinin-piperaquine,TradeName X,Drug,Malaria,Malaria,Phase 3,2008-06-01,"Sex: ALL; Age: >8 Years; Criteria: Inclusion Criteria:
+
+* Age ³ 8 to \< 14 years (boys), ³ 8 to \< 12 years (girls)
+* Student enrolled at participating school in classes 3-7
+* Provision of informed consent from parent or guardian
+* Pro...",Yes,2009-04-09,FDA-39332,2.62,0.32,5,7.94,2011-01-13,2011-05-10,2016-05-10,22,AstraZeneca,45,Kenya,47,82,87,2,34,52,25,55,1,3,2,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE
+Artemether-lumefantrine (COA566),TradeName X,Drug,Malaria,Malaria,Phase 3,2014-07-01,"Sex: ALL; Criteria: Inclusion Criteria:
+
+* Neonates / infants
+* Body weight \< 5 kg
+* In cohort 1, infants aged \> 28 days; in cohort 2, neonates of a term age 0 to ² 28 days
+* Microscopically confirmed diagnosis of acut...",No,2015-01-09,FDA-30952,2.62,0.32,5,7.94,2017-02-11,2017-06-08,2022-06-09,7,AstraZeneca,87,Overall,48.33333333,38,95,88,12,42,15,82,1,4,4,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE
+Hydroxyurea,Molecule Z,Drug,Malaria,Malaria,Phase 3,2017-11-01,"Sex: ALL; Age: >12 Months; Criteria: Inclusion Criteria:
+
+* Pediatric subjects with documented sickle cell anemia (HbSS supported by hemoglobin electrophoresis or by peripheral blood smear showing sickled red blood cells)
+* Age range of ...",No,2018-05-29,FDA-92542,2.62,0.32,5,7.94,2020-06-14,2020-10-09,2025-10-10,37,Sanofi,72,Overall,59.16666667,98,97,2,51,12,95,64,2,2,3,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE
+Azithromycin plus chloroquine,GenName Y,Drug,Malaria,Malaria,Phase 3,2013-11-01,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+* Pregnant women (all gravidae) with ³14 and ²26 weeks of gestational age (by ultrasound).
+* Evidence of a personally signed and dated informed consent/assent document. Assent wil...",Yes,2014-07-21,FDA-91151,2.62,0.32,5,7.94,2016-06-14,2016-10-09,2021-10-10,8,Pfizer,90,South Africa,48,16,36,40,61,72,63,45,1,3,1,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE
+ACT,Comp Beta,Drug,Malaria,Malaria,Phase 3,2020-03-04,"Sex: ALL; Age: >2 Years; Criteria: Inclusion Criteria:
+
+* Male or female, aged from 2 years to 65 years old
+* Acute uncomplicated P. falciparum malaria, confirmed by positive blood smear with asexual forms of P. falciparum (or mixed wi...",No,2020-06-19,FDA-15137,2.62,0.32,5,7.94,2022-10-16,2023-02-10,2028-02-11,86,Gilead,78,Overall,54.83333333,47,49,59,59,54,61,36,1,1,2,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE
+Lamivudine,Product Alpha,Drug,Malaria,Malaria,Phase 3,2013-07-01,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Age \> 16 years (if \<18 years old, living independently from parents)
+2. Documentation of HIV status must come from two assays. Assays include DNA PCR, HIV RNA, Western blot, ...",Yes,2013-12-27,FDA-60226,2.62,0.32,5,7.94,2016-02-12,2016-06-08,2021-06-09,5,Gilead,84,Senegal,30.5,46,34,9,4,16,74,45,1,3,1,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE
+Zidovudine,Comp Beta,Drug,Malaria,Malaria,Phase 3,2013-07-01,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Age \> 16 years (if \<18 years old, living independently from parents)
+2. Documentation of HIV status must come from two assays. Assays include DNA PCR, HIV RNA, Western blot, ...",Yes,2014-04-28,FDA-88082,2.62,0.32,5,7.94,2016-02-12,2016-06-08,2021-06-09,24,Gilead,51,Senegal,31.5,13,60,46,7,31,32,36,1,2,1,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+sulfadoxine-pyrimethamine (SP),Molecule Z,Drug,Malaria,Malaria,Phase 3,2014-04-01,"Sex: ALL; Age: >4 Months; Criteria: Inclusion Criteria:
+
+1. Age 4 -5 months
+2. Confirmed HIV status of biological mother
+3. Negative HIV DNA PCR test at time of enrollment for infants born to HIV-infected mothers
+4. Infants born to HIV-...",Yes,2014-05-21,FDA-21710,2.62,0.32,5,7.94,2016-11-12,2017-03-09,2022-03-10,77,Bayer,92,South Africa,66.66666667,96,21,68,92,97,26,45,2,3,0,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+ACT plus PQ (Rescue medication),AltName B,Drug,Malaria,Malaria,Phase 3,2019-08-19,"Sex: MALE; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Male subjects \>=18 years at the time of signing the informed consent.
+* The subject has a positive Giemsa smear for P. vivax (mixed infection with P.falciparum is acceptable).
+...",No,2020-01-28,FDA-47535,2.62,0.32,5,7.94,2022-04-01,2022-07-27,2027-07-28,26,Sanofi,47,Kenya,56.83333333,41,10,78,93,89,30,36,2,2,0,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+PQ (End of study treatment),Molecule Z,Drug,Malaria,Malaria,Phase 3,2019-08-19,"Sex: MALE; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Male subjects \>=18 years at the time of signing the informed consent.
+* The subject has a positive Giemsa smear for P. vivax (mixed infection with P.falciparum is acceptable).
+...",No,2020-06-11,FDA-19603,2.62,0.32,5,7.94,2022-04-01,2022-07-27,2027-07-28,25,J&J,5,Senegal,26,8,52,13,11,67,5,64,2,3,2,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE
+Hypertonic saline,TradeName X,Drug,Malaria,Malaria,Phase 3,2023-12-31,"Sex: ALL; Age: >6 Months; Criteria: Inclusion Criteria:
+
+* Peripheral P. falciparum parasitemia of any density
+* Blantyre Coma Score ²2
+* No evidence of meningitis on lumbar puncture
+* Consciousness not regained after correction of hypo...",No,2024-05-01,FDA-85878,2.62,0.32,5,7.94,2026-08-13,2026-12-08,2031-12-09,39,Novartis,52,Kenya,64.33333333,26,30,57,97,85,91,64,1,4,2,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE
+Tafenoquine Placebo,Product Alpha,Drug,Malaria,Malaria,Phase 3,2016-11-04,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria:
+
+* A female is eligible to enter and participate in the study if she is non-pregnant, nonlactating and if she is of: a. Non-childbearing potential defined as: post-menopausal (12 m...",No,2017-09-26,FDA-68271,2.62,0.32,5,7.94,2019-06-18,2019-10-13,2024-10-13,59,Pfizer,6,Kenya,39.66666667,23,0,59,33,58,65,45,1,3,1,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE
+Primaquine Placebo,AltName B,Drug,Malaria,Malaria,Phase 3,2016-11-04,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria:
+
+* A female is eligible to enter and participate in the study if she is non-pregnant, nonlactating and if she is of: a. Non-childbearing potential defined as: post-menopausal (12 m...",Yes,2017-03-29,FDA-54664,2.62,0.32,5,7.94,2019-06-18,2019-10-13,2024-10-13,66,Novartis,79,South Africa,49.5,22,69,39,37,37,93,55,2,2,2,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE
+Efavirenz,Comp Beta,Drug,Malaria,Malaria,Phase 3,2013-07-01,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Age \> 16 years (if \<18 years old, living independently from parents)
+2. Documentation of HIV status must come from two assays. Assays include DNA PCR, HIV RNA, Western blot, ...",No,2014-04-23,FDA-58574,2.62,0.32,5,7.94,2016-02-12,2016-06-08,2021-06-09,90,GSK,68,Senegal,30,77,4,12,5,64,18,64,2,3,2,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE
+Azithromycin plus Chloroquine,AltName A,Drug,Malaria,Malaria,Phase 3,2010-09-01,"Sex: ALL; Age: >6 Months; Criteria: Inclusion Criteria:
+
+* Girls and boys ³5 years to ²12 years (Cohort 1); and ³6 to ²59 months of age (Cohort 2) with uncomplicated, symptomatic malaria as indicated by the presence of the following:
+* ...",Yes,2011-08-18,FDA-30392,2.62,0.32,5,7.94,2013-04-14,2013-08-09,2018-08-10,30,Pfizer,60,South Africa,47.16666667,96,90,1,28,59,9,45,1,2,2,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE
+Mefloquine plus artesunate,TradeName X,Drug,Malaria,Malaria,Phase 3,2008-12-01,"Sex: ALL; Age: >3 Years; Criteria: Inclusion Criteria:
+
+* Male or female patients between the ages of 3 and 60 years, inclusive.
+* Body weight between 20 kg and 90 kg with no clinical evidence of severe malnutrition.
+* Presence of acut...",No,2009-04-19,FDA-63859,2.62,0.32,5,7.94,2011-07-15,2011-11-09,2016-11-09,72,Novartis,72,Kenya,65.16666667,30,80,84,71,59,67,45,0,2,3,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE
+1. Artemether-Lumefantrine (AL),GenName Y,Drug,Malaria,Malaria,Phase 3,2009-07-01,"Sex: ALL; Age: >6 Months; Criteria: Inclusion criteria:
+
+* children aged 6-120 months;
+* axillary temperature ³ 37.5¡C and/or history of fever within past 24 hours;
+* P. falciparum asexual parasitemia between 1000 and 100000/µl;
+* abili...",No,2010-02-06,FDA-63639,2.62,0.32,5,7.94,2012-02-12,2012-06-08,2017-06-09,3,Merck,73,Kenya,30.33333333,60,22,31,33,22,14,18,1,1,0,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+2. Amodiaquine-Artesunate (AQ-AS),AltName B,Drug,Malaria,Malaria,Phase 3,2009-07-01,"Sex: ALL; Age: >6 Months; Criteria: Inclusion criteria:
+
+* children aged 6-120 months;
+* axillary temperature ³ 37.5¡C and/or history of fever within past 24 hours;
+* P. falciparum asexual parasitemia between 1000 and 100000/µl;
+* abili...",No,2009-08-28,FDA-68265,2.62,0.32,5,7.94,2012-02-12,2012-06-08,2017-06-09,34,Pfizer,64,South Africa,32,1,41,28,41,76,5,64,0,5,2,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE
+Lopinavir/ritonavir,Product Alpha,Drug,Malaria,Malaria,Phase 3,2013-07-01,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Age \> 16 years (if \<18 years old, living independently from parents)
+2. Documentation of HIV status must come from two assays. Assays include DNA PCR, HIV RNA, Western blot, ...",No,2013-10-10,FDA-91977,2.62,0.32,5,7.94,2016-02-12,2016-06-08,2021-06-09,1,GSK,62,South Africa,37.66666667,59,9,59,29,50,20,45,1,2,2,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+dihydroartemisinin-piperaquine (DP),Product Alpha,Drug,Malaria,Malaria,Phase 3,2014-04-01,"Sex: ALL; Age: >4 Months; Criteria: Inclusion Criteria:
+
+1. Age 4 -5 months
+2. Confirmed HIV status of biological mother
+3. Negative HIV DNA PCR test at time of enrollment for infants born to HIV-infected mothers
+4. Infants born to HIV-...",No,2014-06-28,FDA-88856,2.62,0.32,5,7.94,2016-11-12,2017-03-09,2022-03-10,40,Bayer,11,South Africa,60.83333333,66,51,27,97,49,75,55,1,3,2,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE
+trimethoprim-sulfamethoxazole (TS; TMP/SMX),Molecule Z,Drug,Malaria,Malaria,Phase 3,2014-04-01,"Sex: ALL; Age: >4 Months; Criteria: Inclusion Criteria:
+
+1. Age 4 -5 months
+2. Confirmed HIV status of biological mother
+3. Negative HIV DNA PCR test at time of enrollment for infants born to HIV-infected mothers
+4. Infants born to HIV-...",Yes,2015-01-30,FDA-18462,2.62,0.32,5,7.94,2016-11-12,2017-03-09,2022-03-10,89,Bayer,0,South Africa,22.66666667,31,8,30,0,13,54,64,1,3,3,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE
+3 dose dihydroartemisinin-piperaquine (DP) for adult women during pregnancy,Molecule Z,Drug,Malaria,Malaria,Phase 3,2018-05-14,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Pregnancy confirmed by positive urine pregnancy test or intrauterine pregnancy by ultrasound
+2. Estimated gestational age between 12-20 weeks
+3. Confirmed to be HIV uninfected ...",Yes,2018-06-14,FDA-60623,2.62,0.32,5,7.94,2020-12-25,2021-04-21,2026-04-22,98,GSK,92,Overall,55,97,73,38,26,91,5,45,1,3,1,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE
+"Human Diploid Cell Vaccine (HDCV) or Purified Vero Cell Rabies Vaccine (PVRV, Verorab) (Aventis Pasteur);",GenName Y,Biological,Malaria,Malaria,Phase 3,2013-05-24,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy ALL the following criteria at study entry:
+
+* A male or female infant or child between and including 6 weeks to 17 months of age, at the time of first va...",No,2013-09-09,FDA-67084,2.62,0.32,5,7.94,2016-01-05,2016-05-01,2021-05-02,18,Sanofi,73,Overall,35.16666667,15,42,38,81,1,34,55,2,3,1,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE
+Purified Chick Embryo Cell Culture (PCEC) Rabies Vaccine (Rabipur or equivalent) (Novartis).,TradeName X,Biological,Malaria,Malaria,Phase 3,2013-05-24,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy ALL the following criteria at study entry:
+
+* A male or female infant or child between and including 6 weeks to 17 months of age, at the time of first va...",No,2014-01-28,FDA-90245,2.62,0.32,5,7.94,2016-01-05,2016-05-01,2021-05-02,33,Novartis,1,Kenya,57.83333333,25,17,60,86,72,87,55,1,3,2,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE
+GSK Biologicals' candidate Plasmodium falciparum malaria vaccine (257049),Product Alpha,Biological,Malaria,Malaria,Phase 3,2012-05-04,"Sex: ALL; Age: >5 Months; Criteria: Inclusion Criteria:
+
+* Subjects who the investigator believes that their parent(s)/Legally Acceptable Representative(s) (LAR) can and will comply with the requirements of the protocol.
+* A male or fem...",No,2012-10-13,FDA-86252,2.62,0.32,5,7.94,2014-12-16,2015-04-12,2020-04-12,79,J&J,75,Senegal,59,8,78,66,85,61,56,73,0,5,3,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE
+Monthly Dihydroartemisinin-Piperaquine (DP) During Pregnancy,Comp Beta,Drug,Malaria,Malaria,Phase 3,2018-12-04,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+* Pregnancy confirmed by positive urine pregnancy test or intrauterine pregnancy by ultrasound
+* Estimated gestational age between 12-20 weeks
+* Confirmed to be HIV uninfected by ...",No,2019-03-12,FDA-49165,2.62,0.32,5,7.94,2021-07-17,2021-11-11,2026-11-12,62,GSK,70,Kenya,60.33333333,31,37,96,67,44,87,36,0,3,1,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE
+Artesunate,Molecule Z,Drug,Malaria,Malaria,Phase 3,2012-09-01,"Sex: ALL; Age: >6 Months; Criteria: Inclusion Criteria:
+
+* Subjects aged greater than or equal to 6 months to 5 years presenting to Ndirande Health Centre with signs or symptoms consistent with malaria including, but not limited to, one...",No,2013-05-12,FDA-83742,2.62,0.32,5,7.94,2015-04-15,2015-08-10,2020-08-10,50,Gilead,89,Senegal,32.66666667,20,39,25,15,57,40,55,0,4,2,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE
+GlaxoSmithKline (GSK) Biologicals' candidate Plasmodium falciparum malaria vaccine 257049,TradeName X,Biological,Malaria,Malaria,Phase 3,2017-02-09,"Sex: ALL; Age: >8 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy ALL the following criteria at study entry:
+
+* A male or female infant aged between 8 and 12 weeks inclusive at the time of first vaccination
+* Signed or ...",Yes,2017-06-15,FDA-59597,2.62,0.32,5,7.94,2019-09-23,2020-01-18,2025-01-18,71,AstraZeneca,38,South Africa,46.66666667,90,60,56,29,36,9,55,0,4,2,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE
+Engerix-Bª vaccine,GenName Y,Biological,Malaria,Malaria,Phase 3,2017-02-09,"Sex: ALL; Age: >8 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy ALL the following criteria at study entry:
+
+* A male or female infant aged between 8 and 12 weeks inclusive at the time of first vaccination
+* Signed or ...",No,2018-02-08,FDA-55053,2.62,0.32,5,7.94,2019-09-23,2020-01-18,2025-01-18,57,Sanofi,93,Overall,61.5,81,52,73,43,41,79,45,0,3,2,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE
+Infanrix/Hibª vaccine,Product Alpha,Biological,Malaria,Malaria,Phase 3,2017-02-09,"Sex: ALL; Age: >8 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy ALL the following criteria at study entry:
+
+* A male or female infant aged between 8 and 12 weeks inclusive at the time of first vaccination
+* Signed or ...",Yes,2017-06-28,FDA-79141,2.62,0.32,5,7.94,2019-09-23,2020-01-18,2025-01-18,95,Merck,95,Kenya,35.66666667,29,35,26,35,3,86,64,2,3,2,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE
+Polio Sabinª vaccine,TradeName X,Biological,Malaria,Malaria,Phase 3,2017-02-09,"Sex: ALL; Age: >8 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy ALL the following criteria at study entry:
+
+* A male or female infant aged between 8 and 12 weeks inclusive at the time of first vaccination
+* Signed or ...",No,2017-07-10,FDA-22671,2.62,0.32,5,7.94,2019-09-23,2020-01-18,2025-01-18,20,Bayer,27,Senegal,58.5,69,88,38,24,82,50,55,1,3,2,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE
+Rotarixª vaccine,AltName B,Biological,Malaria,Malaria,Phase 3,2017-02-09,"Sex: ALL; Age: >8 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy ALL the following criteria at study entry:
+
+* A male or female infant aged between 8 and 12 weeks inclusive at the time of first vaccination
+* Signed or ...",No,2017-05-09,FDA-86276,2.62,0.32,5,7.94,2019-09-23,2020-01-18,2025-01-18,38,Pfizer,15,Senegal,43.33333333,5,21,78,88,1,67,45,1,2,2,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Synflorixª vaccine,Comp Beta,Biological,Malaria,Malaria,Phase 3,2017-02-09,"Sex: ALL; Age: >8 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy ALL the following criteria at study entry:
+
+* A male or female infant aged between 8 and 12 weeks inclusive at the time of first vaccination
+* Signed or ...",No,2017-10-16,FDA-17826,2.62,0.32,5,7.94,2019-09-23,2020-01-18,2025-01-18,1,Bayer,99,Kenya,34.5,9,28,55,17,86,12,55,2,3,1,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE
+Measles vaccine,Product Alpha,Biological,Malaria,Malaria,Phase 3,2017-02-09,"Sex: ALL; Age: >8 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy ALL the following criteria at study entry:
+
+* A male or female infant aged between 8 and 12 weeks inclusive at the time of first vaccination
+* Signed or ...",Yes,2017-09-19,FDA-11426,2.62,0.32,5,7.94,2019-09-23,2020-01-18,2025-01-18,19,J&J,8,Kenya,48.5,81,49,22,18,36,85,36,1,2,1,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+Yellow fever vaccine,TradeName X,Biological,Malaria,Malaria,Phase 3,2017-02-09,"Sex: ALL; Age: >8 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy ALL the following criteria at study entry:
+
+* A male or female infant aged between 8 and 12 weeks inclusive at the time of first vaccination
+* Signed or ...",Yes,2017-04-13,FDA-53500,2.62,0.32,5,7.94,2019-09-23,2020-01-18,2025-01-18,9,AstraZeneca,36,Senegal,53.5,62,72,39,73,33,42,91,1,5,4,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE
+GSK Biological's Investigational Malaria Vaccine 257049,AltName B,Biological,Malaria,Malaria,Phase 3,2013-05-24,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy ALL the following criteria at study entry:
+
+* A male or female infant or child between and including 6 weeks to 17 months of age, at the time of first va...",Yes,2013-09-09,FDA-94435,2.62,0.32,5,7.94,2016-01-05,2016-05-01,2021-05-02,100,Merck,29,Senegal,46.5,53,26,95,10,2,93,73,2,4,2,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE
+Placebo oral tablet,Molecule Z,Drug,Malaria,Malaria,Phase 3,2024-08-01,"Sex: ALL; Criteria: Inclusion Criteria (for being enrolled in the study):
+
+* Residence in selected study village
+* Able to understand the information and willing to give consent or assent (age 12-18) and parent/guardian ...",Yes,2025-07-09,FDA-30551,2.62,0.32,5,7.94,2027-03-15,2027-07-10,2032-07-10,22,J&J,71,Overall,57,69,17,52,60,61,83,55,2,2,2,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE
+Sulfadoxine-pyrimethamine,Comp Beta,Drug,Malaria,Malaria,Phase 3,2015-01-01,"Sex: FEMALE; Criteria: Inclusion Criteria:
+
+Women who present to the Ndirande Antenatal Clinic (ANC) and meet the following inclusion criteria will be enrolled in the study: -Before the end of 27th week of gestation -First ...",Yes,2015-09-19,FDA-24425,2.62,0.32,5,7.94,2017-08-14,2017-12-09,2022-12-10,41,GSK,27,Kenya,66,24,86,96,76,47,67,27,0,2,1,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE
+Malaria Vaccine 257049 (MALARIA-055 PRI),AltName A,Biological,Malaria,Malaria,Phase 3,2017-01-31,"Sex: ALL; Age: >42 Months; Criteria: Inclusion Criteria:
+
+* Subjects' parent(s)/ Legally Acceptable Representative (LARs) who, in the opinion of the investigator, can and will comply with the requirements of the protocol.
+* Subjects who ...",No,2017-07-24,FDA-21618,2.62,0.32,5,7.94,2019-09-14,2020-01-09,2025-01-09,83,Sanofi,75,Kenya,30.5,28,43,71,31,2,8,45,1,2,2,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE
+Meningococcal C Conjugate Vaccine (MALARIA-055 PRI),Product Alpha,Biological,Malaria,Malaria,Phase 3,2017-01-31,"Sex: ALL; Age: >42 Months; Criteria: Inclusion Criteria:
+
+* Subjects' parent(s)/ Legally Acceptable Representative (LARs) who, in the opinion of the investigator, can and will comply with the requirements of the protocol.
+* Subjects who ...",Yes,2017-10-30,FDA-11988,2.62,0.32,5,7.94,2019-09-14,2020-01-09,2025-01-09,80,Sanofi,36,South Africa,41.83333333,2,76,72,36,15,50,55,2,2,2,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Cell-culture rabies vaccine (MALARIA-055 PRI),AltName A,Biological,Malaria,Malaria,Phase 3,2017-01-31,"Sex: ALL; Age: >42 Months; Criteria: Inclusion Criteria:
+
+* Subjects' parent(s)/ Legally Acceptable Representative (LARs) who, in the opinion of the investigator, can and will comply with the requirements of the protocol.
+* Subjects who ...",No,2017-04-21,FDA-91910,2.62,0.32,5,7.94,2019-09-14,2020-01-09,2025-01-09,91,Bayer,60,Kenya,33.5,25,5,68,66,13,24,55,1,2,3,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE
+TritanrixHepB/Hib (MALARIA-055 PRI),AltName B,Biological,Malaria,Malaria,Phase 3,2017-01-31,"Sex: ALL; Age: >42 Months; Criteria: Inclusion Criteria:
+
+* Subjects' parent(s)/ Legally Acceptable Representative (LARs) who, in the opinion of the investigator, can and will comply with the requirements of the protocol.
+* Subjects who ...",Yes,2017-09-15,FDA-36803,2.62,0.32,5,7.94,2019-09-14,2020-01-09,2025-01-09,66,GSK,62,Kenya,69.83333333,64,36,75,82,78,84,64,1,4,2,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+Polio Sabin Oral Polio Vaccine (GSK) (MALARIA-055 PRI),Molecule Z,Biological,Malaria,Malaria,Phase 3,2017-01-31,"Sex: ALL; Age: >42 Months; Criteria: Inclusion Criteria:
+
+* Subjects' parent(s)/ Legally Acceptable Representative (LARs) who, in the opinion of the investigator, can and will comply with the requirements of the protocol.
+* Subjects who ...",No,2017-05-20,FDA-63276,2.62,0.32,5,7.94,2019-09-14,2020-01-09,2025-01-09,16,Gilead,96,Senegal,34.83333333,7,19,29,57,7,90,64,2,3,2,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE
+Candidate Plasmodium falciparum malaria vaccine,AltName B,Biological,Malaria,Malaria,Phase 3,2020-10-07,"Sex: ALL; Age: >6 Months; Criteria: Inclusion Criteria:
+
+* Subjects' parent(s)/Legally Acceptable Representative(s) (LAR\[s\]) who, in the opinion of the investigator, could and complied with the requirements of the protocol.
+* A male o...",No,2020-12-01,FDA-72599,2.62,0.32,5,7.94,2023-05-21,2023-09-15,2028-09-15,42,Novartis,91,South Africa,26.5,64,20,9,23,28,15,73,1,3,4,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE
+Polio Sabin Oral Polio Vaccine (GSK),Molecule Z,Biological,Malaria,Malaria,Phase 3,2014-01-31,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy the following criteria at study entry:
+
+* A male or female child of:5-17 months (inclusive) of age at time of first vaccination,or between 6-12 weeks of ...",Yes,2014-11-04,FDA-89470,2.62,0.32,5,7.94,2016-09-13,2017-01-08,2022-01-09,68,Gilead,73,South Africa,35.5,6,36,60,5,29,77,64,2,3,2,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE
+MR-Vac,Molecule Z,Biological,Malaria,Malaria,Phase 3,2020-10-07,"Sex: ALL; Age: >6 Months; Criteria: Inclusion Criteria:
+
+* Subjects' parent(s)/Legally Acceptable Representative(s) (LAR\[s\]) who, in the opinion of the investigator, could and complied with the requirements of the protocol.
+* A male o...",No,2021-01-26,FDA-29398,2.62,0.32,5,7.94,2023-05-21,2023-09-15,2028-09-15,90,Bayer,15,South Africa,55,38,64,89,40,34,65,27,1,0,2,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE
+Stamaril,AltName A,Biological,Malaria,Malaria,Phase 3,2020-10-07,"Sex: ALL; Age: >6 Months; Criteria: Inclusion Criteria:
+
+* Subjects' parent(s)/Legally Acceptable Representative(s) (LAR\[s\]) who, in the opinion of the investigator, could and complied with the requirements of the protocol.
+* A male o...",No,2021-09-12,FDA-27784,2.62,0.32,5,7.94,2023-05-21,2023-09-15,2028-09-15,59,Bayer,76,Overall,64.66666667,84,42,15,90,72,85,45,2,2,1,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+Malaria Vaccine 257049,Molecule Z,Biological,Malaria,Malaria,Phase 3,2014-01-31,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy the following criteria at study entry:
+
+* A male or female child of:5-17 months (inclusive) of age at time of first vaccination,or between 6-12 weeks of ...",No,2014-07-03,FDA-10012,2.62,0.32,5,7.94,2016-09-13,2017-01-08,2022-01-09,55,Sanofi,83,Overall,70.83333333,86,96,54,25,73,91,27,0,1,2,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Meningococcal C Conjugate Vaccine,Product Alpha,Biological,Malaria,Malaria,Phase 3,2014-01-31,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy the following criteria at study entry:
+
+* A male or female child of:5-17 months (inclusive) of age at time of first vaccination,or between 6-12 weeks of ...",Yes,2014-07-04,FDA-85207,2.62,0.32,5,7.94,2016-09-13,2017-01-08,2022-01-09,10,Merck,68,Senegal,71,95,90,70,46,28,97,55,1,3,2,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE
+Cell-culture rabies vaccine,AltName B,Biological,Malaria,Malaria,Phase 3,2014-01-31,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy the following criteria at study entry:
+
+* A male or female child of:5-17 months (inclusive) of age at time of first vaccination,or between 6-12 weeks of ...",No,2015-01-14,FDA-81897,2.62,0.32,5,7.94,2016-09-13,2017-01-08,2022-01-09,99,Merck,51,Senegal,38.83333333,11,33,25,64,2,98,36,0,3,1,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE
+TritanrixHepB/Hib,AltName A,Biological,Malaria,Malaria,Phase 3,2014-01-31,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+All subjects must satisfy the following criteria at study entry:
+
+* A male or female child of:5-17 months (inclusive) of age at time of first vaccination,or between 6-12 weeks of ...",No,2014-11-29,FDA-40155,2.62,0.32,5,7.94,2016-09-13,2017-01-08,2022-01-09,16,Novartis,43,Overall,41.83333333,27,35,54,49,75,11,55,1,3,2,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Monthly dihydroartemisinin-piperaquine (DP) for adult women during pregnancy,AltName B,Drug,Malaria,Malaria,Phase 3,2018-05-14,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Pregnancy confirmed by positive urine pregnancy test or intrauterine pregnancy by ultrasound
+2. Estimated gestational age between 12-20 weeks
+3. Confirmed to be HIV uninfected ...",No,2019-02-15,FDA-27655,2.62,0.32,5,7.94,2020-12-25,2021-04-21,2026-04-22,95,Novartis,8,Kenya,40.5,43,16,54,13,58,59,27,0,2,1,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Monthly dihydroartemisinin-piperaquine (DP) for infants,TradeName X,Drug,Malaria,Malaria,Phase 3,2018-05-14,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Pregnancy confirmed by positive urine pregnancy test or intrauterine pregnancy by ultrasound
+2. Estimated gestational age between 12-20 weeks
+3. Confirmed to be HIV uninfected ...",Yes,2018-07-20,FDA-51444,2.62,0.32,5,7.94,2020-12-25,2021-04-21,2026-04-22,1,Merck,13,South Africa,47.5,9,40,52,40,76,68,55,1,4,1,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE
+Monthly Sulfadoxine-Pyrimethamine (SP) During Pregnancy,GenName Y,Drug,Malaria,Malaria,Phase 3,2018-12-04,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+* Pregnancy confirmed by positive urine pregnancy test or intrauterine pregnancy by ultrasound
+* Estimated gestational age between 12-20 weeks
+* Confirmed to be HIV uninfected by ...",Yes,2019-07-24,FDA-40410,2.62,0.32,5,7.94,2021-07-17,2021-11-11,2026-11-12,5,Merck,88,Senegal,72.16666667,98,37,32,85,81,100,73,2,4,2,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE
+3 dose sulfadoxine-pyrimethamine (SP) for adult women during pregnancy,Comp Beta,Drug,Malaria,Malaria,Phase 3,2018-05-14,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Pregnancy confirmed by positive urine pregnancy test or intrauterine pregnancy by ultrasound
+2. Estimated gestational age between 12-20 weeks
+3. Confirmed to be HIV uninfected ...",No,2018-06-21,FDA-28230,2.62,0.32,5,7.94,2020-12-25,2021-04-21,2026-04-22,51,Sanofi,54,South Africa,42.33333333,26,14,47,32,41,94,55,2,2,2,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE
+3-monthly dihydroartemisinin-piperaquine (DP) for infants,Comp Beta,Drug,Malaria,Malaria,Phase 3,2018-05-14,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+1. Pregnancy confirmed by positive urine pregnancy test or intrauterine pregnancy by ultrasound
+2. Estimated gestational age between 12-20 weeks
+3. Confirmed to be HIV uninfected ...",No,2019-01-25,FDA-29994,2.62,0.32,5,7.94,2020-12-25,2021-04-21,2026-04-22,85,J&J,12,South Africa,55,61,32,41,83,67,46,55,2,3,1,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE
+Rouvaxª,Comp Beta,Biological,Malaria,Malaria,Phase 2,2009-10-07,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+* A male or female infant between 6 and 10 weeks of age at the time of first vaccination.
+* Signed or thumb-printed informed consent obtained from the parent(s)/guardian(s) of the...",Yes,2010-04-11,FDA-69631,4.41,0.98,21,26.39,2014-03-05,2015-02-26,2036-02-26,99,AstraZeneca,30,Senegal,58,36,48,81,48,78,57,55,0,2,4,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE
+KAF156,GenName Y,Drug,Malaria,Malaria,Phase 2,2021-06-28,"Sex: ALL; Age: >2 Years; Criteria: Inclusion Criteria:
+
+* Part A: male and female patients ³ 12 years and with a body weight ³ 35.0 kg. Part B: after determining the effective/tolerated doses and regimens in adolescent and adult patien...",No,2022-02-22,FDA-81356,4.41,0.98,21,26.39,2025-11-24,2026-11-17,2047-11-17,26,Gilead,55,Senegal,67.66666667,75,71,70,46,93,51,27,1,1,1,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+"RTS, S/AS01B",AltName A,Biological,Malaria,Malaria,Phase 2,2006-09-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion criteria:
+
+* Healthy male or female volunteers aged between 18 and 35 years at the time of first vaccination who have given written consent for their participation in the study were included...",No,2007-07-13,FDA-44674,4.41,0.98,21,26.39,2011-01-28,2012-01-21,2033-01-20,92,Novartis,68,Kenya,40.33333333,17,98,15,38,72,2,45,2,0,3,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE
+Prevnarª,Comp Beta,Biological,Malaria,Malaria,Phase 2,2007-05-01,"Sex: ALL; Age: >33 Months; Criteria: Inclusion criteria:
+
+* Completion of Visit 7, Month 21 of 104297 (NCT= NCT00197041).
+* Written informed consent obtained from the parent(s) or guardian(s) of the subject
+
+Exclusion criteria:
+
+* Planne...",No,2008-03-04,FDA-28003,4.41,0.98,21,26.39,2011-09-27,2012-09-19,2033-09-19,27,Gilead,99,Kenya,34.33333333,55,18,92,21,18,2,55,0,3,3,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE
+Hiberix¨,GenName Y,Biological,Malaria,Malaria,Phase 2,2007-05-01,"Sex: ALL; Age: >33 Months; Criteria: Inclusion criteria:
+
+* Completion of Visit 7, Month 21 of 104297 (NCT= NCT00197041).
+* Written informed consent obtained from the parent(s) or guardian(s) of the subject
+
+Exclusion criteria:
+
+* Planne...",No,2007-10-04,FDA-29415,4.41,0.98,21,26.39,2011-09-27,2012-09-19,2033-09-19,67,GSK,65,Overall,58.83333333,63,23,69,67,77,54,73,1,3,4,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE
+Engerixª-B,Molecule Z,Biological,Malaria,Malaria,Phase 2,2007-05-01,"Sex: ALL; Age: >33 Months; Criteria: Inclusion criteria:
+
+* Completion of Visit 7, Month 21 of 104297 (NCT= NCT00197041).
+* Written informed consent obtained from the parent(s) or guardian(s) of the subject
+
+Exclusion criteria:
+
+* Planne...",No,2008-04-09,FDA-76465,4.41,0.98,21,26.39,2011-09-27,2012-09-19,2033-09-19,10,Sanofi,34,South Africa,43.5,17,16,38,68,68,54,55,2,2,2,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE
+GSK Biologicals' candidate Plasmodium falciparum malaria vaccine 257049,AltName B,Biological,Malaria,Malaria,Phase 2,2007-05-01,"Sex: ALL; Age: >33 Months; Criteria: Inclusion criteria:
+
+* Completion of Visit 7, Month 21 of 104297 (NCT= NCT00197041).
+* Written informed consent obtained from the parent(s) or guardian(s) of the subject
+
+Exclusion criteria:
+
+* Planne...",Yes,2007-06-10,FDA-74356,4.41,0.98,21,26.39,2011-09-27,2012-09-19,2033-09-19,39,J&J,69,Overall,25.66666667,11,25,14,60,37,7,55,0,3,3,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE
+Lumefantrine Solid Dispersion Formulation,Molecule Z,Drug,Malaria,Malaria,Phase 2,2021-06-28,"Sex: ALL; Age: >2 Years; Criteria: Inclusion Criteria:
+
+* Part A: male and female patients ³ 12 years and with a body weight ³ 35.0 kg. Part B: after determining the effective/tolerated doses and regimens in adolescent and adult patien...",No,2021-12-22,FDA-89543,4.41,0.98,21,26.39,2025-11-24,2026-11-17,2047-11-17,74,Sanofi,23,South Africa,45.16666667,16,18,98,26,57,56,64,0,3,4,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE
+Coartem,TradeName X,Drug,Malaria,Malaria,Phase 2,2021-06-28,"Sex: ALL; Age: >2 Years; Criteria: Inclusion Criteria:
+
+* Part A: male and female patients ³ 12 years and with a body weight ³ 35.0 kg. Part B: after determining the effective/tolerated doses and regimens in adolescent and adult patien...",Yes,2021-12-13,FDA-54064,4.41,0.98,21,26.39,2025-11-24,2026-11-17,2047-11-17,96,Merck,57,Overall,40.5,45,48,73,8,58,11,64,1,3,3,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE
+Rabipur (Rabies) Vaccine,GenName Y,Biological,Malaria,Malaria,Phase 2,2006-09-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion criteria:
+
+* Healthy male or female volunteers aged between 18 and 35 years at the time of first vaccination who have given written consent for their participation in the study were included...",No,2006-11-19,FDA-55951,4.41,0.98,21,26.39,2011-01-28,2012-01-21,2033-01-20,99,Pfizer,48,Overall,68.83333333,55,91,55,80,66,66,45,0,2,3,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE
+Artemether,Molecule Z,Drug,Malaria,Malaria,Phase 2,2010-01-01,"Sex: ALL; Criteria: Inclusion Criteria:
+
+1. The patient's parent or attendant relative has provided informed consent and the patient has assented (where relevant) to participation in the trial
+2. The patient is a child t...",Yes,2010-11-28,FDA-75095,4.41,0.98,21,26.39,2014-05-30,2015-05-23,2036-05-22,50,AstraZeneca,16,Senegal,58.66666667,79,8,79,61,94,31,36,1,1,2,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE
+VMP001,AltName B,Biological,Malaria,Malaria,Phase 2,2012-01-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Subjects who meet all of the following criteria may participate in this study:
+* Healthy adults (male or non-pregnant, non-lactating female) 18 to 55 years of age (inclusive) at...",Yes,2012-12-22,FDA-44860,4.41,0.98,21,26.39,2016-05-29,2017-05-22,2038-05-22,15,Pfizer,10,South Africa,47.16666667,28,15,87,60,87,6,64,1,3,3,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE
+GSK Biologicals' malaria vaccine 257049 (3 doses),AltName A,Biological,Malaria,Malaria,Phase 2,2012-07-03,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Subjects who the investigator believes can and will comply with the requirements of the protocol.
+* A male or non-pregnant female 18 to 50 years of age at the time of first vacc...",Yes,2013-02-25,FDA-78416,4.41,0.98,21,26.39,2016-11-29,2017-11-22,2038-11-22,30,Pfizer,55,Kenya,43.33333333,5,100,8,76,71,0,36,0,1,3,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE
+GSK Biologicals' malaria vaccine 257049 (2 doses),Molecule Z,Biological,Malaria,Malaria,Phase 2,2012-07-03,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Subjects who the investigator believes can and will comply with the requirements of the protocol.
+* A male or non-pregnant female 18 to 50 years of age at the time of first vacc...",Yes,2013-01-25,FDA-68055,4.41,0.98,21,26.39,2016-11-29,2017-11-22,2038-11-22,30,J&J,15,South Africa,71.5,82,47,91,46,95,68,73,2,3,3,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE
+Crucell's replication deficient adenovirus type 35 circumsporozoite malaria vaccine (Ad35.CS.01),Product Alpha,Biological,Malaria,Malaria,Phase 2,2012-07-03,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Subjects who the investigator believes can and will comply with the requirements of the protocol.
+* A male or non-pregnant female 18 to 50 years of age at the time of first vacc...",Yes,2012-09-02,FDA-55829,4.41,0.98,21,26.39,2016-11-29,2017-11-22,2038-11-22,18,Bayer,51,Senegal,39.66666667,13,61,10,31,23,100,64,2,4,1,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE
+"RTS,S/AS01E (SB257049)",Comp Beta,Biological,Malaria,Malaria,Phase 2,2019-09-26,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+Only for subjects from MALARIA-092 study (NCT03162614):
+
+¥ Subjects vaccinated and having undergone sporozoite challenge during the primary study (MALARIA-092 \[NCT03162614\]).
+
+F...",No,2020-03-04,FDA-95929,4.41,0.98,21,26.39,2024-02-22,2025-02-14,2046-02-14,42,AstraZeneca,39,Senegal,37.83333333,25,93,3,4,88,14,73,1,3,4,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE
+"RTS, S/AS02A",Product Alpha,Biological,Malaria,Malaria,Phase 2,2006-09-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion criteria:
+
+* Healthy male or female volunteers aged between 18 and 35 years at the time of first vaccination who have given written consent for their participation in the study were included...",Yes,2006-10-20,FDA-48780,4.41,0.98,21,26.39,2011-01-28,2012-01-21,2033-01-20,20,Pfizer,6,Overall,48.33333333,67,32,52,60,48,31,55,0,2,4,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE
+ChAd63 PvDBP and MVA PvDBP,GenName Y,Biological,Malaria,Malaria,Phase 2,2022-07-07,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Healthy adult aged 18 to 45 years.
+* Red blood cells positive for the Duffy antigen/chemokine receptor (DARC).
+* Normal serum levels of Glucose-6-phosphate dehydrogenase (G6PD)....",Yes,2023-04-09,FDA-48070,4.41,0.98,21,26.39,2026-12-03,2027-11-26,2048-11-25,75,J&J,45,Senegal,59.66666667,56,75,42,77,37,71,45,1,2,2,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+"Double RTS,S/AS01E Fractional dose",Molecule Z,Biological,Malaria,Malaria,Phase 2,2018-02-20,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Participant is a healthy male or non-pregnant female, aged 18 to 55 years (inclusive), of Thai origin.
+* Participant is willing and able to give informed consent to participate ...",No,2019-01-03,FDA-98917,4.41,0.98,21,26.39,2022-07-19,2023-07-12,2044-07-11,13,Sanofi,98,Kenya,61.5,22,25,71,97,61,93,45,1,3,1,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE
+Primaquine 15mg (Part2 ),Comp Beta,Drug,Malaria,Malaria,Phase 2,2016-11-18,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria: - Positive Giemsa smear for P. vivax
+
+* Parasite density \>100 and \<200,000/_L
+* ³16 years
+* A female is eligible if she is non-pregnant, nonlactating and if she is of: - non-chil...",No,2017-01-08,FDA-45218,4.41,0.98,21,26.39,2021-04-16,2022-04-09,2043-04-09,4,J&J,46,Overall,48.5,53,57,35,22,34,90,64,1,3,3,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE
+Methylene Blue,Molecule Z,Drug,Malaria,Malaria,Phase 2,2017-02-01,"Sex: ALL; Age: >6 Months; Criteria: Inclusion Criteria:
+
+* Weight ³ 6 kg
+* Uncomplicated malaria caused by P. falciparum
+* Asexual parasites ³ 2 000/µl and ² 100 000/µl
+* Axillary temperature ³ 37.5¡C or a history of fever during the la...",No,2017-03-31,FDA-19658,4.41,0.98,21,26.39,2021-06-30,2022-06-23,2043-06-23,27,Gilead,29,South Africa,50.16666667,29,12,49,87,89,35,73,1,4,3,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE
+PfSPZ Vaccine,Comp Beta,Biological,Malaria,Malaria,Phase 2,2023-03-17,"Sex: ALL; Criteria: * INCLUSION CRITERIA:
+
+  1. Females of child bearing potential aged greater than or equal to 18 and less than or equal to 38 years
+  2. Able to provide proof of identity to the satisfaction of the stu...",No,2024-01-12,FDA-32088,4.41,0.98,21,26.39,2027-08-13,2028-08-05,2049-08-05,76,Sanofi,39,Kenya,58,80,13,75,89,6,85,55,1,3,2,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+amodiaquine,TradeName X,Drug,Malaria,Malaria,Phase 2,2007-05-01,"Sex: ALL; Age: >33 Months; Criteria: Inclusion criteria:
+
+* Completion of Visit 7, Month 21 of 104297 (NCT= NCT00197041).
+* Written informed consent obtained from the parent(s) or guardian(s) of the subject
+
+Exclusion criteria:
+
+* Planne...",Yes,2007-11-04,FDA-67285,4.41,0.98,21,26.39,2011-09-27,2012-09-19,2033-09-19,60,Merck,42,South Africa,44.83333333,12,23,54,57,40,83,36,1,2,1,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE
+R21/Matrix-M vaccination,AltName B,Biological,Malaria,Malaria,Phase 2,2023-09-18,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria
+
+The participant is eligible to enter the study if all of the following apply:
+
+1. Participant is a healthy adult, aged 18 to 55 years (inclusive), of Thai origin.
+2. Participant is...",No,2023-11-14,FDA-13188,4.41,0.98,21,26.39,2028-02-14,2029-02-06,2050-02-06,26,Bayer,3,South Africa,63.66666667,89,23,85,57,62,66,91,2,5,3,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE
+DHA-PIP,AltName A,Drug,Malaria,Malaria,Phase 2,2023-09-18,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria
+
+The participant is eligible to enter the study if all of the following apply:
+
+1. Participant is a healthy adult, aged 18 to 55 years (inclusive), of Thai origin.
+2. Participant is...",No,2024-09-09,FDA-60865,4.41,0.98,21,26.39,2028-02-14,2029-02-06,2050-02-06,55,GSK,18,South Africa,34.16666667,31,2,23,58,41,50,45,1,2,2,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE
+PQ,TradeName X,Drug,Malaria,Malaria,Phase 2,2023-09-18,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria
+
+The participant is eligible to enter the study if all of the following apply:
+
+1. Participant is a healthy adult, aged 18 to 55 years (inclusive), of Thai origin.
+2. Participant is...",No,2024-08-04,FDA-19305,4.41,0.98,21,26.39,2028-02-14,2029-02-06,2050-02-06,40,Gilead,20,Senegal,51.33333333,71,26,0,73,54,84,45,1,1,3,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE
+Chloroquine 600mg,Comp Beta,Drug,Malaria,Malaria,Phase 2,2016-11-18,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria: - Positive Giemsa smear for P. vivax
+
+* Parasite density \>100 and \<200,000/_L
+* ³16 years
+* A female is eligible if she is non-pregnant, nonlactating and if she is of: - non-chil...",No,2017-02-23,FDA-41569,4.41,0.98,21,26.39,2021-04-16,2022-04-09,2043-04-09,18,Gilead,51,Senegal,45,38,20,85,41,53,33,45,1,2,2,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE
+Chloroquine 300mg,AltName B,Drug,Malaria,Malaria,Phase 2,2016-11-18,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria: - Positive Giemsa smear for P. vivax
+
+* Parasite density \>100 and \<200,000/_L
+* ³16 years
+* A female is eligible if she is non-pregnant, nonlactating and if she is of: - non-chil...",No,2017-10-10,FDA-76288,4.41,0.98,21,26.39,2021-04-16,2022-04-09,2043-04-09,94,GSK,60,Overall,74.66666667,61,33,95,73,86,100,55,0,3,3,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE
+Tafenoquine 50mg,Molecule Z,Drug,Malaria,Malaria,Phase 2,2016-11-18,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria: - Positive Giemsa smear for P. vivax
+
+* Parasite density \>100 and \<200,000/_L
+* ³16 years
+* A female is eligible if she is non-pregnant, nonlactating and if she is of: - non-chil...",Yes,2017-06-30,FDA-13328,4.41,0.98,21,26.39,2021-04-16,2022-04-09,2043-04-09,97,GSK,48,Kenya,63.33333333,35,94,41,67,63,80,45,0,3,2,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE
+Tafenoquine 100mg,TradeName X,Drug,Malaria,Malaria,Phase 2,2016-11-18,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria: - Positive Giemsa smear for P. vivax
+
+* Parasite density \>100 and \<200,000/_L
+* ³16 years
+* A female is eligible if she is non-pregnant, nonlactating and if she is of: - non-chil...",Yes,2017-10-27,FDA-70892,4.41,0.98,21,26.39,2021-04-16,2022-04-09,2043-04-09,87,J&J,77,Kenya,67.5,69,87,82,65,70,32,55,0,4,2,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE
+Tafenoquine 300mg,TradeName X,Drug,Malaria,Malaria,Phase 2,2016-11-18,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria: - Positive Giemsa smear for P. vivax
+
+* Parasite density \>100 and \<200,000/_L
+* ³16 years
+* A female is eligible if she is non-pregnant, nonlactating and if she is of: - non-chil...",Yes,2017-07-29,FDA-93499,4.41,0.98,21,26.39,2021-04-16,2022-04-09,2043-04-09,22,Novartis,5,South Africa,72,100,73,68,83,63,45,55,1,2,3,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE
+Tafenoquine 600mg,GenName Y,Drug,Malaria,Malaria,Phase 2,2016-11-18,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria: - Positive Giemsa smear for P. vivax
+
+* Parasite density \>100 and \<200,000/_L
+* ³16 years
+* A female is eligible if she is non-pregnant, nonlactating and if she is of: - non-chil...",No,2017-05-10,FDA-85222,4.41,0.98,21,26.39,2021-04-16,2022-04-09,2043-04-09,22,AstraZeneca,54,Kenya,32.66666667,17,85,44,44,4,2,36,0,3,1,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE
+Primaquine 15mg,AltName B,Drug,Malaria,Malaria,Phase 2,2016-11-18,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria: - Positive Giemsa smear for P. vivax
+
+* Parasite density \>100 and \<200,000/_L
+* ³16 years
+* A female is eligible if she is non-pregnant, nonlactating and if she is of: - non-chil...",Yes,2017-07-06,FDA-77326,4.41,0.98,21,26.39,2021-04-16,2022-04-09,2043-04-09,0,Merck,21,Overall,50.83333333,26,53,34,65,72,55,45,1,3,1,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+Chloroquine 600mg (Part 2 ),GenName Y,Drug,Malaria,Malaria,Phase 2,2016-11-18,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria: - Positive Giemsa smear for P. vivax
+
+* Parasite density \>100 and \<200,000/_L
+* ³16 years
+* A female is eligible if she is non-pregnant, nonlactating and if she is of: - non-chil...",Yes,2017-01-26,FDA-28347,4.41,0.98,21,26.39,2021-04-16,2022-04-09,2043-04-09,28,Novartis,76,South Africa,36.33333333,39,65,30,29,11,44,55,1,3,2,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE
+Chloroquine 300mg (Part 2 ),AltName A,Drug,Malaria,Malaria,Phase 2,2016-11-18,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria: - Positive Giemsa smear for P. vivax
+
+* Parasite density \>100 and \<200,000/_L
+* ³16 years
+* A female is eligible if she is non-pregnant, nonlactating and if she is of: - non-chil...",No,2016-12-31,FDA-58007,4.41,0.98,21,26.39,2021-04-16,2022-04-09,2043-04-09,44,GSK,2,South Africa,43,12,63,39,47,97,0,45,1,3,1,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE
+Tafenoquine 300mg (Part 2),Molecule Z,Drug,Malaria,Malaria,Phase 2,2016-11-18,"Sex: ALL; Age: >16 Years; Criteria: Inclusion Criteria: - Positive Giemsa smear for P. vivax
+
+* Parasite density \>100 and \<200,000/_L
+* ³16 years
+* A female is eligible if she is non-pregnant, nonlactating and if she is of: - non-chil...",Yes,2017-01-23,FDA-18350,4.41,0.98,21,26.39,2021-04-16,2022-04-09,2043-04-09,66,Sanofi,7,Senegal,38.66666667,38,89,8,5,92,0,64,0,5,2,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE
+"RTS,S/AS01B Fractional dose",Comp Beta,Biological,Malaria,Malaria,Phase 2,2018-02-20,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Participant is a healthy male or non-pregnant female, aged 18 to 55 years (inclusive), of Thai origin.
+* Participant is willing and able to give informed consent to participate ...",Yes,2018-10-05,FDA-21456,4.41,0.98,21,26.39,2022-07-19,2023-07-12,2044-07-11,100,Sanofi,30,South Africa,54.83333333,46,34,39,85,93,32,64,0,5,2,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE
+"RTS,S/AS01E + DHA-PIP+PQ Standard dose",GenName Y,Biological,Malaria,Malaria,Phase 2,2018-02-20,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Participant is a healthy male or non-pregnant female, aged 18 to 55 years (inclusive), of Thai origin.
+* Participant is willing and able to give informed consent to participate ...",Yes,2018-09-14,FDA-31092,4.41,0.98,21,26.39,2022-07-19,2023-07-12,2044-07-11,1,Merck,88,Senegal,36.83333333,37,24,17,12,31,100,45,1,3,1,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE
+"RTS,S/AS01E Standard dose",Product Alpha,Biological,Malaria,Malaria,Phase 2,2018-02-20,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Participant is a healthy male or non-pregnant female, aged 18 to 55 years (inclusive), of Thai origin.
+* Participant is willing and able to give informed consent to participate ...",No,2018-05-01,FDA-16153,4.41,0.98,21,26.39,2022-07-19,2023-07-12,2044-07-11,55,Merck,13,Overall,53.83333333,59,26,84,48,51,55,55,1,3,2,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE
+KAE609,Product Alpha,Drug,Malaria,Malaria,Phase 2,2014-08-01,"Sex: ALL; Age: >20 Years; Criteria: Inclusion Criteria:
+
+* Male and female patients aged 20 to 60 years
+* Presence of mono-infection of P. falciparum
+* Weight between 40 kg to 90 kg
+
+Exclusion Criteria:
+
+* Patients with signs and sympto...",No,2014-11-07,FDA-81210,4.41,0.98,21,26.39,2018-12-28,2019-12-21,2040-12-20,97,Sanofi,60,Overall,57.66666667,83,50,81,22,52,58,55,1,3,2,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE
+"NMRC-MV-Ad-PfC, NMRC-M3V-Ad-PfCA",AltName B,Biological,Malaria,Malaria,Phase 2,2017-09-25,"Sex: ALL; Age: >18 Years; Criteria: INCLUSION CRITERIA:
+
+* Between the ages of 18-50 (inclusive)
+* Negative results of HIV ELISA, HbSAg, anti-HCV antibody, and no other clinically significant abnormal laboratory results from screening.
+...",Yes,2018-02-21,FDA-75925,4.41,0.98,21,26.39,2022-02-21,2023-02-14,2044-02-14,22,Pfizer,76,South Africa,23.66666667,62,4,0,49,7,20,45,1,2,2,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+Emtricitabine/tenofovir disoproxil fumarate,Molecule Z,Drug,Malaria,Malaria,Phase 2,2016-06-19,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* HIV-1 infection
+* CD4+ count \> 200 and \< 500 cells/mm\^3 obtained within 30 days prior to study entry at a DAIDS-approved laboratory.
+* Pf SCP confirmed in a laboratory approv...",No,2017-02-18,FDA-25269,4.41,0.98,21,26.39,2020-11-15,2021-11-08,2042-11-08,81,AstraZeneca,32,South Africa,54.83333333,70,74,31,87,21,46,64,2,3,2,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE
+Nevirapine,Comp Beta,Drug,Malaria,Malaria,Phase 2,2016-06-19,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* HIV-1 infection
+* CD4+ count \> 200 and \< 500 cells/mm\^3 obtained within 30 days prior to study entry at a DAIDS-approved laboratory.
+* Pf SCP confirmed in a laboratory approv...",Yes,2017-01-29,FDA-80731,4.41,0.98,21,26.39,2020-11-15,2021-11-08,2042-11-08,36,GSK,48,South Africa,50.16666667,76,75,20,40,48,42,45,1,4,0,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Trimethoprim/sulfamethoxazole,TradeName X,Drug,Malaria,Malaria,Phase 2,2016-06-19,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* HIV-1 infection
+* CD4+ count \> 200 and \< 500 cells/mm\^3 obtained within 30 days prior to study entry at a DAIDS-approved laboratory.
+* Pf SCP confirmed in a laboratory approv...",No,2016-07-23,FDA-34327,4.41,0.98,21,26.39,2020-11-15,2021-11-08,2042-11-08,12,Pfizer,1,Kenya,41.5,100,16,37,10,53,33,36,0,2,2,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE
+RH5.1/ ASO1,Product Alpha,Biological,Malaria,Malaria,Phase 2,2019-06-27,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Healthy adults aged 18 to 45 years.
+* Able and willing (in the Investigator's opinion) to comply with all study requirements.
+* Willing to allow the Investigators to discuss the...",Yes,2019-09-16,FDA-41813,4.41,0.98,21,26.39,2023-11-23,2024-11-15,2045-11-15,98,Merck,99,Overall,37.83333333,43,45,99,21,8,11,18,0,1,1,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE
+Mefloquine,Molecule Z,Drug,Malaria,Malaria,Phase 2,2003-03-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Healthy male or female volunteers who provided informed consent (a healthy volunteer was defined as one who was free of ailments that might cause difficulty in evaluating drug e...",Yes,2004-02-23,FDA-60688,4.41,0.98,21,26.39,2007-07-28,2008-07-20,2029-07-20,49,Merck,48,Overall,41.83333333,34,7,46,24,58,82,36,1,2,1,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE
+NMRC-M3V-Ad-PfCA,Product Alpha,Biological,Malaria,Malaria,Phase 2,2017-09-25,"Sex: ALL; Age: >18 Years; Criteria: INCLUSION CRITERIA:
+
+* Between the ages of 18-50 (inclusive)
+* Negative results of HIV ELISA, HbSAg, anti-HCV antibody, and no other clinically significant abnormal laboratory results from screening.
+...",No,2018-05-07,FDA-30690,4.41,0.98,21,26.39,2022-02-21,2023-02-14,2044-02-14,97,Bayer,61,Kenya,47.33333333,47,12,93,23,14,95,55,1,3,2,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Atovaquone Proguanil,Comp Beta,Drug,Malaria,Malaria,Phase 2,2010-04-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* A male or non-pregnant, non-lactating female 18 to 50 years of age (inclusive) at the time of screening
+* Free of clinically significant health problems
+* Baseline ECG before en...",Yes,2010-08-22,FDA-92732,4.41,0.98,21,26.39,2014-08-28,2015-08-21,2036-08-20,23,Gilead,80,South Africa,30.83333333,16,0,8,68,49,44,45,2,1,2,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE
+Artemether / Lumefantrine,TradeName X,Drug,Malaria,Malaria,Phase 2,2022-08-17,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Provision of signed or thumb printed and dated informed consent form
+* Stated willingness to comply with all study procedures and availability for the duration of the study
+* Ma...",No,2022-09-25,FDA-57296,4.41,0.98,21,26.39,2027-01-13,2028-01-06,2049-01-05,58,Pfizer,31,Senegal,46.33333333,9,48,21,91,39,70,18,0,2,0,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Dihydroartemisinin-piperaquine (DHA/Pip),AltName B,Drug,Malaria,Malaria,Phase 2,2022-08-17,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Provision of signed or thumb printed and dated informed consent form
+* Stated willingness to comply with all study procedures and availability for the duration of the study
+* Ma...",Yes,2023-01-11,FDA-99817,4.41,0.98,21,26.39,2027-01-13,2028-01-06,2049-01-05,38,GSK,99,Kenya,68.5,90,45,83,75,85,33,45,1,2,2,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE
+Standard AED,Molecule Z,Drug,Malaria,Malaria,Phase 2,2015-06-01,"Sex: ALL; Age: >24 Months; Criteria: Inclusion Criteria:
+
+* Comatose with Blantyre Comas Score ² 2
+* P. falciparum parasitemia via thick blood film or rapid diagnostic test
+* Active seizure in past 24 hours
+
+Exclusion Criteria:
+
+* Serum ...",No,2016-04-07,FDA-77855,4.41,0.98,21,26.39,2019-10-28,2020-10-20,2041-10-20,67,Novartis,98,Overall,53.33333333,52,55,32,93,4,84,36,0,3,1,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE
+Oral Levetiracetam,Product Alpha,Drug,Malaria,Malaria,Phase 2,2015-06-01,"Sex: ALL; Age: >24 Months; Criteria: Inclusion Criteria:
+
+* Comatose with Blantyre Comas Score ² 2
+* P. falciparum parasitemia via thick blood film or rapid diagnostic test
+* Active seizure in past 24 hours
+
+Exclusion Criteria:
+
+* Serum ...",No,2016-03-04,FDA-35830,4.41,0.98,21,26.39,2019-10-28,2020-10-20,2041-10-20,94,Novartis,37,Overall,63,57,93,79,69,52,28,27,1,1,1,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE
+Placebo/TMPS,Comp Beta,Drug,Malaria,Malaria,Phase 2,2022-01-01,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+* Confirmed HIV-infection (documented in medical record)
+* Age ³16 years
+* Confirmed pregnancy, \<28 weeks estimated gestational age (by best obstetric estimate which may include ...",Yes,2022-11-12,FDA-88320,4.41,0.98,21,26.39,2026-05-30,2027-05-23,2048-05-22,82,Merck,60,South Africa,46.16666667,78,27,33,56,72,11,73,2,4,2,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE
+Azithromycin/TMPS,AltName B,Drug,Malaria,Malaria,Phase 2,2022-01-01,"Sex: FEMALE; Age: >16 Years; Criteria: Inclusion Criteria:
+
+* Confirmed HIV-infection (documented in medical record)
+* Age ³16 years
+* Confirmed pregnancy, \<28 weeks estimated gestational age (by best obstetric estimate which may include ...",Yes,2022-07-13,FDA-42775,4.41,0.98,21,26.39,2026-05-30,2027-05-23,2048-05-22,23,Bayer,22,Overall,39,65,67,12,4,48,38,73,2,4,2,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE
+"RTS,S/AS01E Fractional dose",AltName B,Biological,Malaria,Malaria,Phase 2,2018-02-20,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Participant is a healthy male or non-pregnant female, aged 18 to 55 years (inclusive), of Thai origin.
+* Participant is willing and able to give informed consent to participate ...",No,2018-08-04,FDA-18232,4.41,0.98,21,26.39,2022-07-19,2023-07-12,2044-07-11,29,Sanofi,43,Senegal,45.33333333,35,22,78,57,62,18,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+"RTS,S/AS01E + DHA-PIP+PQ Fractional dose",AltName A,Biological,Malaria,Malaria,Phase 2,2018-02-20,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Participant is a healthy male or non-pregnant female, aged 18 to 55 years (inclusive), of Thai origin.
+* Participant is willing and able to give informed consent to participate ...",No,2018-11-14,FDA-32846,4.41,0.98,21,26.39,2022-07-19,2023-07-12,2044-07-11,66,Pfizer,44,Senegal,63.66666667,71,72,44,61,52,82,45,1,1,3,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE
+"RTS,S/AS01E + DHA-PIP+PQ Fractional two-dose",GenName Y,Biological,Malaria,Malaria,Phase 2,2018-02-20,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Participant is a healthy male or non-pregnant female, aged 18 to 55 years (inclusive), of Thai origin.
+* Participant is willing and able to give informed consent to participate ...",Yes,2019-02-12,FDA-97578,4.41,0.98,21,26.39,2022-07-19,2023-07-12,2044-07-11,68,AstraZeneca,10,Senegal,51.83333333,29,64,81,40,64,33,73,1,3,4,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE
+OZ439,GenName Y,Drug,Malaria,Malaria,Phase 2,2012-05-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+1. Male or female patients between the age of 18 and 60 years, inclusive
+2. Body weight between 40 kg and 90 kg inclusive
+3. Presence of mono-infection of P. falciparum or P. viva...",No,2013-02-09,FDA-88556,4.41,0.98,21,26.39,2016-09-27,2017-09-20,2038-09-20,4,Sanofi,50,Overall,52.66666667,12,29,91,23,85,76,64,1,3,3,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE
+MMV390048,Comp Beta,Drug,Malaria,Malaria,Phase 2,2018-09-24,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Body weight between 40 kg and 90 kg inclusive
+* Presence of P. vivax or P. falciparum monoinfection confirmed by:
+* Fever, as defined by axillary temperature ³37.5¡C or oral/rec...",No,2019-05-11,FDA-81349,4.41,0.98,21,26.39,2023-02-20,2024-02-13,2045-02-12,37,Bayer,51,South Africa,41.5,33,2,88,33,71,22,45,1,2,2,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE
+Sanaria¨ PfSPZ Vaccine,AltName A,Biological,Malaria,Malaria,Phase 2,2022-12-10,"Sex: ALL; Age: >6 Years; Criteria: Inclusion Criteria:
+
+1. Parent(s) or guardian(s) willing and able to provide consent prior to initiation of any study procedures
+2. Stated willingness of parent(s) or guardian(s) to comply with all st...",Yes,2023-04-09,FDA-18978,4.41,0.98,21,26.39,2027-05-08,2028-04-30,2049-04-30,87,Novartis,56,Senegal,40,33,12,96,1,72,26,18,0,1,1,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE
+Chloroquine + Primaquine,TradeName X,Drug,Malaria,Malaria,Phase 2,2005-01-10,"Sex: ALL; Age: >20 Years; Criteria: Inclusion Criteria:
+
+1. Positive smear for P. vivax.
+2. Parasite density \> 500 and \< 200,000/_l
+3. Age: 20-60 years old
+4. Willing to sign consent form
+5. Willing to be hospitalized for 29 days and ...",No,2005-06-15,FDA-71651,4.41,0.98,21,26.39,2009-06-08,2010-06-01,2031-06-01,8,Bayer,65,Kenya,68.5,3,74,77,63,97,97,55,2,4,0,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE
+LEVETIRACETAM,Product Alpha,Drug,Malaria,Malaria,Phase 2,2013-07-01,"Sex: ALL; Age: >2 Years; Criteria: Inclusion Criteria:
+
+* Comatose with Blantyre Comas Score ² 3
+* P. falciparum parasitemia
+* Active seizure
+
+Exclusion Criteria:
+
+* Serum creatinine \> 2mg/dL
+* Pre-admission/concomitant treatment with...",Yes,2014-04-10,FDA-19059,4.41,0.98,21,26.39,2017-11-27,2018-11-20,2039-11-20,17,GSK,91,Kenya,37.5,37,30,36,76,24,22,36,2,2,0,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE
+tafenoquine,Product Alpha,Drug,Malaria,Malaria,Phase 2,2005-01-10,"Sex: ALL; Age: >20 Years; Criteria: Inclusion Criteria:
+
+1. Positive smear for P. vivax.
+2. Parasite density \> 500 and \< 200,000/_l
+3. Age: 20-60 years old
+4. Willing to sign consent form
+5. Willing to be hospitalized for 29 days and ...",No,2005-03-01,FDA-27077,4.41,0.98,21,26.39,2009-06-08,2010-06-01,2031-06-01,43,AstraZeneca,77,Kenya,39.33333333,62,29,8,59,48,30,45,2,0,3,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE
+Acetaminophen,Product Alpha,Drug,Malaria,Malaria,Phase 2,2022-12-02,"Sex: ALL; Age: >2 Years; Criteria: Inclusion Criteria:
+
+* Evidence of Plasmodium falciparum malaria infection by peripheral blood smear or rapid diagnostic test
+* Central nervous system (CNS) symptoms associated with malaria. CEREBRAL ...",Yes,2023-01-29,FDA-85841,4.41,0.98,21,26.39,2027-04-30,2028-04-22,2049-04-22,76,Novartis,78,Kenya,44.83333333,98,18,66,34,53,0,64,1,4,2,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE
+Ibuprofen,AltName A,Drug,Malaria,Malaria,Phase 2,2022-12-02,"Sex: ALL; Age: >2 Years; Criteria: Inclusion Criteria:
+
+* Evidence of Plasmodium falciparum malaria infection by peripheral blood smear or rapid diagnostic test
+* Central nervous system (CNS) symptoms associated with malaria. CEREBRAL ...",Yes,2023-04-15,FDA-61406,4.41,0.98,21,26.39,2027-04-30,2028-04-22,2049-04-22,28,AstraZeneca,35,Senegal,40.33333333,78,37,25,81,17,4,64,0,3,4,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE
+placebo for acetaminophen,Product Alpha,Drug,Malaria,Malaria,Phase 2,2022-12-02,"Sex: ALL; Age: >2 Years; Criteria: Inclusion Criteria:
+
+* Evidence of Plasmodium falciparum malaria infection by peripheral blood smear or rapid diagnostic test
+* Central nervous system (CNS) symptoms associated with malaria. CEREBRAL ...",Yes,2023-10-01,FDA-35005,4.41,0.98,21,26.39,2027-04-30,2028-04-22,2049-04-22,35,Novartis,97,Senegal,40,41,29,87,14,68,1,36,1,0,3,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE
+placebo for ibuprofen,TradeName X,Drug,Malaria,Malaria,Phase 2,2022-12-02,"Sex: ALL; Age: >2 Years; Criteria: Inclusion Criteria:
+
+* Evidence of Plasmodium falciparum malaria infection by peripheral blood smear or rapid diagnostic test
+* Central nervous system (CNS) symptoms associated with malaria. CEREBRAL ...",Yes,2023-04-05,FDA-39462,4.41,0.98,21,26.39,2027-04-30,2028-04-22,2049-04-22,17,GSK,26,Senegal,33,19,13,59,39,10,58,45,1,2,2,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE
+"RTS,S/AS02D",TradeName X,Biological,Malaria,Malaria,Phase 2,2007-12-27,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+* A male or female infant of between 6 and 12 weeks of age at the time of first vaccination.
+* Written informed consent obtained from the parent(s) or guardian(s) of the subject
+*...",Yes,2008-05-16,FDA-83144,4.41,0.98,21,26.39,2012-05-24,2013-05-17,2034-05-17,60,AstraZeneca,89,Senegal,39.16666667,83,10,73,3,56,10,45,0,3,2,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE
+Stamarilª,Product Alpha,Biological,Malaria,Malaria,Phase 2,2009-10-07,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+* A male or female infant between 6 and 10 weeks of age at the time of first vaccination.
+* Signed or thumb-printed informed consent obtained from the parent(s)/guardian(s) of the...",Yes,2010-07-04,FDA-60434,4.41,0.98,21,26.39,2014-03-05,2015-02-26,2036-02-26,87,Pfizer,71,Kenya,40.83333333,48,78,93,4,2,20,82,0,5,4,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE
+M5717 330 mg,Comp Beta,Drug,Malaria,Malaria,Phase 2,2024-05-28,"Sex: ALL; Age: >12 Years; Criteria: Inclusion Criteria:
+
+* Participants with microscopic confirmation of acute uncomplicated Plasmodium falciparum using Giemsa-stained thick and thin film
+* P. falciparum parasitemia of 1,000 to 50,000 a...",No,2024-08-08,FDA-74209,4.41,0.98,21,26.39,2028-10-24,2029-10-17,2050-10-17,70,AstraZeneca,74,Overall,48.16666667,40,69,10,80,37,53,27,1,0,2,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE
+Tritanrix HepB Hib,Product Alpha,Biological,Malaria,Malaria,Phase 2,2014-12-23,"Sex: ALL; Age: >1 Day; Criteria: Inclusion Criteria:
+
+All subjects must satisfy the following criteria at study entry:
+
+* A male or female infant between 1 and 7 days (inclusive) of age (where day 1 is day of birth).
+* Signed or thum...",No,2015-11-07,FDA-92173,4.41,0.98,21,26.39,2019-05-21,2020-05-13,2041-05-13,98,J&J,80,South Africa,24.16666667,61,15,3,53,11,2,45,1,3,1,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+Abhayrab rabies vaccine,TradeName X,Biological,Malaria,Malaria,Phase 2,2022-08-17,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Provision of signed or thumb printed and dated informed consent form
+* Stated willingness to comply with all study procedures and availability for the duration of the study
+* Ma...",No,2023-08-05,FDA-27870,4.41,0.98,21,26.39,2027-01-13,2028-01-06,2049-01-05,70,Merck,29,South Africa,65.5,47,99,85,13,63,86,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Engerix-B,Product Alpha,Biological,Malaria,Malaria,Phase 2,2014-12-23,"Sex: ALL; Age: >1 Day; Criteria: Inclusion Criteria:
+
+All subjects must satisfy the following criteria at study entry:
+
+* A male or female infant between 1 and 7 days (inclusive) of age (where day 1 is day of birth).
+* Signed or thum...",No,2015-07-21,FDA-58442,4.41,0.98,21,26.39,2019-05-21,2020-05-13,2041-05-13,92,GSK,49,Kenya,46.66666667,10,71,75,96,9,19,36,1,2,1,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE
+AQ-13 Treatment,Molecule Z,Drug,Malaria,Malaria,Phase 2,2017-02-01,"Sex: MALE; Age: >18 Years; Criteria: Inclusion Criteria
+
+1. Adult Malian males ³ 18 years of age,
+2. Uncomplicated malaria with ³ 2,000 asexual P. falciparum parasites per ul, and
+3. Informed consent obtained and signed.
+
+Exclusion Crite...",No,2017-11-08,FDA-13275,4.41,0.98,21,26.39,2021-06-30,2022-06-23,2043-06-23,45,GSK,69,South Africa,49.83333333,53,29,50,43,69,55,36,1,1,2,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Coartem Treatment,Molecule Z,Drug,Malaria,Malaria,Phase 2,2017-02-01,"Sex: MALE; Age: >18 Years; Criteria: Inclusion Criteria
+
+1. Adult Malian males ³ 18 years of age,
+2. Uncomplicated malaria with ³ 2,000 asexual P. falciparum parasites per ul, and
+3. Informed consent obtained and signed.
+
+Exclusion Crite...",No,2018-01-20,FDA-99287,4.41,0.98,21,26.39,2021-06-30,2022-06-23,2043-06-23,72,AstraZeneca,68,Kenya,55.83333333,5,83,90,44,72,41,45,1,2,2,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE
+"RTS,S/AS01B",AltName B,Biological,Malaria,Malaria,Phase 2,2018-09-24,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Subjects who, in the opinion of the investigator, can and will comply with the requirements of the protocol.
+* Written informed consent obtained from the subject prior to perfor...",No,2019-01-03,FDA-14918,4.41,0.98,21,26.39,2023-02-20,2024-02-13,2045-02-12,80,Bayer,37,South Africa,39.83333333,65,75,0,7,88,4,27,1,2,0,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+M5717 500 mg,AltName A,Drug,Malaria,Malaria,Phase 2,2024-05-28,"Sex: ALL; Age: >12 Years; Criteria: Inclusion Criteria:
+
+* Participants with microscopic confirmation of acute uncomplicated Plasmodium falciparum using Giemsa-stained thick and thin film
+* P. falciparum parasitemia of 1,000 to 50,000 a...",No,2024-08-30,FDA-65429,4.41,0.98,21,26.39,2028-10-24,2029-10-17,2050-10-17,94,AstraZeneca,61,Kenya,51.83333333,65,68,57,56,65,0,64,2,4,1,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE
+Falciparum Malaria Protein 11 with AS02A adjuvant,Molecule Z,Biological,Malaria,Malaria,Phase 2,2007-04-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* A male or non-pregnant female 18 to 50 years of age (inclusive) at the time of screening.
+* Written informed consent obtained from the subject before screening procedures.
+* Fre...",Yes,2007-09-24,FDA-94720,4.41,0.98,21,26.39,2011-08-28,2012-08-20,2033-08-20,24,Gilead,24,Overall,45.5,15,10,96,9,77,66,45,1,3,1,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE
+M5717 660 mg,GenName Y,Drug,Malaria,Malaria,Phase 2,2024-05-28,"Sex: ALL; Age: >12 Years; Criteria: Inclusion Criteria:
+
+* Participants with microscopic confirmation of acute uncomplicated Plasmodium falciparum using Giemsa-stained thick and thin film
+* P. falciparum parasitemia of 1,000 to 50,000 a...",No,2025-04-05,FDA-65674,4.41,0.98,21,26.39,2028-10-24,2029-10-17,2050-10-17,64,Pfizer,31,Overall,54.33333333,20,57,86,84,54,25,27,0,2,1,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Pyronaridine 360 mg,Comp Beta,Drug,Malaria,Malaria,Phase 2,2024-05-28,"Sex: ALL; Age: >12 Years; Criteria: Inclusion Criteria:
+
+* Participants with microscopic confirmation of acute uncomplicated Plasmodium falciparum using Giemsa-stained thick and thin film
+* P. falciparum parasitemia of 1,000 to 50,000 a...",No,2024-09-16,FDA-41417,4.41,0.98,21,26.39,2028-10-24,2029-10-17,2050-10-17,22,GSK,34,Senegal,39,64,64,2,31,35,38,36,1,3,0,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Pyronaridine 540 mg,Product Alpha,Drug,Malaria,Malaria,Phase 2,2024-05-28,"Sex: ALL; Age: >12 Years; Criteria: Inclusion Criteria:
+
+* Participants with microscopic confirmation of acute uncomplicated Plasmodium falciparum using Giemsa-stained thick and thin film
+* P. falciparum parasitemia of 1,000 to 50,000 a...",No,2024-10-09,FDA-97946,4.41,0.98,21,26.39,2028-10-24,2029-10-17,2050-10-17,40,Novartis,70,Kenya,38.66666667,84,43,5,67,7,26,45,0,3,2,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE
+Pyronaridine 720 mg,AltName A,Drug,Malaria,Malaria,Phase 2,2024-05-28,"Sex: ALL; Age: >12 Years; Criteria: Inclusion Criteria:
+
+* Participants with microscopic confirmation of acute uncomplicated Plasmodium falciparum using Giemsa-stained thick and thin film
+* P. falciparum parasitemia of 1,000 to 50,000 a...",No,2024-10-03,FDA-71482,4.41,0.98,21,26.39,2028-10-24,2029-10-17,2050-10-17,9,Sanofi,43,Kenya,47.66666667,80,52,1,41,47,65,55,1,3,2,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE
+PvDBPII/Matrix-M1,AltName A,Biological,Malaria,Malaria,Phase 2,2022-07-14,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Healthy adult aged 18 to 45 years.
+* Red blood cells positive for the Duffy antigen/chemokine receptor (DARC).
+* Normal serum levels of Glucose-6-phosphate dehydrogenase (G6PD)....",No,2022-11-28,FDA-52258,4.41,0.98,21,26.39,2026-12-10,2027-12-03,2048-12-02,67,GSK,34,South Africa,54.33333333,75,40,20,86,57,48,45,1,2,2,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE
+Pb(PfCS@UIS4)-infected mosquitoes,Comp Beta,Biological,Malaria,Malaria,Phase 2,2018-10-03,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+1. Subject is aged ³ 18 and ² 35 years and in good health.
+2. Subject has adequate understanding of the procedures of the study and is able and willing (in the investigator's opin...",No,2019-07-17,FDA-74980,4.41,0.98,21,26.39,2023-03-01,2024-02-22,2045-02-21,48,Bayer,93,South Africa,73.16666667,80,86,90,75,71,37,36,0,3,1,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE
+"RTS,S/AS01E",Comp Beta,Biological,Malaria,Malaria,Phase 2,2018-09-24,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Subjects who, in the opinion of the investigator, can and will comply with the requirements of the protocol.
+* Written informed consent obtained from the subject prior to perfor...",No,2018-11-25,FDA-42718,4.41,0.98,21,26.39,2023-02-20,2024-02-13,2045-02-12,92,Sanofi,46,Senegal,47.33333333,1,43,78,72,90,0,36,1,2,1,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE
+BCG,GenName Y,Biological,Malaria,Malaria,Phase 2,2014-12-23,"Sex: ALL; Age: >1 Day; Criteria: Inclusion Criteria:
+
+All subjects must satisfy the following criteria at study entry:
+
+* A male or female infant between 1 and 7 days (inclusive) of age (where day 1 is day of birth).
+* Signed or thum...",No,2015-08-26,FDA-50622,4.41,0.98,21,26.39,2019-05-21,2020-05-13,2041-05-13,24,GSK,7,Overall,65.16666667,24,36,87,67,86,91,45,1,3,1,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+OPV,AltName B,Biological,Malaria,Malaria,Phase 2,2014-12-23,"Sex: ALL; Age: >1 Day; Criteria: Inclusion Criteria:
+
+All subjects must satisfy the following criteria at study entry:
+
+* A male or female infant between 1 and 7 days (inclusive) of age (where day 1 is day of birth).
+* Signed or thum...",No,2015-12-22,FDA-53953,4.41,0.98,21,26.39,2019-05-21,2020-05-13,2041-05-13,62,Merck,92,South Africa,20,9,26,29,16,13,27,0,0,0,0,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE
+Rouvax,Molecule Z,Biological,Malaria,Malaria,Phase 2,2014-12-23,"Sex: ALL; Age: >1 Day; Criteria: Inclusion Criteria:
+
+All subjects must satisfy the following criteria at study entry:
+
+* A male or female infant between 1 and 7 days (inclusive) of age (where day 1 is day of birth).
+* Signed or thum...",Yes,2015-09-14,FDA-49074,4.41,0.98,21,26.39,2019-05-21,2020-05-13,2041-05-13,50,Merck,78,Senegal,41,60,16,83,23,1,63,36,1,2,1,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,TRUE
+Chloroquine Phosphate,Comp Beta,Drug,Malaria,Malaria,Phase 2,2021-02-10,"Sex: ALL; Age: >18 Years; Criteria: * INCLUSION CRITERIA:
+* Age greater than or equal to 18 and less than or equal to 50 years (for booster phase, age greater than or equal to 18 and less than or equal to 52 years)
+* Resident of Bancoum...",Yes,2021-04-20,FDA-96145,4.41,0.98,21,26.39,2025-07-09,2026-07-02,2047-07-02,41,Gilead,5,Kenya,30.33333333,50,36,7,35,24,30,27,0,2,1,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+Polio Sabinª,Comp Beta,Biological,Malaria,Malaria,Phase 2,2009-10-07,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+* A male or female infant between 6 and 10 weeks of age at the time of first vaccination.
+* Signed or thumb-printed informed consent obtained from the parent(s)/guardian(s) of the...",Yes,2010-08-20,FDA-10626,4.41,0.98,21,26.39,2014-03-05,2015-02-26,2036-02-26,29,J&J,52,South Africa,47.83333333,73,59,47,10,14,84,64,0,3,4,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE
+Malarone,TradeName X,Drug,Malaria,Malaria,Phase 2,2007-10-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Adult male \& non-pregnant females, 18-65 years
+* Fever, defined as \>37.5¼C, during the current illness, or history (within the last 48 hours) of fever.
+* Diagnosis of falcipar...",Yes,2008-02-27,FDA-56552,4.41,0.98,21,26.39,2012-02-27,2013-02-19,2034-02-19,19,Pfizer,41,Kenya,55.5,53,53,94,3,60,70,55,1,4,1,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE
+Tritanrixª HepB/Hib,Product Alpha,Biological,Malaria,Malaria,Phase 2,2009-10-07,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+* A male or female infant between 6 and 10 weeks of age at the time of first vaccination.
+* Signed or thumb-printed informed consent obtained from the parent(s)/guardian(s) of the...",No,2010-09-21,FDA-71419,4.41,0.98,21,26.39,2014-03-05,2015-02-26,2036-02-26,69,Sanofi,80,South Africa,37.16666667,7,47,8,52,79,30,55,1,3,2,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE
+GSK 257049,GenName Y,Biological,Malaria,Malaria,Phase 2,2009-10-07,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+* A male or female infant between 6 and 10 weeks of age at the time of first vaccination.
+* Signed or thumb-printed informed consent obtained from the parent(s)/guardian(s) of the...",No,2010-07-12,FDA-86878,4.41,0.98,21,26.39,2014-03-05,2015-02-26,2036-02-26,55,Merck,58,Kenya,51.16666667,42,92,16,14,58,85,36,1,0,3,FALSE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE
+p52-/p36- GAP Vaccine,Molecule Z,Biological,Malaria,Malaria,Phase 2,2011-06-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* A male or non-pregnant, non-lactating female 18 to 50 years of age (inclusive) at the time of enrollment
+* Free of significant health problems as established by medical history,...",No,2011-08-17,FDA-45160,4.41,0.98,21,26.39,2015-10-28,2016-10-20,2037-10-20,13,Pfizer,25,Kenya,51.83333333,21,100,39,25,98,28,18,1,0,1,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE
+p52-p36- GAP Vaccine,TradeName X,Biological,Malaria,Malaria,Phase 2,2011-06-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* A male or non-pregnant, non-lactating female 18 to 50 years of age (inclusive) at the time of enrollment
+* Free of significant health problems as established by medical history,...",No,2011-10-25,FDA-16165,4.41,0.98,21,26.39,2015-10-28,2016-10-20,2037-10-20,38,Bayer,98,Kenya,82.33333333,96,76,98,60,83,81,45,0,5,0,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+DSM265,Product Alpha,Drug,Malaria,Malaria,Phase 2,2016-05-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+Health status:
+
+* Certified as healthy by a comprehensive clinical assessment (detailed medical history and complete physical examination).
+* Normal vital signs after 5 minutes re...",No,2016-07-31,FDA-66367,4.41,0.98,21,26.39,2020-09-27,2021-09-20,2042-09-20,53,Novartis,65,Senegal,57.33333333,10,96,73,13,84,68,55,2,3,1,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE
+Ferroquine SSR97193,GenName Y,Drug,Malaria,Malaria,Phase 2,2019-09-23,"Sex: ALL; Age: >6 Months; Criteria: Inclusion criteria:
+
+Male or female participant aged greater than (\>) 6 months old and \<70 years old:
+
+* Cohort 1 = 14 years \< age \<70 years and body weight greater than or equal to (\>=) 35 kilog...",Yes,2020-08-26,FDA-84271,4.41,0.98,21,26.39,2024-02-19,2025-02-11,2046-02-11,94,AstraZeneca,22,Overall,50.5,9,71,1,95,33,94,36,0,4,0,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Artefenomel,TradeName X,Drug,Malaria,Malaria,Phase 2,2019-09-23,"Sex: ALL; Age: >6 Months; Criteria: Inclusion criteria:
+
+Male or female participant aged greater than (\>) 6 months old and \<70 years old:
+
+* Cohort 1 = 14 years \< age \<70 years and body weight greater than or equal to (\>=) 35 kilog...",Yes,2020-01-30,FDA-90517,4.41,0.98,21,26.39,2024-02-19,2025-02-11,2046-02-11,74,Merck,4,Senegal,73.5,80,63,99,73,57,69,73,2,2,4,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE
+L9LS,AltName B,Drug,Malaria,Malaria,Phase 2,2024-06-02,"Sex: ALL; Age: >5 Months; Criteria: Inclusion Criteria
+
+Healthy children aged 5 months to 10 years (Part 1) or 5-59 months (Part 2). Weight ³5 kg and weight ²30 kg (Part 1) or weight ³5 kg and ²22.5 kg (Part 2) or weight ³5 kg and ²20 k...",No,2025-01-14,FDA-29095,4.41,0.98,21,26.39,2028-10-29,2029-10-22,2050-10-22,7,Pfizer,93,South Africa,42.5,20,73,35,87,26,14,55,1,3,2,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+ibuprofen,GenName Y,Drug,Malaria,Malaria,Phase 2,2021-02-10,"Sex: ALL; Age: >18 Years; Criteria: * INCLUSION CRITERIA:
+* Age greater than or equal to 18 and less than or equal to 50 years (for booster phase, age greater than or equal to 18 and less than or equal to 52 years)
+* Resident of Bancoum...",Yes,2021-04-03,FDA-17236,4.41,0.98,21,26.39,2025-07-09,2026-07-02,2047-07-02,35,GSK,70,Senegal,61.16666667,98,76,3,5,93,92,73,1,4,3,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE
+Pyrimethamine,TradeName X,Drug,Malaria,Malaria,Phase 2,2021-02-10,"Sex: ALL; Age: >18 Years; Criteria: * INCLUSION CRITERIA:
+* Age greater than or equal to 18 and less than or equal to 50 years (for booster phase, age greater than or equal to 18 and less than or equal to 52 years)
+* Resident of Bancoum...",Yes,2021-06-10,FDA-28323,4.41,0.98,21,26.39,2025-07-09,2026-07-02,2047-07-02,13,Novartis,87,South Africa,52.16666667,98,53,45,76,41,0,64,2,4,1,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE
+PfSPZ Challenge,Product Alpha,Biological,Malaria,Malaria,Phase 2,2021-02-10,"Sex: ALL; Age: >18 Years; Criteria: * INCLUSION CRITERIA:
+* Age greater than or equal to 18 and less than or equal to 50 years (for booster phase, age greater than or equal to 18 and less than or equal to 52 years)
+* Resident of Bancoum...",Yes,2021-07-17,FDA-88023,4.41,0.98,21,26.39,2025-07-09,2026-07-02,2047-07-02,55,AstraZeneca,24,Overall,57.83333333,88,42,72,43,27,75,55,0,3,3,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE
+(+)-SJ000557733 (SJ733),AltName B,Drug,Malaria,Malaria,Phase 2,2022-04-15,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+1. Male or female, aged 18 to 70 years of age (inclusive) at screening.
+2. Body weight between 45 kg and 90 kg inclusive
+3. Presence of mono-infection of P. falciparum or P. vivax...",Yes,2022-10-26,FDA-22276,4.41,0.98,21,26.39,2026-09-11,2027-09-04,2048-09-03,5,Novartis,96,Kenya,39,15,7,65,60,43,44,36,1,2,1,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE
+TETRActHibª,TradeName X,Biological,Malaria,Malaria,Phase 2,2007-12-27,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion Criteria:
+
+* A male or female infant of between 6 and 12 weeks of age at the time of first vaccination.
+* Written informed consent obtained from the parent(s) or guardian(s) of the subject
+*...",Yes,2008-09-28,FDA-83813,4.41,0.98,21,26.39,2012-05-24,2013-05-17,2034-05-17,61,Bayer,27,Overall,44.66666667,85,49,36,15,81,2,36,1,2,1,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE
+Sanofi-Pasteur's Human Diploid Cell Rabies Vaccine,TradeName X,Biological,Malaria,Malaria,Phase 2,2008-11-11,"Sex: ALL; Age: >5 Months; Criteria: Inclusion Criteria:
+
+* A male or female child of between 5 months and 17 months of age at the time of first vaccination.
+* Written or oral, signed or thumb-printed and witnessed informed consent obtai...",Yes,2009-06-10,FDA-27474,4.41,0.98,21,26.39,2013-04-09,2014-04-02,2035-04-02,61,J&J,93,Kenya,60.33333333,10,78,75,100,71,28,36,0,2,2,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE
+VRC-MALMAB0100-00-AB (CIS43LS),AltName B,Biological,Malaria,Malaria,Phase 2,2023-07-05,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Aged ³18 and ²55 years.
+* Able to provide proof of identity to the satisfaction of the study clinician completing the enrollment process.
+* In good general health and without cl...",Yes,2024-02-23,FDA-76095,4.41,0.98,21,26.39,2027-12-01,2028-11-23,2049-11-23,31,Merck,45,Overall,34.16666667,43,15,53,8,50,36,36,0,4,0,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+"RTS,S/AS01E (Full dose)",AltName B,Biological,Malaria,Malaria,Phase 2,2022-11-14,"Sex: ALL; Age: >5 Months; Criteria: Inclusion Criteria:
+
+* Participants' parent(s)/LAR(s) who, in the opinion of the investigator, can and will comply with the requirements of the protocol (e.g. return for follow-up visits).
+* Signed or...",No,2023-06-17,FDA-75711,4.41,0.98,21,26.39,2027-04-12,2028-04-04,2049-04-04,73,Sanofi,84,Overall,54.66666667,87,49,3,79,94,16,45,1,2,2,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE
+Rabipur,TradeName X,Biological,Malaria,Malaria,Phase 2,2008-05-30,"Sex: ALL; Age: >5 Months; Criteria: Inclusion Criteria:
+
+* A male or female child between 5 months and 17 months of age at the time of first vaccination.
+* Written or oral, signed or thumb-printed and witnessed informed consent obtained...",Yes,2009-03-11,FDA-74942,4.41,0.98,21,26.39,2012-10-26,2013-10-19,2034-10-19,27,Novartis,58,Senegal,28.16666667,22,43,43,1,50,10,36,1,2,1,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE
+GSK malaria vaccine 257049 Vaccine,AltName B,Biological,Malaria,Malaria,Phase 2,2008-11-11,"Sex: ALL; Age: >5 Months; Criteria: Inclusion Criteria:
+
+* A male or female child of between 5 months and 17 months of age at the time of first vaccination.
+* Written or oral, signed or thumb-printed and witnessed informed consent obtai...",Yes,2009-02-04,FDA-86262,4.41,0.98,21,26.39,2013-04-09,2014-04-02,2035-04-02,60,J&J,11,Overall,76.16666667,100,78,67,69,96,47,55,1,3,2,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE
+Pfs230D1M-EPA/AS01,AltName B,Biological,Malaria,Malaria,Phase 2,2022-10-31,"Sex: ALL; Age: >1 Year; Criteria: * INCLUSION CRITERIA FOR GROUPS 1,2,3:
+
+All of the following criteria must be fulfilled for a volunteer to participate in this trial:
+
+1. Meets age requirements for Arm currently being enrolled.
+2. Av...",No,2023-01-08,FDA-44611,4.41,0.98,21,26.39,2027-03-29,2028-03-21,2049-03-21,35,Pfizer,90,Kenya,40.66666667,40,36,13,66,65,24,64,1,3,3,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE
+L9LS (VRC-MALMAB0114-00-AB) intravenous injection,Product Alpha,Biological,Malaria,Malaria,Phase 2,2024-04-20,"Sex: ALL; Age: >6 Years; Criteria: Inclusion Criteria:
+
+* Is within the appropriate age range for the respective cohort:
+
+  1. Children: Aged ³6 years and \<11 years.
+  2. Adults: Aged ³18 years.
+* Able to provide proof of identity to ...",No,2024-08-07,FDA-59409,4.41,0.98,21,26.39,2028-09-16,2029-09-09,2050-09-09,40,J&J,95,Senegal,59.83333333,27,66,99,81,42,44,55,1,3,2,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+L9LS (VRC-MALMAB0114-00-AB) Subcutaneous injection,Comp Beta,Biological,Malaria,Malaria,Phase 2,2024-04-20,"Sex: ALL; Age: >6 Years; Criteria: Inclusion Criteria:
+
+* Is within the appropriate age range for the respective cohort:
+
+  1. Children: Aged ³6 years and \<11 years.
+  2. Adults: Aged ³18 years.
+* Able to provide proof of identity to ...",No,2024-07-16,FDA-86450,4.41,0.98,21,26.39,2028-09-16,2029-09-09,2050-09-09,61,J&J,58,Senegal,52.5,69,24,94,44,10,74,45,0,3,2,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE
+Engerix-B¨,AltName B,Biological,Malaria,Malaria,Phase 2,2009-01-15,"Sex: ALL; Age: >6 Weeks; Criteria: Inclusion criteria:
+
+* A male or female infant between 6 and 10 weeks of age at the time of first vaccination.
+* Written or oral, signed or thumb-printed and witnessed informed consent obtained from t...",No,2009-08-08,FDA-65515,4.41,0.98,21,26.39,2013-06-13,2014-06-06,2035-06-06,2,J&J,33,Kenya,42.5,63,58,8,68,5,53,45,1,2,2,TRUE,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE
+Pyronaridine-Artesunate,Product Alpha,Drug,Malaria,Malaria,Phase 2,2006-12-01,"Sex: ALL; Age: >2 Years; Criteria: Inclusion Criteria:
+
+Patients presenting with symptoms of acute uncomplicated falciparum malaria with the following inclusion criteria:
+
+* Male or female children, being between 2 and 14 years of age ...",No,2007-03-25,FDA-53396,4.41,0.98,21,26.39,2011-04-29,2012-04-21,2033-04-21,23,Sanofi,52,Kenya,53.16666667,17,95,15,92,2,98,55,1,2,3,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,FALSE
+RabAvert,AltName B,Biological,Malaria,Malaria,Phase 2,2007-06-01,"Sex: ALL; Age: >12 Months; Criteria: Inclusion Criteria:
+
+All subjects must satisfy the following criteria at study entry:
+
+* A healthy male or female child, 12 to 47 months of age on the day of screening
+* Written informed consent obtai...",No,2007-10-14,FDA-74295,4.41,0.98,21,26.39,2011-10-28,2012-10-20,2033-10-20,91,Pfizer,100,Senegal,42.5,29,16,78,12,53,67,55,0,4,2,FALSE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE
+FMP1/AS02A,Molecule Z,Biological,Malaria,Malaria,Phase 2,2007-06-01,"Sex: ALL; Age: >12 Months; Criteria: Inclusion Criteria:
+
+All subjects must satisfy the following criteria at study entry:
+
+* A healthy male or female child, 12 to 47 months of age on the day of screening
+* Written informed consent obtai...",Yes,2008-04-22,FDA-66725,4.41,0.98,21,26.39,2011-10-28,2012-10-20,2033-10-20,34,Bayer,20,Senegal,38.5,33,35,97,38,15,13,45,0,1,4,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE
+Rabies Vaccine,Molecule Z,Biological,Malaria,Malaria,Phase 2,2009-07-01,"Sex: ALL; Age: >1 Year; Criteria: Inclusion Criteria:
+
+* Age 1-6 years inclusive at the time of screening
+* Residing in Bandiagara town
+* Appear to be in generally good health based on clinical and laboratory investigation
+* Separate ...",Yes,2009-11-17,FDA-56938,4.41,0.98,21,26.39,2013-11-27,2014-11-20,2035-11-20,94,J&J,96,Kenya,53.83333333,75,40,42,11,86,69,73,2,3,3,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,TRUE
+FMP2.1/AS02A,TradeName X,Biological,Malaria,Malaria,Phase 2,2009-07-01,"Sex: ALL; Age: >1 Year; Criteria: Inclusion Criteria:
+
+* Age 1-6 years inclusive at the time of screening
+* Residing in Bandiagara town
+* Appear to be in generally good health based on clinical and laboratory investigation
+* Separate ...",Yes,2010-05-07,FDA-77096,4.41,0.98,21,26.39,2013-11-27,2014-11-20,2035-11-20,20,Merck,94,Kenya,39.66666667,49,16,53,64,22,34,73,1,4,3,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE
+HAVRIX,TradeName X,Biological,Malaria,Malaria,Phase 2,2022-10-31,"Sex: ALL; Age: >1 Year; Criteria: * INCLUSION CRITERIA FOR GROUPS 1,2,3:
+
+All of the following criteria must be fulfilled for a volunteer to participate in this trial:
+
+1. Meets age requirements for Arm currently being enrolled.
+2. Av...",Yes,2023-09-13,FDA-41983,4.41,0.98,21,26.39,2027-03-29,2028-03-21,2049-03-21,72,Sanofi,66,Senegal,46,23,11,90,94,33,25,73,2,4,2,TRUE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE
+TYPHIM Vi (Salmonella typhi vaccine),TradeName X,Biological,Malaria,Malaria,Phase 2,2022-10-31,"Sex: ALL; Age: >1 Year; Criteria: * INCLUSION CRITERIA FOR GROUPS 1,2,3:
+
+All of the following criteria must be fulfilled for a volunteer to participate in this trial:
+
+1. Meets age requirements for Arm currently being enrolled.
+2. Av...",Yes,2023-02-15,FDA-98339,4.41,0.98,21,26.39,2027-03-29,2028-03-21,2049-03-21,50,Bayer,2,Senegal,50.66666667,84,33,68,23,22,74,55,1,3,2,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE
+Menactra,AltName B,Biological,Malaria,Malaria,Phase 2,2022-10-31,"Sex: ALL; Age: >1 Year; Criteria: * INCLUSION CRITERIA FOR GROUPS 1,2,3:
+
+All of the following criteria must be fulfilled for a volunteer to participate in this trial:
+
+1. Meets age requirements for Arm currently being enrolled.
+2. Av...",Yes,2023-10-12,FDA-58549,4.41,0.98,21,26.39,2027-03-29,2028-03-21,2049-03-21,21,Bayer,82,Kenya,47.83333333,6,87,35,91,18,50,36,1,0,3,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE
+AVAXIM,TradeName X,Biological,Malaria,Malaria,Phase 2,2022-10-31,"Sex: ALL; Age: >1 Year; Criteria: * INCLUSION CRITERIA FOR GROUPS 1,2,3:
+
+All of the following criteria must be fulfilled for a volunteer to participate in this trial:
+
+1. Meets age requirements for Arm currently being enrolled.
+2. Av...",No,2023-01-28,FDA-63452,4.41,0.98,21,26.39,2027-03-29,2028-03-21,2049-03-21,97,GSK,61,Kenya,29,7,20,47,33,27,40,45,1,3,1,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE
+Amodiaquine,Comp Beta,Drug,Malaria,Malaria,Phase 2,2015-07-01,"Sex: ALL; Age: >2 Years; Criteria: * INCLUSION CRITERIA
+
+  1. Age 2 to 10 years, inclusive
+  2. Resident of Kenieroba
+  3. Uncomplicated malaria\*
+  4. P. falciparum density 10,000 70,000/micro L, inclusive
+  5. Willingness to particip...",Yes,2016-01-05,FDA-24734,4.41,0.98,21,26.39,2019-11-27,2020-11-19,2041-11-19,1,Sanofi,76,South Africa,55.33333333,18,95,14,65,69,71,45,0,5,0,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Actidose Aqua,Product Alpha,Drug,Malaria,Malaria,Phase 2,2015-07-01,"Sex: ALL; Age: >2 Years; Criteria: * INCLUSION CRITERIA
+
+  1. Age 2 to 10 years, inclusive
+  2. Resident of Kenieroba
+  3. Uncomplicated malaria\*
+  4. P. falciparum density 10,000 70,000/micro L, inclusive
+  5. Willingness to particip...",Yes,2016-04-10,FDA-94706,4.41,0.98,21,26.39,2019-11-27,2020-11-19,2041-11-19,89,Gilead,45,Senegal,54,75,89,65,14,25,56,45,1,3,1,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,FALSE,FALSE,FALSE
+L9LS (VRC-MALMAB0114-00-AB),AltName B,Biological,Malaria,Malaria,Phase 2,2024-02-11,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+1. Females aged ³18 and ²49 years and weighing ³ 45.0 and ² 90.0 kg.
+2. Males aged ³18 and ²55 years and weighing ³ 50.0 and ² 100.0 kg.
+3. Able to provide proof of identity to th...",No,2024-11-14,FDA-61951,4.41,0.98,21,26.39,2028-07-09,2029-07-02,2050-07-02,24,Merck,33,Overall,47.83333333,18,89,2,81,53,44,82,2,3,4,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,TRUE,TRUE,TRUE
+Artefenomel (OZ439),Product Alpha,Drug,Malaria,Malaria,Phase 2,2019-11-06,"Sex: ALL; Age: >14 Years; Criteria: Inclusion criteria :
+
+Participants (14-69 years old inclusive) with body weight within 35 and 90 kilograms (kg), with uncomplicated Plasmodium falciparum (P. falciparum) malaria, with a fever as defin...",No,2019-12-07,FDA-58535,4.41,0.98,21,26.39,2024-04-03,2025-03-27,2046-03-27,61,Novartis,41,Senegal,54.16666667,3,17,83,67,80,75,64,1,3,3,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,TRUE
+Ferroquine (SSR97193),TradeName X,Drug,Malaria,Malaria,Phase 2,2019-11-06,"Sex: ALL; Age: >14 Years; Criteria: Inclusion criteria :
+
+Participants (14-69 years old inclusive) with body weight within 35 and 90 kilograms (kg), with uncomplicated Plasmodium falciparum (P. falciparum) malaria, with a fever as defin...",No,2020-10-24,FDA-88652,4.41,0.98,21,26.39,2024-04-03,2025-03-27,2046-03-27,44,Bayer,27,Overall,45.16666667,32,30,86,28,0,95,55,1,3,2,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE
+GSK257049 Dosage 2,Comp Beta,Biological,Malaria,Malaria,Phase 2,2014-12-16,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+Inclusion criteria for enrolment to the primary phase:
+
+* Subjects who, in the opinion of the investigator, can and will comply with the requirements of the protocol.
+* A male or ...",No,2015-04-01,FDA-98114,4.41,0.98,21,26.39,2019-05-14,2020-05-06,2041-05-06,85,Sanofi,12,Kenya,53.33333333,28,59,77,25,84,47,45,0,1,4,FALSE,FALSE,FALSE,TRUE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,TRUE
+GSK257049 Dosage 1,Product Alpha,Biological,Malaria,Malaria,Phase 2,2014-12-16,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+Inclusion criteria for enrolment to the primary phase:
+
+* Subjects who, in the opinion of the investigator, can and will comply with the requirements of the protocol.
+* A male or ...",Yes,2015-01-28,FDA-40431,4.41,0.98,21,26.39,2019-05-14,2020-05-06,2041-05-06,21,GSK,86,Overall,50.33333333,11,74,62,53,17,85,55,0,3,3,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE
+Rabies vaccine,TradeName X,Biological,Malaria,Malaria,Phase 2,2022-11-14,"Sex: ALL; Age: >5 Months; Criteria: Inclusion Criteria:
+
+* Participants' parent(s)/LAR(s) who, in the opinion of the investigator, can and will comply with the requirements of the protocol (e.g. return for follow-up visits).
+* Signed or...",Yes,2023-08-23,FDA-62889,4.41,0.98,21,26.39,2027-04-12,2028-04-04,2049-04-04,60,Sanofi,85,Senegal,51.5,4,91,89,52,48,25,64,2,3,2,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,TRUE,FALSE,TRUE,FALSE
+"RTS,S/AS01E (1/5th dose)",AltName A,Biological,Malaria,Malaria,Phase 2,2022-11-14,"Sex: ALL; Age: >5 Months; Criteria: Inclusion Criteria:
+
+* Participants' parent(s)/LAR(s) who, in the opinion of the investigator, can and will comply with the requirements of the protocol (e.g. return for follow-up visits).
+* Signed or...",Yes,2023-06-07,FDA-73486,4.41,0.98,21,26.39,2027-04-12,2028-04-04,2049-04-04,33,AstraZeneca,1,Overall,41.83333333,94,30,18,33,7,69,64,2,2,3,TRUE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE
+pyronaridine/artesunate,Product Alpha,Drug,Malaria,Malaria,Phase 2,2006-04-01,"Sex: ALL; Age: >15 Years; Criteria: Inclusion Criteria:
+
+1. Male or female patients between the age of 15 and 60 years of age inclusive
+2. Written informed consent, in accordance with local practice, provided by patient and/or parent/gu...",Yes,2006-10-13,FDA-54580,4.41,0.98,21,26.39,2010-08-28,2011-08-21,2032-08-20,47,GSK,14,Kenya,44.16666667,99,7,82,6,71,0,36,0,2,2,FALSE,FALSE,FALSE,FALSE,FALSE,TRUE,TRUE,TRUE,FALSE,FALSE,TRUE
+R21/Matrix-M1,GenName Y,Biological,Malaria,Malaria,Phase 2,2017-02-15,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+The volunteer must satisfy all the following criteria to be eligible for the study:
+
+* Healthy adults ages 18 to 45 years.
+* Willingness to remain in study area for the period of ...",Yes,2017-10-08,FDA-72076,4.41,0.98,21,26.39,2021-07-14,2022-07-07,2043-07-07,4,Gilead,17,South Africa,34.83333333,48,27,82,5,18,29,45,1,2,2,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE
+Falciparum Malaria Protein 11 with AS01B adjuvant.,Molecule Z,Biological,Malaria,Malaria,Phase 2,2007-04-01,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* A male or non-pregnant female 18 to 50 years of age (inclusive) at the time of screening.
+* Written informed consent obtained from the subject before screening procedures.
+* Fre...",No,2007-07-28,FDA-94558,4.41,0.98,21,26.39,2011-08-28,2012-08-20,2033-08-20,16,Merck,77,Overall,34,7,13,61,55,22,46,64,2,2,3,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,FALSE,FALSE,TRUE,TRUE,TRUE
+"Malaria Vaccine RTS,S/AS01E",AltName B,Biological,Malaria,Malaria,Phase 2,2022-08-17,"Sex: ALL; Age: >18 Years; Criteria: Inclusion Criteria:
+
+* Provision of signed or thumb printed and dated informed consent form
+* Stated willingness to comply with all study procedures and availability for the duration of the study
+* Ma...",No,2023-08-01,FDA-49352,4.41,0.98,21,26.39,2027-01-13,2028-01-06,2049-01-05,30,Bayer,59,Overall,53.33333333,84,30,86,72,1,47,45,0,2,3,FALSE,FALSE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,FALSE,TRUE,TRUE
