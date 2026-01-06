@@ -1,404 +1,324 @@
-from shiny import ui, reactive
+from shiny import ui, reactive, req as shiny_req
 from shiny.express import render
 import pandas as pd
+import numpy as np
+import plotly.graph_objects as go
+from shinywidgets import output_widget, render_widget
+from pyecharts import options as opts
+from pyecharts.charts import Bar, Radar
 from utils.data_loader import load_data
-from shiny.express import render
+
 
 def req(condition):
     import pandas as pd
+
     if isinstance(condition, (pd.DataFrame, pd.Series)):
         if condition.empty:
-            raise StopIteration
+            shiny_req(False)
+        return
     elif not condition:
-        raise StopIteration
+        shiny_req(False)
 
-# Helper functions
-def mini_bar(label, value):
+
+def comparison_ui(id):
     return ui.div(
         ui.div(
-            ui.span(label, class_="mini-label"),
-            ui.span(f"{int(value)}%", class_="mini-pct"),
-            class_="d-flex justify-content-between align-items-center mb-1",
-        ),
-        ui.div(
-            ui.div(class_="mini-fill", style=f"width: {int(value)}%"),
-            class_="mini-track",
-            role="progressbar",
-            aria_valuenow=str(int(value)),
-            aria_valuemin="0",
-            aria_valuemax="100",
-        ),
-        class_="mini-row",
-    )
-
-def progress_row(label, value):
-    return ui.div(
-        ui.div(
-            ui.span(label, class_="lbl"),
-            ui.span(f"{int(value)}%"),
-            class_="d-flex justify-content-between",
-        ),
-        ui.div(
-            ui.div(
-                class_="progress-bar",
-                role="progressbar",
-                style=f"width: {int(value)}%",
-                aria_valuenow=str(int(value)),
-                aria_valuemin="0",
-                aria_valuemax="100",
+            ui.h2("Product Comparison", class_="mb-1"),
+            ui.p(
+                "Select multiple innovations to compare their key metrics.",
+                class_="text-muted",
             ),
-            class_="progress",
-        ),
-        class_="readiness-row",
-    )
-
-def indicator_row(label, value):
-    icon_class = "fa-solid fa-circle-check yes" if value else "fa-solid fa-circle-xmark no"
-    return ui.div(
-        ui.tags.i(class_=icon_class),
-        ui.span(label, class_="indicator-label"),
-        class_="indicator-row",
-    )
-
-def indicator_list(labels, values):
-    rows = [indicator_row(l, v) for l, v in zip(labels, values)]
-    return ui.div(rows, class_="indicator-card")
-
-def intro_subdomain_section(title, df):
-    n_checked = df["passed"].sum() # Use the new 'passed' column
-    n_total = len(df)
-    return ui.div(
-        ui.div(
-            ui.h5(title, class_="mb-0 fw-bold"),
-            ui.span(f"{n_checked}/{n_total}", class_="badge-round"), # Display n_checked/n_total
-            class_="subdomain-title d-flex align-items-center justify-content-between",
-        ),
-        indicator_list(df["metric"], df["passed"]), # Pass 'passed' to indicator_list
-        class_="subdomain-block",
-    )
-
-def innovation_details_ui(id):
-    return ui.div(
-        # Innovation Explorer table
-        ui.div(
             ui.div(
-                ui.div(
-                    ui.span("Innovation Explorer", class_="fw-semibold"),
-                    ui.input_select("impact_country_table_details", None, choices=["Overall", "Kenya", "Senegal", "South Africa"], selected="Overall", width="220px"),
-                    class_="d-flex align-items-center justify-content-between flex-wrap gap-2",
+                ui.input_selectize(
+                    "selected_innovations_compare",
+                    "Select Innovations to Compare",
+                    choices=[],  # Will be populated dynamically
+                    multiple=True,
+                    width="100%",
                 ),
-                class_="card-header",
+                class_="card p-3 shadow-sm bg-light border-0 mb-4",
             ),
-            ui.div(
-                ui.output_data_frame("pipeline_tbl_details"),
-                class_="card-body",
-            ),
-            class_="card mb-4",
-            min_height="500px",
+            class_="mb-4",
         ),
-        # Title & summary
         ui.div(
-            ui.div(ui.output_text("detail_title"), class_="card-header"),
-            ui.div(ui.output_ui("detail_summary"), class_="card-body"),
-            class_="card",
-            min_height="400px",
-        ),
-        # Two-column layout
-        ui.div(
-            # Left column
             ui.div(
                 ui.div(
-                    ui.div("Overall Domain Readiness", class_="card-header"),
-                    ui.div(ui.output_ui("domain_summary_bars"), class_="card-body"),
-                    class_="card",
+                    ui.span("Comparison Table", class_="fw-semibold"),
+                    class_="card-header",
                 ),
-                class_="col-12 col-lg-4 position-sticky",
-                style="top: 1rem;",
+                ui.div(ui.output_data_frame("comparison_table"), class_="card-body"),
+                class_="card mb-4",
+                min_height="300px",
             ),
-            # Right column
+        ),
+        ui.div(
             ui.div(
                 ui.div(
-                    ui.div("Scores within selected domain", class_="card-header"),
+                    ui.div("Impact Potential Comparison", class_="card-header"),
                     ui.div(
-                        ui.navset_pill(
-                            ui.nav_panel("Impact potential", value="impact"),
-                            ui.nav_panel("Introduction readiness", value="intro_readiness"),
-                            id="domain_tabs",
-                        ),
-                        ui.div(ui.output_ui("domain_bars"), class_="mt-3"),
-                        class_="card-body",
+                        ui.output_ui("comparison_plot"),
+                        class_="card-body d-flex justify-content-center",
                     ),
-                    class_="card",
+                    class_="card h-100",
                 ),
-                class_="col-12 col-lg-8",
-            ),
-            class_="row g-4 align-items-start g-3",
-        ),
-        # Key Indicators
-        ui.tags.hr(),
-        ui.div(
-            ui.div(
-                ui.div(
-                    ui.span("Key Indicators", class_="fw-semibold"),
-                    ui.input_select("impact_country_KPIs", None, choices=["Overall", "Kenya", "Senegal", "South Africa"], selected="Overall", width="220px"),
-                    class_="d-flex align-items-center justify-content-between flex-wrap gap-2",
-                ),
-                class_="card-header",
+                class_="col-md-6",
             ),
             ui.div(
                 ui.div(
-                    ui.div(ui.output_ui("kpi_box"), class_="col-12"),
-                    class_="row g-3",
+                    ui.div("Time to Approval/Market", class_="card-header"),
+                    ui.div(
+                        output_widget("time_to_market_plot"),
+                        class_="card-body d-flex justify-content-center",
+                    ),
+                    class_="card h-100",
                 ),
-                class_="card-body",
+                class_="col-md-6",
             ),
-            class_="card",
-            min_height="600px",
+            class_="row g-4",
         ),
         id=id,
     )
 
-def innovation_details_server(id, selected_innovation, input, output, session):
+
+def comparison_server(id, input, output, session):
     data = load_data()
     horizon_df = data["horizon"]
     impact_template = data["impact_template"]
-    intro_template = data["intro_template"]
     id_offsets = data["id_offsets"]
 
+    # Define colors for the plots
+    colors = [
+        "#00539B",
+        "#228B22",
+        "#DC143C",
+        "#FFD700",
+        "#012169",
+        "#BFBBBB",
+    ]  # ALGIN colors
+
+    # Populate selectize input choices
+    @reactive.Effect
+    def _():
+        choices = horizon_df["Innovation"].unique().tolist()
+        ui.update_selectize("selected_innovations_compare", choices=choices)
+
+    @reactive.Calc
+    def selected_innovations_data():
+        selected_ids = input.selected_innovations_compare()
+        if not selected_ids:
+            return pd.DataFrame()
+        return horizon_df[horizon_df["Innovation"].isin(selected_ids)]
+
     @render.data_frame
-    def pipeline_tbl_details():
-        country = input.impact_country_table_details()
-        if country == "Overall":
-            df = horizon_df
-        else:
-            df = horizon_df[horizon_df["Country"] == country]
-        req(not df.empty)
+    def comparison_table():
+        df = selected_innovations_data()
+        if df.empty:
+            return
 
         return render.DataGrid(
             df[["Innovation", "Disease", "Category", "Stage", "LeadOrg", "Country"]],
-            selection_mode="row",
-            width="100%",
-            filters=True,
-        )
-
-    @reactive.Effect
-    @reactive.event(input.pipeline_tbl_details_selected_rows)
-    def _():
-        if not input.pipeline_tbl_details_selected_rows():
-            return
-        idx = input.pipeline_tbl_details_selected_rows()[0]
-        
-        country = input.impact_country_table_details()
-        if country == "Overall":
-            df = horizon_df
-        else:
-            df = horizon_df[horizon_df["Country"] == country]
-
-        selected_id = df.iloc[idx]["Innovation"]
-        selected_innovation.set(selected_id)
-
-    @reactive.Calc
-    def get_selected_id():
-        return selected_innovation()
-
-    @reactive.Calc
-    def detail_row():
-        selected_id = get_selected_id()
-        req(selected_id) # Ensure selected_id is not None
-        row = horizon_df[horizon_df["Innovation"] == selected_id]
-        req(not row.empty) # Ensure row is not empty
-        return row.iloc[0]
-
-    @reactive.Calc
-    def scores_for_id():
-        sel = get_selected_id()
-        req(sel) # Ensure sel is not None
-        
-        # Impact scores
-        imp = impact_template.copy()
-        if sel in id_offsets:
-            imp["value"] = (imp["value"] + id_offsets[sel]["impact"]).clip(0, 100)
-            imp["passed"] = id_offsets[sel]["impact_passed"]
-        req(not imp.empty) # Ensure imp is not empty
-
-        # Intro scores
-        intro = intro_template.copy()
-        if sel in id_offsets:
-            intro["value"] = (intro["value"] + id_offsets[sel]["intro_delta"]).clip(0, 100)
-            intro["passed"] = intro["passed"] ^ id_offsets[sel]["intro_passed_delta"] # Apply XOR for boolean changes
-        req(not intro.empty) # Ensure intro is not empty
-            
-        return {"impact": imp, "intro": intro}
-
-    @render.text
-    def detail_title():
-        row = detail_row()
-        req(row) # Ensure row is not None
-        return row["Innovation"]
-
-    @render.ui
-    def detail_summary():
-        row = detail_row()
-        req(row) # Ensure row is not None
-        return ui.div(
-            ui.p(ui.tags.b("Innovation: "), row["Innovation"]),
-            ui.p(ui.tags.b("Disease(s): "), row["Disease"]),
-            ui.p(ui.tags.b("Target Population: "), row["TargetPop"]),
-            ui.p(ui.tags.b("Lead Organization: "), row["LeadOrg"]),
+            row_selection_mode="none",
         )
 
     @render.ui
-    def domain_summary_bars():
-        scores = scores_for_id()
-        req(scores) # Ensure scores is not None
+    def comparison_plot():
+        selected_ids = input.selected_innovations_compare()
+        if not selected_ids:
+            return ui.p("Select one or more innovations to compare.")
 
-        labels = {
-            "impact": "Impact Potential",
-            "intro": "Introduction Readiness",
-        }
-        
-        vals = {
-            "impact": scores["impact"]["value"].mean(),
-            "intro": (scores["intro"]["passed"].sum() / len(scores["intro"])) * 100,
-        }
+        radar = Radar()
+        # Removed radar.set_colors(colors)
 
-        df = pd.DataFrame({
-            "label": labels.values(),
-            "value": [round(v) for v in vals.values()]
-        })
-        req(not df.empty) # Ensure df is not empty
+        schema = [
+            opts.RadarIndicatorItem(name=metric, max_=100)
+            for metric in impact_template["metric"]
+        ]
+        radar.add_schema(schema)
 
-        return ui.div(
-            *[mini_bar(row["label"], row["value"]) for index, row in df.iterrows()],
-            class_="domain-summary-vertical"
-        )
+        for i, sel in enumerate(selected_ids):
+            imp = impact_template.copy()
+            if sel in id_offsets:
+                imp["value"] = (imp["value"] + id_offsets[sel]["impact"]).clip(0, 100)
 
-    @render.ui
-    def domain_bars():
-        scores = scores_for_id()
-        req(scores) # Ensure scores is not None
-
-        domain = input.domain_tabs()
-        req(domain) # Ensure domain is not None
-        if domain == "impact":
-            df = scores["impact"]
-            req(not df.empty) # Ensure df is not empty
-            return ui.div(*[progress_row(row["metric"], row["value"]) for index, row in df.iterrows()])
-        elif domain == "intro_readiness":
-            df = scores["intro"]
-            req(not df.empty) # Ensure df is not empty
-            subdomains = df["subdomain"].unique()
-            req(not pd.Series(subdomains).empty) # Ensure subdomains is not empty
-            return ui.div(
-                *[intro_subdomain_section(subdomain, df[df["subdomain"] == subdomain]) for subdomain in subdomains]
+            color = colors[i % len(colors)]  # Cycle through colors
+            radar.add(
+                sel,
+                [imp["value"].tolist()],
+                linestyle_opts=opts.LineStyleOpts(
+                    color=color
+                ),  # Explicitly set line color
+                areastyle_opts=opts.AreaStyleOpts(
+                    opacity=0.5, color=color
+                ),  # Explicitly set area color
             )
 
-    @reactive.Calc
-    def rd_score_from_stage():
-        row = detail_row()
-        req(row) # Ensure detail_row() returns a valid row
-        stage = row["Stage"]
-        req(stage) # Ensure stage is not None or empty
-        if "Implementation Ready" in stage:
-            return 95
-        elif "Post-Market Surveillance" in stage:
-            return 90
-        elif "Phase III" in stage:
-            return 85
-        elif "Phase II" in stage:
-            return 65
-        elif "Phase I" in stage:
-            return 45
-        else:
-            return 50
-
-    @reactive.Calc
-    def delivery_scale_score():
-        scores = scores_for_id()
-        req(scores) # Ensure scores is not None
-        
-        intro_df = scores["intro"]
-        req(not intro_df.empty) # Ensure intro_df is not None or empty
-
-        # Filter for relevant metrics within the "intro" DataFrame
-        # Assuming "Policy" and "Uptake/Delivery" subdomains are relevant for "Delivery & Scale"
-        relevant_metrics = intro_df[
-            (intro_df["subdomain"] == "Policy") | 
-            ((intro_df["subdomain"] == "Uptake/Delivery") & (intro_df["metric"].str.contains("demand", case=False)))
-        ]["value"]
-        req(not relevant_metrics.empty) # Ensure relevant_metrics is not empty
-        
-        if not relevant_metrics.empty:
-            return round(relevant_metrics.mean())
-        return 0
-
-    @reactive.Calc
-    def impl_readiness_avg():
-        scores = scores_for_id()
-        req(scores) # Ensure scores is not None
-        
-        all_scores = pd.concat([scores["impact"]["value"], scores["intro"]["value"]])
-        req(not all_scores.empty) # Ensure all_scores is not empty
-        return round(all_scores.mean())
-
-    @reactive.Calc
-    def sel_ce():
-        selected_id = get_selected_id()
-        req(selected_id) # Ensure selected_id is not None
-        ce_data = data["ce_all"][data["ce_all"]["id"] == selected_id]
-        req(not ce_data.empty) # Ensure ce_data is not empty
-        return ce_data
-
-    @reactive.Calc
-    def sel_pop():
-        selected_id = get_selected_id()
-        req(selected_id) # Ensure selected_id is not None
-        
-        pop_impact = data["pop_impact_all"]
-        pop_row = pop_impact[pop_impact["id"] == selected_id]
-        
-        req(not pop_row.empty) # Ensure pop_row is not empty
-        
-        if not pop_row.empty:
-            return pop_row["pop_millions"].iloc[0]
-        return None
-
-    @render.ui
-    def kpi_box():
-        selected_id = get_selected_id()
-        req(selected_id) # Ensure selected_id is not None
-
-        pop_m = sel_pop()
-        ce_mean = sel_ce()["ce_usd_per_daly"].mean()
-        impl = impl_readiness_avg()
-        rd = rd_score_from_stage()
-        del_score = delivery_scale_score()
-        dev_score = round(0.6 * rd + 0.4 * del_score)
-
-        return ui.div(
-            ui.div(ui.value_box(
-                "Population Impact Potential",
-                f"{pop_m} M" if pop_m else "—",
-                ui.tags.i(class_="fa fa-users"),
-                ui.tags.small("Estimated potential beneficiaries"),
-            ), class_="col-md-3"),
-            ui.div(ui.value_box(
-                "Cost-effectiveness (mean)",
-                f"${int(ce_mean):,}/DALY" if not pd.isna(ce_mean) else "—",
-                ui.tags.i(class_="fa fa-scale-balanced"),
-                ui.tags.small("Mean across countries with data"),
-            ), class_="col-md-3"),
-            ui.div(ui.value_box(
-                "Implementation Readiness",
-                f"{impl}%",
-                ui.tags.i(class_="fa fa-gauge-simple-high"),
-                ui.tags.small("Average of implementation domains"),
-            ), class_="col-md-3"),
-            ui.div(ui.value_box(
-                "Development Score",
-                f"{dev_score}%",
-                ui.tags.i(class_="fa fa-flask"),
-                ui.tags.small("Blend of R&D trial phase and Delivery & Scale"),
-            ), class_="col-md-3"),
-            class_="row g-3",
+        radar.set_global_opts(
+            legend_opts=opts.LegendOpts(
+                orient="vertical", pos_right="5%", pos_top="15%"
+            ),
         )
+
+        return ui.HTML(radar.render_embed())
+
+    @render_widget
+    def time_to_market_plot():
+        selected_ids = input.selected_innovations_compare()
+        if not selected_ids:
+            return go.FigureWidget()
+
+        df = horizon_df[horizon_df["Innovation"].isin(selected_ids)]
+
+        fig = go.FigureWidget()
+
+        # Collect all dates to set range
+        all_dates_flat = []
+
+        # Define color map for milestones
+        milestone_colors = {
+            "Trial": "#BFBBBB",  # Gray
+            "Regulatory Approval": "#228B22",  # Green
+            "First Launch": "#DC143C",  # Red
+            "Market Entry": "#00539B",  # Blue
+        }
+
+        for i, (idx, row) in enumerate(df.iterrows()):
+            innovation = row["Innovation"]
+
+            events = []
+
+            # Trial Completion
+            trial_date = row.get("trial_completion_date")
+            if pd.notna(trial_date):
+                stage = row.get("Stage", "Trial")
+                label = (
+                    f"{stage} Complete"
+                    if "Phase" in str(stage)
+                    else f"{stage} (Trial End)"
+                )
+                events.append(
+                    {
+                        "name": label,
+                        "date": trial_date,
+                        "type": "Trial",
+                        "show_label": True,
+                    }
+                )
+                all_dates_flat.append(trial_date)
+
+            # Projections
+            projs = {
+                "Regulatory Approval": row.get("expected_date_of_regulatory_approval"),
+                "First Launch": row.get("expected_date_of_first_launch"),
+                "Market Entry": row.get("expected_date_of_market"),
+            }
+            for k, v in projs.items():
+                if pd.notna(v):
+                    events.append(
+                        {"name": k, "date": v, "type": k, "show_label": False}
+                    )
+                    all_dates_flat.append(v)
+
+            if events:
+                events.sort(key=lambda x: x["date"])
+
+                dates = [e["date"] for e in events]
+                names = [e["name"] if e["show_label"] else "" for e in events]
+                marker_colors = [
+                    milestone_colors.get(e["type"], "#00539B") for e in events
+                ]
+
+                # Add trace
+                fig.add_trace(
+                    go.Scatter(
+                        x=dates,
+                        y=[innovation] * len(dates),
+                        mode="lines+markers+text",
+                        name=innovation,
+                        line=dict(color="#00539B", width=3),  # Line always Blue
+                        marker=dict(
+                            size=12,
+                            color=marker_colors,
+                            line=dict(width=2, color="white"),
+                        ),
+                        text=names,
+                        textposition="top center",
+                        hoverinfo="text+x+name",
+                        hovertext=[
+                            f"{e['name']}<br>{e['date'].strftime('%Y-%m-%d')}"
+                            for e in events
+                        ],
+                        showlegend=False,
+                    )
+                )
+
+        if not all_dates_flat:
+            fig.update_layout(
+                xaxis=dict(visible=False),
+                yaxis=dict(visible=False),
+                annotations=[
+                    dict(
+                        text="No timeline data available",
+                        showarrow=False,
+                        xref="paper",
+                        yref="paper",
+                        x=0.5,
+                        y=0.5,
+                    )
+                ],
+            )
+            return fig
+
+        # Add Legend Items
+        for name, color in milestone_colors.items():
+            label = "Trial (Collected)" if name == "Trial" else name
+            fig.add_trace(
+                go.Scatter(
+                    x=[None],
+                    y=[None],
+                    mode="markers",
+                    marker=dict(size=10, color=color),
+                    name=label,
+                )
+            )
+
+        # Padding (1 year)
+        start_range = min(all_dates_flat) - pd.DateOffset(years=1)
+        end_range = max(all_dates_flat) + pd.DateOffset(years=1)
+
+        # Calculate dynamic height based on number of innovations
+        num_innovations = len(selected_ids)
+        dynamic_height = max(400, 150 + (num_innovations * 50))
+
+        fig.update_layout(
+            height=dynamic_height,
+            showlegend=True,
+            legend=dict(
+                title=dict(text="Milestone Type", font=dict(size=12)),
+                orientation="h",
+                yanchor="bottom",
+                y=1.02,
+                xanchor="right",
+                x=1,
+            ),
+            margin=dict(l=20, r=20, t=50, b=50),
+            xaxis=dict(
+                type="date",
+                range=[start_range, end_range],
+                showgrid=True,
+                gridcolor="#f0f0f0",
+                zeroline=False,
+                linecolor="#BFBBBB",
+                tickformat="%Y",
+                side="bottom",
+            ),
+            yaxis=dict(
+                showgrid=False,
+                linecolor="#BFBBBB",
+                type="category",
+                autorange="reversed",
+            ),
+            plot_bgcolor="white",
+            paper_bgcolor="white",
+        )
+
+        return fig
