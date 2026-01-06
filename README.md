@@ -64,30 +64,6 @@ uv venv
 uv sync
 ```
 
-## Exporting `requirements.txt` (optional)
-
-Generate a `requirements.txt` file from the lockfile:
-
-```bash
-uv export --format requirements.txt --output-file requirements.txt
-```
-
-Cleaner version (no hashes or annotations):
-
-```bash
-uv export --format requirements.txt --no-hashes --no-annotate --output-file requirements.txt
-```
-
-## Upgrading dependencies intentionally
-
-Only run this when you intend to bump versions:
-
-```bash
-uv lock --upgrade
-uv sync
-uv export --format requirements.txt --output-file requirements.txt
-```
-
 ## Running the application
 
 Activate the environment if needed:
