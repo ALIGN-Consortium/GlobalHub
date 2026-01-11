@@ -4,11 +4,13 @@ import plotly.graph_objects as go
 import pandas as pd
 from utils.data_loader import load_data
 from shinywidgets import output_widget, render_widget
-from pyecharts import options as opts
-from pyecharts.charts import Bar, Line
 
 
 def req(condition):
+    """
+    Helper to stop execution if a condition is not met (similar to R Shiny's req).
+    Useful for preventing errors when data is momentarily empty during reactivity.
+    """
     import pandas as pd
 
     if isinstance(condition, pd.DataFrame):
@@ -19,11 +21,24 @@ def req(condition):
 
 
 def overview_ui(id):
+    """
+    Defines the User Interface for the Overview module.
+    
+    Layout:
+    1. KPI Cards: Top-level metrics for Tuberculosis, HIV, Malaria, and MNCH.
+    2. Market Overview:
+       - Trend Chart: Cumulative forecast of products coming to market.
+       - Pie Chart: Current development status breakdown.
+    3. Average Timeline: Visual timeline of development stages.
+    4. Innovation Explorer: Interactive table to browse and select innovations.
+    """
     data = load_data()
     horizon_df = data["horizon"]
-    diseases = ["Overall"] + sorted(horizon_df["Disease"].dropna().unique().tolist())
+    
+    # Get unique diseases for the filter dropdown
+    diseases = ["Overall"] + sorted(horizon_df["disease"].dropna().unique().tolist())
 
-    # Helper function to create KPI cards
+    # Helper function to create consistent KPI cards
     def kpi_card(value, label, sub, icon):
         return ui.div(
             ui.div(
@@ -37,22 +52,22 @@ def overview_ui(id):
             class_="d-flex justify-content-between align-items-center p-3",
         )
 
-    # Calculate counts for specific diseases
+    # Calculate innovation counts for specific disease categories
     def count_innovations(diseases):
         if isinstance(diseases, str):
             diseases = [diseases]
-        # Filter by Disease column, not Category
+        # Filter by Disease column
         return len(
-            horizon_df[horizon_df["Disease"].isin(diseases)]["Innovation"].unique()
+            horizon_df[horizon_df["disease"].isin(diseases)]["innovation"].unique()
         )
 
-    tb_count = count_innovations(["tuberculosis"])
-    hiv_count = count_innovations(["hiv"])
-    malaria_count = count_innovations(["malaria", "malaria_copy"])
-    mnch_count = count_innovations(["MCNH"])
+    tb_count = count_innovations(["Tuberculosis"])
+    hiv_count = count_innovations(["HIV"])
+    malaria_count = count_innovations(["Malaria"])
+    mnch_count = count_innovations(["MNCH"])
 
     return ui.div(
-        # KPI cards
+        # --- Section 1: KPI Cards ---
         ui.div(
             ui.div(
                 ui.card(
@@ -82,7 +97,7 @@ def overview_ui(id):
             ),
             class_="row mb-4 g-3",
         ),
-        # Overview charts controls
+        # --- Section 2: Market Overview Charts ---
         ui.div(
             ui.div(
                 ui.span("Market Overview", class_="fw-semibold"),
@@ -97,7 +112,6 @@ def overview_ui(id):
             ),
             class_="col-12",
         ),
-        # Overview charts
         ui.div(
             ui.div(
                 ui.div(
@@ -123,63 +137,32 @@ def overview_ui(id):
             ),
             class_="row g-3",
         ),
-        # Analytics tabs
+        # --- Section 3: Average Timeline ---
         ui.div(
             ui.div(
                 ui.div(
-                    ui.span("Analytics", class_="fw-semibold"),
+                    ui.span("Average innovation development time", class_="fw-semibold"),
                     ui.input_select(
-                        "impact_country",
+                        "timeline_country_selector",
                         None,
                         choices=["Overall", "Kenya", "Senegal", "South Africa"],
                         selected="Overall",
                         width="220px",
                     ),
-                    class_="d-flex align-items-center justify-content-between flex-wrap gap-2",
+                    class_="card-header d-flex align-items-center justify-content-between flex-wrap gap-2",
                 ),
-                class_="card-header",
-            ),
-            ui.div(
                 ui.div(
                     ui.div(
-                        ui.div(
-                            ui.div(
-                                "Innovation Impact by Category", class_="card-header"
-                            ),
-                            ui.div(
-                                ui.tags.div(
-                                    "Potential population impact and cost effectiveness",
-                                    style="font-weight:400; font-size:13px; color:#6b7280;",
-                                ),
-                                ui.output_ui("impact_combo", height="300px"),
-                                class_="card-body",
-                            ),
-                            class_="card",
-                        ),
-                        class_="col-md-7",
+                        output_widget("avg_timeline_plot", height="300px"),
+                        style="width: 100%; display: block;"
                     ),
-                    ui.div(
-                        ui.div(
-                            ui.div("Implementation Readiness", class_="card-header"),
-                            ui.div(
-                                ui.tags.div(
-                                    "Innovations ready for policy implementation",
-                                    style="font-weight:400; font-size:13px; color:#6b7280;",
-                                ),
-                                ui.output_ui("readiness_bar", height="300px"),
-                                class_="card-body",
-                            ),
-                            class_="card",
-                        ),
-                        class_="col-md-5",
-                    ),
-                    class_="row mt-3 analytics-row g-3",
+                    class_="card-body",
                 ),
+                class_="card col-12",
             ),
-            class_="card",
-            min_height="500px",
+            class_="row g-3 mb-4",
         ),
-        # Innovation Explorer table
+        # --- Section 4: Innovation Explorer Table ---
         ui.div(
             ui.div(
                 ui.div(
@@ -207,52 +190,70 @@ def overview_ui(id):
 
 
 def overview_server(id, input, output, session):
+    """
+    Server logic for the Overview module.
+    
+    Handles:
+    - Data loading and filtering based on user inputs (disease, country).
+    - Rendering of Plotly charts (trend, pie, timeline).
+    - Rendering of the interactive DataGrid.
+    - Navigation event when a table row is clicked.
+    """
     data = load_data()
-    pipeline_static = data["pipeline"]
-    readiness_static = data["readiness"]
-    impact_dat_all = data["impact_dat_all"]
-    readiness_cat_all = data["readiness_cat_all"]
     horizon_df = data["horizon"]
 
+    # Reactive value to store the selected innovation ID for cross-module communication
     default_innovation_id = (
-        horizon_df["Innovation"].iloc[0] if not horizon_df.empty else None
+        horizon_df["innovation"].iloc[0] if not horizon_df.empty else None
     )
     selected_innovation = reactive.Value(default_innovation_id)
 
+    # --- Layout Fix: Startup Delay ---
+    # Delays the initial render of complex charts to allow CSS layout to settle.
+    layout_ready = reactive.Value(False)
+
+    @reactive.Effect
+    def _():
+        # Trigger once on startup after 0.5s
+        reactive.invalidate_later(0.5)
+        layout_ready.set(True)
+
     @render_widget
     def trend_chart():
+        """
+        Renders a cumulative line chart of products coming to market over time.
+        Filters by selected disease and aggregates by category.
+        """
         disease = input.disease_selector()
 
-        # Calculate pipeline data dynamically based on selection
+        # 1. Filter Data
         if disease == "Overall":
             df_filtered = horizon_df
         else:
-            df_filtered = horizon_df[horizon_df["Disease"] == disease]
+            df_filtered = horizon_df[horizon_df["disease"] == disease]
 
-        # Filter for Forecast period (2025 and above) and cap at 2050
+        # Filter for Forecast period (2025-2050)
         df_filtered = df_filtered[
             (df_filtered["market_year"] >= 2025) & (df_filtered["market_year"] <= 2050)
         ]
 
         if df_filtered.empty:
-            # Return empty chart if no data
             return go.FigureWidget()
 
-        # Aggregate counts by Year and Category
+        # 2. Aggregate Data: Count per Year & Category
         pipeline_raw = (
-            df_filtered.groupby(["market_year", "Category"])
+            df_filtered.groupby(["market_year", "category"])
             .size()
             .unstack(fill_value=0)
         )
 
-        # Ensure we have a reasonable year range
+        # 3. Ensure Continuous Timeline (fill missing years)
         min_year = 2025
         max_year = (
             int(pipeline_raw.index.max())
             if not pipeline_raw.empty and not pd.isna(pipeline_raw.index.max())
             else 2035
         )
-        # Cap max_year for display if data goes beyond, though we filtered already
         max_year = min(max_year, 2050)
         all_years = range(min_year, max_year + 1)
 
@@ -260,12 +261,15 @@ def overview_server(id, input, output, session):
             pipeline_raw.index = pipeline_raw.index.astype(int)
 
         pipeline_reindexed = pipeline_raw.reindex(all_years, fill_value=0)
+        
+        # 4. Calculate Cumulative Sums
         pipeline = pipeline_reindexed.cumsum().reset_index()
         pipeline = pipeline.rename(columns={"index": "year", "market_year": "year"})
 
         df = pipeline.melt(id_vars="year", var_name="category", value_name="count")
         req(not df.empty)
 
+        # 5. Build Plotly Figure
         fig = go.FigureWidget()
         for category in df["category"].unique():
             category_df = df[df["category"] == category]
@@ -287,7 +291,7 @@ def overview_server(id, input, output, session):
             xaxis=dict(showticklabels=True, dtick=1, tickangle=-45, type="category"),
             yaxis=dict(
                 range=[0, None], fixedrange=True
-            ),  # Ensure Y-axis starts at 0 and prevent zooming below it
+            ),
             annotations=[
                 dict(
                     text="Data is cumulative",
@@ -304,22 +308,24 @@ def overview_server(id, input, output, session):
 
     @render_widget
     def pie_chart():
+        """
+        Renders a donut chart showing the breakdown of innovations by development status (Stage).
+        """
         disease = input.disease_selector()
 
         if disease == "Overall":
             df_filtered = horizon_df
         else:
-            df_filtered = horizon_df[horizon_df["Disease"] == disease]
+            df_filtered = horizon_df[horizon_df["disease"] == disease]
 
         if df_filtered.empty:
             return go.FigureWidget()
 
-        stage_counts = df_filtered["Stage"].value_counts().reset_index()
+        stage_counts = df_filtered["trial_status"].value_counts().reset_index()
         stage_counts.columns = ["status", "count"]
         total_innovations = len(df_filtered)
         stage_counts["pct"] = (stage_counts["count"] / total_innovations * 100).round(1)
 
-        # Use consistent colors if possible
         base_colors = ["#10b981", "#3b82f6", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899"]
         stage_counts["colors"] = [
             base_colors[i % len(base_colors)] for i in range(len(stage_counts))
@@ -347,216 +353,133 @@ def overview_server(id, input, output, session):
         )
         return fig
 
-    @render.ui
-    def impact_combo():
-        country_data = impact_dat_all[
-            impact_dat_all["country"] == input.impact_country()
+    @render_widget
+    def avg_timeline_plot():
+        """
+        Renders a static timeline visualization showing average years between key milestones.
+        Calculates means for:
+        1. Start -> Regulatory Approval
+        2. Regulatory Approval -> First Launch
+        3. First Launch -> 20% Market Uptake
+        """
+        # Wait for layout to stabilize (fixes initial width issue)
+        req(layout_ready())
+
+        disease = input.disease_selector()
+        country = input.timeline_country_selector()
+
+        df_filtered = horizon_df.copy()
+
+        if disease != "Overall":
+            df_filtered = df_filtered[df_filtered["disease"] == disease]
+
+        if country != "Overall":
+            df_filtered = df_filtered[df_filtered["country"] == country]
+
+        # Ensure numeric columns
+        cols = [
+            "time_to_regulatory_approval",
+            "time_approval_to_first_launch",
+            "time_launch_to_20lmic",
         ]
-        req(not country_data.empty)
+        for c in cols:
+            if c in df_filtered.columns:
+                df_filtered[c] = pd.to_numeric(df_filtered[c], errors="coerce")
 
-        # Ensure no duplicates
-        country_data = country_data.drop_duplicates(subset=["category"])
-
-        # Round impact and cost_eff values before plotting
-        rounded_impact = country_data["impact"].round(0).tolist()
-        rounded_cost_eff = country_data["cost_eff"].round(0).tolist()
-
-        bar = (
-            Bar(init_opts=opts.InitOpts(width="100%", height="300px"))
-            .add_xaxis(country_data["category"].tolist())
-            .add_yaxis(
-                "Impact",
-                rounded_impact,
-                itemstyle_opts=opts.ItemStyleOpts(color="#00539B"),
-            )
-            .extend_axis(
-                yaxis=opts.AxisOpts(
-                    name="Cost effectiveness",
-                    type_="value",
-                )
-            )
-            .set_global_opts(
-                tooltip_opts=opts.TooltipOpts(
-                    trigger="axis", axis_pointer_type="cross"
-                ),
-                xaxis_opts=opts.AxisOpts(type_="category"),
-                yaxis_opts=opts.AxisOpts(name="Impact index"),
-                legend_opts=opts.LegendOpts(pos_right="10%"),
-            )
+        # Calculate averages
+        t1 = (
+            df_filtered["time_to_regulatory_approval"].mean()
+            if "time_to_regulatory_approval" in df_filtered.columns
+            else 0
         )
-        line = (
-            Line()
-            .add_xaxis(country_data["category"].tolist())
-            .add_yaxis(
-                "Cost effectiveness",
-                rounded_cost_eff,
-                yaxis_index=1,
-                is_smooth=True,
-                itemstyle_opts=opts.ItemStyleOpts(color="#228B22"),
-            )
+        t2 = (
+            df_filtered["time_approval_to_first_launch"].mean()
+            if "time_approval_to_first_launch" in df_filtered.columns
+            else 0
         )
-        bar.overlap(line)
-        return ui.HTML(bar.render_embed())
+        t3 = (
+            df_filtered["time_launch_to_20lmic"].mean()
+            if "time_launch_to_20lmic" in df_filtered.columns
+            else 0
+        )
 
-    @render.ui
-    def readiness_bar():
-        country_data = readiness_cat_all[
-            readiness_cat_all["country"] == input.impact_country()
+        t1 = 0 if pd.isna(t1) else t1
+        t2 = 0 if pd.isna(t2) else t2
+        t3 = 0 if pd.isna(t3) else t3
+
+        # Create cumulative timeline points
+        x_vals = [0, t1, t1 + t2, t1 + t2 + t3]
+        labels = [
+            "Start",
+            "Regulatory approval",
+            "First country launch",
+            "20% Market uptake",
         ]
-        req(not country_data.empty)
+        text_vals = [f"{x:.1f} yrs" for x in x_vals]
 
-        # Ensure no duplicates
-        country_data = country_data.drop_duplicates(subset=["category"])
+        text_positions = ["bottom center", "top center", "bottom center", "top center"]
 
-        bar = (
-            Bar(init_opts=opts.InitOpts(width="100%", height="300px"))
-            .add_xaxis(country_data["category"].tolist())
-            .add_yaxis(
-                "Total in pipeline",
-                country_data["total"].tolist(),
-                itemstyle_opts=opts.ItemStyleOpts(color="#BFBBBB"),
-            )
-            .add_yaxis(
-                "Ready",
-                country_data["ready"].tolist(),
-                z=10,
-                itemstyle_opts=opts.ItemStyleOpts(color="#228B22"),
-            )
-            .set_global_opts(
-                tooltip_opts=opts.TooltipOpts(trigger="axis"),
-                legend_opts=opts.LegendOpts(pos_right="10%"),
+        fig = go.FigureWidget()
+
+        fig.add_trace(
+            go.Scatter(
+                x=x_vals,
+                y=[0] * len(x_vals),
+                mode="lines+markers+text",
+                line=dict(color="red", width=3),
+                marker=dict(size=14, color="red", line=dict(width=2, color="white")),
+                text=[f"<b>{l}</b><br>{v}" for l, v in zip(labels, text_vals)],
+                textposition=text_positions,
+                hoverinfo="text",
+                showlegend=False,
             )
         )
-        return ui.HTML(bar.render_embed())
 
-    @render.ui
-    def budget_chart():
-        budget_df = data["budget_data"]
-        req(not budget_df.empty)
-
-        bar = (
-            Bar()
-            .add_xaxis(budget_df["category"].tolist())
-            .add_yaxis(
-                "Allocated (M)", budget_df["allocated"].round(0).astype(int).tolist()
-            )
-            .add_yaxis("Spent (M)", budget_df["spent"].round(0).astype(int).tolist())
-            .set_global_opts(
-                title_opts=opts.TitleOpts(title="Budget Allocation and Spending"),
-                tooltip_opts=opts.TooltipOpts(
-                    trigger="axis", axis_pointer_type="shadow"
-                ),
-                xaxis_opts=opts.AxisOpts(axislabel_opts=opts.LabelOpts(rotate=-15)),
-                yaxis_opts=opts.AxisOpts(name="Amount (Millions USD)"),
-                legend_opts=opts.LegendOpts(pos_right="10%"),
-            )
+        fig.update_layout(
+            height=300,
+            margin=dict(l=40, r=40, t=40, b=40),
+            xaxis=dict(
+                showgrid=False,
+                zeroline=False,
+                showline=True,
+                linecolor="#BFBBBB",
+                title="Years from Project Start",
+                dtick=1,
+            ),
+            yaxis=dict(visible=False, range=[-1.5, 1.5], fixedrange=True),
+            plot_bgcolor="white",
+            paper_bgcolor="white",
         )
-        return ui.HTML(bar.render_embed())
-
-    @render.ui
-    def implementation_chart():
-        impl_df = data["implementation_data"]
-        req(not impl_df.empty)
-
-        bar = (
-            Bar()
-            .add_xaxis(impl_df["category"].tolist())
-            .add_yaxis(
-                "Planned",
-                impl_df["planned"].round(0).astype(int).tolist(),
-                stack="stack1",
-            )
-            .add_yaxis(
-                "In Progress",
-                impl_df["in_progress"].round(0).astype(int).tolist(),
-                stack="stack1",
-            )
-            .add_yaxis(
-                "Completed",
-                impl_df["completed"].round(0).astype(int).tolist(),
-                stack="stack1",
-            )
-            .set_global_opts(
-                title_opts=opts.TitleOpts(title="Implementation Status by Category"),
-                tooltip_opts=opts.TooltipOpts(
-                    trigger="axis", axis_pointer_type="shadow"
-                ),
-                xaxis_opts=opts.AxisOpts(axislabel_opts=opts.LabelOpts(rotate=-15)),
-                yaxis_opts=opts.AxisOpts(name="Number of Items"),
-                legend_opts=opts.LegendOpts(pos_right="10%"),
-            )
-        )
-        return ui.HTML(bar.render_embed())
-
-    @render.ui
-    def risk_chart():
-        risk_df = data["risk_data"]
-        req(not risk_df.empty)
-
-        categories = risk_df["category"].tolist()
-        technical_risk = risk_df["technical_risk"].round(0).astype(int).tolist()
-        market_risk = risk_df["market_risk"].round(0).astype(int).tolist()
-        regulatory_risk = risk_df["regulatory_risk"].round(0).astype(int).tolist()
-        financial_risk = risk_df["financial_risk"].round(0).astype(int).tolist()
-
-        bar = (
-            Bar()
-            .add_xaxis(categories)
-            .add_yaxis("Technical Risk", technical_risk)
-            .add_yaxis("Market Risk", market_risk)
-            .add_yaxis("Regulatory Risk", regulatory_risk)
-            .add_yaxis("Financial Risk", financial_risk)
-            .set_global_opts(
-                title_opts=opts.TitleOpts(title="Risk Assessment by Category"),
-                tooltip_opts=opts.TooltipOpts(
-                    trigger="axis", axis_pointer_type="shadow"
-                ),
-                xaxis_opts=opts.AxisOpts(axislabel_opts=opts.LabelOpts(rotate=-15)),
-                yaxis_opts=opts.AxisOpts(name="Risk Score (1-10)"),
-                legend_opts=opts.LegendOpts(pos_right="10%"),
-            )
-        )
-        return ui.HTML(bar.render_embed())
-
-    @render.ui
-    def country_readiness_chart():
-        cr_df = data["country_readiness_data"]
-        req(not cr_df.empty)
-
-        countries = cr_df["country"].tolist()
-        policy_readiness = cr_df["policy_readiness"].round(0).astype(int).tolist()
-        infra_readiness = cr_df["infra_readiness"].round(0).astype(int).tolist()
-        uptake_potential = cr_df["uptake_potential"].round(0).astype(int).tolist()
-
-        bar = (
-            Bar()
-            .add_xaxis(countries)
-            .add_yaxis("Policy Readiness", policy_readiness)
-            .add_yaxis("Infrastructure Readiness", infra_readiness)
-            .add_yaxis("Uptake Potential", uptake_potential)
-            .set_global_opts(
-                title_opts=opts.TitleOpts(title="Country Readiness Scores"),
-                tooltip_opts=opts.TooltipOpts(
-                    trigger="axis", axis_pointer_type="shadow"
-                ),
-                xaxis_opts=opts.AxisOpts(axislabel_opts=opts.LabelOpts(rotate=-15)),
-                yaxis_opts=opts.AxisOpts(name="Readiness Score (%)"),
-                legend_opts=opts.LegendOpts(pos_right="10%"),
-            )
-        )
-        return ui.HTML(bar.render_embed())
+        return fig
 
     @render.data_frame
     def pipeline_tbl():
+        """
+        Renders the interactive DataGrid table.
+        Filters by country and selects key columns for display.
+        """
         country = input.impact_country_table()
         if country == "Overall":
-            df = horizon_df
+            df_filtered = horizon_df
         else:
-            df = horizon_df[horizon_df["Country"] == country]
-        req(not df.empty)
+            df_filtered = horizon_df[horizon_df["country"] == country]
+        req(not df_filtered.empty)
 
         return render.DataGrid(
-            df[["Innovation", "Disease", "Category", "Stage", "LeadOrg"]],
+            df_filtered.rename(
+                columns={
+                    "expected_date_of_market": "Expected Market Date",
+                    "disease": "Disease Area",
+                }
+            )[
+                [
+                    "innovation",
+                    "Disease Area",
+                    "category",
+                    "trial_status",
+                    "Expected Market Date",
+                ]
+            ],
             selection_mode="row",
             width="100%",
             filters=True,
@@ -565,17 +488,23 @@ def overview_server(id, input, output, session):
     @reactive.Effect
     @reactive.event(input.pipeline_tbl_selected_rows)
     def _():
+        """
+        Event Handler: Runs when a row is clicked in the pipeline_tbl.
+        1. Identifies the selected innovation ID.
+        2. Updates the `selected_innovation` reactive value.
+        3. Switches the main navigation tab to 'Innovation Details'.
+        """
         if not input.pipeline_tbl_selected_rows():
             return
         idx = input.pipeline_tbl_selected_rows()[0]
 
         country = input.impact_country_table()
         if country == "Overall":
-            df = horizon_df
+            df_filtered = horizon_df
         else:
-            df = horizon_df[horizon_df["Country"] == country]
+            df_filtered = horizon_df[horizon_df["country"] == country]
 
-        selected_id = df.iloc[idx]["Innovation"]
+        selected_id = df_filtered.iloc[idx]["innovation"]
         selected_innovation.set(selected_id)
         ui.update_navset("main_nav", "Innovation Details")
 

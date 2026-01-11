@@ -2,283 +2,260 @@ import pandas as pd
 import numpy as np
 import random
 from pathlib import Path
-from .config import DATA_PATH, COUNTRY_COORDS, COLUMN_MAPPING, COLORS
+from .config import DATA_PATH, POP_DATA_PATH, COLORS
+
 
 def _load_csv(path: str) -> pd.DataFrame:
-    """Loads and deduplicates the raw CSV data."""
+    """
+    Loads the raw CSV data from the specified path.
+    
+    Usage:
+        Called internally by `load_data()` to fetch the main dataset.
+        
+    Args:
+        path (str): The file path to the CSV.
+        
+    Returns:
+        pd.DataFrame: The loaded pandas DataFrame.
+        
+    Raises:
+        FileNotFoundError: If the file does not exist.
+        RuntimeError: If there is an error during parsing.
+    """
     try:
+        # Load the new HorizonData.csv with latin1 encoding to handle potential special characters
         df = pd.read_csv(path, encoding="latin1")
-        # Remove duplicate innovations, keeping the first occurrence
-        df = df.drop_duplicates(subset=["Innovation"]).reset_index(drop=True)
         return df
     except FileNotFoundError:
-        raise FileNotFoundError(f"Data file not found at {path}. Please check the path.")
+        raise FileNotFoundError(
+            f"Data file not found at {path}. Please check the path."
+        )
     except Exception as e:
         raise RuntimeError(f"Error loading data: {e}")
 
-def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
-    """Cleans and filters the dataframe."""
-    # Ensure trial_completion_date is datetime
-    df["trial_completion_date"] = pd.to_datetime(df["trial_completion_date"], errors="coerce")
-    
-    # Filter out products with very old trial completion dates
-    df = df[
-        (df["trial_completion_date"].dt.year >= 2016) | 
-        (df["trial_completion_date"].isna())
-    ]
-    
-    # Sort and ID generation
-    df = df.sort_values(by=["Innovation", "Country"]).reset_index(drop=True)
-    df["Innovation"] = df["Innovation"].fillna("Unknown")
-    df["id"] = df["Innovation"]
 
-    # Date and Market Year
-    df["expected_date_of_market"] = pd.to_datetime(df["expected_date_of_market"], errors="coerce")
-    df["market_year"] = df["expected_date_of_market"].dt.year
-    df["Category"] = df["Category"].str.strip()
+def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Cleans, filters, and types the raw dataframe.
     
-    # Forecast period filter
-    df = df[df["market_year"] >= 2025]
+    Usage:
+        Called internally by `load_data()` immediately after loading.
     
-    # Rename columns
-    df = df.rename(columns=COLUMN_MAPPING)
-    
-    # Numeric conversion
-    numeric_cols = ["Impact Score", "Impact Potential", "Introduction Readiness", 
-                    "Cost-effectiveness", "Readiness", "Time_to_Approval", "Time_to_Market"]
+    Key Logic:
+        1.  **Date Conversion**: Parses multiple date columns using `dayfirst=True` and `format='mixed'` to handle inconsistent date formats (e.g., DD-MM-YYYY vs MM/DD/YYYY).
+        2.  **Market Year**: Extracts the year from `expected_date_of_market` to drive timeline charts.
+        3.  **Numeric Conversion**: Coerces key metrics (scores, DALYs, costs) to numeric types, filling NaNs with 0 to ensure downstream calculations don't fail.
+        4.  **Category Cleanup**: Strips whitespace from category names to ensure grouping consistency.
+        
+    Args:
+        df (pd.DataFrame): Raw dataframe.
+        
+    Returns:
+        pd.DataFrame: Processed dataframe ready for analysis.
+    """
+
+    #  Date Conversions 
+    date_cols = [
+        "expected_date_of_market",
+        "expected_date_of_regulatory_approval",
+        "expected_date_of_first_launch",
+        "nra_date",
+        "gra_date",
+        "eml_date",
+        "date_trial_status",
+    ]
+
+    for col in date_cols:
+        if col in df.columns:
+            # Using dayfirst=True and format='mixed' to handle various formats (dd-mm-YYYY, d/m/yy)
+            # errors='coerce' turns unparseable dates into NaT
+            df[col] = pd.to_datetime(
+                df[col], dayfirst=True, format="mixed", errors="coerce"
+            )
+
+    # Market Year Generation 
+    # Used for the "Forecast of products" trend chart in Overview
+    if "expected_date_of_market" in df.columns:
+        df["market_year"] = df["expected_date_of_market"].dt.year
+    else:
+        df["market_year"] = 2025  # Default fallback if missing
+
+    #  Numeric Conversions 
+    # Ensures all metric columns are actual numbers for plotting/calculations
+    numeric_cols = [
+        "prob_success",
+        "readiness",
+        "financing",
+        "efficacy",
+        "dalys",
+        "dalys_averted",
+        "deaths_averted",
+        "yll",
+        "hs_costs",
+        "dalys_monetized",
+        "time_to_regulatory_approval",
+        "time_approval_to_first_launch",
+        "time_launch_to_20lmic",
+    ]
+
     for col in numeric_cols:
         if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors='coerce').fillna(0)
-            
+            df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
+
+    #  Category Cleanup 
+    if "category" in df.columns:
+        df["category"] = df["category"].str.strip()
+
     return df
 
+
 def _process_pipeline(df: pd.DataFrame) -> pd.DataFrame:
-    """Aggregates pipeline data by year and category."""
-    pipeline_raw = df.groupby(["market_year", "Category"]).size().unstack(fill_value=0)
+    """
+    Aggregates pipeline data by year and category to create a cumulative timeline.
     
+    Usage:
+        Used by the `trend_chart` in `modules/overview.py`.
+        
+    Key Logic:
+        1.  Groups data by `market_year` and `category`.
+        2.  Fills missing years between min and max year (2025-2035) to ensure a continuous X-axis.
+        3.  Calculates the **cumulative sum** (cumsum) of innovations over time.
+        
+    Args:
+        df (pd.DataFrame): Preprocessed horizon dataframe.
+        
+    Returns:
+        pd.DataFrame: A dataframe with columns ['year', 'category1', 'category2'...] representing cumulative counts.
+    """
+    if "market_year" not in df.columns or "category" not in df.columns:
+        return pd.DataFrame()
+
+    # Create a pivot table: Rows=Year, Cols=Category, Values=Count
+    pipeline_raw = df.groupby(["market_year", "category"]).size().unstack(fill_value=0)
+
+    # Determine timeline range
     min_year = 2025
-    max_year = int(pipeline_raw.index.max()) if not pipeline_raw.empty and not pd.isna(pipeline_raw.index.max()) else 2035
+    max_year = (
+        int(pipeline_raw.index.max())
+        if not pipeline_raw.empty and not pd.isna(pipeline_raw.index.max())
+        else 2035
+    )
     all_years = range(min_year, max_year + 1)
-    
+
+    # Reindex to include all years (filling 0 for years with no new products)
     if not pipeline_raw.empty:
         pipeline_raw.index = pipeline_raw.index.astype(int)
 
     pipeline_reindexed = pipeline_raw.reindex(all_years, fill_value=0)
+    
+    # Calculate cumulative sum
     pipeline = pipeline_reindexed.cumsum().reset_index()
     pipeline = pipeline.rename(columns={"index": "year", "market_year": "year"})
-    
+
+    # Ensure integer types for counts
     for col in pipeline.columns:
         if col != "year":
             pipeline[col] = pipeline[col].astype(int)
-            
+
     return pipeline
 
+
 def _process_readiness(df: pd.DataFrame) -> pd.DataFrame:
-    """Calculates readiness percentages and assigns colors."""
-    stage_counts = df["Stage"].value_counts().reset_index()
+    """
+    Calculates the distribution of innovations across different trial statuses.
+    
+    Usage:
+        Used by the `pie_chart` in `modules/overview.py`.
+        
+    Key Logic:
+        1.  Counts occurrences of each `trial_status`.
+        2.  Calculates percentage of total.
+        3.  Assigns consistent colors from `COLORS` config.
+        
+    Args:
+        df (pd.DataFrame): Preprocessed horizon dataframe.
+        
+    Returns:
+        pd.DataFrame: Columns ['status', 'count', 'pct', 'colors'].
+    """
+    if "trial_status" not in df.columns:
+        return pd.DataFrame(columns=["status", "pct", "colors"])
+
+    stage_counts = df["trial_status"].value_counts().reset_index()
     stage_counts.columns = ["status", "count"]
     total_innovations = len(df)
     stage_counts["pct"] = (stage_counts["count"] / total_innovations * 100).round(1)
-    
+
     base_colors = COLORS["status_colors"]
-    stage_counts["colors"] = [base_colors[i % len(base_colors)] for i in range(len(stage_counts))]
+    stage_counts["colors"] = [
+        base_colors[i % len(base_colors)] for i in range(len(stage_counts))
+    ]
     return stage_counts[["status", "pct", "colors"]]
 
-def _process_usage(df: pd.DataFrame) -> pd.DataFrame:
-    """Maps country usage data to coordinates."""
-    usage_all = df[["id", "Country", "Stage"]].copy()
-    usage_all = usage_all.rename(columns={"Country": "country", "Stage": "status"})
-    usage_all["lat"] = usage_all["country"].map(lambda x: COUNTRY_COORDS.get(x, {"lat": 0, "lon": 0})["lat"])
-    usage_all["lon"] = usage_all["country"].map(lambda x: COUNTRY_COORDS.get(x, {"lat": 0, "lon": 0})["lon"])
-    return usage_all
-
-def _process_risks(df: pd.DataFrame) -> pd.DataFrame:
-    """Generates risk data."""
-    risk_cols = {
-        "Probability of technical and regulatory success": "technical_risk",
-        "Demand forecasting and generation": "market_risk",
-        "Regulatory approvals": "regulatory_risk",
-        "Financing": "financial_risk"
-    }
-    
-    risk_data_list = []
-    for cat, group in df.groupby("Category"):
-        cat_risks = {"category": cat}
-        random.seed(hash(cat))
-        for src, target in risk_cols.items():
-            if src in group.columns:
-                val = pd.to_numeric(group[src], errors='coerce').mean()
-                if val <= 5: 
-                    score_10 = val * 4
-                else:
-                    score_10 = val / 10
-                base_risk = 10 - score_10
-                offset = random.uniform(-2, 2)
-                final_risk = max(1, min(9, base_risk + offset))
-                cat_risks[target] = final_risk
-            else:
-                cat_risks[target] = random.uniform(4, 8)
-        risk_data_list.append(cat_risks)
-    return pd.DataFrame(risk_data_list)
-
-def _generate_templates_and_offsets(df: pd.DataFrame):
-    """Generates static templates and random offsets."""
-    impact_template = pd.DataFrame({
-        "metric": [
-            "Disease burden", "Epidemiological impact", "Alignment with goals",
-            "Cost-effectiveness", "Budget impact", "Resource Optimization"
-        ],
-        "value": [72, 68, 63, 74, 58, 61],
-        "passed": [True, True, False, True, False, True]
-    })
-
-    intro_template = pd.DataFrame({
-        "subdomain": [
-            "Financing", "Financing", "Policy", "Policy", "Policy", "Policy", "Policy",
-            "Uptake/Delivery", "Uptake/Delivery", "Uptake/Delivery", "Uptake/Delivery"
-        ],
-        "metric": [
-            "Probability of technical and regulatory success", "Procurement model",
-            "Regulatory Approvals", "Policy Readiness", "Social context",
-            "Guidelines and training", "Policy Implemented",
-            "Advance launch and planning / timeline", "Demand Forecasting and generation",
-            "Potential supply chain", "Delivery model"
-        ],
-        "value": [65, 60, 62, 58, 55, 57, 50, 63, 59, 61, 60],
-        "passed": [True, True, True, False, False, False, False, True, True, True, True]
-    })
-
-    id_offsets = {}
-    for pid in df["id"].unique():
-        random.seed(hash(pid))
-        id_offsets[pid] = {
-            "impact": [random.randint(-20, 20) for _ in range(6)],
-            "impact_passed": [random.choice([True, False]) for _ in range(6)],
-            "intro_delta": [random.randint(-10, 10) for _ in range(11)],
-            "intro_passed_delta": [random.choice([True, False]) for _ in range(11)]
-        }
-        
-    return impact_template, intro_template, id_offsets
-
-def _process_impact_and_readiness(df: pd.DataFrame):
-    """Aggregates impact and readiness data by country and category."""
-    # Impact Data
-    impact_dat_all = df.groupby(["Country", "Category"]).agg({
-        "Impact Score": "mean",
-        "Cost-effectiveness": "mean"
-    }).reset_index()
-    impact_dat_all = impact_dat_all.rename(columns={"Impact Score": "impact", "Cost-effectiveness": "cost_eff"})
-    
-    overall_impact = impact_dat_all[impact_dat_all["Country"] != "Overall"].groupby("Category").agg({
-        "impact": "mean",
-        "cost_eff": "mean"
-    }).reset_index()
-    overall_impact["Country"] = "Overall"
-    
-    impact_dat_all = impact_dat_all[impact_dat_all["Country"] != "Overall"]
-    impact_dat_all = pd.concat([impact_dat_all, overall_impact])
-    impact_dat_all = impact_dat_all.rename(columns={"Country": "country", "Category": "category"})
-
-    # Readiness Data
-    def check_ready(stage):
-        s = str(stage).lower()
-        keywords = ["phase 2", "phase ii", "phase 3", "phase iii", "market", "ready", "stockpiled"]
-        return any(k in s for k in keywords)
-
-    df["is_ready"] = df["Stage"].apply(check_ready)
-    
-    readiness_cat_all = df.groupby(["Country", "Category"]).agg(
-        ready=("is_ready", "sum"),
-        total=("id", "count")
-    ).reset_index()
-    
-    overall_readiness_cat = readiness_cat_all[readiness_cat_all["Country"] != "Overall"].groupby("Category").agg({
-        "ready": "sum",
-        "total": "sum"
-    }).reset_index()
-    overall_readiness_cat["Country"] = "Overall"
-    
-    readiness_cat_all = readiness_cat_all[readiness_cat_all["Country"] != "Overall"]
-    readiness_cat_all = pd.concat([readiness_cat_all, overall_readiness_cat])
-    readiness_cat_all = readiness_cat_all.rename(columns={"Country": "country", "Category": "category"})
-    
-    return impact_dat_all, readiness_cat_all
-
-def _process_implementation(df: pd.DataFrame) -> pd.DataFrame:
-    """Classifies implementation status."""
-    def map_stage(stage):
-        s = str(stage).lower()
-        if "phase 1" in s or "phase 2" in s or "phase i" in s or "phase ii" in s:
-            return "planned"
-        elif "phase 3" in s or "phase iii" in s:
-            return "in_progress"
-        else:
-            return "completed"
-            
-    df["impl_status"] = df["Stage"].apply(map_stage)
-    implementation_data = df.groupby(["Category", "impl_status"]).size().unstack(fill_value=0).reset_index()
-    for col in ["planned", "in_progress", "completed"]:
-        if col not in implementation_data.columns:
-            implementation_data[col] = 0
-    return implementation_data.rename(columns={"Category": "category"})
-
-def _process_country_readiness(df: pd.DataFrame) -> pd.DataFrame:
-    """Aggregates country readiness metrics."""
-    country_readiness_data = df.groupby("Country").agg({
-        "Policy readiness": "mean",
-        "Potential supply chain": "mean",
-        "Uptake/Delivery": "mean"
-    }).reset_index()
-    country_readiness_data.columns = ["country", "policy_readiness", "infra_readiness", "uptake_potential"]
-    
-    overall_cr = country_readiness_data.mean(numeric_only=True).to_frame().T
-    overall_cr["country"] = "Overall"
-    return pd.concat([country_readiness_data, overall_cr])
 
 def load_data() -> dict:
     """
-    Main function to load and process all dashboard data.
-    Returns a dictionary of DataFrames and other data structures.
+    Main orchestration function to load, process, and return all dashboard data structures.
+    
+    Usage:
+        Called by every module (`overview.py`, `innovation_details.py`, `comparison.py`) to access data.
+        
+    Key Logic:
+        1.  Loads main horizon data.
+        2.  Preprocesses (dates, numerics).
+        3.  **Population Merge**: Loads external `PopulationData.csv` and merges it into the main dataframe based on `country` and `disease`.
+            *   *Priority*: Prefers `targeted_population` from PopulationData.csv.
+            *   *Fallback*: Uses `targeted_population` from HorizonData.csv if the merge yields no result.
+        4.  Generates aggregated datasets (`pipeline`, `readiness`) for charts.
+        
+    Returns:
+        dict: A dictionary containing:
+            - "pipeline": DataFrame for trend charts.
+            - "readiness": DataFrame for pie charts.
+            - "horizon": The fully processed and merged main DataFrame.
     """
     df = _load_csv(DATA_PATH)
     df = _preprocess_data(df)
-    
+
+    # --- Population Data Integration ---
+    try:
+        pop_df = _load_csv(POP_DATA_PATH)
+        
+        # Ensure consistent formatting for merge keys (strip whitespace)
+        for d in [df, pop_df]:
+            if "country" in d.columns:
+                d["country"] = d["country"].astype(str).str.strip()
+            if "disease" in d.columns:
+                d["disease"] = d["disease"].astype(str).str.strip()
+
+        # Merge population data based on country and disease
+        df = pd.merge(
+            df,
+            pop_df[["country", "disease", "targeted_population", "pop_description"]],
+            on=["country", "disease"],
+            how="left",
+        )
+        
+        # Rename the merged 'targeted_population' column to 'people_at_risk' for internal consistency
+        df = df.rename(columns={"targeted_population": "people_at_risk"})
+        
+        # Priority Logic: 
+        # 1. 'people_at_risk' (from PopulationData.csv) is the default.
+        # 2. If that is NaN (merge failed/no match), fill it with 'targeted_population' from the original HorizonData.csv.
+        if "targeted_population" in df.columns:
+            df["people_at_risk"] = df["people_at_risk"].fillna(df["targeted_population"])
+            
+    except Exception as e:
+        print(f"Warning: Could not load or merge population data: {e}")
+        # Fallback if PopulationData.csv is missing entirely
+        df["people_at_risk"] = df.get("targeted_population", 0)
+
+    #  Aggregation 
     pipeline = _process_pipeline(df)
     readiness = _process_readiness(df)
-    impact_dat_all, readiness_cat_all = _process_impact_and_readiness(df)
-    usage_all = _process_usage(df)
-    risk_data = _process_risks(df)
-    implementation_data = _process_implementation(df)
-    country_readiness_data = _process_country_readiness(df)
-    impact_template, intro_template, id_offsets = _generate_templates_and_offsets(df)
-    
-    # Simple aggregations
-    ce_all = df[["id", "Country", "Cost-effectiveness"]].copy()
-    ce_all = ce_all.rename(columns={"Country": "country", "Cost-effectiveness": "ce_usd_per_daly"})
-    ce_all["ce_usd_per_daly"] = pd.to_numeric(ce_all["ce_usd_per_daly"], errors='coerce').fillna(0)
-
-    pop_impact_all = df[["id"]].copy()
-    pop_impact_all["pop_millions"] = df["Impact Potential"].apply(lambda x: (pd.to_numeric(x, errors='coerce') or 0) * 0.8 + 5)
-
-    df["Budget Impact"] = pd.to_numeric(df["Budget Impact"], errors='coerce').fillna(0)
-    budget_data = df.groupby("Category")["Budget Impact"].sum().reset_index()
-    budget_data.columns = ["category", "allocated"]
-    budget_data["spent"] = budget_data["allocated"] * 0.8
 
     return {
         "pipeline": pipeline,
         "readiness": readiness,
         "horizon": df,
-        "impact_dat_all": impact_dat_all,
-        "readiness_cat_all": readiness_cat_all,
-        "usage_all": usage_all,
-        "ce_all": ce_all,
-        "pop_impact_all": pop_impact_all,
-        "budget_data": budget_data,
-        "implementation_data": implementation_data,
-        "risk_data": risk_data,
-        "country_readiness_data": country_readiness_data,
-        "impact_template": impact_template,
-        "intro_template": intro_template,
-        "id_offsets": id_offsets,
     }

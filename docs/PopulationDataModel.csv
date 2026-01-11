@@ -1,0 +1,5 @@
+Variable,Section,Label,Definition,Type,Format,Choices/Unit,Ranges
+country,Population Data,Country,Country or region associated with the population data.,text,factor,Kenya; Senegal; South Africa; Overall,
+disease,Population Data,Disease,Disease domain associated with the population data.,text,factor,Malaria; HIV; Tuberculosis; MNCH,
+pop_description,Population Data,Population Description,Detailed description of the specific population group being measured.,text,string,,
+targeted_population,Impact Potential,Targeted Population Size,Size of the population group(s) the innovation is intended for (clinical and demographic targeting).,numeric,integer,Absolute number,
