@@ -8,16 +8,16 @@ from .config import DATA_PATH, POP_DATA_PATH, COLORS
 def _load_csv(path: str) -> pd.DataFrame:
     """
     Loads the raw CSV data from the specified path.
-    
+
     Usage:
         Called internally by `load_data()` to fetch the main dataset.
-        
+
     Args:
         path (str): The file path to the CSV.
-        
+
     Returns:
         pd.DataFrame: The loaded pandas DataFrame.
-        
+
     Raises:
         FileNotFoundError: If the file does not exist.
         RuntimeError: If there is an error during parsing.
@@ -37,24 +37,24 @@ def _load_csv(path: str) -> pd.DataFrame:
 def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     """
     Cleans, filters, and types the raw dataframe.
-    
+
     Usage:
         Called internally by `load_data()` immediately after loading.
-    
+
     Key Logic:
         1.  **Date Conversion**: Parses multiple date columns using `dayfirst=True` and `format='mixed'` to handle inconsistent date formats (e.g., DD-MM-YYYY vs MM/DD/YYYY).
         2.  **Market Year**: Extracts the year from `expected_date_of_market` to drive timeline charts.
         3.  **Numeric Conversion**: Coerces key metrics (scores, DALYs, costs) to numeric types, filling NaNs with 0 to ensure downstream calculations don't fail.
         4.  **Category Cleanup**: Strips whitespace from category names to ensure grouping consistency.
-        
+
     Args:
         df (pd.DataFrame): Raw dataframe.
-        
+
     Returns:
         pd.DataFrame: Processed dataframe ready for analysis.
     """
 
-    #  Date Conversions 
+    #  Date Conversions
     date_cols = [
         "expected_date_of_market",
         "expected_date_of_regulatory_approval",
@@ -67,20 +67,18 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
 
     for col in date_cols:
         if col in df.columns:
-            # Using dayfirst=True and format='mixed' to handle various formats (dd-mm-YYYY, d/m/yy)
-            # errors='coerce' turns unparseable dates into NaT
             df[col] = pd.to_datetime(
                 df[col], dayfirst=True, format="mixed", errors="coerce"
-            )
+            ).dt.normalize()  # <- sets time to 00:00:00
 
-    # Market Year Generation 
+    # Market Year Generation
     # Used for the "Forecast of products" trend chart in Overview
     if "expected_date_of_market" in df.columns:
         df["market_year"] = df["expected_date_of_market"].dt.year
     else:
         df["market_year"] = 2025  # Default fallback if missing
 
-    #  Numeric Conversions 
+    #  Numeric Conversions
     # Ensures all metric columns are actual numbers for plotting/calculations
     numeric_cols = [
         "prob_success",
@@ -102,7 +100,7 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
         if col in df.columns:
             df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
 
-    #  Category Cleanup 
+    #  Category Cleanup
     if "category" in df.columns:
         df["category"] = df["category"].str.strip()
 
@@ -112,18 +110,18 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
 def _process_pipeline(df: pd.DataFrame) -> pd.DataFrame:
     """
     Aggregates pipeline data by year and category to create a cumulative timeline.
-    
+
     Usage:
         Used by the `trend_chart` in `modules/overview.py`.
-        
+
     Key Logic:
         1.  Groups data by `market_year` and `category`.
         2.  Fills missing years between min and max year (2025-2035) to ensure a continuous X-axis.
         3.  Calculates the **cumulative sum** (cumsum) of innovations over time.
-        
+
     Args:
         df (pd.DataFrame): Preprocessed horizon dataframe.
-        
+
     Returns:
         pd.DataFrame: A dataframe with columns ['year', 'category1', 'category2'...] representing cumulative counts.
     """
@@ -147,7 +145,7 @@ def _process_pipeline(df: pd.DataFrame) -> pd.DataFrame:
         pipeline_raw.index = pipeline_raw.index.astype(int)
 
     pipeline_reindexed = pipeline_raw.reindex(all_years, fill_value=0)
-    
+
     # Calculate cumulative sum
     pipeline = pipeline_reindexed.cumsum().reset_index()
     pipeline = pipeline.rename(columns={"index": "year", "market_year": "year"})
@@ -163,18 +161,18 @@ def _process_pipeline(df: pd.DataFrame) -> pd.DataFrame:
 def _process_readiness(df: pd.DataFrame) -> pd.DataFrame:
     """
     Calculates the distribution of innovations across different trial statuses.
-    
+
     Usage:
         Used by the `pie_chart` in `modules/overview.py`.
-        
+
     Key Logic:
         1.  Counts occurrences of each `trial_status`.
         2.  Calculates percentage of total.
         3.  Assigns consistent colors from `COLORS` config.
-        
+
     Args:
         df (pd.DataFrame): Preprocessed horizon dataframe.
-        
+
     Returns:
         pd.DataFrame: Columns ['status', 'count', 'pct', 'colors'].
     """
@@ -196,10 +194,10 @@ def _process_readiness(df: pd.DataFrame) -> pd.DataFrame:
 def load_data() -> dict:
     """
     Main orchestration function to load, process, and return all dashboard data structures.
-    
+
     Usage:
         Called by every module (`overview.py`, `innovation_details.py`, `comparison.py`) to access data.
-        
+
     Key Logic:
         1.  Loads main horizon data.
         2.  Preprocesses (dates, numerics).
@@ -207,7 +205,7 @@ def load_data() -> dict:
             *   *Priority*: Prefers `targeted_population` from PopulationData.csv.
             *   *Fallback*: Uses `targeted_population` from HorizonData.csv if the merge yields no result.
         4.  Generates aggregated datasets (`pipeline`, `readiness`) for charts.
-        
+
     Returns:
         dict: A dictionary containing:
             - "pipeline": DataFrame for trend charts.
@@ -220,7 +218,7 @@ def load_data() -> dict:
     # --- Population Data Integration ---
     try:
         pop_df = _load_csv(POP_DATA_PATH)
-        
+
         # Ensure consistent formatting for merge keys (strip whitespace)
         for d in [df, pop_df]:
             if "country" in d.columns:
@@ -235,22 +233,24 @@ def load_data() -> dict:
             on=["country", "disease"],
             how="left",
         )
-        
+
         # Rename the merged 'targeted_population' column to 'people_at_risk' for internal consistency
         df = df.rename(columns={"targeted_population": "people_at_risk"})
-        
-        # Priority Logic: 
+
+        # Priority Logic:
         # 1. 'people_at_risk' (from PopulationData.csv) is the default.
         # 2. If that is NaN (merge failed/no match), fill it with 'targeted_population' from the original HorizonData.csv.
         if "targeted_population" in df.columns:
-            df["people_at_risk"] = df["people_at_risk"].fillna(df["targeted_population"])
-            
+            df["people_at_risk"] = df["people_at_risk"].fillna(
+                df["targeted_population"]
+            )
+
     except Exception as e:
         print(f"Warning: Could not load or merge population data: {e}")
         # Fallback if PopulationData.csv is missing entirely
         df["people_at_risk"] = df.get("targeted_population", 0)
 
-    #  Aggregation 
+    #  Aggregation
     pipeline = _process_pipeline(df)
     readiness = _process_readiness(df)
 

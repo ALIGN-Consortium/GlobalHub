@@ -23,7 +23,7 @@ def req(condition):
 def overview_ui(id):
     """
     Defines the User Interface for the Overview module.
-    
+
     Layout:
     1. KPI Cards: Top-level metrics for Tuberculosis, HIV, Malaria, and MNCH.
     2. Market Overview:
@@ -34,7 +34,7 @@ def overview_ui(id):
     """
     data = load_data()
     horizon_df = data["horizon"]
-    
+
     # Get unique diseases for the filter dropdown
     diseases = ["Overall"] + sorted(horizon_df["disease"].dropna().unique().tolist())
 
@@ -141,7 +141,9 @@ def overview_ui(id):
         ui.div(
             ui.div(
                 ui.div(
-                    ui.span("Average innovation development time", class_="fw-semibold"),
+                    ui.span(
+                        "Average innovation development time", class_="fw-semibold"
+                    ),
                     ui.input_select(
                         "timeline_country_selector",
                         None,
@@ -154,7 +156,7 @@ def overview_ui(id):
                 ui.div(
                     ui.div(
                         output_widget("avg_timeline_plot", height="300px"),
-                        style="width: 100%; display: block;"
+                        style="width: 100%; display: block;",
                     ),
                     class_="card-body",
                 ),
@@ -192,7 +194,7 @@ def overview_ui(id):
 def overview_server(id, input, output, session):
     """
     Server logic for the Overview module.
-    
+
     Handles:
     - Data loading and filtering based on user inputs (disease, country).
     - Rendering of Plotly charts (trend, pie, timeline).
@@ -261,7 +263,7 @@ def overview_server(id, input, output, session):
             pipeline_raw.index = pipeline_raw.index.astype(int)
 
         pipeline_reindexed = pipeline_raw.reindex(all_years, fill_value=0)
-        
+
         # 4. Calculate Cumulative Sums
         pipeline = pipeline_reindexed.cumsum().reset_index()
         pipeline = pipeline.rename(columns={"index": "year", "market_year": "year"})
@@ -289,9 +291,7 @@ def overview_server(id, input, output, session):
             margin=dict(l=0, r=0, t=0, b=0),
             yaxis_title="Cumulative Number of Products",
             xaxis=dict(showticklabels=True, dtick=1, tickangle=-45, type="category"),
-            yaxis=dict(
-                range=[0, None], fixedrange=True
-            ),
+            yaxis=dict(range=[0, None], fixedrange=True),
             annotations=[
                 dict(
                     text="Data is cumulative",
@@ -466,17 +466,24 @@ def overview_server(id, input, output, session):
         req(not df_filtered.empty)
 
         return render.DataGrid(
-            df_filtered.rename(
+            df_filtered.assign(
+                expected_date_of_market=lambda d: d[
+                    "expected_date_of_market"
+                ].dt.strftime("%Y-%m-%d")
+            ).rename(
                 columns={
+                    "innovation": "Innovation",
+                    "category": "Category",
+                    "trial_status": "Status",
                     "expected_date_of_market": "Expected Market Date",
                     "disease": "Disease Area",
                 }
             )[
                 [
-                    "innovation",
+                    "Innovation",
                     "Disease Area",
-                    "category",
-                    "trial_status",
+                    "Category",
+                    "Status",
                     "Expected Market Date",
                 ]
             ],

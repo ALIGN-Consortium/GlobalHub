@@ -48,7 +48,7 @@ def progress_row(label, value):
 def innovation_details_ui(id):
     """
     Defines the User Interface for the Innovation Details module.
-    
+
     Layout:
     1. Innovation Explorer: Table to select an innovation.
     2. Summary Card: Title and key metadata.
@@ -200,7 +200,7 @@ def innovation_details_ui(id):
 def innovation_details_server(id, selected_innovation, input, output, session):
     """
     Server logic for the Innovation Details module.
-    
+
     Handles:
     - Displaying detailed metrics for a selected innovation.
     - Synchronizing selection with the Overview module via `selected_innovation`.
@@ -221,18 +221,27 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             df_filtered = horizon_df[horizon_df["country"] == country]
         req(not df_filtered.empty)
 
+        # df_filtered["expected_date_of_market"] = df_filtered["expected_date_of_market"].dt.strftime("%Y-%m-%d")
+
         return render.DataGrid(
-            df_filtered.rename(
+            df_filtered.assign(
+                expected_date_of_market=lambda d: d[
+                    "expected_date_of_market"
+                ].dt.strftime("%Y-%m-%d")
+            ).rename(
                 columns={
+                    "innovation": "Innovation",
+                    "category": "Category",
+                    "trial_status": "Status",
                     "expected_date_of_market": "Expected Market Date",
                     "disease": "Disease Area",
                 }
             )[
                 [
-                    "innovation",
+                    "Innovation",
                     "Disease Area",
-                    "category",
-                    "trial_status",
+                    "Category",
+                    "Status",
                     "Expected Market Date",
                 ]
             ],
@@ -367,19 +376,26 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         # Prepare data for the timeline
         all_events = []
 
-        # Add Trial Completion as "Collected"
-        trial_date = row.get("date_trial_status")
-        if pd.notna(trial_date):
-            stage = row.get("trial_status", "Trial")
-            if "Phase" in str(stage):
-                label = f"{stage} Complete"
-            else:
-                label = f"{stage} (Trial End)"
-            all_events.append({"name": label, "date": trial_date, "type": "Collected"})
+        # Add Trial Completion as "Collected" - Commented because of lack of trial completion date
+        # trial_date = row.get("date_trial_status")
+        # if pd.notna(trial_date):
+        #     stage = row.get("trial_status", "Trial")
+        #     if "Phase" in str(stage):
+        #         label = f"{stage} Complete"
+        #     else:
+        #         label = f"{stage} (Trial End)"
+        #     all_events.append({"name": label, "date": trial_date, "type": "Collected"})
+
+        # Add Regulatory Approval as "Collected" - temporary solution
+        reg_date = row.get("expected_date_of_regulatory_approval")
+        if pd.notna(reg_date):
+            all_events.append(
+                {"name": "Regulatory approval", "date": reg_date, "type": "Collected"}
+            )
 
         # Add other dates as "Projection"
         projections = {
-            "Regulatory approval": row.get("expected_date_of_regulatory_approval"),
+            # "Regulatory approval": row.get("expected_date_of_regulatory_approval"),
             "First country launch": row.get("expected_date_of_first_launch"),
             "20% Market uptake": row.get("expected_date_of_market"),
         }
@@ -501,8 +517,8 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         row = detail_row()
 
         # Calculate summary scores for domains using real data
-        impact_score = row.get("prob_success", 0) * 100
-        intro_score = row.get("readiness", 0)
+        impact_score = row.get("impact_potential", 0)
+        intro_score = row.get("introduction_readiness", 0)
 
         return ui.div(
             progress_row("Impact potential", impact_score),
@@ -517,7 +533,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         # Aligned with goals - logic using probability of success or readiness
         align_val = row.get("readiness", 0)
         align_str = "Yes" if align_val > 50 else "No"
-        
+
         # Determine the label for population (use description if available)
         pop_label = str(row.get("pop_description", "People at Risk"))
         if pop_label == "nan" or not pop_label:
@@ -534,7 +550,9 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                 class_="col-12 col-md-2",
             ),
             ui.div(
-                format_value_box("DALYs Averted", row.get("dalys_averted", 0), is_percent=False),
+                format_value_box(
+                    "DALYs Averted", row.get("dalys_averted", 0), is_percent=False
+                ),
                 class_="col-12 col-md-2",
             ),
             ui.div(
@@ -549,7 +567,9 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             ),
             ui.div(
                 format_value_box(
-                    "Monetized DALYs ($)", row.get("dalys_monetized", 0), is_percent=False
+                    "Monetized DALYs ($)",
+                    row.get("dalys_monetized", 0),
+                    is_percent=False,
                 ),
                 class_="col-12 col-md-2",
             ),
@@ -564,8 +584,9 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             ui.div(
                 format_value_box(
                     "Prob. of Success",
-                    row.get("prob_success", 0) * 100,
+                    row.get("prob_success", 0),
                     check_threshold=False,
+                    is_percent=True
                 ),
                 class_="col-12 col-md-6",
             ),

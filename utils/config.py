@@ -1,7 +1,9 @@
 # Configuration for Global Hub Dashboard
 
 # File Paths
-DATA_PATH = "www/HorizonData.csv"
+# DATA_PATH = "www/HorizonData.csv"
+DATA_PATH = "www/ALIGN_health_product_data_horizon.csv"
+
 POP_DATA_PATH = "www/PopulationData.csv"
 
 # UI Colors
