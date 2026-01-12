@@ -24,7 +24,7 @@ def req(condition):
 def comparison_ui(id):
     """
     Defines the User Interface for the Product Comparison module.
-    
+
     Layout:
     1. Innovation Selector: Selectize input for choosing multiple products.
     2. Impact & Readiness Heatmap: A comparison table with conditional formatting.
@@ -84,7 +84,7 @@ def comparison_ui(id):
 def comparison_server(id, input, output, session):
     """
     Server logic for the Product Comparison module.
-    
+
     Handles:
     - Populating the innovation selector with unique product names.
     - Generating a comparison table with color-coded heatmap logic.
@@ -112,7 +112,7 @@ def comparison_server(id, input, output, session):
     @reactive.Calc
     def selected_innovations_data():
         """
-        Reactive calculation that returns the subset of horizon_df 
+        Reactive calculation that returns the subset of horizon_df
         containing only the innovations selected by the user.
         """
         selected_ids = input.selected_innovations_compare()
@@ -131,7 +131,11 @@ def comparison_server(id, input, output, session):
             return pd.DataFrame({"Message": ["Select innovations to compare"]})
 
         # Filter the main dataframe for the selected innovations
-        df_filtered = horizon_df[horizon_df["innovation"].isin(selected_ids)]
+        df_filtered = horizon_df[horizon_df["innovation"].isin(selected_ids)].assign(
+            expected_date_of_market=lambda d: d["expected_date_of_market"].dt.strftime(
+                "%Y-%m-%d"
+            )
+        )
 
         # Define the metrics we want to compare using real data columns
         # Map Display Name -> Column Name
@@ -223,10 +227,10 @@ def comparison_server(id, input, output, session):
 
         # Define color map for different milestone types
         milestone_colors = {
-            "Trial": "#BFBBBB",          # Gray
-            "Regulatory Approval": "#228B22", # Green
-            "First Launch": "#DC143C",   # Red
-            "Market Entry": "#00539B"    # Blue
+            "Trial": "#BFBBBB",  # Gray
+            "Regulatory Approval": "#228B22",  # Green
+            "First Launch": "#DC143C",  # Red
+            "Market Entry": "#00539B",  # Blue
         }
 
         for i, (idx, row) in enumerate(df_filtered.iterrows()):
@@ -302,7 +306,14 @@ def comparison_server(id, input, output, session):
                 xaxis=dict(visible=False),
                 yaxis=dict(visible=False),
                 annotations=[
-                    dict(text="No timeline data available", showarrow=False, xref="paper", yref="paper", x=0.5, y=0.5)
+                    dict(
+                        text="No timeline data available",
+                        showarrow=False,
+                        xref="paper",
+                        yref="paper",
+                        x=0.5,
+                        y=0.5,
+                    )
                 ],
             )
             return fig

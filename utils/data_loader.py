@@ -81,15 +81,14 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     #  Numeric Conversions
     # Ensures all metric columns are actual numbers for plotting/calculations
     numeric_cols = [
-        "prob_success",
+        # "prob_success",
         "readiness",
         "financing",
-        "efficacy",
-        "dalys",
+        # "dalys",
         "dalys_averted",
         "deaths_averted",
         "yll",
-        "hs_costs",
+        # "hs_costs",
         "dalys_monetized",
         "time_to_regulatory_approval",
         "time_approval_to_first_launch",

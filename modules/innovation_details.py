@@ -295,12 +295,16 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         display_text=None,
     ):
         """Helper to format value boxes with consistent styling and logic."""
+
         # Handle numpy types
         if hasattr(value, "item"):
             value = value.item()
 
         numeric_val = 0
         is_missing = pd.isna(value) or value is None
+
+        # NEW: detect yes/true strings
+        is_yes = isinstance(value, str) and value.strip().lower() == "yes"
 
         if is_missing:
             display_val = "Not available"
@@ -321,10 +325,17 @@ def innovation_details_server(id, selected_innovation, input, output, session):
 
         if is_missing:
             theme_class = "bg-white text-muted border"
-            val_class += " fs-4"  # Smaller font for "Not available" to prevent wrapping/height expansion
-            # Optional: No icon for missing data, or a specific icon like 'fa-circle-question'
+            val_class += " fs-4"
+
         elif check_threshold:
-            if numeric_val > 51:
+            # NEW: Yes/yes → green
+            if is_yes:
+                theme_class = "bg-success-subtle text-success-emphasis"
+                icon = ui.tags.i(
+                    class_="fa-solid fa-circle-check fs-4 position-absolute top-0 end-0 m-3 text-success"
+                )
+
+            elif numeric_val > 50:
                 theme_class = "bg-success-subtle text-success-emphasis"
                 icon = ui.tags.i(
                     class_="fa-solid fa-circle-check fs-4 position-absolute top-0 end-0 m-3 text-success"
@@ -340,7 +351,10 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                 icon,
                 ui.h2(str(display_val), class_=val_class),
                 ui.p(title, class_="fs-6 mb-0 text-muted"),
-                class_=f"card-body d-flex flex-column justify-content-center h-100 position-relative {theme_class}",
+                class_=(
+                    "card-body d-flex flex-column justify-content-center "
+                    f"h-100 position-relative {theme_class}"
+                ),
             ),
             class_="card h-100 border-0 shadow-sm",
             style=f"height: {height};",
@@ -551,25 +565,19 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             ),
             ui.div(
                 format_value_box(
-                    "DALYs Averted", row.get("dalys_averted", 0), is_percent=False
-                ),
-                class_="col-12 col-md-2",
-            ),
-            ui.div(
-                format_value_box(
-                    "Aligned with ALIGN goals", align_val, display_text=align_str
-                ),
-                class_="col-12 col-md-2",
-            ),
-            ui.div(
-                format_value_box("Efficacy", row.get("efficacy", 0)),
-                class_="col-12 col-md-2",
-            ),
-            ui.div(
-                format_value_box(
-                    "Monetized DALYs ($)",
-                    row.get("dalys_monetized", 0),
+                    "DALYs",
+                    row.get("dalys", 0),
                     is_percent=False,
+                    check_threshold=False,
+                ),
+                class_="col-12 col-md-2",
+            ),
+            ui.div(
+                format_value_box(
+                    "Efficacy",
+                    row.get("efficacy", "Not available"),
+                    is_percent=False,
+                    check_threshold=False,
                 ),
                 class_="col-12 col-md-2",
             ),
@@ -586,16 +594,17 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                     "Prob. of Success",
                     row.get("prob_success", 0),
                     check_threshold=False,
-                    is_percent=True
+                    is_percent=True,
                 ),
                 class_="col-12 col-md-6",
             ),
             ui.div(
                 format_value_box(
-                    "Financing Score (0-2)",
-                    row.get("financing", 0),
+                    "Health System Costs (Million USD)",
+                    row.get("hs_costs", 0),
                     display_text=str(row.get("financing", 0)),
                     is_percent=False,
+                    check_threshold=False,
                 ),
                 class_="col-12 col-md-6",
             ),
@@ -625,7 +634,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             ui.div(
                 format_value_box(
                     "Supply Readiness",
-                    row.get("country_supply", "Unknown"),
+                    row.get("country_supply", "N/A"),
                     is_percent=False,
                     check_threshold=False,
                 ),
