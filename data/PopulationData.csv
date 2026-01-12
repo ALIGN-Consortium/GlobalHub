@@ -1,0 +1,17 @@
+country,disease,pop_description,targeted_population
+Kenya,Malaria,People at risk of Malaria,22000000
+Kenya,HIV,People living with HIV,1400000
+Kenya,Tuberculosis,People with TB infection,150000
+Kenya,MNCH,Women of reproductive age,12000000
+Senegal,Malaria,People at risk of Malaria,16000000
+Senegal,HIV,People living with HIV,45000
+Senegal,Tuberculosis,People with TB infection,25000
+Senegal,MNCH,Women of reproductive age,4000000
+South Africa,Malaria,People at risk of Malaria,5000000
+South Africa,HIV,People living with HIV,7800000
+South Africa,Tuberculosis,People with TB infection,300000
+South Africa,MNCH,Women of reproductive age,15000000
+Overall,Malaria,Total people at risk of Malaria (Africa),200000000
+Overall,HIV,Total PLHIV (Sub-Saharan Africa),25000000
+Overall,Tuberculosis,Total TB incidence (Regional),2500000
+Overall,MNCH,Regional target population,80000000
