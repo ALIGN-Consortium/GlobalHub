@@ -1,0 +1,371 @@
+---
+title: "Process Kenya EML"
+author: "Joao Vitor Perez de Souza"
+format: html
+---
+**Goal**
+
+-    Extract all medicine tables from the PDF
+-    Repair broken / missing headers
+-    Normalize nested rows and merged cells
+-    Remove therapeutic class rows
+-    Output a single clean canonical table
+
+# EML Example
+
+Reading the Kenya 2023 EML document. This PDF has hundreds of tables, with nested columns, etc. A lot of cleaning is needed
+
+```{python}
+# | label: pdf-cleaning-eml
+import camelot
+import re
+import pandas as pd
+import numpy as np
+
+pdf_path = "Data/kenya-eml-2023.pdf"
+
+tables = camelot.read_pdf(
+    pdf_path,
+    pages="19-104",
+    flavor="lattice",  # because tables have grid lines
+)
+
+CANONICAL_COLUMNS = [
+    "item_code",
+    "medicine_name",
+    "dose_form",
+    "strength_size",
+    "lou",
+]
+
+print(f"Number of tables found {len(tables)}")
+
+```
+
+Inspecting a few tables
+
+```{python}
+#| label: inspecting-tables
+#| tbl-cap: "Table 1"
+tables[0].df.head()
+```
+
+```{python}
+#| tbl-cap: "Table 1"
+tables[10].df.head()
+```
+
+A good number of tables have indexes as their column names
+```{python}
+#| tbl-cap: "Table with indexes as column names"
+tables[2].df.columns
+```
+
+## Header detection and repair
+Some tables are missing headers because these were read as data rows instead of actual headers.
+
+```{python}
+
+def mark_new_medicine_rows(df):
+    """
+    A new medicine row is one where medicine_name is present.
+    """
+    df = df.copy()
+    df["_is_new_medicine"] = df["medicine_name"].notna()
+    return df
+
+def build_medicine_blocks(df):
+    """
+    Create blocks that reset at:
+    - therapeutic class rows
+    - new medicine rows
+    """
+    df = df.copy()
+
+    df["_block"] = (
+        df["_is_class_row"].astype(int)
+        + df["_is_new_medicine"].astype(int)
+    ).cumsum()
+
+    return df
+
+
+def has_bad_headers(df):
+    """
+    Identify tables whose column headers are likely incorrect.
+    This includes:
+      - Integer-based column names (0,1,2...)
+      - Empty / 'Unnamed' headers
+      - Headers that look like data values
+    """
+    cols = df.columns
+
+    if all(isinstance(c, int) for c in cols):
+        return True
+
+    if all(str(c).strip().lower().startswith("unnamed") or str(c).strip() == "" for c in cols):
+        return True
+
+    header_text = " ".join(str(c).lower() for c in cols)
+    data_tokens = ["mg", "ml", "tablet", "capsule", "injection"]
+    return any(tok in header_text for tok in data_tokens)
+
+
+def promote_first_row_to_header(df):
+    """
+    Treat the first data row as the header.
+    Used when Camelot reads headers as data.
+    """
+    df = df.copy()
+    df.columns = df.iloc[0].astype(str)
+    df = df.iloc[1:].reset_index(drop=True)
+    return df
+
+
+def normalize_columns(df):
+    """
+    Normalize column names without assigning meaning.
+    """
+    df = df.copy()
+    df.columns = (
+        df.columns.astype(str)
+        .str.strip()
+        .str.lower()
+        .str.replace(r"\s+", "_", regex=True)
+    )
+    return df
+
+
+def needs_header_repair(df):
+    """
+    Detect collapsed headers like:
+      '#_name_of_medicine_dose-form_strength_/_size_lou'
+    """
+    cols = list(df.columns)
+    if len(cols) < 2:
+        return False
+
+    col0 = str(cols[0]).lower()
+    others_blank = all(str(c).strip() == "" for c in cols[1:])
+    tokens = ["name", "medicine", "dose", "strength", "lou"]
+
+    return others_blank and sum(t in col0 for t in tokens) >= 2
+
+
+def repair_headers(df):
+    """
+    Assign semantic headers if table width matches EML structure.
+    Otherwise fall back to generic column names.
+    """
+    df = df.copy()
+    if df.shape[1] == 5:
+        df.columns = CANONICAL_COLUMNS
+    else:
+        df.columns = [f"col_{i}" for i in range(df.shape[1])]
+    return df
+
+
+def force_canonical_headers(df):
+    """
+    Final schema enforcement.
+    Every table leaving the pipeline has the same columns.
+    """
+    df = df.copy()
+
+    df.columns = (
+        pd.Series(df.columns)
+        .astype(str)
+        .str.lower()
+        .str.strip()
+        .str.replace(r"[^\w]+", "_", regex=True)
+    )
+
+    rename_map = {
+        "col_0": "item_code",
+        "name_of_medicine": "medicine_name",
+        "dose_form": "dose_form",
+        "strength___size": "strength_size",
+        "strength_size": "strength_size",
+        "lou": "lou",
+    }
+
+    df = df.rename(columns=rename_map)
+
+    for c in CANONICAL_COLUMNS:
+        if c not in df.columns:
+            df[c] = None
+
+    return df[CANONICAL_COLUMNS]
+
+```
+
+## Normalize empty cells and detect class rows
+```{python}
+
+
+def normalize_empty_cells(df):
+    df = df.copy()
+
+    def clean_cell(x):
+        if x is None:
+            return None
+        if isinstance(x, str):
+            x = re.sub(r"[\s\xa0]+", " ", x).strip()
+            return x if x else None
+        return x
+
+    for col in df.columns:
+        df[col] = df[col].map(clean_cell)
+
+    return df
+
+
+def mark_class_rows(df):
+    """
+    Mark rows that are therapeutic class headers.
+    A class row has NO formulation information in any available formulation column.
+    """
+    df = df.copy()
+
+    formulation_cols = [
+        c for c in ["dose_form", "strength_size", "lou"] if c in df.columns
+    ]
+
+    # If no formulation columns exist yet, nothing can be a class row
+    if not formulation_cols:
+        df["_is_class_row"] = False
+        return df
+
+    df["_is_class_row"] = df[formulation_cols].isna().all(axis=1)
+    return df
+
+
+def fill_down_medicine_identity(df):
+    df = df.copy()
+
+    for col in ["medicine_name", "item_code", "dose_form"]:
+        if col in df.columns:
+            df[col] = df.groupby("_block")[col].ffill()
+
+    return df
+
+
+def fill_down_medicine_identity_blocked(df):
+    """
+    Fill down medicine identity (item_code, medicine_name)
+    within blocks separated by therapeutic class rows.
+    Only operates on columns that actually exist.
+    """
+    df = df.copy()
+
+    if "_is_class_row" not in df.columns:
+        return df
+
+    df["_block"] = df["_is_class_row"].cumsum()
+
+    for col in ["item_code", "medicine_name", "dose_form"]:
+        if col in df.columns:
+            df[col] = df.groupby("_block")[col].ffill()
+
+    return df
+
+
+def drop_class_rows(df):
+    """
+    Remove therapeutic class rows after propagation.
+    """
+    return (
+        df.loc[~df["_is_class_row"]]
+        .drop(columns=["_is_class_row", "_block"])
+        .reset_index(drop=True)
+    )
+
+
+def strip_trailing_annotations(text):
+    """
+    Remove footnote markers like:
+      Glycopyrronium28 → Glycopyrronium
+    """
+    if not isinstance(text, str):
+        return text
+    return re.sub(r"(?<=[A-Za-z])\d+$", "", text).strip()
+```
+
+## Apply full pipeline to all tables
+
+```{python}
+clean_tables = []
+
+for t in tables:  # camelot TableList
+    df = t.df
+
+    if has_bad_headers(df):
+        df = promote_first_row_to_header(df)
+
+    df = normalize_columns(df)
+    clean_tables.append(df)
+
+processed_tables = []
+
+for i, df in enumerate(clean_tables):
+
+    if df is None or df.empty:
+        continue
+
+    df = df.copy()
+
+    # 1. HEADER REPAIR
+
+    # If headers are collapsed or malformed, fix them
+    if needs_header_repair(df):
+        df = repair_headers(df)
+
+    # Normalize header text (lowercase, underscores, etc.)
+    df.columns = (
+        pd.Series(df.columns)
+        .astype(str)
+        .str.lower()
+        .str.strip()
+        .str.replace(r"[^\w]+", "_", regex=True)
+    )
+
+    # FORCE canonical schema EARLY so downstream logic is safe
+    df = force_canonical_headers(df)
+
+    # 2. NORMALIZE CELL CONTENT
+
+    df = normalize_empty_cells(df)
+
+    # 3. IDENTIFY CLASS / SECTION ROWS
+
+    df = mark_class_rows(df)
+
+    # 4. FILL DOWN MEDICINE IDENTITY
+
+    df = fill_down_medicine_identity_blocked(df)
+
+    # 5. DROP CLASS ROWS
+
+    df = drop_class_rows(df)
+
+    # 6. CLEAN ANNOTATION DIGITS
+
+    df["medicine_name"] = df["medicine_name"].map(strip_trailing_annotations)
+    df["dose_form"] = df["dose_form"].map(strip_trailing_annotations)
+
+    # 7. PROVENANCE
+    df["source_table"] = i
+
+    processed_tables.append(df)
+
+```
+
+```{python}
+df_keml = pd.concat(processed_tables, ignore_index=True)
+
+print(f"Final EML dataset: {df_keml.shape[0]} rows")
+display(df_keml.head())
+
+df_keml.to_csv("/Users/jps89/Downloads/kenya_eml.csv")
+```
+

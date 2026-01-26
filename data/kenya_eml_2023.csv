@@ -1,0 +1,1297 @@
+,item_code,medicine_name,dose_form,strength_size,lou,source_table
+0,1.1.1.1,Halothane,Inhalation,250mL,4,0
+1,1.1.1.2,Isoflurane,Inhalation,250mL,4,0
+2,1.1.1.3,Sevoflurane,Inhalation,250mL,5,0
+3,1.1.2.1,Dexmedetomidine,Injection,200 micrograms/2mL,5,0
+4,1.1.2.2,Etomidate,Injection,2mg/mL (10mL Vial),6,0
+5,1.1.2.3,Fentanyl,Injection,50micrograms/mL (2mL Ampoule),4,0
+6,1.1.2.4,Ketamine,Injection,50mg (as HCL)/mL (10mL vial),4,0
+7,1.1.2.5,Midazolam,Injection,1mg (as HCl)/mL (5mL amp),4,0
+8,1.1.2.6,Propofol,Injection,10mg/mL (20mL vial),4,0
+9,1.1.2.7,Remifentanyl,PFI,2mg/2mL,5,0
+10,1.1.2.8,Thiopental sodium,PFI,500mg vial,4,0
+11,1.2.1,Bupivacaine,Injection,0.5% (as HCl) (10mL vial),4,0
+12,1.2.2,Bupivacaine + Glucose,Injection,0.5% (as HCl) (5mg/mL) + glucose 8% (80mg/mL) (4mL amp),4,0
+13,,Lignocaine,Injection,2% (as HCl) (30mL vial),2,1
+14,,Lignocaine,Topical spray,2% (as HCl),2,1
+15,,Lignocaine,Topical spray,4% (as HCl),2,1
+16,,Lignocaine,Topical spray,10% (as HCl),2,1
+17,,Lignocaine + Epinephrine (Adrenaline),Dental cartridge,"2% + 1:80,000 (1.8mL cartridge)",3,1
+18,,Lignocaine + Epinephrine (Adrenaline),Injection,"2% (HCl or sulphate) + 1:200,000 in vial",3,1
+19,,Dantrolene,Injection,20mg,4,1
+20,,Dexmedetomidine,Injection,200 micrograms (2mL),5,1
+21,,Ephedrine,Injection,30mg,4,1
+22,,Epinephrine (adrenaline)16,Injection,1mg /1mL amp17,4,1
+23,,Fentanyl,Injection (preservative-free),50 micrograms (as citrate)/mL (2mL amp),4,1
+24,,Ketamine,Injection,50mg (as HCl)/mL (10mL vial),4,1
+25,,Midazolam,Injection,1mg (as HCl)/mL (5mL amp),4,1
+26,,Midazolam,Injection,5mg (as HCl)/mL (3mL amp)21,4,1
+27,,Morphine,Injection,10mg (as HCl or sulphate) /1mL amp,4,1
+28,,Morphine,Injection,10mg/mL (1mL Ampoule) Preservative free22,5,1
+29,,Ondansetron,Injection,2mg/mL (2mL Ampoule),4,2
+30,,Phenylephrine,Injection,10mg/mL Hydrochloride 1mL,5,2
+31,,Propofol,Injection,10mg/mL (20mL vial),4,2
+32,,Remifentanyl,PFI,2mg/2mL,5,2
+33,,Medical air,Inhalation (medical gas),,4,2
+34,,Nitrous oxide,Inhalation (medical gas),,4,2
+35,,Oxygen,Inhalation (medical gas),,2,2
+36,,Atracurium,Injection,10mg (as besilate)/mL (5mL amp),4,2
+37,,Cisatracurium,Injection,2mg (as besilate)/mL (10mL amp),4,2
+38,,Rocuronium,Injection,"10mg/mL (as bromide), 5mL vial",5,2
+39,,Suxamethonium,Injection,50mg (as chloride)/mL (2mL amp),4,2
+40,,Vecuronium,PFI,10mg (as bromide) vial [c],6,2
+41,2.2.1,Neostigmine,Injection,2.5mg (as metasulphate)/1mL amp,4,3
+42,2.2.2,Pyridostigmine,Tablet,60mg (as bromide),5,3
+43,2.2.2,Pyridostigmine,Injection,"5mg/mL, 2mL, Ampoule",6,3
+44,2.2.2,Pyridostigmine,Oral Solution,"60mg/5mL, 240mL",6,3
+45,2.3.1,Atropine,Injection,1mg (as sulphate)/1mL amp,4,3
+46,2.3.2,Glycopyrronium,Injection,200 micrograms (as bromide)/mL,4,3
+47,3.1.1,Acetylsalicylic acid (Aspirin),Tablet,300mg,2,3
+48,3.1.2,Celecoxib,Tablet,200mg,4,3
+49,3.1.3,Dexketoprofen,Tablet,25mg,4,3
+50,3.1.3,Dexketoprofen,Injection,25mg/mL (2mL amp),5,3
+51,3.1.4,Ibuprofen,Oral liquid,100mg/5mL [c] 32,2,3
+52,3.1.4,Ibuprofen,Tablet,200mg,2,3
+53,3.1.5,Ketorolac,Injection (IM/IV),30mg/mL,2,3
+54,,Paracetamol,Injection (for IV infusion)34,10mg/mL (100mL vial),4,4
+55,,Paracetamol,Oral liquid,120mg/5mL [c],1,4
+56,,Paracetamol,Suppository,125mg [c],2,4
+57,,Paracetamol,Tablet (scored),500mg,1,4
+58,,Dihydrocodeine phosphate,Tablet,30mg,4,4
+59,,Fentanyl,Transdermal patch,25 micrograms/hr36,5,4
+60,,Fentanyl,Transdermal patch,50 micrograms/hr37,5,4
+61,,Methadone,Tablet,5mg,4,4
+62,,Methadone,Oral Solution,1mg/mL,4,4
+63,,Morphine,Injection,10mg (as HCl or sulphate)/1mL amp,4,4
+64,,Morphine,Injection (for Infusion)41,30mg/mL,4,4
+65,,Morphine,Oral liquid,1mg (as HCl or sulphate)/ mL,3,4
+66,,Morphine,Oral liquid,10mg (as HCl or sulphate)/ mL,3,4
+67,,Morphine,Tablet (m/r),30mg (sulphate),4,4
+68,,Oxycodone,Tablet (i/r),5mg (as HCI),6,4
+69,,Tramadol,Capsule,50mg,5,4
+70,,Tramadol,Injection,50mg/mL (2mL amp),5,4
+71,3.3.1,Amitriptyline,Tablet,25mg,2,5
+72,3.3.2,Bisacodyl,Tablet,5mg,2,5
+73,3.3.3,Carbamazepine,Tablet (scored),200mg,4,5
+74,3.3.4,Dexamethasone,Injection,4mg (as sodium phosphate)/1mL amp,3,5
+75,3.3.4,Dexamethasone,Tablet,500 micrograms,3,5
+76,3.3.4,Dexamethasone,Tablet (scored),4mg,3,5
+77,3.3.5,Diazepam,Injection,5mg/mL (2mL amp),4,5
+78,3.3.5,Diazepam,Tablet (scored),5mg,4,5
+79,3.3.6,Gabapentin,Tablet,300mg,4,5
+80,3.3.7,Haloperidol,Injection,5mg/1mL amp,3,5
+81,3.3.7,Haloperidol,Tablet (scored),5mg,3,5
+82,3.3.8,Hyoscine butylbromide,Injection,20mg/1mL amp,3,5
+83,3.3.8,Hyoscine butylbromide,Tablet,10mg,3,5
+84,3.3.9,Lactulose,Oral liquid,3.1-3.7g/5mL,4,5
+85,3.3.10,Loperamide,Capsule,2mg,3,5
+86,3.3.11,Metoclopramide,Injection,5mg/mL (2mL amp),4,5
+87,3.3.11,Metoclopramide,Tablet,10mg,2,5
+88,3.3.12,Midazolam,Injection,1mg (as HCl)/mL (5mL amp),5,5
+89,,Ondansetron,Injection,2mg (as HCl)/mL (2mL amp),2,6
+90,,Ondansetron,Oral liquid,4mg base/5mL [c],2,6
+91,,Ondansetron,Tablet,4mg (as HCl),2,6
+92,,Prednisolone,Oral liquid,15mg/5mL [c],4,6
+93,,Prednisolone,Tablet,5mg,4,6
+94,,Pregabalin,Capsule,25mg,5,6
+95,,Pregabalin,Capsule,75mg,5,6
+96,,Senna,Tablet,7.5mg,4,6
+97,,Cetirizine,Tablet,10mg,2,6
+98,,Cetirizine,Oral liquid,1mg/mL,2,6
+99,,Chlorpheniramine,Injection,10mg (as maleate)/1mL amp,2,6
+100,,Chlorpheniramine,Oral liquid,2mg (as maleate)/5mL,2,6
+101,,Dexamethasone,Injection,4mg (as sodium phosphate)/1mL amp,4,6
+102,,Diphenhydramine,Injection,50mg/mL,4,6
+103,,Epinephrine (adrenaline)58,Injection,1mg /1mL amp,2,6
+104,,Hydrocortisone,PFI,100mg (as sod. succinate) vial,2,6
+105,,Loratadine,Tablet,10mg,2,6
+106,,Prednisolone,Oral liquid,15mg/5mL [c],4,7
+107,,Prednisolone,Tablet,5mg,4,7
+108,,Acetylcysteine,Injection,200mg/mL (10mL amp59),4,7
+109,,Atropine,Injection,1mg (as sulphate)/1mL amp,2,7
+110,,Calcium folinate,Injection,10mg/mL (5mL vial),4,7
+111,,Calcium gluconate,Injection,100mg/mL in 10mL amp,3,7
+112,,Deferasirox,Tablet,100mg,4,7
+113,,Deferasirox,Tablet,400mg,4,7
+114,,Deferoxamine,PFI,500mg (as mesilate) vial,4,7
+115,,Ethanol,Injection,100% (10mL amp),4,7
+116,,Ethanol,Oral liquid (Medicinal)65,95-96%,4,7
+117,,Fomepizole,Injection,5mg (as sulphate)/mL (20mL amp),5,7
+118,,Flumazenil,Injection,100 micrograms/mL (5mL amp),4,7
+119,,Lipid emulsion,Injection,20% (200 to 500mL),4,8
+120,,Naloxone,Injection,400 micrograms (as HCl)/1mL amp,4,8
+121,,Phytomenadione (Vit K1)70,Injection,10mg/mL (1mL amp),4,8
+122,,Pralidoxime,PFI,1g (as chloride or mesilate) vial,4,8
+123,,Protamine,Injection,10mg/mL (as sulphate) (5mL amp),4,8
+124,,Sodium hydrogen carbonate (Sodium bicarbonate)73,Injectable solution,8.4% (10mL amp),4,8
+125,,Sodium nitrite,Injection,30mg/mL (10mL amp),4,8
+126,,Sodium thiosulphate,Injection,250mg/mL (50mL amp),4,8
+127,,Succimer [Dimercaptosuccinic acid (DMSA)]76,Capsule,100mg,5,8
+128,,Acetazolamide,Tablet,250mg,5,8
+129,,Acetazolamide,Tablet,500mg,5,8
+130,,Carbamazepine,Oral liquid,100mg/5mL,4,8
+131,,Carbamazepine,Tablet (cross-scored),200mg,4,8
+132,,Clobazam,Tablet,10mg (scored),4,8
+133,,Clonazepam,Tablet,0.5mg,4,8
+134,,Clonazepam,Tablet,2mg,4,8
+135,,Diazepam,Rectal gel,5mg/mL (0.5mL tube),2,8
+136,,Gabapentin,Tablet,300mg,4,9
+137,,Gabapentin,Tablet,100mg,4,9
+138,,Lamotrigine,Tablet,25mg,4,9
+139,,Lamotrigine,Tablet,100mg,4,9
+140,,Lamotrigine,"Tablet, (chewable, dispersible)",5mg,4,9
+141,,Lamotrigine,"Tablet, (chewable, dispersible)",25mg,4,9
+142,,Levetiracetam,Injection (IV)79,500mg,5,9
+143,,Levetiracetam,Oral Solution,100mg/mL,5,9
+144,,Levetiracetam,Tablet (scored)80,500mg,4,9
+145,,Lorazepam,Injection,4mg/1mL amp,2,9
+146,,Magnesium sulphate,Injection,"500mg/mL (50%), (10mL amp/vial)",2,9
+147,,Midazolam,Injection,1mg (as HCl)/mL (5mL amp)83,4,9
+148,,Midazolam,Injection,5mg (as HCl)/mL (3mL amp84,4,9
+149,,Midazolam,Oromucosal solution,5mg/mL,4,9
+150,,Midazolam,Oromucosal solution,10mg/mL,4,9
+151,,Oxcarbazepine,SODF,150mg,4,9
+152,,Oxcarbazepine,SODF,300mg,4,9
+153,,Phenobarbital (Phenobarbitone) sodium,Injection,30mg/1mL amp [c]86,2,10
+154,,Phenobarbital (Phenobarbitone) sodium,Injection,200mg/1mL amp,2,10
+155,,Phenobarbital (Phenobarbitone) sodium,Tablet (scored),30mg,2,10
+156,,Phenytoin sodium,Injection,50mg/mL (5mL vial),4,10
+157,,Phenytoin sodium,Oral liquid,30mg/5mL,4,10
+158,,Phenytoin sodium,Tablet / Capsule,50mg,4,10
+159,,Phenytoin sodium,Tablet / Capsule,100mg,4,10
+160,,Pregabalin,Capsule,25mg,4,10
+161,,Pregabalin,Capsule,75mg,4,10
+162,,Topiramate,Tablet,25mg,5,10
+163,,Topiramate,Tablet,50mg,5,10
+164,,Valproic acid (Sodium Valproate),Injection,100mg/mL (4mL amp),4,10
+165,,Valproic acid (Sodium Valproate),Injection,100mg/ mL (10mL amp),4,10
+166,,Valproic acid (Sodium Valproate),Oral liquid,200mg/5mL,4,10
+167,,Valproic acid (Sodium Valproate),Tablet (e/c),200mg,4,10
+168,,Valproic acid (Sodium Valproate),Tablet (e/c),500mg,4,10
+169,,Valproic acid (Sodium Valproate),Tablet (crushable),100mg,4,10
+170,,Albendazole,Tablet (chewable)88,400mg,1,10
+171,,Albendazole,Suspension,100mg/5mL,1,10
+172,,Mebendazole,"Tablet (chewable, dispersible)",500mg,1,11
+173,,Praziquantel,Tablet (scored),600mg,1,11
+174,,Albendazole,Tablet (chewable),400mg,1,11
+175,,Albendazole,Suspension,100 mg/5 mL,1,11
+176,,Diethylcarbamazine (DEC),Tablet (scored),100mg (as dihydrogen citrate),1,11
+177,,Ivermectin,Tablet (scored),3mg,1,11
+178,,Amikacin,Injection,50mg (as sulphate)/mL in 2ml vial [c],4,11
+179,,Amikacin,Injection,250mg (as sulphate)/mL in 2ml vial,4,11
+180,,Amoxicillin,"Tablet (dispersible, scored)",250mg,2,11
+181,,Amoxicillin,PFOL,125mg/5mL ((as trihydrate),2,11
+182,,Amoxicillin,PFOL,250mg/5mL ((as trihydrate),2,11
+183,,Amoxicillin,Capsule,500mg,2,11
+184,,Amoxicillin + clavulanic acid,PFOL,200mg (as trihydrate) + 28mg (as potassium salt) / 5mL,4,12
+185,,Amoxicillin + clavulanic acid,PFOL,125mg (as trihydrate) + 31.25mg (as potassium salt)/5mL,4,12
+186,,Amoxicillin + clavulanic acid,PFOL,250 mg (as trihydrate) + 62.5 mg (as potassium salt)/5mL,4,12
+187,,Amoxicillin + clavulanic acid,"Tablet (dispersible, scored)","250mg + 62.5mg (i.e., 312.5 mg)",4,12
+188,,Amoxicillin + clavulanic acid,Tablet,"875mg + 125mg (i.e., 1g)",4,12
+189,,Amoxicillin + clavulanic acid,PFI,"500mg + 100mg (i.e., 600mg)",4,12
+190,,Amoxicillin + clavulanic acid,PFI,"1g + 200mg (i.e., 1.2gm)",4,12
+191,,Ampicillin,PFI,500mg vial,4,12
+192,,Benzathine benzylpenicillin,PFI,900mg (1.2MU) vial,2,12
+193,,Benzylpenicillin,PFI,600mg (1MU) (as sodium or potassium salt) vial,2,12
+194,,Benzylpenicillin,PFI,3g (5MU) (as sodium or potassium salt) vial,4,12
+195,,Cefalexin,PFOL,125mg/5mL,2,12
+196,,Cefalexin,Capsule,250mg,2,12
+197,,Cefazolin,PFI,500mg (as sodium salt) in vial,4,12
+198,,Cefazolin,PFI,1g (as sodium salt) in vial,4,12
+199,,Doxycycline,Tablet / Capsule,100mg (as hyclate),2,13
+200,,Flucloxacillin,Capsule,250mg (as sodium salt),2,13
+201,,Flucloxacillin,Capsule,500mg (as sodium salt),2,13
+202,,Flucloxacillin,PFOL,125mg (as sodium salt)/5mL,2,13
+203,,Flucloxacillin,PFI,500mg (as sodium salt) vial,4,13
+204,,Gentamicin,Injection,10mg/mL (as sulphate) (2mL vial),3,13
+205,,Gentamicin,Injection,40mg/mL (as sulphate) (2mL vial),3,13
+206,,Metronidazole,Injection,5mg/mL (100mL vial),4,13
+207,,Metronidazole,Oral liquid,200mg/5mL (as benzoate),2,13
+208,,Metronidazole,"Tablet (f/c, scored)",400mg,2,13
+209,,Nitrofurantoin,Oral liquid,25mg/5mL [c],2,13
+210,,Nitrofurantoin,Tablet,100mg,2,13
+211,,Phenoxymethylpenicillin (Penicillin V)108,PFOL,250mg (as potassium salt) /5mL,3,13
+212,,Phenoxymethylpenicillin (Penicillin V)108,Tablet,250mg (as potassium salt),3,13
+213,,Tinidazole,Tablet (f/c),500mg,2,13
+214,7.2.2.1,Azithromycin,Tablet (scored),500mg (anhydrous),2,14
+215,7.2.2.1,Azithromycin,PFOL,200mg/5mL,2,14
+216,7.2.2.2,Cefixime,Tablet,400mg (as trihydrate),2,14
+217,7.2.2.3,Cefotaxime,Powder for Injection,500mg,4,14
+218,7.2.2.3,Cefotaxime,Powder for Injection,1gm,4,14
+219,7.2.2.4,Ceftazidime,PFI,250mg (as pentahydrate) vial,4,14
+220,7.2.2.4,Ceftazidime,PFI,1g (as pentahydrate) vial,4,14
+221,7.2.2.5,Ceftriaxone,Injection (IM/IV),250mg (as sodium salt) [c]114,4,14
+222,7.2.2.5,Ceftriaxone,Injection (IM/IV),1g (as sodium salt)115,4,14
+223,7.2.2.6,Cefuroxime,PFI,750mg,4,14
+224,7.2.2.7,Ciprofloxacin,Tablet (scored)117,500mg (as HCl),4,14
+225,7.2.2.7,Ciprofloxacin,Injection,400mg,5,14
+226,,Clarithromycin,Tablet (scored),500mg,4,15
+227,,Clindamycin,Capsule,150mg (as HCl),4,15
+228,,Clindamycin,Injection,150mg (as phosphate)/mL (2mL vial),4,15
+229,,Clindamycin,Oral liquid,75mg (as palmitate) /5mL [c],4,15
+230,,Cotrimoxazole (Sulfamethoxazole + Trimethoprim),Injection,"80mg + 16mg (i.e., 96mg)/ mL (5mL amp)",4,15
+231,,Cotrimoxazole (Sulfamethoxazole + Trimethoprim),Oral liquid,"200mg +40mg (i.e., 240mg) /5mL [c]",2,15
+232,,Cotrimoxazole (Sulfamethoxazole + Trimethoprim),Tablet (scored)123,"800 + 160mg (i.e., 960mg)",2,15
+233,,Erythromycin,Tablet,250mg,3,15
+234,,Erythromycin,Tablet,500mg,3,15
+235,,Piperacillin + Tazobactam,PFI,4g (as sodium salt) + 500mg (as sodium salt),5,15
+236,,Ceftazidime + avibactam,PFI,2000mg+500mg,5,15
+237,,Colistin,PFI,1MU (as colistemethate sodium) vial,5,15
+238,,Fosfomycin,Granules for oral suspension,3g sachet,5,15
+239,,Fosfomycin,PFI,3g (as sodium) vial,5,15
+240,,Linezolid,Injection (IV),2mg/mL in 300mL bag,5,16
+241,,Linezolid,Tablet,600mg,5,16
+242,,Meropenem,PFI,500mg (as trihydrate),5,16
+243,,Polymyxin B,PFI,"500,000 IU vial",5,16
+244,,Teicoplanin,Injection,200mg,5,16
+245,,Tigecycline,PFI,50mg vial,5,16
+246,,Vancomycin,PFI,500mg vial (as HCl),5,16
+247,,Clofazamine,Capsule,50mg,4,16
+248,,Clofazamine,Capsule,100mg,4,16
+249,,Dapsone,Tablet,100mg,4,16
+250,,Dapsone,Tablet,25mg,4,16
+251,,Rifampicin (R),Tablet / Capsule,150mg,4,16
+252,,Rifampicin (R),Tablet / Capsule,300mg,4,16
+253,7.2.5.1.1,Ethambutol (E),"Tablet, (dispersible)",100mg,2,17
+254,7.2.5.1.1,Ethambutol (E),Tablet,400mg,2,17
+255,7.2.5.1.2,Isoniazid (H),Tablet,50mg (scored),2,17
+256,7.2.5.1.2,Isoniazid (H),Tablet,100mg,2,17
+257,7.2.5.1.2,Isoniazid (H),Tablet,300mg,2,17
+258,7.2.5.1.2,Isoniazid (H),Injection,100mg/mL,4,17
+259,7.2.5.1.3,Pyrazinamide (Z),Tablet,500mg,2,17
+260,7.2.5.1.3,Pyrazinamide (Z),Tablet,150mg (scored),2,17
+261,7.2.5.1.3,Pyrazinamide (Z),"Tablet, (dispersible)",150mg,2,17
+262,7.2.5.1.4,Rifampicin (R),Capsule,150mg,2,17
+263,7.2.5.1.4,Rifampicin (R),Capsule,300mg,2,17
+264,7.2.5.1.4,Rifampicin (R),PFI,600mg,4,17
+265,7.2.5.2.1,Rifampicin + Isoniazid (RH),Tablet,150mg + 75mg,2,17
+266,7.2.5.2.1,Rifampicin + Isoniazid (RH),Tablet,75mg + 50mg [c],2,17
+267,7.2.5.2.2,Rifampicin + Isoniazid + Pyrazinamide (RHZ),Tablet,75mg + 50mg + 150mg [c],2,17
+268,7.2.5.2.3,Rifampicin + Isoniazid + Pyrazinamide + Ethambutol (RHZE),Tablet,150mg + 75mg + 400mg + 275mg,2,17
+269,7.2.5.2.4,Rifapentine + Isoniazid (3HP),Tablet,300mg+300mg,5,17
+270,7.2.5.3.1,Amikacin (Am),Injection,1g (as sulphate) vial,3,17
+271,7.2.5.3.2,Amoxicillin + clavulanic acid (Amx+Clv),Tablet,875mg + 125mg (1g),3,17
+272,7.2.5.3.3,Bedaquiline (Bdq),Tablet,100mg,3,17
+273,,Clofazimine (Cfx),Capsule,50mg,3,18
+274,,Clofazimine (Cfx),Capsule,100mg,3,18
+275,,Cycloserine (Cs),Tablet,125mg [c],3,18
+276,,Cycloserine (Cs),Tablet,250mg,3,18
+277,,Delamanid (Dlm),Tablet,50mg,3,18
+278,,Imipenem + Cilastatin,PFI,250mg + 250mg vial,3,18
+279,,Imipenem + Cilastatin,PFI,500mg + 500mg vial,3,18
+280,,Levofloxacin (Lfx),Tablet (dispersible),100mg [c],3,18
+281,,Levofloxacin (Lfx),Tablet,250mg,3,18
+282,,Levofloxacin (Lfx),Tablet,500mg (scored),3,18
+283,,Levofloxacin (Lfx),Tablet,750mg,3,18
+284,,Linezolid (Lzd),Tablet (dispersible),150mg [c],3,18
+285,,Linezolid (Lzd),Tablet,600mg,3,18
+286,,Moxifloxacin (Mfx),Tablet (dispersible),100mg [c],3,18
+287,,Moxifloxacin (Mfx),Tablet,400mg,3,18
+288,,p-aminosalicylic acid (PAS),Granules,4g sachet,3,18
+289,,Prothionamide (Pto),Tablet,250mg,3,18
+290,,Terizidone (Trd),Tablet,300mg,3,18
+291,,Pretomanid,Tablet,200mg,3,18
+292,,Amphotericin B,PFI,50mg (as sodium deoxycholate) vial,4,18
+293,,Amphotericin B,Injection,(Liposomal) 50mg vial,4,18
+294,,Clotrimazole,Vaginal Tablet,500mg,2,18
+295,,Fluconazole,Tablet / Capsule,150mg139,2,19
+296,,Fluconazole,Tablet / Capsule,200mg,4,19
+297,,Fluconazole,Injection,2mg/mL (100mL bottle),4,19
+298,,Fluconazole,Oral liquid,50mg/5mL,4,19
+299,,Flucytosine,Capsule,250mg,4,19
+300,,Flucytosine,Injection,2.5g/250mL,4,19
+301,,Griseofulvin,Tablet,125mg,2,19
+302,,Griseofulvin,Tablet,500mg,2,19
+303,,Itraconazole,Capsule,100mg,5,19
+304,,Nystatin,Oral liquid (suspension),"100,000 IU/mL [c]",2,19
+305,,Posaconazole,Tablet (Delayed Release),100mg,6,19
+306,,Posaconazole,Injection,18mg/mL (300mg/16.7mL),6,19
+307,,Terbinafine,Tablet,125mg,4,19
+308,,Terbinafine,Tablet,250mg,4,19
+309,,Voriconazole,Tablet,200mg,5,19
+310,,Voriconazole,PFI,200mg vial,5,19
+311,7.4.1.1,Acyclovir,PFI,250mg vial (as sodium salt),4,20
+312,7.4.1.1,Acyclovir,Tablet (scored),400mg,2,20
+313,7.4.2.1.1,Abacavir (ABC)147,Tablet,300mg,2,20
+314,7.4.2.1.1,Abacavir (ABC)147,Oral Solution,20 mg/mL,2,20
+315,7.4.2.1.2,Lamivudine (3TC),Oral liquid,50mg/5mL,2,20
+316,7.4.2.1.3,Tenofovir Alafenamide (TAF),Tablet,25mg,2,20
+317,7.4.2.1.4,Tenofovir disoproxil fumarate (TDF)148,Tablet,300mg,2,20
+318,7.4.2.1.5,Zidovudine (AZT or ZDV),Oral liquid,50mg/5mL,2,20
+319,7.4.2.1.5,Zidovudine (AZT or ZDV),Tablet,300mg,2,20
+320,7.4.2.2.1,Dapivirine,Vaginal ring,25mg,2,20
+321,7.4.2.2.2,Etravirine (ETV),Tablet,25mg,3,20
+322,7.4.2.2.2,Etravirine (ETV),Tablet,100mg,3,20
+323,7.4.2.2.2,Etravirine (ETV),Tablet,200mg,3,20
+324,7.4.2.2.3,Nevirapine (NVP),Oral liquid,10mg/mL,2,20
+325,,Darunavir (DRV)149,Tablet,75mg,3,21
+326,,Darunavir (DRV)149,Tablet,150mg,3,21
+327,,Darunavir (DRV)149,Tablet,600mg (f/c),3,21
+328,,Darunavir (DRV)149,Oral liquid,10mg/mL (200mL),3,21
+329,,Darunavir + Ritonavir (DRV+r),Tablet,600mg + 100mg,3,21
+330,,Darunavir + Ritonavir (DRV+r),Tablet,800mg + 100mg,3,21
+331,,Lopinavir + ritonavir (LPV+r),Tablet (heat-stable),100mg + 25mg,2,21
+332,,Lopinavir + ritonavir (LPV+r),Tablet (heat-stable),200mg + 50mg,2,21
+333,,Lopinavir + ritonavir (LPV+r),Granules (In Sachet)150,40mg +10mg,2,21
+334,,Ritonavir (RTV),Tablet (heat-stable),100mg,2,21
+335,,Ritonavir (RTV),Oral powder,100mg sachet [c],2,21
+336,,Cabotegravir,"Injection (Long acting), Single- dose vial",600mg/3mL,2,21
+337,,Dolutegravir (DTG)152,Tablet,50mg,2,21
+338,,Dolutegravir (DTG)152,Tablet,10mg,2,21
+339,,Dolutegravir (DTG)152,Tablet (dispersible),10mg,2,21
+340,,Abacavir + lamivudine (ABC+3TC),"Tablet, (dispersible, scored)",120mg (as sulphate) + 60mg,2,21
+341,,Abacavir + lamivudine (ABC+3TC),Tablet,600mg (as sulphate) + 300mg,2,21
+342,,Tenofovir disoproxil fumarate + Emtricitabine (TDF+FTC)153,Tablet,300mg + 200mg,2,21
+343,,Tenofovir disoproxil fumarate + Lamivudine (TDF+3TC),Tablet,300mg + 300mg,2,22
+344,,Tenofovir Alafenamide + Lamivudine + Dolutegravir (TAF+3TC+DTG),Tablet,25mg + 300mg + 50mg,2,22
+345,,Tenofovir disoproxil fumarate + Lamivudine + Dolutegravir (TDF+3TC+DTG)154,Tablet,300mg + 300mg + 50mg,2,22
+346,,Tenofovir disoproxil fumarate + Lamivudine + Efavirenz (TDF+3TC+EFV),Tablet,300mg + 300mg + 400mg,2,22
+347,,Zidovudine + Lamivudine (AZT+3TC),Tablet,300mg + 150mg,2,22
+348,,Co-trimoxazole (Sulfamethoxazole + Trimethoprim)155,Oral liquid,240mg/5mL [c],2,22
+349,,Co-trimoxazole (Sulfamethoxazole + Trimethoprim)155,Tablet,800 + 160mg,2,22
+350,,Dapsone,Tablet,25mg,2,22
+351,,Dapsone,Tablet,100mg,2,22
+352,,Gancyclovir,PFI,500mg vial,5,22
+353,,Ribavirin,Injection (IV)158,800mg in 10mL phosphate buffer solution,4,22
+354,,Ribavirin,Capsule,200mg,4,22
+355,,Valgancyclovir,Tablet,450mg,5,22
+356,,Valgancyclovir,PFOL,50mg/mL,5,22
+357,7.4.4.1.1.1,Entecavir,Oral liquid,0.05mg/mL,5,23
+358,7.4.4.1.1.1,Entecavir,Tablet,0.5mg,4,23
+359,7.4.4.1.1.2,Lamivudine (3TC),Tablet,150mg,4,23
+360,7.4.4.1.1.2,Lamivudine (3TC),Oral liquid,50mg/5mL,5,23
+361,7.4.4.1.1.3,Tenofovir Alafenamide (TAF),Tablet,25mg,4,23
+362,7.4.4.1.1.4,Tenofovir disoproxil fumarate (TDF)162,Tablet,300mg,4,23
+363,7.5.1.1,Diloxanide,Tablet,500mg (as furoate),2,23
+364,7.5.1.2,Diloxanide furoate + Metronidazole,Oral liquid,250mg + 200mg,2,23
+365,7.5.1.2,Diloxanide furoate + Metronidazole,Tablet,500mg + 400mg,2,23
+366,7.5.1.3,Metronidazole,Injection,500mg/100mL vial,3,23
+367,7.5.1.3,Metronidazole,Oral liquid,200mg/5mL (as benzoate),2,23
+368,7.5.1.3,Metronidazole,Tablet,400mg (scored),2,23
+369,,Tinidazole,Tablet (f/c),250mg,2,24
+370,,Tinidazole,Tablet (f/c),500mg,2,24
+371,,Amphotericin B,Injection,(Liposomal) 50mg vial,4,24
+372,,Paromomycin,Injection solution (IM),375mg/mL (as sulphate) (2mL amp),4,24
+373,,Sodium stibogluconate,Injection,100mg/mL (100mL amp),4,24
+374,,Artemether,"Injection (oily, IM)",80mg/mL in 1mL amp,2,24
+375,,Artemether+ lumefantrine (AL),Tablet,20mg + 120mg170,1,24
+376,,Artemether+ lumefantrine (AL),Tablet (dispersible)171,20mg + 120mg [c],1,24
+377,,Artesunate,Injection (IM/IV)172,30mg vial,2,24
+378,,Artesunate,Injection (IM/IV)172,60mg vial,2,24
+379,,Artesunate,Suppository,100mg,1,24
+380,,Artesunate + Pyronaridine tetraphosphate,Tablet (f/c),60mg + 180mg,2,24
+381,,Artesunate + Pyronaridine tetraphosphate,Granules for oral suspension,20mg + 60mg [c],2,24
+382,,Dihydroartemisinin + Piperaquine (DHA-PPQ)174,Tablet,20mg + 160mg,3,25
+383,,Dihydroartemisinin + Piperaquine (DHA-PPQ)174,Tablet (scored),40mg + 320mg,3,25
+384,,Doxycycline,Capsule,100mg (as HCl or hyclate),2,25
+385,,Primaquine,Tablet,7.5mg (as diphosphate),3,25
+386,,Primaquine,Tablet,15mg (as diphosphate),3,25
+387,,Quinine,Injection,300mg/mL (as HCl) (2mL amp),3,25
+388,,Quinine,Tablet (f/c)178,300mg (as sulphate or bisulphate),2,25
+389,,Atovaquone + Proguanil,Tablet (f/c),62.5mg (as HCl) + 25mg,4,25
+390,,Atovaquone + Proguanil,Tablet (f/c),250mg (as HCl) + 100mg,4,25
+391,,Doxycycline,Capsule,100mg (as HCl),2,25
+392,,Mefloquine,Tablet,250mg (as HCl),4,25
+393,,Proguanil,Tablet,100mg (as HCl),2,25
+394,,Sulfadoxine + Pyrimethamine,Tablet,500mg + 25mg,2,25
+395,7.5.4.1,Cotrimoxazole (Sulfamethoxazole + Trimethoprim),Injection,96mg/mL (5mL amp),4,26
+396,7.5.4.1,Cotrimoxazole (Sulfamethoxazole + Trimethoprim),Oral liquid,240mg/5mL [c],4,26
+397,7.5.4.1,Cotrimoxazole (Sulfamethoxazole + Trimethoprim),Tablet (scored),800mg + 160mg,4,26
+398,7.5.4.2,Pyrimethamine,Tablet,25mg,4,26
+399,7.5.4.3,Sulfadiazine,Tablet,500mg,4,26
+400,7.5.5.1.1.1,Pentamidine isethionate,PFI,200mg (as isetionate) vial,4,26
+401,7.5.5.1.1.2,Suramin sodium,PFI,1g vial,4,26
+402,7.5.5.1.2.1,Eflornithine,Injection,200mg (as HCl)/ mL in 100mL bottle,4,26
+403,7.5.5.1.2.2,Melarsoprol,Injection,"3.6% solution (180mg), 5mL amp",4,26
+404,7.5.5.1.2.3,Nifurtimox,Tablet,120mg,4,26
+405,,Ibuprofen,Tablet,200mg [c],2,27
+406,,Paracetamol,Tablet (scored),500mg,1,27
+407,,Paracetamol,Oral liquid,120mg/5mL[c],1,27
+408,,Sumatriptan,Tablet,25mg,5,27
+409,,Sumatriptan,Tablet,50mg,5,27
+410,,Propranolol,Tablet,40mg (as HCl),4,27
+411,,Topiramate,Tablet,25mg,5,27
+412,,Topiramate,Tablet,50mg,5,27
+413,,Antithymocyte globulin (ATG) (Equine)195,Injection,"50mg/mL, 5mL vial",6,27
+414,,Azathioprine,Tablet (scored),50mg,5,27
+415,,Basiliximab,PFI,20mg,6,27
+416,,Cyclosporin,Capsule,25mg,6,27
+417,,Cyclosporin,Capsule,100mg,6,27
+418,,Cyclosporin,Concentrate for injection,50mg/mL in 1mL amp,6,27
+419,,Cyclophosphamide,PFI,500mg vial,5,27
+420,,Cyclophosphamide,PFI,1g vial,5,27
+421,,Everolimus,Tablet,500 micrograms (or 0.5mg),5,28
+422,,Methylprednisolone,PFI,125mg (as sodium succinate),4,28
+423,,Methylprednisolone,PFI,500mg (as sodium succinate),4,28
+424,,Mycophenolic acid,Tablet (e/c),180mg (as mycophenolate sodium),6,28
+425,,Mycophenolic acid,Tablet (e/c),360mg (as mycophenolate sodium),6,28
+426,,Mycophenolate mofetil,Tablet,250mg,6,28
+427,,Mycophenolate mofetil,Tablet,500mg,6,28
+428,,Prednisolone,Tablet,5mg,5,28
+429,,Prednisolone,Tablet,20mg,5,28
+430,,Rituximab,Injection (IV),10mg/mL (10mL vial),6,28
+431,,Rituximab,Injection (IV),10mg/mL (50mL vial),6,28
+432,,Tacrolimus,Concentrate (for IV infusion),5mg/1mL amp,6,28
+433,,Tacrolimus,Capsule,500 micrograms,6,28
+434,,Tacrolimus,Capsule,1mg,6,28
+435,,Tacrolimus,Capsule,5mg,6,28
+436,,Arsenic trioxide,Concentrate solution for Infusion,1mg/mL,6,28
+437,,Bendamustine,Injection,100mg vial,5,28
+438,,Bleomycin,PFI,15mg vial (as sulphate),5,29
+439,,Cabazitaxel,Injection,60mg,5,29
+440,,Calcium folinate,Injection,10mg/mL (5mL vial),5,29
+441,,Calcium folinate,Injection,10mg/mL (30mL vial),5,29
+442,,Calcium folinate,Tablet,15mg,5,29
+443,,Capecitabine,Tablet,150mg,5,29
+444,,Capecitabine,Tablet,500mg,5,29
+445,,Carboplatin,Injection,10mg/mL (15mL vial),5,29
+446,,Carboplatin,Injection,10mg/mL (45mL vial),5,29
+447,,Chlorambucil,Tablet,2mg,5,29
+448,,Cisplatin,Injection,1mg/mL (50mL vial),5,29
+449,,Cyclophosphamide,PFI,500mg vial,5,29
+450,,Cyclophosphamide,PFI,1g vial,5,29
+451,,Cyclophosphamide,Tablet,50mg,5,29
+452,,Cytarabine,PFI,100mg vial,5,29
+453,,Cytarabine,PFI,1g vial,5,29
+454,,Dacarbazine,PFI,200mg vial (as citrate),5,29
+455,,Dactinomycin (Actinomycin D)216,PFI,500 micrograms vial,5,30
+456,,Daunorubicin,PFI,20mg vial (as HCl),5,30
+457,,Daunorubicin,PFI,50mg vial (as HCl),5,30
+458,,Docetaxel,Injection (premixed),120mg vial,5,30
+459,,Docetaxel,Injection (premixed),80mg vial,5,30
+460,,Doxorubicin,PFI or Solution for Injection,50mg vial (as HCl),5,30
+461,,Etoposide,Capsule,50mg,5,30
+462,,Etoposide,Capsule,100mg,5,30
+463,,Etoposide,Injection,20mg/mL (5mL vial),5,30
+464,,Fluorouracil,Injection,50mg/mL (5mL vial),5,30
+465,,Gemcitabine,PFI,200mg vial,5,30
+466,,Gemcitabine,PFI,1g vial,5,30
+467,,Hydroxycarbamide (Hydroxyurea)223,SODF,500mg,5,30
+468,,Ifosfamide + Mesna,Injection,1g + 600mg,5,30
+469,,Ifosfamide + Mesna,Injection,2g + 1200mg,5,30
+470,,Irinotecan,Injection,20mg/mL (2mL vial),5,31
+471,,Irinotecan,Injection,20mg/mL (5mL vial),5,31
+472,,L - Asparaginase,PFI,"10,000 IU vial",5,31
+473,,Liposomal Doxorubicin (Pegylated)227,Solution for Injection,20mg vial,5,31
+474,,Liposomal Doxorubicin (Pegylated)227,Solution for Injection,50mg vial,5,31
+475,,Melphalan,Tablet,2mg,5,31
+476,,Melphalan,PFI,50mg vial,5,31
+477,,Mercaptopurine,Tablet,50mg,5,31
+478,,Methotrexate,PFI (preservative-free),25mg (as sodium salt)/mL (2mL vial),5,31
+479,,Methotrexate,PFI (preservative-free),25mg (as sodium salt)/mL (20mL vial)232,5,31
+480,,Methotrexate,Tablet,2.5mg (as sodium salt),5,31
+481,,Methotrexate,Tablet,10mg,5,31
+482,,Mitomycin C,Injection,10mg,5,31
+483,,Oxaliplatin,Solution for Injection,2mg/mL (25mL vial),5,31
+484,,Oxaliplatin,Solution for Injection,2mg/mL (50mL vial),5,31
+485,,Paclitaxel,Concentrate (for IV infusion),6mg/mL (5mL vial),5,32
+486,,Paclitaxel,Concentrate (for IV infusion),6mg/mL (16.7mL vial),5,32
+487,,Paclitaxel,Concentrate (for IV infusion),6mg/mL (50mL vial),5,32
+488,,Pegaspargase,Injection,3750 Units/5mL vial,5,32
+489,,Pemetrexed,PFI or solution for injection,500mg,5,32
+490,,Procarbazine,Capsule,50mg (as HCl),5,32
+491,,Temozolomide,Capsule,100mg,5,32
+492,,Temozolomide,Capsule,20mg,5,32
+493,,Tioguanine,SODF,40mg [c],5,32
+494,,Topotecan,Injection,2.5mg,5,32
+495,,Vinblastine,Injection,1mg/mL (as sulphate) (10mL vial),5,32
+496,,Vincristine,PFI or solution for injection,1mg/mL (as sulphate) vial,5,32
+497,,Vinorelbine,Injection,10mg/mL (1mL vial),5,32
+498,,Vinorelbine,Injection,10mg/mL (5mL vial),5,32
+499,9.2.2.1,All-trans retinoid acid (ATRA)244,Capsule,10mg,5,33
+500,9.2.2.2,Bevacizumab,Injection,100mg,5,33
+501,9.2.2.2,Bevacizumab,Injection,400mg,5,33
+502,9.2.2.3,Bortezomib,PFI,3.5mg vial,5,33
+503,9.2.2.4,Gefitinib,Tablet,250mg,5,33
+504,9.2.2.5,Ibrutinib,Capsule,140mg,5,33
+505,9.2.2.6,Imatinib,Tablet,400mg (as mesylate),5,33
+506,9.2.2.7,Nilotinib,Capsule,200mg,5,33
+507,9.2.2.8,Osimertinib,Tablet,80mg,5,33
+508,9.2.2.9,Palbociclib,Tablet,125mg,5,33
+509,9.2.2.9,Palbociclib,Tablet,100mg,5,33
+510,9.2.2.9,Palbociclib,Tablet,75mg,5,33
+511,9.2.2.10,Pazopanib,Tablet,200mg,5,33
+512,9.2.2.10,Pazopanib,Tablet,400mg,5,33
+513,9.2.2.11,Rituximab,Injection (IV),10mg/mL (10mL vial),5,33
+514,9.2.2.11,Rituximab,Injection (IV),10mg/mL (50mL vial),5,33
+515,,Sorafenib,Capsule,200mg,5,34
+516,,Trastuzumab,PFI,150mg vial,5,34
+517,,Trastuzumab,PFI,440mg vial + diluent,5,34
+518,,Trastuzumab,Injection (Solution for subcutaneous injection)257,600mg,5,34
+519,,Filgrastim,Injection (prefilled syringe),120 micrograms/0.2mL,5,34
+520,,Filgrastim,Injection (prefilled syringe),300 micrograms/0.5mL,5,34
+521,,Lenalidomide,Capsule,10mg,5,34
+522,,Lenalidomide,Capsule,25mg,5,34
+523,,Peg-Filgrastim,Injection (prefilled syringe),6mg/0.6mL,5,34
+524,,Pembrolizumab,Injection,100mg/4mL,5,34
+525,,Thalidomide,Capsule,100mg,5,34
+526,,Abiraterone,Tablet,250mg,5,34
+527,,Anastrozole,Tablet,1mg,5,34
+528,,Bicalutamide,Tablet,50mg,5,35
+529,,Dexamethasone,Injection,4mg/1mL amp (as sodium phosphate),5,35
+530,,Dexamethasone,Tablet (scored),4mg,5,35
+531,,Goserelin,Implant (in syringe applicator),3.6mg (as acetate),5,35
+532,,Goserelin,Implant (in syringe applicator),10.8mg (as acetate),5,35
+533,,Hydrocortisone,PFI,100mg vial (as sodium succinate),5,35
+534,,Letrozole,Tablet,2.5mg,5,35
+535,,Methylprednisolone,PFI,500mg (as sodium succinate) [c],5,35
+536,,Octreotide,Injection kit,20mg,5,35
+537,,Prednisolone,Oral liquid,15mg/5 mL [c],5,35
+538,,Prednisolone,Tablet,5mg,5,35
+539,,Prednisolone,Tablet,20mg,5,35
+540,,Tamoxifen,Tablet,20mg (as citrate),5,35
+541,,Allopurinol,Tablet,100mg,5,35
+542,,Allopurinol,Tablet,300mg,5,35
+543,,Febuxostat,Tablet,40mg,4,35
+544,,Magnesium Sulphate,Injection,4% (100mL vial),5,36
+545,,Mannitol,Solution for Infusion,"20%, 500mL",5,36
+546,,Mesna,Injection,100mg/mL (2mL amp),5,36
+547,,Mesna,Injection,100mg/mL (4mL amp),5,36
+548,,Rasburicase,Injection,7.5mg/vial,5,36
+549,,Sodium hydrogen carbonate (Sodium bicarbonate)280,Injectable solution,8.4% (10mL amp),5,36
+550,,Zoledronic acid,Concentrate solution for Infusion,800 micrograms/mL (in 5mL vial),5,36
+551,,Benzhexol,Tablet,5mg (as HCl),2,36
+552,,Biperiden,Injection,5mg (lactate) in 1mL amp,4,36
+553,,Biperiden,Tablet,2mg (hydrochloride).,4,36
+554,,Levodopa + Carbidopa,Tablet,100mg + 10mg,4,36
+555,,Levodopa + Carbidopa,Tablet,250mg + 25mg,4,36
+556,,Pramipexole,Tablet (scored),180 micrograms base,4,36
+557,,Pramipexole,Tablet (scored),700 micrograms base,4,36
+558,,Donepezil,Tablet,5mg,4,36
+559,,Donepezil,Tablet,10mg,4,36
+560,,Memantine,Tablet,5mg,4,37
+561,,Rivastigmine,Capsule,1.5mg,5,37
+562,,Darbepoetin alfa,Injection,25 micrograms for subcutaneous injection,5,37
+563,,Darbepoetin alfa,Injection,40 micrograms for subcutaneous injection,5,37
+564,,Erythropoetin (alfa or beta) stimulating agents,Injection (prefilled syringe),"2,000 IU",4,37
+565,,Ferrous salt,Oral liquid (drops),25mg (iron as sulphate)/ mL,2,37
+566,,Ferrous salt,Tablet (f/c),60-65mg elemental iron,2,37
+567,,Ferrous salt + Folic acid,Tablet,60-65mg elemental iron + 400mcg,2,37
+568,,Folic acid,Tablet,400 micrograms288,1,37
+569,,Folic acid,Tablet,5mg289,1,37
+570,,Hydroxocobalamin (Vit B12),Injection,"1mg/1mL amp (as HCl, acetate or sulphate)",4,37
+571,,Iron sucrose,Injection,100mg,4,37
+572,,Phytomenadione (Vit K1),Injection,10mg/mL (0.2mL) amp [c]291,2,37
+573,,Phytomenadione (Vit K1),Injection,10mg/mL (1mL amp),4,37
+574,,Tranexamic acid,Injection,100mg/mL (5mL amp),2,38
+575,,Tranexamic acid,Tablet,500mg,4,38
+576,,Enoxaparin,Injection (prefilled and calibrated syringe),40mg/0.4mL,4,38
+577,,Enoxaparin,Injection (prefilled and calibrated syringe),80mg/0.8mL,4,38
+578,,Heparin sodium,Injection,"5,000 IU/mL (5mL vial)",4,38
+579,,Rivaroxaban,Tablet,10mg,5,38
+580,,Rivaroxaban,Tablet,15mg,5,38
+581,,Rivaroxaban,Tablet,20mg,5,38
+582,,Warfarin,Tablet (scored),1mg (as sodium salt),4,38
+583,,Warfarin,Tablet (scored),3mg (as sodium salt),4,38
+584,,Warfarin,Tablet (scored),5mg (as sodium salt),4,38
+585,,Deferasirox,Tablet,100mg,4,38
+586,,Deferasirox,Tablet,400mg,4,38
+587,,Deferoxamine mesilate,PFI,500mg vial,4,38
+588,,Hydroxycarbamide (Hydroxyurea),Capsule,250mg,4,38
+589,,Hydroxycarbamide (Hydroxyurea),Capsule,500mg,4,38
+590,,Hydroxycarbamide (Hydroxyurea),Oral Solution,100mg/45mL,4,38
+591,13.1.1,Cryoprecipitate,,,5,39
+592,13.1.2,"Plasma, fresh-frozen",,,4,39
+593,13.1.3,Platelets,,,4,39
+594,13.1.4,Red blood cells,,,4,39
+595,13.1.5,Whole blood,,,4,39
+596,13.2.1.1,Anti-D immunoglobulin,PFI + diluent,750 IU/mL (2mL vial),4,39
+597,13.2.1.2,Anti-Hepatitis B immunoglobulin (HBIG)299,Injection,100 IU/mL,4,39
+598,13.2.1.3,Anti-Rabies immunoglobulin,Injection,200 IU/mL (5mL vial),2,39
+599,13.2.1.4,Ant-Tetanus immunoglobulin,Injection,1500 IU vial,4,39
+600,13.2.1.5,Normal immunoglobulin,Injection (IV),5% protein solution (100mL vial),5,39
+601,13.2.1.5,Normal immunoglobulin,Injection (IV),10% protein solution (100mL vial),5,39
+602,13.2.2.1,Coagulation factor VIII,PFI (Extended half-life),250 IU vial,4,39
+603,13.2.2.1,Coagulation factor VIII,PFI (Extended half-life),500 IU vial,4,39
+604,13.2.2.1,Coagulation factor VIII,PFI (Extended half-life),"1,000 IU vial",4,39
+605,13.2.2.1,Coagulation factor VIII,PFI (Extended half-life),"2,000 IU vial",4,39
+606,,Coagulation factor IX,PFI (Extended half-life),250 IU/vial,4,40
+607,,Coagulation factor IX,PFI (Extended half-life),500 IU/vial,4,40
+608,,Coagulation factor IX,PFI (Extended half-life),"1,000 IU/vial",4,40
+609,,Dextran- 70303,Solution,6%,4,40
+610,,Gelatin-based colloid,Solution for Infusion,4%,4,40
+611,,Hydroxyethyl starch,Solution for Infusion,6%,4,40
+612,,Human albumin infusion,Solution,5%,4,40
+613,,Human albumin infusion,Solution,20%,4,40
+614,,Polygeline,Infusion (IV),3.5% (500mL pack),4,40
+615,,Bisoprolol,Tablet,2.5mg,4,40
+616,,Bisoprolol,Tablet,5mg,4,40
+617,,Carvedilol,Tablet,3.125mg,4,40
+618,,Carvedilol,Tablet,6.25mg,4,40
+619,,Carvedilol,Tablet,12.5mg,4,40
+620,,Carvedilol,Tablet,25mg,4,40
+621,,Glyceryl trinitrate,Tablet (sublingual),500 micrograms,4,40
+622,,Glyceryl trinitrate,Spray (sublingual),400micrograms/ dose,4,40
+623,,Isosorbide dinitrate,Tablet,20mg,4,40
+624,,Isosorbide dinitrate,Tablet (Sublingual),5mg,4,40
+625,,Trimetazidine,Tablet (m/r),35mg,4,41
+626,,Adenosine,Injection,6mg/2mL,6,41
+627,,Amiodarone,Injection,50mg (as HCl)/mL in 3mL amp,5,41
+628,,Amiodarone,Tablet,100mg (as HCl),4,41
+629,,Amiodarone,Tablet,200mg (as HCl),4,41
+630,,Atropine,Injection,1mg (as sulphate)/1mL amp,4,41
+631,,Bisoprolol,Tablet,2.5mg,4,41
+632,,Bisoprolol,Tablet,5mg,4,41
+633,,Carvedilol,Tablet,3.125mg,4,41
+634,,Carvedilol,Tablet,6.25mg,4,41
+635,,Carvedilol,Tablet,12.5mg,4,41
+636,,Carvedilol,Tablet,25mg,4,41
+637,,Digoxin,Oral liquid,50 micrograms/mL,4,41
+638,,Digoxin,Tablet,250 micrograms,4,41
+639,,Digoxin,Tablet,125 micrograms,4,41
+640,,Epinephrine (adrenaline)312,Injection,1mg/1mL amp,4,41
+641,,Lignocaine (Preservative free)313,Injection,200mg/10mL,5,41
+642,,Verapamil,Tablet (Immediate release),40mg (as HCl),4,41
+643,,Verapamil,Tablet (Modified release),120mg,4,41
+644,14.3.1.1,Enalapril,Tablet (scored),5mg (as hydrogen maleate),3,42
+645,14.3.1.1,Enalapril,Tablet (scored),10mg (as hydrogen maleate),3,42
+646,14.3.1.1,Enalapril,Tablet (scored),20mg (as hydrogen maleate),3,42
+647,14.3.2.1,Losartan,Tablet (f/c),50mg,3,42
+648,14.3.2.2,Telmisartan,Tablet,40mg,4,42
+649,14.3.2.2,Telmisartan,Tablet,80mg,4,42
+650,14.3.3.1,Bisoprolol,Tablet,2.5mg,4,42
+651,14.3.3.1,Bisoprolol,Tablet,5mg,4,42
+652,14.3.3.2,Labetalol,Injection,5mg/mL (20mL amp),4,42
+653,14.3.3.2,Labetalol,Tablet,100mg,3,42
+654,14.3.3.2,Labetalol,Tablet,200mg,3,42
+655,14.3.3.3,Metoprolol,Tablet(e/r),25mg,3,42
+656,14.3.3.3,Metoprolol,Tablet(e/r),50mg,3,42
+657,14.3.3.4,Nebivolol,Tablet,2.5mg,3,42
+658,14.3.3.4,Nebivolol,Tablet,5mg,3,42
+659,14.3.4.1,Amlodipine,Tablet,5mg,3,42
+660,14.3.4.1,Amlodipine,Tablet,10mg,3,42
+661,,Nifedipine,Tablet (s/r),20mg,3,43
+662,,Chlorthalidone,Tablet,12.5mg,4,43
+663,,Hydrochlorothiazide (HCTZ),Tablet (scored),25mg,3,43
+664,,Indapamide,Tablet,1.5mg,4,43
+665,,Methyldopa,Tablet,250mg,4,43
+666,,Methyldopa,Tablet,500mg,4,43
+667,,Hydralazine,Injection,20mg (as HCl),4,43
+668,,Hydralazine,Tablet,25mg (as HCl),3,43
+669,,Hydralazine,Tablet,50mg (as HCl),3,43
+670,,Doxazosin,Tablet,2mg,4,43
+671,,Prazosin,Capsule,500 micrograms,4,43
+672,,Prazosin,Capsule,1mg,4,43
+673,,Prazosin,Capsule,5mg,4,43
+674,14.3.6.6.1,Bosentan,Tablet,62.5mg,4,44
+675,14.3.6.6.2,Sildenafil,Tablet,25mg,4,44
+676,14.3.6.6.3,Tadalafil,Tablet,20mg,4,44
+677,14.3.7.1,Amlodipine + Hydrochlorothiazide (HCTZ),Tablet,5mg + 12.5mg,3,44
+678,14.3.7.2,Amlodipine + Indapamide,Tablet,5mg + 1.25mg,3,44
+679,14.3.7.3,Lisinopril + Hydrochlorothiazide (HCTZ),Tablet,20mg + 12.5mg,3,44
+680,14.3.7.4,Losartan + Hydrochlorothiazide (HCTZ),Tablet,50mg + 12.5mg,3,44
+681,14.3.7.5,Perindopril + Amlodipine,Tablet,5mg + 5mg,3,44
+682,14.3.7.5,Perindopril + Amlodipine,Tablet,5mg + 10mg,5,44
+683,14.3.7.6,Perindopril + Amlodipine + Indapamide,Tablet (Film-coated),5mg + 5mg + 1.25mg,4,44
+684,14.3.7.6,Perindopril + Amlodipine + Indapamide,Tablet (Film-coated),10mg + 10mg+ 2.5mg,4,44
+685,14.3.7.5,Telmisartan + Amlodipine,Tablet,40mg + 5mg,3,44
+686,14.3.7.6,Telmisartan+ Amlodipine+ Hydrochlorothiazide (HCTZ),Tablet,40mg + 5mg + 12.5mg,4,44
+687,14.3.7.7,Telmisartan + Hydrochlorothiazide (HCTZ),Tablet,40mg + 12.5mg,3,44
+688,14.3.7.7,Telmisartan + Hydrochlorothiazide (HCTZ),Tablet,80mg + 12.5mg,3,44
+689,14.4.1,Bisoprolol,Tablet,2.5mg,4,45
+690,14.4.1,Bisoprolol,Tablet,5mg,4,45
+691,14.4.2,Carvedilol,Tablet,3.125mg,,45
+692,14.4.2,Carvedilol,Tablet,6.25mg,4,45
+693,14.4.2,Carvedilol,Tablet,12.5mg,4,45
+694,14.4.2,Carvedilol,Tablet,25mg,4,45
+695,14.4.3,Digoxin,Oral liquid,50 micrograms/mL,4,45
+696,14.4.3,Digoxin,Tablet,125 micrograms,4,45
+697,14.4.4,Dobutamine,Injection (solution),12.5mg/mL (20mL),5,45
+698,14.4.5,Dopamine,Injection,40mg/mL (as HCl) (5mL vial),5,45
+699,14.4.6,Empagliflozin,Tablet,10mg,5,45
+700,14.4.7,Enalapril,Tablet (scored),5mg (as hydrogen maleate),4,45
+701,14.4.8,Eplerenone,Tablet,25mg,4,45
+702,14.4.9,Furosemide,Injection,10mg/mL (2mL amp),4,45
+703,14.4.9,Furosemide,Tablet (cross-scored)328,40mg,3,45
+704,14.4.10,Hydralazine,Tablet,25mg (as HCl),4,45
+705,14.4.10,Hydralazine,Tablet,50mg (as HCl),4,45
+706,14.4.11,Isosorbide dinitrate,Tablet,20mg,4,45
+707,14.4.12,Ivabradine,Tablet (f/c),5mg,5,45
+708,14.4.12,Ivabradine,Tablet (f/c),7.5mg,5,45
+709,,Losartan,Tablet (f/c),50mg,4,46
+710,,Metolazone,Tablet,5mg,5,46
+711,,Milrinone,Injection (solution),1mg/mL (10mL),6,46
+712,,Nitroglycerin (NTG),Injection,2.5mg/mL (10mL) amp,5,46
+713,,Norepinephrine (Noradrenaline)331,Injection,1mg/mL,5,46
+714,,Sacubitril + Valsartan,Tablet (f/c),24mg + 26mg,5,46
+715,,Sacubitril + Valsartan,Tablet (f/c),48mg + 52mg,5,46
+716,,Spironolactone,Tablet (scored),25mg,4,46
+717,,Torsemide,Tablet (scored),20mg,4,46
+718,,Torsemide,Tablet (scored),10mg,4,46
+719,,Acetylsalicylic acid (Aspirin),Tablet,75mg,4,46
+720,,Clopidogrel,Tablet,75mg,4,46
+721,,Acetylsalicylic acid (Aspirin) + Clopidogrel,Tablet,75mg + 75mg,4,46
+722,,Alteplase,PFI,50mg,5,46
+723,,Alteplase,PFI,100mg,5,46
+724,,Reteplase,PFI,10 Units,5,46
+725,,Tenecteplase,PFI with prefilled syringe with 10mL water for injection,50mg (10000IU),5,47
+726,,Atorvastatin,Tablet,20mg,3,47
+727,,Atorvastatin,Tablet,40mg,3,47
+728,,Atorvastatin,Tablet,80mg,3,47
+729,,Clotrimazole,Cream,1%,2,47
+730,,Miconazole,Cream,2% (as nitrate),3,47
+731,,Terbinafine,Cream,1% (as HCl),4,47
+732,,Fusidic acid,Ointment,2% (15g),4,47
+733,,Mupirocin,Ointment,2% (15g),4,47
+734,,Silver sulphadiazine,Cream,1% (50g),2,47
+735,,Silver sulphadiazine,Cream,1% (250g),2,47
+736,,Betamethasone,Cream,0.1% (as valerate),4,47
+737,,Betamethasone,Ointment,0.1% (as valerate),4,47
+738,,Calamine,Lotion,15%,1,47
+739,,Clobetasone propionate,Ointment,0.05%,4,47
+740,,Crotamiton,Cream,10% (30g),2,48
+741,,Hydrocortisone,Cream,1% (as acetate),3,48
+742,,Hydrocortisone,Ointment,1% (as acetate),3,48
+743,,Mometasone,Ointment,0.1% (as furoate) (30g),4,48
+744,,Tacrolimus,Ointment,0.03% (as monohydrate) (10g),4,48
+745,,Tacrolimus,Ointment,0.1% (as monohydrate) (10g),4,48
+746,,Benzoyl peroxide,Gel,5% (30g),4,48
+747,,Dithranol,Paste,2%,4,48
+748,,Podophyllin resin,Solution,15% (in benzoin tincture) (15mL),3,48
+749,,Salicylic acid,Ointment,3%,4,48
+750,,Tretinoin,Cream,0.05%,4,48
+751,,Benzyl Benzoate,Lotion,25% (50mL),2,48
+752,,Calamine,Lotion,15%,1,48
+753,,Crotamiton,Cream,10% (30g),2,48
+754,15.6.1,Benzyl Benzoate,Lotion,25% (50mL),2,49
+755,15.6.2,White soft paraffin (Petroleum jelly)354,Topical application,100g,1,49
+756,16.1.1,Fluorescein,Test strip,0.6mg,4,49
+757,16.1.2,Tropicamide + Phenylephrine,Eye drops,0.8% + 5% w/v,4,49
+758,16.2.1,Amidotrizoate,Solution (oral and rectal use),370-420mg iodine/mL (as sodium or meglumine salt) (100mL),4,49
+759,16.2.2,Barium sulphate,Suspension (aq),95% w/w concentration (1 litre),4,49
+760,16.2.2,Barium sulphate,Paste (for oral or rectal use) 358,92% w/w concentration,4,49
+761,16.2.3,Iso-osmolar contrast media,Solution for IV injection/ infusion,320mg iodine/mL (100mL),4,49
+762,,Non-ionic low osmolar water- soluble iodinated contrast media,Injection,300mg iodine/mL (50mL) [c]361,4,50
+763,,Non-ionic low osmolar water- soluble iodinated contrast media,Injection,300mg iodine/mL (100mL) [c]362,4,50
+764,,Non-ionic low osmolar water- soluble iodinated contrast media,Injection,350mg iodine/mL (50mL)363,4,50
+765,,Non-ionic low osmolar water- soluble iodinated contrast media,Injection,350mg iodine/mL (100mL)364,4,50
+766,,Non-ionic low osmolar water- soluble iodinated contrast media,Injection,"300mg iodine/mL (50mL) [For intrathecal, oral, intra-cavitary and intravenous use] [c]365",4,50
+767,,Non-ionic low osmolar water- soluble iodinated contrast media,Injection,"300mg iodine/mL (100mL) [For intrathecal, oral, intra-cavitary and intravenous use] [c]366",4,50
+768,,Non-ionic low osmolar water- soluble iodinated contrast media,Injection,"350mg iodine/mL (50ml) [For oral, intra-cavitary and intravenous use]367",4,50
+769,,Non-ionic low osmolar water- soluble iodinated contrast media,Injection,"350mg iodine/mL (100ml) [For oral, intra-cavitary and intravenous use]368",4,50
+770,,Gadobutrol,Injection (solution) (IV),1mmol/mL (7.5mL)369,4,50
+771,,Gadobutrol,Injection (solution) (IV),1mmol/mL (15mL)370,4,50
+772,,Gadodiamide,Injection (solution) (IV),0.5 mmol/mL (20mL)370,4,50
+773,,Gadopentate dimeglumine,Injection (solution) (IV),0.5 mmol/mL (10mL)371,4,51
+774,,Gadopentate dimeglumine,Injection (solution) (IV),0.5 mmol/mL (15mL)372,4,51
+775,,Chlorhexidine,Solution for dilution,5% (as gluconate/ digluconate),2,51
+776,,Ethanol,Solution,70% (denatured),2,51
+777,,Povidone iodine,Solution,10% (equiv. to Iodine 1%),2,51
+778,,Alcohol-based hand rub,Solution,Isopropyl alcohol 75% (500mL dispenser),1,51
+779,,Glutaral,Solution,2%,2,51
+780,,Sodium hypochlorite,Solution,4-6% chlorine373,1,51
+781,,Amiloride,Tablet,5mg (as HCl),4,51
+782,,Furosemide,Injection,10mg/mL (2mL amp),4,51
+783,,Furosemide,Oral liquid,20mg/5mL [c]375,4,51
+784,,Furosemide,Tablet (cross-scored),40mg,4,51
+785,,Hydrochlorothiazide (HCTZ),Tablet (scored),25mg,4,51
+786,,Mannitol,Injectable solution,20%,4,51
+787,,Metolazone,Tablet,5mg,5,51
+788,,Spironolactone,Tablet (cross-scored),25mg,4,51
+789,,Spironolactone,Tablet (scored),100mg,4,51
+790,,Torsemide,Tablet,10mg,4,52
+791,,Torsemide,Tablet,20mg,4,52
+792,,Lansoprazole,Tablet (dispersible),15mg [c]377,4,52
+793,,Omeprazole,PFI,40mg (as sodium salt) vial,4,52
+794,,Omeprazole,Capsule,20mg,3,52
+795,,Pantoprazole,Tablet (dispersible),20mg,3,52
+796,,Pantoprazole,Capsule,20mg,3,52
+797,,Pantoprazole,PFI,40mg,4,52
+798,,Dexamethasone,Tablet,4mg,4,52
+799,,Dexamethasone,Tablet,2mg,4,52
+800,,Dexamethasone,Tablet,0.5mg,4,52
+801,,Dexamethasone,Injection,4mg/mL in 1mL amp as disodium phosphate salt,4,52
+802,,Domperidone,Oral liquid,5mg/5mL,5,52
+803,,Domperidone,Tablet,10mg,3,52
+804,,Fosaprepitant,Injection,150mg,5,52
+805,,Metoclopramide,Injection,5mg/mL (2mL amp),2,52
+806,,Metoclopramide,Tablet,10mg,2,52
+807,,Olanzapine,Tablet,5mg,5,53
+808,,Ondansetron,Injection,2mg (as HCl)/mL (2mL amp),2,53
+809,,Ondansetron,Oral liquid,4mg base/5mL [c]384,2,53
+810,,Ondansetron,Tablet,4mg (as HCl),2,53
+811,,Palonosetron,Injection,"0.05mg/mL, 5mL vial",4,53
+812,,Mesalazine,Tablet (e/c),400mg,4,53
+813,,Mesalazine,Suppository,1g,5,53
+814,,Mesalazine,Enema,4g/60mL,5,53
+815,,Prednisolone,Tablet,5mg,4,53
+816,,Bisacodyl,Tablet,5mg,2,53
+817,,Bisacodyl,Suppository,5mg,2,53
+818,,Lactulose,Oral liquid,3.1-3.7g/5mL,4,53
+819,,Oral rehydration salts + Zinc sulphate,Co-pack (4 sachets + 10 Tablet (dispersible)),PFOL in sachet to make 500mL + 20mg Tablet [c],2,53
+820,,Oral rehydration salts (ORS),PFOL (to make 500mL),Sachet (WHO low- osmolarity formula),1,53
+821,,Rehydration solution for malnutrition (ReSoMal)387,PFOL (to make 1L),Sachet (42g) (WHO formula),4,53
+822,19.7.1,Propranolol,Tablet,20mg,4,54
+823,19.7.1,Propranolol,Tablet,40mg,4,54
+824,19.7.2,Spironolactone,Tablet,25mg,4,54
+825,19.7.2,Spironolactone,Tablet,100mg,4,54
+826,20.1.1,Fludrocortisone,Tablet,100 micrograms (as acetate),4,54
+827,20.1.2,Hydrocortisone,Tablet,5mg,4,54
+828,20.1.2,Hydrocortisone,Tablet,20mg,4,54
+829,20.1.2,Hydrocortisone,Injection,100mg/vial,2,54
+830,20.2.1,Testosterone,Gel,1%,4,54
+831,20.2.1,Testosterone,Injection (oily)392,250mg (as enanthate)/1mL amp,4,54
+832,20.3.1,Conjugated Oestrogens,Tablet,300 micrograms,4,54
+833,20.3.1,Conjugated Oestrogens,Cream (Vaginal)394,0.625mg/g (30g),4,54
+834,20.3.2,Estradiol,Transdermal patch,0.1mg/day,4,54
+835,20.5.1.1,"Insulin, intermediate-acting (NPH)",Injection,100 IU/mL (10mL vial),4,55
+836,20.5.1.2,"Insulin, long-acting, Detemir",Injection,100U/mL (10mL vial),4,55
+837,20.5.1.2,"Insulin, long-acting, Detemir",Injection,100 IU/mL (3 mL cartridge or prefilled pen),4,55
+838,20.5.1.3,"Insulin, Long-acting (basal), Glargine",Injection,100 IU/mL (10mL vial),4,55
+839,20.5.1.3,"Insulin, Long-acting (basal), Glargine",Injection,100 IU/mL (3 mL cartridge or prefilled pen),4,55
+840,20.5.1.4,"Insulin, Premixed (Short acting + Intermediate acting) (Human)397",Injection,100 IU/mL (10mL vial),4,55
+841,20.5.1.4,"Insulin, Premixed (Short acting + Intermediate acting) (Human)397",Injection,100 IU/mL (3mL prefilled pen),4,55
+842,20.5.1.5,"Insulin, Premixed (Ultra short acting + Intermediate acting)398",Injection,100 IU/mL (10mL vial),4,55
+843,20.5.1.5,"Insulin, Premixed (Ultra short acting + Intermediate acting)398",Injection,100 IU/mL (3mL prefilled pen),4,55
+844,20.5.1.6,"Insulin, Short acting (Soluble / regular)",Injection,100 IU/mL (10mL vial),3,55
+845,20.5.1.6,"Insulin, Short acting (Soluble / regular)",Injection,100IU/mL (3mL penfill),3,55
+846,20.5.1.7,"Insulin, Ultra short-acting (Rapid) (Insulin Lispro and Aspart)",Injection,100 IU/mL (10mL vial),4,55
+847,20.5.1.7,"Insulin, Ultra short-acting (Rapid) (Insulin Lispro and Aspart)",Injection,100IU/mL (3mL prefilled pen),4,55
+848,20.5.2.1.1,Gliclazide,Tablet (m/r),30mg,3,55
+849,20.5.2.1.1,Gliclazide,Tablet (m/r),60mg,3,55
+850,20.5.2.1.1,Gliclazide,Tablet (i/r),40mg,3,55
+851,20.5.2.1.1,Gliclazide,Tablet (i/r),80mg,3,55
+852,20.5.2.2.1,Metformin,Tablet,500mg (as HCl),3,56
+853,20.5.2.2.1,Metformin,Tablet,850mg (as HCl),3,56
+854,20.5.2.2.1,Metformin,Tablet,1gm (as HCl),3,56
+855,20.5.2.3.1,Pioglitazone,Tablet,15mg,4,56
+856,20.5.2.3.1,Pioglitazone,Tablet,30mg,4,56
+857,20.5.2.4.1,Linagliptin,Tablet (f/c),5mg,5,56
+858,20.5.2.4.2,Sitagliptin,Tablet,50mg,4,56
+859,20.5.2.4.2,Sitagliptin,Tablet,100mg,5,56
+860,20.5.2.5.1,Empagliflozin,Tablet,10mg,4,56
+861,20.5.2.5.1,Empagliflozin,Tablet,25mg,5,56
+862,20.5.2.6.1,Empagliflozin + Metformin,Tablet (i/r),12.5mg + 500mg,4,56
+863,20.5.2.6.1,Empagliflozin + Metformin,Tablet (i/r),12.5mg + 1000mg,4,56
+864,20.5.2.6.1,Empagliflozin + Metformin,Tablet (i/r),5mg + 500mg,4,56
+865,20.5.2.6.1,Empagliflozin + Metformin,Tablet (i/r),5mg + 1000mg,4,56
+866,20.5.2.6.2,Pioglitazone + Metformin,Tablet,15mg + 500mg,4,56
+867,20.5.2.6.2,Pioglitazone + Metformin,Tablet,15mg + 850mg,4,56
+868,,Sitagliptin + Metformin,Tablet,50mg + 500mg,4,57
+869,,Sitagliptin + Metformin,Tablet,50mg + 850mg,4,57
+870,,Sitagliptin + Metformin,Tablet,50mg + 1000mg,4,57
+871,,Diazoxide,Suspension,50mg/mL,4,57
+872,,Glucagon,injection,1mg/mL,4,57
+873,,Carbimazole,Tablet,5mg,4,57
+874,,Carbimazole,Tablet,10mg,4,57
+875,,Levothyroxine,Tablet,25 micrograms [c] (as sodium salt),4,57
+876,,Levothyroxine,Tablet,50 micrograms (as sodium salt),4,57
+877,,Levothyroxine,Tablet,100 micrograms (as sodium salt),4,57
+878,,Lugol’s Iodine solution,Solution,~130mg total iodine/mL,4,57
+879,,Propranolol,Tablet (scored),40mg,4,57
+880,,Propylthiouracil,Tablet,50mg,4,57
+881,,Calcitriol (Vit D3)409,Capsule,250 micrograms,4,57
+882,,Calcitriol (Vit D3)409,Injection,1 microgram/mL (1 mL),4,57
+883,,Desmopressin,Injection,4mcg/mL,5,58
+884,,Desmopressin,Nasal spray,10mcg/spray,5,58
+885,,Somatropin (recombinant human growth hormone)413,Prefilled pen,12mg,5,58
+886,,BCG vaccine (live attenuated),PFI + diluent,1mL vial (multi doses),2,58
+887,,DPT + HiB + Hep B vaccine (pentavalent)416,Injection (suspension),5mL vial (10 doses),2,58
+888,,Hepatitis B vaccine,Injection (suspension),Single dose vial,2,58
+889,,Hepatitis B vaccine,Injection (suspension),Multi dose vial,2,58
+890,,HPV vaccine (quadrivalent)417,Injection,Single or multi dose vial,2,58
+891,,Measles + Rubella vaccine (MR)418,PFI + diluent,5mL vial (10 doses),2,58
+892,,Pneumococcal vaccine (10-valent ads. conjugate),Injection (suspension),2mL vial (4 doses),2,58
+893,,Pneumococcal vaccine (13 valent or higher adsorbed conjugate)419,Injection (syringe),Single or multi dose vial,2,59
+894,,Polio vaccine (IPV),Injection,Multi dose vial,2,59
+895,,"Polio vaccine, oral (OPV) (live attenuated)",Oral drops,10mL vial (20 doses),2,59
+896,,Rotavirus vaccine,Oral suspension,5 dose vial,2,59
+897,,Tetanus + Diphtheria (Td) vaccine,Injection,10mL vial (20 doses),2,59
+898,,Tetanus + Diphtheria + Pertussis (Tdap) vaccine,Injection,0.5mL (single dose),2,59
+899,,Cholera vaccine,Oral suspension,1.5mL vial (single dose) - single dose vial,2,59
+900,,Hepatitis A vaccine,Injection,80 units (Paed),2,59
+901,,Hepatitis A vaccine,Injection,160 units (Adult),2,59
+902,,Malaria vaccine,Injection,1mL vial (2 doses),2,59
+903,,Meningococcal meningitis vaccine,Injection,Single or multi dose,2,59
+904,,Rabies vaccine (cell culture),Injection,Single dose (Purified Verocell / Human diploid),2,59
+905,,Typhoid vaccine,Injection (solution),Single or multi dose,2,59
+906,22.1.1,Acyclovir,Eye ointment,3%,4,60
+907,22.1.2,Dexamethasone + Polymixin B sulphate + Neomycin sulphate,Ointment,"1mg dexamethasone, 6000 IU polymixin B sulphate, 3500 IU neomycin sulphate",4,60
+908,22.1.3,Erythromycin,Eye ointment,0.5% [c],4,60
+909,22.1.4,Gentamicin,Eye drops,0.3% (as sulphate) (10mL),2,60
+910,22.1.5,Gentamicin + Dexamethasone,Eye drops,0.3% + 0.1%,4,60
+911,22.1.6,Moxifloxacin,Eye drops,0.5% (as HCL),5,60
+912,22.1.7,Natamycin,Eye drops,5%,5,60
+913,22.1.8,Ofloxacin,Eye drops,0.3% (as sulphate),4,60
+914,22.1.9,Ofloxacin + Dexamethasone,Solution (eye-drops),0.3 + 0.1%,4,60
+915,22.1.10,Tetracycline,Eye ointment,1% (as HCl),1,60
+916,22.1.11,Tobramycin,Solution (eye-drops),0.3% (as sulphate),3,60
+917,22.1.12,Tobramycin + Dexamethasone,Solution (eye-drops),0.3 + 0.1%,4,60
+918,22.1.13,Voriconazole,Powder for eye-drops,1% w/v(Lyophilized),5,60
+919,22.2.1,Dexamethasone,Solution (eye-drops),0.1%,4,60
+920,22.2.2,Fluorometholone,Solution (eye-drops),0.1%,4,60
+921,22.2.3,Ketorolac trometamol,Solution (eye-drops),0.5%,4,60
+922,,Methylprednisolone,PFI,1g vial (as sodium succinate),5,61
+923,,Prednisolone,Solution (eye-drops),1% (as acetate) (5mL),4,61
+924,,Triamcinolone,Injection suspension,40mg/1mL amp (as acetonide or hexacetonide),5,61
+925,,Lignocaine,Solution (eye-drops),2% (as HCL),4,61
+926,,Lignocaine + Epinephrine (Adrenaline),Solution (eye-drops),"Lignocaine 2% and Epinephrine (Adrenaline) 1:100,000 or1:200,000 (as HCl)",5,61
+927,,Proparacaine,Solution (eye-drops),0.5% (as HCl),4,61
+928,,Tetracaine,Solution (eye-drops),0.5% (as HCl),4,61
+929,,Acetazolamide,Tablet,250mg,4,61
+930,,Bimatoprost,Solution (eye-drops),0.01%,4,61
+931,,Bimatoprost,Solution (eye-drops),0.03%,4,61
+932,,Bimatoprost + Timolol,Solution (eye-drops),Bimatoprost 0.03% +Timolol 0.5%,4,61
+933,,Brimonidine + Timolol,Solution (eye-drops),Brimonidine 0.2% +Timolol 0.5%,5,61
+934,,Dorzolamide,Solution (eye-drops),2% (as HCl),4,61
+935,,Latanoprost,Solution (eye-drops),0.005%,4,61
+936,,Pilocarpine,Solution (eye-drops)441,4% (as HCl or nitrate),5,61
+937,,Pilocarpine,Solution (eye-drops)441,2%,5,61
+938,,Pilocarpine,Solution (eye-drops)441,1%,5,61
+939,,Pilocarpine,Injection,0.5% w/v(as nitrate) vial,5,61
+940,,Timolol,Solution (eye-drops),0.5% (as hyd. maleate),4,62
+941,,Atropine,Solution (eye-drops),0.1% (as sulphate) [c]443,4,62
+942,,Atropine,Solution (eye-drops),0.5% (as sulphate),4,62
+943,,Cyclopentolate,Solution (eye-drops),1%,4,62
+944,,Tropicamide + phenylephrine,Solution (eye-drops),0.8% + 5% w/v,4,62
+945,,Aflibercept,Injection,0.05mL (2mg vial),6,62
+946,,Bevacizumab,Injection,25mg/mL (4mL vial),6,62
+947,,Ranibizumab,Injection,6mg/mL (0.3mg vial),6,62
+948,,Ranibizumab,Injection,10mg/mL (0.5mg vial),6,62
+949,,Azelastine,Solution (eye-drops),0.05%,3,62
+950,,Olopatadine,Solution (eye-drops),0.1% (HCl),5,62
+951,,Olopatadine,Solution (eye-drops),0.2% (HCl),5,62
+952,,Sodium cromoglicate,Solution (eye-drops),2%,5,62
+953,,Hypertonic saline,Solution (eye-drops),3%,5,62
+954,,Methyl cellulose,Solution (eye-drops),0.3 - 1%,4,62
+955,,Polyacrylic acid,Eye Gel,0.2%,4,63
+956,,Riboflavin,Solution (eye-drops),0.1% with Dextran,5,63
+957,,Riboflavin,Solution (eye-drops),0.1% without Dextran,5,63
+958,,Sodium Hyaluronate,Solution (eye-drops),1% (preseverative free),4,63
+959,,Trypan blue,Intracameral Solution,0.06%,5,63
+960,,Ethinylestradiol + Levonorgestrel,Tablet,30 micrograms + 150 micrograms,2,63
+961,,Ethinylestradiol + Norethisterone,Tablet,35 micrograms + 1mg,2,63
+962,,Levonorgestrel,Tablet,30 micrograms,2,63
+963,,Medroxyprogesterone acetate (DMPA),Depot Injection (IM)459,150mg/1mL (prefilled syringe),2,63
+964,,Medroxyprogesterone acetate (DMPA),Depot Injection (SC)460,104 mg/0.65 mL (prefilled syringe),2,63
+965,23.1.4.1,Etonorgestrel-releasing implant,Implant,68mg (1 rod),2,64
+966,23.1.4.2,Levonorgestrel-releasing implant,Implant,150mg (2 x 75mg rods),2,64
+967,23.2.1,Clomifene,Tablet,50mg (as citrate),4,64
+968,23.2.2,Human chorionic gonadotropin (HCG),Injection,"5,000 IU/vial",5,64
+969,23.2.3,Human menopausal gonadotropin (HMG)464,Injection,75 IU,5,64
+970,23.2.4,Letrozole,Tablets,2.5mg,4,64
+971,23.3.1,Danazol,Capsule,50mg,4,64
+972,23.3.2,Dienogest,Tablet,2mg,4,64
+973,23.3.3,Goserelin,"Injection (depot, SC)",3.6mg (as acetate),4,64
+974,23.3.4,Levonorgestrel (LNG),LNG-releasing Intrauterine system (LNG-IUS),Reservoir with 52mg,4,64
+975,,Ergometrine,Injection,500 micrograms/1mL (as hydrogen maleate) amp,2,65
+976,,Mifepristone + Misoprostol,Tablet,Mifepristone 200mg (1 Tablet) and Misoprostol 200 micrograms (4 vaginal tablets) in Combi-pack,2,65
+977,,Misoprostol,Tablet,200 micrograms470,2,65
+978,,Misoprostol,Vaginal Tablet,25 micrograms471,2,65
+979,,Oxytocin,Injection,10 IU/1mL amp,2,65
+980,,Prostaglandin E,Vaginal Tablet,3mg,4,65
+981,,Salbutamol,Injection,500 micrograms (as sulphate)/mL (5mL amp),4,65
+982,,Terbutaline,Injection,"0.5mg/mL, 1mL",4,65
+983,,Terbutaline,Injection,"0.5mg/mL, 5mL",4,65
+984,,Chlorhexidine,Gel,7.1% (as digluconate) (20 g tube) [c],2,66
+985,,Ibuprofen,Injection solution,5mg/mL (2mL amp) [c],5,66
+986,,Prostaglandin E,Injection solution,1mg/mL [c],5,66
+987,,Sildenafil,PFOL,10mg/mL,5,66
+988,,Surfactant,Suspension for intratracheal instillation,25mg/mL [c]483,5,66
+989,,Surfactant,Suspension for intratracheal instillation,80mg/mL [c]484,5,66
+990,,Continuous ambulatory peritoneal dialysis solution (CAPD),Parenteral solution,Of appropriate composition,4,66
+991,,Haemodialysis solution,Parenteral solution,Of appropriate composition,4,66
+992,,Aripiprazole,Tablet,15mg,4,66
+993,,Aripiprazole,Tablet,5mg,4,66
+994,,Chlorpromazine,Injection,25mg (as HCl)/mL (2mL amp),2,66
+995,,Chlorpromazine,Tablet,50mg (as HCl)486,2,66
+996,,Chlorpromazine,Tablet,100mg (as HCl),2,66
+997,,Clozapine,Tablet (scored),100mg,5,66
+998,,Flupentixol,"Injection (oily, depot)",20mg (as decanoate)/mL (2mL amp),4,66
+999,,Fluphenazine,"Injection (oily, depot)",25mg (as decanoate) /1mL amp,4,66
+1000,,Haloperidol,Injection,5mg/1mL amp,4,66
+1001,,Haloperidol,Injection (oily),50mg/1mL amp,4,66
+1002,,Haloperidol,Tablet (scored),5mg,2,66
+1003,,Midazolam,Injection (IM),5mg/mL (3mL amp),4,67
+1004,,Olanzapine,PFI,10mg,5,67
+1005,,Olanzapine,Tablet,10mg,3,67
+1006,,Olanzapine,Tablet,5mg,3,67
+1007,,Olanzapine,Tablet (dispersible),10mg,3,67
+1008,,Paliperidone palmitate,Injection,75mg/mL,5,67
+1009,,Paliperidone palmitate,Injection,100mg/mL,5,67
+1010,,Paliperidone palmitate,Injection,150mg/mL,5,67
+1011,,Quetiapine,"Tablet (i/r, scored)",100mg,4,67
+1012,,Quetiapine,"Tablet (i/r, scored)",300mg,4,67
+1013,,Quetiapine,"Tablet (i/r, scored)",200mg,4,67
+1014,,Quetiapine,Tablet (e/r),300mg,4,67
+1015,,Quetiapine,Tablet (e/r),200mg,4,67
+1016,,Risperidone,Tablet (scored),2mg,3,67
+1017,,Zuclopenthixol,Injection (aqua)491,100mg (as acetate)/mL (2mL amp),4,67
+1018,,Zuclopenthixol,"Injection (oily, depot)492",200mg (as decanoate)/1mL amp,4,67
+1019,,Zuclopenthixol,Oral drops,20mg/mL (20mL),4,67
+1020,,Amitriptyline,Tablet,25mg (as HCl),2,67
+1021,,Escitalopram,Tablet,10mg,3,67
+1022,,Fluoxetine,Tablet (scored),20mg (as HCl),3,67
+1023,,Mirtazapine,Tablet,15mg,5,67
+1024,,Venlafaxine,Tablet,75mg,4,68
+1025,,Venlafaxine,Tablet,37.5mg,4,68
+1026,,Carbamazepin,Tablet (cross-scored),200mg,2,68
+1027,,Carbamazepin,Tablet (Controlled Release),200mg,4,68
+1028,,Divalproex sodium,Tablet,500mg,4,68
+1029,,Divalproex sodium,Tablet,750mg,4,68
+1030,,Lamotrigine,Tablet,25mg,5,68
+1031,,Lamotrigine,Tablet,100mg,5,68
+1032,,Lamotrigine,"Tablet, (chewable, dispersible)",25mg,5,68
+1033,,Lithium carbonate,Tablet (scored),400mg,6,68
+1034,,Lithium carbonate,Tablet (m/r),400mg,6,68
+1035,,Quetiapine,"Tablet (i/r, scored)",100mg,4,68
+1036,,Quetiapine,"Tablet (i/r, scored)",300mg,4,68
+1037,,Quetiapine,"Tablet (i/r, scored)",200mg,4,68
+1038,,Quetiapine,Tablet (e/r),300mg,4,68
+1039,,Quetiapine,Tablet (e/r),200mg,4,68
+1040,,Alprazolam,Tablet,0.25mg,3,68
+1041,,Alprazolam,Tablet,0.5mg,3,68
+1042,,Bromazepam,Tablet (scored),3mg,4,68
+1043,,Escitalopram,Tablet,10mg,3,68
+1044,,Mirtazapine,Tablet,15mg,5,68
+1045,,Paroxetine,Tablet,20mg,4,68
+1046,,Propranolol,Tablet,40mg,3,68
+1047,,Vitamin B and C,Injection (IV),Pair of amps. (2 x 5mL),4,69
+1048,,Buprenorphine,Tablet (sublingual),2mg (as HCl),4,69
+1049,,Buprenorphine,Tablet (sublingual),8mg (as HCl),4,69
+1050,,Buprenorphine + Naloxone,Tablet (sublingual),2mg + 500 micrograms (both as HCl),4,69
+1051,,Buprenorphine + Naloxone,Tablet (sublingual),8mg + 2mg (both as HCl),4,69
+1052,,Bupropion,Tablet,150mg,4,69
+1053,,Methadone,Oral liquid,5mg/mL (as HCl) (concentrate),4,69
+1054,,Naltrexone,Tablet,50mg (as HCl),4,69
+1055,,Naltrexone,"Injection (IM, suspension for extended release)504",380mg (as HCl),4,69
+1056,,Naltrexone,Implant,765mg (as HCl),6,69
+1057,,Nicotine (NRT)506,Chewing gum,2mg,4,69
+1058,,Nicotine (NRT)506,Chewing gum,4mg,4,69
+1059,,Nicotine (NRT)506,Transdermal patch,7-21mg/24 hours,4,69
+1060,,Atomoxetine,Tablet,10mg,6,69
+1061,,Methylphenidate,Tablet,10mg,4,69
+1062,,Methylphenidate,Tablet (e/r),18mg,4,69
+1063,,Methylphenidate,Tablet (e/r),27mg,5,69
+1064,25.7.1,Melatonin,Tablet (dispersible),4mg,2,70
+1065,25.7.1,Melatonin,Tablet (dispersible),3mg,2,70
+1066,25.7.2,Zolpidem,Tablet,10mg,4,70
+1067,26.1.1,Budesonide,Inhalation (aerosol),100 micrograms/dose (200 dose),4,70
+1068,26.1.1,Budesonide,Inhalation (aerosol),200 micrograms/dose (200 dose),4,70
+1069,26.1.2,Budesonide + Formoterol,Metered dose inhaler,100 micrograms + 6mg/ metered dose (120 dose),4,70
+1070,26.1.2,Budesonide + Formoterol,Metered dose inhaler,200 micrograms + 6mg/ metered dose (120 dose),4,70
+1071,26.1.2,Budesonide + Formoterol,Dry powder inhaler,80 micrograms + 4.5mcg/ metered dose (120 dose),4,70
+1072,26.1.2,Budesonide + Formoterol,Dry powder inhaler,160 micrograms + 4.5mcg/ metered dose (120 dose),4,70
+1073,26.1.3,Epinephrine (adrenaline),Injection,1mg/1mL amp511,2,70
+1074,26.1.4,Ipratropium bromide,Inhalation (aerosol),20 micrograms/metered dose (200 dose),4,70
+1075,26.1.4,Ipratropium bromide,Nebuliser solution,500 micrograms/2mL unit dose vial (isotonic),4,70
+1076,26.1.5,Montelukast,Tablet (chewable),5mg (as sodium salt)512,4,70
+1077,26.1.5,Montelukast,Tablet,10mg (as sodium salt),4,70
+1078,26.1.6,Salbutamol,Nebuliser solution,5mg/mL (as sulphate),2,70
+1079,26.1.7,Salbutamol + Beclomethasone,Inhalation (aerosol),100 micrograms + 50 micrograms,3,70
+1080,26.1.8,Salbutamol + Ipratropium,Nebuliser solution,Salbutamol 2.5mg as sulphate + Ipratropium 500 micrograms as bromide in 2.5mL Amp,3,70
+1081,,Tiotropium,Powder for inhalation in a Capsule,18 micrograms / Capsule,4,71
+1082,,Tiotropium,Metered dose Inhaler,2.5 micrograms per actuation,4,71
+1083,,Benzocaine + Chlorbutol + Paradichlorobenzene + Turpentine oil,Solution (ear drops),2.7% + 2% + 5% + 15%,3,71
+1084,,Betahistine,Tablet,8mg,5,71
+1085,,Betahistine,Tablet,16mg,5,71
+1086,,Cinnarizine,Tablet,25mg,5,71
+1087,,Ciprofloxacin,Solution (ear drops),0.3% (as HCl),2,71
+1088,,Ciprofloxacin + Dexamethasone,Solution (ear drops),0.3% (as HCl) + 0.1%,3,71
+1089,,Clotrimazole,Solution (ear drops),1%,3,71
+1090,,Hydrogen peroxide,Solution (ear drops),3% (stabilised),2,71
+1091,,Budesonide,Nasal spray,100 micrograms / metered dose [c],4,71
+1092,,Fluticasone,Nasal spray,27.5 micrograms (as propionate or furoate),5,71
+1093,,Liquid paraffin,Nasal drops,100%,2,71
+1094,,Neomycin + Betamethasone,Solution (nasal drops),0.5% (as sulphate) + (0.1% as sodium phosphate),4,71
+1095,,Sodium chloride,Solution (nasal drops),0.9%,2,71
+1096,,Xylometazoline,Nasal spray,0.05%,4,71
+1097,,Lidocaine (Lignocaine)521,Spray,10mg/metered dose (actuation),4,72
+1098,,Allopurinol,Tablet,100mg,4,72
+1099,,Allopurinol,Tablet,300mg,4,72
+1100,,Colchicine,Tablet,500 micrograms,4,72
+1101,,Febuxostat,Tablet,40mg,5,72
+1102,,Probenecid,Tablet,250mg,6,72
+1103,,Abatacept,PFI (IV),250mg,6,72
+1104,,Adalimumab,Injection,40mg/0.4mL,6,72
+1105,,Azathioprine,Tablet,50mg,4,72
+1106,,Baricitinib,Tablet,2mg,6,72
+1107,,Cyclosporin,Capsule,25mg,6,72
+1108,,Cyclosporin,Capsule,100mg,6,72
+1109,,Etanercept,Injection,25mg vial528,6,72
+1110,,Etanercept,Injection,50mg vial529,6,72
+1111,,Golimumab,Injection (solution) (SC),50mg,6,72
+1112,,Hydroxychloroquine,Tablet,200mg (as sulphate),4,72
+1113,,Infliximab,PFI,100mg,6,72
+1114,,Leflunomide,Tablet,20mg,6,73
+1115,,Methotrexate (MTX),Tablet,2.5mg (as sodium salt),4,73
+1116,,Methotrexate (MTX),Injection (prefilled syringe)535,10mg/mL (0.4mL),4,73
+1117,,Methotrexate (MTX),Injection (prefilled syringe)535,25mg/mL (0.4mL),4,73
+1118,,Methylprednisolone,PFI,125mg (as sodium succinate),4,73
+1119,,Methylprednisolone,PFI,500mg (as sodium succinate),4,73
+1120,,Prednisolone,Tablet,5mg,5,73
+1121,,Prednisolone,Tablet,20mg,5,73
+1122,,Rituximab,Injection (IV),10mg/mL (10mL vial),6,73
+1123,,Rituximab,Injection (IV),10mg/mL (50mL vial),6,73
+1124,,Sulfasalazine (SSZ),Tablet,500mg,4,73
+1125,,Tocilizumab,(Solution for IV infusion),20mg/mL (4mL vial),6,73
+1126,,Tocilizumab,"Injection, single use prefilled syringe for subcutaneous injection",162mg/0.9mL,6,73
+1127,,Triamcinolone,Injection (suspension),40mg/1mL amp (as acetonide or hexacetonide),5,73
+1128,,Acetylsalicylic acid (Aspirin)539,Tablet (scored),300mg,4,73
+1129,,Adalimumab,Injection,40mg/0.4mL,6,73
+1130,,Etanercept,Injection,25mg vial,6,73
+1131,,Methotrexate (MTX),Tablet,2.5mg (as sodium salt),4,73
+1132,,Methotrexate (MTX),Injection (prefilled syringe)543,10mg/mL (0.4mL),4,73
+1133,,Methotrexate (MTX),Injection (prefilled syringe)543,25mg/mL (0.4mL),4,73
+1134,,Rituximab,Injection (IV),10mg/mL (10mL vial),6,74
+1135,,Rituximab,Injection (IV),10mg/mL (50mL vial),6,74
+1136,,Tocilizumab,Injection (solution for IV infusion),20mg/mL (4mL vial),6,74
+1137,,Tocilizumab,"Injection, single use prefilled syringe for subcutaneous injection",162mg/0.9mL,6,74
+1138,,Triamcinolone,Injection (suspension),40mg/1mL amp (as acetonide or hexacetonide),6,74
+1139,,β-Sitosterol,Ointment,0.25% w/w (30gm),2,74
+1140,,Collagenase clostridiopeptidase A + Proteases,Ointment,1.2 units + 0.24 units (15g),2,74
+1141,,Distilled water,Liquid,500mL,2,74
+1142,,Human Epidermal growth factor (recombinant)550,Gel (water-based),60 micrograms (15g),4,74
+1143,,Human Platelet derived growth factor (recombinant),Gel (water-based),100 micrograms (15g),4,74
+1144,,Metronidazole,Gel,0.75% or 0.80%,4,74
+1145,,Papain + Urea (Papain-urea topical)552,Ointment,"521,700 IU + 100mg (15g)",4,74
+1146,,Silver ion,Solution,0.01% (100mL),4,74
+1147,,Silver ion,Solution,0.01% (250mL),4,74
+1148,,Silver sulphadiazine,Cream,1% (50g),2,74
+1149,,Silver sulphadiazine,Cream,1% (250g),2,74
+1150,,Zinc Hyaluronate (zinc- hyaluronan),Gel (water-based),15g,2,75
+1151,,Calcium carbonate,Tablet,500mg,4,75
+1152,,Calcium Carbonate with Vitamin D,Tablet,Minimum Calcium 1000mg/600IU of vitamin D,4,75
+1153,,Calcium polystyrene sulphonate,Powder,15g sachet,4,75
+1154,,Magnesium chloride,Tablet,71.5mg (containing Calcium as carbonate 119mg per Tablet),4,75
+1155,,Oral rehydration salts (ORS),PFOL (to make 500mL),Sachet (WHO low- osmolarity formula),1,75
+1156,,Oral rehydration salts + Zinc sulphate,"Co-pack (4 sachets + 10 Tablets, (dispersible))",PFOL in sachet to make 500mL + 20mg Tablet [c],2,75
+1157,,Potassium chloride,Tablet (e/r),600mg,4,75
+1158,,Rehydration solution for malnutrition (ReSoMal),PFOL (to make 1L),Sachet (42g) (WHO formula),4,75
+1159,,Sevelamer,Tablet,400mg,4,75
+1160,,Sevelamer,Tablet,800mg,4,75
+1161,,Sodium acid phosphate,Tablets (effervescent),1.936g (equiv. to phosphorus 500mg),4,75
+1162,,Sodium chloride,Tablet,600mg,4,75
+1163,,Sodium polystyrene sulphonate,Powder,450g,4,75
+1164,,Sodium hydrogen carbonate (Sodium bicarbonate)562,Tablet,1g,5,75
+1165,,Tolvaptan,Tablet,15mg,5,75
+1166,,Glucose,Injectable solution,5% (isotonic) (500mL infusion pack),2,76
+1167,,Glucose,Injectable solution,10% (hypertonic) (500mL infusion pack),2,76
+1168,,Glucose,Injectable solution,50% (hypertonic) (50mL amp)565,4,76
+1169,,Glucose + Sodium chloride,Injectable solution,5% + 0.9% [c],2,76
+1170,,Potassium acid phosphate,Injection,13.6% w/v sterile aqueous solution,4,76
+1171,,Potassium chloride,Injectable solution for dilution,15% (10mL amp)567,4,76
+1172,,Sodium chloride,Injectable solution (infusion),0.45% (hypotonic) (500mL) [in collapsible bottle or Euro cap]568,4,76
+1173,,Sodium chloride,Injectable solution (infusion),0.9% (isotonic) (500mL)569,2,76
+1174,,Sodium chloride,Injectable solution (infusion),0.9% (isotonic) (100mL),2,76
+1175,,Sodium chloride,Injectable solution (infusion),0.9% (isotonic) (250mL),2,76
+1176,,Sodium chloride,Injectable solution (infusion),3% (hypertonic) (100mL amp)570,5,76
+1177,,Sodium chloride,Injectable solution,30% (hypertonic) (10mL amp),5,76
+1178,,Sodium hydrogen carbonate (Sodium bicarbonate),Injectable solution,8.4% (10mL amp)571,2,76
+1179,,Sodium lactate compound (Hartmann’s /Ringers lactate),Injectable solution (infusion),BP formula (500mL)572,2,76
+1180,,Water for injection,Injection,10mL amp,2,76
+1181,32.1,Ascorbic acid (Vit C)573,Tablet,50mg,2,77
+1182,32.1,Ascorbic acid (Vit C)573,Tablet,250mg,2,77
+1183,32.1,Ascorbic acid (Vit C)573,Tablet,1g,2,77
+1184,32.2,Calcitriol (Vit D3)574,Capsule,250 micrograms,4,77
+1185,32.2,Calcitriol (Vit D3)574,Injection,1 microgram/mL (1 mL),4,77
+1186,32.3,Calcium carbonate,Tablet (chewable),1.25g,4,77
+1187,32.3,Calcium carbonate,Tablet (chewable),500mg,4,77
+1188,32.4,Calcium gluconate,Injection,100mg/mL (10%) (10mL amp),4,77
+1189,32.5,Cholecalciferol (Vit D3),Oral liquid (drops)576,400 IU/mL [c],4,77
+1190,32.5,Cholecalciferol (Vit D3),Injection (IM/Oral)577,"300,000 IU/1mL amp",4,77
+1191,32.6,Ergocalciferol (Vit D2)578,Oral liquid,"250 micrograms (10,000 IU)/mL",4,77
+1192,32.6,Ergocalciferol (Vit D2)578,Tablet / Capsule,"250 micrograms (10,000 IU)",4,77
+1193,32.6,Ergocalciferol (Vit D2)578,Tablet / Capsule,"1.25mg (50,000 IU)",4,77
+1194,32.7,Niacinamide,Tablet,500mg,3,77
+1195,,Omega 3 fatty acids,Tablet / Capsule,1g,2,78
+1196,,Omega 3 fatty acids,Liquid,250mg to 500mg/100mL (100 to 200mL),2,78
+1197,,Pyridoxine (Vit B6),Tablet,25mg (as HCl)581,2,78
+1198,,Pyridoxine (Vit B6),Tablet (scored),50mg (as HCl)582,2,78
+1199,,Retinol (Vit A),Capsule,"50,000 IU (as palmitate)",2,78
+1200,,Retinol (Vit A),Capsule,"100,000 IU (as palmitate)",2,78
+1201,,Retinol (Vit A),Capsule,"200,000 IU (as palmitate)",2,78
+1202,,Thiamine (Vit B1)583,Tablet,50mg (as HCl),4,78
+1203,,Vitamins & Minerals Mix,Powder,1g sachet [c],2,78
+1204,,Vitamin B12 (Cobalamin),Tablet,500 micrograms,3,78
+1205,,Vitamin B12 (Cobalamin),Injection,"1mg/1mL amp (as HCl, acetate or sulphate)",4,78
+1206,,Zinc sulphate,Tablet (dispersible),20mg,2,79
+1207,,Amino acids,Solution for IV infusion,21g amino acid + 12g glutamine per 100mL bottle587,4,79
+1208,,Amino acids,Solution for IV infusion,5-6% (100ml bottle) [c]588,4,79
+1209,,Amino acids,Solution for IV infusion,7% (500ml bottle)589,4,79
+1210,,Amino acids,Solution for IV infusion,8% (500ml bottle)590,4,79
+1211,,Amino acids,Solution for IV infusion,10% (500ml bottle)591,4,79
+1212,,Combined amino acid and glucose formulation for central administration-two chamber bag for central admnistration,Solution for IV infusion,1 litre,5,79
+1213,,"Combined amino acid, glucose and lipids with medium chain Triglycerides (MCT) / Long chain Triglycerides (LCT) - Three Chamber Bag For Central Administration",Solution for IV infusion,1 litre,5,79
+1214,,"Combined amino acid, glucose and lipids with medium chain Triglycerides (MCT) / Long chain Triglycerides (LCT) - Three Chamber Bag For Central Administration",Solution for IV infusion,2 litres,5,79
+1215,,"Combined amino acid, glucose, and lipids with medium chain Triglycerides (MCT) + Long chain Triglycerides (LCT) - three chamber bag for peripherial administration",Solution for IV infusion,500mL,4,79
+1216,,"Combined amino acid, glucose, and lipids with medium chain Triglycerides (MCT) + Long chain Triglycerides (LCT) - three chamber bag for peripherial administration",Solution for IV infusion,1 Litre,4,79
+1217,,"Combined amino acid, glucose, and lipids with medium chain Triglycerides (MCT) + Long chain Triglycerides (LCT) - three chamber bag for peripherial administration",Solution for IV infusion,1.5 litre,4,79
+1218,,"Combined amino acid, glucose, and lipids with medium chain Triglycerides (MCT) + Long chain Triglycerides (LCT) - three chamber bag for peripherial administration",Solution for IV infusion,2 litres,4,79
+1219,,Fat (lipid)595,Infusion (emulsion) (IV),20% (100mL) [c],4,79
+1220,,Fat (lipid)595,Infusion (emulsion) (IV),20% (500mL),4,79
+1221,,Fat-soluble vitamins,"Solution for IV infusion, for infants and children",10mL [c],4,80
+1222,,Fat-soluble vitamins,"Solution for IV infusion, adults",10mL,4,80
+1223,,Trace elements,"Solution for IV infusion, Adult",10mL,4,80
+1224,,Trace elements,"Solution for IV infusion, Paediatric",10mL [c],4,80
+1225,,Water-soluble vitamins Containing Vitamin C and B-complex,Solution for IV infusion,10mL,4,80
+1226,,High energy protein fat-free hydrolyzed feed,Liquid,200mL,4,80
+1227,,Nutritionally complete elemental hepatic formula with MCT for oral / tube feeding,Liquid,200mL,4,80
+1228,,Nutritionally complete elemental hepatic formula with MCT for oral / tube feeding,Liquid,500mL,4,80
+1229,,Nutritionally complete glutamine-enriched liquid formula,Liquid,500mL,4,80
+1230,,"Nutritionally complete High energy, high protein oral / tube feed",Liquid,200mL,4,80
+1231,,"Nutritionally complete High energy, high protein oral / tube feed",Liquid,500mL,4,80
+1232,,Nutritionally complete hydrolysed feeds with MCT fibre-free,Liquid,500mL,4,80
+1233,,Nutritionally complete hypercaloric liquid formula feed,Liquid,500mL,4,80
+1234,,"Nutritionally complete, hypocaloric oral / tube feed liquid diet with fibre",Liquid,200mL,4,81
+1235,,"Nutritionally complete, hypocaloric oral / tube feed liquid diet with fibre",Liquid,500mL,4,81
+1236,,Nutritionally complete isocaloric liquid diet with fibre for oral / tube feeding,Liquid,200mL,4,81
+1237,,Nutritionally complete isocaloric liquid diet with fibre for oral / tube feeding,Liquid,500mL,4,81
+1238,,Nutritionally complete isocaloric liquid diet with fibre for oral / tube feeding,Liquid,1000mL,4,81
+1239,,Nutritionally complete isocaloric liquid diet fibre- free for oral / tube feeding,Liquid,200mL,4,81
+1240,,Nutritionally complete isocaloric liquid diet fibre- free for oral / tube feeding,Liquid,500mL,4,81
+1241,,Nutritionally complete isocaloric liquid diet fibre- free for oral / tube feeding,Liquid,1000mL,4,81
+1242,,Nutritionally complete Iso- caloric paediatric liquid diet for oral / tube feeding,Liquid,200mL,4,81
+1243,,Nutritionally complete Iso- caloric paediatric liquid diet for oral / tube feeding,Liquid,500mL,4,81
+1244,,Nutritionally complete liquid low sodium formula,Liquid,500mL,4,81
+1245,,Nutritionally complete semi- elemental peptide-based formula for oral / tube feed,Liquid,200mL,4,81
+1246,,Nutritionally complete semi- elemental peptide-based formula for oral / tube feed,Liquid,500mL,4,81
+1247,,Adult nutritionally complete isocaloric formula,Powder,400g,4,81
+1248,,Adult nutritionally complete elemental peptide formula,Powder,20 to 30g sachet,4,81
+1249,,Amino acids and Vitamin granules,Powder,5 to 10g sachet,4,81
+1250,,"High calorie, high protein formula",Powder,200g,4,81
+1251,,"High calorie, high protein formula",Diskettes,200g,4,81
+1252,,Hepatic formula rich in BCAA,Powder,200g to 500g,4,82
+1253,,Hepatic formula rich in BCAA,Powder,Sachet,4,82
+1254,,Nutritionally complete low glycaemic index formula,Powder,50g sachet,4,82
+1255,,Paediatric nutritionally complete isocaloric formula,Powder,400g [c],4,82
+1256,,Paediatric nutritionally complete peptide-based formula,Powder,400g [c],4,82
+1257,,Specialized Renal formula,Powder,400g,4,82
+1258,,Specialized Semi-elemental peptide formula,Powder,400g,4,82
+1259,,Fortified Blended Food (FBF),Flour,415kcal/100g (Sachet)623,2,82
+1260,,Fortified Blended Food (FBF),Flour,435kcal/100g (Sachet)624,2,82
+1261,,Fortified Blended Food (FBF),Flour,450kcal/100g (Sachet)625,2,82
+1262,,Fortified Blended Food (FBF),Flour,"1,000 kcal/250g (Bag or Sachet)626",2,82
+1263,,Ready to use supplemental food (RUSF)627,Oral paste / bar / liquid / powder,Standard formula (minimum 350 Kcal/100g),2,82
+1264,,Ready to use therapeutic food (RUTF)628,Oral paste / bar / liquid / powder,Standard formula (minimum 500 Kcal/100g),2,82
+1265,,Therapeutic diet feed (F-75)629,PFOL (for approx. 600mL),Standard formula (102.5g sachet),4,82
+1266,,Therapeutic diet feed (F-75)629,PFOL,Standard formula (400g tin),4,82
+1267,,Therapeutic diet feed (F-100)630,PFOL (for approx. 600mL),Standard formula (114g sachet),4,83
+1268,,Therapeutic diet feed (F-100)630,PFOL,Standard formula (400g tin),4,83
+1269,,Technetium Tc- 99m (99m Tc) Succimer (Technetium Tc-99m Dimercaptosuccinic Acid (DMSA)631,"Injection, prepared from a non-radioactive succimer kit for radiolabelling with 99mTc prior to administration",,6,83
+1270,,Hexamethyl propylene amine oxime (HMPAO) (Technetium- 99m exametazime)632,"Injection, prepared from a non- radioactive exametazine kit for radiolabelling with 99mTc prior to administration",,6,83
+1271,,Iodine -123 (sodium iodide)633,Capsule (Oral),3.7MBq (100uCi),6,83
+1272,,Iodine -123 (sodium iodide)633,Capsule (Oral),7.4MBq (200uCi),6,83
+1273,,Iodine -123 (sodium iodide)633,Capsule (Oral),14.8MBq (400uCi),6,83
+1274,,Iodine 131(sodium iodide)634,Capsule (Oral),0.33 MBq (9uCi),6,83
+1275,,Iodine 131(sodium iodide)634,Capsule (Oral),0.61MBq (16.5uCi),6,83
+1276,,Iodine 131(sodium iodide)634,Capsule (Oral),1.11MBq (30uCi),6,83
+1277,,Iodine 131(sodium iodide)634,Capsule (Oral),2.03MBq (55uCi),6,83
+1278,,Iodine 131(sodium iodide)634,Capsule (Oral),3.7MBq (100uCi),6,83
+1279,,Mercaptoacetyltriglycine (MAG3) (Technetium -99m mertiatide)635,"Injection, prepared from a non-radioactive betiatide kit for radiolabelling with 99mTc prior to administration",,5,83
+1280,,Methylene diphosphonate (MDP) (Technetium -99m medronate)636,"Injection, prepared from a non-radioactive medronate kit for radiolabeling with 99mTc prior to administration",,5,83
+1281,,Molybdenum-99 / Technetium-99m radionuclide generator,Radionuclide generator,"1, 2, 2.5, 3, 4, 4.5, 5, 6, 7.5, 10, 12.5, 15, 18, 20 Ci of 99Mo",5,84
+1282,,Sesta methoxyisobutylisonitrile (sestamibi) (Technetium -99m Sestamibi)638,"Injection, prepared from a non-radioactive sestamibi kit for radiolabeling with 99mTc prior to administration",,5,84
+1283,,Technetium - 99m disofenin (DISIDA)639,"Injection, prepared from a non-radioactive disofenin kit for radiolabelling with 99mTc prior to administration",,6,84
+1284,,Technetium - 99m leucocytes,Injection,,6,84
+1285,,Technetium - 99m mebrofenin (BRIDA)641,"Injection, prepared from a non-radioactive mebrofenin kit for radiolabelling with 99mTc prior to administration",,5,84
+1286,,Technetium-99m pentetate (DTPA)642,"Injection, Inhalation, prepared from a non-radioactive pentetate kit for radiolabelling with 99mTc prior to administration",,6,84
+1287,,Technetium-99m sodium pertechnetate,"Injection, eluted from approved 99Mo/99mTc radionuclide generator",,6,84
+1288,,Technetium-99m sodium pertechnetate,"Precursor radiopharmaceutical, eluted from approved 99Mo/99mTc radionuclide generator",,6,84
+1289,,[Fluorine-18] Prostate Specific Membrane Antigen (PSMA) 1007,,,6,84
+1290,,Fluorodeoxyglucose (FDG) (Fluorine -18),Injection,0.74 – 11.1 GBq (20 – 300 mCi/mL),5,84
+1291,,Gallium-68 oxodotreotide (dotatate),Injection,40 micrograms of oxodotreotide kit for radiolabeling with up to 1110 MBq (30 mCi) of [68Ga]GaCl2,6,85
+1292,,Germanium-68 - Gallium-68 radionuclide generator,Radionuclide generator,0.74 – 1.85 GBq,6,85
+1293,,[Iodine-131] sodium iodide,Oral solution,5 mCi/mL,6,85
+1294,,[Iodine-131] sodium iodide,Oral solution,25 mCi/mL,6,85
+1295,,Lutetium-177 oxodotreotide (dotatate),Injection,370 MBq/mL (10 mCi/mL),6,85
