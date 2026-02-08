@@ -1759,10 +1759,50 @@ display(unresolved_summary)
 
 ```
 
-# FDA Lookup
+# Step (d): FDA-based regulatory enrichment
+
+In this step, we enrich resolved EML items with U.S. FDA regulatory metadata. Unlike RxNorm or ATC, the FDA is not a normalization authority; it is a regulatory evidence source. 
+
+Therefore:
+-   FDA data does not affect resolution status
+-   FDA data is appended as regulatory assertions
+-   All FDA-derived facts retain query provenance
+
+This step enables downstream analyses of:
+-   approval timelines,
+-   formulation availability,
+-   regulatory maturity of essential medicines,
+-   and alignment between EML inclusion and FDA approval history.
+
+**FDA data source**
+We use the openFDA drug/drugsfda endpoint, which provides structured information on:
+-   New Drug Applications (NDA) / Abbreviated New Drug Applications (ANDA) / Biologics License Application (BLA) application numbers
+-   sponsor/manufacturer
+-   submission and approval dates
+-   dosage forms and routes (from SPL linkage)
+-   associated brand names
+
+**FDA query strategy**
+
+FDA search is brittle and inconsistent across products. To balance recall and precision, we use a tiered query strategy:
+1.   `openfda.generic_name` (highest precision)
+2.   `openfda.substance_name`
+3.   free-text fallback (lowest precision, audited)
+
+Each successful hit records which query pathway produced it. No FDA query is attempted for records lacking a usable ingredient-level name.
+
+## Step (d.1): Selecting FDA query names
+
+For each canonical EML record, we select a single FDA-facing query string using the following priority order:
+-   RxNorm ingredient-level names (IN, PIN, MIN)
+-   LLM-normalized name (if used in resolution)
+-   Original EML name (last resort)
+
+This mirrors prior normalization steps and ensures FDA queries are anchored to the best available lexical evidence.
 
 ```{python}
-# | label: fda-table
+# | label: fda-select-query-name
+# | tbl-cap: "FDA query name selection logic"
 
 
 def safe_lower(x):
@@ -1776,14 +1816,16 @@ def safe_lower(x):
 def best_rxnorm_name(record):
     """
     Choose the best ingredient-level name for FDA querying.
+
     Priority:
-      1) RxNorm IN / PIN / MIN synonym
-      2) LLM name
-      3) Original name
-    Returns None if nothing usable exists.
+      1) RxNorm ingredient-level synonyms (IN / PIN / MIN)
+      2) LLM-normalized name
+      3) Original EML name
+
+    Returns None if no usable name exists.
     """
 
-    # 1️⃣ RxNorm ingredient names
+    # 1 — RxNorm ingredient names
     rxnorm_names = [
         safe_lower(s.get("value"))
         for s in record.get("synonyms", [])
@@ -1793,39 +1835,252 @@ def best_rxnorm_name(record):
     ]
 
     if rxnorm_names:
-        # Prefer shortest ingredient name
         return sorted(rxnorm_names, key=len)[0]
 
-    # 2️⃣ LLM-derived name
+    # 2 — LLM-derived name
     llm_name = safe_lower(record.get("resolution", {}).get("llm_name"))
     if llm_name:
         return llm_name
 
-    # 3️⃣ Fallback: original name
+    # 3 — Fallback: original name
     orig = safe_lower(record.get("original", {}).get("name"))
     if orig:
         return orig
 
-    # Nothing usable
     return None
 
 
-fda_query_rows = []
+def fda_query_with_fallbacks(name, limit=5):
+    """
+    Query FDA drugsfda endpoint using a tiered strategy.
 
-for r in master_records:
-    rxcuis = [i["value"] for i in r.get("identifiers", []) if i.get("type") == "RxNorm"]
+    Query order:
+      1) openfda.generic_name
+      2) openfda.substance_name
+      3) free-text search
 
-    fda_query_rows.append(
-        {
-            "eml_id": r.get("eml_id"),
-            "scope": r.get("scope"),
-            "fda_query_name": best_rxnorm_name(r),
-            "rxcuis": rxcuis,
-            "resolution_status": r.get("resolution", {}).get("status"),
-        }
+    Returns:
+      dict with query metadata and raw FDA results,
+      or None if no hits found.
+    """
+
+    if not name:
+        return None
+
+    query_plan = [
+        ("generic_name", f'openfda.generic_name:"{name}"'),
+        ("substance_name", f'openfda.substance_name:"{name}"'),
+        ("free_text", name),
+    ]
+
+    for query_type, query in query_plan:
+        r = requests.get(
+            FDA_BASE,
+            params={"search": query, "limit": limit},
+            timeout=15,
+        )
+
+        if r.status_code != 200:
+            continue
+
+        results = r.json().get("results", [])
+        if results:
+            return {
+                "query_name": name,
+                "query_type": query_type,
+                "query": query,
+                "results": results,
+            }
+
+    return None
+
+
+def extract_fda_applications(fda_payload):
+    """
+    Extract structured regulatory assertions from FDA drugsfda results.
+    """
+
+    applications = []
+
+    for res in fda_payload.get("results", []):
+        openfda = res.get("openfda", {}) or {}
+
+        applications.append(
+            {
+                "assertion_type": "regulatory",
+                "authority": "FDA",
+                "application_number": res.get("application_number"),
+                "sponsor": res.get("sponsor_name"),
+                "submission_type": res.get("submission_type"),
+                "submission_status_date": res.get("submission_status_date"),
+                "dosage_form": [x.lower() for x in openfda.get("dosage_form", [])],
+                "route": [x.lower() for x in openfda.get("route", [])],
+                "brand_names": [x.lower() for x in openfda.get("brand_name", [])],
+                "generic_names": [x.lower() for x in openfda.get("generic_name", [])],
+                "query_type": fda_payload.get("query_type"),
+            }
+        )
+
+    return applications
+```
+
+```{python}
+#| label: fda-api-setup
+
+import requests
+
+FDA_BASE = "https://api.fda.gov/drug/drugsfda.json"
+
+```
+
+## Step (d.2): Running FDA enrichment across canonical records
+
+We now apply FDA querying to all canonical EML records with a usable query name.
+No FDA data is added for unresolved records lacking a meaningful ingredient string.
+
+```{python}
+#| label: run-fda-enrichment
+# commented after running once
+# fda_enriched_records = []
+
+# for rec in master_records:
+#     query_name = best_rxnorm_name(rec)
+
+#     if not query_name:
+#         rec["fda"] = None
+#         fda_enriched_records.append(rec)
+#         continue
+
+#     fda_payload = fda_query_with_fallbacks(query_name)
+
+#     if not fda_payload:
+#         rec["fda"] = {
+#             "queried_name": query_name,
+#             "results": [],
+#         }
+#         fda_enriched_records.append(rec)
+#         continue
+
+#     rec["fda"] = {
+#         "queried_name": query_name,
+#         "query_type": fda_payload["query_type"],
+#         "applications": extract_fda_applications(fda_payload),
+#     }
+
+#     fda_enriched_records.append(rec)
+
+# output_path = "eml_master_fda_enriched.jsonl"
+
+# with open(output_path, "w", encoding="utf-8") as f:
+#     for rec in fda_enriched_records:
+#         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+# output_path
+
+input_path = "eml_master_fda_enriched.jsonl"
+
+fda_enriched_records = []
+
+with open(input_path, "r", encoding="utf-8") as f:
+    for line in f:
+        fda_enriched_records.append(json.loads(line))
+
+len(fda_enriched_records)
+
+```
+
+## Step (d.3): FDA coverage summary
+
+This table summarizes the proportion of EML items with at least one FDA application identified.
+
+FDA enrichment performs best for long-established small molecules, antiretrovirals, antibiotics and chronic disease therapies. Lower coverage is expected for region-specific formulations, older pre-NDA products combination therapies recorded differently in FDA systems.
+
+Importantly, absence of FDA data does not imply lack of efficacy or approval elsewhere, and FDA assertions are treated as supplementary regulatory evidence only.
+
+```{python}
+#| label: fda-coverage-summary
+#| tbl-cap: "FDA regulatory coverage across EML items"
+
+df_fda = pd.DataFrame(
+    {
+        "has_fda": [
+            bool(r.get("fda", {}).get("applications"))
+            for r in fda_enriched_records
+        ],
+        "resolution_status": [
+            r.get("resolution", {}).get("status")
+            for r in fda_enriched_records
+        ],
+        "scope": [
+            r.get("scope")
+            for r in fda_enriched_records
+        ],
+    }
+)
+
+coverage_summary = (
+    df_fda.groupby("scope", as_index=False)
+    .agg(
+        total_items=("has_fda", "size"),
+        n_with_fda=("has_fda", "sum"),
     )
+)
 
-fda_query_df = pd.DataFrame(fda_query_rows)
+coverage_summary["percent_with_fda"] = (
+    coverage_summary["n_with_fda"] / coverage_summary["total_items"] * 100
+).round(1)
 
+display(coverage_summary)
+```
+
+Minimal structural check to ensure that all records remain valid canonical records, preserve resolution and identifier fields, and include FDA data only as an additive extension.
+```{python}
+#| label: fda-json-validation
+
+def validate_fda_record(rec):
+    required_keys = {"scope", "original", "resolution", "synonyms", "identifiers", "rxnorm"}
+    missing = required_keys - set(rec.keys())
+
+    return {
+        "valid": len(missing) == 0,
+        "missing_fields": list(missing),
+        "has_fda": "fda" in rec,
+    }
+
+
+validation_results = [validate_fda_record(r) for r in fda_enriched_records]
+
+# Quick sanity checks
+assert all(v["valid"] for v in validation_results), "Invalid canonical records detected"
+
+```
+
+
+```{python}
+#| label: fda-json-summary
+#| tbl-cap: "Summary of FDA-enriched canonical EML records"
+
+total_records = len(fda_enriched_records)
+records_with_fda = sum(
+    bool(r.get("fda", {}).get("applications"))
+    for r in fda_enriched_records
+)
+
+summary_df = pd.DataFrame(
+    {
+        "metric": [
+            "Total canonical records",
+            "Records with FDA data",
+            "Records without FDA data",
+        ],
+        "value": [
+            total_records,
+            records_with_fda,
+            total_records - records_with_fda,
+        ],
+    }
+)
+
+display(summary_df)
 
 ```
