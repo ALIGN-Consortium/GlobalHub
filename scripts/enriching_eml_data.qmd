@@ -1,0 +1,1831 @@
+---
+title: "Enriching EML Data"
+author: "Joao Vitor Perez de Souza"
+format: html
+---
+
+Considering the intial four Essential Medication Lists (EMLs \[South Africa, Kenya, Senegal and the WHO\]) we now need to append identifiers and generate synonyms for the drugs/compount in them. This will allow for better downstream alignment with horizon data.
+
+We start by proposing a common data model for the 4 EMLs. The full list is mantained for later re-identificaiton, but the pipeline will be required after removal of duplicates to reduce processing time. The retrieved hits are then re-merged to the original databases.
+
+# Setup
+
+```{python}
+# | label: import packages, read data
+
+import pandas as pd
+import re
+import numpy as np
+
+who_eml = pd.read_csv("/Users/jps89/Documents/GEMINI/ALIGN/GlobalHub/data/WHO_EML.csv")
+sa_eml = pd.read_csv(
+    "/Users/jps89/Documents/GEMINI/ALIGN/GlobalHub/data/south_africa_eml_2025.csv"
+)
+kenya_eml = pd.read_csv(
+    "/Users/jps89/Documents/GEMINI/ALIGN/GlobalHub/data/kenya_eml_2023.csv"
+)
+senegal_eml = pd.read_csv(
+    "/Users/jps89/Documents/GEMINI/ALIGN/GlobalHub/data/senegal_eml.csv"
+)
+```
+
+## Common EML Data Model
+
+I harmonize the EML data into the following columns: - `name` - Name of the medicine/product - `dosage_form` - Oral, IV, etc - `dose` - `atc_code` - SA and WHO data contain ATC codes natively - `scope` - identifer for each eml document
+
+```{python}
+who_eml.columns
+who_eml.head(6)
+sa_eml.columns
+kenya_eml.columns
+senegal_eml.columns
+```
+
+### WHO
+
+```{python}
+who_eml = who_eml.rename(
+    columns={
+        "Medicine name": "name",
+        "ATC codes": "atc_code"
+    }
+).copy()
+
+who_eml = (
+    who_eml
+    .assign(formulation_raw=who_eml["Formulations"].str.split(r"\n"))
+    .explode("formulation_raw")
+    .drop(columns="Formulations")
+)
+
+who_eml["formulation_raw"] = who_eml["formulation_raw"].str.strip()
+```
+
+```{python}
+split = who_eml["formulation_raw"].str.split(":", n=1, expand=True)
+
+who_eml["dosage_form_raw"] = split[0]
+who_eml["dose_raw"] = split[1]
+```
+
+```{python}
+def clean_dosage_form(x):
+    if pd.isna(x):
+        return None
+    return (
+        x.lower()
+         .replace(">", " ")
+         .replace("  ", " ")
+         .strip()
+    )
+
+who_eml["dosage_form"] = who_eml["dosage_form_raw"].apply(clean_dosage_form)
+
+def clean_dose(x):
+    if pd.isna(x):
+        return None
+    return (
+        x.lower()
+         .replace("per  mL", "per mL")
+         .replace("ml", "mL")
+         .strip()
+    )
+
+who_eml["dose"] = who_eml["dose_raw"].apply(clean_dose)
+
+```
+
+```{python}
+who_eml["scope"] = "WHO"
+who_eml_c = who_eml[["name", "dosage_form", "dose", "atc_code", "scope"]].drop_duplicates(subset = "name")
+```
+
+### South Africa
+
+```{python}
+sa_eml = (
+    sa_eml.rename(
+        columns={
+            "MEDICINE NAME": "name",
+            "DOSAGE FORM": "dosage_form",
+            "DOSE": "dose",
+            "ATC": "atc_code",
+        }
+    )
+    .drop(columns=["Unnamed: 0", "ROUTE OF ADMINISTRATION"])
+    .assign(scope="South Africa")
+).copy()
+
+
+sa_eml_c = sa_eml.drop_duplicates(subset="name").copy()
+```
+
+### Kenya
+
+```{python}
+kenya_eml = (
+    kenya_eml.rename(columns={"medicine_name": "name", "strenght_size": "dose"})
+    .drop(columns=["item_code", "lou", "source_table"])
+    .assign(atc_code=np.nan, scope="Kenya")
+).copy()
+
+kenya_eml_c = kenya_eml.drop_duplicates(subset="name")
+```
+
+### Senegal
+
+Senegal EML contains the name of the product in the column called `dci` and a commerical reference in the column `reference`. I will use both to expand the searchingh parameters.
+
+```{python}
+senegal_eml_c = pd.concat(
+    [
+        (
+            senegal_eml.rename(
+                columns={"dci": "name", "forme": "dosage_form", "dosage": "dose"}
+            )
+            .drop(
+                columns=[
+                    "n°",
+                    "case_sante",
+                    "poste_sante",
+                    "cs1_cs2",
+                    "eps1_eps2",
+                    "eps3",
+                    "source_table_id",
+                    "source_page",
+                    "reference",
+                ]
+            )
+            .assign(atc_code=np.nan, scope="Senegal")
+            .dropna(subset="name")
+        ),
+        # Using reference name, keeping same dosages
+        (
+            senegal_eml.rename(
+                columns={"reference": "name", "forme": "dosage_form", "dosage": "dose"}
+            )
+            .drop(
+                columns=[
+                    "n°",
+                    "case_sante",
+                    "poste_sante",
+                    "cs1_cs2",
+                    "eps1_eps2",
+                    "eps3",
+                    "source_table_id",
+                    "source_page",
+                    "dci",
+                ]
+            )
+            .assign(atc_code=np.nan, scope="Senegal")
+            .dropna(subset="name")
+        ),
+    ]
+).drop_duplicates(subset="name")
+
+   
+    
+```
+
+## Concatenate everything
+
+```{python}
+eml = pd.concat([who_eml_c, sa_eml_c, kenya_eml_c, senegal_eml_c]).drop_duplicates(
+    subset="name"
+)
+```
+
+```{python}
+eml.to_csv("/Users/jps89/Documents/GEMINI/ALIGN/GlobalHub/data/all_scope_eml_raw.csv")
+```
+
+# Enriching data
+
+Now I submit the combined eml data to the pipeline to detect synoyms, etc. To fix: the naming and definition of functions should go to a single source file in the end to avoid confusion.
+
+## Function definition and setup
+
+```{python}
+import re
+import unicodedata
+import os
+import requests
+import lxml.html as lh
+import pandas as pd
+from dotenv import load_dotenv 
+load_dotenv()
+
+UTS_API_KEY = os.getenv("UTS_API_KEY")
+UTS_BASE = "https://uts-ws.nlm.nih.gov"
+```
+
+```{python}
+# | label: function-definition
+
+# STEP 1 — Lexical normalization (string hygiene only)
+
+import re
+import unicodedata
+import requests
+import lxml.html as lh
+
+
+def normalize_name(name: str) -> str:
+    """
+    Canonicalize a drug name string using lexical normalization only.
+
+    Operations:
+      - Unicode normalization (accent / symbol handling)
+      - Lowercasing
+      - Remove punctuation (except hyphens)
+      - Collapse repeated whitespace
+
+    This function performs NO semantic interpretation.
+    """
+    if not isinstance(name, str):
+        return None
+
+    name = unicodedata.normalize("NFKD", name)
+    name = name.lower()
+    name = re.sub(r"[^\w\s\-]", "", name)
+    name = re.sub(r"\s+", " ", name).strip()
+    return name
+
+
+def init_record(raw_name: str) -> dict:
+    """
+    Initialize a canonical drug record.
+
+    This record is progressively enriched across pipeline steps.
+    All evidence (names and later identifiers) is stored as assertions.
+    """
+    return {
+        "input_name": raw_name,
+        "canonical_name": normalize_name(raw_name),
+        "rxcui": set(),  # # RXCUIs discovered via direct RxNorm name lookup (step a only)
+        "assertions": [],  # unified long-form evidence store
+    }
+
+
+def add_name_assertion(
+    record: dict,
+    name: str,
+    source: str,
+    metadata: dict = None,
+):
+    """
+    Add a lexical name assertion to the record.
+
+    Name assertions represent strings asserted by an authority
+    (e.g., normalization, RxNorm, UMLS), with full provenance.
+    """
+    if not name:
+        return
+
+    record["assertions"].append(
+        {
+            "assertion_type": "name",
+            "assertion_value": name,
+            "source": source,
+            "metadata": metadata or {},
+        }
+    )
+
+
+# STEP 2 — RxNorm anchoring (clinical drug graph)
+
+
+def rxnorm_lookup(record: dict) -> dict:
+    """
+    Anchor a record to RxNorm using the canonical name.
+
+    This step:
+      - Maps name → RXCUI(s)
+      - Expands to related RxNorm concepts
+      - Emits RxNorm-asserted lexical names with TTY metadata
+
+    RxNorm is treated as the primary clinical anchor.
+    # This function performs NO fallback logic.
+    # If RxNorm does not return an RXCUI for the canonical name,
+    # the record remains unresolved at this stage.
+
+    """
+    name = record.get("canonical_name")
+    if not name:
+        return record
+
+    r = requests.get(
+        "https://rxnav.nlm.nih.gov/REST/rxcui.json",
+        params={"name": name},
+        timeout=10,
+    )
+
+    if r.status_code != 200:
+        return record
+
+    rxcuis = r.json().get("idGroup", {}).get("rxnormId", [])
+
+    for rxcui in rxcuis:
+        record["rxcui"].add(rxcui)
+
+        rel = requests.get(
+            f"https://rxnav.nlm.nih.gov/REST/rxcui/{rxcui}/allrelated.json",
+            timeout=10,
+        )
+
+        if rel.status_code != 200:
+            continue
+
+        data = rel.json()
+        for group in data.get("allRelatedGroup", {}).get("conceptGroup", []):
+            for prop in group.get("conceptProperties") or []:
+                add_name_assertion(
+                    record,
+                    normalize_name(prop.get("name")),
+                    source="rxnorm",
+                    metadata={
+                        "rxcui": rxcui,
+                        "tty": prop.get("tty"),  # IN, BN, SCD, etc.
+                    },
+                )
+
+    return record
+
+
+# STEP 3 — UMLS semantic expansion (cross-vocabulary lexical linking)
+
+UTS_BASE = "https://uts-ws.nlm.nih.gov"
+
+# Trusted vocabularies for drug naming
+UMLS_ALLOWED_SOURCES = {
+    "RXNORM",
+    "SNM",
+    "SNMI",
+    "MTH",
+    "MTHSPL",
+    "CHV",
+}
+
+UMLS_ALLOWED_LANGUAGE = "ENG"
+
+
+def get_tgt(api_key: str) -> str:
+    """
+    Obtain a Ticket Granting Ticket (TGT) for UMLS authentication.
+    """
+    r = requests.post(
+        "https://utslogin.nlm.nih.gov/cas/v1/api-key",
+        data={"apikey": api_key},
+    )
+    r.raise_for_status()
+
+    tree = lh.fromstring(r.text)
+    return tree.xpath("//form/@action")[0]
+
+
+def get_service_ticket(tgt: str) -> str:
+    """
+    Obtain a single-use UMLS service ticket from the TGT.
+    """
+    r = requests.post(tgt, data={"service": "http://umlsks.nlm.nih.gov"})
+    r.raise_for_status()
+    return r.text
+
+
+def rxcui_to_cui(rxcui: str, tgt: str) -> str:
+    """
+    Map an RxNorm RXCUI to a UMLS CUI.
+    """
+    st = get_service_ticket(tgt)
+    url = f"{UTS_BASE}/rest/content/current/source/RXNORM/{rxcui}/atoms"
+
+    r = requests.get(url, params={"ticket": st})
+    r.raise_for_status()
+
+    for atom in r.json().get("result", []):
+        concept = atom.get("concept")
+
+        if isinstance(concept, dict):
+            cui = concept.get("ui")
+            if cui and cui.startswith("C"):
+                return cui
+
+        if isinstance(concept, str) and "/CUI/" in concept:
+            cui = concept.split("/CUI/")[-1]
+            if cui.startswith("C"):
+                return cui
+
+    return None
+
+
+def umls_atoms(cui: str, tgt: str) -> list:
+    """
+    Retrieve all UMLS atoms (lexical terms) for a given CUI.
+    """
+    st = get_service_ticket(tgt)
+    url = f"{UTS_BASE}/rest/content/current/CUI/{cui}/atoms"
+
+    r = requests.get(url, params={"ticket": st})
+    r.raise_for_status()
+    return r.json().get("result", [])
+
+
+def umls_expand(record: dict, tgt: str) -> dict:
+    """
+    Expand a record using UMLS.
+
+    This step performs:
+      1. Lexical expansion (names only, controlled vocabularies)
+      2. Identifier extraction for downstream analysis:
+         - DrugBank IDs
+         - ATC codes
+
+    ATC is treated as a classification identifier, NOT a synonym.
+    """
+
+    for rxcui in record.get("rxcui", []):
+        cui = rxcui_to_cui(rxcui, tgt)
+        if not cui:
+            continue
+
+        atoms = umls_atoms(cui, tgt)
+
+        for atom in atoms:
+            source_vocab = atom.get("rootSource")
+            name = atom.get("name")
+            code = atom.get("code")
+            language = atom.get("language")
+
+            # 3a — Lexical name assertions 
+            if (
+                language == UMLS_ALLOWED_LANGUAGE
+                and source_vocab in UMLS_ALLOWED_SOURCES
+                and name
+            ):
+                add_name_assertion(
+                    record,
+                    normalize_name(name),
+                    source="umls",
+                    metadata={
+                        "cui": cui,
+                        "rxcui": rxcui,
+                        "source_vocab": source_vocab,
+                        "aui": atom.get("ui"),
+                    },
+                )
+
+            # 3b — DrugBank identifier
+            if source_vocab == "DRUGBANK" and code:
+                drugbank_id = code.split("/")[-1]
+                if drugbank_id.startswith("DB"):
+                    add_identifier_assertion(
+                        record,
+                        drugbank_id,
+                        identifier_type="DrugBank",
+                        source="umls",
+                        metadata={
+                            "cui": cui,
+                            "rxcui": rxcui,
+                        },
+                    )
+            if source_vocab == "ATC" and code:
+                # UMLS ATC codes are full URIs
+                atc_code = code.split("/")[-1]
+
+                add_identifier_assertion(
+                    record,
+                    atc_code,
+                    identifier_type="ATC",
+                    source="umls",
+                    metadata={
+                        "cui": cui,
+                        "rxcui": rxcui,
+                    },
+                )            
+
+    return record
+
+def add_identifier_assertion(
+    record: dict,
+    identifier_value: str,
+    identifier_type: str,
+    source: str,
+    metadata: dict = None,
+):
+    """
+    Add a structured identifier assertion to the record.
+
+    Identifier assertions represent non-lexical, structure-based or
+    registry-based identifiers (e.g., InChIKey, ChEMBL ID, DrugBank ID).
+
+    These assertions are used for disambiguation and cross-registry linking,
+    not for name matching.
+    """
+    if not identifier_value:
+        return
+
+    record["assertions"].append(
+        {
+            "assertion_type": "identifier",
+            "assertion_value": identifier_value,
+            "source": source,
+            "metadata": {
+                "identifier_type": identifier_type,
+                **(metadata or {}),
+            },
+        }
+    )
+
+def umls_search(term: str, tgt: str, max_results: int = 5) -> list:
+    """
+    Search UMLS by free text and return candidate CUIs.
+
+    This is used ONLY when no RXCUI anchor exists
+    (e.g., Horizon / pipeline products).
+    """
+    st = get_service_ticket(tgt)
+
+    url = f"{UTS_BASE}/rest/search/current"
+    params = {
+        "string": term,
+        "ticket": st,
+        "pageSize": max_results,
+        "searchType": "exact",
+    }
+
+    r = requests.get(url, params=params)
+    r.raise_for_status()
+
+    return [
+        res["ui"]
+        for res in r.json().get("result", {}).get("results", [])
+        if res.get("ui", "").startswith("C")
+    ]
+
+def umls_expand_from_string(record: dict, tgt: str) -> dict:
+    """
+    UMLS expansion for records WITHOUT RXCUI anchors.
+
+    Used for Horizon / innovation data.
+    Extracts ATC + DrugBank identifiers for classification.
+    """
+
+    term = record.get("canonical_name")
+    if not term:
+        return record
+
+    cuis = umls_search(term, tgt)
+
+    for cui in cuis:
+        atoms = umls_atoms(cui, tgt)
+
+        for atom in atoms:
+            source_vocab = atom.get("rootSource")
+            code = atom.get("code")
+
+            # ATC classification
+            if source_vocab == "ATC" and code:
+                atc_code = code.split("/")[-1]
+                add_identifier_assertion(
+                    record,
+                    atc_code,
+                    identifier_type="ATC",
+                    source="umls",
+                    metadata={"cui": cui},
+                )
+
+            # DrugBank identifier
+            if source_vocab == "DRUGBANK" and code:
+                dbid = code.split("/")[-1]
+                if dbid.startswith("DB"):
+                    add_identifier_assertion(
+                        record,
+                        dbid,
+                        identifier_type="DrugBank",
+                        source="umls",
+                        metadata={"cui": cui},
+                    )
+
+    return record
+
+```
+
+## Step (a): Native-name RxNorm enrichment
+
+In this step, we attempt to resolve each Essential Medicines List (EML) item using its native recorded name only. This step establishes a high-confidence clinical anchor by querying RxNorm directly from the normalized product name.
+
+The output of this step is: - a set of RxNorm RXCUI(s), if found; - RxNorm-asserted lexical synonyms with term-type metadata; - a list of items that could not be resolved using names alone.
+
+These unresolved items are carried forward to subsequent enrichment steps.
+
+```{python}
+#| label: api-setup
+assert UTS_API_KEY, "Missing UTS_API_KEY in environment (.env)."
+
+TGT = get_tgt(UTS_API_KEY)
+st = get_service_ticket(TGT)
+st[:25]
+```
+
+### Step (a.1): Lexical normalization of native EML names
+
+We first normalize all native EML product names using string-level canonicalization only (case folding, accent removal, punctuation handling). This step does not perform semantic interpretation.
+
+```{python}
+#| label: step-1-normalize-seeds
+#| tbl-cap: "Step 1 output: lexical normalization of seed product names."
+seed_products = eml.name
+
+df_step1 = pd.DataFrame(
+    {
+        "input_name": seed_products,
+        "canonical_name": [normalize_name(x) for x in  seed_products],
+    }
+)
+
+display(df_step1)
+
+```
+
+### Step (a.2): Direct RxNorm anchoring using native names
+
+Each normalized product name is submitted to the RxNorm API. For records that successfully map to one or more RXCUI(s), we collect all RxNorm-asserted lexical variants and their term types (TTY).
+
+This step is time intensive and was executed once and cached to disk.
+
+```{python}
+# | label: step-2-rxnorm-run
+# STEP 2 — RxNorm anchoring (clinical normalization)
+# Build one record per product and run normalization + RxNorm
+
+
+# takes a lot of time
+# rx_records = []
+
+# for p in seed_products:
+#     rec = init_record(p)
+#     rec["eml_name_key"] = normalize_name(p)
+
+#     # Step 1 assertion — lexical normalization
+#     add_name_assertion(
+#         rec,
+#         rec["canonical_name"],
+#         source="normalized",
+#         metadata={"method": "lexical"},
+#     )
+
+#     # Step 2 — RxNorm anchoring
+#     rxnorm_lookup(rec)
+#     rx_records.append(rec)
+
+```
+
+```{python}
+# | label: save-json
+# with open("rx_records.jsonl", "w", encoding="utf-8") as f:
+#     for rec in rx_records:
+#         f.write(json.dumps(rec, default=json_safe, ensure_ascii=False) + "\n")
+
+rx_records = []
+with open("rx_records.jsonl", "r", encoding="utf-8") as f:
+    for line in f:
+        rx_records.append(json.loads(line))
+```
+
+```{python}
+#| label: transform output from json to rows df
+
+# Build long-form evidence table for RxNorm name assertions
+rows = []
+
+for rec in rx_records:
+    for a in rec["assertions"]:
+        if a["assertion_type"] != "name":
+            continue
+        if a["source"] != "rxnorm":
+            continue
+
+        meta = a.get("metadata", {})
+
+        rows.append(
+            {
+                "input_name": rec["input_name"],
+                "canonical_name": rec["canonical_name"],
+                "synonym": a["assertion_value"],
+                "rxcui": meta.get("rxcui"),
+                "tty": meta.get("tty"),
+                "source": a["source"],
+            }
+        )
+
+```
+
+Each row corresponds to a single RxNorm-asserted synonym, linked to its originating EML item and RXCUI.
+
+```{python}
+#| label: step-2-rxnorm-summary
+#| tbl-cap: "Step A.2 output: RxNorm-derived synonyms with RXCUI + TTY (term type)."
+df_rxnorm_long = pd.DataFrame(rows).drop_duplicates().reset_index(drop=True)
+
+display(df_rxnorm_long.head(25))
+```
+
+This table collapses the long-form lexical evidence to one row per input name, summarizing the number of synonyms, term types, and RXCUI(s) discovered.
+
+```{python}
+# | label: step-2-rxnorm-anchor-table
+# | tbl-cap: "Step A.2 anchor view: one row per input with discovered RXCUI(s)."
+
+df_rxnorm_anchor = (
+    df_rxnorm_long.groupby(["input_name", "canonical_name"], as_index=False)
+    .agg(
+        rxnorm_rxcuis=("rxcui", lambda x: ";".join(sorted(set(v for v in x if v)))),
+        n_rxnorm_synonyms=("synonym", "nunique"),
+        n_tty=("tty", lambda x: len(set(v for v in x if v))),
+    )
+    .sort_values(["n_rxnorm_synonyms", "input_name"], ascending=[False, True])
+    .reset_index(drop=True)
+)
+
+display(df_rxnorm_anchor.sort_values(by="n_rxnorm_synonyms"))
+df_rxnorm_anchor.sort_values(by = "rxnorm_rxcuis")
+```
+
+### Step (a.3): Identifying unresolved items after native-name matching
+
+We merge the RxNorm anchor summary back into the original EML dataset to identify items that could not be resolved using native names alone.
+
+```{python}
+#| label: merge
+eml_merged = eml.merge(df_rxnorm_anchor, how="left", left_on="name", right_on="input_name")
+
+# temporary fix because I did not add SA as a category previoulsy
+eml_merged = eml_merged.fillna(value = {"scope":"South Africa"})
+```
+
+How many items from the EML were found in the pipeline?
+
+```{python}
+#| label: NA-input_name
+eml_merged.input_name.notna().sum()
+```
+
+What is the proportion of no hits by country?
+
+```{python}
+#| label: EML-no-hits-country
+counts = eml_merged.loc[eml_merged["input_name"].isna(), "scope"].value_counts()
+
+df_counts = counts.to_frame(name="No hit").assign(
+    total_items = eml_merged.scope.value_counts(),
+    percent_no_hit=(counts / eml_merged["scope"].value_counts()).mul(100).round(decimals = 2)
+)
+
+display(df_counts)
+```
+
+Of the no matches, how many have ATC codes recorded natively?
+
+```{python}
+eml_merged[(eml_merged["input_name"].isna()) & (eml_merged["scope"] == "WHO")].atc_code.isna().value_counts()
+
+```
+
+What are the items that were not found like?
+
+```{python}
+eml_merged[(eml_merged["input_name"].isna()) & (eml_merged["scope"] == "WHO") & (eml_merged["atc_code"].isna())].name
+```
+
+## Step (b): ATC-based enrichment for unresolved items
+
+In this step, we attempt to resolve EML items that failed native-name RxNorm matching by using ATC codes recorded in the source data.
+
+**This step:** - only runs on items unresolved after step (a), - uses ATC codes as a structured entry point, - expands ATC → UMLS CUIs → RxNorm candidates, - records all evidence as identifier assertions.
+
+This step does not: - use free-text search, - use language models, - override results from step (a).
+
+### Step (b.1): Select ATC-eligible unresolved items
+
+We restrict this step to items that did not obtain RXCUI via native names, and have at least one ATC code recorded.
+
+ATC codes provide a structured, non-lexical entry point into controlled vocabularies and are therefore used here as an alternative resolution pathway.
+
+```{python}
+# | label: step-b1-select-atc-candidates
+step2_candidates = eml_merged[
+    (eml_merged["rxnorm_rxcuis"].isna()) & (eml_merged["atc_code"].notna())
+].copy()
+```
+
+### Step (b.2): ATC record initialization and expansion functions
+
+In contrast to step (a), which treats RxNorm as the primary anchor, this step uses ATC codes as a classification-level proxy to reach UMLS concepts and, subsequently, candidate RxNorm identifiers.
+
+RxNorm identifiers discovered through this pathway are treated as inferred clinical anchors rather than direct name-based matches, and their provenance is explicitly retained in the assertion metadata.
+
+```{python}
+# | label: function-def-atc
+def init_atc_record(row):
+    """
+    Initialize a record for ATC-based enrichment.
+
+    This record preserves the original EML name.
+    RxNorm identifiers discovered here will be stored
+    using the same schema as native RxNorm resolution.
+    """
+    return {
+        "input_name": row["name"],
+        "canonical_name": normalize_name(row["name"]),
+        "atc_code": row["atc_code"],
+        "rxcui": set(),  # <-- ADDED (critical)
+        "assertions": [],
+    }
+
+
+def expand_atc_record(record, tgt):
+    """
+    Expand a record using ATC codes.
+
+    Resolution path:
+      ATC → UMLS CUI → RxNorm atoms
+
+    RxNorm concepts discovered here are treated as
+    valid clinical anchors, with provenance recorded
+    via metadata.
+    """
+    atc_codes = [
+        normalize_atc(x.strip())
+        for x in record["atc_code"].split(",")
+        if normalize_atc(x.strip())
+    ]
+
+    for atc in atc_codes:
+        # 1. ATC identifier (classification-level)
+        add_identifier_assertion(
+            record,
+            atc,
+            identifier_type="ATC",
+            source="input",
+        )
+
+        # 2. ATC → UMLS CUIs
+        cuis = atc_to_cuis(atc, tgt)
+        for cui in cuis:
+            add_identifier_assertion(
+                record,
+                cui,
+                identifier_type="UMLS_CUI",
+                source="umls",
+                metadata={"via": "ATC", "atc_code": atc},
+            )
+
+            # 3. CUI → RxNorm (AUTHORITATIVE, schema-aligned)
+            atoms = umls_atoms(cui, tgt)
+            for atom in atoms:
+                if atom.get("rootSource") != "RXNORM":
+                    continue
+
+                code = atom.get("code")
+                name = atom.get("name")
+                tty = atom.get("termType") or atom.get("tty")
+
+                if not code:
+                    continue
+
+                rxcui = code.split("/")[-1]
+                if not rxcui.isdigit():
+                    continue
+
+                #  store RXCUI
+                record["rxcui"].add(rxcui)
+
+                # emit RxNorm name assertion
+                add_name_assertion(
+                    record,
+                    normalize_name(name),
+                    source="rxnorm",
+                    metadata={
+                        "rxcui": rxcui,
+                        "tty": tty,
+                        "via": "ATC",
+                        "atc_code": atc,
+                        "cui": cui,
+                    },
+                )
+
+    return record
+
+
+```
+
+### Step (b.3): Run ATC-based enrichment
+
+Each record produced in this step corresponds to a previously unresolved EML item and contains all identifier evidence derived from its ATC code(s), including UMLS CUIs and candidate RxNorm identifiers.
+
+All evidence is identifier-based.
+
+```{python}
+# | label: run-atc
+
+atc_records = []
+
+for _, row in step2_candidates.iterrows():
+    rec = init_atc_record(row)
+    rec["eml_name_key"] = normalize_name(row["name"])
+    rec = expand_atc_record(rec, TGT)
+    atc_records.append(rec)
+
+
+# Save
+with open("atc_records.jsonl", "w", encoding="utf-8") as f:
+    for rec in atc_records:
+        f.write(json.dumps(rec, default=json_safe) + "\n")
+
+```
+
+### Step (b.4): ATC enrichment output — long format
+
+Each row corresponds to one identifier assertion produced via ATC expansion.
+
+```{python}
+# | label: summarizing-long-format
+rows = []
+
+for rec in atc_records:
+    for a in rec["assertions"]:
+        if a["assertion_type"] != "identifier":
+            continue
+
+        rows.append(
+            {
+                "input_name": rec["input_name"],
+                "identifier_type": a["metadata"]["identifier_type"],
+                "identifier_value": a["assertion_value"],
+            }
+        )
+
+df_atc_long = pd.DataFrame(rows)
+```
+
+This long-format table enumerates all identifier assertions generated through ATC expansion. It serves as an audit-friendly representation of the resolution process, enabling inspection of intermediate identifiers (e.g., CUIs) prior to aggregation at the item level.
+
+```{python}
+#| label: step-3-rxnorm-summary
+#| tbl-cap: "Step A.3 output: First five rows of the synonym-level ATC-Derived RxNorm data (ATC -> UMLS -> RxNorm)"
+display(df_atc_long.head(5))
+```
+
+The summary format below collapses ATC-derived identifier evidence to one row per EML item, capturing ATC codes reaffirmed during expansion, UMLS CUIs reached via ATC, and candidate RxNorm identifiers inferred from those CUIs.
+
+This table is used solely to update resolution status and does not override results from native-name matching.
+
+```{python}
+# | tbl-cap: "Step A.3 output: Input-Level-Derived RxNorm data (ATC -> UMLS -> RxNorm)"
+# | label: step-A3-per-input-summary
+df_atc_anchor = df_atc_long.groupby("input_name", as_index=False).agg(
+    atc_codes=(
+        "identifier_value",
+        lambda x: ";".join(sorted(set(v for v in x if len(v) == 7))),
+    ),
+    cuis=(
+        "identifier_value",
+        lambda x: ";".join(sorted(set(v for v in x if v.startswith("C")))),
+    ),
+    candidate_rxcuis=(
+        "identifier_value",
+        lambda x: ";".join(sorted(set(v for v in x if v.isdigit()))),
+    ),
+)
+
+display(df_atc_anchor.head())
+```
+
+### Step (b.5): Merge ATC results back into EML resolution table and update status
+
+Resolution status is updated hierarchically, preserving native-name RxNorm matches over ATC-derived inferences. Items classified as rxnorm_via_atc are considered clinically resolved but retain explicit provenance indicating that RxNorm identifiers were inferred through ATC and UMLS rather than direct lexical matching.
+
+```{python}
+#| label: merge-atc-results
+eml_step2 = eml_merged.merge(
+    df_atc_anchor,
+    how="left",
+    left_on="name",
+    right_on="input_name",
+    suffixes=("", "_atc"),
+)
+
+# update-resolution-status
+def resolution_status(row):
+    if pd.notna(row.get("rxnorm_rxcuis")):
+        return "rxnorm_name"
+    if pd.notna(row.get("candidate_rxcuis")) and row["candidate_rxcuis"] != "":
+        return "rxnorm_via_atc"
+    if pd.notna(row.get("cuis")) and row["cuis"] != "":
+        return "cui_only"
+    if pd.notna(row.get("atc_code")):
+        return "atc_only"
+    return "unresolved"
+
+eml_step2["resolution_status"] = eml_step2.apply(resolution_status, axis=1)
+```
+
+### Step (b.6): Resolution summary after ATC enrichment
+
+This step substantially reduces the number of unresolved items, particularly for sources that natively recorded ATC codes (e.g., WHO and South Africa). Remaining unresolved items either lack ATC annotations or could not be linked to RxNorm through ATC-mediated pathways and are carried forward to step (c) for language-model–assisted normalization.
+
+```{python}
+# | label: atc-no-hit-summary
+# tbl-cap: "Step B items not matched and proportions by EML scope"
+counts = eml_step2.loc[
+    eml_step2["resolution_status"] == "unresolved", "scope"
+].value_counts()
+
+df_counts = counts.to_frame(name="No hit").assign(
+    total_items=eml_step2.scope.value_counts(),
+    percent_no_hit=(counts / eml_step2["scope"].value_counts()).mul(100).round(2),
+)
+
+display(df_counts)
+
+```
+
+```{python}
+# | label: atc-resolution-totals
+print(f"Unresolved = {sum(eml_step2['resolution_status'] == 'unresolved')}")
+print(
+    f"Resolved = {sum(eml_step2['resolution_status'] != 'unresolved')} / "
+    f"{eml_step2.shape[0]} "
+    f"({sum(eml_step2['resolution_status'] != 'unresolved') / eml_step2.shape[0]:.2%})"
+)
+
+```
+
+## Step (c) - What about the remaining issues?
+
+A large language model is used here strictly as a lexical normalization aid, not as a knowledge source.
+
+The model is instructed to rewrite names into forms more likely to be found in RxNorm, without introducing new ingredients or semantic interpretation. All downstream clinical anchoring is still performed exclusively via RxNorm APIs.
+
+This is what I expect to achieve:
+
+| Input Name | LLM Name |
+|------------------------------------|------------------------------------|
+| Amikacin (am) | amikacin |
+| Abacavir (ABC)147 | abacavir |
+| 224 charbon activé solution buvable | charcoal activated |
+| Acetylsalicylic acid (Aspirin) + Clopidogrel | acetylsalicylic acid clopidogrel |
+
+```{python}
+# | label: llm-setup
+
+import os
+from openai import OpenAI
+
+assert os.getenv("OPENAI_API_KEY"), "Missing OPENAI_API_KEY"
+
+client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
+
+SYSTEM_PROMPT = """
+You rewrite medication product names into a simplified string that is most likely
+to be found in RxNorm.
+
+Rules:
+- Output exactly ONE lowercase string.
+- Prefer ingredient-level names.
+- Remove numbers, pack sizes, strengths, and dosage forms.
+- Remove parentheticals and abbreviations.
+- Convert combinations into space-separated ingredients.
+- Translate common non-English drug phrases into English ingredient names.
+- Do NOT invent drugs or add ingredients.
+
+If rewriting would not improve RxNorm searchability, return the input unchanged.
+Do not explain.
+""".strip()
+
+
+def llm_normalize_for_rxnorm(name: str) -> str:
+    try:
+        resp = client.chat.completions.create(
+            model="gpt-4.1-mini",
+            temperature=0.3,
+            messages=[
+                {"role": "system", "content": SYSTEM_PROMPT},
+                {
+                    "role": "user",
+                    "content": f"Rewrite for RxNorm search:\n{name}",
+                },
+            ],
+            max_tokens=20,
+        )
+    except Exception:
+        return name
+
+    out = resp.choices[0].message.content.strip().splitlines()[0].strip().lower()
+
+    # safety: never return something longer / worse
+    if not out or len(out) > len(name) + 10:
+        return name
+
+    return out
+
+
+
+```
+
+```{python}
+tests = [
+    "Amikacin (am)",
+    "Abacavir (ABC)147",
+    "224 charbon activé solution buvable",
+    "Acetylsalicylic acid (Aspirin) + Clopidogrel",
+]
+
+for t in tests:
+    print(f"{t}  →  {llm_normalize_for_rxnorm(t)}")
+
+```
+
+```{python}
+# | label: run-llm
+unresolved = eml_step2[eml_step2["resolution_status"] == "unresolved"].copy()
+
+unresolved["llm_name"] = unresolved["name"].apply(llm_normalize_for_rxnorm)
+
+```
+
+```{python}
+# | label: run pipeline again for llm normalized cases
+
+llm_records = []
+
+for _, row in unresolved.iterrows():
+    rec = init_record(row["llm_name"])
+    rec["eml_name_key"] = normalize_name(row["name"])  # ORIGINAL EML NAME
+    
+    rec["original_name"] = row["name"]
+
+    add_name_assertion(
+        rec,
+        rec["canonical_name"],
+        source="llm_normalized",
+        metadata={
+            "method": "gpt",
+        },
+    )
+
+    rxnorm_lookup(rec)
+    llm_records.append(rec)
+
+```
+
+```{python}
+# | label: flat-llm-results
+# | label: flat-llm-results
+rows = []
+
+for rec in llm_records:
+    for a in rec["assertions"]:
+        if a["assertion_type"] != "name":
+            continue
+        if a["source"] != "rxnorm":
+            continue
+
+        meta = a.get("metadata", {})
+
+        rows.append(
+            {
+                "original_name": rec["original_name"],  # EML name
+                "llm_name": rec["input_name"],  # rewritten name
+                "canonical_name": rec["canonical_name"],
+                "synonym": a["assertion_value"],
+                "rxcui": meta.get("rxcui"),
+                "tty": meta.get("tty"),
+                "source": "rxnorm_llm",
+            }
+        )
+
+```
+
+```{python}
+#| label: llm long data
+df_llm_rxnorm_long = (
+    pd.DataFrame(rows)
+    .drop_duplicates()
+    .reset_index(drop=True)
+)
+
+display(df_llm_rxnorm_long.head(25))
+
+```
+
+```{python}
+df_llm_rxnorm_anchor = (
+    df_llm_rxnorm_long
+    .groupby(["original_name", "llm_name"], as_index=False)
+    .agg(
+        rxnorm_rxcuis_llm=(
+            "rxcui",
+            lambda x: ";".join(sorted(set(v for v in x if v))),
+        ),
+        n_rxnorm_synonyms_llm=("synonym", "nunique"),
+        n_tty_llm=("tty", lambda x: len(set(v for v in x if v))),
+    )
+)
+
+display(df_llm_rxnorm_anchor.head(25))
+
+```
+
+```{python}
+eml_step3 = eml_step2.merge(
+    df_llm_rxnorm_anchor,
+    how="left",
+    left_on="name",
+    right_on="original_name",
+)
+
+
+def resolution_status_final(row):
+    # Step 1: direct name → RxNorm
+    if pd.notna(row.get("rxnorm_rxcuis")) and row["rxnorm_rxcuis"] != "":
+        return "rxnorm_name"
+
+    # Step 2: ATC → RxNorm
+    if pd.notna(row.get("candidate_rxcuis")) and row["candidate_rxcuis"] != "":
+        return "rxnorm_via_atc"
+
+    # Step 3: LLM rewrite → RxNorm
+    if pd.notna(row.get("rxnorm_rxcuis_llm")) and row["rxnorm_rxcuis_llm"] != "":
+        return "rxnorm_via_llm"
+
+    # Step 4: partial resolution
+    if pd.notna(row.get("cuis")) and row["cuis"] != "":
+        return "cui_only"
+
+    if pd.notna(row.get("atc_code")):
+        return "atc_only"
+
+    return "unresolved"
+
+
+eml_step3["resolution_status"] = eml_step3.apply(resolution_status_final, axis=1)
+
+eml_step3.loc[eml_step3["resolution_status"] == "unresolved"]
+```
+
+Language-model–assisted normalization further reduces unresolved items by recovering matches obscured by abbreviations, non-English descriptors, or formatting artifacts.
+
+RxNorm identifiers obtained through this pathway are retained with explicit provenance (rxnorm_via_llm), allowing users to filter or down-weight these matches if desired.
+
+```{python}
+#| label: final-unresolved-count
+#| tbl-cap: "Step (c) results: Count of unresolved items"
+counts = eml_step3.loc[
+    eml_step3["resolution_status"] == "unresolved",
+    "scope",
+].value_counts()
+
+df_counts = counts.to_frame(name="No hit").assign(
+    total_items=eml_step3.scope.value_counts(),
+    percent_no_hit=(counts / eml_step3.scope.value_counts()).mul(100).round(2),
+)
+
+display(df_counts)
+```
+
+```{python}
+print(f"Unresolved = {sum(eml_step3['resolution_status'] == 'unresolved')}")
+
+
+print(
+    f"Resolved = {sum(eml_step3['resolution_status'] != 'unresolved')} / {eml_step3.shape[0]} ({sum(eml_step3['resolution_status'] != 'unresolved') / (eml_step3.shape[0])})"
+)
+```
+
+### Items unresolved
+
+Each Senegal product concept is defined by the pair of names available in the source data: - the international nonproprietary name (dci), and - the commercial reference name (reference). A concept is considered resolved if either name maps successfully through the enrichment pipeline.
+
+```{python}
+#| label: senegal-concepts
+senegal_concepts = (
+    senegal_eml.loc[:, ["dci", "reference"]]
+    .dropna(how="all")
+    .drop_duplicates()
+    .reset_index(drop=True)
+)
+
+senegal_concepts.head()
+
+```
+
+To enable consistent comparison with pipeline outputs, DCI and reference names are lowercased and stripped of leading/trailing whitespace. No semantic rewriting is performed at this stage.
+
+```{python}
+def norm(x):
+    if pd.isna(x):
+        return None
+    return x.strip().lower()
+
+
+senegal_concepts["dci_norm"] = senegal_concepts["dci"].apply(norm)
+senegal_concepts["reference_norm"] = senegal_concepts["reference"].apply(norm)
+
+```
+
+#### Resolved-name set.
+
+This set contains all EML names that were successfully resolved through any pipeline pathway (native RxNorm, ATC-based inference, or LLM-assisted normalization).
+
+```{python}
+# | label: resolved-set
+resolved_names = (
+    eml_step3.loc[eml_step3["resolution_status"] != "unresolved", "name"]
+    .str.strip()
+    .str.lower()
+    .unique()
+)
+
+resolved_names = set(resolved_names)
+
+
+def concept_resolved(row):
+    return (row["dci_norm"] in resolved_names if row["dci_norm"] else False) or (
+        row["reference_norm"] in resolved_names if row["reference_norm"] else False
+    )
+
+
+senegal_concepts["resolved"] = senegal_concepts.apply(
+    concept_resolved,
+    axis=1,
+).astype(bool)
+
+```
+
+These counts represent unique Senegal product concepts, not expanded name rows. Unresolved concepts are those for which neither the DCI nor the commercial reference name could be mapped.
+
+```{python}
+senegal_total = len(senegal_concepts)
+senegal_unresolved = (~senegal_concepts["resolved"]).sum()
+senegal_resolved = senegal_concepts["resolved"].sum()
+
+print(f"Total items in Senegal EML {senegal_total}")
+print(f"N items resolved {senegal_resolved}")
+print(f"N items unresolved {senegal_unresolved}")
+```
+
+Considering the numbers obtained above, we can tweek the numbers slightly to account for the change.
+
+```{python}
+# | label: final-unresolved
+# | tbl-cap: "Final results: Count of unresolved items"
+counts = eml_step3.loc[
+    eml_step3["resolution_status"] == "unresolved",
+    "scope",
+].value_counts()
+
+df_counts = counts.to_frame(name="No hit").assign(
+    total_items=eml_step3.scope.value_counts(),
+    percent_no_hit=(counts / eml_step3.scope.value_counts()).mul(100).round(2),
+)
+
+df_counts.loc[df_counts["No hit"] == 195] = [
+    senegal_unresolved,
+    senegal_total,
+    round((senegal_unresolved / senegal_total) * 100, 2),
+]
+
+display(df_counts)
+```
+
+# Saving canonical JSON
+
+At the end of the enrichment pipeline, each EML item is represented as a single canonical JSON record. This record consolidates the original EML information, the final resolution outcome, all lexical evidence (synonyms), all registry identifiers (RxNorm, ATC, UMLS, etc.).
+
+Crucially, RxNorm identifiers are derived from assertion-level evidence collected across all resolution paths (native name, ATC inference, LLM normalization). These identifiers are then materialized into a convenience field to simplify downstream integration (e.g., FDA queries), while full provenance is preserved.
+
+| Field           | Description                                          |
+|-----------------|------------------------------------------------------|
+| eml_id          | Stable identifier for the original EML row           |
+| scope           | Source EML (e.g., WHO, Senegal, Kenya, South Africa) |
+| original        | Raw information as recorded in the EML               |
+| resolution      | Final resolution outcome and method                  |
+| synonyms\[\]    | All lexical evidence discovered                      |
+| identifiers\[\] | Registry identifiers (RxNorm, ATC, UMLS, etc.)       |
+| rxnorm          | Materialized RxNorm identifiers for convenience      |
+
+```{python}
+# | label: example-final-record
+{
+    "eml_id": "WHO_02341",
+    "scope": "Senegal",
+    "original": {
+        "name": "Abacavir (ABC)147",
+        "dosage_form": "tablet",
+        "dose": "300 mg",
+        "atc_code": "J05AF06",
+    },
+    "resolution": {
+        "status": "rxnorm_via_llm",
+        "path": ["llm_name", "rxnorm"],
+        "llm_name": "abacavir",
+        "notes": None,
+    },
+    "synonyms": [
+        {
+            "value": "abacavir",
+            "source": "rxnorm",
+            "source_vocab": "RXNORM",
+            "rxcui": "614534",
+            "tty": "IN",
+            "via": "llm_name",
+        },
+        {
+            "value": "abacavir sulfate",
+            "source": "rxnorm",
+            "source_vocab": "RXNORM",
+            "rxcui": "614534",
+            "tty": "SCD",
+            "via": "llm_name",
+        },
+    ],
+    "identifiers": [
+        {"type": "RxNorm", "value": "614534", "source": "rxnorm", "via": "llm_name"},
+        {"type": "ATC", "value": "J05AF06", "source": "input", "via": "original"},
+        {"type": "UMLS_CUI", "value": "C1613391", "source": "umls", "via": "atc"},
+    ],
+    "rxnorm": {"rxcuis": ["614534"]},
+}
+
+
+```
+
+## Consolidating assertions from all pipeline stages
+
+The enrichment pipeline produces three independent record streams: - Step (a): native-name RxNorm records - Step (b): ATC-based inference records - Step (c): LLM-normalized RxNorm records
+
+All assertion-level evidence from these steps is pooled before building the final canonical records.
+
+```{python}
+#| label: combining all records
+all_records = []
+all_records.extend(rx_records)     # Step A
+all_records.extend(atc_records)     # Step B
+all_records.extend(llm_records)    # Step C
+```
+
+### Assertion index (single join key)
+
+All assertions are indexed by a normalized EML name key (eml_name_key). This ensures that evidence derived from different resolution paths is correctly unified.
+
+```{python}
+#| label: build-assertion-index
+from collections import defaultdict
+
+assertion_index = defaultdict(list)
+
+for rec in all_records:
+    key = rec["eml_name_key"]
+    for a in rec["assertions"]:
+        assertion_index[key].append(a)
+
+```
+
+## Resolution flags
+
+The status field captures the highest-confidence successful pathway used to resolve the item:
+
+| Status         | Meaning                                       |
+|----------------|-----------------------------------------------|
+| rxnorm_name    | Direct match using the original EML name      |
+| rxnorm_via_atc | RxNorm inferred via ATC → UMLS                |
+| rxnorm_via_llm | RxNorm recovered after LLM name normalization |
+| cui_only       | UMLS concept found, but no RxNorm             |
+| atc_only       | ATC code available, no clinical anchor        |
+| unresolved     | No structured identifiers found               |
+
+```{python}
+#| label: resolution-path-logic
+def resolution_path(row):
+    if row["resolution_status"] == "rxnorm_name":
+        return ["original", "rxnorm"]
+    if row["resolution_status"] == "rxnorm_via_atc":
+        return ["atc", "umls", "rxnorm"]
+    if row["resolution_status"] == "rxnorm_via_llm":
+        return ["llm_name", "rxnorm"]
+    if row["resolution_status"] == "cui_only":
+        return ["umls"]
+    if row["resolution_status"] == "atc_only":
+        return ["atc"]
+    return []
+
+
+```
+
+### Materializing RxNorm identifiers
+
+RxNorm identifiers may appear in multiple forms across the pipeline (name assertions, identifier assertions). The function below collects all RXCUIs discovered anywhere and materializes them in a single place.
+
+Each row in eml_step3 is converted into one canonical JSON record, enriched with all assertions indexed under its normalized name key.
+
+```{python}
+#| label: collect-rxcuis
+def collect_rxcuis(assertions):
+    rxcuis = set()
+
+    for a in assertions:
+        if a["assertion_type"] == "name":
+            rxcui = a.get("metadata", {}).get("rxcui")
+            if rxcui:
+                rxcuis.add(str(rxcui))
+
+        if a["assertion_type"] == "identifier":
+            if a.get("metadata", {}).get("identifier_type") in {
+                "RxNorm",
+                "RxNorm_candidate",
+            }:
+                rxcuis.add(str(a["assertion_value"]))
+
+    return sorted(rxcuis)
+
+# build-master-record
+def build_master_record(row):
+    eml_key = normalize_name(row["name"])
+    assertions = assertion_index.get(eml_key, [])
+
+    synonyms = [
+        {
+            "value": a["assertion_value"],
+            "source": a["source"],
+            "source_vocab": a.get("metadata", {}).get("source_vocab"),
+            "rxcui": a.get("metadata", {}).get("rxcui"),
+            "tty": a.get("metadata", {}).get("tty"),
+            "via": a.get("metadata", {}).get("via", "original"),
+        }
+        for a in assertions
+        if a["assertion_type"] == "name"
+    ]
+
+    identifiers = [
+        {
+            "type": a["metadata"]["identifier_type"],
+            "value": a["assertion_value"],
+            "source": a["source"],
+            "via": a.get("metadata", {}).get("via", "original"),
+        }
+        for a in assertions
+        if a["assertion_type"] == "identifier"
+    ]
+
+    rxcuis = collect_rxcuis(assertions)
+
+    return {
+        "eml_id": row.get("record_id"),
+        "scope": row["scope"],
+        "original": {
+            "name": row["name"],
+            "dosage_form": row.get("dosage_form"),
+            "dose": row.get("dose"),
+            "atc_code": row.get("atc_code"),
+        },
+        "resolution": {
+            "status": row["resolution_status"],
+            "path": resolution_path(row),
+            "llm_name": row.get("llm_name"),
+        },
+        "synonyms": synonyms,
+        "identifiers": identifiers,
+        "rxnorm": {"rxcuis": rxcuis},
+    }
+
+
+```
+
+```{python}
+#| label: generate-master-records
+master_records = [build_master_record(row) for _, row in eml_step3.iterrows()]
+len(master_records)
+
+```
+
+```{python}
+#| label: count-records-with-rxcui
+sum(len(r["rxnorm"]["rxcuis"]) > 0 for r in master_records)
+
+```
+
+```{python}
+# | label: preview-rxcui-examples
+[
+    (r["original"]["name"], r["rxnorm"]["rxcuis"])
+    for r in master_records
+    if r["rxnorm"]["rxcuis"]
+][:10]
+
+
+```
+
+```{python}
+#| label: save-master-json
+
+with open("eml_master.jsonl", "w", encoding="utf-8") as f:
+    for rec in master_records:
+        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+```
+
+# Summary Results
+
+How were items resolved?
+
+-   rxnorm_name represents direct, high-confidence clinical anchoring.
+-   rxnorm_via_atc captures structured inference via ATC → UMLS → RxNorm.
+-   rxnorm_via_llm reflects recovered matches after lexical normalization, with full provenance.
+-   cui_only and atc_only indicate partial resolution without a clinical anchor.
+-   unresolved are items with no usable structured identifiers.
+
+```{python}
+#| label: resolution-status-summary
+# | tbl-cap: "Final resolution status of EML items by highest-confidence pathway"
+
+import pandas as pd
+
+df_resolution = pd.DataFrame(
+    {"resolution_status": [r["resolution"]["status"] for r in master_records]}
+)
+
+df_resolution_summary = df_resolution.value_counts().rename("n_items").reset_index()
+
+df_resolution_summary["percent"] = (
+    df_resolution_summary["n_items"] / df_resolution_summary["n_items"].sum() * 100
+).round(1)
+
+df_resolution_summary
+
+```
+
+```{python}
+# | label: clinical-vs-classification
+# | tbl-cap: "Clinical (RxNorm) vs classification-only resolution"
+
+
+def has_rxnorm(record):
+    return len(record.get("rxnorm", {}).get("rxcuis", [])) > 0
+
+
+def has_any_identifier(record):
+    return len(record.get("identifiers", [])) > 0
+
+
+df_anchor = pd.DataFrame({
+    # True if ANY RxNorm CUI exists (from any pipeline step)
+    "has_rxnorm": [
+        len(r["rxnorm"]["rxcuis"]) > 0
+        for r in master_records
+    ],
+
+    # True if ANY identifier exists (ATC, UMLS, DrugBank, etc.)
+    "has_any_identifier": [
+        len(r["identifiers"]) > 0
+        for r in master_records
+    ],
+})
+
+anchor_summary = pd.DataFrame(
+    {
+        "category": [
+            "RxNorm clinical anchor",
+            "Classification only (ATC / UMLS)",
+            "No identifiers",
+        ],
+        "n_items": [
+            # 1RxNorm wins
+            df_anchor["has_rxnorm"].sum(),
+
+            # 2 Identifiers but explicitly NO RxNorm
+            ((~df_anchor["has_rxnorm"]) & df_anchor["has_any_identifier"]).sum(),
+
+            # 3 Nothing at all
+            ((~df_anchor["has_any_identifier"]) & (~df_anchor["has_rxnorm"])).sum(),
+        ],
+    }
+)
+
+anchor_summary["percent"] = (
+    anchor_summary["n_items"] / len(master_records) * 100
+).round(1)
+
+display(anchor_summary)
+
+
+```
+
+Remaining unresolved items are source-dependent, reflecting differences in how EMLs are curated.
+These items are prime candidates for manual curation, future ontology expansion, or exclusion from RxNorm-dependent downstream analyses.
+
+```{python}
+# | label: unresolved-by-scope
+# | tbl-cap: "Unresolved EML items by source list"
+
+df_unresolved = pd.DataFrame(
+    {
+        "scope": [r["scope"] for r in master_records],
+        "status": [r["resolution"]["status"] for r in master_records],
+    }
+)
+
+unresolved_summary = (
+    df_unresolved.loc[df_unresolved["status"] == "unresolved"]
+    .value_counts("scope")
+    .rename("n_unresolved")
+    .reset_index()
+)
+
+# add totals for context
+scope_totals = df_unresolved.value_counts("scope").rename("total_items").reset_index()
+
+unresolved_summary = unresolved_summary.merge(
+    scope_totals,
+    on="scope",
+    how="left",
+)
+
+unresolved_summary["percent_unresolved"] = (
+    unresolved_summary["n_unresolved"] / unresolved_summary["total_items"] * 100
+).round(2)
+
+display(unresolved_summary)
+
+```
+
+# FDA Lookup
+
+```{python}
+# | label: fda-table
+
+
+def safe_lower(x):
+    if x is None:
+        return None
+    if isinstance(x, float):  # catches NaN
+        return None
+    return str(x).strip().lower()
+
+
+def best_rxnorm_name(record):
+    """
+    Choose the best ingredient-level name for FDA querying.
+    Priority:
+      1) RxNorm IN / PIN / MIN synonym
+      2) LLM name
+      3) Original name
+    Returns None if nothing usable exists.
+    """
+
+    # 1️⃣ RxNorm ingredient names
+    rxnorm_names = [
+        safe_lower(s.get("value"))
+        for s in record.get("synonyms", [])
+        if s.get("source") == "rxnorm"
+        and s.get("tty") in {"IN", "PIN", "MIN"}
+        and safe_lower(s.get("value")) is not None
+    ]
+
+    if rxnorm_names:
+        # Prefer shortest ingredient name
+        return sorted(rxnorm_names, key=len)[0]
+
+    # 2️⃣ LLM-derived name
+    llm_name = safe_lower(record.get("resolution", {}).get("llm_name"))
+    if llm_name:
+        return llm_name
+
+    # 3️⃣ Fallback: original name
+    orig = safe_lower(record.get("original", {}).get("name"))
+    if orig:
+        return orig
+
+    # Nothing usable
+    return None
+
+
+fda_query_rows = []
+
+for r in master_records:
+    rxcuis = [i["value"] for i in r.get("identifiers", []) if i.get("type") == "RxNorm"]
+
+    fda_query_rows.append(
+        {
+            "eml_id": r.get("eml_id"),
+            "scope": r.get("scope"),
+            "fda_query_name": best_rxnorm_name(r),
+            "rxcuis": rxcuis,
+            "resolution_status": r.get("resolution", {}).get("status"),
+        }
+    )
+
+fda_query_df = pd.DataFrame(fda_query_rows)
+
+
+```
