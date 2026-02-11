@@ -16,6 +16,7 @@ We start by proposing a common data model for the 4 EMLs. The full list is manta
 import pandas as pd
 import re
 import numpy as np
+import json
 
 who_eml = pd.read_csv("/Users/jps89/Documents/GEMINI/ALIGN/GlobalHub/data/WHO_EML.csv")
 sa_eml = pd.read_csv(
@@ -27,196 +28,6 @@ kenya_eml = pd.read_csv(
 senegal_eml = pd.read_csv(
     "/Users/jps89/Documents/GEMINI/ALIGN/GlobalHub/data/senegal_eml.csv"
 )
-```
-
-## Common EML Data Model
-
-I harmonize the EML data into the following columns: - `name` - Name of the medicine/product - `dosage_form` - Oral, IV, etc - `dose` - `atc_code` - SA and WHO data contain ATC codes natively - `scope` - identifer for each eml document
-
-```{python}
-who_eml.columns
-who_eml.head(6)
-sa_eml.columns
-kenya_eml.columns
-senegal_eml.columns
-```
-
-### WHO
-
-```{python}
-who_eml = who_eml.rename(
-    columns={
-        "Medicine name": "name",
-        "ATC codes": "atc_code"
-    }
-).copy()
-
-who_eml = (
-    who_eml
-    .assign(formulation_raw=who_eml["Formulations"].str.split(r"\n"))
-    .explode("formulation_raw")
-    .drop(columns="Formulations")
-)
-
-who_eml["formulation_raw"] = who_eml["formulation_raw"].str.strip()
-```
-
-```{python}
-split = who_eml["formulation_raw"].str.split(":", n=1, expand=True)
-
-who_eml["dosage_form_raw"] = split[0]
-who_eml["dose_raw"] = split[1]
-```
-
-```{python}
-def clean_dosage_form(x):
-    if pd.isna(x):
-        return None
-    return (
-        x.lower()
-         .replace(">", " ")
-         .replace("  ", " ")
-         .strip()
-    )
-
-who_eml["dosage_form"] = who_eml["dosage_form_raw"].apply(clean_dosage_form)
-
-def clean_dose(x):
-    if pd.isna(x):
-        return None
-    return (
-        x.lower()
-         .replace("per  mL", "per mL")
-         .replace("ml", "mL")
-         .strip()
-    )
-
-who_eml["dose"] = who_eml["dose_raw"].apply(clean_dose)
-
-```
-
-```{python}
-who_eml["scope"] = "WHO"
-who_eml_c = who_eml[["name", "dosage_form", "dose", "atc_code", "scope"]].drop_duplicates(subset = "name")
-```
-
-### South Africa
-
-```{python}
-sa_eml = (
-    sa_eml.rename(
-        columns={
-            "MEDICINE NAME": "name",
-            "DOSAGE FORM": "dosage_form",
-            "DOSE": "dose",
-            "ATC": "atc_code",
-        }
-    )
-    .drop(columns=["Unnamed: 0", "ROUTE OF ADMINISTRATION"])
-    .assign(scope="South Africa")
-).copy()
-
-
-sa_eml_c = sa_eml.drop_duplicates(subset="name").copy()
-```
-
-### Kenya
-
-```{python}
-kenya_eml = (
-    kenya_eml.rename(columns={"medicine_name": "name", "strenght_size": "dose"})
-    .drop(columns=["item_code", "lou", "source_table"])
-    .assign(atc_code=np.nan, scope="Kenya")
-).copy()
-
-kenya_eml_c = kenya_eml.drop_duplicates(subset="name")
-```
-
-### Senegal
-
-Senegal EML contains the name of the product in the column called `dci` and a commerical reference in the column `reference`. I will use both to expand the searchingh parameters.
-
-```{python}
-senegal_eml_c = pd.concat(
-    [
-        (
-            senegal_eml.rename(
-                columns={"dci": "name", "forme": "dosage_form", "dosage": "dose"}
-            )
-            .drop(
-                columns=[
-                    "n°",
-                    "case_sante",
-                    "poste_sante",
-                    "cs1_cs2",
-                    "eps1_eps2",
-                    "eps3",
-                    "source_table_id",
-                    "source_page",
-                    "reference",
-                ]
-            )
-            .assign(atc_code=np.nan, scope="Senegal")
-            .dropna(subset="name")
-        ),
-        # Using reference name, keeping same dosages
-        (
-            senegal_eml.rename(
-                columns={"reference": "name", "forme": "dosage_form", "dosage": "dose"}
-            )
-            .drop(
-                columns=[
-                    "n°",
-                    "case_sante",
-                    "poste_sante",
-                    "cs1_cs2",
-                    "eps1_eps2",
-                    "eps3",
-                    "source_table_id",
-                    "source_page",
-                    "dci",
-                ]
-            )
-            .assign(atc_code=np.nan, scope="Senegal")
-            .dropna(subset="name")
-        ),
-    ]
-).drop_duplicates(subset="name")
-
-   
-    
-```
-
-## Concatenate everything
-
-```{python}
-eml = pd.concat([who_eml_c, sa_eml_c, kenya_eml_c, senegal_eml_c]).drop_duplicates(
-    subset="name"
-)
-```
-
-```{python}
-eml.to_csv("/Users/jps89/Documents/GEMINI/ALIGN/GlobalHub/data/all_scope_eml_raw.csv")
-```
-
-# Enriching data
-
-Now I submit the combined eml data to the pipeline to detect synoyms, etc. To fix: the naming and definition of functions should go to a single source file in the end to avoid confusion.
-
-## Function definition and setup
-
-```{python}
-import re
-import unicodedata
-import os
-import requests
-import lxml.html as lh
-import pandas as pd
-from dotenv import load_dotenv 
-load_dotenv()
-
-UTS_API_KEY = os.getenv("UTS_API_KEY")
-UTS_BASE = "https://uts-ws.nlm.nih.gov"
 ```
 
 ```{python}
@@ -456,7 +267,7 @@ def umls_expand(record: dict, tgt: str) -> dict:
             code = atom.get("code")
             language = atom.get("language")
 
-            # 3a — Lexical name assertions 
+            # 3a — Lexical name assertions
             if (
                 language == UMLS_ALLOWED_LANGUAGE
                 and source_vocab in UMLS_ALLOWED_SOURCES
@@ -501,9 +312,10 @@ def umls_expand(record: dict, tgt: str) -> dict:
                         "cui": cui,
                         "rxcui": rxcui,
                     },
-                )            
+                )
 
     return record
+
 
 def add_identifier_assertion(
     record: dict,
@@ -536,6 +348,7 @@ def add_identifier_assertion(
         }
     )
 
+
 def umls_search(term: str, tgt: str, max_results: int = 5) -> list:
     """
     Search UMLS by free text and return candidate CUIs.
@@ -561,6 +374,7 @@ def umls_search(term: str, tgt: str, max_results: int = 5) -> list:
         for res in r.json().get("result", {}).get("results", [])
         if res.get("ui", "").startswith("C")
     ]
+
 
 def umls_expand_from_string(record: dict, tgt: str) -> dict:
     """
@@ -608,6 +422,225 @@ def umls_expand_from_string(record: dict, tgt: str) -> dict:
 
     return record
 
+```
+
+## Common EML Data Model
+
+I harmonize the EML data into the following columns: - `name` - Name of the medicine/product - `dosage_form` - Oral, IV, etc - `dose` - `atc_code` - SA and WHO data contain ATC codes natively - `scope` - identifer for each eml document
+
+```{python}
+who_eml.columns
+who_eml.head(6)
+sa_eml.columns
+kenya_eml.columns
+senegal_eml.columns
+```
+
+### WHO
+
+```{python}
+who_eml = who_eml.rename(
+    columns={
+        "Medicine name": "name",
+        "ATC codes": "atc_code"
+    }
+).copy()
+
+who_eml = (
+    who_eml
+    .assign(formulation_raw=who_eml["Formulations"].str.split(r"\n"))
+    .explode("formulation_raw")
+    .drop(columns="Formulations")
+)
+
+who_eml["formulation_raw"] = who_eml["formulation_raw"].str.strip()
+```
+
+```{python}
+split = who_eml["formulation_raw"].str.split(":", n=1, expand=True)
+
+who_eml["dosage_form_raw"] = split[0]
+who_eml["dose_raw"] = split[1]
+```
+
+```{python}
+def clean_dosage_form(x):
+    if pd.isna(x):
+        return None
+    return (
+        x.lower()
+         .replace(">", " ")
+         .replace("  ", " ")
+         .strip()
+    )
+
+who_eml["dosage_form"] = who_eml["dosage_form_raw"].apply(clean_dosage_form)
+
+def clean_dose(x):
+    if pd.isna(x):
+        return None
+    return (
+        x.lower()
+         .replace("per  mL", "per mL")
+         .replace("ml", "mL")
+         .strip()
+    )
+
+who_eml["dose"] = who_eml["dose_raw"].apply(clean_dose)
+
+```
+
+```{python}
+who_eml["scope"] = "WHO"
+who_eml_c = who_eml[["name", "dosage_form", "dose", "atc_code", "scope"]].drop_duplicates(subset = "name")
+```
+
+### South Africa
+
+```{python}
+sa_eml = (
+    sa_eml.rename(
+        columns={
+            "MEDICINE NAME": "name",
+            "DOSAGE FORM": "dosage_form",
+            "DOSE": "dose",
+            "ATC": "atc_code",
+        }
+    )
+    .drop(columns=["Unnamed: 0", "ROUTE OF ADMINISTRATION"])
+    .assign(scope="South Africa")
+).copy()
+
+
+sa_eml_c = sa_eml.drop_duplicates(subset="name").copy()
+```
+
+### Kenya
+
+```{python}
+kenya_eml = (
+    kenya_eml.rename(columns={"medicine_name": "name", "strenght_size": "dose"})
+    .drop(columns=["item_code", "lou", "source_table"])
+    .assign(atc_code=np.nan, scope="Kenya")
+).copy()
+
+kenya_eml_c = kenya_eml.drop_duplicates(subset="name")
+```
+
+### Senegal
+
+Senegal EML contains the name of the product in the column called `dci` and a commerical reference in the column `reference`. I will use both to expand the searchingh parameters.
+
+```{python}
+senegal_eml_c = pd.concat(
+    [
+        (
+            senegal_eml.rename(
+                columns={"dci": "name", "forme": "dosage_form", "dosage": "dose"}
+            )
+            .drop(
+                columns=[
+                    "n°",
+                    "case_sante",
+                    "poste_sante",
+                    "cs1_cs2",
+                    "eps1_eps2",
+                    "eps3",
+                    "source_table_id",
+                    "source_page",
+                    "reference",
+                ]
+            )
+            .assign(atc_code=np.nan, scope="Senegal")
+            .dropna(subset="name")
+        ),
+        # Using reference name, keeping same dosages
+        (
+            senegal_eml.rename(
+                columns={"reference": "name", "forme": "dosage_form", "dosage": "dose"}
+            )
+            .drop(
+                columns=[
+                    "n°",
+                    "case_sante",
+                    "poste_sante",
+                    "cs1_cs2",
+                    "eps1_eps2",
+                    "eps3",
+                    "source_table_id",
+                    "source_page",
+                    "dci",
+                ]
+            )
+            .assign(atc_code=np.nan, scope="Senegal")
+            .dropna(subset="name")
+        ),
+    ]
+).drop_duplicates(subset="name")
+
+   
+    
+```
+
+## Concatenate everything
+
+Not removing duplicates at this point because of membership tests downstream.
+```{python}
+#| label: concatenate
+# FULL dataset (no deduplication)
+eml_full = pd.concat([who_eml_c, sa_eml_c, kenya_eml_c, senegal_eml_c])
+
+# Deduplicated dataset for enrichment pipeline (unchanged behavior)
+eml = eml_full.drop_duplicates(subset="name")
+
+```
+
+```{python}
+#| label: save eml
+eml_full.to_csv("/Users/jps89/Documents/GEMINI/ALIGN/GlobalHub/data/all_scope_eml_raw.csv")
+```
+
+
+```{python}
+# | label: build-name-scope-map
+
+from collections import defaultdict
+
+name_scope_map = defaultdict(list)
+
+for _, row in eml_full.iterrows():
+    key = normalize_name(row["name"])
+
+    name_scope_map[key].append(
+        {
+            "scope": row["scope"],
+            "original_name": row["name"],
+            "dosage_form": row.get("dosage_form"),
+            "dose": row.get("dose"),
+            "atc_code": row.get("atc_code"),
+        }
+    )
+
+```
+
+# Enriching data
+
+Now I submit the combined eml data to the pipeline to detect synoyms, etc. To fix: the naming and definition of functions should go to a single source file in the end to avoid confusion.
+
+```{python}
+# | label: setup-enrichment
+import re
+import unicodedata
+import os
+import requests
+import lxml.html as lh
+import pandas as pd
+from dotenv import load_dotenv
+
+load_dotenv()
+
+UTS_API_KEY = os.getenv("UTS_API_KEY")
+UTS_BASE = "https://uts-ws.nlm.nih.gov"
 ```
 
 ## Step (a): Native-name RxNorm enrichment
@@ -928,19 +961,28 @@ All evidence is identifier-based.
 ```{python}
 # | label: run-atc
 
-atc_records = []
+# atc_records = []
 
-for _, row in step2_candidates.iterrows():
-    rec = init_atc_record(row)
-    rec["eml_name_key"] = normalize_name(row["name"])
-    rec = expand_atc_record(rec, TGT)
-    atc_records.append(rec)
+# for _, row in step2_candidates.iterrows():
+#     rec = init_atc_record(row)
+#     rec["eml_name_key"] = normalize_name(row["name"])
+#     rec = expand_atc_record(rec, TGT)
+#     atc_records.append(rec)
 
 
 # Save
-with open("atc_records.jsonl", "w", encoding="utf-8") as f:
-    for rec in atc_records:
-        f.write(json.dumps(rec, default=json_safe) + "\n")
+# with open("atc_records.jsonl", "w", encoding="utf-8") as f:
+#     for rec in atc_records:
+#         f.write(json.dumps(rec, default=json_safe) + "\n")
+
+
+atc_records = []
+
+with open("atc_records.jsonl", "r", encoding="utf-8") as f:
+    for line in f:
+        atc_records.append(json.loads(line))
+
+len(atc_records)
 
 ```
 
@@ -1129,8 +1171,6 @@ def llm_normalize_for_rxnorm(name: str) -> str:
 
     return out
 
-
-
 ```
 
 ```{python}
@@ -1141,46 +1181,86 @@ tests = [
     "Acetylsalicylic acid (Aspirin) + Clopidogrel",
 ]
 
-for t in tests:
-    print(f"{t}  →  {llm_normalize_for_rxnorm(t)}")
+# commented to prevent rerunning
+# for t in tests:
+#     print(f"{t}  →  {llm_normalize_for_rxnorm(t)}")
 
 ```
 
+
 ```{python}
 # | label: run-llm
+
 unresolved = eml_step2[eml_step2["resolution_status"] == "unresolved"].copy()
 
-unresolved["llm_name"] = unresolved["name"].apply(llm_normalize_for_rxnorm)
+# commented to prevent re-running everytime - reading from memory later
+# unresolved["llm_name"] = unresolved["name"].apply(llm_normalize_for_rxnorm)
 
 ```
 
 ```{python}
 # | label: run pipeline again for llm normalized cases
 
-llm_records = []
+# commented to prevent re-running
+# llm_records = []
 
-for _, row in unresolved.iterrows():
-    rec = init_record(row["llm_name"])
-    rec["eml_name_key"] = normalize_name(row["name"])  # ORIGINAL EML NAME
+# for _, row in unresolved.iterrows():
+#     rec = init_record(row["llm_name"])
+#     rec["eml_name_key"] = normalize_name(row["name"])  # ORIGINAL EML NAME
     
-    rec["original_name"] = row["name"]
+#     rec["original_name"] = row["name"]
 
-    add_name_assertion(
-        rec,
-        rec["canonical_name"],
-        source="llm_normalized",
-        metadata={
-            "method": "gpt",
-        },
-    )
+#     add_name_assertion(
+#         rec,
+#         rec["canonical_name"],
+#         source="llm_normalized",
+#         metadata={
+#             "method": "gpt",
+#         },
+#     )
 
-    rxnorm_lookup(rec)
-    llm_records.append(rec)
+#     rxnorm_lookup(rec)
+#     llm_records.append(rec)
 
 ```
 
+
 ```{python}
-# | label: flat-llm-results
+# | label: saving llm_records
+
+
+# def json_safe(obj):
+#     if isinstance(obj, set):
+#         return sorted(list(obj))
+#     return obj
+
+
+# with open("eml_llm_records.jsonl", "w", encoding="utf-8") as f:
+#     for rec in llm_records:
+#         f.write(json.dumps(rec, ensure_ascii=False, default=json_safe) + "\n")
+
+
+```
+
+
+```{python}
+llm_records = []
+
+with open("eml_llm_records.jsonl", "r", encoding="utf-8") as f:
+    for line in f:
+        llm_records.append(json.loads(line))
+
+len(llm_records)
+
+# Adding llm name back to the unresolved frame without re runinng the llm
+llm_lookup = {
+    rec["original_name"]: rec["input_name"]
+    for rec in llm_records
+}
+unresolved["llm_name"] = unresolved["name"].map(llm_lookup)
+```
+
+```{python}
 # | label: flat-llm-results
 rows = []
 
@@ -1530,7 +1610,7 @@ RxNorm identifiers may appear in multiple forms across the pipeline (name assert
 Each row in eml_step3 is converted into one canonical JSON record, enriched with all assertions indexed under its normalized name key.
 
 ```{python}
-#| label: collect-rxcuis
+# | label: collect-rxcuis
 def collect_rxcuis(assertions):
     rxcuis = set()
 
@@ -1549,10 +1629,13 @@ def collect_rxcuis(assertions):
 
     return sorted(rxcuis)
 
+
 # build-master-record
 def build_master_record(row):
     eml_key = normalize_name(row["name"])
+
     assertions = assertion_index.get(eml_key, [])
+    membership = name_scope_map.get(eml_key, [])
 
     synonyms = [
         {
@@ -1581,14 +1664,9 @@ def build_master_record(row):
     rxcuis = collect_rxcuis(assertions)
 
     return {
-        "eml_id": row.get("record_id"),
-        "scope": row["scope"],
-        "original": {
-            "name": row["name"],
-            "dosage_form": row.get("dosage_form"),
-            "dose": row.get("dose"),
-            "atc_code": row.get("atc_code"),
-        },
+        "canonical_key": eml_key,
+        # 🔵 NEW FIELD
+        "membership": membership,
         "resolution": {
             "status": row["resolution_status"],
             "path": resolution_path(row),
@@ -1617,21 +1695,28 @@ sum(len(r["rxnorm"]["rxcuis"]) > 0 for r in master_records)
 
 ```{python}
 # | label: preview-rxcui-examples
-[
-    (r["original"]["name"], r["rxnorm"]["rxcuis"])
-    for r in master_records
-    if r["rxnorm"]["rxcuis"]
-][:10]
-
+# [
+#     (r["original"]["name"], r["rxnorm"]["rxcuis"])
+#     for r in master_records
+#     if r["rxnorm"]["rxcuis"]
+# ][:10]
 
 ```
 
 ```{python}
 #| label: save-master-json
 
-with open("eml_master.jsonl", "w", encoding="utf-8") as f:
-    for rec in master_records:
-        f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+# with open("eml_master.jsonl", "w", encoding="utf-8") as f:
+#     for rec in master_records:
+#         f.write(json.dumps(rec, ensure_ascii=False) + "\n")
+
+master_records = []
+
+with open("eml_master.jsonl", "r", encoding="utf-8") as f:
+    for line in f:
+        master_records.append(json.loads(line))
+
+len(master_records)
 
 ```
 
@@ -1757,6 +1842,13 @@ unresolved_summary["percent_unresolved"] = (
 
 display(unresolved_summary)
 
+```
+
+```{python}
+#| label: deleting objects
+del atc_records
+del llm_records
+del rx_records
 ```
 
 # Step (d): FDA-based regulatory enrichment
