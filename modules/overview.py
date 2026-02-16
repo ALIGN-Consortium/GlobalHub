@@ -167,17 +167,7 @@ def overview_ui(id):
         # --- Section 4: Innovation Explorer Table ---
         ui.div(
             ui.div(
-                ui.div(
-                    ui.span("Innovation Explorer", class_="fw-semibold"),
-                    ui.input_select(
-                        "impact_country_table",
-                        None,
-                        choices=["Overall", "Kenya", "Senegal", "South Africa"],
-                        selected="Overall",
-                        width="220px",
-                    ),
-                    class_="d-flex align-items-center justify-content-between flex-wrap gap-2",
-                ),
+                ui.span("Innovation Explorer", class_="fw-semibold"),
                 class_="card-header",
             ),
             ui.div(
@@ -203,6 +193,7 @@ def overview_server(id, input, output, session):
     """
     data = load_data()
     horizon_df = data["horizon"]
+    innovation_df = data["innovation_df"]
 
     # Reactive value to store the selected innovation ID for cross-module communication
     default_innovation_id = (
@@ -228,11 +219,14 @@ def overview_server(id, input, output, session):
         """
         disease = input.disease_selector()
 
+        # Use only unique innovations (country="Overall") for global counts
+        df_unique = horizon_df[horizon_df["country"] == "Overall"]
+
         # 1. Filter Data
         if disease == "Overall":
-            df_filtered = horizon_df
+            df_filtered = df_unique
         else:
-            df_filtered = horizon_df[horizon_df["disease"] == disease]
+            df_filtered = df_unique[df_unique["disease"] == disease]
 
         # Filter for Forecast period (2025-2050)
         df_filtered = df_filtered[
@@ -292,6 +286,8 @@ def overview_server(id, input, output, session):
             yaxis_title="Cumulative Number of Products",
             xaxis=dict(showticklabels=True, dtick=1, tickangle=-45, type="category"),
             yaxis=dict(range=[0, None], fixedrange=True),
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
             annotations=[
                 dict(
                     text="Data is cumulative",
@@ -313,10 +309,13 @@ def overview_server(id, input, output, session):
         """
         disease = input.disease_selector()
 
+        # Use only unique innovations
+        df_unique = horizon_df[horizon_df["country"] == "Overall"]
+
         if disease == "Overall":
-            df_filtered = horizon_df
+            df_filtered = df_unique
         else:
-            df_filtered = horizon_df[horizon_df["disease"] == disease]
+            df_filtered = df_unique[df_unique["disease"] == disease]
 
         if df_filtered.empty:
             return go.FigureWidget()
@@ -326,10 +325,33 @@ def overview_server(id, input, output, session):
         total_innovations = len(df_filtered)
         stage_counts["pct"] = (stage_counts["count"] / total_innovations * 100).round(1)
 
-        base_colors = ["#10b981", "#3b82f6", "#f59e0b", "#ef4444", "#8b5cf6", "#ec4899"]
-        stage_counts["colors"] = [
-            base_colors[i % len(base_colors)] for i in range(len(stage_counts))
+        # Define colors for the consolidated categories
+        categories = [
+            "Preclinical",
+            "Phase 1",
+            "Phase 2",
+            "Phase 3",
+            "Phase 4",
+            "Observational",
+            "Implementation/Pilot",
+            "Not in trials",
+            "Unknown",
         ]
+        
+        base_colors = [
+            "#94a3b8", # Preclinical (Grey)
+            "#60a5fa", # Phase 1 (Blue)
+            "#3b82f6", # Phase 2 (Darker Blue)
+            "#2563eb", # Phase 3 (Even Darker Blue)
+            "#1d4ed8", # Phase 4 (Deep Blue)
+            "#a78bfa", # Observational (Purple)
+            "#10b981", # Implementation/Pilot (Green)
+            "#f43f5e", # Not in trials (Red)
+            "#cbd5e1"  # Unknown (Light Grey)
+        ]
+        color_map = dict(zip(categories, base_colors))
+        
+        stage_counts["colors"] = stage_counts["status"].map(color_map).fillna("#cbd5e1")
         readiness = stage_counts
 
         req(not readiness.empty)
@@ -458,11 +480,7 @@ def overview_server(id, input, output, session):
         Renders the interactive DataGrid table.
         Filters by country and selects key columns for display.
         """
-        country = input.impact_country_table()
-        if country == "Overall":
-            df_filtered = horizon_df
-        else:
-            df_filtered = horizon_df[horizon_df["country"] == country]
+        df_filtered = innovation_df
         req(not df_filtered.empty)
 
         return render.DataGrid(
@@ -505,11 +523,7 @@ def overview_server(id, input, output, session):
             return
         idx = input.pipeline_tbl_selected_rows()[0]
 
-        country = input.impact_country_table()
-        if country == "Overall":
-            df_filtered = horizon_df
-        else:
-            df_filtered = horizon_df[horizon_df["country"] == country]
+        df_filtered = innovation_df
 
         selected_id = df_filtered.iloc[idx]["innovation"]
         selected_innovation.set(selected_id)

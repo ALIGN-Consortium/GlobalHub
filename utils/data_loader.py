@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import random
 from pathlib import Path
+from datetime import timedelta
 from .config import DATA_PATH, POP_DATA_PATH, COLORS
 
 
@@ -23,10 +24,12 @@ def _load_csv(path: str) -> pd.DataFrame:
         RuntimeError: If there is an error during parsing.
     """
     try:
-        # Load the new HorizonData.csv with latin1 encoding to handle potential special characters
-        df = pd.read_csv(path, encoding="latin1")
+        # Load the CSV with utf-8-sig encoding to handle BOM
+        df = pd.read_csv(path, encoding="utf-8-sig")
         return df
     except FileNotFoundError:
+        # Fallback logic if specific file not found is handled in load_data usually, 
+        # but for _load_csv we raise
         raise FileNotFoundError(
             f"Data file not found at {path}. Please check the path."
         )
@@ -53,6 +56,13 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Processed dataframe ready for analysis.
     """
+    # Rename 'scope' to 'country' for consistency with app logic
+    if "scope" in df.columns:
+        df = df.rename(columns={"scope": "country"})
+
+    # Map 'WHO' to 'Overall' to match the app's expected aggregate identifier
+    if "country" in df.columns:
+        df["country"] = df["country"].replace("WHO", "Overall")
 
     #  Date Conversions
     date_cols = [
@@ -63,6 +73,8 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
         "gra_date",
         "eml_date",
         "date_trial_status",
+        "phase_1_date", "phase_2_date", "phase_3_date", "phase_4_date",
+        "who_eml_date", "date_market"
     ]
 
     for col in date_cols:
@@ -93,6 +105,8 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
         "time_to_regulatory_approval",
         "time_approval_to_first_launch",
         "time_launch_to_20lmic",
+        "impact_potential",
+        "introduction_readiness"
     ]
 
     for col in numeric_cols:
@@ -102,7 +116,120 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     #  Category Cleanup
     if "category" in df.columns:
         df["category"] = df["category"].str.strip()
+        
+        # Standardize categories
+        cat_map = {
+            "Therapeutics": "Therapeutic",
+            "therapeutic": "Therapeutic",
+            "Vacine": "Vaccine",
+            "VCPs": "Vector Control",
+            "Vector-Contrlled Products": "Vector Control",
+            "Medical device": "Medical Device"
+        }
+        df["category"] = df["category"].replace(cat_map)
 
+    # --- Trial Status Mapping ---
+    def map_status(status):
+        s = str(status).lower().strip()
+        if s == "nan" or s == "unknown" or s == "phase":
+            return "Unknown"
+        
+        # Phase mapping
+        if "phase 1" in s:
+            return "Phase 1"
+        if "phase 2" in s:
+            return "Phase 2"
+        if "phase 3" in s:
+            return "Phase 3"
+        if "phase 4" in s:
+            return "Phase 4"
+            
+        # Implementation/Pilot mapping (Approved, Marketed, WHO_PQ, CE)
+        if any(x in s for x in ["approved", "marketed", "who", "ce", "yes"]):
+            return "Implementation/Pilot"
+            
+        return "Unknown"
+
+    if "trial_status" in df.columns:
+        df["trial_status"] = df["trial_status"].apply(map_status)
+    else:
+        df["trial_status"] = "Unknown"
+
+    # --- Time to Market Estimation ---
+    def estimate_time_to_market(stage):
+        stage = str(stage).upper()
+        # Defaults (Median in Years)
+        t1, t2, t3 = 2.62, 0.32, 5.0 
+        
+        if "PHASE 1" in stage or "PHASE 2" in stage or "EARLY" in stage:
+            # High Uncertainty (75th Percentile)
+            t1, t2, t3 = 4.41, 0.98, 21.0
+        elif "PHASE 3" in stage:
+            # Standard (Median)
+            t1, t2, t3 = 2.62, 0.32, 5.0
+        elif "PHASE 4" in stage:
+            # Mature/Optimized (25th Percentile)
+            t1, t2, t3 = 0.56, 0.15, 3.5
+            
+        return pd.Series([t1, t2, t3])
+
+    time_cols = ['time_to_regulatory_approval', 'time_approval_to_first_launch', 'time_launch_to_20lmic']
+    
+    # Calculate estimations for all rows based on status
+    estimations = df['trial_status'].apply(estimate_time_to_market)
+    estimations.columns = time_cols
+    
+    # Fill missing numeric values with estimations
+    for col in time_cols:
+        if col not in df.columns:
+            df[col] = estimations[col]
+        else:
+            df[col] = df[col].fillna(estimations[col])
+
+    # --- Date Projections ---
+    def calculate_projected_dates(row):
+        start_date = row.get('date_trial_status')
+        if pd.isna(start_date):
+            return pd.Series([pd.NaT] * 3)
+        
+        try:
+            # Ensure start_date is a timestamp
+            base_date = pd.to_datetime(start_date)
+            
+            # Calculate offsets in days (approximate 365.25 days/year)
+            days_to_reg = (row['time_to_regulatory_approval'] or 0) * 365.25
+            days_to_launch = (row['time_approval_to_first_launch'] or 0) * 365.25
+            days_to_lmic = (row['time_launch_to_20lmic'] or 0) * 365.25
+            
+            date_reg_approval = base_date + timedelta(days=days_to_reg)
+            date_first_launch = date_reg_approval + timedelta(days=days_to_launch)
+            date_lmic_uptake = date_first_launch + timedelta(days=days_to_lmic)
+            
+            return pd.Series([
+                date_reg_approval,
+                date_first_launch,
+                date_lmic_uptake
+            ])
+        except Exception:
+            return pd.Series([pd.NaT] * 3)
+
+    proj_date_cols = ['expected_date_of_regulatory_approval', 'expected_date_of_first_launch', 'expected_date_of_market']
+    
+    # Calculate projections
+    projections = df.apply(calculate_projected_dates, axis=1)
+    projections.columns = proj_date_cols
+    
+    # Fill missing date values with projections
+    for col in proj_date_cols:
+        if col not in df.columns:
+            df[col] = projections[col]
+        else:
+            df[col] = df[col].fillna(projections[col])
+            
+    # Re-calculate market_year after filling dates
+    if "expected_date_of_market" in df.columns:
+        df["market_year"] = df["expected_date_of_market"].dt.year
+    
     return df
 
 
@@ -165,7 +292,7 @@ def _process_readiness(df: pd.DataFrame) -> pd.DataFrame:
         Used by the `pie_chart` in `modules/overview.py`.
 
     Key Logic:
-        1.  Counts occurrences of each `trial_status`.
+        1.  Counts occurrences of each `trial_status` (which is already recoded).
         2.  Calculates percentage of total.
         3.  Assigns consistent colors from `COLORS` config.
 
@@ -178,15 +305,39 @@ def _process_readiness(df: pd.DataFrame) -> pd.DataFrame:
     if "trial_status" not in df.columns:
         return pd.DataFrame(columns=["status", "pct", "colors"])
 
+    # Define standard categories for color mapping
+    categories = [
+        "Preclinical",
+        "Phase 1",
+        "Phase 2",
+        "Phase 3",
+        "Phase 4",
+        "Observational",
+        "Implementation/Pilot",
+        "Not in trials",
+        "Unknown",
+    ]
+    
+    base_colors = [
+        "#94a3b8", # Preclinical (Grey)
+        "#60a5fa", # Phase 1 (Blue)
+        "#3b82f6", # Phase 2 (Darker Blue)
+        "#2563eb", # Phase 3 (Even Darker Blue)
+        "#1d4ed8", # Phase 4 (Deep Blue)
+        "#a78bfa", # Observational (Purple)
+        "#10b981", # Implementation/Pilot (Green)
+        "#f43f5e", # Not in trials (Red)
+        "#cbd5e1"  # Unknown (Light Grey)
+    ]
+    color_map = dict(zip(categories, base_colors))
+
     stage_counts = df["trial_status"].value_counts().reset_index()
     stage_counts.columns = ["status", "count"]
     total_innovations = len(df)
     stage_counts["pct"] = (stage_counts["count"] / total_innovations * 100).round(1)
 
-    base_colors = COLORS["status_colors"]
-    stage_counts["colors"] = [
-        base_colors[i % len(base_colors)] for i in range(len(stage_counts))
-    ]
+    stage_counts["colors"] = stage_counts["status"].map(color_map).fillna("#cbd5e1")
+
     return stage_counts[["status", "pct", "colors"]]
 
 
@@ -210,51 +361,78 @@ def load_data() -> dict:
             - "pipeline": DataFrame for trend charts.
             - "readiness": DataFrame for pie charts.
             - "horizon": The fully processed and merged main DataFrame.
+            - "innovation_df": DataFrame with distinct innovations (Overall country).
+            - "country_regulatory_df": DataFrame with country-specific rows.
     """
-    df = _load_csv(DATA_PATH)
-    df = _preprocess_data(df)
-
-    # --- Population Data Integration ---
+    
     try:
-        pop_df = _load_csv(POP_DATA_PATH)
+        raw_df = _load_csv(DATA_PATH)
+    except Exception as e:
+        print(f"Warning: Could not load data from {DATA_PATH}: {e}")
+        raw_df = pd.DataFrame()
+
+    df = _preprocess_data(raw_df)
+
+    # --- 3. Organize DataFrames ---
+    # The input CSV is already in long format.
+    # horizon_df is the master dataframe.
+    horizon_df = df.copy()
+
+    # innovation_df: The aggregate/global view (country="Overall")
+    if "country" in horizon_df.columns:
+        innovation_df = horizon_df[horizon_df["country"] == "Overall"].copy()
+        # country_regulatory_df: The specific country rows
+        country_regulatory_df = horizon_df[horizon_df["country"] != "Overall"].copy()
+    else:
+        innovation_df = pd.DataFrame()
+        country_regulatory_df = pd.DataFrame()
+
+    # --- 5. Population Data Integration ---
+    try:
+        # Load population data with standard utf-8
+        pop_df = pd.read_csv(POP_DATA_PATH)
 
         # Ensure consistent formatting for merge keys (strip whitespace)
-        for d in [df, pop_df]:
+        for d in [horizon_df, pop_df]:
             if "country" in d.columns:
                 d["country"] = d["country"].astype(str).str.strip()
             if "disease" in d.columns:
                 d["disease"] = d["disease"].astype(str).str.strip()
 
         # Merge population data based on country and disease
-        df = pd.merge(
-            df,
+        horizon_df = pd.merge(
+            horizon_df,
             pop_df[["country", "disease", "targeted_population", "pop_description"]],
             on=["country", "disease"],
             how="left",
         )
 
         # Rename the merged 'targeted_population' column to 'people_at_risk' for internal consistency
-        df = df.rename(columns={"targeted_population": "people_at_risk"})
+        horizon_df = horizon_df.rename(columns={"targeted_population": "people_at_risk"})
 
         # Priority Logic:
         # 1. 'people_at_risk' (from PopulationData.csv) is the default.
-        # 2. If that is NaN (merge failed/no match), fill it with 'targeted_population' from the original HorizonData.csv.
-        if "targeted_population" in df.columns:
-            df["people_at_risk"] = df["people_at_risk"].fillna(
-                df["targeted_population"]
-            )
+        # 2. If that is NaN (merge failed/no match), fill it with 'target_population' from the original data if available.
+        # Note: Original CSV has 'target_population' column, not 'targeted_population' (checked from header).
+        if "target_population" in horizon_df.columns:
+             horizon_df["people_at_risk"] = horizon_df["people_at_risk"].fillna(horizon_df["target_population"])
 
     except Exception as e:
         print(f"Warning: Could not load or merge population data: {e}")
-        # Fallback if PopulationData.csv is missing entirely
-        df["people_at_risk"] = df.get("targeted_population", 0)
+        # Fallback
+        if "target_population" in horizon_df.columns:
+            horizon_df["people_at_risk"] = horizon_df["target_population"]
+        else:
+            horizon_df["people_at_risk"] = 0
 
     #  Aggregation
-    pipeline = _process_pipeline(df)
-    readiness = _process_readiness(df)
+    pipeline = _process_pipeline(horizon_df)
+    readiness = _process_readiness(horizon_df)
 
     return {
         "pipeline": pipeline,
         "readiness": readiness,
-        "horizon": df,
+        "horizon": horizon_df,
+        "innovation_df": innovation_df,
+        "country_regulatory_df": country_regulatory_df,
     }

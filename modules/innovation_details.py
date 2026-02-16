@@ -24,18 +24,26 @@ def progress_row(label, value):
     """
     Helper to create a labelled progress bar component.
     """
+    try:
+        if pd.isna(value):
+            int_val = 0
+        else:
+            int_val = int(value)
+    except (ValueError, TypeError):
+        int_val = 0
+
     return ui.div(
         ui.div(
             ui.span(label, class_="lbl"),
-            ui.span(f"{int(value)}%"),
+            ui.span(f"{int_val}%"),
             class_="d-flex justify-content-between",
         ),
         ui.div(
             ui.div(
                 class_="progress-bar",
                 role="progressbar",
-                style=f"width: {int(value)}%",
-                aria_valuenow=str(int(value)),
+                style=f"width: {int_val}%",
+                aria_valuenow=str(int_val),
                 aria_valuemin="0",
                 aria_valuemax="100",
             ),
@@ -62,17 +70,7 @@ def innovation_details_ui(id):
         # Innovation Explorer table
         ui.div(
             ui.div(
-                ui.div(
-                    ui.span("Innovation explorer", class_="fw-semibold"),
-                    ui.input_select(
-                        "impact_country_table_details",
-                        None,
-                        choices=["Overall", "Kenya", "Senegal", "South Africa"],
-                        selected="Overall",
-                        width="220px",
-                    ),
-                    class_="d-flex align-items-center justify-content-between flex-wrap gap-2",
-                ),
+                ui.span("Innovation explorer", class_="fw-semibold"),
                 class_="card-header",
             ),
             ui.div(
@@ -208,17 +206,14 @@ def innovation_details_server(id, selected_innovation, input, output, session):
     """
     data = load_data()
     horizon_df = data["horizon"]
+    innovation_df = data["innovation_df"]
 
     @render.data_frame
     def pipeline_tbl_details():
         """
         Renders the table in the Details tab, allowing independent selection.
         """
-        country = input.impact_country_table_details()
-        if country == "Overall":
-            df_filtered = horizon_df
-        else:
-            df_filtered = horizon_df[horizon_df["country"] == country]
+        df_filtered = innovation_df
         req(not df_filtered.empty)
 
         # df_filtered["expected_date_of_market"] = df_filtered["expected_date_of_market"].dt.strftime("%Y-%m-%d")
@@ -261,11 +256,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             return
         idx = input.pipeline_tbl_details_selected_rows()[0]
 
-        country = input.impact_country_table_details()
-        if country == "Overall":
-            df_filtered = horizon_df
-        else:
-            df_filtered = horizon_df[horizon_df["country"] == country]
+        df_filtered = innovation_df
 
         selected_id = df_filtered.iloc[idx]["innovation"]
         selected_innovation.set(selected_id)
@@ -282,7 +273,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         """
         selected_id = get_selected_id()
         req(selected_id)  # Ensure selected_id is not None
-        row = horizon_df[horizon_df["innovation"] == selected_id]
+        row = innovation_df[innovation_df["innovation"] == selected_id]
         req(not row.empty)  # Ensure row is not empty
         return row.iloc[0]
 
