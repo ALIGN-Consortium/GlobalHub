@@ -1,0 +1,764 @@
+n°,dci,dosage,forme,case_sante,poste_sante,cs1_cs2,eps1_eps2,eps3,reference,source_table_id,source_page
+1,amikacine,500mg,injectable,,,+,+,+,amiklin,0,9
+2,amoxicilline,500mg,gélule,,+,+,+,clamoxyl + +,,0,9
+3,amoxicilline,1 g,comprimé,,+,+,+,,clamoxyl,0,9
+4,amoxicillicine,250mg,comprimé dispersible,+,+,+,+,+,clamoxyl,0,9
+5,amoxicilline,250mg,suspension buvable,,+,+,+,+,clamoxyl,0,9
+6,amoxicilline+acide clavulanique,"500mg/62,5mg",sachet,,+,+,+,+,augmentin,0,9
+7,amoxicilline+acide clavulanique,1000mg/125mg,sachet,,+,+,+,+,augmentin,0,9
+8,ampicilline,1g,injectable,,+,+,+,+,totapen,0,9
+9,azithromycine,500mg,comprimé,,,+,+,0,zithromax,0,9
+10,benzathine -benzylpénicilline,"2,4mui",injectable,,,+,+,+,extenlliline,0,9
+11,benzathine-benzylpénicilline,"1,2mui",injectable,,+,+,+,+,extencilline,0,9
+12,benzylpénicilline,1mui,injectable,,,+,+,+,pénig,0,9
+13,céfazoline,1g,injectable,,,+,+,+,céfacidal,0,9
+14,céfixime,200mg,comprimé,,,+,+,+,oroken,0,9
+15,céfixime,100mg/5ml,suspension. buvable.,,,+,+,+,oroken,0,9
+16,céfotaxime,1 g,injectable,,,+,+,+,claforan,0,9
+17,ceftriaxone,1g,injectable,,+,+,+,+,rocéphine,0,9
+18,ciprofloxacine,250mg,comprimé,,+,+,+,+,cifran,0,9
+19,ciprofloxacine,200mg,injectable,,,+,+,+,ciproxin,0,9
+20,ciprofloxacine,100mg,injectable,,+,+,+,+,ciproxin,0,9
+21,ciprofloxacine,500mg,injectable,,,+,+,+,ciproxin,0,9
+22,doxycycline,100mg,comprimé,,,+,+,+,vibra,0,9
+23,erythromycine,500mg,comprimé,,+,+,+,+,ery,1,10
+24,gentamicine,80mg/2ml,injectable,,+,+,+,+,gentalline,1,10
+25,oxacilline,1g,injectable,,,+,+,+,bristopen,1,10
+26,flucloxacilline,250mg/5ml,suspension buvable,,+,+,+,+,staphypen,1,10
+27,flucloxacilline,500mg,comprimé,,+,+,+,+,staphypen,1,10
+28,flucloxacilline,125mg/5ml,suspension buvable,,+,+,+,+,staphypen,1,10
+29,imipénèmes,500mg,injectable,,,+,+,+,,1,10
+30,phénoxyméthylpénicilline,1000000 ui,comprimé,,+,+,+,+,ospen,1,10
+31,sulfaméthoxazole + triméthoprime,400mg/80mg,comprimé,,,+,+,+,bactrim,1,10
+32,sulfaméthoxazole + triméthoprime,200mg/40mg,suspension . buvable.,,,+,+,+,bactrim,1,10
+33,sulfaméthoxazole + triméthoprime,800mg/160mg,comprimé,,,+,+,+,bactrim,1,10
+34,vancomycine,500mg,injectable,,,+,+,+,vanco,1,10
+35,thiamphénicol,750mg,injectable,,,+,+,+,thiophénic ol,1,10
+36,imipéneme +cilastatine,500mg/500mg,injectable,,,,+,+,bacqure,1,10
+37,amoxicilline + acide clavulanique,"100 mg / 12,5 mg / ml",sirop,,,+,+,+,augmentin,1,10
+38,amoxicilline+acide clavulanique,"500mg/62,5mg",injectable,,,+,+,+,augmentin,1,10
+39,céfuroxime,750mg,injectable,,,,+,+,zinnat,1,10
+40,cyclosérine,250mg,comprimé,,+,+,+,+,,1,10
+41,ethambutol,400mg,comprimé,,+,+,+,+,myambutol,1,10
+42,ethionamide,250mg,comprimé,,+,+,+,+,trecator,1,10
+43,isoniazide,300mg,comprimé,,+,+,+,+,rimifon,1,10
+44,lévofloxacine,250mg,comprimé,,+,+,+,+,tavanic,1,10
+45,pyrazinamide,400mg,comprimé,,+,+,+,+,pirilène,1,10
+46,clofazimine,100mg,comprimé,,+,+,+,+,lampréne,2,11
+47,rifampicine/isoniazide/pyrazinam ide,75/50/150 mg,comp.disp,,+,+,+,+,,2,11
+48,rifampicine/isoniazide,75/50 mg,comp.disp,,+,+,+,+,,2,11
+49,bédaquiline,100 mg,comprimé,,+,+,+,+,,2,11
+50,linézolide,600 mg,comprimé,,+,+,+,+,zyvoxid,2,11
+51,pyridoxine,100mg,comprimé,,+,+,+,+,,2,11
+52,delamanid,50mg,comprimé dispersible,,+,+,+,+,,2,11
+53,clofazimine,50mg,comprimé dispersible,,+,+,+,+,lampréne,2,11
+54,ethionamide,125mg,comprimé dispersible,,+,+,+,+,trecator,2,11
+55,cyclosérine,125mg,comprimé dispersible,,+,+,+,+,cyclosérine,2,11
+56,lévofloxacine,100mg,comprimé dispersible,,+,+,+,+,tavanic,2,11
+57,ethambutol,100mg,comp.disp,,+,+,+,+,,2,11
+58,pyrazinamide,150mg,comprimé dispersible,,+,+,+,+,pirilène,2,11
+59,rifampicine/isoniazide,150mg/75mg,comprimé,,+,+,+,+,,2,11
+60,isoniazide,300mg,comprimé,,+,+,+,+,rimifon,2,11
+61,rifapentine+isoniazide,(300/300)mg,comprimé,,+,+,+,+,rimifon,2,11
+62,rifampicine/isoniazide/pyrazinam ide/ethambutol,150mg/75mg/4 00mg/275mg,comprimé,,+,+,+,+,,2,11
+63,isoniazide,100mg,comprimé disp,,+,+,+,+,rimifon,3,12
+64,ethambutol,100mg,comp.disp,,+,+,+,+,,3,12
+65,rifampicine/isoniazide,75mg/50mg,comprimé dispersible,,+,+,+,+,,3,12
+66,rifampicine/isoniazide/pyrazinam ide,75/50/150 mg,comp.disp,,+,+,+,+,,3,12
+67,clofazimine,50mg et 100mg,capsule molle,,+,+,+,+,lamprène,3,12
+68,dapsone,100mg,comprimé,,+,+,+,+,disulone,3,12
+69,rifampicine,300mg,gélule,,+,+,+,+,rimactan,3,12
+70,artésunate/amodiaquine,"25 mg/67,5mg; b/3cp",comprimé,+,+,+,+,+,asaq,3,12
+71,artésunate/amodiaquine,50mg/135mg,comprimé,+,+,+,+,+,asaq,3,12
+72,artésunate/amodiaquine,100mg/270mg; b/3cp,comprimé,+,+,+,+,+,asaq,3,12
+73,artésunate/amodiaquine,100mg/270mg; b/6cp,comprimé,+,+,+,+,+,asaq,3,12
+74,artéméther/luméfantrine,20mg/120mg; b18cp,comprimé,+,+,+,+,+,coartem,3,12
+75,artéméther/luméfantrine,20mg/120mg; b/12cp,comprimé,+,+,+,+,+,coartem,3,12
+76,artémèther/luméfantrine,80mg/480mg,comprimé,+,+,+,+,+,coartem,3,12
+77,artéméther/luméfantrine,20mg/120mg; b/6cp,comprimé,+,+,+,+,+,coartem,3,12
+78,dihydroartémisinine/pipéraquine,40mg/320mg; b/9cp,comprimé,+,+,+,+,+,duocotexci n,3,12
+79,artésunate,30mg/ml,injectable,,+,+,+,+,artesun,3,12
+80,artésunate,60mg/ml,injectable,,+,+,+,+,artesun,3,12
+81,artéméther,80mg/ml,injectable,,+,+,+,+,artemedine,3,12
+82,artesunate,100mg,suppositoire,+,+,+,+,+,plasmotrim,4,13
+83,sulfadoxine + pyriméthamine,500mg/25mg,comprimé,,+,+,+,+,fansidar,4,13
+84,sulfadoxine/pyriméthamine + amodiaquine,500mg/25mg + 153mg,comprimé,+,+,+,+,+,spaq-co,4,13
+85,sulfadoxine/pyriméthamine + amodiaquine,"250mg/12,5mg + 76,5mg",comprimé,+,+,+,+,+,spaq-co,4,13
+86,quinine,400mg,injectable,,,+,+,+,quinimax,4,13
+87,primaquine,"7,5 mg",comprimé,,+,+,+,+,primaquine,4,13
+88,métronidazole,500mg,comprimé,,+,+,+,+,flagyl,4,13
+89,métronidazole,250mg,comprimé,,+,+,+,+,flagyl,4,13
+90,métronidazole,500mg,comprimé gynécologique,,+,+,+,+,flagyl,4,13
+91,métronidazole,200mg/5ml,suspension buvable.,,+,+,+,+,flagyl,4,13
+92,métronidazole,500mg/100ml,perfusion,,,+,+,+,flagyl,4,13
+93,amphotéricine b liposomale,50mg,injectable,,,,+,+,ambisome,4,13
+94,amphotéricine b,250mg,comprimé,,,+,+,+,fungizone,4,13
+95,amphotéricine b,1000µg/ml,suspension buvable.,,,+,+,+,fungizone,4,13
+96,fluconazole,100mg,comprimé,,,+,+,+,triflucan,4,13
+97,fluconazole,2mg/ml,injectable,,,+,+,+,triflucan,4,13
+98,fluconazole,50mg/5ml,suspension buvable,,,+,+,+,triflucan,4,13
+99,griséofulvine,250mg,comprimé,,+,+,+,+,griséfuline,4,13
+100,griséofulvine,500mg,comprimé,,+,+,+,+,griséfuline,4,13
+101,kétoconazole,200mg,comprimé,,+,+,+,+,nizoral,4,13
+102,nystatine,100.000ui,comprimé gynécologique,,+,+,+,+,mycostatin e,4,13
+103,terbinafine,250mg,comprimé,,,+,+,+,lamisil,4,13
+104,albendazole,400mg,comprimé,+,+,+,+,+,zentel,5,14
+105,albendazole,200mg,comprimé,+,+,+,+,+,zentel,5,14
+106,albendazole,4%,suspension buvable,+,+,+,+,+,zentel,5,14
+107,mébendazole,100mg,comprimé,+,+,+,+,+,vermox,5,14
+108,mébendazole,500mg,comprimé,+,+,+,+,+,vermox,5,14
+109,mébendazole,100mg/5ml,suspension buvable,+,+,+,+,+,vermox,5,14
+110,ivermectine,3mg,comprimé,,+,+,+,+,mectizan,5,14
+111,praziquantel,600mg,comprimé,,+,+,+,+,biltricide,5,14
+112,aciclovir,200mg,comprimé,,,+,+,+,zovirax,5,14
+113,aciclovir,250mg,injectable,,,,+,+,zovirax,5,14
+114,valaciclovir,500mg,comprimé,,,+,+,+,zélitrex,5,14
+115,ganciclovir,500mg,injectable,,,,+,+,cymévan,5,14
+116,ténofovir,300mg,comprimé,,,+,+,+,viread,5,14
+117,sofosbuvir,400mg,comprimé,,,,+,+,solvaldi,5,14
+118,ténofovir + emtricitabine,300mg/200mg,comprimé,,,+,+,+,,6,15
+119,ténofovir + lamivudine,300mg/300mg,comprimé,,,+,+,+,,6,15
+120,zidovudine + lamivudine,60mg/30mg,comprimé,,,+,+,+,,6,15
+121,zidovudine + lamivudine + abacavir,300mg/150mg/ 300mg,comprimé,,,+,+,+,,6,15
+122,abacavir+lamivudine,600mg/300mg,comprimé,,,+,+,+,,6,15
+123,abacavir+lamivudine,120mg/60mg,comprimé,,,+,+,+,,6,15
+124,abacavir+lamivudine,60mg/30mg,comprimé,,,+,+,+,,6,15
+125,efavirenz,200mg,comprimé,,,+,+,+,sustiva,6,15
+126,atazanavir + ritonavir,300mg/100mg,comprimé,,,+,+,+,reyataz,6,15
+127,darunavir,600mg,comprimé,,,+,+,+,prezista,6,15
+128,darunavir + ritonavir,400mg/100mg,comprimé,,,+,+,+,prezista,6,15
+129,lopinavir + ritonavir,200mg/50mg,comprimé,,,+,+,+,kaletra,6,15
+130,lopinavir + ritonavir,80mg/20mg,sirop,,,+,+,+,kaletra,6,15
+131,lopinavir + ritonavir,100mg/25mg,comprimé,,,+,+,+,kaletra,6,15
+132,lopinavir + ritonavir,40mg/10mg,comprimé,,,+,+,+,kaletra,6,15
+133,ritonavir,100mg,comprimé,,,+,+,+,norvir,6,15
+134,ténofovir+emtricitabine+efaviren z,300mg/200mg/ 600mg,comprimé,,,+,+,+,,7,16
+135,ténofovir+emtricitabine+efaviren z,300mg/200mg/ 400mg,comprimé,,,+,+,+,,7,16
+136,ténofovir+lamivudine+efavirenz,300mg/300mg/ 600mg,comprimé,,,+,+,+,,7,16
+137,ténofovir+lamivudine+efavirenz,300mg/300mg/ 400mg,comprimé,,,+,+,+,,7,16
+138,raltégravir,400mg,comprimé,,,+,+,+,isentress,7,16
+139,dolutégravir,50mg,comprimé,,,+,+,+,tivicay,7,16
+140,dolutégravir,10mg,comprimé,,,+,+,+,tivicay,7,16
+141,ténofovir + lamivudine +dolutégravir,300mg/300mg/ 50mg,comprimé,,,+,+,+,,7,16
+142,ténofovir alafenamide +emtricitabine +dolutégravir,25mg/200mg/5 0mg,comprimé,,,+,+,+,,7,16
+143,ténofovir alafenamide +emtricitabine,25mg/200mg,comprimé,,,+,+,+,,7,16
+144,abacavir + lamivudine +dolutégravir,600mg/300mg/ 50mg,comprimé,,,+,+,+,,7,16
+ii-1 gaz médicaux,,,,,,,,,,8,17
+147,isoflurane,184.5 g/mol,inhalation,,,+,+,+,isoflurane,8,17
+148,sévoflurane,2mg/ml,injectable,,,+,+,+,sévorane,8,17
+149,desflurane,2mg/ml,inhalation,,,+,+,+,,8,17
+150,kétamine,50mg,injectable,,,+,+,+,kétalar,8,17
+151,propofol,20mg/ml,injectable,,,+,+,+,diprivan,8,17
+152,etomidate,20mg/10ml,injectable,,,+,+,+,hypnomida te,8,17
+153,diazépam,10mg/ml,injectable,,+,+,+,+,valium,8,17
+154,midazolam,5mg/ml,injectable,,+,+,+,+,hypnovel,8,17
+155,midazolam,50mg/10ml,injectable,,,,,,hypnovel,8,17
+156,thiopental,1g,injectable,,,+,+,+,pentothal,8,17
+157,dexmedetomidine,100microgram/ ml,injectable,,,+,+,+,,8,17
+158,dropéridol,"2,5mg/ml",injectable,,,,,+,droleptan,8,17
+159,bupivacaïne hyperbare,"0,50%",injectable,,,+,+,+,marcaïne,8,17
+160,bupivacaïne isobare,5mg/1ml,injectable,,,+,+,+,,8,17
+161,lidocaïne,2%,injectable,,+,+,+,+,xylocaïne,8,17
+162,lidocaïne,1%,injectable,,+,+,+,+,xylocaïne,8,17
+163,lidocaïne,,2% gel urétral,,,+,+,+,xylocaïne,8,17
+164,lidocaïne épinéphrine,2%,injectable,,,+,+,+,xylocaïne,9,18
+165,ropivacaïne,2mg/ml,injectable,,,+,+,+,naropeine,9,18
+166,mepivacain,20mg/ml,injectable,,,+,+,+,,9,18
+167,atropine,"0,25mg",injectable,,,+,+,+,atropine faure,9,18
+168,atropine,"0,50mg",injectable,,,+,+,+,atropine faure,9,18
+169,dropéridol,5mg/ml,injectable,,,+,+,+,droleptan,9,18
+170,néostigmine,"0,5mg/ml",injectable,,,+,+,+,prostigmin e,9,18
+171,suxaméthonium ( succinylcholine),10mg/ml,injectable,,,+,+,+,célocurine,9,18
+172,rocuronium,10mg/ml,injectable,,,,+,+,esmeron,9,18
+173,rocuronium,50mg/5ml,injectable,,,,+,+,esmeron,9,18
+174,vécuronium bromure,10mg,injectable,,,,+,+,norcuron,9,18
+175,atracurium bésilate,50mg/ml,injectable,,,,+,+,tracrium,9,18
+176,fentanyl,"0,5mg/10mg",injectable,,,+,+,+,fentanyl,9,18
+177,fentanyl,"0,1mg/20mg",injectable,,,+,+,+,fentanyl,9,18
+178,sufentanil,10µmg/2ml,injectable,,,+,+,+,sufenta,9,18
+179,morphine chlorhydrate,10mg,injectable,,,,+,+,morphine,9,18
+180,nalbuphine,20mg/2ml,injectable,,,,,+,nubain,9,18
+181,nefopam,20mg/2ml,injectable,,,+,+,+,acupam,9,18
+182,tramadol,100mg/2ml,injectable,,,+,+,+,trabar,9,18
+183,acétylsalicylate de lysine,"1,8g",injectable,,+,+,+,+,aspégic,9,18
+184,acétylsalicylate de lysine,100mg,poudre,,+,+,+,+,aspégic,9,18
+185,acétylsalicylate de lysine,250mg,poudre,,+,+,+,+,aspégic,9,18
+186,acide acétylsalicylique,100mg,comprimé,,+,+,+,+,,10,19
+187,acide acétylsalicylique,500mg,comprimé,,+,+,+,+,aspirine,10,19
+188,acide méfénamique,250mg,comprimé,,+,+,+,+,ponstyl,10,19
+189,acide niflumique,,3% pommade,,+,+,+,+,nifluril,10,19
+190,ibuprofène,400mg,comprimé,,+,+,+,+,brufen,10,19
+191,ibuprofène,100mg/5ml,sirop,,+,+,+,+,advil,10,19
+192,indométacine,25mg,comprimé,,+,+,+,+,indocid,10,19
+193,kétoprofène,100mg/2ml,injectable,,,+,+,+,profénid,10,19
+194,diclofénac,50mg,comprimé,,+,+,+,+,voltarène,10,19
+195,paracétamol,500mg,comprimé,+,+,+,+,+,doliprane,10,19
+196,paracétamol,125mg/5ml,sirop,+,+,+,+,+,doliprane,10,19
+197,paracétamol,1g,injectable,,+,+,+,+,perfalgan,10,19
+198,paracétamol,"0,5g",injectable,,+,+,+,+,perfalgan,10,19
+199,prednisone,5mg,comprimé,,,+,+,+,cortancyl,10,19
+200,prednisone,20mg,comprimé,,,+,+,+,cortancyl,10,19
+201,buprénorphine,"0,2mg",comprimé perlingual,,,,+,+,temgésic,10,19
+202,morphine chlorhydrate,5mg,comprimé,,,+,+,+,morphine,10,19
+203,morphine chlorhydrate,10mg,comprimé,,,+,+,+,skenan,10,19
+204,morphine chlorhydrate,20mg,comprimé,,,+,+,+,skenan,10,19
+205,morphine chlorhydrate,30mg,comprimé,,,+,+,+,skenan,10,19
+206,morphine chlorhydrate lp,10mg,comprimé,,,+,+,+,actiskenan,10,19
+207,morphine chlorhydrate lp,20mg,comprimé,,,+,+,+,actiskenan,10,19
+208,morphine chlorhydrate lp,30mg,comprimé,,,+,+,+,actiskenan,11,20
+209,morphine,10mg,poudre,,,+,+,+,,11,20
+211,morphine chlorhydrate lp,60 mg,comprimé,,,+,+,+,actiskenan,11,20
+212,méthadone,5mg,gélule,,,+,+,,+ méthadone,11,20
+213,méthadone,5mg,sirop,,,+,+,,+ méthadone,11,20
+214,sufentanil,10µg/2ml,injectable,,,+,+,+,sufenta,11,20
+215,cétirizine,10mg,comprimé,,+,+,+,+,zyrtec,11,20
+216,dexaméthasone,4mg,injectable,,+,+,+,+,soludécadr on,11,20
+217,dexchlorphéniramine,2mg,comprimé,,+,+,+,+,polaramine,11,20
+218,dexchlorphéniramine,"0,01%",sirop,,+,+,+,+,polaramine,11,20
+219,hydrocortisone,500mg,injectable,,,+,+,+,hydrocorti sone,11,20
+220,hydrocortisone,100mg,injectable,,+,+,+,+,hydrocortis one,11,20
+221,méthylprednisolone,40mg/ml,injectable,,+,+,+,+,solumédrol,11,20
+222,prométhazine,50mg/ml,injectable,,+,+,+,+,phénergan,11,20
+223,prométhazine,25mg,comprimé,,+,+,+,+,phénergan,11,20
+,224 charbon activé solution buvable,12g/60ml,solution buvable,,,,+,+,,11,20
+225,charbon,500mg,comprimé,,+,+,+,+,carbophos,11,20
+226,disulfurame,500mg,comprimé,,,,+,+,espéral,12,21
+227,flumazénil,"0,5mg/ml",injectable,,,,+,+,anexate,12,21
+228,n-acétylcystéine,5g/25ml,injectable,,,,+,+,fluimicil,12,21
+229,naloxone,"0,4mg/ml",injectable,,,,+,+,narcan,12,21
+230,pralidoxime,200mg,injectable,,,+,+,+,contrathio n,12,21
+231,edta disodique calcique,500mg/10ml,injectable,,,+,+,+,,12,21
+232,déferoxamine,500mg,injectable,,,+,+,+,desferal,12,21
+233,glucagon,1mg/ml,injectable,,,+,+,+,glucagen,12,21
+234,sulfate de protamine,1000 uah/ml,injectable,,,+,+,+,protamine choay,12,21
+235,intralipide,20%/250ml,injectable,,,,+,+,,12,21
+236,les concentres de complexe prothrombinique humaine,25u/ml,injectable,,,,+,+,,12,21
+237,succimer,100mg,capsule orale,,,+,+,+,succicaptal,12,21
+238,sulfate de magnésium,20%,injectable,,+,+,+,+,,12,21
+239,acide valproïque,200mg,comprimé,,,,+,+,dépakine,12,21
+240,acide valproïque,400mg/4ml,injectable,,,,+,+,dépakine,12,21
+241,valproate de sodium lp,500mg,injectable,,,,+,+,dépakine,12,21
+242,valproate de sodium,200mg/5ml,solution buvable,,,,+,+,dépakine,12,21
+243,amitriptyline,40mg/ml,gouttes orales,,,,+,+,laroxyl,12,21
+244,carbamazépine,200mg,comprimé,,,,+,+,tégrétol,12,21
+245,chlorpromazine,100mg,comprimé,,,,+,+,largactil,12,21
+246,chlorpromazine,25mg/ml,injectable,,,+,+,+,largactil,13,22
+247,clonazépam,2mg,gouttes,,,,+,+,rivotril,13,22
+248,clonazepam,1mg/ml,injectable,,,,+,+,rivotril,13,22
+249,clonazépam,2mg,comprime,,,,+,+,rivotril,13,22
+250,diazepam,10mg/2ml,injectable,,,,+,+,valium,13,22
+251,diazépam,5mg,comprimé,,,+,+,+,valium,13,22
+252,phénytoïne,30mg/5ml,solution buvable,,,+,+,+,dihydan,13,22
+253,phénytoïne,100mg,comprimé,,,+,+,+,dihydan,13,22
+254,fluphénazine,25mg/ml,injectable,,,,+,+,modécate,13,22
+255,fluphénazine,125mg/5ml,injectable,,,,+,+,modécate,13,22
+256,halopéridol,,"0,50% gouttes orales",,,,+,+,haldol,13,22
+257,halopéridol,5mg/ml,injectable,,,+,+,+,haldol,13,22
+258,lévomépromazine,100mg,comprimé,,,,,+,nozinan,13,22
+259,lévomépromazine,25mg,injectable,,,,,+,nozinan,13,22
+260,phénobarbital,100mg,comprimé,,+,+,+,+,gardénal,13,22
+261,phénobarbital,200mg/ml,injectable,,,+,+,+,gardénal,13,22
+262,phénobarbital,15mg/5ml,solution buvable,,+,+,+,+,gardénal,13,22
+263,trihexyphénidyle,,"0,40% gouttes",,,,+,+,artane,13,22
+264,trihexyphénidyle,5mg,comprimé,,,,+,+,artane,13,22
+265,tropatépine,10mg/2ml,injectable,,,,+,+,lepticur,13,22
+266,tropatépine,5mg,comprimé,,,,+,+,lepticur,13,22
+267,acide folique,5mg,comprimé,,+,+,+,+,foldine,13,22
+268,acide folique,2mg,comprimé,,+,+,+,+,foldine,13,22
+269,chélateurs de fer,125mg,comprimé,,,,,+,déférasirox,13,22
+270,chélateurs de fer,250mg,comprimé,,,,,+,déférasirox,13,22
+271,chélateurs de fer,500mg,comprimé,,,,,+,déférasirox,13,22
+272,cyanocobalamine,1mg,injectable,,,+,+,+,vitamine b12,14,23
+273,erythropoïétine,"2000ui/0,5ml",injectable,,,,+,+,eprex,14,23
+274,erythropoïétine,"4000ui/0,5ml",injectable,,,,+,+,eprex,14,23
+275,erythropoïétine,"5000ui/0,5ml",injectable,,,,+,+,eprex,14,23
+276,erythropoïétine,"10000ui/0,5ml",injectable,,,,+,+,eprex,14,23
+277,sels ferreux forme pédiatrique,50mg/5ml,injectable,,+,+,+,+,,14,23
+278,epoétine bêta,"50µg/0,3ml",injectable,,,,,+,néorecorm on,14,23
+279,epoétine bêta,"75µg/0,3ml",injectable,,,,,+,néorecorm on,14,23
+280,epoétine bêta,"100µg/0,3ml",injectable,,,,,+,néorecorm on,14,23
+281,epoétine bêta,"150µg/0,3ml",injectable,,,,,+,néorecorm on,14,23
+282,epoétine bêta,"200µg/0,3ml",injectable,,,,,+,néorecorm on,14,23
+283,epoétine bêta,"50µg/0,3ml",injectable,,,,,+,néorecor mon,14,23
+284,epoétine bêta,"250µg/0,3ml",injectable,,,,,+,néorecorm on,14,23
+285,fer ferrique,100mg/2ml,injectable,,,,,+,,14,23
+286,fer + acide folique,"60mg/0,4mg",comprimé,+,+,+,+,+,folifer,14,23
+288,sels ferreux forme adulte,80mg,comprimé,+,+,+,+,+,fumafer,14,23
+289,sels ferreux forme adule,100mg,injectable,,,+,+,+,,14,23
+290,sels ferreux forme adulte,100mg,comprimé,+,+,+,+,+,,14,23
+291,sels ferreux forme pédiatrique,33mg,poudre/sirop,+,+,+,+,+,,14,23
+292,sels ferreux forme pédiatrique,50mg/5ml,comprimé/sirop,+,+,+,+,+,,14,23
+293,etamsylate,500mg,comprimé,,+,+,+,+,dicynone,14,23
+294,etamsylate,250mg/2ml,injectable,,+,+,+,+,dicynone,14,23
+295,misoprostol,200 µg,comprimé,+,+,+,+,+,cytotec,14,23
+296,acide tranexamique,1g,ampoule buvable,,,+,+,+,exacyl,15,24
+297,acide tranexamique,500mg,comprimé,,,+,+,+,exacyl,15,24
+298,acide tranexamique,500g,injectable,,,+,+,+,exacyl,15,24
+299,phytoménadione,"2mg/0,2ml",solution acqueuse injectable et buvable,,+,+,+,+,vitamine k1,15,24
+300,phytoménadione,10mg/ml,solution injectable et buvable,,+,+,+,+,vitamine k1,15,24
+301,fluindione,20mg,comprime,,,+,+,+,préviscan,15,24
+302,acénocoumarol,4mg,comprimé,,,+,+,+,sintrom,15,24
+303,acénocoumarol,1mg,comprimé,,,+,+,+,mini- sintrom,15,24
+304,rivaroxaban,10mg,comprimé,,,+,+,+,rixa,15,24
+305,enoxaparine,2000 ui anti xa,injectable,,,+,+,+,lovenox,15,24
+306,enoxaparine,4000 ui anti xa,injectable,,,+,+,+,lovenox,15,24
+307,enoxaparine,6000 ui anti xa,injectable,,,+,+,+,lovenox,15,24
+308,enoxaparine,8000 ui anti xa,injectable,,,+,+,+,lovenox,15,24
+309,enoxaparine,10000 ui anti xa,injectable,,,+,+,+,lovenox,15,24
+310,héparinate non fractionnée,250ui/ml,injectable,,,+,+,+,calciparine,15,24
+311,héparinate de sodium,25000ui/5ml,injectable,,,+,+,+,héparine sodique,15,24
+312,streptokinase,1.500.000ui,injectable,,,+,+,+,streptase,15,24
+313,altéplase,100mg,injectable,,,,+,+,actilise,15,24
+314,tenecteplase,10 000 u/10 ml,injectable,,,,+,+,metalyse,15,24
+315,clopidogrel,75mg,comprimé,,,+,+,+,plavix,15,24
+316,ticagrelol,90mg,comprimé,,,+,+,+,brilique,15,24
+317,allupurinol,100mg,comprimé,,,+,+,+,zyloric,16,25
+318,allupurinol,300mg,comprimé,,,+,+,+,zyloric,16,25
+319,gélatine fluide modifiée,,perfusion,,,,+,+,haemacel,16,25
+320,concentré de facteur viii,500ui,injectable,,,,+,+,,16,25
+321,concentré de facteur viii,1000ui,injectable,,,,+,+,,16,25
+322,concentré de facteur viii,250ui,injectable,,,,+,+,,16,25
+323,concentré de facteur ix,500ui,injectable,,,,+,+,,16,25
+324,concentré de facteur ix,1000ui,injectable,,,,+,+,,16,25
+325,immunoglobuline anti-d,250ui,injectable,,,,+,+,,16,25
+326,immunoglobuline anti-d,1000ui,injectable,,,,+,+,,16,25
+327,immunoglobuline polyvalent,250ui,injectable,,,,+,+,,16,25
+328,facteurs antihémophilliques a et b,,injectable,,,,+,+,,16,25
+329,hydroxyéthylamidon,,perfusion,,,,+,+,voluven,16,25
+330,trocard de mallarmé 15 g (aiguille medullograme),,,,,,,+,,16,25
+331,trocard de mallarmé 18 g (aiguille medullograme),,,,,,,+,,16,25
+332,diltiazem,60mg,comprimé,,,,+,+,tildiem,17,26
+333,diltiazem,200mg,comprimé,,,,+,+,tildiem,17,26
+334,dinitrate d’isosorbide,10mg/10ml,injectable,,,,+,+,risordan,17,26
+335,dinitrate d’isosorbide,10mg,comprimé,,,,+,+,risordan,17,26
+336,trinitrate de glycérine,"0,15mg",comprimé,,,,+,+,,17,26
+337 338,trinitrate de glycérine nitroglycerine,"0,15mg 5mg",spray patch,,,,+ +,+ +,trinitrine nitroderm,17,26
+339,nitroglycerine,10mg,patch,,,,+,+,nitroderm,17,26
+340,altizide + spironolactone,15mg/25mg,comprimé,,,+,+,+,aldactazine,17,26
+341,amlodipine,10mg,gélules,,+,+,+,+,amlor,17,26
+342,amlodipine,5mg,comprimé,,+,+,+,+,amlor,17,26
+343,bisoprolol,5mg,comprimé,,,,+,+,cardiocor,17,26
+344,bisoprolol,10mg,comprimé,,,,+,+,cardiocor,17,26
+345,carvedilol,"6,5mg",comprimé,,,,+,+,,17,26
+346,carvedilol,25mg,comprimé,,,,+,+,,17,26
+347,perindopril,5mg,comprime,,+,+,+,+,coversyl,17,26
+348,perindopril,10mg,comprime,,+,+,+,+,coversyl,17,26
+349,ramipril,"2,5mg",comprime,,+,+,+,+,triatec,17,26
+350,ramipril,10mg,comprime,,+,+,+,+,triatec,17,26
+351,valsartan,80mg,comprime,,+,+,+,+,tareg,17,26
+352,valsartan,160mg,comprime,,+,+,+,+,tareg,17,26
+353,candésartan,8mg,comprime,,+,+,+,+,atacand,17,26
+354,candésartan,16mg,comprime,,+,+,+,+,atacand,17,26
+355,clonidine,"0,15mg",injectable,,,,+,+,catapressa n,17,26
+356,furosémide,40mg,comprimé,,+,+,+,+,lasilix,17,26
+357,furosémide,250mg,injectable,,,,+,+,lasilix,17,26
+358,furosémide,500mg,comprimé,,,,+,+,lasilix,17,26
+359,furosémide,20mg,injectable,,+,+,+,+,lasilix,17,26
+360,hydrochlorothiazide,25mg,comprimé,,+,+,+,+,esidrex,17,26
+361,indapamide,"1,25mg",comprimé,,+,+,+,+,fludex,18,27
+362,indapamide,"2,5mg",comprimé,,+,+,+,+,fludex,18,27
+363,méthyldopa,250mg,comprimé,,+,+,+,+,aldomet,18,27
+364,méthyldopa,500mg,comprimé,,+,+,+,+,aldomet,18,27
+365,labétalol,5mg,injectable,,,,+,+,trandate,18,27
+366,nicardipine,10mg/10ml,injectable,,+,+,+,+,loxen,18,27
+367,nicardipine,20mg,comprimé,,+,+,+,+,loxen,18,27
+368,nicardipine,50mg,gélule,,+,+,+,+,loxen lp,18,27
+369,nifédipine,20mg,comprimé,,+,+,+,+,adalate retard,18,27
+370,propranolol,5mg/5ml,injectable,,,,+,+,avlocardyl,18,27
+371,propranolol,40mg,comprimé,,,,+,+,avlocardyl,18,27
+372,spironolactone,75mg,comprimé,,,,+,+,aldactone,18,27
+373,spironolactone,50 mg,comprimé,,,,+,+,aldactone,18,27
+374,spironolactone,25mg,comprimé,,,,+,+,aldactone,18,27
+375,amlodipine/perindopril,5mg/5mg,comprime,,,+,+,+,,18,27
+376,amlodipine/perindopril,10mg/10mg,comprime,,,+,+,+,,18,27
+377,amlodipine/valsartan,5mg/80mg,comprimé,,,+,+,+,,18,27
+378,amlodipine/valsartan,10mg/160mg,comprimé,,,+,+,+,,18,27
+379,ramipril/hydrochlorothiazide,"5mg/12,5mg",comprimé,,,+,+,+,,18,27
+380,ramipril/hydrochlorothiazide,10mg/25mg,comprimé,,,+,+,+,,18,27
+381,valsartan/hydrochlorothiazide,"80mg/12,5mg",comprimé,,,+,+,+,,18,27
+382,valsartan/hydrochlorothiazide,160mg/25mg,comprimé,,,+,+,+,,18,27
+383,amlodipine/indapamide,"5mg/1,5mg",comprimé,,,+,+,+,,18,27
+384,amlodipine/indapamide,"10mg/1,5mg",comprimé,,,+,+,+,,18,27
+385,amlodipine/indapamide/perindop ril,"5mg/1,25mg/5 mg",comprimé,,,+,+,+,,18,27
+386,amlodipine/indapamide/perindop ril,"10mg/2,5mg/10 mg",comprimé,,,+,+,+,,19,28
+387,amlodipine/valsartan/hydrochlor othiazide,"5mg/160mg/12, 5mg",comprimé,,,+,+,+,,19,28
+388,amlodipine/valsartan/hydrochlor othiazide,10mg/160mg/2 5mg,comprimé,,,+,+,+,,19,28
+ix-3 glucosides cardiotoniques et antiarythmiques,,,,,,,,,,19,28
+389,amiodarone,200mg,comprimé,,,,+,+,cordarone,19,28
+390,amiodarone,150mg/3ml,injectable,,,,+,+,cordarone,19,28
+391,digoxine,"0,25mg",comprimé,,,+,+,+,digoxine,19,28
+392,digoxine,"0,5mg/2ml",injectable,,,+,+,+,digoxine,19,28
+393,digoxine,"5µg/0,1ml",gouttes,,,+,+,+,digoxine,19,28
+394,digoxine,"0,125mg",comprimé,,,+,+,+,hémidigoxi ne,19,28
+395,dopamine,200mg/ml,injectable,,,,+,+,dopamine,19,28
+396,noradrénaline,2ml/ml,injectable,,,+,+,+,norépinéph rine,19,28
+397,dobutamine,250mg/ml,injectable,,,,+,+,dobutrex,19,28
+398,epinéphrine,"0,25mg/ml",injectable,,+,+,+,+,adrénaline,19,28
+399,hydrocortisone,500mg,injectable,,+,+,+,+,,19,28
+400,ephédrine,30mg,injectable,,,+,+,+,ephédrine,19,28
+401,phenylephedrine,"0,5mg",injectable,,,+,+,+,,19,28
+402,"isoprénaline 0,20 mg/1 ml injectable + + isuprel",,,,,,,,,20,29
+403,"alprostadil 0,5mg/1ml injectable + + prostine vr",,,,,,,,,20,29
+404,vérapamil 5 mg/2 ml injectable + + isoptine,,,,,,,,,20,29
+405,atorvastatine,10 mg,comprimé,,,+,+,+,tahor,20,29
+406,atorvastatine,20 mg,comprimé,,,+,+,+,tahor,20,29
+407,rosuvastatine,10 mg,comprimé,,,+,+,+,crestor,20,29
+408,rosuvastatine,20 mg,comprimé,,,+,+,+,crestor,20,29
+409,ezetimibe,10 mg,comprimé,,,+,+,+,ezetrol,20,29
+410,econazole,1%,crème,,+,+,+,+,pévaryl,20,29
+411,griseofulvine,,pommade,,+,+,+,+,,20,29
+412,griséofulvine,500 mg,comprimé,,,+,+,+,,20,29
+413,terbinafine,1%,crème,,+,+,+,+,lamisil,20,29
+414,béthamétasone,"0,10%",crème,,+,+,+,+,betnéval,20,29
+415,clobétasone,"0,05%",crème,,+,+,+,+,dermoval,20,29
+416,hydrocortison,1%,crème,,+,+,+,+,cortapaisyl,20,29
+417,mupirocine,,2% pommade,,+,+,+,+,bactroban,20,29
+420,alcool iodé,,solution,,+,+,+,+,alcol iodé,20,29
+423,eosine aqueuse,"0,02",solution,+,+,+,+,+,eosine,21,30
+425,formaldéhyde,1g,liquide,,,,+,+,formol,21,30
+426,hypochlorite de sodium,8°cf,solution,+,+,+,+,+,eau de javel,21,30
+427,hypochlorite de sodium + permanganate de potassium,500mg/100ml de cl actif,solution,,+,+,+,+,dakin,21,30
+429,polyvidone iodé,10%,solution,,+,+,+,+,bétadine,21,30
+430,violet de gentiane,250mg,poudre,,,+,+,+,,21,30
+431,chlorhexidine,"7 , 10%",gel,,+,+,+,+,+,21,30
+434,vaseline,,pommade,,+,+,+,+,,21,30
+435,benzoate de benzyle,"12,50%",solution,+,+,+,+,+,ascabiol,21,30
+436,vaseline salicylée,5%,pommade,,,+,+,+,,21,30
+437,vaseline salicylée,10%,pommade,,,+,+,+,,21,30
+438,thiocolchicoside,4mg,comprimé,,,+,+,+,coltramyl,21,30
+439,ocytocine,5ui,injectable,,+,+,+,+,syntocinon,22,31
+440,carbétocine,100 mcg/ml,injectable,,,+,+,+,pabal,22,31
+441,salbutamol,"0,5mg",injectable,,,+,+,+,ventoline,22,31
+442,salbutamol,2mg,comprimé,,,+,+,+,ventoline,22,31
+443,salbutamol,1mg,suppositoire,,,+,+,+,salbumol,22,31
+444,bétamethasone,4mg,injectable,,,+,+,+,célestène,22,31
+445,cimétidine,200mg/2ml,injectable,,,+,+,+,tagamet,22,31
+446,oméprazole,40 mg,injectable,,,+,+,+,mopral,22,31
+447,oméprazole,10mg,gélule,,+,+,,+,mopral,22,31
+448,oméprazole,20mg,comprimé,,,+,+,+,mopral,22,31
+449,sels d’aluminium et de magnésium,400mg/400mg,comprimé,,+,+,+,+,maalox,22,31
+450,granisétron chlorhydrate,3mg,injectable,,,+,+,+,kytril,22,31
+451,granisétron chlorhydrate,1mg,injectable,,,+,+,+,kytril,22,31
+452,ondasétron,8 mg,comprimé,,,+,+,+,zophren,22,31
+453,métopimazine,5 mg,suppositoire,,+,+,+,+,vogalène,22,31
+454,métopimazine,,sirop,,+,+,+,+,vogalène,22,31
+455,métopimazine,10mg/ml,injectable,,+,+,+,+,vogalène,22,31
+456,lévosulpiride,25mg,comprimé,,,+,+,+,dislep,22,31
+457,lévosulpiride,25mg/2ml,injectable,,,+,+,+,dislep,22,31
+458,lévosulpiride 25mg/ml sirop + + + dislep,,,,,,,,,23,32
+459,anti-infl.+astrigent+anest local,100g,pommade,,+,+,+,+,anti- hémorroïda ire,23,32
+461,atropine,"0,25mg",injectable,,+,+,+,+,atropine,23,32
+462,phloroglucinol +trimethylphloroglucinol,"40mg/0,04mg par 4ml",injectable,,,+,+,+,spasfon,23,32
+463,phloroglucinol +trimethylphloroglucinol,80mg/80mg,comprimé,,+,+,+,+,spasfon,23,32
+464,paraffine liquide,215g/225g,gelée buvable,,+,+,+,+,lansoyl,23,32
+465,lactulose,10 g,suspension buvable,,+,+,+,+,duphalac,23,32
+466,lactulose,10g,gelée buvable,,+,+,+,+,duphalac,23,32
+467,sels de réhydratation orale faible osmolarité,"glucose 13,5g/l ; nacl 2,6g/l; kcl 1,5 g/l, citrate trisodique dihydraté 2,9g/l",poudre en sachet,+,+,+,+,+,sro,23,32
+comprimé 470 zinc (sulfate) 20mg dispersible et + + + + + sirop,,,,,,,,,,24,33
+471,carbocystéine,5%,sirop,,+,+,+,+,rhinathiol,24,33
+472,carbocystéine,2%,sirop,,+,+,+,+,rhinathiol,24,33
+473,terpine+codéine,100mg/5mg,comprimé,,,+,+,+,néocodion,24,33
+474,dextromethorphane,"1,5mg/ml",sirop,,+,+,+,+,drill,24,33
+475,dextromethorphane +phenylephrine,15 mg / 5 ml,sirop,,+,+,+,+,kofof,24,33
+476,oxomémazine+guaïfénésine,"(1,65mg/33,3m g)/ml",sirop,,+,+,+,+,toplexil,24,33
+477,salbutamol,"0,5mg",injectable,,+,+,+,+,ventoline,24,33
+478,salbutamol,2mg/5ml,sirop,,+,+,+,+,ventoline,24,33
+479,salbutamol,2mg,comprimé,,+,+,+,+,ventoline,24,33
+480,salbutamol,100ug/bouffee,spray( aerosol),,+,+,+,+,ventoline,24,33
+481,salbutamol,"2,5mg/2,5ml",nebulisation,,,+,+,+,ventoline,24,33
+482,salbutamol,"5mg/2,5ml",nebulisation,,,+,+,+,ventoline,24,33
+483,terbutaline,"0,5mg/ml",injectable,,,+,+,+,bricanyl,24,33
+484,terbutaline,5mg/2ml,nebulisation,,,,,+,bricanyl,24,33
+485,terbutaline,"2,5mg",injectable,,,,+,+,bricanyl,24,33
+486,terbutaline,5mg,comprimé,,,,,+,bricanyl,24,33
+489,budesonide,"0,5 mg /2ml",nebulisation,,,,+,+,pulmicor t,24,33
+490,budesonide,1 mg /2ml,nebulisation,,,,+,+,pulmicor t,24,33
+491,montelukast,"5, 10 mg",comprimé,,,,+,+,,25,34
+493 494,propionate fluticasone + salméterol propionate fluticasone + salméterol,500 mg/50 microns 250 mg/50 microns,diskus diskus,,,,+ +,+ +,seretide seretide,25,34
+495,bromure d'ipratropium,"o,5 mg",nebulisation,,,+,+,+,atrovent,25,34
+496,citrate de cafeine,250mg/1ml,injectable,,+,+,+,+,,25,34
+498,solution antiseptique pour bain de bouche,,,+,+,+,+,+,,25,34
+499,lidocaïne 2 %,,injectable,,,+,+,+,,25,34
+500,lidocaine 3%,,injectable,,,+,+,+,,25,34
+501,lidocaïne adrénalinée,,injectable,,,+,+,+,,25,34
+506,oxyde de zinc leger,500g,,,,+,+,+,,25,34
+508,pulpéryl,,solution,,,+,+,+,,26,35
+509,carpules d’anesthésie ( articaine),,ampoule injectable,,,+,+,+,,26,35
+510,carpules d’anesthésie (mepivacaine),3%,ampoule injectable,,,+,+,+,,26,35
+512,sérum anti-d,,injectable,,,+,+,+,immunho ro,26,35
+513,sérum antirabique,,injectable,,,+,+,+,,26,35
+514,sérum antitétanique,,injectable,,,+,+,+,,26,35
+515,sérum antilymphocytaire,25mg,injectable,,,,+,+,,26,35
+516,sérum antilymphocytaire,20mg,injectable,,,,,+,,26,35
+517,sérum antivenimeux polyvalent,,injectable,,+,+,+,+,inoserp,26,35
+520,vaccin antiamaril,,injectable,,+,+,+,+,,26,35
+521,vaccin antihépatite b,,injectable,,+,+,+,+,,26,35
+522,"vaccin antiméningo a, c, y, w135",,injectable,,+,+,+,+,,27,36
+523,vaccin antiméningo w135,,injectable,,+,+,+,+,,27,36
+524,vaccin antipneumococcique,,injectable,,+,+,+,+,,27,36
+526,vaccin antipoliomyélitique,,injectable,,+,+,+,+,,27,36
+527,vaccin antirabique,,injectable,,+,+,+,+,,27,36
+528,vaccin antitétanique,,injectable,,+,+,+,+,,27,36
+529,vaccin antituberculeux,,injectable,,+,+,+,+,,27,36
+530,vaccin anti-papillomavirus,,injectable,,+,+,+,+,,27,36
+532,vaccin anticovid,,injectable,,+,+,+,+,,27,36
+533,vaccin pentavalent,,injectable,,+,+,+,+,,27,36
+534,bicarbonate de sodium,14%o,perfusion,,,+,+,+,,27,36
+535,bicarbonate de sodium,42%o,perfusion,,,,+,+,,27,36
+536,chlorure de potassium,10%,perfusion,,,+,+,+,,27,36
+537,chlorure de sodium,9%o,perfusion,,+,+,+,+,,27,36
+538,chlorure de calcium,,perfusion,,+,+,+,+,,27,36
+539,chlorure de magnésium,,perfusion,,+,+,+,+,,27,36
+540,chlorure de sodium (irrigation vésicale 3 litres),9%o,perfusion,,,,+,+,uro 3000,28,37
+541,chlorure de sodium,10%,perfusion,,,+,+,+,,28,37
+542,gluconate de calcium,100mg/ml,injectable,,+,+,+,+,,28,37
+543,glucose,5%,perfusion,,+,+,+,+,,28,37
+544,glucose,10%,perfusion,,+,+,+,+,,28,37
+545,glucose,30%,perfusion,,,,+,+,,28,37
+546,ringer lactate,,perfusion,,+,+,+,+,,28,37
+547,mannitol,20%,perfusion,,,,+,+,,28,37
+548,albumine humaine,5%,perfusion,,,,,+,,28,37
+549,albumine humaine,20%,,,,,,+,,28,37
+550,aciclovir,3%,pommade ophtalmique,,,,+,+,zovirax,28,37
+551,cétoxonium,"0,25%",collyre,,+,+,+,+,biocidan,28,37
+552,chloramphénicol + dexaméthasone,,collyre,,,+,+,+,cébédexac ol,28,37
+553,chlortétracycline ou tétracycline,1%,pommade ophtalmique,+,+,+,+,+,auréomyci ne,28,37
+554,fluorescéine,1%,collyre,,,,+,+,,28,37
+555,gentamicine,"0,30%",collyre,,,+,+,+,gentalline,28,37
+556,néomycine + polymyxine,340.000ui+1mui,collyre,,,+,+,+,cébémyxin e,28,37
+557,norfloxacine,"0,30%",collyre,,,+,+,+,chibroxine,28,37
+558,dexaméthasone,"0,10%",collyre,,,+,+,+,désocort,28,37
+559,diclofénac,"0,10%",collyre,,,+,+,+,voltarène,28,37
+560,hydrocortisone 1% collyre + +,,,,,,,,,29,38
+561,"indométacine 0,10% collyre + + + indocollyre",,,,,,,,,29,38
+562,oxybuprocaïne,40mg,collyre,,,+,+,+,cébésine,29,38
+563,lidocaine 2% + adrénaline inj,,injectable,,,+,+,+,,29,38
+564,lignocaine hcl plain,2%/ 20ml,injectable,,,+,+,+,,29,38
+565,amethocaine hydrochoride,"0,5%/10ml",injectable,,,+,+,+,,29,38
+566,tétracaïne,"0,005",collyre,,,,+,+,marcaïne,29,38
+567,acétazolamide,250mg,comprimé,,,,+,+,diamox,29,38
+568,acétazolamide,500mg/5ml,injectable,,,,+,+,diamox,29,38
+569,brinzolamide,10mg/ml,collyre,,,,+,+,azopt,29,38
+570,cartéolol,15mg,collyre,,,+,+,+,cartéol,29,38
+571,pilocarpine,2%,collyre,,,,+,+,pilocarpine,29,38
+572,timolol,"0,25%",collyre,,,,+,+,timoptol,29,38
+573,latanoprost,"0,50%",collyre,,,,+,+,xalatan,29,38
+574,timolol,"0,50%",collyre,,,,+,+,timoptol,29,38
+575,atropine,1%,collyre,,,,+,+,atropine,29,38
+576,atropine,"0,50%",collyre,,,,+,+,atropine,29,38
+577,epinéphrine,2%,collyre,,,,+,+,adrénaline,29,38
+578,"tropicamide + phénylephrine 5ml 0,8%+5%",,collyre,,,,,,mydrane,29,38
+579,visqueux en seringue pré rempli,2%,,,,+,+,+,,29,38
+580,gentamycine 80mg 2ml,80mg/2ml,injectable,,,+,+,+,,29,38
+581,dexaméthasone 8mg 2ml,8mg/2ml,injectable,,,+,+,+,,29,38
+582,pilocarpine,"0,50%",collyre,,,+,+,+,,30,39
+583,cyclopentolate,"0,50%",collyre,,,+,+,+,skiacol,30,39
+584,tropicamide,5mg/ml,collyre,,,,+,+,mydriaticu m,30,39
+585,picloxydine,5mg,collyre,,+,+,+,+,vitabact,30,39
+586,carbomère 980 (larmes artificielles),10mg,gel ophtalmique,,,+,+,+,lacrigel,30,39
+587,cromoglycate,7mg,collyre,,,+,+,+,cromoptic,30,39
+588,lévocabastine,"2,5mg",collyre,,,+,+,+,lévophta,30,39
+589,fluorescéine,2mg,collyre,,,+,+,+,fluorescein e,30,39
+590,tropicamide,50mg,collyre,,,+,+,+,mydriaticu m,30,39
+591,ranibizumab,10mg/ml,solution pour injection intravitréenne,,,,+,+,lucentis,30,39
+592,acide ascorbique,500mg,comprimé,,+,+,+,+,vit c,30,39
+593,acide ascorbique,500mg,injectable,,+,+,+,+,vit c,30,39
+594,calcium gluconate,10%,injectable,,+,+,+,+,,30,39
+595,calcium vit d3,500/400 ui,comprimé,,,+,+,+,calc vita,30,39
+596,cyanocobalamine,1mg/2ml,injectable,,,+,+,+,vit b12,30,39
+597,pyridoxine 250mg/5ml injectable + + + vit b6,,,,,,,,,31,40
+598,rétinol 100.000ui capsules + + + + + vit a,,,,,,,,,31,40
+599,rétinol 200.000ui capsules + + + + + vit a,,,,,,,,,31,40
+600,eau pour préparation injectable,,,,+,+,+,+,,31,40
+601,glimépiride,2 mg,comprimé,,,+,+,+,amarel,31,40
+602,glimépiride,4 mg,comprimé,,,+,+,+,amarel,31,40
+603,gliclazide,60 mg,comprimé,,,+,+,+,diamicro n,31,40
+604,insuline mixte 30%,100ui,injectable,,,+,+,+,mixtard,31,40
+605,insuline lente,100ui,injectable,,,+,+,+,insulatard,31,40
+606,insuline rapide,100ui,injectable,,,+,+,+,actrapid,31,40
+610,metformine,500mg,comprimé,,+,+,+,+,glucophag e,31,40
+611,metformine,850mg,comprimé,,+,+,+,+,glucophag e,31,40
+612,gliclazide /metformine,60/850 mg,comprimé,,,+,+,+,glide-m,31,40
+613,gliclazide /metformine,60/1000 mg,comprimé,,,+,+,+,glide-m,31,40
+614,carbimazole,5mg,comprimé,,,,+,+,néo mercazole,32,41
+615,carbimazole,20mg,comprimé,,,,+,+,néo mercazole,32,41
+616,cortisone,5mg,comprimé,,,,+,+,cortisone,32,41
+617,cyprotérone,50mg,comprimé,,,,+,+,androcur,32,41
+618,progesterone,200 mg,ovule,,,+,+,+,,32,41
+619,bicalutamide,50mg,comprimé,,,,+,+,casodex,32,41
+620,hydrocortisone,10 mg,comprimé,,,,+,+,,32,41
+621,goséréline,"3,6 mg",injectable,,,,+,+,zoladex,32,41
+622,lévothyroxine,50µg,comprimé,,,,+,+,l-thyroxine,32,41
+623,lévothyroxine,100µg,comprimé,,,,+,+,l-thyroxine,32,41
+624,cabergoline,"0,5 mg",comprimé,,,,+,+,dostinex,32,41
+625,bléomycine,15mg,injectable,,,,+,+,bléomycine,32,41
+626,carboplatine,450mg,injectable,,,,+,+,,32,41
+627,carboplatine,150mg,injectable,,,,+,+,,32,41
+628,chlormétine,10mg,injectable,,,,,+,caryolysine,32,41
+629,cisplatine,10mg,injectable,,,,+,+,cisplatyl,32,41
+630,cisplatine,25mg,injectable,,,,+,+,cisplatyl,32,41
+631,cisplatine,50mg,injectable,,,,+,+,cisplatyl,32,41
+632,cyclophosphamide,500mg,injectable,,,,,+,endoxan,32,41
+633,cyclophosphamide,25mg,comprimé,,,,+,+,,32,41
+634,cyclophosphamide,50 mg,comprimé,,,,+,+,,32,41
+635,doxorubicine,10mg ;50mg,injectable,,,,+,+,adriblastin e,32,41
+636,epirubicine,20mg ; 50mg,injectable,,,,+,+,farmorubic ine,32,41
+637,etoposide,100mg,comprimé,,,,+,+,vépéside,32,41
+638,fluorouracil,500mg/ml,injectable,,,,,+,fluracil,32,41
+639,hydroxycarbamide,500mg,comprimé,,,,,+,hydréa,32,41
+640,melphalan,2mg,comprimé,,,,,+,alkéran,32,41
+641,melphalan,50mg,injectable,,,,,+,,32,41
+642,méthotrexate,50mg/ml,injectable,,,,+,+,méthotrexa te,32,41
+643,méthotrexate,20mg,injectable,,,,+,+,,32,41
+644,méthotrexate,10mg,injectable,,,,+,+,,33,42
+645,ledertrexate,5mg,injectable,,,,+,+,,33,42
+646,méthotrexate,"2,5mg",comprimé,,,,+,+,méthotrexa te,33,42
+647,méthotrexate,20mg,comprimé,,,,+,+,méthotrexa te,33,42
+648,paclitaxel,30mg,injectable,,,,+,+,taxol,33,42
+649,paclitaxel,100mg,injectable,,,,+,+,taxol,33,42
+650,tamoxifène,20mg,comprimé,,,,+,+,nolvadex,33,42
+651,vinblastine,10mg,injectable,,,,+,+,nolvadex,33,42
+652,vincristine,1mg,injectable,,,,+,+,oncovin,33,42
+653,vincristine,2mg,injectable,,,,+,+,oncovin,33,42
+654,bevacizumab,400mg,injectable,,,,+,+,avastin,33,42
+655,trastuzumab,150mg,injectable,,,,+,+,herceptin,33,42
+656,rituximab,100mg,injectable,,,,+,+,mabthera,33,42
+657,rituximab,500mg,injectable,,,,+,+,mabthera,33,42
+658,capecitabine,500mg,injectable,,,,+,+,xéloda,33,42
+659,ibandronate,50mg,injectable,,,,+,+,bondronat,33,42
+660,ibandronate,6mg,injectable,,,,+,+,bondronat,33,42
+661,filgrastim,300µg,injectable,,,,+,+,neupogen,33,42
+662,acide zolédronique,4mg,perfusion,,,,+,+,zométa,33,42
+663,triptoréline,"0,1 mg",injectable,,,,+,+,décapeptyl,33,42
+664,folinate de calcium,50mg,injectable,,,,+,+,,33,42
+665,folinate de calcium,100mg,injectable,,,,+,+,,33,42
+666,actinomycine d,"0,5mg",injectable,,,,+,+,,33,42
+667,pemetrexed,100mg,injectable,,,,+,+,,33,42
+668,pemetrexed,500mg,injectable,,,,+,+,,33,42
+669,thalidomide,50mg,comprimé,,,,+,+,,33,42
+670,fluoro-5 uracil,250mg,injectable,,,,+,+,,33,42
+671,fluoro-5 uracil,500mg,injectable,,,,+,+,,33,42
+672,anastrozole,1mg,comprimé,,,,+,+,arimidex,33,42
+673,gemcitabine,200mg,injectable,,,,+,+,,33,42
+674,gemcitabine,1000mg,injectable,,,,+,+,,33,42
+675,letrozole,"2,5mg",comprimé,,,,+,+,femara,33,42
+676,sunitinib,"12,5mg",gélule,,,,+,+,sutent,33,42
+677,azacitidine,100mg,injectable,,,,+,+,,34,43
+678,mercaptopurine,50mg,comprimé,,,,+,+,,34,43
+679,thioguanine,40mg,comprimé,,,,+,+,,34,43
+680,cytarabine,100mg,injectable,,,,+,+,,34,43
+681,ifosfamide,1g,injectable,,,,+,+,,34,43
+682,ifosfamide,3g,injectable,,,,+,+,,34,43
+683,oxaliplatine,50mg,injectable,,,,+,+,,34,43
+684,oxaliplatine,100mg,injectable,,,,+,+,,34,43
+685,dacarbazine,500mg,injectable,,,,+,+,,34,43
+686,dacarbazine,200mg,injectable,,,,+,+,,34,43
+687,témozolomide,100mg,gélule,,,,+,+,,34,43
+688,irinotécan,100mg,injectable,,,,+,+,,34,43
+689,irinotécan,500mg,injectable,,,,+,+,,34,43
+690,irinotécan,40mg,injectable,,,,+,+,,34,43
+691,topotécan,4mg,injectable,,,,+,+,,34,43
+692,daunorubicine,50mg,injectable,,,,+,+,,34,43
+693,vinorelbine,50mg,,,,,+,+,,34,43
+694,vinorelbine,10mg,injectable,,,,+,+,,34,43
+695,l asparaginase,10.000unités,injectable,,,,+,+,,34,43
+696,pegfilgastrim,6mg,injectable,,,,+,+,,34,43
+697,mesna,1g,injectable,,,,+,+,,34,43
+698,fludarabine,50mg,injectable,,,,+,+,,34,43
+699,busulphan,60mg,injectable,,,,+,+,,34,43
+700,chorambucil,2mg,comprimé,,,,+,+,,34,43
+701,oxaliplatine,100mg,injectable,,,,+,+,,34,43
+702,bendamustine,"2,5mg",injectable,,,,+,+,,34,43
+703,carmustine,100mg,injectable,,,,+,+,,34,43
+704,procarbazine,50mg,gélule,,,,+,+,,34,43
+705,docetaxel,80mg,,,,,+,+,,34,43
+706,docetaxel,160mg,injectable,,,,+,+,,34,43
+707,bortézomib,"3,5mg",injectable,,,,+,+,,34,43
+708,idarubicine,5mg,injectable,,,,+,+,,34,43
+709,brentuximab vedotin,50mg,injectable,,,,+,+,,34,43
+710,daratumumab,20mg,injectable,,,,+,+,,34,43
+711,lénalidomide,25mg,gélule,,,,+,+,,35,44
+712,ciclosporine,50mg,comprimé,,,,+,+,,35,44
+713,trétinoïne,10mg,gélule,,,,+,+,,35,44
+714,arsénic trrioxyde,10mg,injectable,,,,+,+,,35,44
+715,atézolizumab,1200mg,injectable,,,,+,+,,35,44
+716,pembrolizumab,50mg,injectable,,,,+,+,,35,44
+717,pembrolizumab,100mg,injectable,,,,+,+,,35,44
+718,erlotinib,150mg,injectable,,,,+,+,,35,44
+719,chloraminophène,2mg,comprimé,,,,+,+,,35,44
+720,acides aminés essentiels,,perfusion,,,+,+,+,trophysan,35,44
+721,acides gras essentiels,,perfusion,,,,,+,,35,44
+722,complexe vitaminique,,perfusion,,,+,+,+,,35,44
+723,"mélange ternaire (protide, glucide, lipide)",,perfusion,,,,+,+,,35,44
+724,oligo-éléments,,perfusion,,,,,+,,35,44
+729,fénoxazoline,15mg/flacon,goutte auriculaire,,,,+,+,,35,44
+730,phénazone + lidocaïne,(4g/1g)/100g,goutte auriculaire,,,+,+,+,otipax,35,44
+"xylométazoline 731 0,5%o goutte nasale + + + otrivine",,,,,,,,,,36,45
+736,ethinylestradiol+levonorgestrel+f umarate ferreux,"0,03mg/0,15mg /75mg",comprimé,+,+,+,+,+,microgynon,36,45
+737,levonorgestrel,"0,75mg",comprimé,,+,+,+,+,norlevo,36,45
+738,levonorgestrel,"1,5mg",comprimé,,+,+,+,+,norlevo,36,45
+739,levonorgestrel,"0,03mg",comprimé,+,+,+,+,+,microlut,37,46
+740,etonogestrel,68mg,implant/1batonne t,,+,+,+,+,nxt implanon,37,46
+741,levonorgestrel,"2x 0,75mg",implant/2batonne ts,,+,+,+,+,jadelle,37,46
+742,acétate médroxyprogestérone,150mg,injectable,+,+,+,+,+,dépo provéra,37,46
+743,anneau vaginal a progestérone,2g,anneau,+,+,+,+,+,anneau vaginal a progestatif avp,37,46
+744,acétate médroxyprogestérone,"104mg/0,65 ml",injectable sous cutané,+,+,+,+,+,sayana press,37,46
+777,bicarbonate,1g ; 500mg,,,,,+,+,,39,48
+778,calciférol,"0,25µg ; 0,5µg ; 1µg ;",,,,,+,+,,39,48
+779,carbonate de calcium,1g,,,,,+,+,,39,48
+780,cyclosporine,25mg,comprimé,,,,+,+,,39,48
+781,cyclosporine,100mg,comprimé,,,,+,+,,39,48
+782,cyclosporine,50mg,comprimé,,,,+,+,,40,49
+783,cinacalcet,120mg,,,,,+,+,,40,49
+784,cyclophosphamide,500mg,,,,,+,+,,40,49
+786,furosémide,500mg,comprimé,,,,+,+,lasilix,40,49
+787,prednisolone,20mg,comprimé,,,,+,+,cortancyl,40,49
+788,prednisolone,25mg/ml,injectable injectable injectable injectable ampoule buvable,,,,+,+,cortancyl,40,49
+789,methylprednisolone,80mg,,,,,+,+,,40,49
+790,methylprednisolone,120mg,,,,,+,+,,40,49
+791,methoxy polyéthyléne glycol epoeitine beta,50µg,,,,,+,+,,40,49
+792,cholecalciferol,100000 ui,,,,+,+,+,,40,49
+793,cinacalcet,30mg,,,,,,+,,40,49
+794,fer carboxymaltose,1000 mg,injectable,,,+,+,+,,40,49
+795,fer saccharose,100 mg,injectable,,,+,+,+,,40,49
+796,micophénolate mofétil,1g,,,,+,+,+,,40,49
+797,alphacalcidiol,"0,25mcg; 0,5,1 mcg",comprimé,,,,+,+,,40,49
+798,chorure de sodium,1g,injectable,,,+,+,+,,40,49
+799,chlorure de potassium,600 mg,injectable,,,,+,+,,40,49
+800,chlorure de potassium,1g,injectable,,,,+,+,,40,49
+801,sévélamer chlorhydrate,400mg,,,,,+,+,renagel,40,49
+802,azathioprine,50mg,comprimé,,,,,+,imurel,40,49
+803,basiliximab,20mg,inj,,,,,+,simulect,40,49
+804,basiliximab,10mg,inj,,,,,+,simulect,40,49
+805,micophénolate mofétil,1g,comprimé,,,,,+,cellcept,40,49
+806,micophénolate mofétil,500mg,comprimé,,,,,+,cellcept,40,49
+807,solution de conservation d'organes,poche de 5litres,solution,,,,,+,solution uw,41,50
+808,tacrolimus,"0,5mg",comprimé,,,,,+,prograf,41,50
+809,tacrolimus,2mg,comprimé,,,,,+,prograf,41,50
+810,tacrolimus,1mg,comprimé,,,,,+,prograf,41,50
+811,tacrolimus,4mg,comprimé,,,,,+,prograf,41,50
+812,interferon pegyle,,injectable,,,,,+,,41,50
+813,thymoglobuline,25 mg /5ml,injectable,,,,,+,,41,50
+836,alfuzosine,5mg,comprimé,,,,+,+,,42,51
+837,alfuzosine,10mg,comprimé,,,,+,+,xatral,42,51
+839,levodopa/ benserazide chlorhydrate,"50 mg / 12,5 mg",comprimé,,,,+,+,modopar,42,51
+840,levodopa/ benserazide chlorhydrate,100 mg / 25 mg comprimé,,,,,+,+,modopar,42,51
+levodopa/ benserazide 841 200mg / 50 mg comprimé + + modopar chlorhydrate,,,,,,,,,,43,52
+842,donepézil chlorhydrate,10mg,,,,,+,+,aricept,43,52
+843,donepézil chlorhydrate,5mg,,,,,+,+,aricept,43,52
+844,extrait de ginko biloba,40mg,,,,,+,+,tanakan,43,52
+845,piracétam,800mg,comprimé,,,,+,+,nootropyl,43,52
+861,goniosol,,,,,,+,+,,44,53
+867,gaze pièce,,,,,,,,,44,53
+873,catheter 16g,,,,,,,,,45,54
+874,catheter 18g,,,,,,,,,45,54
+875,catheter 20 g,,,,,,,,,45,54
+876,catheter 22 g,,,,,,,,,45,54
+877,catheter 24 g,,,,,,,,,45,54
+879,gant de chirurgie,,,,,,,,,45,54
+917,gant d'examen latex,,,,,,,,,47,56
+923,garrot,,,,,,,,,47,56
+933,eugenol fl/250ml,,,,,,,,,47,56
+934,pharmaéthyl fl/210g,,,,,,,,,47,56
+940,rocklès solution,,,,,,,,,48,57
+941,détartrine 45g,,,,,,,,,48,57

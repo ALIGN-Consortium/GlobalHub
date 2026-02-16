@@ -1,0 +1,2913 @@
+,name,dosage_form,dose,atc_code,scope,dose_form,strength_size
+0,BCG vaccine,all vaccines should comply with the who requirements for biological substances.,,L03AX03,WHO,,
+1,Japanese encephalitis vaccine,all vaccines should comply with the who requirements for biological substances.,,"J07BA02, J07BA03",WHO,,
+2,Medicines for COVID-19,refer to who living guidelines,,,WHO,,
+3,abacavir,oral  solid,300 mg tablet (as sulfate),J05AF06,WHO,,
+4,abacavir + lamivudine,oral  solid,"120 mg (as sulfate) + 60 mg tablet (dispersible, scored)",J05AR02,WHO,,
+5,abacavir + lamivudine + lopinavir + ritonavir,oral  solid,30 mg + 15 mg + 40 mg + 10 mg capsule containing oral granules,,WHO,,
+6,abemaciclib,,,,WHO,,
+7,abiraterone,oral  solid,250 mg; 500 mg,L02BX03,WHO,,
+8,acamprosate calcium,oral  solid  tablet,333 mg,N07BB03,WHO,,
+9,acetazolamide,oral  solid,250 mg,S01EC01,WHO,,
+10,acetic acid,local  otological  drops,2% in alcohol,S02AA10,WHO,,
+11,acetylcysteine,parenteral  general injections  iv,200 mg per  mL in 10 mL ampoule,V03AB23,WHO,,
+13,acetylsalicylic acid,oral  solid,100 mg,B01AC06,WHO,,
+20,acetylsalicylic acid + atorvastatin + ramipril,oral  solid  tablet,100 mg + 20 mg + 2.5 mg; 100 mg + 20 mg + 5 mg; 100 mg + 20 mg + 10 mg; 100 mg + 40 mg + 2.5 mg; 100 mg + 40 mg + 5 mg; 100 mg   + 40 mg + 10 mg,C10BX06,WHO,,
+23,acetylsalicylic acid + simvastatin + ramipril + atenolol + hydrochlorothiazide,oral  solid  tablet,100 mg + 20 mg + 5 mg + 50 mg + 12.5 mg,,WHO,,
+26,aciclovir,local  ophthalmological  ointment,3% w/w,S01AD03,WHO,,
+30,aclidinium,,,,WHO,,
+31,activated charcoal,oral  other,powder,A07BA01,WHO,,
+32,adalimumab,parenteral  general injections  sc,40 mg per 0.8 mL; 40 mg per 0.4 mL; 10 mg per 0.2 mL; 20 mg per 0.4 mL,L04AB04,WHO,,
+36,afatinib,,,,WHO,,
+37,albendazole,oral  solid  tablet,"400 mg (chewable, scored)",P02CA03,WHO,,
+46,alcohol based hand rub,local  topical  solution,80% v/v ethanol; 75% v/v isopropyl alcohol,D08AX08,WHO,,
+47,alcuronium,parenteral  general injections  iv,5 mg per  mL in 2 mL ampoule (alcuronium chloride),M03AA01,WHO,,
+48,alfacalcidol,oral  liquid,2 µg per  mL,A11CC03,WHO,,
+50,all-trans retinoic acid,oral  solid,10 mg capsule,L01XF01,WHO,,
+51,allopurinol,oral  solid,100 mg,M04AA01,WHO,,
+53,alprostadil (prostaglandin E1),parenteral  general injections  iv,0.5 mg per  mL in alcohol,C01EA01,WHO,,
+54,alteplase,parenteral  general injections  iv,10 mg in vial powder for injection; 20 mg in vial powder for injection; 50 mg in vial powder for injection,B01AD02,WHO,,
+55,amidotrizoate,parenteral  general injections  unspecified,140 to 420 mg iodine per  mL in 20 mL ampoule (as sodium or meglumine salt),V08AA01,WHO,,
+56,amikacin,,,,WHO,,
+65,amiloride,oral  solid,5 mg (hydrochloride),C03DB01,WHO,,
+67,amiodarone,parenteral  general injections  iv,50 mg per  mL in 3 ampoule (hydrochloride),C01BD01,WHO,,
+68,amitriptyline,oral  solid,25 mg; 75 mg,N06AA09,WHO,,
+70,amlodipine,oral  solid,"5 mg (as maleate, mesylate or besylate)",C08CA01,WHO,,
+71,amodiaquine,oral  solid,153 mg (as hydrochloride); 200 mg (as hydrochloride),P01BA06,WHO,,
+73,amodiaquine - sulfadoxine + pyrimethamine,oral  solid,76.5 mg (as hydrochloride) [3] + 250 mg + 12.5 mg [1] dispersible tablets in co-package; 153 mg (as hydrochloride) [3] + 500 mg + 25 mg [1] dispersible tablets in co-package,"P01BA06, P01BD51",WHO,,
+74,amoxicillin,oral  liquid,125 mg per 5 mL (as trihydrate) powder for oral liquid; 250 mg per 5 mL (as trihydrate) powder for oral liquid,J01CA04,WHO,,
+87,amoxicillin + clavulanic acid,parenteral  general injections  iv,500 mg (as sodium salt) + 100 mg (as potassium salt) powder for injection; 1000 mg (as sodium salt) + 200 mg (as potassium salt) powder for injection,J01CR02,WHO,,
+104,amphotericin B,parenteral  general injections  iv,50 mg in vial powder for injection (liposomal complex); 50 mg in vial powder for injection (as sodium deoxycholate),J02AA01,WHO,,
+112,ampicillin,parenteral  general injections  unspecified,500 mg in vial (as sodium salt) powder for injection; 1 g in vial (as sodium salt) powder for injection,J01CA01,WHO,,
+121,anakinra,parenteral  general injections  sc,100 mg per 0.67 mL in pre-filled syringe,L04AC03,WHO,,
+122,anastrozole,oral  solid,1 mg tablet,L02BG03,WHO,,
+124,anidulafungin,,,,WHO,,
+125,ansuvimab,parenteral  general injections  iv,400 mg powder for injection,J06BD04,WHO,,
+126,anti-D immunoglobulin,parenteral  general injections  iv,250 µg in single-dose vial,J06BB01,WHO,,
+128,anti-rabies immunoglobulin,parenteral  general injections  im,150 iu per  mL in vial,J06BB05,WHO,,
+129,anti-rabies virus monoclonal antibodies,parenteral  locoregional injections  intradermal,40 iu per  mL in 1.25 mL vial (human); 40 iu per  mL in 2.5 mL vial (human); 100 iu per  mL in 2.5 mL vial (human); 300 iu per  mL in 10 mL vial (murine); 600 iu per  mL in 1 mL vial (murine); 600 iu per  mL in 2.5 mL vial (murine); 600 iu per  mL in 5 mL vial (murine),,WHO,,
+130,anti-tetanus immunoglobulin,parenteral  general injections  im,500 iu in vial,J06BB02,WHO,,
+131,antirabies hyperimmune serum,parenteral  general injections  unspecified,1000 iu in 5 mL ampoule,,WHO,,
+132,antivenom immunoglobulin,parenteral  general injections  iv,,,WHO,,
+133,antivenom sera,parenteral  general injections  iv,,,WHO,,
+134,apixaban,,,,WHO,,
+136,aprepitant,oral  liquid,125 mg powder for oral suspension (in sachet),A04AD12,WHO,,
+137,aripiprazole,,,,WHO,,
+138,arsenic trioxide,parenteral  general injections  iv,1 mg per  mL concentrate for solution for infusion; 2 mg per  mL concentrate for solution for infusion,L01XX27,WHO,,
+139,artemether,parenteral  general injections  im,80 mg per  mL in 1 mL ampoule (oily injection),P01BE02,WHO,,
+141,artemether + lumefantrine,oral  solid,20 mg + 120 mg tablet; 20 mg + 120 mg dispersible tablet,P01BF01,WHO,,
+143,artesunate,parenteral  general injections  iv,60 mg in ampoule containing anhydrous artesunic acid with a separate ampoule of 5% sodium bicarbonate solution,P01BE03,WHO,,
+145,artesunate + amodiaquine,oral  solid,25 mg + 67.5 mg tablet; 50 mg + 135 mg tablet; 100 mg + 270 mg tablet,P01BF03,WHO,,
+147,artesunate + mefloquine,oral  solid,25 mg + 55 mg tablet; 100 mg + 220 mg tablet,P01BF02,WHO,,
+149,artesunate + pyronaridine,oral  solid,60 mg + 180 mg tablet; 20 mg + 60 mg granules,P01BF06,WHO,,
+151,ascorbic acid,oral  solid,50 mg,A11GA01,WHO,,
+152,asparaginase,powder for injection,10 000 iu in vial.,L01XX02,WHO,,
+154,atazanavir,oral  solid,100 mg (as sulfate); 300 mg (as sulfate),J05AE08,WHO,,
+155,atazanavir + ritonavir,oral  solid,300 mg (as sulfate) + 100 mg tablet (heat stable),J05AR23,WHO,,
+156,atenolol,oral  solid,50 mg; 100 mg,C07AB03,WHO,,
+159,atezolizumab,parenteral  general injections  iv,1.2 g per 20 mL concentrate solution for infusion,L01XC18,WHO,,
+161,atoltivimab + maftivimab + odesivimab,parenteral  general injections  iv,241.7 mg + 241.7 mg + 241.7 mg in 14.5 mL vial,,WHO,,
+162,atorvastatin,,,,WHO,,
+164,atorvastatin + perindopril + amlodipine,oral  solid  tablet,20 mg + 5 mg + 5 mg; 20 mg + 10 mg + 10 mg; 40 mg + 5 mg + 5 mg; 40 mg + 10 mg + 10 mg,C10BX11,WHO,,
+167,atracurium,parenteral  general injections  iv,10 mg per  mL (besylate),M03AC04,WHO,,
+169,atropine,,,,WHO,,
+173,axicabtagene ciloleucel,cell suspension for infusion,2 × 10*6 anti-cd19 car-positive viable t-cells per kg of body weight.,L01XL03,WHO,,
+174,azacitidine,parenteral  general injections  iv,100 mg in vial powder for injection,L01BC07,WHO,,
+175,azathioprine,parenteral  general injections  iv,50 mg in vial powder for injection (as sodium salt); 100 mg in vial powder for injection (as sodium salt),L04AX01,WHO,,
+179,azithromycin,local  ophthalmological  solution (eye drops),1.5% eye drops,S01AA26,WHO,,
+190,aztreonam,parenteral  general injections  unspecified,1 g in vial powder for injection; 2 g in vial powder for injection,J01DF01,WHO,,
+191,barium sulfate,oral  liquid,aqueous suspension,V08BA01,WHO,,
+192,beclometasone,,,,WHO,,
+194,beclometasone + formoterol,,,,WHO,,
+195,bedaquiline,oral  solid,100 mg tablet; 20 mg tablet,J04AK05,WHO,,
+196,bendamustine,parenteral  general injections  unspecified,45 mg per 0.5 mL; 180 mg per 2 mL,L01AA09,WHO,,
+198,benzathine benzylpenicillin,parenteral  general injections  im,1.2 million iu in vial (≈ 900 mg) powder for injection; 2.4 million iu in vial (≈ 1.8 g) powder for injection,J01CE08,WHO,,
+201,benznidazole,oral  solid  tablet,100 mg (scored); 50 mg (scored); 12.5 mg,P01CA02,WHO,,
+202,benzoic acid + salicylic acid,local  topical  cream,6% + 3%,,WHO,,
+203,benzoyl peroxide,local  topical  cream,5%,D10AE01,WHO,,
+204,benzyl benzoate,local  topical  lotion,25%,P03AX01,WHO,,
+208,benzylpenicillin,parenteral  general injections  unspecified,600 mg in vial powder for injection (=1 million iu as sodium or potassium salt); 3 g in vial powder for injection (=5 million iu as sodium or potassium salt),J01CE01,WHO,,
+215,beractant,respiratory  suspension,80 mg per  mL for intratracheal instillation; 25 mg per  mL for intratracheal instillation,R07AA02,WHO,,
+216,betamethasone,local  topical  cream,0.1% (as valerate),D07AC01,WHO,,
+220,bevacizumab,parenteral  locoregional injections  intravitreal,25 mg per  mL,S01LA08,WHO,,
+221,bicalutamide,oral  solid,50 mg,L02BB03,WHO,,
+222,binimetinib,,,,WHO,,
+223,biperiden,parenteral  general injections  iv,5 mg per  mL in 1 mL ampoule (lactate),N04AA02,WHO,,
+224,bisacodyl,,,,WHO,,
+225,bisoprolol,oral  solid,1.25 mg; 5 mg,C07AB07,WHO,,
+229,bleomycin,parenteral  general injections  unspecified,15000 iu in vial (as sulfate),L01DC01,WHO,,
+234,bortezomib,parenteral  general injections  unspecified,3.5 mg in vial powder for injection,L01XG01,WHO,,
+235,bromocriptine,oral  solid,2.5 mg; 5 mg,N04BC01,WHO,,
+237,budesonide,respiratory  inhalation  aerosol,100 µg per  dose; 200 µg per  dose,R03BA02,WHO,,
+239,budesonide + formoterol,respiratory  inhalation  powder,100 µg + 6 µg per dose; 200 µg + 6 µg per dose,R03AK07,WHO,,
+240,budesonide + salmeterol,,,,WHO,,
+241,bumetanide,,,,WHO,,
+244,bupivacaine,parenteral  locoregional injections  spinal anaesthesia,0.5% in 4 mL ampoule (hydrochloride) + 7.5% glucose solution,N01BB01,WHO,,
+245,buprenorphine,,,,WHO,,
+246,bupropion,oral  solid,150 mg sustained-release (hydrochloride),N06AX12,WHO,,
+247,c1 esterase inhibitor,parenteral  general injections  iv,500 iu in vial powder for injection,,WHO,,
+248,cabergoline,oral  solid  tablet,0.5 mg; 1 mg,G02CB03,WHO,,
+250,caffeine citrate,parenteral  general injections  iv,20 mg per  mL (equivalent to 10 mg caffeine base per mL),N06BC01,WHO,,
+251,calamine,local  topical  lotion,,D02AB,WHO,,
+252,calcipotriol,local  topical  cream,50 µg per  mL (0.005%),D05AX02,WHO,,
+253,calcitriol,,,,WHO,,
+256,calcium,oral  solid,500 mg (elemental calcium),A12AA20,WHO,,
+257,calcium folinate (leucovorin calcium),oral  solid,15 mg tablet,V03AF03,WHO,,
+264,calcium gluconate,parenteral  general injections  iv,100 mg per  mL in 10 mL ampoule,A12AA03,WHO,,
+266,canagliflozin,,,,WHO,,
+267,capecitabine,oral  solid  tablet,150 mg; 500 mg,L01BC06,WHO,,
+271,capreomycin,parenteral  general injections  iv,1000 mg powder for injection (vial),J04AB30,WHO,,
+272,captopril,oral  solid,25 mg,C09AA01,WHO,,
+273,carbachol,,,,WHO,,
+276,carbamazepine,oral  solid  tablet,100 mg (scored); 200 mg (scored); 400 mg,N03AF01,WHO,,
+278,carbetocin,parenteral  general injections  iv,100 µg per  mL (heat stable),H01BB03,WHO,,
+279,carbimazole,,,,WHO,,
+280,carboplatin,parenteral  general injections  iv,50 mg per 5 mL; 150 mg per 15 mL; 450 mg per 45 mL; 600 mg per 60 mL,L01XA02,WHO,,
+295,carmellose,,,,WHO,,
+296,carvedilol,,,,WHO,,
+300,caspofungin,,,,WHO,,
+301,cefalexin,oral  liquid,125 mg per 5 mL (anhydrous) powder for oral liquid; 250 mg per 5 mL (anhydrous) powder for oral liquid,J01DB01,WHO,,
+305,cefazolin,parenteral  general injections  unspecified,1 g in vial (as sodium salt) powder for injection,J01DB04,WHO,,
+310,cefepime,parenteral  general injections  unspecified,500 mg in vial (as hydrochloride) powder for injection; 1 g in vial (as hydrochloride) powder for injection; 2 g in vial (as hydrochloride) powder for injection,J01DE01,WHO,,
+311,cefiderocol,parenteral  general injections  iv,1 g in vial (as sulfate tosylate) powder for injection,J01DI04,WHO,,
+313,cefixime,oral  liquid,100 mg per 5 mL powder for oral liquid,J01DD08,WHO,,
+315,cefotaxime,parenteral  general injections  unspecified,250 mg in vial powder for injection (as sodium salt),J01DD01,WHO,,
+331,ceftaroline,parenteral  general injections  iv,400 mg in vial (as fosamil) powder for injection; 600 mg in vial (as fosamil) powder for injection,J01DI02,WHO,,
+332,ceftazidime,parenteral  general injections  unspecified,250 mg in vial (as pentahydrate) powder for injection; 1 g in vial (as pentahydrate) powder for injection,J01DD02,WHO,,
+334,ceftazidime + avibactam,parenteral  general injections  iv,2 g in vial + 0.5 g in vial powder for injection,J01DD52,WHO,,
+336,ceftolozane + tazobactam,parenteral  general injections  iv,1 g + 0.5 g powder for injection,J01DI54,WHO,,
+337,ceftriaxone,parenteral  general injections  unspecified,250 mg in vial powder for injection (as sodium salt); 1 g in vial powder for injection (as sodium salt),J01DD04,WHO,,
+359,cefuroxime,parenteral  general injections  iv,250 mg in vial (as sodium salt) powder for injection; 750 mg in vial (as sodium salt) powder for injection; 1.5 g in vial (as sodium salt) powder for injection,J01DC02,WHO,,
+360,cemiplimab,,,,WHO,,
+361,certolizumab pegol,,,,WHO,,
+365,cetirizine,,,,WHO,,
+366,chlorambucil,oral  solid,2 mg tablet,L01AA02,WHO,,
+368,chloramphenicol,parenteral  general injections  iv,1 g in vial powder for injection (sodium succinate),J01BA01,WHO,,
+370,chlorhexidine,local  topical  solution,7.1% chlorhexidine digluconate (delivering 4% chlorhexidine),D08AC02,WHO,,
+372,chlorine base compound,local  topical  powder,0.1% available chlorine for solution,V07AV,WHO,,
+373,chloroquine,oral  liquid,50 mg per 5 mL syrup (as phosphate or sulfate),P01BA01,WHO,,
+380,chlorothiazide,,,,WHO,,
+382,chloroxylenol,local  topical  solution,4.8%,D08AE05,WHO,,
+383,chlorpromazine,oral  liquid,25 mg per 5 mL (hydrochloride),,WHO,,
+385,chlortalidone,,,,WHO,,
+387,chlortetracycline,,,,WHO,,
+391,cholera vaccine,all vaccines should comply with the who requirements for biological substances.,,J07AE01,WHO,,
+392,ciclesonide,,,,WHO,,
+393,ciclosporin,parenteral  general injections  iv,50 mg per  mL in 1 mL ampoule concentrate for injection,L04AD01,WHO,,
+394,cimetidine,oral  solid,200 mg,A02BA01,WHO,,
+396,ciprofloxacin,parenteral  general injections  iv,2 mg per  mL (as hyclate),J01MA02,WHO,,
+408,cisplatin,parenteral  general injections  unspecified,10 mg in vial powder for injection; 50 mg in vial powder for injection,L01XA01,WHO,,
+420,cladribine,parenteral  general injections  iv,1 mg per  mL in 10 mL vial; 2 mg per  mL in 5 mL vial,L01BB04,WHO,,
+422,clarithromycin,oral  liquid,125 mg per 5 mL powder for oral liquid; 250 mg per 5 mL powder for oral liquid,J01FA09,WHO,,
+427,clindamycin,oral  liquid,75 mg per 5 mL (as palmitate hydrochloride),J01FF01,WHO,,
+431,clofazimine,oral  solid  dosage form,100 mg; 50 mg,J04BA01,WHO,,
+433,clomifene,oral  solid,50 mg (citrate),G03GB02,WHO,,
+434,clomipramine,oral  solid,10 mg (hydrochloride); 25 mg (hydrochloride),N06AA04,WHO,,
+435,clonazepam,oral  solid,500 µg,N03AE01,WHO,,
+436,clopidogrel,oral  solid,75 mg; 300 mg,B01AC04,WHO,,
+438,clotrimazole,local  topical  other,1% vaginal cream; 10% vaginal cream; 100 mg vaginal tablet; 500 mg vaginal tablet,G01AF02,WHO,,
+439,cloxacillin,oral  liquid,125 mg per 5 mL (as sodium salt) powder for oral liquid,J01CF02,WHO,,
+444,clozapine,oral  solid,25 mg; 50 mg; 100 mg; 200 mg,N05AH02,WHO,,
+445,coagulation factor IX complex,,,,WHO,,
+447,"coagulation factor IX, plasma-derived",parenteral  general injections  iv,500 iu in vial powder for injection; 1000 iu in vial powder for injection,B02BD01,WHO,,
+449,"coagulation factor VIII, plasma-derived",parenteral  general injections  iv,250 iu in vial powder for injection; 500 iu in vial powder for injection; 1000 iu in vial powder for injection,B02BD02,WHO,,
+450,coal tar,local  topical  solution,5%,D05AA,WHO,,
+451,cobicistat + elvitegravir + emtricitabine + tenofovir disoproxil fumarate,oral  solid,150 mg + 150 mg + 200 mg + 300 mg (tenofovir disoproxil fumarate equivalent to 245 mg tenofovir disoproxil),J05AR09,WHO,,
+452,cobicistat + elvitegravir + emtricitabine+ tenofovir alafenamide,oral  solid,150 mg + 150 mg + 200 mg + 10 mg,J05AR18,WHO,,
+453,cobimetinib,,,,WHO,,
+454,codeine,oral  solid,30 mg tablet (codeine phosphate),,WHO,,
+457,colchicine,oral  solid,0.5 mg,M04AC01,WHO,,
+458,colecalciferol,oral  liquid,400 iu per  mL,A11CC05,WHO,,
+462,colistin (injection),parenteral  general injections  unspecified,1 million iu in vial (as colistemethate sodium),J01XB01,WHO,,
+466,compound sodium lactate solution,parenteral  general injections  iv,injectable solution,B05BB01,WHO,,
+468,condoms,-,,,WHO,,
+469,copper-containing intrauterine device,-,,G02BA02,WHO,,
+470,crizotinib,oral  solid,200 mg; 250 mg,L01ED01,WHO,,
+472,cryoprecipitate (not pathogen-reduced),,,,WHO,,
+476,cryoprecipitate (pathogen-reduced),injection,frozen liquid in bag or lyophilized powder in vial containing:,B05AA02,WHO,,
+480,cyanocobalamin,.,,B03BA01,WHO,,
+481,cyclizine,oral  solid,50 mg tablet,R06AE03,WHO,,
+482,cyclopentolate,,,,WHO,,
+484,cyclophosphamide,oral  solid,25 mg tablet,L01AA01,WHO,,
+501,cycloserine,oral  solid,250 mg; 125 mg,J04AB01,WHO,,
+502,cytarabine,parenteral  general injections  unspecified,100 mg in vial powder for injection,L01BC01,WHO,,
+510,dabigatran,oral  solid,110 mg; 150 mg,B01AE07,WHO,,
+512,dabrafenib,oral  solid,50 mg; 75 mg,L01EC02,WHO,,
+513,dacarbazine,parenteral  general injections  iv,100 mg in vial powder for injection; 200 mg in vial powder for injection,L01AX04,WHO,,
+514,daclatasvir,oral  solid  tablet,30 mg (as hydrochloride); 60 mg (as hydrochloride),J05AP07,WHO,,
+515,daclatasvir + sofosbuvir,oral  solid  tablet,60 mg + 400 mg,"J05AP07, J05AP08",WHO,,
+516,dactinomycin,parenteral  general injections  iv,500 µg in vial powder for injection,L01DA01,WHO,,
+521,dalteparin,,,,WHO,,
+523,dapagliflozin,,,,WHO,,
+524,dapsone,oral  solid,100 mg tablet; 50 mg tablet; 25 mg tablet,J04BA02,WHO,,
+525,daptomycin,parenteral  general injections  iv,350 mg in vial powder for injection; 500 mg in vial powder for injection,J01XX09,WHO,,
+526,daratumumab,parenteral  general injections  iv,100 mg per 5 mL; 400 mg per 20 mL,L01FC01,WHO,,
+527,darbepoetin alfa,,,,WHO,,
+528,darunavir,oral  solid,75 mg; 400 mg; 600 mg; 800 mg,J05AE10,WHO,,
+529,dasabuvir,oral  solid,250 mg tablet,J05AX16,WHO,,
+530,dasatinib,oral  solid,20 mg tablet; 50 mg tablet; 70 mg tablet; 80 mg tablet; 100 mg tablet; 140 mg tablet,L01EA02,WHO,,
+531,daunorubicin,parenteral  general injections  iv,50 mg in vial (as hydrochloride) powder for injection; 20 mg in vial (as hydrochloride) powder for injection; 2 mg per  mL in vial (as hydrochloride); 5 mg per  mL in vial (as hydrochloride),L01DB02,WHO,,
+534,deferasirox,oral  solid  dispersible tablet,100 mg; 125 mg; 250 mg; 400 mg; 500 mg,V03AC03,WHO,,
+537,deferiprone,,,,WHO,,
+539,deferoxamine,parenteral  general injections  unspecified,500 mg in vial powder for injection (mesilate),V03AC01,WHO,,
+542,delafloxacin,parenteral  general injections  iv,300 mg lyophilized powder for injection,J01MA23,WHO,,
+543,delamanid,oral  solid  dispersible tablet,25 mg,J04AK06,WHO,,
+544,dengue vaccine,all vaccines should comply with the who requirements for biological substances.,,J07BX04,WHO,,
+545,desmopressin,parenteral  general injections  iv,4 µg per  mL in 1 mL ampoule (acetate),H01BA02,WHO,,
+547,dexamethasone,parenteral  general injections  unspecified,4 mg per  mL (dexamethasone phosphate (as sodium)),H02AB02,WHO,,
+556,dextran 40,.,,B05AA05,WHO,,
+557,dextran 70,parenteral  general injections  iv,6% injectable solution,B05AA05,WHO,,
+558,diaphragms,-,,,WHO,,
+559,diazepam,oral  solid,5 mg (scored); 2 mg (scored),N05BA01,WHO,,
+563,diazoxide,oral  liquid,50 mg per  mL,V03AH01,WHO,,
+564,didanosine,oral  liquid,100 mg buffered powder for oral solution; 167 mg buffered powder for oral solution; 250 mg buffered powder for oral solution,J05AF02,WHO,,
+565,diethylcarbamazine,oral  solid,50 mg tablet (dihydrogen citrate); 100 mg tablet (dihydrogen citrate),P02CB02,WHO,,
+566,digitoxin,parenteral  general injections  iv,0.2 mg in 1 mL ampoule,C01AA04,WHO,,
+567,digoxin,parenteral  general injections  iv,250 µg per  mL in 2 mL ampoule,C01AA05,WHO,,
+569,dihydroartemisinin + piperaquine,oral  solid,40 mg + 320 mg tablet; 20 mg + 160 mg tablet,P01BF05,WHO,,
+571,dihydroergocryptine mesylate,oral  solid,,N04BC03,WHO,,
+572,diloxanide,oral  solid,500 mg (furoate),P01AC01,WHO,,
+573,dimercaprol,parenteral  general injections  im,50 mg per  mL in 2 mL ampoule,V03AB09,WHO,,
+574,dinoprostone (prostaglandin E2),parenteral  general injections  iv,1 mg per  mL,G02AD02,WHO,,
+576,diphtheria antitoxin,parenteral  general injections  im,10000 iu in vial; 20000 iu in vial,J06AA01,WHO,,
+577,diphtheria vaccine,all vaccines should comply with the who requirements for biological substances.,,J07AF01,WHO,,
+578,diphtheria-pertussis-tetanus vaccine,all vaccines should comply with the who requirements for biological substances.,,J07AJ52,WHO,,
+579,diphtheria-tetanus vaccine,all vaccines should comply with the who requirements for biological substances.,,J07AM51,WHO,,
+580,docetaxel,parenteral  general injections  iv,20 mg per  mL; 40 mg per  mL,L01CD02,WHO,,
+584,docusate sodium,oral  liquid,50 mg per 5 mL oral liquid,A06AA02,WHO,,
+585,dolasetron,,,,WHO,,
+587,dolutegravir,oral  solid,"50 mg tablet; 10 mg tablet (dispersible, scored)",J05AJ03,WHO,,
+588,dolutegravir + lamivudine + tenofovir,oral  solid,50 mg + 300 mg + 300 mg (tenofovir disoproxil fumarate equivalent to 245 mg tenofovir disoproxil),J05AR27,WHO,,
+589,donepezil,oral  liquid,1 mg per  mL (hydrochloride),N06DA02,WHO,,
+590,dopamine,parenteral  general injections  iv,40 mg per  mL in 5 mL vial (hydrochloride),C01CA04,WHO,,
+592,doxorubicin,parenteral  general injections  iv,10 mg in vial (hydrochloride); 50 mg in vial (hydrochloride),L01DB01,WHO,,
+608,doxorubicin (as pegylated liposomal),parenteral  general injections  iv,2 mg per  mL in 10 mL vial (hydrochloride); 2 mg per  mL in 25 mL vial (hydrochloride),L01DB01,WHO,,
+609,doxycycline,oral  liquid,25 mg per 5 mL (anhydrous); 50 mg per 5 mL (anhydrous),J01AA02,WHO,,
+617,durvalumab,parenteral  general injections  iv,120 mg per 2.4 mL in vial; 500 mg per 10 mL in vial,L01FF03,WHO,,
+618,edoxaban,,,,WHO,,
+620,efavirenz,oral  solid,600 mg tablet,J05AG03,WHO,,
+621,efavirenz + emtricitabine + tenofovir,oral  solid,600 mg + 200 mg + 300 mg (tenofovir disoproxil fumarate equivalent to 245 mg tenofovir disoproxil),J05AR06,WHO,,
+622,efavirenz + lamivudine + tenofovir,oral  solid,"400 mg + 300 mg + 300 mg (tenofovir disoproxil fumarate, equivalent to 245 mg tenofovir disoproxil)",J05AR11,WHO,,
+624,eflornithine,parenteral  general injections  iv,200 mg per  mL in 50 mL bottle (hydrochloride),P01CX03,WHO,,
+625,elbasvir + grazoprevir,oral  solid,50 mg + 100 mg,J05AP54,WHO,,
+626,empagliflozin,oral  solid,10 mg; 25 mg,A10BK03,WHO,,
+627,emtricitabine,oral  liquid,10 mg per  mL,J05AF09,WHO,,
+628,emtricitabine + rilpivirine + tenofovir alafenamide,oral  solid,200 mg + 25 mg + 25 mg,J05AR19,WHO,,
+629,emtricitabine + rilpivirine + tenofovir disoproxil fumarate,oral  solid,200 mg + 25 mg + 300 mg (tenofovir disoproxil fumarate equivalent to 245 mg tenofovir disoproxil),J05AR08,WHO,,
+630,emtricitabine + tenofovir,oral  solid,200 mg + 300 mg (tenofovir disoproxil fumarate equivalent to 245 mg tenofovir disoproxil),J05AR03,WHO,,
+632,emtricitabine + tenofovir alafenamide,oral  solid,200 mg + 10 mg; 200 mg + 25 mg,J05AR17,WHO,,
+633,enalapril,oral  liquid,1 mg per  mL (as hydrogen maleate),C09AA02,WHO,,
+635,encorafenib,,,,WHO,,
+636,enoxaparin,parenteral  general injections  sc,20 mg per 0.2 mL in prefilled syringe; 40 mg per 0.4 mL in prefilled syringe; 60 mg per 0.6 mL in prefilled syringe; 80 mg per 0.8 mL in prefilled syringe; 100 mg per 1 mL in prefilled syringe; 120 mg per 0.8 mL in prefilled syringe; 150 mg per 1 mL in prefilled syringe; 150 mg per 1 mL in ampoule; 20 mg per 0.2 mL in ampoule; 40 mg per 0.4 mL in ampoule; 60 mg per 0.6 mL in ampoule; 80 mg per 0.8 mL in ampoule; 100 mg per 1 mL in ampoule; 120 mg per 0.8 mL in ampoule,B01AB05,WHO,,
+638,entecavir,oral  liquid,0.05 mg per  mL,J05AF10,WHO,,
+639,enzalutamide,,,,WHO,,
+641,ephedrine,parenteral  locoregional injections  spinal anaesthesia,30 mg per  mL in 1 mL ampoule (ephedrine hydrochloride),C01CA26,WHO,,
+642,epinephrine,parenteral  general injections  iv,100 µg per  mL in 10 mL ampoule (as acid tartrate or hydrochloride),C01CA24,WHO,,
+647,epoetin alfa,,,,WHO,,
+648,epoetin beta,,,,WHO,,
+649,epoetin theta,,,,WHO,,
+650,equine rabies immunoglobulin,parenteral  locoregional injections  intradermal,150 iu per  mL in vial; 200 iu per  mL in vial; 300 iu per  mL in vial; 400 iu per  mL in vial,J06BB05,WHO,,
+651,eravacycline,parenteral  general injections  iv,50 mg lyophilized powder for injection,J01AA13,WHO,,
+652,ergocalciferol,,,,WHO,,
+656,ergometrine,parenteral  general injections  unspecified,200 µg in 1 mL ampoule (hydrogen maleate),G02AB03,WHO,,
+657,erlotinib,oral  solid,100 mg; 150 mg,L01EB02,WHO,,
+658,erythromycin,parenteral  general injections  iv,500 mg in vial powder for injection (as lactobionate),J01FA09,WHO,,
+662,erythropoiesis-stimulating agents,parenteral  general injections  unspecified,1000 iu per 0.5 mL pre-filled syringe; 2000 iu per 0.5 mL pre-filled syringe; 3000 iu per 0.3 mL pre-filled syringe; 4000 iu per 0.4 mL pre-filled syringe; 5000 iu per 0.5 mL pre-filled syringe; 6000 iu per 0.6 mL pre-filled syringe; 8000 iu per 0.8 mL pre-filled syringe; 10000 iu per 1 mL pre-filled syringe; 20000 iu per 0.5 mL pre-filled syringe; 40000 iu per 1 mL pre-filled syringe,"B03XA03, B03XA01, B03XA02",WHO,,
+663,estradiol,oral  solid  tablet,0.5 mg; 1 mg; 2 mg,G03CA03,WHO,,
+666,estradiol cypionate + medroxyprogesterone acetate,parenteral  general injections  im,5 mg + 25 mg,G03AA08,WHO,,
+667,etanercept,,,,WHO,,
+671,ethambutol,parenteral  general injections  iv,1000 mg per 10 mL; 2000 mg per 20 mL,J04AK02,WHO,,
+673,ethambutol + isoniazid,oral  solid,400 mg + 150 mg tablet,J04AM03,WHO,,
+674,ethambutol + isoniazid + pyrazinamide + rifampicin,oral  solid,275 mg + 75 mg + 400 mg + 150 mg tablet,J04AM06,WHO,,
+675,ethambutol + isoniazid + rifampicin,oral  solid,275 mg + 75 mg + 150 mg tablet,"J04AK02, J04AC01, J04AB02",WHO,,
+676,ethanol,local  topical  solution,70% (denatured),D08AX08,WHO,,
+677,ether,respiratory  inhalation  solution,,N01AA01,WHO,,
+678,ethinylestradiol + etonogestrel,local  vaginal  vaginal ring,2.7 mg + 11.7 mg,G02BB01,WHO,,
+679,ethinylestradiol + levonorgestrel,oral  solid,50 µg + 250 µg [4],G03AA07,WHO,,
+681,ethinylestradiol + norethisterone,oral  solid,35 µg + 1 mg,G03AA05,WHO,,
+682,ethionamide,oral  solid  dispersible tablet,125 mg,J04AD03,WHO,,
+684,ethosuximide,oral  liquid,250 mg per 5 mL,N03AD01,WHO,,
+685,etonogestrel-releasing implant,implant  subdermal,68 mg single rod,G03AC08,WHO,,
+686,etoposide,parenteral  general injections  iv,20 mg per  mL in 5 mL ampoule,L01CB01,WHO,,
+701,everolimus,oral  solid  dispersible tablet,2 mg; 3 mg; 5 mg,L01EG02,WHO,,
+702,fentanyl,local  topical  transdermal patch,12 µg/hour; 25 µg/hour; 50 µg/hour; 75 µg/hour; 100 µg/hour,N01AH01,WHO,,
+704,ferrous salt,oral  liquid,25 mg per  mL iron (as sulfate),"B03AA07, B03AA02",WHO,,
+705,ferrous salt + folic acid,oral  solid,60 mg iron + 2.8 mg,"B03AD02, B03AD03, B03AD05",WHO,,
+710,fexinidazole,oral  solid,600 mg,P01CA03,WHO,,
+712,fexofenadine,,,,WHO,,
+713,fifth generation cephalosporins,.,,,WHO,,
+714,filgrastim,parenteral  general injections  sc,120 µg per 0.2 mL in prefilled syringe; 300 µg per 0.5 mL in prefilled syringe; 480 µg per 0.8 mL in prefilled syringe; 300 µg per  mL in 1 mL vial; 480 µg per 1.6 mL in 1.6 mL vial,L03AA02,WHO,,
+715,fingolimod,oral  solid,0.25 mg; 0.5 mg,L04AE01,WHO,,
+716,flomoxef,parenteral  general injections  iv,0.5 g in vial powder for injection; 1 g in vial powder for injection,J01DC14,WHO,,
+717,fluconazole,parenteral  general injections  iv,2 mg per  mL in vial,J02AC01,WHO,,
+719,flucytosine,parenteral  general injections  iv,2.5 g per 250 mL infusion,J02AX01,WHO,,
+720,fludarabine,parenteral  general injections  iv,50 mg in vial (fludarabine phosphate) powder for injection,L01BB05,WHO,,
+721,fludrocortisone,oral  solid,100 µg (acetate),H02AA02,WHO,,
+722,flunisolide,,,,WHO,,
+723,fluorescein,local  ophthalmological  solution (eye drops),1% (sodium salt),S01JA01,WHO,,
+724,fluoride,local  dental  gel,2500 to 12500 ppm fluoride (any type),"A01AA01, A01AA04",WHO,,
+725,fluorouracil,local  topical  ointment,5%,L01BC02,WHO,,
+732,fluoxetine,oral  solid,20 mg (as hydrochloride),N06AB03,WHO,,
+738,fluphenazine,parenteral  general injections  im,25 mg per  mL in ampoule (decanoate); 25 mg per  mL in ampoule (enanthate),N05AB02,WHO,,
+739,flutamide,,,,WHO,,
+740,fluticasone,,,,WHO,,
+741,fluticasone + formoterol,,,,WHO,,
+742,fluticasone furoate + vilanterol,,,,WHO,,
+743,fluvastatin,,,,WHO,,
+745,folic acid,oral  solid,400 µg,B03BB01,WHO,,
+749,fomepizole,parenteral  general injections  iv,5 mg per  mL in 20 mL ampoule (sulfate); 1 g per  mL in 1.5 mL ampoule (base),V03AB34,WHO,,
+750,fosfomycin (injection),parenteral  general injections  iv,2 g in vial (as sodium) powder for injection; 4 g in vial (as sodium) powder for injection,J01XX01,WHO,,
+754,fourth generation cephalosporins,.,,,WHO,,
+755,fresh-frozen plasma,parenteral  general injections  iv,,B05AX03,WHO,,
+756,fulvestrant,parenteral  general injections  iv,250 mg per 5 mL,L02BA03,WHO,,
+757,furosemide,parenteral  general injections  iv,10 mg per  mL in 2 mL ampoule; 10 mg per  mL in 5 mL ampoule,C03CA01,WHO,,
+760,gabapentin,oral  solid,100 mg; 200 mg; 300 mg; 400 mg; 600 mg; 800 mg,N02BF01,WHO,,
+761,gallamine,parenteral  general injections  iv,40 mg per  mL in 2 mL ampoule (gallamine triethiodide),M03AC02,WHO,,
+762,gatifloxacin,oral  solid,200 mg; 400 mg,J01MA16,WHO,,
+763,gefitinib,,,,WHO,,
+764,gemcitabine,parenteral  general injections  iv,200 mg in vial powder for injection; 1 g in vial powder for injection,L01BC05,WHO,,
+766,gentamicin,parenteral  general injections  unspecified,10 mg per  mL in 2 mL vial (as sulfate); 40 mg per  mL in 2 mL vial (as sulfate),J01GB03,WHO,,
+784,glass ionomer cement,local  dental  powder + liquid,single-use capsules: 0.4 g powder + 0.09 mL liquid; multi-use bottle: powder + liquid,,WHO,,
+785,glatiramer acetate,parenteral  general injections  sc,20 mg per  mL in pre-filled syringe; 40 mg per  mL in pre-filled syringe,L03AX13,WHO,,
+787,glecaprevir + pibrentasvir,oral  solid,50 mg + 20 mg granules,J05AP57,WHO,,
+788,glibenclamide,oral  solid,5 mg; 2.5 mg,A10BB01,WHO,,
+789,gliclazide,oral  solid,30 mg controlled-release; 60 mg controlled-release; 80 mg controlled-release,A10BB09,WHO,,
+790,glucagon,parenteral  general injections  unspecified,1 mg per  mL,H04AA01,WHO,,
+791,glucose,parenteral  general injections  iv,5% isotonic; 10% hypertonic,B05CX01,WHO,,
+793,glucose + sodium chloride,parenteral  general injections  iv,4% + 0.18% (equivalent to na+ 30 mmol/l and cl- 30 mmol/l; 5% + 0.9% (equivalent to na+ 150 mmol/l and cl- 150 mmol/l); 5% + 0.45% (equivalent to na+ 75 mmol/l and cl- 75 mmol/l),B05BB02,WHO,,
+794,glutaral,local  topical  solution,2%,V07AV,WHO,,
+795,glyceryl trinitrate,oral  solid,500 µg sublingual tablet,C01DA02,WHO,,
+796,glycopyrronium,,,,WHO,,
+797,golimumab,,,,WHO,,
+801,goserelin,,,,WHO,,
+803,granisetron,,,,WHO,,
+805,griseofulvin,oral  liquid,125 mg per 5 mL,D01BA01,WHO,,
+806,haemophilus influenzae type b vaccine,all vaccines should comply with the who requirements for biological substances.,,J07AG01,WHO,,
+807,haloperidol,oral  liquid,2 mg per  mL,N05AD01,WHO,,
+809,haloperidol decanoate,,,,WHO,,
+810,halothane,respiratory  inhalation  liquid,,N01AB01,WHO,,
+811,heparin sodium,parenteral  general injections  iv,1000 iu per  mL in 1 mL ampoule; 20000 iu per  mL in 1 mL ampoule; 5000 iu per  mL in 1 mL ampoule,B01AB01,WHO,,
+814,hepatitis A vaccine,all vaccines should comply with the who requirements for biological substances.,,J07BC02,WHO,,
+815,hepatitis B vaccine,all vaccines should comply with the who requirements for biological substances.,,J07BC01,WHO,,
+816,homatropine,local  ophthalmological  solution (eye drops),2% (hydrobromide),S01FA05,WHO,,
+818,human papilloma virus (HPV) vaccine,all vaccines should comply with the who requirements for biological substances.,,J07BM01,WHO,,
+819,hydralazine,parenteral  general injections  iv,20 mg in ampoule powder for injection (hydrochloride),C02DB02,WHO,,
+821,hydrochlorothiazide,oral  liquid,50 mg per 5 mL,C03AA03,WHO,,
+824,hydrocortisone,parenteral  general injections  unspecified,100 mg in vial (as sodium succinate),H02AB09,WHO,,
+837,hydromorphone,,,,WHO,,
+838,hydroxocobalamin,parenteral  general injections  im,1 mg per  mL in 1 mL ampoule (as acetate); 1 mg per  mL in 1 mL ampoule (as hydrochloride); 1 mg per  mL in 1 mL ampoule (as sulfate),B03BA03,WHO,,
+839,hydroxycarbamide (hydroxyurea),oral  solid,200 mg; 250 mg; 300 mg; 400 mg; 500 mg; 1 g,L01XX05,WHO,,
+842,hydroxychloroquine,,,,WHO,,
+845,hyoscine butylbromide,parenteral  general injections  unspecified,20 mg per  mL injection,A03BB01,WHO,,
+846,hyoscine hydrobromide,local  topical  transdermal patch,1 mg per 72 hours transdermal patch,A04AD01,WHO,,
+847,hypochlorous acid,local  topical  solution,,V07AV,WHO,,
+848,hypromellose,local  ophthalmological  solution (eye drops),0.3%,S01KA02,WHO,,
+849,ibrutinib,oral  solid,140 mg,L01EL01,WHO,,
+850,ibuprofen,parenteral  general injections  iv,5 mg per  mL,C01EB16,WHO,,
+853,idoxuridine,local  ophthalmological  solution (eye drops),0.1%,S01AD01,WHO,,
+854,ifosfamide,parenteral  general injections  iv,500 mg in vial powder for injection; 1 g in vial powder for injection; 2 g in vial powder for injection,L01AA06,WHO,,
+864,imatinib,oral  solid,100 mg; 400 mg,L01EA01,WHO,,
+867,imipenem + cilastatin,parenteral  general injections  iv,250 mg (as monohydrate) + 250 mg (as sodium salt) powder for injection; 500 mg (as monohydrate) + 500 mg (as sodium salt) powder for injection,J01DH02,WHO,,
+873,imipenem + cilastatin + relebactam,parenteral  general injections  iv,500 mg + 500 mg + 250 mg powder for injection,J01DH56,WHO,,
+876,indapamide,,,,WHO,,
+878,indinavir,oral  solid,400 mg (as sulfate),J05AE02,WHO,,
+879,indometacin,,,,WHO,,
+880,infliximab,,,,WHO,,
+884,influenza vaccine (seasonal),all vaccines should comply with the who requirements for biological substances.,,"J07BB01, J07BB02, J07BB03",WHO,,
+885,"insulin (analogue, long-acting)",parenteral  general injections  sc,100 iu per  mL in 3 mL cartridge; 100 iu per  mL in 3 mL pre-filled pen,"A10AE06, A10AE05, A10AE04",WHO,,
+887,"insulin (human, intermediate-acting)",parenteral  general injections  sc,40 iu per  mL in 10 mL vial as compound insulin zinc suspension or isophane insulin; 100 iu per  mL in 10 mL vial as compound insulin zinc suspension or isophane insulin; 100 iu per  mL in 3 mL cartridge as compound insulin zinc suspension or isophane insulin; 100 iu per  mL in 3 mL pre-filled pen as compound insulin zinc suspension or isophane insulin,A10AC01,WHO,,
+889,"insulin (human, short-acting)",parenteral  general injections  sc,40 iu per  mL in 10 mL vial (soluble); 100 iu per  mL in 10 mL vial (soluble); 100 iu per  mL in 3 mL cartridge (soluble); 100 iu per  mL in 3 mL pre-filled pen (soluble),A10AC01,WHO,,
+891,insulin analogues,not specified,,"A10AE04, A10AE05, A10AB05, A10AD05, A10AB04, A10AC04, A10AD04, A10AB06, A10AE06",WHO,,
+893,insulin degludec,parenteral  general injections  sc,100 units per  mL,,WHO,,
+896,insulin detemir,,,,WHO,,
+899,insulin glargine,parenteral  general injections  sc,100 units per  mL,A10AE04,WHO,,
+902,intraperitoneal dialysis solution,parenteral solution,,,WHO,,
+903,iodine,,,,WHO,,
+905,iodine + potassium iodide (Lugol's solution),oral  liquid,13% w/v (about 130 mg/mL total iodine),H03CA,WHO,,
+906,iohexol,parenteral  general injections  unspecified,140 to 350 mg iodine per  mL in 5 mL ampoule; 140 to 350 mg iodine per  mL in 10 mL ampoule; 140 to 350 mg iodine per  mL in 20 mL ampoule,V08AB02,WHO,,
+907,ipecacuanha,oral  liquid,0.14% ipecacuanha alkaloids calculated as emetine,V03AB01,WHO,,
+908,ipratropium bromide,respiratory  inhalation  aerosol,20 µg per  dose,R03BB01,WHO,,
+910,irinotecan,parenteral  general injections  iv,40 mg per 2 mL in 2 mL vial; 100 mg per 5 mL in 5 mL vial; 500 mg per 25 mL in 25 mL vial,L01CE02,WHO,,
+913,isoflurane,respiratory  inhalation  liquid,,N01AB06,WHO,,
+914,isoniazid,parenteral  general injections  iv,100 mg per  mL,J04AC01,WHO,,
+916,isoniazid + pyrazinamide + rifampicin,oral  solid  dispersible tablet,50 mg + 150 mg + 75 mg,J04AM05,WHO,,
+917,isoniazid + pyridoxine + sulfamethoxazole + trimethoprim,oral  solid,300 mg + 25 mg + 800 mg + 160 mg tablet (scored),J04AC51,WHO,,
+918,isoniazid + rifampicin,oral  solid  dispersible tablet,50 mg + 75 mg,J04AM02,WHO,,
+919,isoniazid + rifapentine,oral  solid,300 mg + 300 mg tablet (scored),J04AC51,WHO,,
+920,isoprenaline,parenteral  general injections  iv,20 µg per  mL in ampoule (hydrochloride),C01CA02,WHO,,
+922,isosorbide dinitrate,oral  solid,5 mg sublingual tablet,C01DA08,WHO,,
+923,itraconazole,oral  liquid,10 mg per  mL,J02AC02,WHO,,
+929,ivermectin,oral  solid  tablet,3 mg,P02CF01,WHO,,
+937,kanamycin,,,,WHO,,
+939,kanamycin (injection),parenteral  general injections  iv,1000 mg powder for injection (vial),J01GB04,WHO,,
+940,ketamine,parenteral  general injections  unspecified,50 mg per  mL in 10 mL vial (as hydrochloride),N01AX03,WHO,,
+941,ketoconazole,oral  solid  tablet,200 mg,H02CA03,WHO,,
+942,lactulose,oral  liquid,3.1 to 3.7 g per 5 mL oral liquid,A06AD11,WHO,,
+943,lamivudine,oral  liquid,50 mg per 5 mL,J05AF05,WHO,,
+944,lamivudine + nevirapine + zidovudine,oral  solid,30 mg + 50 mg + 60 mg tablet; 150 mg + 200 mg + 300 mg tablet,J05AR05,WHO,,
+945,lamivudine + tenofovir,,,,WHO,,
+947,lamivudine + zidovudine,oral  solid,30 mg + 60 mg tablet; 150 mg + 300 mg tablet,J05AR01,WHO,,
+948,lamotrigine,oral  solid,"25 mg tablet; 50 mg tablet; 100 mg tablet; 200 mg tablet; 2 mg tablet (chewable, dispersible); 5 mg tablet (chewable, dispersible); 25 mg tablet (chewable, dispersible); 50 mg tablet (chewable, dispersible); 100 mg tablet (chewable, dispersible); 200 mg tablet (chewable, dispersible)",N03AX09,WHO,,
+949,latanoprost,local  ophthalmological  solution (eye drops),50 µg per  mL eye drops,S01EE01,WHO,,
+950,ledipasvir + sofosbuvir,oral  solid,90 mg + 400 mg tablet,J05AP51,WHO,,
+951,lenalidomide,oral  solid,25 mg,L04AX04,WHO,,
+952,letrozole,oral  solid  dosage form,2.5 mg,L02BG04,WHO,,
+953,leuprorelin,parenteral  general injections  im,7.5 mg in prefilled syringe; 22.5 mg in prefilled syringe,L02AE02,WHO,,
+955,levamisole,oral  solid  tablet,50 mg  (as hydrochloride); 150 mg  (as hydrochloride),P02CE01,WHO,,
+956,levetiracetam,oral  liquid,100 mg per  mL,N03AX14,WHO,,
+958,levodopa,oral  solid,250 mg,N04BA01,WHO,,
+959,levodopa + benserazide,,,,WHO,,
+960,levodopa + carbidopa,oral  solid,100 mg + 10 mg tablet; 250 mg + 25 mg tablet; 100 mg + 25 mg tablet,N04BA02,WHO,,
+961,levofloxacin,oral  solid  dispersible tablet,100 mg,J01MA12,WHO,,
+962,levonorgestrel,oral  solid,750 µg [2]; 1.5 mg [1],G03AD01,WHO,,
+965,levonorgestrel-releasing implant,implant  subdermal,75 mg per  rod (two-rods),G03AC03,WHO,,
+966,levothyroxine,oral  solid,50 µg (sodium salt); 100 µg (sodium salt); 25 µg (sodium salt),H03AA01,WHO,,
+967,lidocaine,parenteral  general injections  iv,20 mg per  mL in 5 mL ampoule (hydrochloride),C01BB01,WHO,,
+969,lidocaine + epinephrine,parenteral  locoregional injections  other,1% (lidocaine hydrochloride or lidocaine sulfate) + 1:200 000 epinephrine in vial; 2% (lidocaine hydrochloride or lidocaine sulfate) + 1:200 000 epinephrine in vial,N01BB52,WHO,,
+970,lindane,local  topical  cream,1%,P03AB02,WHO,,
+971,linezolid,parenteral  general injections  iv,2 mg per  mL in 300 mL bag,J01XX08,WHO,,
+976,liraglutide,parenteral  general injections  sc,6 mg per  mL in 3 mL pre-filled pen,A10BJ02,WHO,,
+977,lisinopril + amlodipine,oral  solid,10 mg + 5 mg; 20 mg + 5 mg; 20 mg + 10 mg,C09BB03,WHO,,
+978,lisinopril + hydrochlorothiazide,oral  solid,10 mg + 12.5 mg; 20 mg + 12.5 mg; 20 mg + 25 mg,C09BA03,WHO,,
+979,lisocabtagene maraleucel,,,,WHO,,
+980,lithium carbonate,oral  solid,300 mg,N05AN01,WHO,,
+981,loperamide,oral  solid  dosage form,2 mg,A07DA03,WHO,,
+982,lopinavir + ritonavir,oral  solid  tablet,100 mg + 25 mg tablet (heat-stable); 200 mg + 50 mg tablet (heat-stable),J05AR10,WHO,,
+983,loratadine,oral  liquid,1 mg per  mL,R06AX13,WHO,,
+984,lorazepam,,,,WHO,,
+986,losartan,oral  solid,25 mg tablet; 50 mg tablet; 100 mg tablet,C09CA01,WHO,,
+988,lovastatin,,,,WHO,,
+990,magnesium sulfate,parenteral  general injections  iv,500 mg per  mL in 2 mL ampoule (equivalent to 1 g in 2 mL; 50% weight/volume),B05XA05,WHO,,
+992,mannitol,parenteral  general injections  iv,10% solution; 20% solution,B05BC01,WHO,,
+994,measles vaccine,all vaccines should comply with the who requirements for biological substances.,,J07BD01,WHO,,
+995,mebendazole,oral  solid  tablet,100 mg (chewable); 500 mg (chewable),P02CA01,WHO,,
+1000,medroxyprogesterone acetate,parenteral  general injections  im,150 mg per  mL in 1 mL vial,G03AC06,WHO,,
+1002,mefloquine,oral  solid,250 mg tablet (hydrochloride),P01BC02,WHO,,
+1005,meglumine antimoniate,parenteral  general injections  im,1.5 g per 5 mL in 5 mL ampoule,P01CB01,WHO,,
+1008,meglumine iotroxate,parenteral  general injections  iv,5 to 8 g iodine (as meglumine) in 100 to 250 mL,V08AC02,WHO,,
+1009,melarsoprol,parenteral  general injections  iv,3.6% in 5 mL ampoule solution (180 mg of active compound),P01CD01,WHO,,
+1011,melphalan,parenteral  general injections  iv,50 mg in vial powder for injection,L01AA03,WHO,,
+1012,meningococcal meningitis vaccine,all vaccines should comply with the who requirements for biological substances.,,"J07AH01, J07AH02, J07AH03, J07AH04, J07AH05, J07AH06, J07AH07, J07AH08, J07AH09, J07AH10",WHO,,
+1013,mercaptopurine,oral  solid,50 mg tablet,L01BB02,WHO,,
+1017,meropenem,parenteral  general injections  iv,500 mg in vial (as trihydrate) powder for injection; 1 g in vial (as trihydrate) powder for injection,J01DH02,WHO,,
+1022,meropenem + vaborbactam,parenteral  general injections  iv,1 g in vial + 1 g in vial powder for injection,J01DH52,WHO,,
+1025,mesalazine,,,,WHO,,
+1027,mesna,parenteral  general injections  iv,100 mg per  mL in 4 mL ampoule; 100 mg per  mL in 10 mL ampoule,V03AF01,WHO,,
+1035,metformin,oral  solid,500 mg (hydrochloride),A10BA02,WHO,,
+1036,methadone,oral  liquid,5 mg per 5 mL (methadone hydrochloride); 10 mg per 5 mL (methadone hydrochloride); 5 mg per  mL concentrate for oral liquid (methadone hydrochloride); 10 mg per  mL concentrate for oral liquid (methadone hydrochloride),N07BC02,WHO,,
+1038,methimazole,oral  solid,5 mg; 10 mg; 20 mg,H03BB02,WHO,,
+1039,methionine,oral  solid,250 mg (dl),V03AB26,WHO,,
+1040,methotrexate,parenteral  general injections  iv,50 mg in vial (as sodium salt),L01BA01,WHO,,
+1055,methoxy polyethylene glycol-epoetin beta,,,,WHO,,
+1056,methyldopa,oral  solid,250 mg,C02AB01,WHO,,
+1058,methylergometrine,,,,WHO,,
+1059,methylphenidate,multiple formulations and strengths.,,N06BA04,WHO,,
+1060,methylprednisolone,parenteral  general injections  iv,40 mg per  mL in 1 mL single-dose vial (as sodium succinate); 40 mg per  mL in 5 mL multi-dose vial (as sodium succinate); 80 mg per  mL in 1 mL single-dose vial (as sodium succinate),H02AB04,WHO,,
+1062,methylthioninium chloride,parenteral  general injections  iv,10 mg per  mL in 10 mL ampoule,V03AB17,WHO,,
+1063,metoclopramide,oral  liquid,5 mg per 5 mL,A03FA01,WHO,,
+1065,metoprolol,,,,WHO,,
+1069,metronidazole,oral  liquid,200 mg per 5 mL (as benzoate),A01AB17,WHO,,
+1085,micafungin,parenteral  general injections  iv,50 mg in vial (as sodium) powder for injection; 100 mg in vial (as sodium) powder for injection,J02AX05,WHO,,
+1086,miconazole,local  topical  cream,2% (nitrate),D01AC02,WHO,,
+1087,midazolam,parenteral  general injections  unspecified,1 mg per  mL in 5 mL vial (for buccal administration); 5 mg per  mL in 1 mL vial (for buccal administration); 5 mg per  mL in 3 mL vial (for buccal administration),N05CD08,WHO,,
+1091,mifepristone - misoprostol,oral  solid,200 mg + 200 µg; 200 mg [1] + 200 µg [4] in co-package,G03XB51,WHO,,
+1093,miltefosine,oral  solid,10 mg; 50 mg,P01CX04,WHO,,
+1096,misoprostol,local  vaginal  tablet,25 µg,G02AD06,WHO,,
+1099,mometasone,,,,WHO,,
+1100,mometasone + formoterol,,,,WHO,,
+1101,morphine,parenteral  general injections  iv,10 mg in 1 mL ampoule (morphine hydrochloride or morphine sulfate),N02AA01,WHO,,
+1103,moxifloxacin,oral  solid  tablet,400 mg,J01MA14,WHO,,
+1105,multiple micronutrient powder,sachets containing,,A11AA01,WHO,,
+1106,multiple micronutrient supplement,tablet containing,,A11AA01,WHO,,
+1107,mumps vaccine,all vaccines should comply with the who requirements for biological substances.,,J07BE01,WHO,,
+1108,mupirocin,local  topical  cream,2% (as mupirocin calcium),D06AX09,WHO,,
+1110,nadroparin,,,,WHO,,
+1112,nalidixic acid,oral  solid,250 mg; 500 mg,J01MB02,WHO,,
+1113,naloxone,parenteral  general injections  unspecified,400 µg per 1 mL in ampoule (naloxone hydrochloride),V03AB15,WHO,,
+1114,naltrexone,parenteral  general injections  im,380 mg in vial (extended-release),N07BB04,WHO,,
+1115,natamycin,local  ophthalmological  suspension,5% eye drops,S01AA10,WHO,,
+1116,nelfinavir,oral  solid,250 mg (as mesilate),J05AE04,WHO,,
+1117,neostigmine,oral  solid,15 mg (neostigmine bromide),N07AA01,WHO,,
+1119,netilmicin,,,,WHO,,
+1121,nevirapine,oral  liquid,50 mg per 5 mL,J05AG01,WHO,,
+1122,niclosamide,oral  solid,500 mg tablet (chewable),P02DA01,WHO,,
+1126,nicotinamide,oral  solid,50 mg,A11HA01,WHO,,
+1127,nicotine replacement therapy,local  topical  transdermal patch,5 to 30 mg per 16 hour; 7 to 21 mg per 24 hour,N07BA01,WHO,,
+1128,nifedipine,oral  solid,10 mg (immediate-release),C08CA05,WHO,,
+1131,nifurtimox,oral  solid  tablet,30 mg (scored); 120 mg (scored),P01CC01,WHO,,
+1133,nilotinib,oral  solid  capsule,150 mg; 200 mg,L01EA03,WHO,,
+1134,nilutamide,,,,WHO,,
+1135,nitrofurantoin,oral  liquid,25 mg per 5 mL oral liquid,J01XE01,WHO,,
+1136,nitrous oxide,respiratory  inhalation,,N01AX13,WHO,,
+1137,nivolumab,parenteral  general injections  iv,10 mg per  mL concentrate solution for infusion,L01FF01,WHO,,
+1139,norethisterone,oral  solid,350 µg,G03AC01,WHO,,
+1142,norethisterone enantate,parenteral  general injections  im,200 mg per  mL in 1 mL ampoule oily solution,G03AC01,WHO,,
+1143,normal immunoglobulin,parenteral  general injections  iv,5% protein solution; 10% protein solution,J06BA02,WHO,,
+1146,nystatin,oral  liquid,100000 iu per  mL,A07AA02,WHO,,
+1147,ocrelizumab,parenteral  general injections  iv,30 mg per  mL in 10 mL vial,L04AG08,WHO,,
+1149,octreotide,parenteral  general injections  im,"20 mg in vial (modified-release, as acetate) plus diluent",H01CB02,WHO,,
+1150,ofloxacin,oral  solid,200 mg; 400 mg,J01MA01,WHO,,
+1154,olanzapine,,,,WHO,,
+1156,omadacycline,parenteral  general injections  iv,100 mg lyophilized powder for injection,J01AA15,WHO,,
+1157,ombitasvir + paritaprevir + ritonavir,oral  solid,12.5 mg + 75 mg + 50 mg tablet,J05AP53,WHO,,
+1158,omeprazole,parenteral  general injections  iv,40 mg in vial,A02BC01,WHO,,
+1161,ondansetron,parenteral  general injections  iv,"2 mg per  mL in 2 mL ampoule (ondansetron base, as hydrochloride)",A04AA01,WHO,,
+1163,oral rehydration salts,"powder for dilution in 200 ml, 500 ml, 1 l",,A07CA,WHO,,
+1165,oral rehydration salts - zinc sulfate,oral  other,ors powder for dilution and zinc sulfate solid oral dosage form 20 mg (co-packaged),A07CA,WHO,,
+1166,oseltamivir,oral  solid,30 mg capsule (as phosphate); 45 mg capsule (as phosphate); 75 mg capsule (as phosphate),J05AH02,WHO,,
+1167,osimertinib,oral  solid,40 mg (as mesylate); 80 mg (as mesylate),L01EB04,WHO,,
+1168,oxaliplatin,parenteral  general injections  iv,50 mg in vial powder for injection; 100 mg in vial powder for injection; 50 mg per 10 mL in 10 mL vial; 100 mg per 20 mL in 20 mL vial; 200 mg per 40 mL in 40 mL vial,L01XA03,WHO,,
+1170,oxamniquine,oral  liquid,250 mg per 5 mL,P02BA02,WHO,,
+1171,oxazolindinones,.,,,WHO,,
+1172,oxycodone,,,,WHO,,
+1173,oxygen,respiratory  inhalation,(medical gas),V03AN01,WHO,,
+1175,oxytetracycline,,,,WHO,,
+1179,oxytocin,parenteral  general injections  unspecified,10 iu per  mL,H01BB02,WHO,,
+1180,p-aminosalicylate sodium,oral  liquid,5.52 g in sachet (equivalent to 4 g p-aminosalicylic acid) powder for oral solution,J04AA01,WHO,,
+1181,p-aminosalicylic acid,oral  solid,4 g granules in sachet,J04AA01,WHO,,
+1182,paclitaxel,parenteral  general injections  iv,6 mg per  mL,L01CD01,WHO,,
+1190,palbociclib,oral  solid,75 mg; 100 mg; 125 mg,L01EF01,WHO,,
+1191,paliperidone,,,,WHO,,
+1193,palonosetron,,,,WHO,,
+1195,pancreatic enzymes,capsule (modified release),10 000 lipase units + 8000 amylase units + 600 protease units; 25 000 lipase units + 18 000 amylase units + 1000 protease units.,A09AA02,WHO,,
+1196,paracetamol (acetaminophen),oral  liquid,125 mg per 5 mL; 120 mg per 5 mL; 250 mg per 5 mL,N02BE01,WHO,,
+1198,paromomycin,parenteral  general injections  im,750 mg paromomycin base (as sulfate),A07AA06,WHO,,
+1200,pegaspargase,parenteral  general injections  iv,3750 units per 5 mL in vial; 3750 units in vial powder for injection,L01XX24,WHO,,
+1201,pegfilgrastim,parenteral  general injections  sc,6 mg per 0.6 mL in pre-filled syringe,L03AA13,WHO,,
+1202,pegylated interferon alfa (2a),parenteral  general injections  sc,180 µg in vial; 180 µg in prefilled syringe,L03AB11,WHO,,
+1203,pegylated interferon alfa (2b),parenteral  general injections  sc,80 µg in prefilled syringe; 100 µg in prefilled syringe,L03AB10,WHO,,
+1204,pembrolizumab,,,,WHO,,
+1206,penicillamine,oral  solid,250 mg,M01CC01,WHO,,
+1208,pentamidine,parenteral  general injections  im,200 mg (as isetionate); 300 mg (as isetionate),P01CX01,WHO,,
+1211,permethrin,local  topical  lotion,1%,P03AC04,WHO,,
+1214,pertussis vaccine,all vaccines should comply with the who requirements for biological substances.,,J07AJ02,WHO,,
+1215,pertuzumab,parenteral  general injections  iv,240 mg per 14 mL in vial concentrated solution,L01FD02,WHO,,
+1216,phenelzine,oral  solid  dosage form,15 mg (as sulfate),N06AF03,WHO,,
+1217,phenobarbital,parenteral  general injections  iv,200 mg per  mL (phenobarbital sodium); 30 mg per  mL (phenobarbital sodium); 60 mg per  mL (phenobarbital sodium),N03AA02,WHO,,
+1219,phenoxymethylpenicillin,oral  liquid,250 mg per 5 mL (as potassium salt) powder for oral liquid,J01CE02,WHO,,
+1223,phenytoin,oral  liquid,30 mg per 5 mL (phenytoin),N03AB02,WHO,,
+1224,phosphorus,oral  other,500 mg in sachet (elemental phosphorus) granules,V03AG05,WHO,,
+1225,phytomenadione,parenteral  general injections  iv,10 mg per  mL in ampoule; 1 mg per  mL in ampoule,B02BA01,WHO,,
+1227,pilocarpine,local  ophthalmological  solution (eye drops),2% (hydrochloride or nitrate); 4% (hydrochloride or nitrate),S01EB01,WHO,,
+1230,piperacillin + tazobactam,parenteral  general injections  iv,2 g (as sodium salt) + 250 mg (as sodium salt) powder for injection; 4 g (as sodium salt) + 500 mg (as sodium salt) powder for injection,J01CR05,WHO,,
+1235,platelets,parenteral  general injections  iv,,B05AX02,WHO,,
+1236,plazomicin,parenteral  general injections  iv,500 mg per 10 mL,J01GB14,WHO,,
+1239,pneumococcal vaccine,all vaccines should comply with the who requirements for biological substances.,,J07AL01,WHO,,
+1240,podophyllotoxin,,,,WHO,,
+1242,podophyllum resin,local  topical  solution,10 to 25%,D06BB04,WHO,,
+1244,poliomyelitis vaccine,all vaccines should comply with the who requirements for biological substances.,,"J07BF01, J07BF02, J07BF03, J07BF04",WHO,,
+1245,polygeline,parenteral  general injections  iv,3.5% injectable solution,,WHO,,
+1247,polymyxin B (injection),parenteral  general injections  iv,500000 iu in vial powder for injection (equivalent to 50 mg polymyxin b base),J01XB02,WHO,,
+1250,polymyxins,.,,,WHO,,
+1251,potassium chloride,oral  liquid,powder for solution,A12BA01,WHO,,
+1253,potassium ferric hexacyanoferrate (Prussian blue),oral  solid,powder for oral administration,V03AB31,WHO,,
+1254,potassium iodide,local  topical  solution,saturated solution,D08AG03,WHO,,
+1256,potassium permanganate,local  topical  solution,aqueous solution: 1:10 000,D08AX06,WHO,,
+1260,povidone iodine,local  topical  solution,10% (equivalent to 1% available iodine),D08AG02,WHO,,
+1261,pralidoxime,.,,V03AB04,WHO,,
+1262,pramipexole,oral  solid,125 µg immediate-release; 250 mg immediate-release; 500 µg immediate-release; 750 µg immediate-release; 1 mg immediate-release; 1.5 mg immediate-release; 375 µg extended-release; 750 µg extended-release; 1.5 mg extended-release; 2.25 mg extended-release; 3 mg extended-release; 3.75 mg extended-release; 4.5 extended-release,N04BC05,WHO,,
+1263,pravastatin,,,,WHO,,
+1265,praziquantel,oral  solid  tablet,600 mg (scored); 500 mg; 150 mg,P02BA01,WHO,,
+1274,precipitated sulfur,local  topical  ointment,,,WHO,,
+1278,prednisolone,oral  liquid,5 mg per  mL,H02AB06,WHO,,
+1296,prednisone,,,,WHO,,
+1307,pretomanid,oral  solid  tablet,200 mg,J04AK08,WHO,,
+1308,primaquine,oral  solid,7.5 mg tablet (as phosphate); 15 mg tablet (as phosphate),P01BA03,WHO,,
+1310,probenecid,oral  solid,500 mg,M04AB01,WHO,,
+1311,procainamide,parenteral  general injections  iv,100 mg per  mL in 10 mL ampoule (hydrochloride),C01BA02,WHO,,
+1312,procaine benzylpenicillin,parenteral  general injections  im,1 g in vial (=1 million iu) powder for injection; 3 g in vial (=3 million iu) powder for injection,J01CE09,WHO,,
+1314,procarbazine,oral  solid,50 mg (as hydrochloride),L01XB01,WHO,,
+1316,progesterone vaginal ring,local  vaginal  vaginal ring,2.074 g micronized progesterone,G03DA04,WHO,,
+1317,proguanil,oral  solid,100 mg tablet (hydrochloride),P01BB01,WHO,,
+1318,promethazine,oral  liquid,5 mg per 5 mL (hydrochloride),R06AD02,WHO,,
+1319,propanol,,,,WHO,,
+1320,propofol,parenteral  general injections  iv,10 mg per  mL; 20 mg per  mL,N01AX10,WHO,,
+1321,propranolol,oral  solid,80 mg tablet (hydrochloride); 40 mg tablet (hydrochloride),C07AA05,WHO,,
+1325,propylthiouracil,oral  solid,50 mg,H03BA02,WHO,,
+1326,protamine sulfate,parenteral  general injections  iv,10 mg per  mL in 5 mL ampoule,V03AB14,WHO,,
+1327,protionamide,,,,WHO,,
+1328,pyrantel,oral  solid  tablet,250 mg (chewable) (as embonate or pamoate),P02CC01,WHO,,
+1332,pyrazinamide,oral  solid  dispersible tablet,150 mg,J04AK01,WHO,,
+1333,pyridostigmine,parenteral  general injections  iv,1 mg in 1 mL ampoule (pyridostigmine bromide),N07AA02,WHO,,
+1334,pyridoxine,oral  solid,25 mg (hydrochloride),A11HA02,WHO,,
+1337,pyrimethamine,oral  solid,25 mg,P01BD01,WHO,,
+1338,quetiapine,,,,WHO,,
+1340,quinidine,oral  solid,200 mg (sulfate),C01BA01,WHO,,
+1341,quinine,parenteral  general injections  iv,300 mg per  mL in 2 mL ampoule (quinine hydrochloride),P01BC01,WHO,,
+1342,rabies vaccine,all vaccines should comply with the who requirements for biological substances.,,J07BG01,WHO,,
+1343,raltegravir,oral  liquid,100 mg granules for oral suspension,J05AJ01,WHO,,
+1344,ranibizumab,.,,S01LA04,WHO,,
+1348,ranitidine,oral  liquid,75 mg per 5 mL (as hydrochloride),A02BA02,WHO,,
+1350,rasburicase,parenteral  general injections  iv,1.5 mg in vial powder and solvent for solution; 7.5 mg in vial powder and solvent for solution,V03AF07,WHO,,
+1351,ravidasvir,oral  solid  tablet,200 mg,J05AP13,WHO,,
+1352,ready to use therapeutic food,biscuit or paste of nutritional composition as determined by the un joint statement on the community-based management of severe acute malnutrition and codex alimentarius guidelines.,,,WHO,,
+1353,realgar-indigo naturalis formulation,oral  solid,270 mg (containing tetra-arsenic tetra-sulfide 30 mg),,WHO,,
+1354,red blood cells,parenteral  general injections  iv,,B05AX01,WHO,,
+1355,resin-based composite (high-viscosity),local  topical  other,single-use capsule or multi-use syringe,,WHO,,
+1356,resin-based composite (low-viscosity),local  topical  other,single-use applicator or multi-use bottle,,WHO,,
+1357,retinol,parenteral  general injections  im,100000 iu in 2 mL ampoule (as palmitate) water-miscible injection,A11CA01,WHO,,
+1358,ribavirin,parenteral  general injections  iv,1000 mg per 10 mL phosphate buffer solution; 800 mg per 10 mL phosphate buffer solution,J05AP01,WHO,,
+1360,ribociclib,,,,WHO,,
+1361,riboflavin,oral  solid,5 mg,A11HA04,WHO,,
+1362,rifabutin,oral  solid,150 mg,J04AB04,WHO,,
+1363,rifampicin,oral  liquid,20 mg per  mL,J04AB02,WHO,,
+1366,rifapentine,oral  solid  tablet,150 mg; 300 mg,J04AB05,WHO,,
+1368,risdiplam,oral  liquid,0.75 mg per  mL powder for oral liquid,M09AX10,WHO,,
+1369,risperidone,oral  solid,0.25 mg; 0.5 mg; 1 mg; 2 mg; 3 mg; 4 mg; 6 mg,N05AX08,WHO,,
+1371,ritonavir,oral  solid,25 mg tablet (heat stable); 100 mg tablet (heat stable),J05AE03,WHO,,
+1372,rituximab,parenteral  general injections  iv,100 mg per 10 mL in 10 mL vial; 500 mg per 50 mL in 50 mL vial,L01FA01,WHO,,
+1377,rivaroxaban,,,,WHO,,
+1379,ropinirole,oral  solid,0.25 mg immediate-release; 0.5 mg immediate-release; 1 mg immediate-release; 2 immediate-release; 3 mg immediate-release; 4 mg immediate-release; 5 mg immediate-release; 2 mg extended-release; 4 mg extended-release; 6 mg extended-release; 8 mg extended-release; 12 mg extended-release,N04BC04,WHO,,
+1380,rotavirus vaccine,all vaccines should comply with the who requirements for biological substances.,,"J07BH01, J07BH02",WHO,,
+1381,rubella vaccine,all vaccines should comply with the who requirements for biological substances.,,J07BJ01,WHO,,
+1382,salbutamol,parenteral  general injections  iv,50 µg per  mL in 5 mL ampoule (as sulfate),R03AC02,WHO,,
+1384,salicylic acid,local  topical  solution,5%,D01AE12,WHO,,
+1387,saquinavir,oral  solid,200 mg; 500 mg,J05AE01,WHO,,
+1388,selenium sulfide,local  topical  suspension,2% detergent-based,D01AE13,WHO,,
+1390,senna,oral  liquid,7.5 mg per 5 mL oral liquid,A06AB06,WHO,,
+1392,sevoflurane,respiratory  inhalation  liquid,,N01AB08,WHO,,
+1393,silver diamine fluoride,local  dental  solution,38% w/v,,WHO,,
+1394,silver nitrate,local  ophthalmological  solution (eye drops),1%,D08AL01,WHO,,
+1395,silver sulfadiazine,local  topical  cream,1%,D06BA01,WHO,,
+1396,simeprevir,oral  solid,150 mg,J05AP05,WHO,,
+1397,simvastatin,oral  solid,5 mg; 10 mg; 20 mg; 40 mg,C10AA01,WHO,,
+1400,smallpox vaccine,all vaccines should comply with the who requirements for biological substances.,,J07BX01,WHO,,
+1401,snake antivenom,.,,J06AA03,WHO,,
+1402,sodium calcium edetate,parenteral  general injections  iv,200 mg per  mL in 5 mL ampoule,V03AB03,WHO,,
+1403,sodium chloride,parenteral  general injections  iv,0.9% isotonic (equivalent to na+ 154 mmol/l and cl- 154 mmol/l),B05XA03,WHO,,
+1404,sodium hyaluronate,,,,WHO,,
+1405,sodium hydrogen carbonate,parenteral  general injections  iv,1.4% isotonic (equivalent to na+ 167 mmol/l and hco3- 167 mmol/l); 8.4% in 10 mL ampoule (equivalent to na+ 1000 mmol/l and hco3- 1000 mmol/l),B05XA02,WHO,,
+1406,sodium nitrite,parenteral  general injections  iv,30 mg per  mL in 10 mL ampoule,V03AB08,WHO,,
+1407,sodium nitroprusside,parenteral  general injections  iv,50 mg in ampoule powder for infusion,C02DD01,WHO,,
+1408,sodium stibogluconate,parenteral  general injections  unspecified,100 mg per  mL in 30 mL vial,P01CB02,WHO,,
+1411,sodium thiosulfate,local  topical  solution,15%,V03AB06,WHO,,
+1413,sofosbuvir,oral  solid  tablet,200 mg; 400 mg,J05AP08,WHO,,
+1414,sofosbuvir + velpatasvir,oral  solid  tablet,200 mg + 50 mg; 400 mg + 100 mg,J05AP55,WHO,,
+1415,somatropin,parenteral  general injections  sc,5 mg in cartridge powder for injection; 5 mg per  mL in 2 mL cartridge,H01AC01,WHO,,
+1416,spectinomycin,parenteral  general injections  unspecified,2 g in vial (as hydrochloride) powder for injection,J01XX04,WHO,,
+1418,spironolactone,oral  solid  tablet,25 mg,C03DA01,WHO,,
+1421,stavudine,oral  liquid,5 mg per 5 mL powder for oral solution,J05AF04,WHO,,
+1422,streptokinase,parenteral  general injections  iv,1.5 million iu in vial powder for injection,B01AD01,WHO,,
+1423,streptomycin (injection),parenteral  general injections  iv,1 g powder for injection (as sulfate) as vial,J01GA01,WHO,,
+1424,succimer,oral  solid,100 mg,,WHO,,
+1425,sulfacetamide,local  ophthalmological  ointment,10% (sodium salt),S01AB04,WHO,,
+1426,sulfadiazine,oral  solid,500 mg,J01EC02,WHO,,
+1428,sulfadimidine,oral  liquid,500 mg per 5 mL,J01EB03,WHO,,
+1429,sulfadoxine + pyrimethamine,oral  solid,500 mg + 25 mg tablet,P01BD51,WHO,,
+1433,sulfamethoxazole + trimethoprim,parenteral  general injections  iv,80 mg + 16 mg per  mL in 10 mL ampoule; 80 mg + 16 mg per  mL in 5 mL ampoule,J01EE01,WHO,,
+1437,sulfasalazine,oral  solid,500 mg,A07EC01,WHO,,
+1440,sumatriptan,oral  solid,50 mg,N02CC01,WHO,,
+1441,"sunscreen, broad-spectrum","topical cream, lotion, gel, ointment, spray with sun protection factor ≥ 50.",,,WHO,,
+1443,suramin sodium,parenteral  general injections  iv,1 g in vial,P01CX02,WHO,,
+1445,suxamethonium,parenteral  general injections  iv,50 mg per  mL in 2 mL ampoule (suxamethonium chloride); powder for injection (suxamethonium chloride) in vial,M03AB01,WHO,,
+1446,tacalcitol,,,,WHO,,
+1447,tacrolimus,parenteral  general injections  iv,5 mg per  mL in 1 mL vial,L04AD02,WHO,,
+1448,tamoxifen,oral  solid,10 mg (as citrate); 20 mg (as citrate),L02BA01,WHO,,
+1450,tedizolid,,,,WHO,,
+1453,telmisartan + amlodipine,oral  solid,40 mg + 5 mg; 80 mg + 5 mg; 80 mg + 10 mg,C09DB04,WHO,,
+1454,telmisartan + hydrochlorothiazide,oral  solid,40 mg + 12.5 mg; 80 mg + 12.5 mg; 80 mg + 25 mg,C09DA07,WHO,,
+1455,tenofovir alafenamide,oral  solid,25 mg,J05AF13,WHO,,
+1456,tenofovir disoproxil fumarate,oral  solid,300 mg tablet (equivalent to 245 mg tenofovir disoproxil),J05AF07,WHO,,
+1459,terbinafine,local  topical  cream,1% terbinafine hydrochloride,D01AE15,WHO,,
+1460,terbutaline,,,,WHO,,
+1462,terizidone,,,,WHO,,
+1463,testosterone,parenteral  general injections  im,200 mg per  mL in 1 mL ampoule (enantate),G03BA03,WHO,,
+1464,tetanus antitoxin,parenteral  general injections  im,50000 iu in vial,J06AA02,WHO,,
+1465,tetanus vaccine,all vaccines should comply with the who requirements for biological substances.,,J07AM01,WHO,,
+1466,tetracaine,local  ophthalmological  solution (eye drops),0.5% (hydrochloride),S01HA03,WHO,,
+1467,tetracycline,oral  solid,250 mg (hydrochloride),J01AA07,WHO,,
+1473,thalidomide,oral  solid,50 mg,L04AX02,WHO,,
+1474,thiamine,oral  solid,50 mg (hydrochloride),A11DA01,WHO,,
+1475,thiopental,,,,WHO,,
+1476,ticagrelor,oral  solid  tablet,60 mg; 90 mg,B01AC24,WHO,,
+1478,tick-borne encephalitis vaccine,all vaccines should comply with the who requirements for biological substances.,,J07BA01,WHO,,
+1479,tigecycline,parenteral  general injections  iv,50 mg in vial powder for injection,J01AA12,WHO,,
+1480,timolol,local  ophthalmological  solution (eye drops),0.25% (hydrogen maleate); 0.5% (hydrogen maleate),S01ED01,WHO,,
+1482,tinidazole,,,,WHO,,
+1483,tioguanine,oral  solid,40 mg,L01BB03,WHO,,
+1484,tiotropium bromide,respiratory  inhalation  powder,18 µg capsule,R03BB04,WHO,,
+1485,tisagenlecleucel,,,,WHO,,
+1486,tislelizumab,parenteral  general injections  iv,100 mg per 10 mL,L01FF09,WHO,,
+1489,tobramycin,,,,WHO,,
+1491,tocilizumab,parenteral  general injections  iv,80 mg per 4 mL in vial; 200 mg per 10 mL in vial; 400 mg per 20 mL in vial,L04AC07,WHO,,
+1492,tolbutamide,oral  solid,500 mg,A10BB03,WHO,,
+1493,torasemide,,,,WHO,,
+1496,toripalimab,parenteral  general injections  iv,240 mg per 6 mL in vial,L01FF13,WHO,,
+1498,tramadol,oral  liquid,100 mg per  mL (hydrochloride),N02AX02,WHO,,
+1499,trametinib,oral  solid,0.5 mg; 2 mg,L01EE01,WHO,,
+1500,tranexamic acid,parenteral  general injections  iv,100 mg per  mL in 10 mL ampoule,B02AA02,WHO,,
+1502,trastuzumab,parenteral  general injections  iv,60 mg in vial powder for injection; 150 mg in vial powder for injection; 440 mg in vial powder for injection,L01FD01,WHO,,
+1503,trastuzumab emtansine,parenteral  general injections  iv,100 mg in vial powder for injection; 160 mg in vial powder for injection,L01FD03,WHO,,
+1504,triamcinolone hexacetonide,parenteral  locoregional injections  intra-articular,20 mg per  mL in vial,H02AB08,WHO,,
+1505,triclabendazole,oral  solid  tablet,250 mg (scored),P02BX04,WHO,,
+1507,trihexyphenidyl,oral  solid,2 mg (hydrochloride); 5 mg (hydrochloride),N04AA01,WHO,,
+1509,trimethoprim,oral  liquid,50 mg per  mL,J01EA01,WHO,,
+1510,triptorelin,,,,WHO,,
+1512,tropicamide,local  ophthalmological  solution (eye drops),0.5%,S01FA06,WHO,,
+1513,tropisetron,,,,WHO,,
+1515,"tuberculin, purified protein derivative",parenteral  locoregional injections  intradermal,,V04CF01,WHO,,
+1516,tubocurarine,parenteral  general injections  iv,10 mg per  mL in 1.5 mL ampoule (tubocurarine chloride),M03AA02,WHO,,
+1517,typhoid vaccine,all vaccines should comply with the who requirements for biological substances.,,J07AP03,WHO,,
+1518,ulipristal,oral  solid,30 mg tablet (ulipristal acetate),G03AD02,WHO,,
+1519,umeclidinium,,,,WHO,,
+1520,urea,local  topical  cream,10%; 5%,D02AE01,WHO,,
+1521,ustekinumab,parenteral  general injections  sc,45 mg per 0.5 mL in vial; 90 mg per  mL in pre-filled syringe,L04AC05,WHO,,
+1522,valaciclovir,,,,WHO,,
+1525,valganciclovir,oral  liquid,50 mg per  mL powder for oral solution,J05AB14,WHO,,
+1526,valproic acid (sodium valproate),oral  solid,200 mg tablet (enteric-coated); 500 mg tablet (enteric-coated),N03AG01,WHO,,
+1529,vancomycin,parenteral  general injections  iv,250 mg in vial (as hydrochloride) powder for injection,J01XA01,WHO,,
+1535,varenicline,oral  solid,0.5 mg; 1 mg,N07BA03,WHO,,
+1536,varicella vaccine,all vaccines should comply with the who requirements for biological substances.,,J07BK01,WHO,,
+1537,vecuronium,parenteral  general injections  iv,10 mg in vial powder for injection (vecuronium bromide),M03AC03,WHO,,
+1538,vemurafenib,,,,WHO,,
+1539,verapamil,parenteral  general injections  iv,2.5 mg per  mL in 2 mL ampoule (hydrochloride),C08DA01,WHO,,
+1541,vinblastine,parenteral  general injections  iv,10 mg in vial (vinblastine sulfate),L01CA01,WHO,,
+1550,vincristine,parenteral  general injections  iv,1 mg in vial (vincristine sulfate); 5 mg in vial (vincristine sulfate),L01CA02,WHO,,
+1564,vinorelbine,parenteral  general injections  iv,10 mg per  mL in 1 mL vial; 10 mg per   mL in 5 mL vial,L01CA04,WHO,,
+1567,voriconazole,parenteral  general injections  iv,200 mg in vial powder for injection,J02AC03,WHO,,
+1569,warfarin,oral  solid,5 mg (sodium salt); 1 mg (sodium salt); 2 mg (sodium salt); 0.5 mg (sodium salt),B01AA03,WHO,,
+1573,water for injection,parenteral  general injections  unspecified,2 mL ampoule; 5 mL ampoule; 10 mL ampoule,,WHO,,
+1574,whole blood,parenteral  general injections  iv,,,WHO,,
+1575,xylometazoline,local  nasal  spray,0.05% w/v equivalent to 0.5 mg per mL,R01AA07,WHO,,
+1576,yellow fever vaccine,all vaccines should comply with the who requirements for biological substances.,,J07BL01,WHO,,
+1577,zanubrutinib,oral  solid,80 mg,L01EL03,WHO,,
+1579,zidovudine,parenteral  general injections  iv,10 mg per  mL in 20 mL vial solution for iv infusion,J05AF01,WHO,,
+1580,zinc sulfate,oral  solid,20 mg,A12CB01,WHO,,
+1581,zoledronic acid,parenteral  general injections  iv,4 mg per 5 mL in 5 mL vial; 4 mg per 100 mL in 100 mL bottle,M05BA08,WHO,,
+1583,zuclopenthixol decanoate,,,,WHO,,
+0,Albumin,Solution,40g (20%),B05AA01,South Africa,,
+1,Azathioprine,Tablet/Capsule,0.5-1mg/kg,L04AX01,South Africa,,
+2,Calcium Gluconate 10%,Injection,10 - 120ml,B05XA19,South Africa,,
+3,Amoxicillin,Tablet/Capsule,1g,J01CA04,South Africa,,
+7,Freeze dried plasma (FDP),Solution,15ml/kg,B05AX03,South Africa,,
+8,Fresh Frozen Plasma (FFP),Solution,15ml/kg,B05AX03,South Africa,,
+9,Furosemide,Tablet/Capsule,40mg,C03CA01,South Africa,,
+10,Hepatitis B immunoglobulin (HBIG),Injection,500 units,J06BB04 ,South Africa,,
+11,Hepatitis B vaccine,Injection,1 dose,J06BB04,South Africa,,
+12,Lactulose,Solution,10-30ml,A06AD11,South Africa,,
+14,Lipase,Tablet/Capsule,30 000 units,A09AA02,South Africa,,
+15,Loperamide,Tablet/Capsule,2-4mg,A07DA03,South Africa,,
+16,Magnesium sulfate,Solution,25-50mmol,B05XA05,South Africa,,
+17,Metoclopramide,Tablet/Capsule,10mg,A03FA01,South Africa,,
+19,Morphine,Injection,10mg,N02AA01,South Africa,,
+20,Oral rehydration solution (ORS),Solution,as requried,A07CA ,South Africa,,
+22,Pantoprazole,Tablet/Capsule,40mg,A02BC02,South Africa,,
+24,PEG/sodium sulphate ,Solution,4 litres,A06AD13,South Africa,,
+25,Prednisone,Tablet/Capsule,0.5mg/kg,H02AB07,South Africa,,
+26,Propranolol,Tablet/Capsule,20-40mg,C07AA05,South Africa,,
+27,Ringer's Lactate,Solution,,B05BB01,South Africa,,
+28,Sodium chloride 0.9%,Solution,1L,B05XA13,South Africa,,
+30,Spironolactone,Tablet/Capsule,100mg,C03DA01,South Africa,,
+31,Tenofovir alafenamide,Tablet/Capsule,25mg,J05AF13,South Africa,,
+32,Tenofovir disoproxil fumarate,Tablet/Capsule,300mg,J05AF07,South Africa,,
+33,Thiamine,Tablet/Capsule,300mg,A11DA01,South Africa,,
+34,Vitamin K1,Injection,10mg,B02BA01,South Africa,,
+35,Adrenaline (epinephrine),Injection,0.01 mL/kg (10 mcg/kg)(maximum per dose = 0.5ml),C01CA24,South Africa,,
+39,Adrenaline (Epinephrine) 1:10 000,Injection,0.1 mL/kg,C01CA24,South Africa,,
+42,Aqueous cream,Cream/ointment/gel,Topical application - dose dependant on size of affected area. Daily application,V4890,South Africa,,
+43,Cetirizine,Solution,5mg ,R06AE07,South Africa,,
+47,Chlorphenamine,Solution,0.1 mg/kg/dose single dose at night,R06AB04,South Africa,,
+51,Dextrose 5%/Sodium chloride 0.9%,Solution,To be calculated according to STG,B05XA03,South Africa,,
+52,Dobutamine,Injection,5-15 mcg/kg/minute,C01CA07,South Africa,,
+54,Freeze dried (lyophilised) plasma (FDP),Solution,1 unit for each unit of  emergency blood transfused,B05AX03,South Africa,,
+55,Hydrocortisone,Injection,1 - 2 mg/kg/dose 6 hourly,H02AB09,South Africa,,
+57,Lidocaine (Lignocaine),Injection,0.5 mg/kg,N01BB02,South Africa,,
+58,Omeprazole,Tablet/capsule/granules,0.4 - 0.8 mg/kg/dose,A02BC01,South Africa,,
+59,Ondansetron,Tablet/capsule/granules,0.1 - 0.2 mg/kg 12 hourly,A04AA01,South Africa,,
+62,Povidone iodine 0.5%,Cream/ointment/gel,Topical application - dose dependant on size of affected area. Daily application,D08AG02,South Africa,,
+63,Promethazine,Injection,0.25 - 0.5 mg/kg/dose,R06AD02,South Africa,,
+64,Ranitidine,Injection,1 mg/kg 6 hourly,A02BA02,South Africa,,
+69,Salbutamol ,Solution,1 mL in NaCl 0.9% at 20 min intervals,R03AC02,South Africa,,
+70,Silver-sulphadiazine 1%,Cream/ointment/gel,Topical application - dose dependant on size of affected area. Daily application,D06BA01,South Africa,,
+71,Sodium Chloride 0.9%,Solution,1mL/hr (0.02 mcg/kg/minute),B05XA03,South Africa,,
+80,Tetanus immunoglobulin,Injection,500 IU,J06BB02,South Africa,,
+81,Tetanus Toxoid Vaccine (TT),Injection,0.5 ml,J07AM01,South Africa,,
+82,Aciclovir,Solution,250 mg/m2/dose,D06BB03,South Africa,,
+84,Chlorhexidine,Solution,0.2%. 15 mL,A01AB03,South Africa,,
+86,Lidocaine with adrenaline (epinephrine),Injection,,N01BB52 ,South Africa,,
+87,Metronidazole,Solution,7.5mg/kg/dose,A01AB17,South Africa,,
+91,Nystatin,Suspension,100 000 IU/mL,A07AA02,South Africa,,
+92,Paracetamol,Tablet/Capsule,1g,N01BA03,South Africa,,
+95,Petroleum jelly,Ointment,,D02AC,South Africa,,
+96,Tetracaine,Ointment,0.005,N01BA03,South Africa,,
+97,Amoxicillin/clavulanic acid,Tablet/Capsule,875/125mg,J01CR02,South Africa,,
+100,Azithromycin,Tablet/Capsule,500mg,J01FA10,South Africa,,
+103,Ceftriaxone,Injection,1g,J01DD04,South Africa,,
+104,Ciprofloxacin,Tablet/Capsule,500mg,J01MA02,South Africa,,
+110,Vancomycin,Injection,125mg,J01XA01,South Africa,,
+111,Amikacin,Injection,15mg/kg,J01GB06,South Africa,,
+118,Amphotericin B deoxyxholate,Injection,1mg/kg,J02AA01,South Africa,,
+119,Aspirin,Tablet/Capsule,150mg,B01AC06,South Africa,,
+120,Cryoprecipitate,Solution,1 unit/10kg,,South Africa,,
+121,Dextrose 5%,Injection,,B05BA03,South Africa,,
+122,Enoxaparin,Injection,1mg/kg,B01AB05,South Africa,,
+128,Factor IX concentrate,Solution,40units/kg,B02BD04,South Africa,,
+132,Factor VIII concentrate,Solution,30 IU/kg/dose,B02BD02,South Africa,,
+137,Ferrous Fumarate,Tablet/Capsule,200mg (+-65mg),B03AA02,South Africa,,
+138,Ferrous sulfate,Tablet/Capsule,170mg (+- 55mg elemental iron),B03AA07,South Africa,,
+139,Folic Acid,Tablet/Capsule,5mg,B03BB01,South Africa,,
+142,Haemophilus influenza vaccine type B,Injection,0.5ml,J07BB,South Africa,,
+143,Hydroxyurea,,,,South Africa,,
+144,Iron dextran,Injection,100-200mg,B05AA05,South Africa,,
+145,Iron sucrose,Injection,200mg ,B05AA05,South Africa,,
+146,Methylprednisolone acetate,Injection,1 g,H02AB04,South Africa,,
+147,Polyvalent pneumococcal vaccine,Injection,0.5ml,J07AL01,South Africa,,
+150,Rivaroxaban,Tablet/Capsule,15 - 20mg  ,B01AF01,South Africa,,
+152,Tranexamic acid,Tablet/Capsule,25mg/kg/dose,B02AA02,South Africa,,
+155,Unfractionated heparin,Injection,5000 units,B01AB01,South Africa,,
+156,Vitamim B12,Injection,1mg,B03BA02,South Africa,,
+157,Warfarin,Tablet/Capsule,5mg,B01AA03,South Africa,,
+161,Albendazole,Solution,7.5mg/kg/dose ,P02CA03,South Africa,,
+164,Chlorhexidine 0.2%,Gargle,10ml,A01AB03,South Africa,,
+168,Colestyramine,Oral Powder,240mg/kg/day ,C10AC01,South Africa,,
+169,Dextrose 10%,Injection,10ml/kg (Mix Dextrose 50% with 8ml/kg water for injection to make Dextrose 10%),B05BA03,South Africa,,
+176,Dextrose 50%,Injection,,B05XA03,South Africa,,
+177,Diazepam,Injection,0.2mg/kg,N05BA01,South Africa,,
+178,Folic acid,Tablet/capsule/granules,2.5mg,B03BB01,South Africa,,
+183,Hydrochlorothiazide,Tablet/capsule/granules,1mg/kg/dose  ,C03AA03,South Africa,,
+184,Ibuprofen,Solution,5-10mg/kg/dose ,M01AE01,South Africa,,
+186,Iron (elemental),Solution,2mg/kg/dose,B03AA,South Africa,,
+188,Ispaghula husk,Oral Powder,1.75-3.5g,A06AC01,South Africa,,
+191,Lidocaine (Lignocaine) 2%,Cream/ointment/gel,3mg/kg/dose,N01BB02,South Africa,,
+192,Liquid Paraffin,Solution,1-3ml/kg/day,A06AA01,South Africa,,
+193,Magnesium Sulphate 50%,Injection,0.32ml/kg,B05XA05,South Africa,,
+194,Mebendazole,Solution,100mg ,P02CA01,South Africa,,
+201,Midazolam,Injection,0.1mg/kg,N05CD08,South Africa,,
+202,Multivitamin,Solution,5ml ,,South Africa,,
+204,Octreotide,Injection,1-2 mcg/kg,H01CB01,South Africa,,
+213,Pancreatic enzymes (lipase/amylase/protease),Tablet/capsule/granules,,,South Africa,,
+219,Phenobarbitone,Injection,20mg/kg,N03AA02,South Africa,,
+222,Phosphate-containing enema,Solution,0.32-1.0mmol/kg,A06AG01,South Africa,,
+223,"Phosphate-containing enema (sodium phosphate 6 g, sodium biphosphate 16 g/100 mL)",Solution,32ml (2-5 years); 64ml (5-11 years),A06AG,South Africa,,
+224,Polyethylene glycol 59g/l + sodium sulphate,Oral Powder,10-25ml/kg/hour,A06AD15,South Africa,,
+228,Potassium Chloride,Solution,25-50mg/kg/dose,B05XA01,South Africa,,
+236,Sodium bicarbonate 4.2%,Solution,0.3 x base deficit x weight,B05XA02,South Africa,,
+241,Trace Element Mix ,Solution,2.5ml,A11AA04,South Africa,,
+244,Vitamin A (retinol),Capsule,50 000 IU (<6 months); 100 000 IU (6-11 months); 200 000 IU (12 months - 5 years),A11CA,South Africa,,
+245,Vitamin D,Solution,5000 IU ,A11CC,South Africa,,
+251,Zinc,Solution,10mg/day if <10kg; 20mg/day if >10kg,A12CB,South Africa,,
+259,Amethocaine,Cream,0.01,,South Africa,,
+261,Bismuth subgallate compound,Ointment,,C05AX00,South Africa,,
+264,Hyoscine butylbromide,Tablet/Capsule,10mg  ,M01AE01,South Africa,,
+283,Sennosides A and B,Tablet/Capsule,13.5 mg,A06AB06,South Africa,,
+287,Zinc (elemental),Solution,10 mg,A12CB01 ,South Africa,,
+290,Ampicillin,Injection,50mg/kg/dose,J01CA01,South Africa,,
+297,Cefepime,Injection,2g,J01DE01,South Africa,,
+298,Cefotaxime,Injection,50mg/kg/dose,J01DD01,South Africa,,
+314,Gentamicin,Injection,6mg/kg,J01GB03,South Africa,,
+317,Imipenem/cilastatin,Injection,1000/1000mg,J01DH51,South Africa,,
+318,Meropenem,Injection,1g,J01DH02,South Africa,,
+326,Piperacillin/tazobactam,Injection,4.5g,J01CA12,South Africa,,
+327,Trimethoprim/Sulfamethoxazole (Cotrimoxazole),Solution,5mg/kg/dose ,J01EE01,South Africa,,
+340,Adenosine,Injection,6mg,C01EB10,South Africa,,
+343,Alteplase,Injection,15mg; 0.75mg/kg; 0.5mg/kg,B01AD02,South Africa,,
+346,Amiodarone,Tablet/Capsule,200mg,C01BD01,South Africa,,
+349,Amlodipine,Tablet/Capsule,5mg,C08CA01,South Africa,,
+350,Atenolol,Tablet/Capsule,50mg,C07AB03,South Africa,,
+352,Atorvastatin,Tablet/Capsule,10mg,C10AA05,South Africa,,
+353,Atropine,Injection,0.6-1.2mg,A03BA01,South Africa,,
+354,Carvedilol,Tablet/Capsule,3.125-25mg,C07AG02,South Africa,,
+356,Clopidogrel,Tablet/Capsule,75mg,B01AC04,South Africa,,
+358,Digoxin,Tablet/Capsule,0.125mg,C01AA05,South Africa,,
+359,Enalapril,Tablet/Capsule,2.5-10mg,C09AA02,South Africa,,
+364,Glyceryl trinitrate,Injection,5-10mcg/minute,C01DA02,South Africa,,
+369,Influenza vaccine,Injection,0.5ml,J07BB,South Africa,,
+370,Isosorbide dinitrate,Tablet/Capsule,20-30mg,C01DA08,South Africa,,
+372,Isosorbide mononitrate,Tablet/Capsule,10-20mg,C01DA14,South Africa,,
+373,Labetalol,Injection,1-2mg/kg,C07AG01,South Africa,,
+375,Losartan,Tablet/Capsule,50-100mg,C09CA01,South Africa,,
+381,Rifampicin,Tablet/Capsule,7.5mg/kg,J04AB02,South Africa,,
+382,Rosuvastatin,Tablet/Capsule,10mg,C10AA07,South Africa,,
+383,Simvastatin,Tablet/Capsule,10mg,C10AA01,South Africa,,
+387,Streptokinase,Injection,1.5 MU,B01AD01,South Africa,,
+392,Verapamil,Tablet/Capsule,40-120mg,C08DA01,South Africa,,
+393,"Combined oral contraceptive, low dose",Tablet/capsule/granules,,G03AA,South Africa,,
+402,Ferrous gluconate (250mg/5ml = 30mg elemental iron/5ml),Solution,3 mg/kg/dose  (elemental),B03AA,South Africa,,
+403,Ferrous gluconate (350mg/5ml = 40mg elemental iron/5ml),Elixir,3 mg/kg/dose  (elemental),B03AA03,South Africa,,
+404,Ferrous lactate (25mg/ml = 25mg elemental iron/ ml),Solution,3 mg/kg/dose  (elemental),B03AA,South Africa,,
+411,"Haemophilus influenzae, type B (Hib) booster vaccine ",Injection,0.5 mL,J07AG,South Africa,,
+436,Meningococcal conjugate vaccine,Injection,0.5 mL,J07AH,South Africa,,
+437,Methylprednisolone,Injection,30 mg/kg/dose (maximum 1g),H02AB04,South Africa,,
+447,Pneumococcus conjugate vaccine (PCV-13),Injection,0.5 mL,J07AL02,South Africa,,
+449,Pneumococcus conjugate vaccine (PCV-13) ,Injection,,J07AL02,South Africa,,
+450,Pneumococcus polysaccharide (PPV-23) vaccine,Injection,,J07AL01,South Africa,,
+465,Vitamin B12,Injection,100 mcg,B03BA,South Africa,,
+470,Ferrous fumarate,Tablet/Capsule,200mg-400mg,B03AA02 ,South Africa,,
+471,Ferrous gluconate,Solution,2.5mL,B03AA03 ,South Africa,,
+472,Ferrous lactate,Solution,0.6mL,,South Africa,,
+475,Glucose,Solution,10%. 10mL/kg,V06DC01,South Africa,,
+477,Iron,Solution,1-2mg/kg/dose,B03A,South Africa,,
+481,Nicotinamide,Solution,50mg,A11HA01,South Africa,,
+483,Pyridoxine,Solution,12.5mg,A11HA02 ,South Africa,,
+495,Benzathine benzylpenicillin,Injection,1.2 MU,J01CE08,South Africa,,
+496,Benzylpenicillin (Penicillin G) ,Injection,5 MU,J01CE01,South Africa,,
+498,Cefazolin,Injection,2g,J01DB04,South Africa,,
+504,Clindamycin,Injection,600mg,J01FF01,South Africa,,
+506,Cloxacillin,Injection,3g,J01CF02,South Africa,,
+515,Phenoxymethylpenicillin,Tablet/Capsule,250mg,J01CE02,South Africa,,
+528,Aqueous Cream,Cream,,,South Africa,,
+529,Betamethasone  ,Ointment,0.1%,D07AC01,South Africa,,
+533,Clotrimazole,Ointment,0.01,D01AC01,South Africa,,
+534,Coal tar ,Ointment,0.05,,South Africa,,
+536,Cyproterone acetate + ethinyl estradiol,Tablet/Capsule,2mg/35mcg,G03HB01,South Africa,,
+537,Emulsifying ointment,Ointment,,,South Africa,,
+538,Fluconazole,Tablet/Capsule,200mg,J02AC01,South Africa,,
+541,Podophyllin ,Ointment,0.2,D06BB04,South Africa,,
+542,Podophyllotoxin,Solution,0.5%,D06BB04,South Africa,,
+543,Povidone iodine,Cream,0.05,D08AG02,South Africa,,
+544,Selenium sulfide,Suspension,2.5%,D01AE13,South Africa,,
+545,Sodium chloride,Solution,0.9%,,South Africa,,
+556,Captopril,Tablet/capsule/granules,0.15 - 0.3 mg/kg/dose (maximum = 2mg/kg/dose),C09AA01,South Africa,,
+583,Ketamine,,,C01EB10,South Africa,,
+585,Lidocaine (lignocaine) 1%,Injection,refer to STGs ,C01BB01,South Africa,,
+590,Phenylephrine,Injection,,C01CA06,South Africa,,
+620,Benzathine Benzylpenicillin,Injection,600 000IU ,J01CE08,South Africa,,
+626,Cefalexin,Tablet/Capsule,500mg,J01DB01,South Africa,,
+633,Flucloxacillin,Tablet/Capsule,500mg,J01CF05,South Africa,,
+640,Anti-D Immunoglobulin,Injection,0.1mg/kg,J06BB01,South Africa,,
+644,Citalopram,Tablet/Capsule,10mg,N06AB04,South Africa,,
+645,Clomifene,Tablet/Capsule,50mg,G03GB02,South Africa,,
+646,Combined oral contraceptive,Tablet/Capsule,1 tablet,,South Africa,,
+648,Conjugated estrogens,Tablet/Capsule,0.625mg,G03CA57,South Africa,,
+649,Cu T380A,IUCD,,G02BA02,South Africa,,
+650,Ethinylestradiol,Tablet/Capsule,50mcg,G03CA01,South Africa,,
+651,Fluoxetine,Tablet/Capsule,20mg,N06AB03,South Africa,,
+652,Letrozole,Tablet/Capsule,2.5mg,L02BG04,South Africa,,
+653,Levonorgestrel,Tablet/Capsule,1.5mg,G03AD01,South Africa,,
+655,Medroxyprogesterone,Injection,150mg,G03AC06,South Africa,,
+658,Methotrexate,Injection,50mg/m2,L04AX03,South Africa,,
+661,Mifepristone,Tablet/Capsule,200mg,G03XB01,South Africa,,
+662,Misoprostol,Tablet/Capsule,400mcg,G02AD06,South Africa,,
+673,Norethisternone,Tablet/Capsule,5mg,G03AC01,South Africa,,
+675,Oxytocin,Injection,20 millunits/ml,H01BB02,South Africa,,
+676,Tranexamic Acid,Tablet/Capsule,1g,B02AA02,South Africa,,
+678,Benzoyl peroxide 5%,Cream/ointment/gel,Quantity dependant on size of affected area,D10AE01,South Africa,,
+679,Betamethasone 0.1%,Cream/ointment/gel,Quantity dependant on size of affected area,D07AC01,South Africa,,
+680,Betamethasone 1%,Solution,Quantity dependant on size of affected area,D07AC01,South Africa,,
+681,Calamine,Lotion,Apply ,D02AB,South Africa,,
+691,Clotrimazole 1%,Cream/ointment/gel,Quantity dependant on size of affected area,D01AC01,South Africa,,
+697,Hydrocortisone 1%,Cream/ointment/gel,Quantity dependant on size of affected area,D07AA02,South Africa,,
+701,Podophyllin resin 20%,Cream/ointment/gel,Apply ,D06BB04,South Africa,,
+705,Salicylic Acid 2%,Cream/ointment/gel,Quantity dependant on size of affected area,D02AF,South Africa,,
+706,Salicylic Acid 25%,Cream/ointment/gel,Apply ,D02AF,South Africa,,
+707,Sunscreen ,Cream/ointment/gel/lotion,Quantity dependant on size of affected area,,South Africa,,
+708,Tretinoin 0.05%,Cream/ointment/gel,Quantity dependant on size of affected area,D10AD01,South Africa,,
+709,White soft paraffin ,Cream/ointment/gel,Quantity dependant on size of affected area,,South Africa,,
+716,Benzyl benzoate ,Lotion,0.25,P03AX01,South Africa,,
+736,Emulsifying Ointment,Ointment,,,South Africa,,
+744,Permethrin ,Lotion,0.05,P03AC04,South Africa,,
+747,Salicylic acid ,Solution,15-30%,D01AE12,South Africa,,
+748,Salicylic Acid ,Solution,0.02,D01AE12,South Africa,,
+750,Tincture of iodine,Cream,,,South Africa,,
+751,Tretinoin,Ointment,,D01AD01,South Africa,,
+752,Zinc and castor oil ,Ointment,,D02AB,South Africa,,
+753,Zinc Oxide,Ointment,,D02AB,South Africa,,
+763,Doxycycline,Tablet/capsule/granules,100mg,J01AA02,South Africa,,
+781,Abacavir,Tablet/Capsule,600mg,J05AF06,South Africa,,
+783,Anti-D immunoglobulin,Injection,50mcg,J06BB01,South Africa,,
+788,"Calcium, elemental",Tablet/Capsule,500mg,A12AA04,South Africa,,
+789,Clonazepam,Injection,2mg,N03AE01,South Africa,,
+790,Dexamethasone,Injection,8mg,H02AB02,South Africa,,
+794,Dinoprostone,Gel,1mg,G02AD02,South Africa,,
+796,Dolutegravir,Tablet/Capsule,50mg,J05AJ03,South Africa,,
+797,Ergometrine,Injection,0.5mg,G02AB03,South Africa,,
+803,Hydralazine,Tablet/Capsule,25mg,C02DB02,South Africa,,
+805,Indomethacin,Tablet/Capsule,25-50mg,M01AB01,South Africa,,
+806,Insulin,Injection,0.1 units/kg,A10AD,South Africa,,
+808,"Insulin, biphasic",Injection,0.5 units/kg,A10AD01 ,South Africa,,
+812,Lorazepam,Injection,4mg,N05BA06,South Africa,,
+817,Metformin,Tablet/Capsule,500mg,A10BA02,South Africa,,
+818,Methyldopa,Tablet/Capsule,250-750mg,C02AB01,South Africa,,
+823,Nevirapine,Tablet/Capsule,200mg,J05AG01,South Africa,,
+824,Nifedipine,Tablet/Capsule,10mg,C08CA05,South Africa,,
+832,Progesterone,Pessary,200mg,G03DA04,South Africa,,
+839,"Tenofovir disoproxil, lamivudine, dolutegravir",Tablet/Capsule,300/300/50 mg,J05AR27,South Africa,,
+843,Vitamin B complex,Injection,10ml,A11EA,South Africa,,
+845,Alfacalcidol,Tablet/capsule/granules,0.25mcg,A11CC03,South Africa,,
+847,Calcium Carbonate (420mg = 168mg elemental calcium),Chewable tablet ,1 - 4 tablets (equivalent to 0.168-0.672g elemental calcium),A12AA04,South Africa,,
+850,Cyclophosphamide,Solution,2mg/kg/dose,L01AA01,South Africa,,
+857,Erythropoietin,Injection,75units/kg/week ,,South Africa,,
+869,"Insulin, soluble ",Injection,0.1 units/kg,B05BA03,South Africa,,
+876,"Multivitamin (with pyridoxine, other B vitamins, vitamin C 30 mg
+and vitamin D 400 IU.)",Solution,5mL,,South Africa,,
+877,Pneumococcal polysaccharide vaccine (PPV),Injection,0.5mL,C09AA02,South Africa,,
+888,Sodium Bicarbonate ,Solution,1mmol/kg/dose ,B05CB04,South Africa,,
+893,Sodium polystyrene sulfonate,Oral Powder,1g/kg/dose  ,V03AE01,South Africa,,
+898,Varicella-zoster vaccine,Injection,0.5mL,C09AA02,South Africa,,
+900,"Abacavir, lamivudine, dolutegravir ",Tablet/Capsule,600/300mg/50mg,J05AR13,South Africa,,
+904,BCG (Bacillus Calmette-Guerin) vaccine,Injection,,L03AX03,South Africa,,
+906,bOPV (Oral polio vaccine),Solution,,J07BF04,South Africa,,
+907,Calcium Gluconate,Solution,10%,B05XA19,South Africa,,
+909,Chloramphenicol 1%,Ointment,1%,S02AA01 ,South Africa,,
+912,Dextrose,Solution,2.5–5 mL/kg of 10% dextrose  (250–500 mg/kg) ,,South Africa,,
+916,Estradiol valerate,Tablet/Capsule,1 –2 mg,G03CA03 ,South Africa,,
+917,Estradiol valerate/cyproterone acetate,Tablet/Capsule,2 mg for 11 days. 2mg/1mg for 10 days,G03HB01 ,South Africa,,
+918,Estradiol/norethisterone acetate,Tablet/Capsule,1mg/0.5mg or 2mg/1mg,G03FA01 ,South Africa,,
+919,"Ethinylestradiol, levonorgestrel",Tablet/Capsule,,G03AB03 ,South Africa,,
+946,Naloxone,Injection,0.1 mg/kg,A06AH04 ,South Africa,,
+958,"Tenofovir disoproxil fumarate, lamivudine, dolutegravir",Tablet/Capsule,300/300/50mg,J05AR27,South Africa,,
+960,Vitamin K (phytomenadione),Injection,1 mg,B02BA01,South Africa,,
+970,Fosfomycin,Tablet/Capsule,3g,J01XX01,South Africa,,
+972,Nitrofurantoin,Tablet/Capsule,100mg,J01XE01,South Africa,,
+975,Procaine Penicillin,Injection,50 000 units/kg,J01CE09,South Africa,,
+976,Trimethoprim/Sulfamethoxazole (cotrimoxazole),Tablet/Capsule,160/800 mg,J01EE01,South Africa,,
+977,Aluminium hydroxide,Tablet/Capsule,300mg/5ml,A02AB01,South Africa,,
+978,Calciferol,Tablet/Capsule,50 000IU,A11CC05,South Africa,,
+979,Calcitriol,Tablet/Capsule,0.25-4mcg,A11CC04,South Africa,,
+983,Diclofenac,Injection,75mg,M01AB05,South Africa,,
+984,Doxazosin,Tablet/Capsule,4mg,C02CA04,South Africa,,
+986,Erythropoietin alpha or beta,Injection,40-50 IU/kg/dose,B03XA01,South Africa,,
+995,Oxybutynin,Tablet/Capsule,2.5-5mg,G04BD04,South Africa,,
+1005,Testosterone  ,,See section 8.3,G03BA03 ,South Africa,,
+1006,Tramadol,Injection,50-100mg,N02AX02,South Africa,,
+1013,Carbimazole,Tablet/capsule/granules,0.5mg/kg,H03BB01,South Africa,,
+1014,Desmopressin,Tablet/capsule/granules,50-300mcg/day (maximum dose = 1200mcg/day) ,H01BA02,South Africa,,
+1020,Dextrose 5%/Sodium chloride (0.9% or 0.45%),Solution,100ml/kg/24 hours ,B05XA03,South Africa,,
+1024,Diazoxide,Tablet/capsule/granules,5mg/kg/day (up to 15mg/kg/day),V03AH01,South Africa,,
+1026,Fludrocortisone acetate,Tablet/capsule/granules,5mcg/kg/day (range = 50 - 200mcg daily) ,H02AA02,South Africa,,
+1027,Glucagon,Injection,0.5mg ,H04AA01,South Africa,,
+1043,"Insulin, short acting",Injection,0.06 - 0.12 units/kg,A10A,South Africa,,
+1046,Levothyroxine (T4),Tablet/capsule/granules,10-15 mcg/kg,H03AA01,South Africa,,
+1056,Potassium Chloride 15%,Injection,20ml (40mmol) ,,South Africa,,
+1058,Sodium Chloride,Solution,1 - 2g/daily,A12CA01,South Africa,,
+1059,Sodium Chloride 0.45%,Solution,1L,,South Africa,,
+1063,Sodium Chloride 5%,Solution,90ml,,South Africa,,
+1070,Etonorgestrel,Implant,68mg,G03AC08,South Africa,,
+1096,Alendronic Acid,Tablet/Capsule,70mg,M05BA04,South Africa,,
+1098,Bezafibrate,Tablet/Capsule,400mg,C10AB02,South Africa,,
+1099,Bromocriptine,Tablet/Capsule,1.25mg,N04BC01,South Africa,,
+1113,Fludrocortisone,Tablet/Capsule,50-100mcg,H02AA02,South Africa,,
+1114,Glibenclamide,Tablet/Capsule,2.5 - 15mg,A10BB01,South Africa,,
+1115,Glimepiride,Tablet/Capsule,1-8mg,A10BB12,South Africa,,
+1121,"Insulin, intermediate acting",Injection,0.6 units/kg,A10AC,South Africa,,
+1122,"Insulin, intermediate to long acting",Injection,10 units,A10AC,South Africa,,
+1127,Lugol's Iodine,Solution,10 drops in milk,H03CA ,South Africa,,
+1136,Testosterone cypionate,Injection,200-300mg,G03BA03,South Africa,,
+1137,Vitamin D (calciferol),Tablet/Capsule,800 units,A11CC05,South Africa,,
+1138,Zoledronic Acid,Injection,4mg,M05BA08,South Africa,,
+1139,Flucytosine,Tablet/capsule/granules,100mg/kg/day,J02AX01,South Africa,,
+1157,Artemether/lumefantrine,Solution,1 - 4 tablets ,P01BF01,South Africa,,
+1159,Artesunate,Injection,2.4mg/kg,P01BE03,South Africa,,
+1170,Chlorhexidine 0.05%,Solution,Flush wound ,D08AG02,South Africa,,
+1171,Chloroquine,Solution,5mg base/kg,P01BA01,South Africa,,
+1185,Equine-derived Rabies Immunoglobulin (ERIG),Injection,40 IU/kg,J06BB05,South Africa,,
+1186,Ethambutol,Tablet/capsule/granules,20-25mg/kg,J04AK02,South Africa,,
+1187,Ceftazidime,Injection,50mg/kg/dose ,J01DD02,South Africa,,
+1200,Ganciclovir,Injection,5mg/kg over 1 hour ,J05AB06,South Africa,,
+1201,Human normal immunoglobulin,Injection,,J06BA01,South Africa,,
+1204,Human-derived Rabies Immunoglobulin (HRIG),Injection,20 IU/kg,J06BB05,South Africa,,
+1205,Mannitol,Injection,250mg/kg,B05BC01,South Africa,,
+1211,Miconazole,Cream/ointment/gel,Apply ,G01AF04,South Africa,,
+1212,Miconazole 2%,Cream/gel,Apply ,D01AC02,South Africa,,
+1213,Nystatin 10 000IU/ml,Solution,1mL,A07AA02,South Africa,,
+1217,Povidone iodine 10%,Cream/ointment/gel,Apply ,D08AG02,South Africa,,
+1218,Praziquantel,Solution,40mg/kg  ,P02BA01,South Africa,,
+1222,Primaquine,Solution,0.25mg base/kg/day,P01BA03,South Africa,,
+1224,Quinine,Solution,10mg/kg/dose ,P01BC01,South Africa,,
+1226,Rabies vaccine,Injection,1 amp/dose,J07BG01,South Africa,,
+1237,Tetanus Immunoglobulin,Injection,3 000 IU,J06BB02,South Africa,,
+1243,Valganciclovir,Solution,16mg/kg,J05AB14,South Africa,,
+1245,Varicella-zoster immunoglobulin,Injection,1ml (100 units),J06BB03,South Africa,,
+1265,Clarithromycin,Tablet/capsule/granules,7.5mg/kg/dose ,J01FA09,South Africa,,
+1289,Amitriptyline,Tablet/Capsule,10mg,N06AA09,South Africa,,
+1308,"Abacavir, Lamivudine, Lopinavir/ritonavir",Tablet/capsule/granules,30/15/40/10mg,J05AR,South Africa,,
+1309,"Atazanavir, ritonavir",Tablet/capsule/granules,by weight band,J05AR23,South Africa,,
+1310,Copper IUCD,Intra-uterine device ,380mm2,,South Africa,,
+1322,Efavirenz,Tablet/capsule/granules,by weight band,J05AG03,South Africa,,
+1323,Isoniazid,Tablet/capsule/granules,10mg/kg/dose (maximum dose = 300mg daily) ,J04AC01,South Africa,,
+1324,Lamivudine,Solution,8mg/kg,J05AF05,South Africa,,
+1331,"Lopinavir, ritonavir",Solution,300/75 mg/m2/dose,J05AR10,South Africa,,
+1333,Medroxyprogesterone acetate,Injection,150mg,G03AC06,South Africa,,
+1355,Zidovudine,Solution,3mg/kg body weight,J05AF01,South Africa,,
+1391,Ertapenem,Injection,1g,J01DH03,South Africa,,
+1411,"Amphotericin B, liposomal",Injection,10mg/kg,J02AA01,South Africa,,
+1414,Dapsone,Tablet/Capsule,100mg,,South Africa,,
+1416,"Dolutegravir, lamivudine",Tablet/Capsule,50/300 mg,J05AR25 ,South Africa,,
+1435,Pyrazinamide,Tablet/Capsule,25mg/kg,J04AK01,South Africa,,
+1436,Rifapentine,Tablet/Capsule,900mg,J04AB05,South Africa,,
+1439,"Tenofovir alafenamide, emtricitabine, dolutegravir",Tablet/Capsule,25/200/50 mg,J05AR29 ,South Africa,,
+1440,"Tenofovir disoproxil, emtricitabine",Tablet/Capsule,300/200 mg,J05AR03,South Africa,,
+1442,"Tenofovir disoproxil, emtricitabine, efavirenz",Tablet/Capsule,300/200/600 mg,J05AR06,South Africa,,
+1446,"Zidovudine, lamivudine",Tablet/Capsule,200/150 mg,J05AR01,South Africa,,
+1448,Acetazolamide,Tablet/capsule/granules,20 mg/kg/dose (maximum daily dose = 1000mg),S01EC01,South Africa,,
+1451,Ethionamide,Tablet/capsule/granules,20 mg/kg (maximum dose = 1000mg daily),J04AD03,South Africa,,
+1480,Rifampicin/Isoniazid,Tablet/capsule/granules,refer to STGs ,J04AM02,South Africa,,
+1481,Rifampicin/Isoniazid (150/75mg),Tablet/capsule/granules,refer to STGs ,,South Africa,,
+1482,Rifampicin/Isoniazid (300/150mg),Tablet/capsule/granules,refer to STGs ,,South Africa,,
+1483,Rifampicin/Isoniazid (60/60mg),Tablet/capsule/granules,refer to STGs ,J04AD03,South Africa,,
+1485,Rifampicin/Isoniazid (75/50mg),Tablet/capsule/granules,refer to STGs ,,South Africa,,
+1486,Rifampicin/Isoniazid/Pyrazinamide (75/50/150mg),Tablet/capsule/granules,refer to STGs ,,South Africa,,
+1487,Rifampicin/Isoniazid/Pyrazinamide/Ethambutol (150/75/400/275mg),Tablet/capsule/granules,refer to STGs ,,South Africa,,
+1488,Sodium Chloride 0.9% ,Solution,as required ,B05XA03,South Africa,,
+1492,Alcohol,Solution,0.7,,South Africa,,
+1519,Levofloxacin,Tablet/Capsule,750-1000mg,J01MA12,South Africa,,
+1522,Linezolid,Tablet/Capsule,600 mg,J01XX08,South Africa,,
+1530,Chloramphenicol 0.5%,Solution,1 drop,S01AA01,South Africa,,
+1532,Influenza Vaccine,Injection,0.5ml,J07BB,South Africa,,
+1533,Meningococcal polysaccharide vaccine,Injection,0.5ml,J07AH01,South Africa,,
+1536,Ofloxacin ,Solution,1 drop ,,South Africa,,
+1537,"Abacavir, Lamivudine ",Tablet/Capsule,600/300 mg,J05AR02,South Africa,,
+1577,Alfentanil,Injection,7.5mcg/kg,N01AH02,South Africa,,
+1579,Biperiden,Injection,2mg,N04AA02,South Africa,,
+1580,Bupivacaine 0.5%,Injection,3ml,N01BB01,South Africa,,
+1584,Cisatracurium,Injection,0.1-0.15mg/kg,M03AC11,South Africa,,
+1585,Dantrolene,Injection,2.5mg/kg,M03CA01,South Africa,,
+1589,Ephedrine,Injection,3-5mg,C01CA26,South Africa,,
+1590,Etomidate,Injection,0.3mg/kg,N01AX07,South Africa,,
+1591,Fentanyl,Injection,25mcg,N01AH01,South Africa,,
+1594,Glycopyrrolate,Injection,10mcg/kg,A03AB02,South Africa,,
+1595,Halothane,Gas,titrated to effect,N01AB01,South Africa,,
+1596,Isoflurane,Gas,MAC = 1.2%,N01AB06,South Africa,,
+1604,Lidocaine (lignocaine)/prilocaine,Cream,,N01BB52,South Africa,,
+1605,Lipid emulsion 20%,Solution,0.25-1.5ml/kg,,South Africa,,
+1611,Neostigmine,Injection,50mcg/kg,N07AA01,South Africa,,
+1615,Propofol,Injection,1.5-2.5mg/kg,N01AX10,South Africa,,
+1617,Rocuronium   ,Injection,0.9mg/kg,M03AC09,South Africa,,
+1618,Sevoflurane,Gas,titrated to effect,N01AB08,South Africa,,
+1620,Sodium citrate 0.3M,Solution,30ml,B05CB02,South Africa,,
+1621,Suxamethonium,Injection,1-1.5mg/kg,M03AB01,South Africa,,
+1622,Thiopental,Injection,3-5mg/kg,N01AF03,South Africa,,
+1626,Vecuronium,Injection,0.08-0.1mg/kg,M03AC03,South Africa,,
+1633,Calcium,,,,South Africa,,
+1639,Immunoglobulin,Injection,2g/kg,J06BA ,South Africa,,
+1676,Probenacid,Tablet/Capsule,250mg,M04AB01,South Africa,,
+1677,Yellow petroleum jelly,Jelly,,,South Africa,,
+1695,Allopurinol,Tablet/Capsule,100mg,M04AA01,South Africa,,
+1698,Chloroquine Sulphate,Tablet/Capsule,150mg,P01BA01,South Africa,,
+1699,Colchicine,Tablet/Capsule,0.5mg,M04AC01,South Africa,,
+1701,Lansoprazole,Tablet/Capsule,30mg,A02BC03,South Africa,,
+1705,Sulfasalazine,Tablet/Capsule,500mg,A07EC01,South Africa,,
+1709,Carbamazepine,Tablet/capsule/granules,10-20mg/kg/day (titrated at 2 weekly intervals by 2mg/kg/dose)),N03AF01,South Africa,,
+1721,Haloperidol,Tablet/capsule/granules,0.025mg/kg/day (up to 0.05 mg/kg/day slowly and incrementally),N05AD01,South Africa,,
+1725,Lamotrigine,Tablet/capsule/granules,titrate up 1-5mg/kg/dose,N03AX09,South Africa,,
+1728,Levetiracetam,Tablet/capsule/granules,60mg/kg (maximum dose = 4500 mg) ,,South Africa,,
+1748,Phenobarbital ,Solution,3-5mg/kg/dose ,N03AA02,South Africa,,
+1754,Phenytoin ,Injection,20mg/kg,N03AB02,South Africa,,
+1761,Pyridostigmine,Tablet/capsule/granules,1-5mg/kg/day ,N07AA02,South Africa,,
+1764,Topiramate,Tablet/capsule/granules,0.5mg/kg/day,N03AX11,South Africa,,
+1766,Valproate,Solution,20-30mg/kg/day (titrated by 5mg/kg weekly. maximum daily dose = 40mg/kg/day) ,N03AG01,South Africa,,
+1773,Hexavalent (DTaP-IPV-HB-Hib) vaccine,Injection,0.5 mL,J07CA02,South Africa,,
+1774,HPV (Human Papilloma Virus) Vaccine,Injection,0.5 mL,J07BM02 ,South Africa,,
+1776,Measles/Rubella vaccine ,Injection,0.5 mL,J07BD53 ,South Africa,,
+1777,Pneumococcal conjugated vaccine (PCV),Injection,0.5 mL,J07AL02,South Africa,,
+1778,Rotavirus vaccine,Solution,1 or 2 mL,J07BH01,South Africa,,
+1779,"Tdap (Tetanus, reduced diphtheria and acellular pertussis vaccine)",Injection,0.5 mL,J07AM51,South Africa,,
+1796,Carbidopa/levodopa,Tablet/Capsule,25/100mg,N04BA02 ,South Africa,,
+1814,Nimodipine,Tablet/Capsule,60mg,C08CA06 ,South Africa,,
+1815,Orphenadrine,Tablet/Capsule,50mg,N04AB02,South Africa,,
+1835,Clonidine,Tablet/capsule/granules,25mcg (titrate up to 3 - 5mcg/kg),,South Africa,,
+1867,Lithium carbonate,Tablet/capsule/granules,20mg/kg/day ,N05AN01,South Africa,,
+1881,Methylphenidate - short acting only,Tablet/capsule/granules,1mg/kg/day (maximum daily dose = 60mg = 2mg/kg/day),N06BA04,South Africa,,
+1886,Morphine extended release ,Tablet/capsule/granules,0.05mg/kg/dose,N02AA01,South Africa,,
+1888,Olanzapine,Tablet/capsule/granules,2.5-5mg (up to 10mg),N05AH03,South Africa,,
+1892,Risperidone,Tablet/capsule/granules,0.01-0.08mg/kg/day (maximum dose = 4mg/day divided into 2-4 doses),N05AX08,South Africa,,
+1953,Chlorpromazine,Tablet/Capsule,75-300mg,N05AA01,South Africa,,
+1963,Clozapine,Tablet/Capsule,100-400mg,N05AH02,South Africa,,
+1976,Flupenthixol decanoate,Injection,10–40 mg ,N05AF01,South Africa,,
+1982,Lithium,Tablet/Capsule,200–600 mg ,N05AN01,South Africa,,
+1989,Methadone,Tablet/Capsule,5 to 10 mg. up to 30 mg/24 hours,N07BC02 ,South Africa,,
+1998,Oxazepam,Tablet/Capsule,7.5-30mg,N05BA04,South Africa,,
+2001,Quetiapine,Tablet/Capsule,100-300mg,N05AH04,South Africa,,
+2009,Zuclopenthixol acetate,Injection,50-150mg,N05AF05,South Africa,,
+2010,Zuclopenthixol decanoate,Injection,100–400 mg ,N05AF05,South Africa,,
+2013,Aminophylline,Injection,1mg/kg/hour ,R03DA05,South Africa,,
+2016,Beclomethasone ,Inhaler,100-200mcg,R03BA01,South Africa,,
+2018,Budesonide,Inhaler,50-100mcg,R03BA02,South Africa,,
+2024,Fluticasone,Solution,50mcg/spray. 1 spray,R03BA05,South Africa,,
+2026,Hydrcortisone ,Injection,2mg/kg/dose ,H02AB09,South Africa,,
+2027,Ipratropium bromide,Solution,0.25mg in 2ml sodium chloride 0.9%,R03BB01,South Africa,,
+2055,Salmeterol/Fluticasone,Inhaler,25/50 (2 puffs),R03AK06,South Africa,,
+2063,Sodium Chloride 3% (3ml 5% sodium chloride in 2ml sterile water),Solution,Nebulise ,,South Africa,,
+2083,Phenobarbital,Injection,20mg/kg,N03AA02,South Africa,,
+2099,Beclomethasone,Inhaler,200mcg,R03BA01,South Africa,,
+2103,Formoterol,Inhaler,12mcg,R03AC13,South Africa,,
+2112,"Rifampicin, Isoniazid",Tablet/Capsule,150/75,J04AM02,South Africa,,
+2120,Salmeterol/fluticasone,Inhaler,50/500mcg,R03AK06,South Africa,,
+2122,Theophylline,Tablet/Capsule,200mg,R03DA04,South Africa,,
+2131,Cyclopentolate + phenylephrine,Solution/ointment,1 drop ,S01FA54,South Africa,,
+2133,Fluorescein 2%,Solution/ointment,stain the cornea,,South Africa,,
+2135,Oxybuprocaine,Solution/ointment,1 drop ,S01HA02,South Africa,,
+2137,Sterile water ,Solution/ointment,irrigate ,,South Africa,,
+2138,Tobramycin,Solution/ointment,1 drop,S01AA12,South Africa,,
+2139,Tobramycin 0.3%,Solution/ointment,Apply ,S01AA12,South Africa,,
+2165,Moxifloxacin,Injection,400mg,J01MA14,South Africa,,
+2174,Acetic acid 2%,Solution,3-4 drops,S02AA10,South Africa,,
+2179,Oxymetazoline 0.05%,Solution,,R01AA05,South Africa,,
+2181,BIPP (bismuth iodoform paraffin paste),Cream/ointment/gel,impregnate cotton wool,,South Africa,,
+2187,Oxymetazoline 0.025%,Solution,1-2 drops,R01AA05,South Africa,,
+2232,Spacer (for metered dose inhaler),,,,South Africa,,
+2238,Acetylcholine chloride,,,S01EB09,South Africa,,
+2240,Betaxolol 0.25-0.5%,Solution,1 drop,S01ED02,South Africa,,
+2242,Bimatoprost 0.03%,Solution,,S01EE03,South Africa,,
+2243,Brimonidine 0.15-0.2%,Solution,1 drop,S01EA05,South Africa,,
+2246,Cyclopentolate,Solution,2mg/ml,S01FA04 ,South Africa,,
+2248,Dexamethasone 0.1%,Solution,1-2 drops,S01CB01,South Africa,,
+2249,Fluorescein ,Opthalmic strips,,S01JA01 ,South Africa,,
+2252,Glycerine (glycerol),Solution,1g/kg,A06AX01,South Africa,,
+2253,Hyaluronidase,Injection,1500IU,S01KA01,South Africa,,
+2254,Hydroxypropyl methylcellulose,Solution,1 drop,,South Africa,,
+2256,Lanolin ,Ointment,,,South Africa,,
+2257,Latanoprost 0.005%,Solution,1 drop,S01EE01,South Africa,,
+2259,Mitomycin C,Injection,2mg,L01DC03 ,South Africa,,
+2260,Natamycin 5%,Solution,1 drop,S01AA10,South Africa,,
+2261,Oxybuprocaine hydrochloride 0.4%,Solution,,S01HA02 ,South Africa,,
+2263,Pilocarpine 1%,Solution,1 drop,S01EB01,South Africa,,
+2264,Polyacrylic acid,Gel,2mg/g,,South Africa,,
+2266,Sodium hyaluronate,,,S01KA01,South Africa,,
+2267,Sterile intraocular irrigating solution,,,,South Africa,,
+2268,Timolol 0.25-0.5%,Solution,1 drop,S01ED01,South Africa,,
+2269,Timolol 0.5%,Solution,,S01ED01,South Africa,,
+2270,Tropicamide 1%,Solution,,S01FA06 ,South Africa,,
+2271,Activated Charcoal,Oral Powder,1g/kg in 50-100ml water,A07BA01,South Africa,,
+2279,Boomslang monovalent antivenom,Injection,10 - 20 ml,J06AA03,South Africa,,
+2282,Chloramphenicol ,Solution/ointment,Apply ,D06AX02,South Africa,,
+2284,Deferoxamine (desferrioxamine),Injection,15mg/kg/hour,V03AC01,South Africa,,
+2296,Latrodectus Spider Antivenom,Injection,5-10ml,DB14113,South Africa,,
+2298,Local anaesthetic ,Solution/ointment,instil ,,South Africa,,
+2299,N-Acetylcysteine,Injection,100mg/kg ,V03AB23,South Africa,,
+2306,Polyethylene glycol (PEG) balanced electrolyte solution,Solution,500 ml per hour,A06AD15,South Africa,,
+2308,Polyvalent antivenom,Injection,50ml,J06AA03,South Africa,,
+2315,Scorpion antivenom,Injection,10ml,J06AA ,South Africa,,
+2316,Sodium bicarbonate 8.4%,Solution,1ml/kg,B05XA02,South Africa,,
+2330,Sodium cromoglycate 2%,Solution,1 drop,S01GX01,South Africa,,
+2332,Water for injection,Injection,2ml,,South Africa,,
+2351,Activated charcoal,Solution,50g diluted in 100ml water,A07BA01,South Africa,,
+2366,"Ethanol 40% (gin, whiskey, vodka, any spirit liquor of 43% v/v)",Solution,Dilution required,V03AB16,South Africa,,
+2367,Ethanol 96%,Solution,Dilution required,V03AB16,South Africa,,
+2369,Methylene blue (methylthionine chloride) 1%,Injection,1-2mg/kg,V03AB17,South Africa,,
+2374,N-acetylcysteine,Injection,100-200mg/kg,V03AB23,South Africa,,
+2377,Polyvalent snake antivenom,Injection,50-200ml,J06AA03,South Africa,,
+2382,Scorpion Antivenom,Injection,10ml,,South Africa,,
+2389,Spider antivenom,Injection,5-10ml,,South Africa,,
+2391,Tetracaine 1%,Solution,1 drop,S01HA03,South Africa,,
+2397,Alprostadil,Injection,0.05-0.1mcg/kg/minute,C01EA01,South Africa,,
+2409,Caffeine Citrate,Injection,20mg/kg,N06BC01,South Africa,,
+2421,Dextrose 15%,Solution,15mg/kg/minute ,B05BA03,South Africa,,
+2429,Dopamine,Injection,5-15mcg/kg/minute ,C01CA04,South Africa,,
+2455,Lipid Emulsion 20%,Injection,0.25 mL/kg/minute,B05BA02,South Africa,,
+2468,Multivitamin (providing at least vitamin D 400–800 IU and vitamin A 1250–5000 IU per 24 hours),Solution,,,South Africa,,
+2470,Neonatal maintenance solution,Solution,60–80 mL/kg/24 hours,B05XA03,South Africa,,
+2493,Surfactant,Solution,100 mg/kg,,South Africa,,
+2500,Oxymetazoline 0.025 - 0.05%   ,Solution,2 drops in each nostril,R01AB07,South Africa,,
+2536,Povidone iodine 5%,Cream,As needed,D08AG02,South Africa,,
+2758,Polyethylene glycol 59g/l + sodium sulphate and electrolytes ,Solution,10 - 25 mL/kg/hour,A06AD15,South Africa,,
+2760,Sorbitol 70%,Solution,2 mL/kg,A06AD18,South Africa,,
+2778,Emtricitabine,Tablet/Capsule,200mg,J05AF09,South Africa,,
+2804,Rabies Vaccine,Injection,1,J07BG01,South Africa,,
+2815,Iohexol,Suspension,,V08AB02,South Africa,,
+2816,Iopamidol,Suspension,,V08AB04,South Africa,,
+2817,Iopromide,Suspension,,V08AB05,South Africa,,
+2818,Ioversol,Suspension,,V08AB07,South Africa,,
+2823,Bupivacaine ,Injection,maximum dose allowed for patient weight,N01BB01,South Africa,,
+2826,Bupivacaine 0.1%,Injection,0.2ml/kg/hour,N01BB01,South Africa,,
+2827,Bupivacaine 0.2%,Injection,0.2ml/kg/hour,N01BB01,South Africa,,
+2839,Fenoterol ,Solution,refer to STGs ,,South Africa,,
+2907,Ceftazidime-avibactam,Injection,2.5 g,J01DD52 ,South Africa,,
+2929,Balanced-salt solution crystalloid,Injection,30ml/kg over 3 hours,,South Africa,,
+2975,Calcium Chloride 10%,Injection,0.2mL/kg/dose,A12AA07,South Africa,,
+2987,Dextrose 25%,Injection,2 mL/kg,B05BA03,South Africa,,
+2988,Dextrose 5%/Sodium chloride 0.45%,Solution,refer to STGs ,A12BA01,South Africa,,
+3009,"Insulin, rapid acting ",Injection,0.1 units/kg ,,South Africa,,
+3011,Intravenous polyvalent human immune-globulin (IVIG),Solution,total of 2g/kg,J06BA02,South Africa,,
+3045,Mist. Potassium citrate 30% suspension (2.8mmol/mL),Injection,1mmol/kg/dose ,A12BA01,South Africa,,
+3051,Potassium Chloride 15% or Potassium Phosphate 15% (= 2mmol/mL of potassium),Injection,1-2mmol/kg (recommended dose = 1.2 mmol/kg = 0.3 mmol/kg/hour for 4 hours),A12BA01,South Africa,,
+3052,Potassium Chloride 600mg (8mmol) ,Tablet/capsule/granules,1mmol/kg/dose ,A12BA01,South Africa,,
+3053,Potassium Phosphate (1mmol/L phosphate/ 2mmol/L potassium),Injection,0.15–0.6 mmol/kg/day,B05XA06,South Africa,,
+3066,Sodium bicarbonate 8.5%,Solution,1 mL/kg (diluted 1:1 with sterile water),B05XA02,South Africa,,
+3075,Sodium Chloride 3%,Solution,0.1–1 mL/kg/hour,B05XA03,South Africa,,
+3089,Bisacodyl,Suppository,10mg,A06AB02,South Africa,,
+3128,Granisetron,Tablet/capsule/injection,,A04AA02,South Africa,,
+3130,Mesalazine (rectal),Suppository,,A07EC02,South Africa,,
+3131,Mesalazine (oral),Tablet/capsule,,A07EC02,South Africa,,
+3132,Insulin detemir,Vial/pen,,A10AE05,South Africa,,
+3133,Insulin glargine,Vial/pen,,A10AE04,South Africa,,
+3134,Micronutrients,Injection,,A111/A12,South Africa,,
+3135,"Omeprazole, IV",Injection,,A02BC01,South Africa,,
+3136,"Esomeprazole, IV",Injection,,A02BC05,South Africa,,
+3137,"Pantoprazole, IV",Injection,,A02BC02,South Africa,,
+3139,rFVIIa,Infusion solution,,B02BD03,South Africa,,
+3140,aPCC,Infusion solution,,B02BD03,South Africa,,
+3141,Emicizumab,Injection,,B02BX06,South Africa,,
+3142,Minoxidil,Tablet/capsule,,C02DC01,South Africa,,
+3143,Atorvastatin – high dose (80mg/day),Tablet/capsule,,C10AA05,South Africa,,
+3144,Ezetimibe,Tablet/capsule,,C10AX09,South Africa,,
+3145,Dithranol,Cream/ointment/gel,,D05AC01,South Africa,,
+3146,Clobetasol propionate 0.05%.,Cream/ointment/gel,,D07AD01,South Africa,,
+3147,Isotretinoin,Tablet/capsule,,D10BA01,South Africa,,
+3148,Acitretin,Tablet/capsule,,D05BB02,South Africa,,
+3149,Cabergoline,Tablet/capsule,,G02CB03,South Africa,,
+3150,Levonorgestrel Intrauterine system,IUD,,G03AC03,South Africa,,
+3151,Oestrogen,Tablet/capsule,,G03CA,South Africa,,
+3152,Testosterone,Injection,,G03BA03,South Africa,,
+3154,Cyproterone acetate,Injection,,G03HA01,South Africa,,
+3155,"Cyproterone,
+Ethinyl Oestradiol",Tablet/capsule,,G03HB01,South Africa,,
+3156,Sildenafil,Tablet/capsule,,G04BE03,South Africa,,
+3157,Tadalafil,Tablet/casule,,G04BE08 ,South Africa,,
+3158,Vardenafil,Tablet/casule,,G04BE09,South Africa,,
+3160,"Somatropin
+(Growth Hormone)",Injection,,H01AC01,South Africa,,
+3161,"Octreotide
+(Short-acting)",Injection,,H01CB02,South Africa,,
+3162,Ketoconazole,Tablet/capsule,,J02AB02,South Africa,,
+3163,Itraconazole,Tablet/capsule,,J02AC02,South Africa,,
+3164,Caspofungin,Injection,,J02AX04,South Africa,,
+3165,Micafungin,Injection,,J02AX05,South Africa,,
+3166,Anidulafungin,Injection,,J02AX06,South Africa,,
+3167,Ribavirin,Tablet/capsule,,J05AP01,South Africa,,
+3168,Sofosbuvir- velpatasvir,Tablet/capsule,,J05AP55,South Africa,,
+3169,Intravenous Immunoglobulin (IVIG),Injection,,J06BA02,South Africa,,
+3171,Chlorambucil,Tablet/capsule,,L01AA02,South Africa,,
+3172,Melphalan,Tablet/capsule/injection,,L01AA03,South Africa,,
+3173,Ifosfomide,Injection,,L01AA06,South Africa,,
+3174,Busulfan,Tablet/capsule/injection,,L01AB01,South Africa,,
+3175,Bacille Calmette-Guerin (BCG),Injection,,L03AX03,South Africa,,
+3176,Dacarbazine,Injection,,L01AX04,South Africa,,
+3179,Mercaptopurine,Tablet/capsule,,L01BB02,South Africa,,
+3180,Thioguanine,Tablet/capsule,,L01BB03,South Africa,,
+3181,Fludarabine,Injection,,L01BB05,South Africa,,
+3182,Cytarabine,Injection,,L01BC01,South Africa,,
+3183,Topical 5 Fluorouracil,Cream/ointment/gel,,L01BC02,South Africa,,
+3184,Capecitabine,Tablet/capsule,,L01BC06,South Africa,,
+3185,Gemcitabine,Injection,,L01BC05,South Africa,,
+3186,Fluoro-uracil,Injection,,L01BC52,South Africa,,
+3187,Vinblastine,Injection,,L01CA01,South Africa,,
+3188,Vincristine,Injection,,L01CA02,South Africa,,
+3189,Vinorelbine (IV),Injection,,L01CA04,South Africa,,
+3190,Docetaxel,Injection,,L01CD02,South Africa,,
+3191,Paclitaxel,Injection,,L01CD01,South Africa,,
+3192,Doxorubicin,Injection,,L01DB01,South Africa,,
+3193,Daunorubicin,Injection,,L01DB02,South Africa,,
+3194,Idarubicin,Injection,,L01DB06,South Africa,,
+3195,Mitoxantrone,Injection,,L01DB07,South Africa,,
+3196,Epirubicin,Injection,,L01DB03,South Africa,,
+3197,Bleomycin,Injection,,L01DC01,South Africa,,
+3198,Rituximab,Injection,,L01FA01,South Africa,,
+3199,Cisplatin,Injection,,L01XA01,South Africa,,
+3200,Carboplatin,Injection,,L01XA02,South Africa,,
+3201,Etoposide,Injection,,L01XA02,South Africa,,
+3202,Oxaliplatin,Injection,,L01XA03,South Africa,,
+3203,Bevacizumab,Injection,,L01XC07,South Africa,,
+3204,Imatinib,Tablet/capsule,,L01EA01,South Africa,,
+3205,Dasatinib,Tablet/capsule,,L01EA02,South Africa,,
+3206,Nilotinib,Tablet/capsule,,L01EA03,South Africa,,
+3207,Trastuzumab,Injection,,L01XC03,South Africa,,
+3208,Bortezomib,Injection,,L01XG01,South Africa,,
+3209,Asparaginase,Injection,,L01XX02,South Africa,,
+3210,All-trans retinoic acid (tretinoin),Tablet/capsule,,L01XX14,South Africa,,
+3211,Irinotecan,Injection,,L01XX19,South Africa,,
+3212,Goserelin,Injection,,L02AE03,South Africa,,
+3213,Buserelin,Implant,,L02AE01,South Africa,,
+3214,Leuprolide,Injection,,L02AE02,South Africa,,
+3215,Triptorelin ,Injection,,L02AE04,South Africa,,
+3217,Tamoxifen,Tablet/capsule,,L02BA01,South Africa,,
+3218,Anastrozole,Tablet/capsule,,L02BG03,South Africa,,
+3220,Exemestane,Tablet/capsule,,L02BG06,South Africa,,
+3221,Filgrastim,Injection,,L03AA02,South Africa,,
+3222,Antithymocyte immunoglobulin (ATG),Infusion solution,,L04AA04,South Africa,,
+3223,Sirolimus,Tablet/capsule,,L04AH01,South Africa,,
+3224,Mycophenolate mofetil (MMF),Tablet/capsule,,L04AA06,South Africa,,
+3225,Leflunomide,Tablet/capsule,,L04AK01,South Africa,,
+3227,Teriflunomide,Tablet/capsule,,L04AK02,South Africa,,
+3228,Adalimumab,Injection,,L04AB04,South Africa,,
+3229,Infliximab,injection,,L04AB02,South Africa,,
+3231,Interferon beta 1a,Injection,,L03AB07,South Africa,,
+3232,Interferon beta 1b,Injection,,L03AB08,South Africa,,
+3233,Basiliximab,Injection,,L04AC02,South Africa,,
+3234,Ciclosporin,Tablet/capsule/solution/injection,,L04AD01,South Africa,,
+3235,Tacrolimus,Tablet/capsule,,L04AD02,South Africa,,
+3237,Lenalidomide,Tablet/capsule,,L04AX04,South Africa,,
+3238,Botulinum toxin,Injection,,M03AX01,South Africa,,
+3239,Zoledronate,Injection,,M05BA08,South Africa,,
+3241,Ibandronate,Injection,,M05BA06,South Africa,,
+3242,Transdermal fentanyl (fentanyl patches),Patch,,N02AB03,South Africa,,
+3244,Gabapentin,Tablet/capsule,,N02BF01,South Africa,,
+3245,Pregabalin,Tablet/capsule,,N02BF02,South Africa,,
+3246,Ropinarole,Tablet/capsule,,N04BC04,South Africa,,
+3247,Pramipexole,Tablet/capsule,,N04BC05,South Africa,,
+3249,Amisulpride,Tablet/capsule,,N05AL05,South Africa,,
+3250,Aripiprazole,Tablet/capsule,,N05AX12,South Africa,,
+3251,Alprazolam,Tablet/capsule,,N05BA12,South Africa,,
+3252,Bupropion,Tablet/capsule,,N06AX12,South Africa,,
+3253,Venlafaxine,Tablet/capsule,,N06AX16,South Africa,,
+3254,Montelukast,Tablet/capsule/granules,,R03DC03,South Africa,,
+3255,"Deferasirox
+",Tablet/capsule,,V03AC03,South Africa,,
+3256,Calcium folinate IV,Injection,,V03AF03,South Africa,,
+3257,Calcium folinate oral,Tablet/capsule,,V03AF03,South Africa,,
+3258,Lanthanum carbonate,Tablet/capsule,,V03AE03,South Africa,,
+3259,Sevelamer,Tablet/capsule,,V03AE02,South Africa,,
+3260,Mesna,Injection,,V03AF01,South Africa,,
+3261,Rifabutin,Tablet/Capsule,150mg,J04AB04,South Africa,,
+0,Halothane,,,,Kenya,Inhalation,250mL
+1,Isoflurane,,,,Kenya,Inhalation,250mL
+2,Sevoflurane,,,,Kenya,Inhalation,250mL
+3,Dexmedetomidine,,,,Kenya,Injection,200 micrograms/2mL
+4,Etomidate,,,,Kenya,Injection,2mg/mL (10mL Vial)
+5,Fentanyl,,,,Kenya,Injection,50micrograms/mL (2mL Ampoule)
+6,Ketamine,,,,Kenya,Injection,50mg (as HCL)/mL (10mL vial)
+7,Midazolam,,,,Kenya,Injection,1mg (as HCl)/mL (5mL amp)
+8,Propofol,,,,Kenya,Injection,10mg/mL (20mL vial)
+9,Remifentanyl,,,,Kenya,PFI,2mg/2mL
+10,Thiopental sodium,,,,Kenya,PFI,500mg vial
+11,Bupivacaine,,,,Kenya,Injection,0.5% (as HCl) (10mL vial)
+12,Bupivacaine + Glucose,,,,Kenya,Injection,0.5% (as HCl) (5mg/mL) + glucose 8% (80mg/mL) (4mL amp)
+13,Lignocaine,,,,Kenya,Injection,2% (as HCl) (30mL vial)
+17,Lignocaine + Epinephrine (Adrenaline),,,,Kenya,Dental cartridge,"2% + 1:80,000 (1.8mL cartridge)"
+19,Dantrolene,,,,Kenya,Injection,20mg
+21,Ephedrine,,,,Kenya,Injection,30mg
+22,Epinephrine (adrenaline)16,,,,Kenya,Injection,1mg /1mL amp17
+27,Morphine,,,,Kenya,Injection,10mg (as HCl or sulphate) /1mL amp
+29,Ondansetron,,,,Kenya,Injection,2mg/mL (2mL Ampoule)
+30,Phenylephrine,,,,Kenya,Injection,10mg/mL Hydrochloride 1mL
+33,Medical air,,,,Kenya,Inhalation (medical gas),
+34,Nitrous oxide,,,,Kenya,Inhalation (medical gas),
+35,Oxygen,,,,Kenya,Inhalation (medical gas),
+36,Atracurium,,,,Kenya,Injection,10mg (as besilate)/mL (5mL amp)
+37,Cisatracurium,,,,Kenya,Injection,2mg (as besilate)/mL (10mL amp)
+38,Rocuronium,,,,Kenya,Injection,"10mg/mL (as bromide), 5mL vial"
+39,Suxamethonium,,,,Kenya,Injection,50mg (as chloride)/mL (2mL amp)
+40,Vecuronium,,,,Kenya,PFI,10mg (as bromide) vial [c]
+41,Neostigmine,,,,Kenya,Injection,2.5mg (as metasulphate)/1mL amp
+42,Pyridostigmine,,,,Kenya,Tablet,60mg (as bromide)
+45,Atropine,,,,Kenya,Injection,1mg (as sulphate)/1mL amp
+46,Glycopyrronium,,,,Kenya,Injection,200 micrograms (as bromide)/mL
+47,Acetylsalicylic acid (Aspirin),,,,Kenya,Tablet,300mg
+48,Celecoxib,,,,Kenya,Tablet,200mg
+49,Dexketoprofen,,,,Kenya,Tablet,25mg
+51,Ibuprofen,,,,Kenya,Oral liquid,100mg/5mL [c] 32
+53,Ketorolac,,,,Kenya,Injection (IM/IV),30mg/mL
+54,Paracetamol,,,,Kenya,Injection (for IV infusion)34,10mg/mL (100mL vial)
+58,Dihydrocodeine phosphate,,,,Kenya,Tablet,30mg
+61,Methadone,,,,Kenya,Tablet,5mg
+68,Oxycodone,,,,Kenya,Tablet (i/r),5mg (as HCI)
+69,Tramadol,,,,Kenya,Capsule,50mg
+71,Amitriptyline,,,,Kenya,Tablet,25mg
+72,Bisacodyl,,,,Kenya,Tablet,5mg
+73,Carbamazepine,,,,Kenya,Tablet (scored),200mg
+74,Dexamethasone,,,,Kenya,Injection,4mg (as sodium phosphate)/1mL amp
+77,Diazepam,,,,Kenya,Injection,5mg/mL (2mL amp)
+79,Gabapentin,,,,Kenya,Tablet,300mg
+80,Haloperidol,,,,Kenya,Injection,5mg/1mL amp
+82,Hyoscine butylbromide,,,,Kenya,Injection,20mg/1mL amp
+84,Lactulose,,,,Kenya,Oral liquid,3.1-3.7g/5mL
+85,Loperamide,,,,Kenya,Capsule,2mg
+86,Metoclopramide,,,,Kenya,Injection,5mg/mL (2mL amp)
+92,Prednisolone,,,,Kenya,Oral liquid,15mg/5mL [c]
+94,Pregabalin,,,,Kenya,Capsule,25mg
+96,Senna,,,,Kenya,Tablet,7.5mg
+97,Cetirizine,,,,Kenya,Tablet,10mg
+99,Chlorpheniramine,,,,Kenya,Injection,10mg (as maleate)/1mL amp
+102,Diphenhydramine,,,,Kenya,Injection,50mg/mL
+103,Epinephrine (adrenaline)58,,,,Kenya,Injection,1mg /1mL amp
+104,Hydrocortisone,,,,Kenya,PFI,100mg (as sod. succinate) vial
+105,Loratadine,,,,Kenya,Tablet,10mg
+108,Acetylcysteine,,,,Kenya,Injection,200mg/mL (10mL amp59)
+110,Calcium folinate,,,,Kenya,Injection,10mg/mL (5mL vial)
+111,Calcium gluconate,,,,Kenya,Injection,100mg/mL in 10mL amp
+112,Deferasirox,,,,Kenya,Tablet,100mg
+114,Deferoxamine,,,,Kenya,PFI,500mg (as mesilate) vial
+115,Ethanol,,,,Kenya,Injection,100% (10mL amp)
+117,Fomepizole,,,,Kenya,Injection,5mg (as sulphate)/mL (20mL amp)
+118,Flumazenil,,,,Kenya,Injection,100 micrograms/mL (5mL amp)
+119,Lipid emulsion,,,,Kenya,Injection,20% (200 to 500mL)
+120,Naloxone,,,,Kenya,Injection,400 micrograms (as HCl)/1mL amp
+121,Phytomenadione (Vit K1)70,,,,Kenya,Injection,10mg/mL (1mL amp)
+122,Pralidoxime,,,,Kenya,PFI,1g (as chloride or mesilate) vial
+123,Protamine,,,,Kenya,Injection,10mg/mL (as sulphate) (5mL amp)
+124,Sodium hydrogen carbonate (Sodium bicarbonate)73,,,,Kenya,Injectable solution,8.4% (10mL amp)
+125,Sodium nitrite,,,,Kenya,Injection,30mg/mL (10mL amp)
+126,Sodium thiosulphate,,,,Kenya,Injection,250mg/mL (50mL amp)
+127,Succimer [Dimercaptosuccinic acid (DMSA)]76,,,,Kenya,Capsule,100mg
+128,Acetazolamide,,,,Kenya,Tablet,250mg
+132,Clobazam,,,,Kenya,Tablet,10mg (scored)
+133,Clonazepam,,,,Kenya,Tablet,0.5mg
+138,Lamotrigine,,,,Kenya,Tablet,25mg
+142,Levetiracetam,,,,Kenya,Injection (IV)79,500mg
+145,Lorazepam,,,,Kenya,Injection,4mg/1mL amp
+146,Magnesium sulphate,,,,Kenya,Injection,"500mg/mL (50%), (10mL amp/vial)"
+151,Oxcarbazepine,,,,Kenya,SODF,150mg
+153,Phenobarbital (Phenobarbitone) sodium,,,,Kenya,Injection,30mg/1mL amp [c]86
+156,Phenytoin sodium,,,,Kenya,Injection,50mg/mL (5mL vial)
+162,Topiramate,,,,Kenya,Tablet,25mg
+164,Valproic acid (Sodium Valproate),,,,Kenya,Injection,100mg/mL (4mL amp)
+170,Albendazole,,,,Kenya,Tablet (chewable)88,400mg
+172,Mebendazole,,,,Kenya,"Tablet (chewable, dispersible)",500mg
+173,Praziquantel,,,,Kenya,Tablet (scored),600mg
+176,Diethylcarbamazine (DEC),,,,Kenya,Tablet (scored),100mg (as dihydrogen citrate)
+177,Ivermectin,,,,Kenya,Tablet (scored),3mg
+178,Amikacin,,,,Kenya,Injection,50mg (as sulphate)/mL in 2ml vial [c]
+180,Amoxicillin,,,,Kenya,"Tablet (dispersible, scored)",250mg
+184,Amoxicillin + clavulanic acid,,,,Kenya,PFOL,200mg (as trihydrate) + 28mg (as potassium salt) / 5mL
+191,Ampicillin,,,,Kenya,PFI,500mg vial
+192,Benzathine benzylpenicillin,,,,Kenya,PFI,900mg (1.2MU) vial
+193,Benzylpenicillin,,,,Kenya,PFI,600mg (1MU) (as sodium or potassium salt) vial
+195,Cefalexin,,,,Kenya,PFOL,125mg/5mL
+197,Cefazolin,,,,Kenya,PFI,500mg (as sodium salt) in vial
+199,Doxycycline,,,,Kenya,Tablet / Capsule,100mg (as hyclate)
+200,Flucloxacillin,,,,Kenya,Capsule,250mg (as sodium salt)
+204,Gentamicin,,,,Kenya,Injection,10mg/mL (as sulphate) (2mL vial)
+206,Metronidazole,,,,Kenya,Injection,5mg/mL (100mL vial)
+209,Nitrofurantoin,,,,Kenya,Oral liquid,25mg/5mL [c]
+211,Phenoxymethylpenicillin (Penicillin V)108,,,,Kenya,PFOL,250mg (as potassium salt) /5mL
+213,Tinidazole,,,,Kenya,Tablet (f/c),500mg
+214,Azithromycin,,,,Kenya,Tablet (scored),500mg (anhydrous)
+216,Cefixime,,,,Kenya,Tablet,400mg (as trihydrate)
+217,Cefotaxime,,,,Kenya,Powder for Injection,500mg
+219,Ceftazidime,,,,Kenya,PFI,250mg (as pentahydrate) vial
+221,Ceftriaxone,,,,Kenya,Injection (IM/IV),250mg (as sodium salt) [c]114
+223,Cefuroxime,,,,Kenya,PFI,750mg
+224,Ciprofloxacin,,,,Kenya,Tablet (scored)117,500mg (as HCl)
+226,Clarithromycin,,,,Kenya,Tablet (scored),500mg
+227,Clindamycin,,,,Kenya,Capsule,150mg (as HCl)
+230,Cotrimoxazole (Sulfamethoxazole + Trimethoprim),,,,Kenya,Injection,"80mg + 16mg (i.e., 96mg)/ mL (5mL amp)"
+233,Erythromycin,,,,Kenya,Tablet,250mg
+235,Piperacillin + Tazobactam,,,,Kenya,PFI,4g (as sodium salt) + 500mg (as sodium salt)
+236,Ceftazidime + avibactam,,,,Kenya,PFI,2000mg+500mg
+237,Colistin,,,,Kenya,PFI,1MU (as colistemethate sodium) vial
+238,Fosfomycin,,,,Kenya,Granules for oral suspension,3g sachet
+240,Linezolid,,,,Kenya,Injection (IV),2mg/mL in 300mL bag
+242,Meropenem,,,,Kenya,PFI,500mg (as trihydrate)
+243,Polymyxin B,,,,Kenya,PFI,"500,000 IU vial"
+244,Teicoplanin,,,,Kenya,Injection,200mg
+245,Tigecycline,,,,Kenya,PFI,50mg vial
+246,Vancomycin,,,,Kenya,PFI,500mg vial (as HCl)
+247,Clofazamine,,,,Kenya,Capsule,50mg
+249,Dapsone,,,,Kenya,Tablet,100mg
+251,Rifampicin (R),,,,Kenya,Tablet / Capsule,150mg
+253,Ethambutol (E),,,,Kenya,"Tablet, (dispersible)",100mg
+255,Isoniazid (H),,,,Kenya,Tablet,50mg (scored)
+259,Pyrazinamide (Z),,,,Kenya,Tablet,500mg
+265,Rifampicin + Isoniazid (RH),,,,Kenya,Tablet,150mg + 75mg
+267,Rifampicin + Isoniazid + Pyrazinamide (RHZ),,,,Kenya,Tablet,75mg + 50mg + 150mg [c]
+268,Rifampicin + Isoniazid + Pyrazinamide + Ethambutol (RHZE),,,,Kenya,Tablet,150mg + 75mg + 400mg + 275mg
+269,Rifapentine + Isoniazid (3HP),,,,Kenya,Tablet,300mg+300mg
+270,Amikacin (Am),,,,Kenya,Injection,1g (as sulphate) vial
+271,Amoxicillin + clavulanic acid (Amx+Clv),,,,Kenya,Tablet,875mg + 125mg (1g)
+272,Bedaquiline (Bdq),,,,Kenya,Tablet,100mg
+273,Clofazimine (Cfx),,,,Kenya,Capsule,50mg
+275,Cycloserine (Cs),,,,Kenya,Tablet,125mg [c]
+277,Delamanid (Dlm),,,,Kenya,Tablet,50mg
+278,Imipenem + Cilastatin,,,,Kenya,PFI,250mg + 250mg vial
+280,Levofloxacin (Lfx),,,,Kenya,Tablet (dispersible),100mg [c]
+284,Linezolid (Lzd),,,,Kenya,Tablet (dispersible),150mg [c]
+286,Moxifloxacin (Mfx),,,,Kenya,Tablet (dispersible),100mg [c]
+288,p-aminosalicylic acid (PAS),,,,Kenya,Granules,4g sachet
+289,Prothionamide (Pto),,,,Kenya,Tablet,250mg
+290,Terizidone (Trd),,,,Kenya,Tablet,300mg
+291,Pretomanid,,,,Kenya,Tablet,200mg
+292,Amphotericin B,,,,Kenya,PFI,50mg (as sodium deoxycholate) vial
+294,Clotrimazole,,,,Kenya,Vaginal Tablet,500mg
+295,Fluconazole,,,,Kenya,Tablet / Capsule,150mg139
+299,Flucytosine,,,,Kenya,Capsule,250mg
+301,Griseofulvin,,,,Kenya,Tablet,125mg
+303,Itraconazole,,,,Kenya,Capsule,100mg
+304,Nystatin,,,,Kenya,Oral liquid (suspension),"100,000 IU/mL [c]"
+305,Posaconazole,,,,Kenya,Tablet (Delayed Release),100mg
+307,Terbinafine,,,,Kenya,Tablet,125mg
+309,Voriconazole,,,,Kenya,Tablet,200mg
+311,Acyclovir,,,,Kenya,PFI,250mg vial (as sodium salt)
+313,Abacavir (ABC)147,,,,Kenya,Tablet,300mg
+315,Lamivudine (3TC),,,,Kenya,Oral liquid,50mg/5mL
+316,Tenofovir Alafenamide (TAF),,,,Kenya,Tablet,25mg
+317,Tenofovir disoproxil fumarate (TDF)148,,,,Kenya,Tablet,300mg
+318,Zidovudine (AZT or ZDV),,,,Kenya,Oral liquid,50mg/5mL
+320,Dapivirine,,,,Kenya,Vaginal ring,25mg
+321,Etravirine (ETV),,,,Kenya,Tablet,25mg
+324,Nevirapine (NVP),,,,Kenya,Oral liquid,10mg/mL
+325,Darunavir (DRV)149,,,,Kenya,Tablet,75mg
+329,Darunavir + Ritonavir (DRV+r),,,,Kenya,Tablet,600mg + 100mg
+331,Lopinavir + ritonavir (LPV+r),,,,Kenya,Tablet (heat-stable),100mg + 25mg
+334,Ritonavir (RTV),,,,Kenya,Tablet (heat-stable),100mg
+336,Cabotegravir,,,,Kenya,"Injection (Long acting), Single- dose vial",600mg/3mL
+337,Dolutegravir (DTG)152,,,,Kenya,Tablet,50mg
+340,Abacavir + lamivudine (ABC+3TC),,,,Kenya,"Tablet, (dispersible, scored)",120mg (as sulphate) + 60mg
+342,Tenofovir disoproxil fumarate + Emtricitabine (TDF+FTC)153,,,,Kenya,Tablet,300mg + 200mg
+343,Tenofovir disoproxil fumarate + Lamivudine (TDF+3TC),,,,Kenya,Tablet,300mg + 300mg
+344,Tenofovir Alafenamide + Lamivudine + Dolutegravir (TAF+3TC+DTG),,,,Kenya,Tablet,25mg + 300mg + 50mg
+345,Tenofovir disoproxil fumarate + Lamivudine + Dolutegravir (TDF+3TC+DTG)154,,,,Kenya,Tablet,300mg + 300mg + 50mg
+346,Tenofovir disoproxil fumarate + Lamivudine + Efavirenz (TDF+3TC+EFV),,,,Kenya,Tablet,300mg + 300mg + 400mg
+347,Zidovudine + Lamivudine (AZT+3TC),,,,Kenya,Tablet,300mg + 150mg
+348,Co-trimoxazole (Sulfamethoxazole + Trimethoprim)155,,,,Kenya,Oral liquid,240mg/5mL [c]
+352,Gancyclovir,,,,Kenya,PFI,500mg vial
+353,Ribavirin,,,,Kenya,Injection (IV)158,800mg in 10mL phosphate buffer solution
+355,Valgancyclovir,,,,Kenya,Tablet,450mg
+357,Entecavir,,,,Kenya,Oral liquid,0.05mg/mL
+362,Tenofovir disoproxil fumarate (TDF)162,,,,Kenya,Tablet,300mg
+363,Diloxanide,,,,Kenya,Tablet,500mg (as furoate)
+364,Diloxanide furoate + Metronidazole,,,,Kenya,Oral liquid,250mg + 200mg
+372,Paromomycin,,,,Kenya,Injection solution (IM),375mg/mL (as sulphate) (2mL amp)
+373,Sodium stibogluconate,,,,Kenya,Injection,100mg/mL (100mL amp)
+374,Artemether,,,,Kenya,"Injection (oily, IM)",80mg/mL in 1mL amp
+375,Artemether+ lumefantrine (AL),,,,Kenya,Tablet,20mg + 120mg170
+377,Artesunate,,,,Kenya,Injection (IM/IV)172,30mg vial
+380,Artesunate + Pyronaridine tetraphosphate,,,,Kenya,Tablet (f/c),60mg + 180mg
+382,Dihydroartemisinin + Piperaquine (DHA-PPQ)174,,,,Kenya,Tablet,20mg + 160mg
+385,Primaquine,,,,Kenya,Tablet,7.5mg (as diphosphate)
+387,Quinine,,,,Kenya,Injection,300mg/mL (as HCl) (2mL amp)
+389,Atovaquone + Proguanil,,,,Kenya,Tablet (f/c),62.5mg (as HCl) + 25mg
+392,Mefloquine,,,,Kenya,Tablet,250mg (as HCl)
+393,Proguanil,,,,Kenya,Tablet,100mg (as HCl)
+394,Sulfadoxine + Pyrimethamine,,,,Kenya,Tablet,500mg + 25mg
+398,Pyrimethamine,,,,Kenya,Tablet,25mg
+399,Sulfadiazine,,,,Kenya,Tablet,500mg
+400,Pentamidine isethionate,,,,Kenya,PFI,200mg (as isetionate) vial
+401,Suramin sodium,,,,Kenya,PFI,1g vial
+402,Eflornithine,,,,Kenya,Injection,200mg (as HCl)/ mL in 100mL bottle
+403,Melarsoprol,,,,Kenya,Injection,"3.6% solution (180mg), 5mL amp"
+404,Nifurtimox,,,,Kenya,Tablet,120mg
+408,Sumatriptan,,,,Kenya,Tablet,25mg
+410,Propranolol,,,,Kenya,Tablet,40mg (as HCl)
+413,Antithymocyte globulin (ATG) (Equine)195,,,,Kenya,Injection,"50mg/mL, 5mL vial"
+414,Azathioprine,,,,Kenya,Tablet (scored),50mg
+415,Basiliximab,,,,Kenya,PFI,20mg
+416,Cyclosporin,,,,Kenya,Capsule,25mg
+419,Cyclophosphamide,,,,Kenya,PFI,500mg vial
+421,Everolimus,,,,Kenya,Tablet,500 micrograms (or 0.5mg)
+422,Methylprednisolone,,,,Kenya,PFI,125mg (as sodium succinate)
+424,Mycophenolic acid,,,,Kenya,Tablet (e/c),180mg (as mycophenolate sodium)
+426,Mycophenolate mofetil,,,,Kenya,Tablet,250mg
+430,Rituximab,,,,Kenya,Injection (IV),10mg/mL (10mL vial)
+432,Tacrolimus,,,,Kenya,Concentrate (for IV infusion),5mg/1mL amp
+436,Arsenic trioxide,,,,Kenya,Concentrate solution for Infusion,1mg/mL
+437,Bendamustine,,,,Kenya,Injection,100mg vial
+438,Bleomycin,,,,Kenya,PFI,15mg vial (as sulphate)
+439,Cabazitaxel,,,,Kenya,Injection,60mg
+443,Capecitabine,,,,Kenya,Tablet,150mg
+445,Carboplatin,,,,Kenya,Injection,10mg/mL (15mL vial)
+447,Chlorambucil,,,,Kenya,Tablet,2mg
+448,Cisplatin,,,,Kenya,Injection,1mg/mL (50mL vial)
+452,Cytarabine,,,,Kenya,PFI,100mg vial
+454,Dacarbazine,,,,Kenya,PFI,200mg vial (as citrate)
+455,Dactinomycin (Actinomycin D)216,,,,Kenya,PFI,500 micrograms vial
+456,Daunorubicin,,,,Kenya,PFI,20mg vial (as HCl)
+458,Docetaxel,,,,Kenya,Injection (premixed),120mg vial
+460,Doxorubicin,,,,Kenya,PFI or Solution for Injection,50mg vial (as HCl)
+461,Etoposide,,,,Kenya,Capsule,50mg
+464,Fluorouracil,,,,Kenya,Injection,50mg/mL (5mL vial)
+465,Gemcitabine,,,,Kenya,PFI,200mg vial
+467,Hydroxycarbamide (Hydroxyurea)223,,,,Kenya,SODF,500mg
+468,Ifosfamide + Mesna,,,,Kenya,Injection,1g + 600mg
+470,Irinotecan,,,,Kenya,Injection,20mg/mL (2mL vial)
+472,L - Asparaginase,,,,Kenya,PFI,"10,000 IU vial"
+473,Liposomal Doxorubicin (Pegylated)227,,,,Kenya,Solution for Injection,20mg vial
+475,Melphalan,,,,Kenya,Tablet,2mg
+477,Mercaptopurine,,,,Kenya,Tablet,50mg
+478,Methotrexate,,,,Kenya,PFI (preservative-free),25mg (as sodium salt)/mL (2mL vial)
+482,Mitomycin C,,,,Kenya,Injection,10mg
+483,Oxaliplatin,,,,Kenya,Solution for Injection,2mg/mL (25mL vial)
+485,Paclitaxel,,,,Kenya,Concentrate (for IV infusion),6mg/mL (5mL vial)
+488,Pegaspargase,,,,Kenya,Injection,3750 Units/5mL vial
+489,Pemetrexed,,,,Kenya,PFI or solution for injection,500mg
+490,Procarbazine,,,,Kenya,Capsule,50mg (as HCl)
+491,Temozolomide,,,,Kenya,Capsule,100mg
+493,Tioguanine,,,,Kenya,SODF,40mg [c]
+494,Topotecan,,,,Kenya,Injection,2.5mg
+495,Vinblastine,,,,Kenya,Injection,1mg/mL (as sulphate) (10mL vial)
+496,Vincristine,,,,Kenya,PFI or solution for injection,1mg/mL (as sulphate) vial
+497,Vinorelbine,,,,Kenya,Injection,10mg/mL (1mL vial)
+499,All-trans retinoid acid (ATRA)244,,,,Kenya,Capsule,10mg
+500,Bevacizumab,,,,Kenya,Injection,100mg
+502,Bortezomib,,,,Kenya,PFI,3.5mg vial
+503,Gefitinib,,,,Kenya,Tablet,250mg
+504,Ibrutinib,,,,Kenya,Capsule,140mg
+505,Imatinib,,,,Kenya,Tablet,400mg (as mesylate)
+506,Nilotinib,,,,Kenya,Capsule,200mg
+507,Osimertinib,,,,Kenya,Tablet,80mg
+508,Palbociclib,,,,Kenya,Tablet,125mg
+511,Pazopanib,,,,Kenya,Tablet,200mg
+515,Sorafenib,,,,Kenya,Capsule,200mg
+516,Trastuzumab,,,,Kenya,PFI,150mg vial
+519,Filgrastim,,,,Kenya,Injection (prefilled syringe),120 micrograms/0.2mL
+521,Lenalidomide,,,,Kenya,Capsule,10mg
+523,Peg-Filgrastim,,,,Kenya,Injection (prefilled syringe),6mg/0.6mL
+524,Pembrolizumab,,,,Kenya,Injection,100mg/4mL
+525,Thalidomide,,,,Kenya,Capsule,100mg
+526,Abiraterone,,,,Kenya,Tablet,250mg
+527,Anastrozole,,,,Kenya,Tablet,1mg
+528,Bicalutamide,,,,Kenya,Tablet,50mg
+531,Goserelin,,,,Kenya,Implant (in syringe applicator),3.6mg (as acetate)
+534,Letrozole,,,,Kenya,Tablet,2.5mg
+536,Octreotide,,,,Kenya,Injection kit,20mg
+540,Tamoxifen,,,,Kenya,Tablet,20mg (as citrate)
+541,Allopurinol,,,,Kenya,Tablet,100mg
+543,Febuxostat,,,,Kenya,Tablet,40mg
+544,Magnesium Sulphate,,,,Kenya,Injection,4% (100mL vial)
+545,Mannitol,,,,Kenya,Solution for Infusion,"20%, 500mL"
+546,Mesna,,,,Kenya,Injection,100mg/mL (2mL amp)
+548,Rasburicase,,,,Kenya,Injection,7.5mg/vial
+549,Sodium hydrogen carbonate (Sodium bicarbonate)280,,,,Kenya,Injectable solution,8.4% (10mL amp)
+550,Zoledronic acid,,,,Kenya,Concentrate solution for Infusion,800 micrograms/mL (in 5mL vial)
+551,Benzhexol,,,,Kenya,Tablet,5mg (as HCl)
+552,Biperiden,,,,Kenya,Injection,5mg (lactate) in 1mL amp
+554,Levodopa + Carbidopa,,,,Kenya,Tablet,100mg + 10mg
+556,Pramipexole,,,,Kenya,Tablet (scored),180 micrograms base
+558,Donepezil,,,,Kenya,Tablet,5mg
+560,Memantine,,,,Kenya,Tablet,5mg
+561,Rivastigmine,,,,Kenya,Capsule,1.5mg
+562,Darbepoetin alfa,,,,Kenya,Injection,25 micrograms for subcutaneous injection
+564,Erythropoetin (alfa or beta) stimulating agents,,,,Kenya,Injection (prefilled syringe),"2,000 IU"
+565,Ferrous salt,,,,Kenya,Oral liquid (drops),25mg (iron as sulphate)/ mL
+567,Ferrous salt + Folic acid,,,,Kenya,Tablet,60-65mg elemental iron + 400mcg
+568,Folic acid,,,,Kenya,Tablet,400 micrograms288
+570,Hydroxocobalamin (Vit B12),,,,Kenya,Injection,"1mg/1mL amp (as HCl, acetate or sulphate)"
+571,Iron sucrose,,,,Kenya,Injection,100mg
+572,Phytomenadione (Vit K1),,,,Kenya,Injection,10mg/mL (0.2mL) amp [c]291
+574,Tranexamic acid,,,,Kenya,Injection,100mg/mL (5mL amp)
+576,Enoxaparin,,,,Kenya,Injection (prefilled and calibrated syringe),40mg/0.4mL
+578,Heparin sodium,,,,Kenya,Injection,"5,000 IU/mL (5mL vial)"
+579,Rivaroxaban,,,,Kenya,Tablet,10mg
+582,Warfarin,,,,Kenya,Tablet (scored),1mg (as sodium salt)
+587,Deferoxamine mesilate,,,,Kenya,PFI,500mg vial
+588,Hydroxycarbamide (Hydroxyurea),,,,Kenya,Capsule,250mg
+591,Cryoprecipitate,,,,Kenya,,
+592,"Plasma, fresh-frozen",,,,Kenya,,
+593,Platelets,,,,Kenya,,
+594,Red blood cells,,,,Kenya,,
+595,Whole blood,,,,Kenya,,
+596,Anti-D immunoglobulin,,,,Kenya,PFI + diluent,750 IU/mL (2mL vial)
+597,Anti-Hepatitis B immunoglobulin (HBIG)299,,,,Kenya,Injection,100 IU/mL
+598,Anti-Rabies immunoglobulin,,,,Kenya,Injection,200 IU/mL (5mL vial)
+599,Ant-Tetanus immunoglobulin,,,,Kenya,Injection,1500 IU vial
+600,Normal immunoglobulin,,,,Kenya,Injection (IV),5% protein solution (100mL vial)
+602,Coagulation factor VIII,,,,Kenya,PFI (Extended half-life),250 IU vial
+606,Coagulation factor IX,,,,Kenya,PFI (Extended half-life),250 IU/vial
+609,Dextran- 70303,,,,Kenya,Solution,6%
+610,Gelatin-based colloid,,,,Kenya,Solution for Infusion,4%
+611,Hydroxyethyl starch,,,,Kenya,Solution for Infusion,6%
+612,Human albumin infusion,,,,Kenya,Solution,5%
+614,Polygeline,,,,Kenya,Infusion (IV),3.5% (500mL pack)
+615,Bisoprolol,,,,Kenya,Tablet,2.5mg
+617,Carvedilol,,,,Kenya,Tablet,3.125mg
+621,Glyceryl trinitrate,,,,Kenya,Tablet (sublingual),500 micrograms
+623,Isosorbide dinitrate,,,,Kenya,Tablet,20mg
+625,Trimetazidine,,,,Kenya,Tablet (m/r),35mg
+626,Adenosine,,,,Kenya,Injection,6mg/2mL
+627,Amiodarone,,,,Kenya,Injection,50mg (as HCl)/mL in 3mL amp
+637,Digoxin,,,,Kenya,Oral liquid,50 micrograms/mL
+640,Epinephrine (adrenaline)312,,,,Kenya,Injection,1mg/1mL amp
+641,Lignocaine (Preservative free)313,,,,Kenya,Injection,200mg/10mL
+642,Verapamil,,,,Kenya,Tablet (Immediate release),40mg (as HCl)
+644,Enalapril,,,,Kenya,Tablet (scored),5mg (as hydrogen maleate)
+647,Losartan,,,,Kenya,Tablet (f/c),50mg
+648,Telmisartan,,,,Kenya,Tablet,40mg
+652,Labetalol,,,,Kenya,Injection,5mg/mL (20mL amp)
+655,Metoprolol,,,,Kenya,Tablet(e/r),25mg
+657,Nebivolol,,,,Kenya,Tablet,2.5mg
+659,Amlodipine,,,,Kenya,Tablet,5mg
+661,Nifedipine,,,,Kenya,Tablet (s/r),20mg
+662,Chlorthalidone,,,,Kenya,Tablet,12.5mg
+663,Hydrochlorothiazide (HCTZ),,,,Kenya,Tablet (scored),25mg
+664,Indapamide,,,,Kenya,Tablet,1.5mg
+665,Methyldopa,,,,Kenya,Tablet,250mg
+667,Hydralazine,,,,Kenya,Injection,20mg (as HCl)
+670,Doxazosin,,,,Kenya,Tablet,2mg
+671,Prazosin,,,,Kenya,Capsule,500 micrograms
+674,Bosentan,,,,Kenya,Tablet,62.5mg
+675,Sildenafil,,,,Kenya,Tablet,25mg
+676,Tadalafil,,,,Kenya,Tablet,20mg
+677,Amlodipine + Hydrochlorothiazide (HCTZ),,,,Kenya,Tablet,5mg + 12.5mg
+678,Amlodipine + Indapamide,,,,Kenya,Tablet,5mg + 1.25mg
+679,Lisinopril + Hydrochlorothiazide (HCTZ),,,,Kenya,Tablet,20mg + 12.5mg
+680,Losartan + Hydrochlorothiazide (HCTZ),,,,Kenya,Tablet,50mg + 12.5mg
+681,Perindopril + Amlodipine,,,,Kenya,Tablet,5mg + 5mg
+683,Perindopril + Amlodipine + Indapamide,,,,Kenya,Tablet (Film-coated),5mg + 5mg + 1.25mg
+685,Telmisartan + Amlodipine,,,,Kenya,Tablet,40mg + 5mg
+686,Telmisartan+ Amlodipine+ Hydrochlorothiazide (HCTZ),,,,Kenya,Tablet,40mg + 5mg + 12.5mg
+687,Telmisartan + Hydrochlorothiazide (HCTZ),,,,Kenya,Tablet,40mg + 12.5mg
+697,Dobutamine,,,,Kenya,Injection (solution),12.5mg/mL (20mL)
+698,Dopamine,,,,Kenya,Injection,40mg/mL (as HCl) (5mL vial)
+699,Empagliflozin,,,,Kenya,Tablet,10mg
+701,Eplerenone,,,,Kenya,Tablet,25mg
+702,Furosemide,,,,Kenya,Injection,10mg/mL (2mL amp)
+707,Ivabradine,,,,Kenya,Tablet (f/c),5mg
+710,Metolazone,,,,Kenya,Tablet,5mg
+711,Milrinone,,,,Kenya,Injection (solution),1mg/mL (10mL)
+712,Nitroglycerin (NTG),,,,Kenya,Injection,2.5mg/mL (10mL) amp
+713,Norepinephrine (Noradrenaline)331,,,,Kenya,Injection,1mg/mL
+714,Sacubitril + Valsartan,,,,Kenya,Tablet (f/c),24mg + 26mg
+716,Spironolactone,,,,Kenya,Tablet (scored),25mg
+717,Torsemide,,,,Kenya,Tablet (scored),20mg
+720,Clopidogrel,,,,Kenya,Tablet,75mg
+721,Acetylsalicylic acid (Aspirin) + Clopidogrel,,,,Kenya,Tablet,75mg + 75mg
+722,Alteplase,,,,Kenya,PFI,50mg
+724,Reteplase,,,,Kenya,PFI,10 Units
+725,Tenecteplase,,,,Kenya,PFI with prefilled syringe with 10mL water for injection,50mg (10000IU)
+726,Atorvastatin,,,,Kenya,Tablet,20mg
+730,Miconazole,,,,Kenya,Cream,2% (as nitrate)
+732,Fusidic acid,,,,Kenya,Ointment,2% (15g)
+733,Mupirocin,,,,Kenya,Ointment,2% (15g)
+734,Silver sulphadiazine,,,,Kenya,Cream,1% (50g)
+736,Betamethasone,,,,Kenya,Cream,0.1% (as valerate)
+738,Calamine,,,,Kenya,Lotion,15%
+739,Clobetasone propionate,,,,Kenya,Ointment,0.05%
+740,Crotamiton,,,,Kenya,Cream,10% (30g)
+743,Mometasone,,,,Kenya,Ointment,0.1% (as furoate) (30g)
+746,Benzoyl peroxide,,,,Kenya,Gel,5% (30g)
+747,Dithranol,,,,Kenya,Paste,2%
+748,Podophyllin resin,,,,Kenya,Solution,15% (in benzoin tincture) (15mL)
+749,Salicylic acid,,,,Kenya,Ointment,3%
+750,Tretinoin,,,,Kenya,Cream,0.05%
+751,Benzyl Benzoate,,,,Kenya,Lotion,25% (50mL)
+755,White soft paraffin (Petroleum jelly)354,,,,Kenya,Topical application,100g
+756,Fluorescein,,,,Kenya,Test strip,0.6mg
+757,Tropicamide + Phenylephrine,,,,Kenya,Eye drops,0.8% + 5% w/v
+758,Amidotrizoate,,,,Kenya,Solution (oral and rectal use),370-420mg iodine/mL (as sodium or meglumine salt) (100mL)
+759,Barium sulphate,,,,Kenya,Suspension (aq),95% w/w concentration (1 litre)
+761,Iso-osmolar contrast media,,,,Kenya,Solution for IV injection/ infusion,320mg iodine/mL (100mL)
+762,Non-ionic low osmolar water- soluble iodinated contrast media,,,,Kenya,Injection,300mg iodine/mL (50mL) [c]361
+770,Gadobutrol,,,,Kenya,Injection (solution) (IV),1mmol/mL (7.5mL)369
+772,Gadodiamide,,,,Kenya,Injection (solution) (IV),0.5 mmol/mL (20mL)370
+773,Gadopentate dimeglumine,,,,Kenya,Injection (solution) (IV),0.5 mmol/mL (10mL)371
+775,Chlorhexidine,,,,Kenya,Solution for dilution,5% (as gluconate/ digluconate)
+777,Povidone iodine,,,,Kenya,Solution,10% (equiv. to Iodine 1%)
+778,Alcohol-based hand rub,,,,Kenya,Solution,Isopropyl alcohol 75% (500mL dispenser)
+779,Glutaral,,,,Kenya,Solution,2%
+780,Sodium hypochlorite,,,,Kenya,Solution,4-6% chlorine373
+781,Amiloride,,,,Kenya,Tablet,5mg (as HCl)
+792,Lansoprazole,,,,Kenya,Tablet (dispersible),15mg [c]377
+793,Omeprazole,,,,Kenya,PFI,40mg (as sodium salt) vial
+795,Pantoprazole,,,,Kenya,Tablet (dispersible),20mg
+802,Domperidone,,,,Kenya,Oral liquid,5mg/5mL
+804,Fosaprepitant,,,,Kenya,Injection,150mg
+807,Olanzapine,,,,Kenya,Tablet,5mg
+811,Palonosetron,,,,Kenya,Injection,"0.05mg/mL, 5mL vial"
+812,Mesalazine,,,,Kenya,Tablet (e/c),400mg
+819,Oral rehydration salts + Zinc sulphate,,,,Kenya,Co-pack (4 sachets + 10 Tablet (dispersible)),PFOL in sachet to make 500mL + 20mg Tablet [c]
+820,Oral rehydration salts (ORS),,,,Kenya,PFOL (to make 500mL),Sachet (WHO low- osmolarity formula)
+821,Rehydration solution for malnutrition (ReSoMal)387,,,,Kenya,PFOL (to make 1L),Sachet (42g) (WHO formula)
+826,Fludrocortisone,,,,Kenya,Tablet,100 micrograms (as acetate)
+830,Testosterone,,,,Kenya,Gel,1%
+832,Conjugated Oestrogens,,,,Kenya,Tablet,300 micrograms
+834,Estradiol,,,,Kenya,Transdermal patch,0.1mg/day
+835,"Insulin, intermediate-acting (NPH)",,,,Kenya,Injection,100 IU/mL (10mL vial)
+836,"Insulin, long-acting, Detemir",,,,Kenya,Injection,100U/mL (10mL vial)
+838,"Insulin, Long-acting (basal), Glargine",,,,Kenya,Injection,100 IU/mL (10mL vial)
+840,"Insulin, Premixed (Short acting + Intermediate acting) (Human)397",,,,Kenya,Injection,100 IU/mL (10mL vial)
+842,"Insulin, Premixed (Ultra short acting + Intermediate acting)398",,,,Kenya,Injection,100 IU/mL (10mL vial)
+844,"Insulin, Short acting (Soluble / regular)",,,,Kenya,Injection,100 IU/mL (10mL vial)
+846,"Insulin, Ultra short-acting (Rapid) (Insulin Lispro and Aspart)",,,,Kenya,Injection,100 IU/mL (10mL vial)
+848,Gliclazide,,,,Kenya,Tablet (m/r),30mg
+852,Metformin,,,,Kenya,Tablet,500mg (as HCl)
+855,Pioglitazone,,,,Kenya,Tablet,15mg
+857,Linagliptin,,,,Kenya,Tablet (f/c),5mg
+858,Sitagliptin,,,,Kenya,Tablet,50mg
+862,Empagliflozin + Metformin,,,,Kenya,Tablet (i/r),12.5mg + 500mg
+866,Pioglitazone + Metformin,,,,Kenya,Tablet,15mg + 500mg
+868,Sitagliptin + Metformin,,,,Kenya,Tablet,50mg + 500mg
+871,Diazoxide,,,,Kenya,Suspension,50mg/mL
+872,Glucagon,,,,Kenya,injection,1mg/mL
+873,Carbimazole,,,,Kenya,Tablet,5mg
+875,Levothyroxine,,,,Kenya,Tablet,25 micrograms [c] (as sodium salt)
+878,Lugol’s Iodine solution,,,,Kenya,Solution,~130mg total iodine/mL
+880,Propylthiouracil,,,,Kenya,Tablet,50mg
+881,Calcitriol (Vit D3)409,,,,Kenya,Capsule,250 micrograms
+883,Desmopressin,,,,Kenya,Injection,4mcg/mL
+885,Somatropin (recombinant human growth hormone)413,,,,Kenya,Prefilled pen,12mg
+886,BCG vaccine (live attenuated),,,,Kenya,PFI + diluent,1mL vial (multi doses)
+887,DPT + HiB + Hep B vaccine (pentavalent)416,,,,Kenya,Injection (suspension),5mL vial (10 doses)
+888,Hepatitis B vaccine,,,,Kenya,Injection (suspension),Single dose vial
+890,HPV vaccine (quadrivalent)417,,,,Kenya,Injection,Single or multi dose vial
+891,Measles + Rubella vaccine (MR)418,,,,Kenya,PFI + diluent,5mL vial (10 doses)
+892,Pneumococcal vaccine (10-valent ads. conjugate),,,,Kenya,Injection (suspension),2mL vial (4 doses)
+893,Pneumococcal vaccine (13 valent or higher adsorbed conjugate)419,,,,Kenya,Injection (syringe),Single or multi dose vial
+894,Polio vaccine (IPV),,,,Kenya,Injection,Multi dose vial
+895,"Polio vaccine, oral (OPV) (live attenuated)",,,,Kenya,Oral drops,10mL vial (20 doses)
+896,Rotavirus vaccine,,,,Kenya,Oral suspension,5 dose vial
+897,Tetanus + Diphtheria (Td) vaccine,,,,Kenya,Injection,10mL vial (20 doses)
+898,Tetanus + Diphtheria + Pertussis (Tdap) vaccine,,,,Kenya,Injection,0.5mL (single dose)
+899,Cholera vaccine,,,,Kenya,Oral suspension,1.5mL vial (single dose) - single dose vial
+900,Hepatitis A vaccine,,,,Kenya,Injection,80 units (Paed)
+902,Malaria vaccine,,,,Kenya,Injection,1mL vial (2 doses)
+903,Meningococcal meningitis vaccine,,,,Kenya,Injection,Single or multi dose
+904,Rabies vaccine (cell culture),,,,Kenya,Injection,Single dose (Purified Verocell / Human diploid)
+905,Typhoid vaccine,,,,Kenya,Injection (solution),Single or multi dose
+907,Dexamethasone + Polymixin B sulphate + Neomycin sulphate,,,,Kenya,Ointment,"1mg dexamethasone, 6000 IU polymixin B sulphate, 3500 IU neomycin sulphate"
+910,Gentamicin + Dexamethasone,,,,Kenya,Eye drops,0.3% + 0.1%
+911,Moxifloxacin,,,,Kenya,Eye drops,0.5% (as HCL)
+912,Natamycin,,,,Kenya,Eye drops,5%
+913,Ofloxacin,,,,Kenya,Eye drops,0.3% (as sulphate)
+914,Ofloxacin + Dexamethasone,,,,Kenya,Solution (eye-drops),0.3 + 0.1%
+915,Tetracycline,,,,Kenya,Eye ointment,1% (as HCl)
+916,Tobramycin,,,,Kenya,Solution (eye-drops),0.3% (as sulphate)
+917,Tobramycin + Dexamethasone,,,,Kenya,Solution (eye-drops),0.3 + 0.1%
+920,Fluorometholone,,,,Kenya,Solution (eye-drops),0.1%
+921,Ketorolac trometamol,,,,Kenya,Solution (eye-drops),0.5%
+924,Triamcinolone,,,,Kenya,Injection suspension,40mg/1mL amp (as acetonide or hexacetonide)
+927,Proparacaine,,,,Kenya,Solution (eye-drops),0.5% (as HCl)
+928,Tetracaine,,,,Kenya,Solution (eye-drops),0.5% (as HCl)
+930,Bimatoprost,,,,Kenya,Solution (eye-drops),0.01%
+932,Bimatoprost + Timolol,,,,Kenya,Solution (eye-drops),Bimatoprost 0.03% +Timolol 0.5%
+933,Brimonidine + Timolol,,,,Kenya,Solution (eye-drops),Brimonidine 0.2% +Timolol 0.5%
+934,Dorzolamide,,,,Kenya,Solution (eye-drops),2% (as HCl)
+935,Latanoprost,,,,Kenya,Solution (eye-drops),0.005%
+936,Pilocarpine,,,,Kenya,Solution (eye-drops)441,4% (as HCl or nitrate)
+940,Timolol,,,,Kenya,Solution (eye-drops),0.5% (as hyd. maleate)
+943,Cyclopentolate,,,,Kenya,Solution (eye-drops),1%
+944,Tropicamide + phenylephrine,,,,Kenya,Solution (eye-drops),0.8% + 5% w/v
+945,Aflibercept,,,,Kenya,Injection,0.05mL (2mg vial)
+947,Ranibizumab,,,,Kenya,Injection,6mg/mL (0.3mg vial)
+949,Azelastine,,,,Kenya,Solution (eye-drops),0.05%
+950,Olopatadine,,,,Kenya,Solution (eye-drops),0.1% (HCl)
+952,Sodium cromoglicate,,,,Kenya,Solution (eye-drops),2%
+953,Hypertonic saline,,,,Kenya,Solution (eye-drops),3%
+954,Methyl cellulose,,,,Kenya,Solution (eye-drops),0.3 - 1%
+955,Polyacrylic acid,,,,Kenya,Eye Gel,0.2%
+956,Riboflavin,,,,Kenya,Solution (eye-drops),0.1% with Dextran
+958,Sodium Hyaluronate,,,,Kenya,Solution (eye-drops),1% (preseverative free)
+959,Trypan blue,,,,Kenya,Intracameral Solution,0.06%
+960,Ethinylestradiol + Levonorgestrel,,,,Kenya,Tablet,30 micrograms + 150 micrograms
+961,Ethinylestradiol + Norethisterone,,,,Kenya,Tablet,35 micrograms + 1mg
+962,Levonorgestrel,,,,Kenya,Tablet,30 micrograms
+963,Medroxyprogesterone acetate (DMPA),,,,Kenya,Depot Injection (IM)459,150mg/1mL (prefilled syringe)
+965,Etonorgestrel-releasing implant,,,,Kenya,Implant,68mg (1 rod)
+966,Levonorgestrel-releasing implant,,,,Kenya,Implant,150mg (2 x 75mg rods)
+967,Clomifene,,,,Kenya,Tablet,50mg (as citrate)
+968,Human chorionic gonadotropin (HCG),,,,Kenya,Injection,"5,000 IU/vial"
+969,Human menopausal gonadotropin (HMG)464,,,,Kenya,Injection,75 IU
+971,Danazol,,,,Kenya,Capsule,50mg
+972,Dienogest,,,,Kenya,Tablet,2mg
+974,Levonorgestrel (LNG),,,,Kenya,LNG-releasing Intrauterine system (LNG-IUS),Reservoir with 52mg
+975,Ergometrine,,,,Kenya,Injection,500 micrograms/1mL (as hydrogen maleate) amp
+976,Mifepristone + Misoprostol,,,,Kenya,Tablet,Mifepristone 200mg (1 Tablet) and Misoprostol 200 micrograms (4 vaginal tablets) in Combi-pack
+977,Misoprostol,,,,Kenya,Tablet,200 micrograms470
+979,Oxytocin,,,,Kenya,Injection,10 IU/1mL amp
+980,Prostaglandin E,,,,Kenya,Vaginal Tablet,3mg
+981,Salbutamol,,,,Kenya,Injection,500 micrograms (as sulphate)/mL (5mL amp)
+982,Terbutaline,,,,Kenya,Injection,"0.5mg/mL, 1mL"
+988,Surfactant,,,,Kenya,Suspension for intratracheal instillation,25mg/mL [c]483
+990,Continuous ambulatory peritoneal dialysis solution (CAPD),,,,Kenya,Parenteral solution,Of appropriate composition
+991,Haemodialysis solution,,,,Kenya,Parenteral solution,Of appropriate composition
+992,Aripiprazole,,,,Kenya,Tablet,15mg
+994,Chlorpromazine,,,,Kenya,Injection,25mg (as HCl)/mL (2mL amp)
+997,Clozapine,,,,Kenya,Tablet (scored),100mg
+998,Flupentixol,,,,Kenya,"Injection (oily, depot)",20mg (as decanoate)/mL (2mL amp)
+999,Fluphenazine,,,,Kenya,"Injection (oily, depot)",25mg (as decanoate) /1mL amp
+1008,Paliperidone palmitate,,,,Kenya,Injection,75mg/mL
+1011,Quetiapine,,,,Kenya,"Tablet (i/r, scored)",100mg
+1016,Risperidone,,,,Kenya,Tablet (scored),2mg
+1017,Zuclopenthixol,,,,Kenya,Injection (aqua)491,100mg (as acetate)/mL (2mL amp)
+1021,Escitalopram,,,,Kenya,Tablet,10mg
+1022,Fluoxetine,,,,Kenya,Tablet (scored),20mg (as HCl)
+1023,Mirtazapine,,,,Kenya,Tablet,15mg
+1024,Venlafaxine,,,,Kenya,Tablet,75mg
+1026,Carbamazepin,,,,Kenya,Tablet (cross-scored),200mg
+1028,Divalproex sodium,,,,Kenya,Tablet,500mg
+1033,Lithium carbonate,,,,Kenya,Tablet (scored),400mg
+1040,Alprazolam,,,,Kenya,Tablet,0.25mg
+1042,Bromazepam,,,,Kenya,Tablet (scored),3mg
+1045,Paroxetine,,,,Kenya,Tablet,20mg
+1047,Vitamin B and C,,,,Kenya,Injection (IV),Pair of amps. (2 x 5mL)
+1048,Buprenorphine,,,,Kenya,Tablet (sublingual),2mg (as HCl)
+1050,Buprenorphine + Naloxone,,,,Kenya,Tablet (sublingual),2mg + 500 micrograms (both as HCl)
+1052,Bupropion,,,,Kenya,Tablet,150mg
+1054,Naltrexone,,,,Kenya,Tablet,50mg (as HCl)
+1057,Nicotine (NRT)506,,,,Kenya,Chewing gum,2mg
+1060,Atomoxetine,,,,Kenya,Tablet,10mg
+1061,Methylphenidate,,,,Kenya,Tablet,10mg
+1064,Melatonin,,,,Kenya,Tablet (dispersible),4mg
+1066,Zolpidem,,,,Kenya,Tablet,10mg
+1067,Budesonide,,,,Kenya,Inhalation (aerosol),100 micrograms/dose (200 dose)
+1069,Budesonide + Formoterol,,,,Kenya,Metered dose inhaler,100 micrograms + 6mg/ metered dose (120 dose)
+1073,Epinephrine (adrenaline),,,,Kenya,Injection,1mg/1mL amp511
+1074,Ipratropium bromide,,,,Kenya,Inhalation (aerosol),20 micrograms/metered dose (200 dose)
+1076,Montelukast,,,,Kenya,Tablet (chewable),5mg (as sodium salt)512
+1079,Salbutamol + Beclomethasone,,,,Kenya,Inhalation (aerosol),100 micrograms + 50 micrograms
+1080,Salbutamol + Ipratropium,,,,Kenya,Nebuliser solution,Salbutamol 2.5mg as sulphate + Ipratropium 500 micrograms as bromide in 2.5mL Amp
+1081,Tiotropium,,,,Kenya,Powder for inhalation in a Capsule,18 micrograms / Capsule
+1083,Benzocaine + Chlorbutol + Paradichlorobenzene + Turpentine oil,,,,Kenya,Solution (ear drops),2.7% + 2% + 5% + 15%
+1084,Betahistine,,,,Kenya,Tablet,8mg
+1086,Cinnarizine,,,,Kenya,Tablet,25mg
+1088,Ciprofloxacin + Dexamethasone,,,,Kenya,Solution (ear drops),0.3% (as HCl) + 0.1%
+1090,Hydrogen peroxide,,,,Kenya,Solution (ear drops),3% (stabilised)
+1092,Fluticasone,,,,Kenya,Nasal spray,27.5 micrograms (as propionate or furoate)
+1093,Liquid paraffin,,,,Kenya,Nasal drops,100%
+1094,Neomycin + Betamethasone,,,,Kenya,Solution (nasal drops),0.5% (as sulphate) + (0.1% as sodium phosphate)
+1095,Sodium chloride,,,,Kenya,Solution (nasal drops),0.9%
+1096,Xylometazoline,,,,Kenya,Nasal spray,0.05%
+1097,Lidocaine (Lignocaine)521,,,,Kenya,Spray,10mg/metered dose (actuation)
+1100,Colchicine,,,,Kenya,Tablet,500 micrograms
+1102,Probenecid,,,,Kenya,Tablet,250mg
+1103,Abatacept,,,,Kenya,PFI (IV),250mg
+1104,Adalimumab,,,,Kenya,Injection,40mg/0.4mL
+1106,Baricitinib,,,,Kenya,Tablet,2mg
+1109,Etanercept,,,,Kenya,Injection,25mg vial528
+1111,Golimumab,,,,Kenya,Injection (solution) (SC),50mg
+1112,Hydroxychloroquine,,,,Kenya,Tablet,200mg (as sulphate)
+1113,Infliximab,,,,Kenya,PFI,100mg
+1114,Leflunomide,,,,Kenya,Tablet,20mg
+1115,Methotrexate (MTX),,,,Kenya,Tablet,2.5mg (as sodium salt)
+1124,Sulfasalazine (SSZ),,,,Kenya,Tablet,500mg
+1125,Tocilizumab,,,,Kenya,(Solution for IV infusion),20mg/mL (4mL vial)
+1128,Acetylsalicylic acid (Aspirin)539,,,,Kenya,Tablet (scored),300mg
+1139,β-Sitosterol,,,,Kenya,Ointment,0.25% w/w (30gm)
+1140,Collagenase clostridiopeptidase A + Proteases,,,,Kenya,Ointment,1.2 units + 0.24 units (15g)
+1141,Distilled water,,,,Kenya,Liquid,500mL
+1142,Human Epidermal growth factor (recombinant)550,,,,Kenya,Gel (water-based),60 micrograms (15g)
+1143,Human Platelet derived growth factor (recombinant),,,,Kenya,Gel (water-based),100 micrograms (15g)
+1145,Papain + Urea (Papain-urea topical)552,,,,Kenya,Ointment,"521,700 IU + 100mg (15g)"
+1146,Silver ion,,,,Kenya,Solution,0.01% (100mL)
+1150,Zinc Hyaluronate (zinc- hyaluronan),,,,Kenya,Gel (water-based),15g
+1151,Calcium carbonate,,,,Kenya,Tablet,500mg
+1152,Calcium Carbonate with Vitamin D,,,,Kenya,Tablet,Minimum Calcium 1000mg/600IU of vitamin D
+1153,Calcium polystyrene sulphonate,,,,Kenya,Powder,15g sachet
+1154,Magnesium chloride,,,,Kenya,Tablet,71.5mg (containing Calcium as carbonate 119mg per Tablet)
+1157,Potassium chloride,,,,Kenya,Tablet (e/r),600mg
+1158,Rehydration solution for malnutrition (ReSoMal),,,,Kenya,PFOL (to make 1L),Sachet (42g) (WHO formula)
+1159,Sevelamer,,,,Kenya,Tablet,400mg
+1161,Sodium acid phosphate,,,,Kenya,Tablets (effervescent),1.936g (equiv. to phosphorus 500mg)
+1163,Sodium polystyrene sulphonate,,,,Kenya,Powder,450g
+1164,Sodium hydrogen carbonate (Sodium bicarbonate)562,,,,Kenya,Tablet,1g
+1165,Tolvaptan,,,,Kenya,Tablet,15mg
+1166,Glucose,,,,Kenya,Injectable solution,5% (isotonic) (500mL infusion pack)
+1169,Glucose + Sodium chloride,,,,Kenya,Injectable solution,5% + 0.9% [c]
+1170,Potassium acid phosphate,,,,Kenya,Injection,13.6% w/v sterile aqueous solution
+1178,Sodium hydrogen carbonate (Sodium bicarbonate),,,,Kenya,Injectable solution,8.4% (10mL amp)571
+1179,Sodium lactate compound (Hartmann’s /Ringers lactate),,,,Kenya,Injectable solution (infusion),BP formula (500mL)572
+1180,Water for injection,,,,Kenya,Injection,10mL amp
+1181,Ascorbic acid (Vit C)573,,,,Kenya,Tablet,50mg
+1184,Calcitriol (Vit D3)574,,,,Kenya,Capsule,250 micrograms
+1189,Cholecalciferol (Vit D3),,,,Kenya,Oral liquid (drops)576,400 IU/mL [c]
+1191,Ergocalciferol (Vit D2)578,,,,Kenya,Oral liquid,"250 micrograms (10,000 IU)/mL"
+1194,Niacinamide,,,,Kenya,Tablet,500mg
+1195,Omega 3 fatty acids,,,,Kenya,Tablet / Capsule,1g
+1197,Pyridoxine (Vit B6),,,,Kenya,Tablet,25mg (as HCl)581
+1199,Retinol (Vit A),,,,Kenya,Capsule,"50,000 IU (as palmitate)"
+1202,Thiamine (Vit B1)583,,,,Kenya,Tablet,50mg (as HCl)
+1203,Vitamins & Minerals Mix,,,,Kenya,Powder,1g sachet [c]
+1204,Vitamin B12 (Cobalamin),,,,Kenya,Tablet,500 micrograms
+1206,Zinc sulphate,,,,Kenya,Tablet (dispersible),20mg
+1207,Amino acids,,,,Kenya,Solution for IV infusion,21g amino acid + 12g glutamine per 100mL bottle587
+1212,Combined amino acid and glucose formulation for central administration-two chamber bag for central admnistration,,,,Kenya,Solution for IV infusion,1 litre
+1213,"Combined amino acid, glucose and lipids with medium chain Triglycerides (MCT) / Long chain Triglycerides (LCT) - Three Chamber Bag For Central Administration",,,,Kenya,Solution for IV infusion,1 litre
+1215,"Combined amino acid, glucose, and lipids with medium chain Triglycerides (MCT) + Long chain Triglycerides (LCT) - three chamber bag for peripherial administration",,,,Kenya,Solution for IV infusion,500mL
+1219,Fat (lipid)595,,,,Kenya,Infusion (emulsion) (IV),20% (100mL) [c]
+1221,Fat-soluble vitamins,,,,Kenya,"Solution for IV infusion, for infants and children",10mL [c]
+1223,Trace elements,,,,Kenya,"Solution for IV infusion, Adult",10mL
+1225,Water-soluble vitamins Containing Vitamin C and B-complex,,,,Kenya,Solution for IV infusion,10mL
+1226,High energy protein fat-free hydrolyzed feed,,,,Kenya,Liquid,200mL
+1227,Nutritionally complete elemental hepatic formula with MCT for oral / tube feeding,,,,Kenya,Liquid,200mL
+1229,Nutritionally complete glutamine-enriched liquid formula,,,,Kenya,Liquid,500mL
+1230,"Nutritionally complete High energy, high protein oral / tube feed",,,,Kenya,Liquid,200mL
+1232,Nutritionally complete hydrolysed feeds with MCT fibre-free,,,,Kenya,Liquid,500mL
+1233,Nutritionally complete hypercaloric liquid formula feed,,,,Kenya,Liquid,500mL
+1234,"Nutritionally complete, hypocaloric oral / tube feed liquid diet with fibre",,,,Kenya,Liquid,200mL
+1236,Nutritionally complete isocaloric liquid diet with fibre for oral / tube feeding,,,,Kenya,Liquid,200mL
+1239,Nutritionally complete isocaloric liquid diet fibre- free for oral / tube feeding,,,,Kenya,Liquid,200mL
+1242,Nutritionally complete Iso- caloric paediatric liquid diet for oral / tube feeding,,,,Kenya,Liquid,200mL
+1244,Nutritionally complete liquid low sodium formula,,,,Kenya,Liquid,500mL
+1245,Nutritionally complete semi- elemental peptide-based formula for oral / tube feed,,,,Kenya,Liquid,200mL
+1247,Adult nutritionally complete isocaloric formula,,,,Kenya,Powder,400g
+1248,Adult nutritionally complete elemental peptide formula,,,,Kenya,Powder,20 to 30g sachet
+1249,Amino acids and Vitamin granules,,,,Kenya,Powder,5 to 10g sachet
+1250,"High calorie, high protein formula",,,,Kenya,Powder,200g
+1252,Hepatic formula rich in BCAA,,,,Kenya,Powder,200g to 500g
+1254,Nutritionally complete low glycaemic index formula,,,,Kenya,Powder,50g sachet
+1255,Paediatric nutritionally complete isocaloric formula,,,,Kenya,Powder,400g [c]
+1256,Paediatric nutritionally complete peptide-based formula,,,,Kenya,Powder,400g [c]
+1257,Specialized Renal formula,,,,Kenya,Powder,400g
+1258,Specialized Semi-elemental peptide formula,,,,Kenya,Powder,400g
+1259,Fortified Blended Food (FBF),,,,Kenya,Flour,415kcal/100g (Sachet)623
+1263,Ready to use supplemental food (RUSF)627,,,,Kenya,Oral paste / bar / liquid / powder,Standard formula (minimum 350 Kcal/100g)
+1264,Ready to use therapeutic food (RUTF)628,,,,Kenya,Oral paste / bar / liquid / powder,Standard formula (minimum 500 Kcal/100g)
+1265,Therapeutic diet feed (F-75)629,,,,Kenya,PFOL (for approx. 600mL),Standard formula (102.5g sachet)
+1267,Therapeutic diet feed (F-100)630,,,,Kenya,PFOL (for approx. 600mL),Standard formula (114g sachet)
+1269,Technetium Tc- 99m (99m Tc) Succimer (Technetium Tc-99m Dimercaptosuccinic Acid (DMSA)631,,,,Kenya,"Injection, prepared from a non-radioactive succimer kit for radiolabelling with 99mTc prior to administration",
+1270,Hexamethyl propylene amine oxime (HMPAO) (Technetium- 99m exametazime)632,,,,Kenya,"Injection, prepared from a non- radioactive exametazine kit for radiolabelling with 99mTc prior to administration",
+1271,Iodine -123 (sodium iodide)633,,,,Kenya,Capsule (Oral),3.7MBq (100uCi)
+1274,Iodine 131(sodium iodide)634,,,,Kenya,Capsule (Oral),0.33 MBq (9uCi)
+1279,Mercaptoacetyltriglycine (MAG3) (Technetium -99m mertiatide)635,,,,Kenya,"Injection, prepared from a non-radioactive betiatide kit for radiolabelling with 99mTc prior to administration",
+1280,Methylene diphosphonate (MDP) (Technetium -99m medronate)636,,,,Kenya,"Injection, prepared from a non-radioactive medronate kit for radiolabeling with 99mTc prior to administration",
+1281,Molybdenum-99 / Technetium-99m radionuclide generator,,,,Kenya,Radionuclide generator,"1, 2, 2.5, 3, 4, 4.5, 5, 6, 7.5, 10, 12.5, 15, 18, 20 Ci of 99Mo"
+1282,Sesta methoxyisobutylisonitrile (sestamibi) (Technetium -99m Sestamibi)638,,,,Kenya,"Injection, prepared from a non-radioactive sestamibi kit for radiolabeling with 99mTc prior to administration",
+1283,Technetium - 99m disofenin (DISIDA)639,,,,Kenya,"Injection, prepared from a non-radioactive disofenin kit for radiolabelling with 99mTc prior to administration",
+1284,Technetium - 99m leucocytes,,,,Kenya,Injection,
+1285,Technetium - 99m mebrofenin (BRIDA)641,,,,Kenya,"Injection, prepared from a non-radioactive mebrofenin kit for radiolabelling with 99mTc prior to administration",
+1286,Technetium-99m pentetate (DTPA)642,,,,Kenya,"Injection, Inhalation, prepared from a non-radioactive pentetate kit for radiolabelling with 99mTc prior to administration",
+1287,Technetium-99m sodium pertechnetate,,,,Kenya,"Injection, eluted from approved 99Mo/99mTc radionuclide generator",
+1289,[Fluorine-18] Prostate Specific Membrane Antigen (PSMA) 1007,,,,Kenya,,
+1290,Fluorodeoxyglucose (FDG) (Fluorine -18),,,,Kenya,Injection,0.74 – 11.1 GBq (20 – 300 mCi/mL)
+1291,Gallium-68 oxodotreotide (dotatate),,,,Kenya,Injection,40 micrograms of oxodotreotide kit for radiolabeling with up to 1110 MBq (30 mCi) of [68Ga]GaCl2
+1292,Germanium-68 - Gallium-68 radionuclide generator,,,,Kenya,Radionuclide generator,0.74 – 1.85 GBq
+1293,[Iodine-131] sodium iodide,,,,Kenya,Oral solution,5 mCi/mL
+1295,Lutetium-177 oxodotreotide (dotatate),,,,Kenya,Injection,370 MBq/mL (10 mCi/mL)
+0,amikacine,injectable,500mg,,Senegal,,
+1,amoxicilline,gélule,500mg,,Senegal,,
+3,amoxicillicine,comprimé dispersible,250mg,,Senegal,,
+5,amoxicilline+acide clavulanique,sachet,"500mg/62,5mg",,Senegal,,
+7,ampicilline,injectable,1g,,Senegal,,
+8,azithromycine,comprimé,500mg,,Senegal,,
+9,benzathine -benzylpénicilline,injectable,"2,4mui",,Senegal,,
+10,benzathine-benzylpénicilline,injectable,"1,2mui",,Senegal,,
+11,benzylpénicilline,injectable,1mui,,Senegal,,
+12,céfazoline,injectable,1g,,Senegal,,
+13,céfixime,comprimé,200mg,,Senegal,,
+15,céfotaxime,injectable,1 g,,Senegal,,
+16,ceftriaxone,injectable,1g,,Senegal,,
+17,ciprofloxacine,comprimé,250mg,,Senegal,,
+21,doxycycline,comprimé,100mg,,Senegal,,
+22,erythromycine,comprimé,500mg,,Senegal,,
+23,gentamicine,injectable,80mg/2ml,,Senegal,,
+24,oxacilline,injectable,1g,,Senegal,,
+25,flucloxacilline,suspension buvable,250mg/5ml,,Senegal,,
+28,imipénèmes,injectable,500mg,,Senegal,,
+29,phénoxyméthylpénicilline,comprimé,1000000 ui,,Senegal,,
+30,sulfaméthoxazole + triméthoprime,comprimé,400mg/80mg,,Senegal,,
+33,vancomycine,injectable,500mg,,Senegal,,
+34,thiamphénicol,injectable,750mg,,Senegal,,
+35,imipéneme +cilastatine,injectable,500mg/500mg,,Senegal,,
+36,amoxicilline + acide clavulanique,sirop,"100 mg / 12,5 mg / ml",,Senegal,,
+38,céfuroxime,injectable,750mg,,Senegal,,
+39,cyclosérine,comprimé,250mg,,Senegal,,
+40,ethambutol,comprimé,400mg,,Senegal,,
+41,ethionamide,comprimé,250mg,,Senegal,,
+42,isoniazide,comprimé,300mg,,Senegal,,
+43,lévofloxacine,comprimé,250mg,,Senegal,,
+44,pyrazinamide,comprimé,400mg,,Senegal,,
+45,clofazimine,comprimé,100mg,,Senegal,,
+46,rifampicine/isoniazide/pyrazinam ide,comp.disp,75/50/150 mg,,Senegal,,
+47,rifampicine/isoniazide,comp.disp,75/50 mg,,Senegal,,
+48,bédaquiline,comprimé,100 mg,,Senegal,,
+49,linézolide,comprimé,600 mg,,Senegal,,
+50,pyridoxine,comprimé,100mg,,Senegal,,
+51,delamanid,comprimé dispersible,50mg,,Senegal,,
+60,rifapentine+isoniazide,comprimé,(300/300)mg,,Senegal,,
+61,rifampicine/isoniazide/pyrazinam ide/ethambutol,comprimé,150mg/75mg/4 00mg/275mg,,Senegal,,
+67,dapsone,comprimé,100mg,,Senegal,,
+68,rifampicine,gélule,300mg,,Senegal,,
+69,artésunate/amodiaquine,comprimé,"25 mg/67,5mg; b/3cp",,Senegal,,
+73,artéméther/luméfantrine,comprimé,20mg/120mg; b18cp,,Senegal,,
+75,artémèther/luméfantrine,comprimé,80mg/480mg,,Senegal,,
+77,dihydroartémisinine/pipéraquine,comprimé,40mg/320mg; b/9cp,,Senegal,,
+78,artésunate,injectable,30mg/ml,,Senegal,,
+80,artéméther,injectable,80mg/ml,,Senegal,,
+81,artesunate,suppositoire,100mg,,Senegal,,
+82,sulfadoxine + pyriméthamine,comprimé,500mg/25mg,,Senegal,,
+83,sulfadoxine/pyriméthamine + amodiaquine,comprimé,500mg/25mg + 153mg,,Senegal,,
+85,quinine,injectable,400mg,,Senegal,,
+86,primaquine,comprimé,"7,5 mg",,Senegal,,
+87,métronidazole,comprimé,500mg,,Senegal,,
+92,amphotéricine b liposomale,injectable,50mg,,Senegal,,
+93,amphotéricine b,comprimé,250mg,,Senegal,,
+95,fluconazole,comprimé,100mg,,Senegal,,
+98,griséofulvine,comprimé,250mg,,Senegal,,
+100,kétoconazole,comprimé,200mg,,Senegal,,
+101,nystatine,comprimé gynécologique,100.000ui,,Senegal,,
+102,terbinafine,comprimé,250mg,,Senegal,,
+103,albendazole,comprimé,400mg,,Senegal,,
+106,mébendazole,comprimé,100mg,,Senegal,,
+109,ivermectine,comprimé,3mg,,Senegal,,
+110,praziquantel,comprimé,600mg,,Senegal,,
+111,aciclovir,comprimé,200mg,,Senegal,,
+113,valaciclovir,comprimé,500mg,,Senegal,,
+114,ganciclovir,injectable,500mg,,Senegal,,
+115,ténofovir,comprimé,300mg,,Senegal,,
+116,sofosbuvir,comprimé,400mg,,Senegal,,
+117,ténofovir + emtricitabine,comprimé,300mg/200mg,,Senegal,,
+118,ténofovir + lamivudine,comprimé,300mg/300mg,,Senegal,,
+119,zidovudine + lamivudine,comprimé,60mg/30mg,,Senegal,,
+120,zidovudine + lamivudine + abacavir,comprimé,300mg/150mg/ 300mg,,Senegal,,
+121,abacavir+lamivudine,comprimé,600mg/300mg,,Senegal,,
+124,efavirenz,comprimé,200mg,,Senegal,,
+125,atazanavir + ritonavir,comprimé,300mg/100mg,,Senegal,,
+126,darunavir,comprimé,600mg,,Senegal,,
+127,darunavir + ritonavir,comprimé,400mg/100mg,,Senegal,,
+128,lopinavir + ritonavir,comprimé,200mg/50mg,,Senegal,,
+132,ritonavir,comprimé,100mg,,Senegal,,
+133,ténofovir+emtricitabine+efaviren z,comprimé,300mg/200mg/ 600mg,,Senegal,,
+135,ténofovir+lamivudine+efavirenz,comprimé,300mg/300mg/ 600mg,,Senegal,,
+137,raltégravir,comprimé,400mg,,Senegal,,
+138,dolutégravir,comprimé,50mg,,Senegal,,
+140,ténofovir + lamivudine +dolutégravir,comprimé,300mg/300mg/ 50mg,,Senegal,,
+141,ténofovir alafenamide +emtricitabine +dolutégravir,comprimé,25mg/200mg/5 0mg,,Senegal,,
+142,ténofovir alafenamide +emtricitabine,comprimé,25mg/200mg,,Senegal,,
+143,abacavir + lamivudine +dolutégravir,comprimé,600mg/300mg/ 50mg,,Senegal,,
+145,isoflurane,inhalation,184.5 g/mol,,Senegal,,
+146,sévoflurane,injectable,2mg/ml,,Senegal,,
+147,desflurane,inhalation,2mg/ml,,Senegal,,
+148,kétamine,injectable,50mg,,Senegal,,
+149,propofol,injectable,20mg/ml,,Senegal,,
+150,etomidate,injectable,20mg/10ml,,Senegal,,
+151,diazépam,injectable,10mg/ml,,Senegal,,
+152,midazolam,injectable,5mg/ml,,Senegal,,
+154,thiopental,injectable,1g,,Senegal,,
+155,dexmedetomidine,injectable,100microgram/ ml,,Senegal,,
+156,dropéridol,injectable,"2,5mg/ml",,Senegal,,
+157,bupivacaïne hyperbare,injectable,"0,50%",,Senegal,,
+158,bupivacaïne isobare,injectable,5mg/1ml,,Senegal,,
+159,lidocaïne,injectable,2%,,Senegal,,
+162,lidocaïne épinéphrine,injectable,2%,,Senegal,,
+163,ropivacaïne,injectable,2mg/ml,,Senegal,,
+164,mepivacain,injectable,20mg/ml,,Senegal,,
+165,atropine,injectable,"0,25mg",,Senegal,,
+168,néostigmine,injectable,"0,5mg/ml",,Senegal,,
+169,suxaméthonium ( succinylcholine),injectable,10mg/ml,,Senegal,,
+170,rocuronium,injectable,10mg/ml,,Senegal,,
+172,vécuronium bromure,injectable,10mg,,Senegal,,
+173,atracurium bésilate,injectable,50mg/ml,,Senegal,,
+174,fentanyl,injectable,"0,5mg/10mg",,Senegal,,
+176,sufentanil,injectable,10µmg/2ml,,Senegal,,
+177,morphine chlorhydrate,injectable,10mg,,Senegal,,
+178,nalbuphine,injectable,20mg/2ml,,Senegal,,
+179,nefopam,injectable,20mg/2ml,,Senegal,,
+180,tramadol,injectable,100mg/2ml,,Senegal,,
+181,acétylsalicylate de lysine,injectable,"1,8g",,Senegal,,
+184,acide acétylsalicylique,comprimé,100mg,,Senegal,,
+186,acide méfénamique,comprimé,250mg,,Senegal,,
+187,acide niflumique,3% pommade,,,Senegal,,
+188,ibuprofène,comprimé,400mg,,Senegal,,
+190,indométacine,comprimé,25mg,,Senegal,,
+191,kétoprofène,injectable,100mg/2ml,,Senegal,,
+192,diclofénac,comprimé,50mg,,Senegal,,
+193,paracétamol,comprimé,500mg,,Senegal,,
+197,prednisone,comprimé,5mg,,Senegal,,
+199,buprénorphine,comprimé perlingual,"0,2mg",,Senegal,,
+204,morphine chlorhydrate lp,comprimé,10mg,,Senegal,,
+207,morphine,poudre,10mg,,Senegal,,
+209,méthadone,gélule,5mg,,Senegal,,
+212,cétirizine,comprimé,10mg,,Senegal,,
+213,dexaméthasone,injectable,4mg,,Senegal,,
+214,dexchlorphéniramine,comprimé,2mg,,Senegal,,
+216,hydrocortisone,injectable,500mg,,Senegal,,
+218,méthylprednisolone,injectable,40mg/ml,,Senegal,,
+219,prométhazine,injectable,50mg/ml,,Senegal,,
+221,224 charbon activé solution buvable,solution buvable,12g/60ml,,Senegal,,
+222,charbon,comprimé,500mg,,Senegal,,
+223,disulfurame,comprimé,500mg,,Senegal,,
+224,flumazénil,injectable,"0,5mg/ml",,Senegal,,
+225,n-acétylcystéine,injectable,5g/25ml,,Senegal,,
+226,naloxone,injectable,"0,4mg/ml",,Senegal,,
+227,pralidoxime,injectable,200mg,,Senegal,,
+228,edta disodique calcique,injectable,500mg/10ml,,Senegal,,
+229,déferoxamine,injectable,500mg,,Senegal,,
+230,glucagon,injectable,1mg/ml,,Senegal,,
+231,sulfate de protamine,injectable,1000 uah/ml,,Senegal,,
+232,intralipide,injectable,20%/250ml,,Senegal,,
+233,les concentres de complexe prothrombinique humaine,injectable,25u/ml,,Senegal,,
+234,succimer,capsule orale,100mg,,Senegal,,
+235,sulfate de magnésium,injectable,20%,,Senegal,,
+236,acide valproïque,comprimé,200mg,,Senegal,,
+238,valproate de sodium lp,injectable,500mg,,Senegal,,
+239,valproate de sodium,solution buvable,200mg/5ml,,Senegal,,
+240,amitriptyline,gouttes orales,40mg/ml,,Senegal,,
+241,carbamazépine,comprimé,200mg,,Senegal,,
+242,chlorpromazine,comprimé,100mg,,Senegal,,
+244,clonazépam,gouttes,2mg,,Senegal,,
+245,clonazepam,injectable,1mg/ml,,Senegal,,
+247,diazepam,injectable,10mg/2ml,,Senegal,,
+249,phénytoïne,solution buvable,30mg/5ml,,Senegal,,
+251,fluphénazine,injectable,25mg/ml,,Senegal,,
+253,halopéridol,"0,50% gouttes orales",,,Senegal,,
+255,lévomépromazine,comprimé,100mg,,Senegal,,
+257,phénobarbital,comprimé,100mg,,Senegal,,
+260,trihexyphénidyle,"0,40% gouttes",,,Senegal,,
+262,tropatépine,injectable,10mg/2ml,,Senegal,,
+264,acide folique,comprimé,5mg,,Senegal,,
+266,chélateurs de fer,comprimé,125mg,,Senegal,,
+269,cyanocobalamine,injectable,1mg,,Senegal,,
+270,erythropoïétine,injectable,"2000ui/0,5ml",,Senegal,,
+274,sels ferreux forme pédiatrique,injectable,50mg/5ml,,Senegal,,
+275,epoétine bêta,injectable,"50µg/0,3ml",,Senegal,,
+282,fer ferrique,injectable,100mg/2ml,,Senegal,,
+283,fer + acide folique,comprimé,"60mg/0,4mg",,Senegal,,
+284,sels ferreux forme adulte,comprimé,80mg,,Senegal,,
+285,sels ferreux forme adule,injectable,100mg,,Senegal,,
+289,etamsylate,comprimé,500mg,,Senegal,,
+291,misoprostol,comprimé,200 µg,,Senegal,,
+292,acide tranexamique,ampoule buvable,1g,,Senegal,,
+295,phytoménadione,solution acqueuse injectable et buvable,"2mg/0,2ml",,Senegal,,
+297,fluindione,comprime,20mg,,Senegal,,
+298,acénocoumarol,comprimé,4mg,,Senegal,,
+300,rivaroxaban,comprimé,10mg,,Senegal,,
+301,enoxaparine,injectable,2000 ui anti xa,,Senegal,,
+306,héparinate non fractionnée,injectable,250ui/ml,,Senegal,,
+307,héparinate de sodium,injectable,25000ui/5ml,,Senegal,,
+308,streptokinase,injectable,1.500.000ui,,Senegal,,
+309,altéplase,injectable,100mg,,Senegal,,
+310,tenecteplase,injectable,10 000 u/10 ml,,Senegal,,
+311,clopidogrel,comprimé,75mg,,Senegal,,
+312,ticagrelol,comprimé,90mg,,Senegal,,
+313,allupurinol,comprimé,100mg,,Senegal,,
+315,gélatine fluide modifiée,perfusion,,,Senegal,,
+316,concentré de facteur viii,injectable,500ui,,Senegal,,
+319,concentré de facteur ix,injectable,500ui,,Senegal,,
+321,immunoglobuline anti-d,injectable,250ui,,Senegal,,
+323,immunoglobuline polyvalent,injectable,250ui,,Senegal,,
+324,facteurs antihémophilliques a et b,injectable,,,Senegal,,
+325,hydroxyéthylamidon,perfusion,,,Senegal,,
+326,trocard de mallarmé 15 g (aiguille medullograme),,,,Senegal,,
+327,trocard de mallarmé 18 g (aiguille medullograme),,,,Senegal,,
+328,diltiazem,comprimé,60mg,,Senegal,,
+330,dinitrate d’isosorbide,injectable,10mg/10ml,,Senegal,,
+332,trinitrate de glycérine,comprimé,"0,15mg",,Senegal,,
+333,trinitrate de glycérine nitroglycerine,spray patch,"0,15mg 5mg",,Senegal,,
+334,nitroglycerine,patch,10mg,,Senegal,,
+335,altizide + spironolactone,comprimé,15mg/25mg,,Senegal,,
+336,amlodipine,gélules,10mg,,Senegal,,
+338,bisoprolol,comprimé,5mg,,Senegal,,
+340,carvedilol,comprimé,"6,5mg",,Senegal,,
+342,perindopril,comprime,5mg,,Senegal,,
+344,ramipril,comprime,"2,5mg",,Senegal,,
+346,valsartan,comprime,80mg,,Senegal,,
+348,candésartan,comprime,8mg,,Senegal,,
+350,clonidine,injectable,"0,15mg",,Senegal,,
+351,furosémide,comprimé,40mg,,Senegal,,
+355,hydrochlorothiazide,comprimé,25mg,,Senegal,,
+356,indapamide,comprimé,"1,25mg",,Senegal,,
+358,méthyldopa,comprimé,250mg,,Senegal,,
+360,labétalol,injectable,5mg,,Senegal,,
+361,nicardipine,injectable,10mg/10ml,,Senegal,,
+364,nifédipine,comprimé,20mg,,Senegal,,
+365,propranolol,injectable,5mg/5ml,,Senegal,,
+367,spironolactone,comprimé,75mg,,Senegal,,
+370,amlodipine/perindopril,comprime,5mg/5mg,,Senegal,,
+372,amlodipine/valsartan,comprimé,5mg/80mg,,Senegal,,
+374,ramipril/hydrochlorothiazide,comprimé,"5mg/12,5mg",,Senegal,,
+376,valsartan/hydrochlorothiazide,comprimé,"80mg/12,5mg",,Senegal,,
+378,amlodipine/indapamide,comprimé,"5mg/1,5mg",,Senegal,,
+380,amlodipine/indapamide/perindop ril,comprimé,"5mg/1,25mg/5 mg",,Senegal,,
+382,amlodipine/valsartan/hydrochlor othiazide,comprimé,"5mg/160mg/12, 5mg",,Senegal,,
+385,amiodarone,comprimé,200mg,,Senegal,,
+387,digoxine,comprimé,"0,25mg",,Senegal,,
+391,dopamine,injectable,200mg/ml,,Senegal,,
+392,noradrénaline,injectable,2ml/ml,,Senegal,,
+393,dobutamine,injectable,250mg/ml,,Senegal,,
+394,epinéphrine,injectable,"0,25mg/ml",,Senegal,,
+396,ephédrine,injectable,30mg,,Senegal,,
+397,phenylephedrine,injectable,"0,5mg",,Senegal,,
+398,"isoprénaline 0,20 mg/1 ml injectable + + isuprel",,,,Senegal,,
+399,"alprostadil 0,5mg/1ml injectable + + prostine vr",,,,Senegal,,
+400,vérapamil 5 mg/2 ml injectable + + isoptine,,,,Senegal,,
+401,atorvastatine,comprimé,10 mg,,Senegal,,
+403,rosuvastatine,comprimé,10 mg,,Senegal,,
+405,ezetimibe,comprimé,10 mg,,Senegal,,
+406,econazole,crème,1%,,Senegal,,
+407,griseofulvine,pommade,,,Senegal,,
+410,béthamétasone,crème,"0,10%",,Senegal,,
+411,clobétasone,crème,"0,05%",,Senegal,,
+412,hydrocortison,crème,1%,,Senegal,,
+413,mupirocine,2% pommade,,,Senegal,,
+414,alcool iodé,solution,,,Senegal,,
+415,eosine aqueuse,solution,"0,02",,Senegal,,
+416,formaldéhyde,liquide,1g,,Senegal,,
+417,hypochlorite de sodium,solution,8°cf,,Senegal,,
+418,hypochlorite de sodium + permanganate de potassium,solution,500mg/100ml de cl actif,,Senegal,,
+419,polyvidone iodé,solution,10%,,Senegal,,
+420,violet de gentiane,poudre,250mg,,Senegal,,
+421,chlorhexidine,gel,"7 , 10%",,Senegal,,
+422,vaseline,pommade,,,Senegal,,
+423,benzoate de benzyle,solution,"12,50%",,Senegal,,
+424,vaseline salicylée,pommade,5%,,Senegal,,
+426,thiocolchicoside,comprimé,4mg,,Senegal,,
+427,ocytocine,injectable,5ui,,Senegal,,
+428,carbétocine,injectable,100 mcg/ml,,Senegal,,
+429,salbutamol,injectable,"0,5mg",,Senegal,,
+432,bétamethasone,injectable,4mg,,Senegal,,
+433,cimétidine,injectable,200mg/2ml,,Senegal,,
+434,oméprazole,injectable,40 mg,,Senegal,,
+437,sels d’aluminium et de magnésium,comprimé,400mg/400mg,,Senegal,,
+438,granisétron chlorhydrate,injectable,3mg,,Senegal,,
+440,ondasétron,comprimé,8 mg,,Senegal,,
+441,métopimazine,suppositoire,5 mg,,Senegal,,
+444,lévosulpiride,comprimé,25mg,,Senegal,,
+446,lévosulpiride 25mg/ml sirop + + + dislep,,,,Senegal,,
+447,anti-infl.+astrigent+anest local,pommade,100g,,Senegal,,
+449,phloroglucinol +trimethylphloroglucinol,injectable,"40mg/0,04mg par 4ml",,Senegal,,
+451,paraffine liquide,gelée buvable,215g/225g,,Senegal,,
+452,lactulose,suspension buvable,10 g,,Senegal,,
+454,sels de réhydratation orale faible osmolarité,poudre en sachet,"glucose 13,5g/l ; nacl 2,6g/l; kcl 1,5 g/l, citrate trisodique dihydraté 2,9g/l",,Senegal,,
+456,carbocystéine,sirop,5%,,Senegal,,
+458,terpine+codéine,comprimé,100mg/5mg,,Senegal,,
+459,dextromethorphane,sirop,"1,5mg/ml",,Senegal,,
+460,dextromethorphane +phenylephrine,sirop,15 mg / 5 ml,,Senegal,,
+461,oxomémazine+guaïfénésine,sirop,"(1,65mg/33,3m g)/ml",,Senegal,,
+468,terbutaline,injectable,"0,5mg/ml",,Senegal,,
+472,budesonide,nebulisation,"0,5 mg /2ml",,Senegal,,
+474,montelukast,comprimé,"5, 10 mg",,Senegal,,
+475,propionate fluticasone + salméterol propionate fluticasone + salméterol,diskus diskus,500 mg/50 microns 250 mg/50 microns,,Senegal,,
+476,bromure d'ipratropium,nebulisation,"o,5 mg",,Senegal,,
+477,citrate de cafeine,injectable,250mg/1ml,,Senegal,,
+478,solution antiseptique pour bain de bouche,,,,Senegal,,
+479,lidocaïne 2 %,injectable,,,Senegal,,
+480,lidocaine 3%,injectable,,,Senegal,,
+481,lidocaïne adrénalinée,injectable,,,Senegal,,
+482,oxyde de zinc leger,,500g,,Senegal,,
+483,pulpéryl,solution,,,Senegal,,
+484,carpules d’anesthésie ( articaine),ampoule injectable,,,Senegal,,
+485,carpules d’anesthésie (mepivacaine),ampoule injectable,3%,,Senegal,,
+486,sérum anti-d,injectable,,,Senegal,,
+487,sérum antirabique,injectable,,,Senegal,,
+488,sérum antitétanique,injectable,,,Senegal,,
+489,sérum antilymphocytaire,injectable,25mg,,Senegal,,
+491,sérum antivenimeux polyvalent,injectable,,,Senegal,,
+492,vaccin antiamaril,injectable,,,Senegal,,
+493,vaccin antihépatite b,injectable,,,Senegal,,
+494,"vaccin antiméningo a, c, y, w135",injectable,,,Senegal,,
+495,vaccin antiméningo w135,injectable,,,Senegal,,
+496,vaccin antipneumococcique,injectable,,,Senegal,,
+497,vaccin antipoliomyélitique,injectable,,,Senegal,,
+498,vaccin antirabique,injectable,,,Senegal,,
+499,vaccin antitétanique,injectable,,,Senegal,,
+500,vaccin antituberculeux,injectable,,,Senegal,,
+501,vaccin anti-papillomavirus,injectable,,,Senegal,,
+502,vaccin anticovid,injectable,,,Senegal,,
+503,vaccin pentavalent,injectable,,,Senegal,,
+504,bicarbonate de sodium,perfusion,14%o,,Senegal,,
+506,chlorure de potassium,perfusion,10%,,Senegal,,
+507,chlorure de sodium,perfusion,9%o,,Senegal,,
+508,chlorure de calcium,perfusion,,,Senegal,,
+509,chlorure de magnésium,perfusion,,,Senegal,,
+510,chlorure de sodium (irrigation vésicale 3 litres),perfusion,9%o,,Senegal,,
+512,gluconate de calcium,injectable,100mg/ml,,Senegal,,
+513,glucose,perfusion,5%,,Senegal,,
+516,ringer lactate,perfusion,,,Senegal,,
+517,mannitol,perfusion,20%,,Senegal,,
+518,albumine humaine,perfusion,5%,,Senegal,,
+521,cétoxonium,collyre,"0,25%",,Senegal,,
+522,chloramphénicol + dexaméthasone,collyre,,,Senegal,,
+523,chlortétracycline ou tétracycline,pommade ophtalmique,1%,,Senegal,,
+524,fluorescéine,collyre,1%,,Senegal,,
+526,néomycine + polymyxine,collyre,340.000ui+1mui,,Senegal,,
+527,norfloxacine,collyre,"0,30%",,Senegal,,
+530,hydrocortisone 1% collyre + +,,,,Senegal,,
+531,"indométacine 0,10% collyre + + + indocollyre",,,,Senegal,,
+532,oxybuprocaïne,collyre,40mg,,Senegal,,
+533,lidocaine 2% + adrénaline inj,injectable,,,Senegal,,
+534,lignocaine hcl plain,injectable,2%/ 20ml,,Senegal,,
+535,amethocaine hydrochoride,injectable,"0,5%/10ml",,Senegal,,
+536,tétracaïne,collyre,"0,005",,Senegal,,
+537,acétazolamide,comprimé,250mg,,Senegal,,
+539,brinzolamide,collyre,10mg/ml,,Senegal,,
+540,cartéolol,collyre,15mg,,Senegal,,
+541,pilocarpine,collyre,2%,,Senegal,,
+542,timolol,collyre,"0,25%",,Senegal,,
+543,latanoprost,collyre,"0,50%",,Senegal,,
+548,"tropicamide + phénylephrine 5ml 0,8%+5%",collyre,,,Senegal,,
+549,visqueux en seringue pré rempli,,2%,,Senegal,,
+550,gentamycine 80mg 2ml,injectable,80mg/2ml,,Senegal,,
+551,dexaméthasone 8mg 2ml,injectable,8mg/2ml,,Senegal,,
+553,cyclopentolate,collyre,"0,50%",,Senegal,,
+554,tropicamide,collyre,5mg/ml,,Senegal,,
+555,picloxydine,collyre,5mg,,Senegal,,
+556,carbomère 980 (larmes artificielles),gel ophtalmique,10mg,,Senegal,,
+557,cromoglycate,collyre,7mg,,Senegal,,
+558,lévocabastine,collyre,"2,5mg",,Senegal,,
+561,ranibizumab,solution pour injection intravitréenne,10mg/ml,,Senegal,,
+562,acide ascorbique,comprimé,500mg,,Senegal,,
+564,calcium gluconate,injectable,10%,,Senegal,,
+565,calcium vit d3,comprimé,500/400 ui,,Senegal,,
+567,pyridoxine 250mg/5ml injectable + + + vit b6,,,,Senegal,,
+568,rétinol 100.000ui capsules + + + + + vit a,,,,Senegal,,
+569,rétinol 200.000ui capsules + + + + + vit a,,,,Senegal,,
+570,eau pour préparation injectable,,,,Senegal,,
+571,glimépiride,comprimé,2 mg,,Senegal,,
+573,gliclazide,comprimé,60 mg,,Senegal,,
+574,insuline mixte 30%,injectable,100ui,,Senegal,,
+575,insuline lente,injectable,100ui,,Senegal,,
+576,insuline rapide,injectable,100ui,,Senegal,,
+577,metformine,comprimé,500mg,,Senegal,,
+579,gliclazide /metformine,comprimé,60/850 mg,,Senegal,,
+581,carbimazole,comprimé,5mg,,Senegal,,
+583,cortisone,comprimé,5mg,,Senegal,,
+584,cyprotérone,comprimé,50mg,,Senegal,,
+585,progesterone,ovule,200 mg,,Senegal,,
+586,bicalutamide,comprimé,50mg,,Senegal,,
+588,goséréline,injectable,"3,6 mg",,Senegal,,
+589,lévothyroxine,comprimé,50µg,,Senegal,,
+591,cabergoline,comprimé,"0,5 mg",,Senegal,,
+592,bléomycine,injectable,15mg,,Senegal,,
+593,carboplatine,injectable,450mg,,Senegal,,
+595,chlormétine,injectable,10mg,,Senegal,,
+596,cisplatine,injectable,10mg,,Senegal,,
+599,cyclophosphamide,injectable,500mg,,Senegal,,
+602,doxorubicine,injectable,10mg ;50mg,,Senegal,,
+603,epirubicine,injectable,20mg ; 50mg,,Senegal,,
+604,etoposide,comprimé,100mg,,Senegal,,
+605,fluorouracil,injectable,500mg/ml,,Senegal,,
+606,hydroxycarbamide,comprimé,500mg,,Senegal,,
+607,melphalan,comprimé,2mg,,Senegal,,
+609,méthotrexate,injectable,50mg/ml,,Senegal,,
+612,ledertrexate,injectable,5mg,,Senegal,,
+615,paclitaxel,injectable,30mg,,Senegal,,
+617,tamoxifène,comprimé,20mg,,Senegal,,
+618,vinblastine,injectable,10mg,,Senegal,,
+619,vincristine,injectable,1mg,,Senegal,,
+621,bevacizumab,injectable,400mg,,Senegal,,
+622,trastuzumab,injectable,150mg,,Senegal,,
+623,rituximab,injectable,100mg,,Senegal,,
+625,capecitabine,injectable,500mg,,Senegal,,
+626,ibandronate,injectable,50mg,,Senegal,,
+628,filgrastim,injectable,300µg,,Senegal,,
+629,acide zolédronique,perfusion,4mg,,Senegal,,
+630,triptoréline,injectable,"0,1 mg",,Senegal,,
+631,folinate de calcium,injectable,50mg,,Senegal,,
+633,actinomycine d,injectable,"0,5mg",,Senegal,,
+634,pemetrexed,injectable,100mg,,Senegal,,
+636,thalidomide,comprimé,50mg,,Senegal,,
+637,fluoro-5 uracil,injectable,250mg,,Senegal,,
+639,anastrozole,comprimé,1mg,,Senegal,,
+640,gemcitabine,injectable,200mg,,Senegal,,
+642,letrozole,comprimé,"2,5mg",,Senegal,,
+643,sunitinib,gélule,"12,5mg",,Senegal,,
+644,azacitidine,injectable,100mg,,Senegal,,
+645,mercaptopurine,comprimé,50mg,,Senegal,,
+646,thioguanine,comprimé,40mg,,Senegal,,
+647,cytarabine,injectable,100mg,,Senegal,,
+648,ifosfamide,injectable,1g,,Senegal,,
+650,oxaliplatine,injectable,50mg,,Senegal,,
+652,dacarbazine,injectable,500mg,,Senegal,,
+654,témozolomide,gélule,100mg,,Senegal,,
+655,irinotécan,injectable,100mg,,Senegal,,
+658,topotécan,injectable,4mg,,Senegal,,
+659,daunorubicine,injectable,50mg,,Senegal,,
+660,vinorelbine,,50mg,,Senegal,,
+662,l asparaginase,injectable,10.000unités,,Senegal,,
+663,pegfilgastrim,injectable,6mg,,Senegal,,
+664,mesna,injectable,1g,,Senegal,,
+665,fludarabine,injectable,50mg,,Senegal,,
+666,busulphan,injectable,60mg,,Senegal,,
+667,chorambucil,comprimé,2mg,,Senegal,,
+669,bendamustine,injectable,"2,5mg",,Senegal,,
+670,carmustine,injectable,100mg,,Senegal,,
+671,procarbazine,gélule,50mg,,Senegal,,
+672,docetaxel,,80mg,,Senegal,,
+674,bortézomib,injectable,"3,5mg",,Senegal,,
+675,idarubicine,injectable,5mg,,Senegal,,
+676,brentuximab vedotin,injectable,50mg,,Senegal,,
+677,daratumumab,injectable,20mg,,Senegal,,
+678,lénalidomide,gélule,25mg,,Senegal,,
+679,ciclosporine,comprimé,50mg,,Senegal,,
+680,trétinoïne,gélule,10mg,,Senegal,,
+681,arsénic trrioxyde,injectable,10mg,,Senegal,,
+682,atézolizumab,injectable,1200mg,,Senegal,,
+683,pembrolizumab,injectable,50mg,,Senegal,,
+685,erlotinib,injectable,150mg,,Senegal,,
+686,chloraminophène,comprimé,2mg,,Senegal,,
+687,acides aminés essentiels,perfusion,,,Senegal,,
+688,acides gras essentiels,perfusion,,,Senegal,,
+689,complexe vitaminique,perfusion,,,Senegal,,
+690,"mélange ternaire (protide, glucide, lipide)",perfusion,,,Senegal,,
+691,oligo-éléments,perfusion,,,Senegal,,
+692,fénoxazoline,goutte auriculaire,15mg/flacon,,Senegal,,
+693,phénazone + lidocaïne,goutte auriculaire,(4g/1g)/100g,,Senegal,,
+695,ethinylestradiol+levonorgestrel+f umarate ferreux,comprimé,"0,03mg/0,15mg /75mg",,Senegal,,
+696,levonorgestrel,comprimé,"0,75mg",,Senegal,,
+699,etonogestrel,implant/1batonne t,68mg,,Senegal,,
+701,acétate médroxyprogestérone,injectable,150mg,,Senegal,,
+702,anneau vaginal a progestérone,anneau,2g,,Senegal,,
+704,bicarbonate,,1g ; 500mg,,Senegal,,
+705,calciférol,,"0,25µg ; 0,5µg ; 1µg ;",,Senegal,,
+706,carbonate de calcium,,1g,,Senegal,,
+707,cyclosporine,comprimé,25mg,,Senegal,,
+710,cinacalcet,,120mg,,Senegal,,
+713,prednisolone,comprimé,20mg,,Senegal,,
+715,methylprednisolone,,80mg,,Senegal,,
+717,methoxy polyéthyléne glycol epoeitine beta,,50µg,,Senegal,,
+718,cholecalciferol,,100000 ui,,Senegal,,
+720,fer carboxymaltose,injectable,1000 mg,,Senegal,,
+721,fer saccharose,injectable,100 mg,,Senegal,,
+722,micophénolate mofétil,,1g,,Senegal,,
+723,alphacalcidiol,comprimé,"0,25mcg; 0,5,1 mcg",,Senegal,,
+724,chorure de sodium,injectable,1g,,Senegal,,
+727,sévélamer chlorhydrate,,400mg,,Senegal,,
+728,azathioprine,comprimé,50mg,,Senegal,,
+729,basiliximab,inj,20mg,,Senegal,,
+733,solution de conservation d'organes,solution,poche de 5litres,,Senegal,,
+734,tacrolimus,comprimé,"0,5mg",,Senegal,,
+738,interferon pegyle,injectable,,,Senegal,,
+739,thymoglobuline,injectable,25 mg /5ml,,Senegal,,
+740,alfuzosine,comprimé,5mg,,Senegal,,
+742,levodopa/ benserazide chlorhydrate,comprimé,"50 mg / 12,5 mg",,Senegal,,
+745,donepézil chlorhydrate,,10mg,,Senegal,,
+747,extrait de ginko biloba,,40mg,,Senegal,,
+748,piracétam,comprimé,800mg,,Senegal,,
+749,goniosol,,,,Senegal,,
+750,gaze pièce,,,,Senegal,,
+751,catheter 16g,,,,Senegal,,
+752,catheter 18g,,,,Senegal,,
+753,catheter 20 g,,,,Senegal,,
+754,catheter 22 g,,,,Senegal,,
+755,catheter 24 g,,,,Senegal,,
+756,gant de chirurgie,,,,Senegal,,
+757,gant d'examen latex,,,,Senegal,,
+758,garrot,,,,Senegal,,
+759,eugenol fl/250ml,,,,Senegal,,
+760,pharmaéthyl fl/210g,,,,Senegal,,
+761,rocklès solution,,,,Senegal,,
+762,détartrine 45g,,,,Senegal,,
+0,amiklin,injectable,500mg,,Senegal,,
+2,clamoxyl,comprimé,1 g,,Senegal,,
+5,augmentin,sachet,"500mg/62,5mg",,Senegal,,
+7,totapen,injectable,1g,,Senegal,,
+8,zithromax,comprimé,500mg,,Senegal,,
+9,extenlliline,injectable,"2,4mui",,Senegal,,
+10,extencilline,injectable,"1,2mui",,Senegal,,
+11,pénig,injectable,1mui,,Senegal,,
+12,céfacidal,injectable,1g,,Senegal,,
+13,oroken,comprimé,200mg,,Senegal,,
+15,claforan,injectable,1 g,,Senegal,,
+16,rocéphine,injectable,1g,,Senegal,,
+17,cifran,comprimé,250mg,,Senegal,,
+18,ciproxin,injectable,200mg,,Senegal,,
+21,vibra,comprimé,100mg,,Senegal,,
+22,ery,comprimé,500mg,,Senegal,,
+23,gentalline,injectable,80mg/2ml,,Senegal,,
+24,bristopen,injectable,1g,,Senegal,,
+25,staphypen,suspension buvable,250mg/5ml,,Senegal,,
+29,ospen,comprimé,1000000 ui,,Senegal,,
+30,bactrim,comprimé,400mg/80mg,,Senegal,,
+33,vanco,injectable,500mg,,Senegal,,
+34,thiophénic ol,injectable,750mg,,Senegal,,
+35,bacqure,injectable,500mg/500mg,,Senegal,,
+38,zinnat,injectable,750mg,,Senegal,,
+40,myambutol,comprimé,400mg,,Senegal,,
+41,trecator,comprimé,250mg,,Senegal,,
+42,rimifon,comprimé,300mg,,Senegal,,
+43,tavanic,comprimé,250mg,,Senegal,,
+44,pirilène,comprimé,400mg,,Senegal,,
+45,lampréne,comprimé,100mg,,Senegal,,
+49,zyvoxid,comprimé,600 mg,,Senegal,,
+66,lamprène,capsule molle,50mg et 100mg,,Senegal,,
+67,disulone,comprimé,100mg,,Senegal,,
+68,rimactan,gélule,300mg,,Senegal,,
+69,asaq,comprimé,"25 mg/67,5mg; b/3cp",,Senegal,,
+73,coartem,comprimé,20mg/120mg; b18cp,,Senegal,,
+77,duocotexci n,comprimé,40mg/320mg; b/9cp,,Senegal,,
+78,artesun,injectable,30mg/ml,,Senegal,,
+80,artemedine,injectable,80mg/ml,,Senegal,,
+81,plasmotrim,suppositoire,100mg,,Senegal,,
+82,fansidar,comprimé,500mg/25mg,,Senegal,,
+83,spaq-co,comprimé,500mg/25mg + 153mg,,Senegal,,
+85,quinimax,injectable,400mg,,Senegal,,
+87,flagyl,comprimé,500mg,,Senegal,,
+92,ambisome,injectable,50mg,,Senegal,,
+93,fungizone,comprimé,250mg,,Senegal,,
+95,triflucan,comprimé,100mg,,Senegal,,
+98,griséfuline,comprimé,250mg,,Senegal,,
+100,nizoral,comprimé,200mg,,Senegal,,
+101,mycostatin e,comprimé gynécologique,100.000ui,,Senegal,,
+102,lamisil,comprimé,250mg,,Senegal,,
+103,zentel,comprimé,400mg,,Senegal,,
+106,vermox,comprimé,100mg,,Senegal,,
+109,mectizan,comprimé,3mg,,Senegal,,
+110,biltricide,comprimé,600mg,,Senegal,,
+111,zovirax,comprimé,200mg,,Senegal,,
+113,zélitrex,comprimé,500mg,,Senegal,,
+114,cymévan,injectable,500mg,,Senegal,,
+115,viread,comprimé,300mg,,Senegal,,
+116,solvaldi,comprimé,400mg,,Senegal,,
+124,sustiva,comprimé,200mg,,Senegal,,
+125,reyataz,comprimé,300mg/100mg,,Senegal,,
+126,prezista,comprimé,600mg,,Senegal,,
+128,kaletra,comprimé,200mg/50mg,,Senegal,,
+132,norvir,comprimé,100mg,,Senegal,,
+137,isentress,comprimé,400mg,,Senegal,,
+138,tivicay,comprimé,50mg,,Senegal,,
+146,sévorane,injectable,2mg/ml,,Senegal,,
+148,kétalar,injectable,50mg,,Senegal,,
+149,diprivan,injectable,20mg/ml,,Senegal,,
+150,hypnomida te,injectable,20mg/10ml,,Senegal,,
+151,valium,injectable,10mg/ml,,Senegal,,
+152,hypnovel,injectable,5mg/ml,,Senegal,,
+154,pentothal,injectable,1g,,Senegal,,
+156,droleptan,injectable,"2,5mg/ml",,Senegal,,
+157,marcaïne,injectable,"0,50%",,Senegal,,
+159,xylocaïne,injectable,2%,,Senegal,,
+163,naropeine,injectable,2mg/ml,,Senegal,,
+165,atropine faure,injectable,"0,25mg",,Senegal,,
+168,prostigmin e,injectable,"0,5mg/ml",,Senegal,,
+169,célocurine,injectable,10mg/ml,,Senegal,,
+170,esmeron,injectable,10mg/ml,,Senegal,,
+172,norcuron,injectable,10mg,,Senegal,,
+173,tracrium,injectable,50mg/ml,,Senegal,,
+176,sufenta,injectable,10µmg/2ml,,Senegal,,
+178,nubain,injectable,20mg/2ml,,Senegal,,
+179,acupam,injectable,20mg/2ml,,Senegal,,
+180,trabar,injectable,100mg/2ml,,Senegal,,
+181,aspégic,injectable,"1,8g",,Senegal,,
+185,aspirine,comprimé,500mg,,Senegal,,
+186,ponstyl,comprimé,250mg,,Senegal,,
+187,nifluril,3% pommade,,,Senegal,,
+188,brufen,comprimé,400mg,,Senegal,,
+189,advil,sirop,100mg/5ml,,Senegal,,
+190,indocid,comprimé,25mg,,Senegal,,
+191,profénid,injectable,100mg/2ml,,Senegal,,
+192,voltarène,comprimé,50mg,,Senegal,,
+193,doliprane,comprimé,500mg,,Senegal,,
+195,perfalgan,injectable,1g,,Senegal,,
+197,cortancyl,comprimé,5mg,,Senegal,,
+199,temgésic,comprimé perlingual,"0,2mg",,Senegal,,
+201,skenan,comprimé,10mg,,Senegal,,
+204,actiskenan,comprimé,10mg,,Senegal,,
+209,+ méthadone,gélule,5mg,,Senegal,,
+212,zyrtec,comprimé,10mg,,Senegal,,
+213,soludécadr on,injectable,4mg,,Senegal,,
+214,polaramine,comprimé,2mg,,Senegal,,
+216,hydrocorti sone,injectable,500mg,,Senegal,,
+217,hydrocortis one,injectable,100mg,,Senegal,,
+218,solumédrol,injectable,40mg/ml,,Senegal,,
+219,phénergan,injectable,50mg/ml,,Senegal,,
+222,carbophos,comprimé,500mg,,Senegal,,
+223,espéral,comprimé,500mg,,Senegal,,
+224,anexate,injectable,"0,5mg/ml",,Senegal,,
+225,fluimicil,injectable,5g/25ml,,Senegal,,
+226,narcan,injectable,"0,4mg/ml",,Senegal,,
+227,contrathio n,injectable,200mg,,Senegal,,
+229,desferal,injectable,500mg,,Senegal,,
+230,glucagen,injectable,1mg/ml,,Senegal,,
+231,protamine choay,injectable,1000 uah/ml,,Senegal,,
+234,succicaptal,capsule orale,100mg,,Senegal,,
+236,dépakine,comprimé,200mg,,Senegal,,
+240,laroxyl,gouttes orales,40mg/ml,,Senegal,,
+241,tégrétol,comprimé,200mg,,Senegal,,
+242,largactil,comprimé,100mg,,Senegal,,
+244,rivotril,gouttes,2mg,,Senegal,,
+249,dihydan,solution buvable,30mg/5ml,,Senegal,,
+251,modécate,injectable,25mg/ml,,Senegal,,
+253,haldol,"0,50% gouttes orales",,,Senegal,,
+255,nozinan,comprimé,100mg,,Senegal,,
+257,gardénal,comprimé,100mg,,Senegal,,
+260,artane,"0,40% gouttes",,,Senegal,,
+262,lepticur,injectable,10mg/2ml,,Senegal,,
+264,foldine,comprimé,5mg,,Senegal,,
+266,déférasirox,comprimé,125mg,,Senegal,,
+269,vitamine b12,injectable,1mg,,Senegal,,
+270,eprex,injectable,"2000ui/0,5ml",,Senegal,,
+275,néorecorm on,injectable,"50µg/0,3ml",,Senegal,,
+280,néorecor mon,injectable,"50µg/0,3ml",,Senegal,,
+283,folifer,comprimé,"60mg/0,4mg",,Senegal,,
+284,fumafer,comprimé,80mg,,Senegal,,
+289,dicynone,comprimé,500mg,,Senegal,,
+291,cytotec,comprimé,200 µg,,Senegal,,
+292,exacyl,ampoule buvable,1g,,Senegal,,
+295,vitamine k1,solution acqueuse injectable et buvable,"2mg/0,2ml",,Senegal,,
+297,préviscan,comprime,20mg,,Senegal,,
+298,sintrom,comprimé,4mg,,Senegal,,
+299,mini- sintrom,comprimé,1mg,,Senegal,,
+300,rixa,comprimé,10mg,,Senegal,,
+301,lovenox,injectable,2000 ui anti xa,,Senegal,,
+306,calciparine,injectable,250ui/ml,,Senegal,,
+307,héparine sodique,injectable,25000ui/5ml,,Senegal,,
+308,streptase,injectable,1.500.000ui,,Senegal,,
+309,actilise,injectable,100mg,,Senegal,,
+310,metalyse,injectable,10 000 u/10 ml,,Senegal,,
+311,plavix,comprimé,75mg,,Senegal,,
+312,brilique,comprimé,90mg,,Senegal,,
+313,zyloric,comprimé,100mg,,Senegal,,
+315,haemacel,perfusion,,,Senegal,,
+325,voluven,perfusion,,,Senegal,,
+328,tildiem,comprimé,60mg,,Senegal,,
+330,risordan,injectable,10mg/10ml,,Senegal,,
+333,trinitrine nitroderm,spray patch,"0,15mg 5mg",,Senegal,,
+334,nitroderm,patch,10mg,,Senegal,,
+335,aldactazine,comprimé,15mg/25mg,,Senegal,,
+336,amlor,gélules,10mg,,Senegal,,
+338,cardiocor,comprimé,5mg,,Senegal,,
+342,coversyl,comprime,5mg,,Senegal,,
+344,triatec,comprime,"2,5mg",,Senegal,,
+346,tareg,comprime,80mg,,Senegal,,
+348,atacand,comprime,8mg,,Senegal,,
+350,catapressa n,injectable,"0,15mg",,Senegal,,
+351,lasilix,comprimé,40mg,,Senegal,,
+355,esidrex,comprimé,25mg,,Senegal,,
+356,fludex,comprimé,"1,25mg",,Senegal,,
+358,aldomet,comprimé,250mg,,Senegal,,
+360,trandate,injectable,5mg,,Senegal,,
+361,loxen,injectable,10mg/10ml,,Senegal,,
+363,loxen lp,gélule,50mg,,Senegal,,
+364,adalate retard,comprimé,20mg,,Senegal,,
+365,avlocardyl,injectable,5mg/5ml,,Senegal,,
+367,aldactone,comprimé,75mg,,Senegal,,
+385,cordarone,comprimé,200mg,,Senegal,,
+390,hémidigoxi ne,comprimé,"0,125mg",,Senegal,,
+392,norépinéph rine,injectable,2ml/ml,,Senegal,,
+393,dobutrex,injectable,250mg/ml,,Senegal,,
+394,adrénaline,injectable,"0,25mg/ml",,Senegal,,
+401,tahor,comprimé,10 mg,,Senegal,,
+403,crestor,comprimé,10 mg,,Senegal,,
+405,ezetrol,comprimé,10 mg,,Senegal,,
+406,pévaryl,crème,1%,,Senegal,,
+410,betnéval,crème,"0,10%",,Senegal,,
+411,dermoval,crème,"0,05%",,Senegal,,
+412,cortapaisyl,crème,1%,,Senegal,,
+413,bactroban,2% pommade,,,Senegal,,
+414,alcol iodé,solution,,,Senegal,,
+415,eosine,solution,"0,02",,Senegal,,
+416,formol,liquide,1g,,Senegal,,
+417,eau de javel,solution,8°cf,,Senegal,,
+418,dakin,solution,500mg/100ml de cl actif,,Senegal,,
+419,bétadine,solution,10%,,Senegal,,
+421,+,gel,"7 , 10%",,Senegal,,
+423,ascabiol,solution,"12,50%",,Senegal,,
+426,coltramyl,comprimé,4mg,,Senegal,,
+427,syntocinon,injectable,5ui,,Senegal,,
+428,pabal,injectable,100 mcg/ml,,Senegal,,
+429,ventoline,injectable,"0,5mg",,Senegal,,
+431,salbumol,suppositoire,1mg,,Senegal,,
+432,célestène,injectable,4mg,,Senegal,,
+433,tagamet,injectable,200mg/2ml,,Senegal,,
+434,mopral,injectable,40 mg,,Senegal,,
+437,maalox,comprimé,400mg/400mg,,Senegal,,
+438,kytril,injectable,3mg,,Senegal,,
+440,zophren,comprimé,8 mg,,Senegal,,
+441,vogalène,suppositoire,5 mg,,Senegal,,
+444,dislep,comprimé,25mg,,Senegal,,
+447,anti- hémorroïda ire,pommade,100g,,Senegal,,
+449,spasfon,injectable,"40mg/0,04mg par 4ml",,Senegal,,
+451,lansoyl,gelée buvable,215g/225g,,Senegal,,
+452,duphalac,suspension buvable,10 g,,Senegal,,
+454,sro,poudre en sachet,"glucose 13,5g/l ; nacl 2,6g/l; kcl 1,5 g/l, citrate trisodique dihydraté 2,9g/l",,Senegal,,
+456,rhinathiol,sirop,5%,,Senegal,,
+458,néocodion,comprimé,100mg/5mg,,Senegal,,
+459,drill,sirop,"1,5mg/ml",,Senegal,,
+460,kofof,sirop,15 mg / 5 ml,,Senegal,,
+461,toplexil,sirop,"(1,65mg/33,3m g)/ml",,Senegal,,
+468,bricanyl,injectable,"0,5mg/ml",,Senegal,,
+472,pulmicor t,nebulisation,"0,5 mg /2ml",,Senegal,,
+475,seretide seretide,diskus diskus,500 mg/50 microns 250 mg/50 microns,,Senegal,,
+476,atrovent,nebulisation,"o,5 mg",,Senegal,,
+486,immunho ro,injectable,,,Senegal,,
+491,inoserp,injectable,,,Senegal,,
+510,uro 3000,perfusion,9%o,,Senegal,,
+521,biocidan,collyre,"0,25%",,Senegal,,
+522,cébédexac ol,collyre,,,Senegal,,
+523,auréomyci ne,pommade ophtalmique,1%,,Senegal,,
+526,cébémyxin e,collyre,340.000ui+1mui,,Senegal,,
+527,chibroxine,collyre,"0,30%",,Senegal,,
+528,désocort,collyre,"0,10%",,Senegal,,
+532,cébésine,collyre,40mg,,Senegal,,
+537,diamox,comprimé,250mg,,Senegal,,
+539,azopt,collyre,10mg/ml,,Senegal,,
+540,cartéol,collyre,15mg,,Senegal,,
+542,timoptol,collyre,"0,25%",,Senegal,,
+543,xalatan,collyre,"0,50%",,Senegal,,
+548,mydrane,collyre,,,Senegal,,
+553,skiacol,collyre,"0,50%",,Senegal,,
+554,mydriaticu m,collyre,5mg/ml,,Senegal,,
+555,vitabact,collyre,5mg,,Senegal,,
+556,lacrigel,gel ophtalmique,10mg,,Senegal,,
+557,cromoptic,collyre,7mg,,Senegal,,
+558,lévophta,collyre,"2,5mg",,Senegal,,
+559,fluorescein e,collyre,2mg,,Senegal,,
+561,lucentis,solution pour injection intravitréenne,10mg/ml,,Senegal,,
+562,vit c,comprimé,500mg,,Senegal,,
+565,calc vita,comprimé,500/400 ui,,Senegal,,
+566,vit b12,injectable,1mg/2ml,,Senegal,,
+571,amarel,comprimé,2 mg,,Senegal,,
+573,diamicro n,comprimé,60 mg,,Senegal,,
+574,mixtard,injectable,100ui,,Senegal,,
+575,insulatard,injectable,100ui,,Senegal,,
+576,actrapid,injectable,100ui,,Senegal,,
+577,glucophag e,comprimé,500mg,,Senegal,,
+579,glide-m,comprimé,60/850 mg,,Senegal,,
+581,néo mercazole,comprimé,5mg,,Senegal,,
+584,androcur,comprimé,50mg,,Senegal,,
+586,casodex,comprimé,50mg,,Senegal,,
+588,zoladex,injectable,"3,6 mg",,Senegal,,
+589,l-thyroxine,comprimé,50µg,,Senegal,,
+591,dostinex,comprimé,"0,5 mg",,Senegal,,
+595,caryolysine,injectable,10mg,,Senegal,,
+596,cisplatyl,injectable,10mg,,Senegal,,
+599,endoxan,injectable,500mg,,Senegal,,
+602,adriblastin e,injectable,10mg ;50mg,,Senegal,,
+603,farmorubic ine,injectable,20mg ; 50mg,,Senegal,,
+604,vépéside,comprimé,100mg,,Senegal,,
+605,fluracil,injectable,500mg/ml,,Senegal,,
+606,hydréa,comprimé,500mg,,Senegal,,
+607,alkéran,comprimé,2mg,,Senegal,,
+609,méthotrexa te,injectable,50mg/ml,,Senegal,,
+615,taxol,injectable,30mg,,Senegal,,
+617,nolvadex,comprimé,20mg,,Senegal,,
+619,oncovin,injectable,1mg,,Senegal,,
+621,avastin,injectable,400mg,,Senegal,,
+622,herceptin,injectable,150mg,,Senegal,,
+623,mabthera,injectable,100mg,,Senegal,,
+625,xéloda,injectable,500mg,,Senegal,,
+626,bondronat,injectable,50mg,,Senegal,,
+628,neupogen,injectable,300µg,,Senegal,,
+629,zométa,perfusion,4mg,,Senegal,,
+630,décapeptyl,injectable,"0,1 mg",,Senegal,,
+639,arimidex,comprimé,1mg,,Senegal,,
+642,femara,comprimé,"2,5mg",,Senegal,,
+643,sutent,gélule,"12,5mg",,Senegal,,
+687,trophysan,perfusion,,,Senegal,,
+693,otipax,goutte auriculaire,(4g/1g)/100g,,Senegal,,
+695,microgynon,comprimé,"0,03mg/0,15mg /75mg",,Senegal,,
+696,norlevo,comprimé,"0,75mg",,Senegal,,
+698,microlut,comprimé,"0,03mg",,Senegal,,
+699,nxt implanon,implant/1batonne t,68mg,,Senegal,,
+700,jadelle,implant/2batonne ts,"2x 0,75mg",,Senegal,,
+701,dépo provéra,injectable,150mg,,Senegal,,
+702,anneau vaginal a progestatif avp,anneau,2g,,Senegal,,
+703,sayana press,injectable sous cutané,"104mg/0,65 ml",,Senegal,,
+727,renagel,,400mg,,Senegal,,
+728,imurel,comprimé,50mg,,Senegal,,
+729,simulect,inj,20mg,,Senegal,,
+731,cellcept,comprimé,1g,,Senegal,,
+733,solution uw,solution,poche de 5litres,,Senegal,,
+734,prograf,comprimé,"0,5mg",,Senegal,,
+741,xatral,comprimé,10mg,,Senegal,,
+742,modopar,comprimé,"50 mg / 12,5 mg",,Senegal,,
+745,aricept,,10mg,,Senegal,,
+747,tanakan,,40mg,,Senegal,,
+748,nootropyl,comprimé,800mg,,Senegal,,
