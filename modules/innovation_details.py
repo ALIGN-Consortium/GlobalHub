@@ -216,19 +216,26 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         df_filtered = innovation_df
         req(not df_filtered.empty)
 
-        # df_filtered["expected_date_of_market"] = df_filtered["expected_date_of_market"].dt.strftime("%Y-%m-%d")
+            # Removing Phase 1 only
+        df_filtered = df_filtered[df_filtered["trial_status"] != "Phase 1"]
+        # Removing items with proj date <= today 
+        
+        df_filtered = df_filtered[
+            df_filtered["proj_date_lmic_20_uptake"].notna()
+            & (df_filtered["proj_date_lmic_20_uptake"] >= pd.Timestamp("2025-01-01"))
+        ]
 
         return render.DataGrid(
             df_filtered.assign(
-                expected_date_of_market=lambda d: d[
-                    "expected_date_of_market"
+                proj_date_lmic_20_uptake=lambda d: d[
+                    "proj_date_lmic_20_uptake"
                 ].dt.strftime("%Y-%m-%d")
             ).rename(
                 columns={
                     "innovation": "Innovation",
                     "category": "Category",
                     "trial_status": "Status",
-                    "expected_date_of_market": "Expected Market Date",
+                    "proj_date_lmic_20_uptake": "Projected Date of 20% Market Uptake",
                     "disease": "Disease Area",
                 }
             )[
@@ -237,7 +244,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                     "Disease Area",
                     "Category",
                     "Status",
-                    "Expected Market Date",
+                    "Projected Date of 20% Market Uptake",
                 ]
             ],
             selection_mode="row",
@@ -390,24 +397,71 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         #     else:
         #         label = f"{stage} (Trial End)"
         #     all_events.append({"name": label, "date": trial_date, "type": "Collected"})
+        # Define paired real + projected dates
 
+        # Define paired real + projected dates
+        event_map = [
+            {
+                "label": "Proof of concept",
+                "real": "date_proof_of_concept",
+                "proj": "date_proof_of_concept",  # use same field
+            },
+            {
+                "label": "Regulatory approval",
+                "real": "date_first_regulatory",
+                "proj": "proj_date_first_regulatory",
+            },
+            {
+                "label": "First country launch",
+                "real": "date_first_launch",
+                "proj": "proj_date_first_launch",
+            },
+            {
+                "label": "20% Market uptake",
+                "real": None,  # no collected equivalent
+                "proj": "proj_date_lmic_20_uptake",
+            },
+        ]
+        for event in event_map:
+            proj_col = event["proj"]
+            real_col = event["real"]
+
+            proj_date = row.get(proj_col) if proj_col in row.index else None
+            real_date = row.get(real_col) if real_col and real_col in row.index else None
+
+            if pd.notna(proj_date):
+                event_type = (
+                    "Collected"
+                    if real_col and pd.notna(real_date)
+                    else "Projection"
+                )
+
+                all_events.append(
+                    {
+                        "name": event["label"],
+                        "date": proj_date,
+                        "type": event_type,
+                    }
+                )
+
+        # Part fixed 
         # Add Regulatory Approval as "Collected" - temporary solution
-        reg_date = row.get("expected_date_of_regulatory_approval")
-        if pd.notna(reg_date):
-            all_events.append(
-                {"name": "Regulatory approval", "date": reg_date, "type": "Collected"}
-            )
+        # reg_date = row.get("proj_date_first_regulatory")
+        # if pd.notna(reg_date):
+        #     all_events.append(
+        #         {"name": "Regulatory approval", "date": reg_date, "type": "Collected"}
+        #     )
 
-        # Add other dates as "Projection"
-        projections = {
-            # "Regulatory approval": row.get("expected_date_of_regulatory_approval"),
-            "First country launch": row.get("expected_date_of_first_launch"),
-            "20% Market uptake": row.get("expected_date_of_market"),
-        }
+        # # Add other dates as "Projection"
+        # projections = {
+        #     # "Regulatory approval": row.get("proj_date_first_regulatory"),
+        #     "First country launch": row.get("proj_date_first_launch"),
+        #     "20% Market uptake": row.get("proj_date_lmic_20_uptake"),
+        # }
 
-        for name, date in projections.items():
-            if pd.notna(date):
-                all_events.append({"name": name, "date": date, "type": "Projection"})
+        # for name, date in projections.items():
+        #     if pd.notna(date):
+        #         all_events.append({"name": name, "date": date, "type": "Projection"})
 
         if not all_events:
             fig = go.FigureWidget()
@@ -615,8 +669,8 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         return ui.TagList(
             ui.div(
                 format_value_box(
-                    "Expected Market Date",
-                    format_date(row.get("expected_date_of_market")),
+                    "Projected Date of 20% Market Uptake",
+                    format_date(row.get("proj_date_lmic_20_uptake")),
                     is_percent=False,
                     check_threshold=False,
                 ),

@@ -68,10 +68,11 @@ def comparison_ui(id):
                 ui.div(
                     ui.div("Time to Approval/Market", class_="card-header"),
                     ui.div(
-                        output_widget("time_to_market_plot"),
-                        class_="card-body d-flex justify-content-center",
+                        output_widget("time_to_market_plot", height="auto"),
+                        id="timeline_card_body",  
+                        class_="card-body",
                     ),
-                    class_="card h-100",
+                    class_="card mb-4",
                 ),
                 class_="col-12",
             ),
@@ -106,7 +107,8 @@ def comparison_server(id, input, output, session):
     # Populate selectize input choices
     @reactive.Effect
     def _():
-        choices = horizon_df["innovation"].unique().tolist()
+        # currently not allowing the user to chose innovations without dates forecasted.
+        choices = horizon_df[horizon_df["proj_date_lmic_20_uptake"].notna()]["innovation"].unique().tolist()
         ui.update_selectize("selected_innovations_compare", choices=choices)
 
     @reactive.Calc
@@ -131,8 +133,8 @@ def comparison_server(id, input, output, session):
             return pd.DataFrame({"Message": ["Select innovations to compare"]})
 
         # Filter the main dataframe for the selected innovations
-        df_filtered = horizon_df[horizon_df["innovation"].isin(selected_ids)].assign(
-            expected_date_of_market=lambda d: d["expected_date_of_market"].dt.strftime(
+        df_filtered = horizon_df[horizon_df["scope"] == "WHO"][horizon_df["innovation"].isin(selected_ids)].assign(
+            proj_date_lmic_20_uptake=lambda d: d["proj_date_lmic_20_uptake"].dt.strftime(
                 "%Y-%m-%d"
             )
         )
@@ -148,7 +150,7 @@ def comparison_server(id, input, output, session):
             "Readiness Score": "readiness",
             "DALYs Averted": "dalys_averted",
             "Efficacy": "efficacy",
-            "Expected Market Date": "expected_date_of_market",
+            "Expected Market Date": "proj_date_lmic_20_uptake",
             "Policy Implemented": "policy_implemented",
             "NRA Approved": "nra",
             "WHO PQ / Global": "gra",
@@ -211,144 +213,145 @@ def comparison_server(id, input, output, session):
 
         return styler.format(precision=2, na_rep="N/A", subset=cols_to_style)
 
-    @render_widget
+    # @reactive.Effect
+    # def _adjust_timeline_height():
+    #     selected = input.selected_innovations_compare()
+    #     n = len(selected) if selected else 0
+
+    #     # Base height
+    #     base = 400
+
+    #     # Add 60px per innovation
+    #     dynamic_height = base + max(0, n - 5) * 60
+
+    #     ui.update_ui(
+    #         id="timeline_card_body",
+    #         style=f"min-height: {dynamic_height}px;"
+    #     )
+
+    @render_widget(
+        height=lambda: f"{max(400, 150 + len(input.selected_innovations_compare() or []) * 60)}px"
+    )
     def time_to_market_plot():
-        """
-        Renders a Plotly horizontal timeline showing milestones for multiple selected products.
-        """
         selected_ids = input.selected_innovations_compare()
         if not selected_ids:
-            return go.FigureWidget()
+            return go.Figure()
 
-        df_filtered = horizon_df[horizon_df["innovation"].isin(selected_ids)]
+        # 1) Restrict to the canonical rows you want to plot
+        # If WHO is your global row, keep this. If not, remove scope filter.
+        base = horizon_df[horizon_df["scope"] == "WHO"].copy()
 
-        fig = go.FigureWidget()
+        fig = go.Figure()
         all_dates_flat = []
 
-        # Define color map for different milestone types
-        milestone_colors = {
-            "Trial": "#BFBBBB",  # Gray
-            "Regulatory Approval": "#228B22",  # Green
-            "First Launch": "#DC143C",  # Red
-            "Market Entry": "#00539B",  # Blue
+        # Colors represent DATA TYPE (collected vs projection)
+        data_type_colors = {
+            "Collected": "#00539B",
+            "Projection": "#BFBBBB",
         }
 
-        for i, (idx, row) in enumerate(df_filtered.iterrows()):
-            innovation = row["innovation"]
+        # Milestone mapping: plot proj_* but classify based on corresponding date_*
+        # IMPORTANT: Only include columns that actually exist in your dataset.
+        event_map = [
+            # If you do NOT have proj_date_proof_of_concept, delete this block or map proj to date_proof_of_concept.
+            {"label": "Proof of Concept", "real": "date_proof_of_concept", "proj": "date_proof_of_concept"},
+            {"label": "Regulatory Approval",   "real": "date_first_regulatory",   "proj": "proj_date_first_regulatory"},
+            {"label": "First Launch",          "real": "date_first_launch",       "proj": "proj_date_first_launch"},
+            {"label": "Market Entry",          "real": None,                      "proj": "proj_date_lmic_20_uptake"},
+        ]
+
+        # 2) Iterate the selected innovations (NOT rows)
+        for innovation in selected_ids:
+            sub = base[base["innovation"] == innovation]
+
+            if sub.empty:
+                continue
+
+            # 3) Choose the "best" row for this innovation (most milestone dates present)
+            proj_cols = [e["proj"] for e in event_map if e["proj"] in sub.columns]
+            if proj_cols:
+                completeness = sub[proj_cols].notna().sum(axis=1)
+                row = sub.loc[completeness.idxmax()]
+            else:
+                row = sub.iloc[0]
+
             events = []
 
-            # Add Trial Milestone (Collected Data)
-            trial_date = row.get("date_trial_status")
-            if pd.notna(trial_date):
-                stage = row.get("trial_status", "Trial")
-                label = (
-                    f"{stage} Complete"
-                    if "Phase" in str(stage)
-                    else f"{stage} (Trial End)"
+            for event in event_map:
+                proj_col = event["proj"]
+                real_col = event["real"]
+
+                # Skip if projected column doesn't exist at all
+                if proj_col not in row.index:
+                    continue
+
+                proj_date = row.get(proj_col)
+                real_date = row.get(real_col) if real_col and real_col in row.index else None
+
+                if pd.notna(proj_date):
+                    event_type = "Collected" if (real_col and pd.notna(real_date)) else "Projection"
+                    events.append({"name": event["label"], "date": proj_date, "type": event_type})
+                    all_dates_flat.append(proj_date)
+
+            # If this innovation has no events, skip adding a trace
+            if not events:
+                continue
+
+            events.sort(key=lambda x: x["date"])
+            dates = [e["date"] for e in events]
+            labels = [e["name"] for e in events]
+            marker_colors = [data_type_colors[e["type"]] for e in events]
+
+            fig.add_trace(
+                go.Scatter(
+                    x=dates,
+                    y=[innovation] * len(dates),
+                    mode="lines+markers+text",
+                    line=dict(color="#000000", width=3),
+                    marker=dict(size=12, color=marker_colors, line=dict(width=2, color="white")),
+                    # text=labels,
+                    textposition="top center",
+                    hoverinfo="text+x+name",
+                    hovertext=[f"{e['name']} ({e['type']})<br>{e['date'].strftime('%Y-%m-%d')}" for e in events],
+                    showlegend=False,
                 )
-                events.append(
-                    {
-                        "name": label,
-                        "date": trial_date,
-                        "type": "Trial",
-                        "show_label": True,
-                    }
-                )
-                all_dates_flat.append(trial_date)
+            )
 
-            # Add Projected Milestones
-            projs = {
-                "Regulatory Approval": row.get("expected_date_of_regulatory_approval"),
-                "First Launch": row.get("expected_date_of_first_launch"),
-                "Market Entry": row.get("expected_date_of_market"),
-            }
-            for k, v in projs.items():
-                if pd.notna(v):
-                    events.append(
-                        {"name": k, "date": v, "type": k, "show_label": False}
-                    )
-                    all_dates_flat.append(v)
-
-            if events:
-                events.sort(key=lambda x: x["date"])
-                dates = [e["date"] for e in events]
-                names = [e["name"] if e["show_label"] else "" for e in events]
-                marker_colors = [
-                    milestone_colors.get(e["type"], "#00539B") for e in events
-                ]
-
-                # Add scatter trace for this specific innovation
-                fig.add_trace(
-                    go.Scatter(
-                        x=dates,
-                        y=[innovation] * len(dates),
-                        mode="lines+markers+text",
-                        name=innovation,
-                        line=dict(color="#00539B", width=3),
-                        marker=dict(
-                            size=12,
-                            color=marker_colors,
-                            line=dict(width=2, color="white"),
-                        ),
-                        text=names,
-                        textposition="top center",
-                        hoverinfo="text+x+name",
-                        hovertext=[
-                            f"{e['name']}<br>{e['date'].strftime('%Y-%m-%d')}"
-                            for e in events
-                        ],
-                        showlegend=False,
-                    )
-                )
-
+        # Nothing to show
         if not all_dates_flat:
             fig.update_layout(
                 xaxis=dict(visible=False),
                 yaxis=dict(visible=False),
-                annotations=[
-                    dict(
-                        text="No timeline data available",
-                        showarrow=False,
-                        xref="paper",
-                        yref="paper",
-                        x=0.5,
-                        y=0.5,
-                    )
-                ],
+                annotations=[dict(text="No timeline data available", showarrow=False, xref="paper", yref="paper", x=0.5, y=0.5)],
+                height=300,
             )
             return fig
 
-        # Add Custom Legend Items
-        for name, color in milestone_colors.items():
-            label = "Trial (Collected)" if name == "Trial" else name
+        # Legend for data type (Collected vs Projection)
+        for name, color in data_type_colors.items():
             fig.add_trace(
                 go.Scatter(
-                    x=[None],
-                    y=[None],
+                    x=[None], y=[None],
                     mode="markers",
                     marker=dict(size=10, color=color),
-                    name=label,
+                    name=name,
                 )
             )
 
-        # Padding (1 year)
+        # Axis ranges
         start_range = min(all_dates_flat) - pd.DateOffset(years=1)
         end_range = max(all_dates_flat) + pd.DateOffset(years=1)
 
-        # Dynamic Height
-        num_innovations = len(selected_ids)
-        dynamic_height = max(400, 150 + (num_innovations * 50))
-
+        # Make sure all selected innovations appear on Y axis in selection order
+        # Plotly's category axis uses categoryarray; reverse because autorange="reversed"
         fig.update_layout(
-            height=dynamic_height,
+            height=max(400, 150 + (len(selected_ids) * 50)),
             showlegend=True,
             legend=dict(
-                title=dict(text="Milestone Type", font=dict(size=12)),
+                title=dict(text="Data Type", font=dict(size=12)),
                 orientation="h",
-                yanchor="bottom",
-                y=1.02,
-                xanchor="right",
-                x=1,
+                yanchor="bottom", y=1.02,
+                xanchor="right", x=1,
             ),
             margin=dict(l=20, r=20, t=50, b=50),
             xaxis=dict(
@@ -362,13 +365,22 @@ def comparison_server(id, input, output, session):
                 side="bottom",
             ),
             yaxis=dict(
-                showgrid=False,
-                linecolor="#BFBBBB",
                 type="category",
+                categoryorder="array",
+                categoryarray=list(reversed(selected_ids)),
                 autorange="reversed",
+                showgrid=False,
             ),
             plot_bgcolor="white",
             paper_bgcolor="white",
+        )
+
+        fig.update_xaxes(
+            automargin=True
+        )
+
+        fig.update_yaxes(
+            automargin=True
         )
 
         return fig

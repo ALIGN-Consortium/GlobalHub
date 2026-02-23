@@ -145,7 +145,7 @@ def overview_ui(id):
                         "Average innovation development time", class_="fw-semibold"
                     ),
                     ui.input_select(
-                        "timeline_country_selector",
+                        "timeline_scope_selector",
                         None,
                         choices=["Overall", "Kenya", "Senegal", "South Africa"],
                         selected="Overall",
@@ -186,7 +186,7 @@ def overview_server(id, input, output, session):
     Server logic for the Overview module.
 
     Handles:
-    - Data loading and filtering based on user inputs (disease, country).
+    - Data loading and filtering based on user inputs (disease, scope).
     - Rendering of Plotly charts (trend, pie, timeline).
     - Rendering of the interactive DataGrid.
     - Navigation event when a table row is clicked.
@@ -219,8 +219,8 @@ def overview_server(id, input, output, session):
         """
         disease = input.disease_selector()
 
-        # Use only unique innovations (country="Overall") for global counts
-        df_unique = horizon_df[horizon_df["country"] == "Overall"]
+        # Use only unique innovations (scope="Overall") for global counts
+        df_unique = horizon_df[horizon_df["scope"] == "WHO"]
 
         # 1. Filter Data
         if disease == "Overall":
@@ -307,22 +307,13 @@ def overview_server(id, input, output, session):
         """
         Renders a donut chart showing the breakdown of innovations by development status (Stage).
         """
-        disease = input.disease_selector()
 
         # Use only unique innovations
-        df_unique = horizon_df[horizon_df["country"] == "Overall"]
+        df_unique = (horizon_df[horizon_df["scope"] == "WHO"][horizon_df["trial_status"] != "Phase 1"])
 
-        if disease == "Overall":
-            df_filtered = df_unique
-        else:
-            df_filtered = df_unique[df_unique["disease"] == disease]
-
-        if df_filtered.empty:
-            return go.FigureWidget()
-
-        stage_counts = df_filtered["trial_status"].value_counts().reset_index()
+        stage_counts = df_unique["trial_status"].value_counts().reset_index()
         stage_counts.columns = ["status", "count"]
-        total_innovations = len(df_filtered)
+        total_innovations = len(df_unique)
         stage_counts["pct"] = (stage_counts["count"] / total_innovations * 100).round(1)
 
         # Define colors for the consolidated categories
@@ -334,7 +325,7 @@ def overview_server(id, input, output, session):
             "Phase 4",
             "Observational",
             "Implementation/Pilot",
-            "Not in trials",
+            "Approved / Marketed",
             "Unknown",
         ]
         
@@ -388,42 +379,47 @@ def overview_server(id, input, output, session):
         req(layout_ready())
 
         disease = input.disease_selector()
-        country = input.timeline_country_selector()
+        scope = input.timeline_scope_selector()
 
         df_filtered = horizon_df.copy()
 
         if disease != "Overall":
             df_filtered = df_filtered[df_filtered["disease"] == disease]
 
-        if country != "Overall":
-            df_filtered = df_filtered[df_filtered["country"] == country]
+        if scope != "Overall":
+            df_filtered = df_filtered[df_filtered["scope"] == scope]
 
-        # Ensure numeric columns
-        cols = [
-            "time_to_regulatory_approval",
-            "time_approval_to_first_launch",
-            "time_launch_to_20lmic",
+        # Ensure datetime
+        date_cols = [
+            "date_proof_of_concept",
+            "date_first_regulatory",
+            "date_first_launch",
+            "proj_date_lmic_20_uptake",
         ]
-        for c in cols:
-            if c in df_filtered.columns:
-                df_filtered[c] = pd.to_numeric(df_filtered[c], errors="coerce")
 
-        # Calculate averages
-        t1 = (
-            df_filtered["time_to_regulatory_approval"].mean()
-            if "time_to_regulatory_approval" in df_filtered.columns
-            else 0
+        for c in date_cols:
+            if c in df_filtered.columns:
+                df_filtered[c] = pd.to_datetime(df_filtered[c], errors="coerce")
+
+        # Compute durations in years
+        df_filtered["t1"] = (
+            (df_filtered["date_first_regulatory"] - df_filtered["date_proof_of_concept"])
+            .dt.days / 365.25
         )
-        t2 = (
-            df_filtered["time_approval_to_first_launch"].mean()
-            if "time_approval_to_first_launch" in df_filtered.columns
-            else 0
+
+        df_filtered["t2"] = (
+            (df_filtered["date_first_launch"] - df_filtered["date_first_regulatory"])
+            .dt.days / 365.25
         )
-        t3 = (
-            df_filtered["time_launch_to_20lmic"].mean()
-            if "time_launch_to_20lmic" in df_filtered.columns
-            else 0
+
+        df_filtered["t3"] = (
+            (df_filtered["proj_date_lmic_20_uptake"] - df_filtered["date_first_launch"])
+            .dt.days / 365.25
         )
+
+        t1 = df_filtered["t1"].dropna().mean()
+        t2 = df_filtered["t2"].dropna().mean()
+        t3 = df_filtered["t3"].dropna().mean()
 
         t1 = 0 if pd.isna(t1) else t1
         t2 = 0 if pd.isna(t2) else t2
@@ -478,22 +474,29 @@ def overview_server(id, input, output, session):
     def pipeline_tbl():
         """
         Renders the interactive DataGrid table.
-        Filters by country and selects key columns for display.
+        Filters by scope and selects key columns for display.
         """
         df_filtered = innovation_df
         req(not df_filtered.empty)
 
+        df_filtered = df_filtered[df_filtered["trial_status"] != "Phase 1"]
+        
+        df_filtered = df_filtered[
+            df_filtered["proj_date_lmic_20_uptake"].notna()
+            & (df_filtered["proj_date_lmic_20_uptake"] >= pd.Timestamp("2025-01-01"))
+        ]
+
         return render.DataGrid(
             df_filtered.assign(
-                expected_date_of_market=lambda d: d[
-                    "expected_date_of_market"
+                proj_date_lmic_20_uptake=lambda d: d[
+                    "proj_date_lmic_20_uptake"
                 ].dt.strftime("%Y-%m-%d")
             ).rename(
                 columns={
                     "innovation": "Innovation",
                     "category": "Category",
                     "trial_status": "Status",
-                    "expected_date_of_market": "Expected Market Date",
+                    "proj_date_lmic_20_uptake": "Projected Date of 20% Market Uptake",
                     "disease": "Disease Area",
                 }
             )[
@@ -502,7 +505,7 @@ def overview_server(id, input, output, session):
                     "Disease Area",
                     "Category",
                     "Status",
-                    "Expected Market Date",
+                    "Projected Date of 20% Market Uptake",
                 ]
             ],
             selection_mode="row",

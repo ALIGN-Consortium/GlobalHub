@@ -1,7 +1,4 @@
 import pandas as pd
-import numpy as np
-import random
-from pathlib import Path
 from datetime import timedelta
 from .config import DATA_PATH, POP_DATA_PATH, COLORS
 
@@ -46,7 +43,7 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
 
     Key Logic:
         1.  **Date Conversion**: Parses multiple date columns using `dayfirst=True` and `format='mixed'` to handle inconsistent date formats (e.g., DD-MM-YYYY vs MM/DD/YYYY).
-        2.  **Market Year**: Extracts the year from `expected_date_of_market` to drive timeline charts.
+        2.  **Market Year**: Extracts the year from `proj_date_lmic_20_uptake` to drive timeline charts.
         3.  **Numeric Conversion**: Coerces key metrics (scores, DALYs, costs) to numeric types, filling NaNs with 0 to ensure downstream calculations don't fail.
         4.  **Category Cleanup**: Strips whitespace from category names to ensure grouping consistency.
 
@@ -56,39 +53,37 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
     Returns:
         pd.DataFrame: Processed dataframe ready for analysis.
     """
-    # Rename 'scope' to 'country' for consistency with app logic
-    if "scope" in df.columns:
-        df = df.rename(columns={"scope": "country"})
-
     # Map 'WHO' to 'Overall' to match the app's expected aggregate identifier
-    if "country" in df.columns:
-        df["country"] = df["country"].replace("WHO", "Overall")
 
     #  Date Conversions
     date_cols = [
-        "expected_date_of_market",
-        "expected_date_of_regulatory_approval",
-        "expected_date_of_first_launch",
+        "eml_date",
         "nra_date",
         "gra_date",
-        "eml_date",
+        "phase_1_date",
+        "phase_2_date",
+        "phase_3_date",
+        "phase_4_date",
         "date_trial_status",
-        "phase_1_date", "phase_2_date", "phase_3_date", "phase_4_date",
-        "who_eml_date", "date_market"
+        "date_market",
+        "date_proof_of_concept",
+        "date_first_regulatory",
+        "date_first_launch",
+        "proj_date_first_regulatory",
+        "proj_date_first_launch",
+        "proj_date_lmic_20_uptake"
     ]
 
     for col in date_cols:
         if col in df.columns:
             df[col] = pd.to_datetime(
                 df[col], dayfirst=True, format="mixed", errors="coerce"
-            ).dt.normalize()  # <- sets time to 00:00:00
+            ).dt.normalize()  # <- sets time to 00:00:00\
 
     # Market Year Generation
     # Used for the "Forecast of products" trend chart in Overview
-    if "expected_date_of_market" in df.columns:
-        df["market_year"] = df["expected_date_of_market"].dt.year
-    else:
-        df["market_year"] = 2025  # Default fallback if missing
+    if "proj_date_lmic_20_uptake" in df.columns:
+        df["market_year"] = df["proj_date_lmic_20_uptake"].dt.year
 
     #  Numeric Conversions
     # Ensures all metric columns are actual numbers for plotting/calculations
@@ -102,134 +97,16 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
         "yll",
         # "hs_costs",
         "dalys_monetized",
-        "time_to_regulatory_approval",
-        "time_approval_to_first_launch",
-        "time_launch_to_20lmic",
+        # "time_to_regulatory_approval",
+        # "time_approval_to_first_launch",
+        # "time_launch_to_20lmic",
         "impact_potential",
         "introduction_readiness"
     ]
 
-    for col in numeric_cols:
-        if col in df.columns:
-            df[col] = pd.to_numeric(df[col], errors="coerce").fillna(0)
-
-    #  Category Cleanup
-    if "category" in df.columns:
-        df["category"] = df["category"].str.strip()
-        
-        # Standardize categories
-        cat_map = {
-            "Therapeutics": "Therapeutic",
-            "therapeutic": "Therapeutic",
-            "Vacine": "Vaccine",
-            "VCPs": "Vector Control",
-            "Vector-Contrlled Products": "Vector Control",
-            "Medical device": "Medical Device"
-        }
-        df["category"] = df["category"].replace(cat_map)
-
-    # --- Trial Status Mapping ---
-    def map_status(status):
-        s = str(status).lower().strip()
-        if s == "nan" or s == "unknown" or s == "phase":
-            return "Unknown"
-        
-        # Phase mapping
-        if "phase 1" in s:
-            return "Phase 1"
-        if "phase 2" in s:
-            return "Phase 2"
-        if "phase 3" in s:
-            return "Phase 3"
-        if "phase 4" in s:
-            return "Phase 4"
-            
-        # Implementation/Pilot mapping (Approved, Marketed, WHO_PQ, CE)
-        if any(x in s for x in ["approved", "marketed", "who", "ce", "yes"]):
-            return "Implementation/Pilot"
-            
-        return "Unknown"
-
-    if "trial_status" in df.columns:
-        df["trial_status"] = df["trial_status"].apply(map_status)
-    else:
-        df["trial_status"] = "Unknown"
-
-    # --- Time to Market Estimation ---
-    def estimate_time_to_market(stage):
-        stage = str(stage).upper()
-        # Defaults (Median in Years)
-        t1, t2, t3 = 2.62, 0.32, 5.0 
-        
-        if "PHASE 1" in stage or "PHASE 2" in stage or "EARLY" in stage:
-            # High Uncertainty (75th Percentile)
-            t1, t2, t3 = 4.41, 0.98, 21.0
-        elif "PHASE 3" in stage:
-            # Standard (Median)
-            t1, t2, t3 = 2.62, 0.32, 5.0
-        elif "PHASE 4" in stage:
-            # Mature/Optimized (25th Percentile)
-            t1, t2, t3 = 0.56, 0.15, 3.5
-            
-        return pd.Series([t1, t2, t3])
-
-    time_cols = ['time_to_regulatory_approval', 'time_approval_to_first_launch', 'time_launch_to_20lmic']
-    
-    # Calculate estimations for all rows based on status
-    estimations = df['trial_status'].apply(estimate_time_to_market)
-    estimations.columns = time_cols
-    
-    # Fill missing numeric values with estimations
-    for col in time_cols:
-        if col not in df.columns:
-            df[col] = estimations[col]
-        else:
-            df[col] = df[col].fillna(estimations[col])
-
-    # --- Date Projections ---
-    def calculate_projected_dates(row):
-        start_date = row.get('date_trial_status')
-        if pd.isna(start_date):
-            return pd.Series([pd.NaT] * 3)
-        
-        try:
-            # Ensure start_date is a timestamp
-            base_date = pd.to_datetime(start_date)
-            
-            # Calculate offsets in days (approximate 365.25 days/year)
-            days_to_reg = (row['time_to_regulatory_approval'] or 0) * 365.25
-            days_to_launch = (row['time_approval_to_first_launch'] or 0) * 365.25
-            days_to_lmic = (row['time_launch_to_20lmic'] or 0) * 365.25
-            
-            date_reg_approval = base_date + timedelta(days=days_to_reg)
-            date_first_launch = date_reg_approval + timedelta(days=days_to_launch)
-            date_lmic_uptake = date_first_launch + timedelta(days=days_to_lmic)
-            
-            return pd.Series([
-                date_reg_approval,
-                date_first_launch,
-                date_lmic_uptake
-            ])
-        except Exception:
-            return pd.Series([pd.NaT] * 3)
-
-    proj_date_cols = ['expected_date_of_regulatory_approval', 'expected_date_of_first_launch', 'expected_date_of_market']
-    
-    # Calculate projections
-    projections = df.apply(calculate_projected_dates, axis=1)
-    projections.columns = proj_date_cols
-    
-    # Fill missing date values with projections
-    for col in proj_date_cols:
-        if col not in df.columns:
-            df[col] = projections[col]
-        else:
-            df[col] = df[col].fillna(projections[col])
-            
-    # Re-calculate market_year after filling dates
-    if "expected_date_of_market" in df.columns:
-        df["market_year"] = df["expected_date_of_market"].dt.year
-    
+    # for col in numeric_cols:
+    #     if col in df.columns:
+    #         df[col] = pd.to_numeric(df[col], errors="coerce")
     return df
 
 
@@ -258,11 +135,11 @@ def _process_pipeline(df: pd.DataFrame) -> pd.DataFrame:
     pipeline_raw = df.groupby(["market_year", "category"]).size().unstack(fill_value=0)
 
     # Determine timeline range
-    min_year = 2025
+    min_year = 2025 #?
     max_year = (
         int(pipeline_raw.index.max())
         if not pipeline_raw.empty and not pd.isna(pipeline_raw.index.max())
-        else 2035
+        else 2035 #?
     )
     all_years = range(min_year, max_year + 1)
 
@@ -379,10 +256,10 @@ def load_data() -> dict:
     horizon_df = df.copy()
 
     # innovation_df: The aggregate/global view (country="Overall")
-    if "country" in horizon_df.columns:
-        innovation_df = horizon_df[horizon_df["country"] == "Overall"].copy()
+    if "scope" in horizon_df.columns:
+        innovation_df = horizon_df[horizon_df["scope"] == "WHO"].copy()
         # country_regulatory_df: The specific country rows
-        country_regulatory_df = horizon_df[horizon_df["country"] != "Overall"].copy()
+        country_regulatory_df = horizon_df[horizon_df["scope"] != "WHO"].copy()
     else:
         innovation_df = pd.DataFrame()
         country_regulatory_df = pd.DataFrame()
@@ -391,19 +268,11 @@ def load_data() -> dict:
     try:
         # Load population data with standard utf-8
         pop_df = pd.read_csv(POP_DATA_PATH)
-
-        # Ensure consistent formatting for merge keys (strip whitespace)
-        for d in [horizon_df, pop_df]:
-            if "country" in d.columns:
-                d["country"] = d["country"].astype(str).str.strip()
-            if "disease" in d.columns:
-                d["disease"] = d["disease"].astype(str).str.strip()
-
         # Merge population data based on country and disease
         horizon_df = pd.merge(
             horizon_df,
-            pop_df[["country", "disease", "targeted_population", "pop_description"]],
-            on=["country", "disease"],
+            pop_df[["scope", "disease", "targeted_population", "pop_description"]],
+            on=["scope", "disease"],
             how="left",
         )
 
