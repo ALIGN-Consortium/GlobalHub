@@ -1,5 +1,6 @@
 from shiny import ui, reactive
-from shiny.express import render
+from shiny.express import render, input
+from shiny.render import DataGrid
 import plotly.graph_objects as go
 import pandas as pd
 from utils.data_loader import load_data
@@ -30,8 +31,9 @@ def overview_ui(id):
        - Trend Chart: Cumulative forecast of products coming to market.
        - Pie Chart: Current development status breakdown.
     3. Average Timeline: Visual timeline of development stages.
-    4. Innovation Explorer: Interactive table to browse and select innovations.
+    4. Product Explorer: Interactive table to browse and select innovations.
     """
+
     data = load_data()
     horizon_df = data["horizon"]
 
@@ -67,115 +69,144 @@ def overview_ui(id):
     mnch_count = count_innovations(["MNCH"])
 
     return ui.div(
-        # --- Section 1: KPI Cards ---
-        ui.div(
+        ui.div(  # ---- CONTAINER WRAPPER ----
+            # --- HERO HEADER ---
             ui.div(
-                ui.card(
-                    kpi_card(
-                        str(tb_count), "Tuberculosis", "Innovations", "lungs-virus"
-                    )
+                ui.h1("ALIGN GlobalHub", class_="fw-bold display-5 mb-1"),
+                ui.p(
+                    "Market Intelligence Hub for Global Health Innovation",
+                    class_="lead text-muted mb-3",
                 ),
-                class_="col-md-3",
+                ui.hr(class_="mb-4"),
             ),
+            # --- Section 1: KPI Cards ---
             ui.div(
-                ui.card(kpi_card(str(hiv_count), "HIV/AIDS", "Innovations", "ribbon")),
-                class_="col-md-3",
-            ),
-            ui.div(
-                ui.card(
-                    kpi_card(str(malaria_count), "Malaria", "Innovations", "mosquito")
+                ui.div(
+                    ui.card(
+                        kpi_card(
+                            str(tb_count), "Tuberculosis", "Products", "lungs-virus"
+                        )
+                    ),
+                    class_="col-md-3",
                 ),
-                class_="col-md-3",
-            ),
-            ui.div(
-                ui.card(
-                    kpi_card(
-                        str(mnch_count), "MNCH", "Innovations", "person-breastfeeding"
-                    )
+                ui.div(
+                    ui.card(kpi_card(str(hiv_count), "HIV/AIDS", "Products", "ribbon")),
+                    class_="col-md-3",
                 ),
-                class_="col-md-3",
-            ),
-            class_="row mb-4 g-3",
-        ),
-        # --- Section 2: Market Overview Charts ---
-        ui.div(
-            ui.div(
-                ui.span("Market Overview", class_="fw-semibold"),
-                ui.input_select(
-                    "disease_selector",
-                    None,
-                    choices=diseases,
-                    selected="Overall",
-                    width="220px",
+                ui.div(
+                    ui.card(
+                        kpi_card(str(malaria_count), "Malaria", "Products", "mosquito")
+                    ),
+                    class_="col-md-3",
                 ),
-                class_="d-flex align-items-center justify-content-between flex-wrap gap-2 mb-2",
+                ui.div(
+                    ui.card(
+                        kpi_card(
+                            str(mnch_count), "MNCH", "Products", "person-breastfeeding"
+                        )
+                    ),
+                    class_="col-md-3",
+                ),
+                class_="row mb-4 g-3",
             ),
-            class_="col-12",
-        ),
-        ui.div(
+            # --- Section 2: Market Overview (Parent Card) ---
             ui.div(
                 ui.div(
                     ui.div(
-                        "Forecast of products coming to market", class_="card-header"
+                        ui.span("Market Overview", class_="fw-semibold"),
+                        ui.input_select(
+                            "disease_selector",
+                            None,
+                            choices=diseases,
+                            selected="Overall",
+                            width="220px",
+                        ),
+                        class_="card-header d-flex align-items-center justify-content-between flex-wrap gap-2",
                     ),
                     ui.div(
-                        output_widget("trend_chart", height="350px"), class_="card-body"
+                        ui.div(
+                            ui.div(
+                                ui.div(
+                                    "Forecast of products coming to market",
+                                    class_="card-header",
+                                ),
+                                ui.div(
+                                    output_widget("trend_chart", height="360px"),
+                                    class_="card-body",
+                                ),
+                                class_="card",
+                            ),
+                            class_="col-md-7",
+                        ),
+                        ui.div(
+                            ui.div(
+                                ui.div("Development Status", class_="card-header"),
+                                ui.div(
+                                    output_widget("pie_chart", height="360px"),
+                                    class_="card-body",
+                                ),
+                                class_="card",
+                            ),
+                            class_="col-md-5",
+                        ),
+                        class_="row g-3",
                     ),
-                    class_="card",
+                    class_="card mb-4",
                 ),
-                class_="col-md-7",
+                class_="col-12",
             ),
+            # --- Section 3: Average Timeline ---
+            # ui.div(
+            #     ui.div(
+            #         ui.div(
+            #             ui.span(
+            #                 "Average innovation development time", class_="fw-semibold"
+            #             ),
+            #             ui.input_select(
+            #                 "timeline_scope_selector",
+            #                 None,
+            #                 choices=["Overall", "Kenya", "Senegal", "South Africa"],
+            #                 selected="Overall",
+            #                 width="220px",
+            #             ),
+            #             class_="card-header d-flex align-items-center justify-content-between flex-wrap gap-2",
+            #         ),
+            #         ui.div(
+            #             ui.div(
+            #                 output_widget("avg_timeline_plot", height="300px"),
+            #                 style="width: 100%; display: block;",
+            #             ),
+            #             class_="card-body",
+            #         ),
+            #         class_="card col-12",
+            #     ),
+            #     class_="row g-3 mb-4",
+            # ),
+            # --- Section 4: Product Explorer ---
             ui.div(
                 ui.div(
-                    ui.div("Development Status", class_="card-header"),
                     ui.div(
-                        output_widget("pie_chart", height="350px"), class_="card-body"
+                        ui.span("Product Explorer", class_="fw-semibold"),
+                        ui.input_action_button(
+                            "clear_filters",
+                            ui.tags.span(
+                                ui.tags.i(class_="fa-solid fa-rotate-left me-1"),
+                                "Clear filters",
+                            ),
+                            class_="btn btn-sm btn-outline-secondary",
+                        ),
+                        class_="d-flex justify-content-between align-items-center w-100",
                     ),
-                    class_="card",
-                ),
-                class_="col-md-5",
-            ),
-            class_="row g-3",
-        ),
-        # --- Section 3: Average Timeline ---
-        ui.div(
-            ui.div(
-                ui.div(
-                    ui.span(
-                        "Average innovation development time", class_="fw-semibold"
-                    ),
-                    ui.input_select(
-                        "timeline_scope_selector",
-                        None,
-                        choices=["Overall", "Kenya", "Senegal", "South Africa"],
-                        selected="Overall",
-                        width="220px",
-                    ),
-                    class_="card-header d-flex align-items-center justify-content-between flex-wrap gap-2",
+                    class_="card-header",
                 ),
                 ui.div(
-                    ui.div(
-                        output_widget("avg_timeline_plot", height="300px"),
-                        style="width: 100%; display: block;",
-                    ),
-                    class_="card-body",
+                    ui.output_data_frame("pipeline_tbl"),
+                    class_="card-body p-0",
                 ),
-                class_="card col-12",
+                class_="card",
+                min_height="500px",
             ),
-            class_="row g-3 mb-4",
-        ),
-        # --- Section 4: Innovation Explorer Table ---
-        ui.div(
-            ui.div(
-                ui.span("Innovation Explorer", class_="fw-semibold"),
-                class_="card-header",
-            ),
-            ui.div(
-                ui.output_data_frame("pipeline_tbl"),
-                class_="card-body",
-            ),
-            class_="card",
-            min_height="500px",
+            class_="container-fluid px-3 py-3",
         ),
         id=id,
     )
@@ -191,16 +222,23 @@ def overview_server(id, input, output, session):
     - Rendering of the interactive DataGrid.
     - Navigation event when a table row is clicked.
     """
+    clear_trigger = reactive.Value(0)
     data = load_data()
     horizon_df = data["horizon"]
     innovation_df = data["innovation_df"]
 
+    df_filtered = innovation_df
+    df_filtered = df_filtered[df_filtered["trial_status"] != "Phase 1"]
+
+    df_filtered = df_filtered[
+        df_filtered["proj_date_lmic_20_uptake"].notna()
+        & (df_filtered["proj_date_lmic_20_uptake"] >= pd.Timestamp("2025-01-01"))
+    ]
     # Reactive value to store the selected innovation ID for cross-module communication
     default_innovation_id = (
-        horizon_df["innovation"].iloc[0] if not horizon_df.empty else None
+        df_filtered["innovation"].iloc[0] if not df_filtered.empty else None
     )
     selected_innovation = reactive.Value(default_innovation_id)
-
     # --- Layout Fix: Startup Delay ---
     # Delays the initial render of complex charts to allow CSS layout to settle.
     layout_ready = reactive.Value(False)
@@ -309,7 +347,9 @@ def overview_server(id, input, output, session):
         """
 
         # Use only unique innovations
-        df_unique = (horizon_df[horizon_df["scope"] == "WHO"][horizon_df["trial_status"] != "Phase 1"])
+        df_unique = horizon_df[horizon_df["scope"] == "WHO"][
+            horizon_df["trial_status"] != "Phase 1"
+        ]
 
         stage_counts = df_unique["trial_status"].value_counts().reset_index()
         stage_counts.columns = ["status", "count"]
@@ -328,20 +368,20 @@ def overview_server(id, input, output, session):
             "Approved / Marketed",
             "Unknown",
         ]
-        
+
         base_colors = [
-            "#94a3b8", # Preclinical (Grey)
-            "#60a5fa", # Phase 1 (Blue)
-            "#3b82f6", # Phase 2 (Darker Blue)
-            "#2563eb", # Phase 3 (Even Darker Blue)
-            "#1d4ed8", # Phase 4 (Deep Blue)
-            "#a78bfa", # Observational (Purple)
-            "#10b981", # Implementation/Pilot (Green)
-            "#f43f5e", # Not in trials (Red)
-            "#cbd5e1"  # Unknown (Light Grey)
+            "#94a3b8",  # Preclinical (Grey)
+            "#60a5fa",  # Phase 1 (Blue)
+            "#3b82f6",  # Phase 2 (Darker Blue)
+            "#2563eb",  # Phase 3 (Even Darker Blue)
+            "#1d4ed8",  # Phase 4 (Deep Blue)
+            "#a78bfa",  # Observational (Purple)
+            "#10b981",  # Implementation/Pilot (Green)
+            "#f43f5e",  # Not in trials (Red)
+            "#cbd5e1",  # Unknown (Light Grey)
         ]
         color_map = dict(zip(categories, base_colors))
-        
+
         stage_counts["colors"] = stage_counts["status"].map(color_map).fillna("#cbd5e1")
         readiness = stage_counts
 
@@ -403,19 +443,16 @@ def overview_server(id, input, output, session):
 
         # Compute durations in years
         df_filtered["t1"] = (
-            (df_filtered["date_first_regulatory"] - df_filtered["date_proof_of_concept"])
-            .dt.days / 365.25
-        )
+            df_filtered["date_first_regulatory"] - df_filtered["date_proof_of_concept"]
+        ).dt.days / 365.25
 
         df_filtered["t2"] = (
-            (df_filtered["date_first_launch"] - df_filtered["date_first_regulatory"])
-            .dt.days / 365.25
-        )
+            df_filtered["date_first_launch"] - df_filtered["date_first_regulatory"]
+        ).dt.days / 365.25
 
         df_filtered["t3"] = (
-            (df_filtered["proj_date_lmic_20_uptake"] - df_filtered["date_first_launch"])
-            .dt.days / 365.25
-        )
+            df_filtered["proj_date_lmic_20_uptake"] - df_filtered["date_first_launch"]
+        ).dt.days / 365.25
 
         t1 = df_filtered["t1"].dropna().mean()
         t2 = df_filtered["t2"].dropna().mean()
@@ -476,11 +513,14 @@ def overview_server(id, input, output, session):
         Renders the interactive DataGrid table.
         Filters by scope and selects key columns for display.
         """
+        clear_trigger.get()  # dependency to force re-render
         df_filtered = innovation_df
         req(not df_filtered.empty)
 
+        # Does not show Trial Phase 1
         df_filtered = df_filtered[df_filtered["trial_status"] != "Phase 1"]
-        
+
+        # Removes empty time stamps or time stamps way too in the past
         df_filtered = df_filtered[
             df_filtered["proj_date_lmic_20_uptake"].notna()
             & (df_filtered["proj_date_lmic_20_uptake"] >= pd.Timestamp("2025-01-01"))
@@ -493,7 +533,7 @@ def overview_server(id, input, output, session):
                 ].dt.strftime("%Y-%m-%d")
             ).rename(
                 columns={
-                    "innovation": "Innovation",
+                    "innovation": "Product",
                     "category": "Category",
                     "trial_status": "Status",
                     "proj_date_lmic_20_uptake": "Projected Date of 20% Market Uptake",
@@ -501,7 +541,7 @@ def overview_server(id, input, output, session):
                 }
             )[
                 [
-                    "Innovation",
+                    "Product",
                     "Disease Area",
                     "Category",
                     "Status",
@@ -516,20 +556,27 @@ def overview_server(id, input, output, session):
     @reactive.Effect
     @reactive.event(input.pipeline_tbl_selected_rows)
     def _():
-        """
-        Event Handler: Runs when a row is clicked in the pipeline_tbl.
-        1. Identifies the selected innovation ID.
-        2. Updates the `selected_innovation` reactive value.
-        3. Switches the main navigation tab to 'Innovation Details'.
-        """
         if not input.pipeline_tbl_selected_rows():
             return
+
         idx = input.pipeline_tbl_selected_rows()[0]
 
+        # Recreate same filtered df as table
         df_filtered = innovation_df
+        df_filtered = df_filtered[df_filtered["trial_status"] != "Phase 1"]
+        df_filtered = df_filtered[
+            df_filtered["proj_date_lmic_20_uptake"].notna()
+            & (df_filtered["proj_date_lmic_20_uptake"] >= pd.Timestamp("2025-01-01"))
+        ]
 
         selected_id = df_filtered.iloc[idx]["innovation"]
+
         selected_innovation.set(selected_id)
-        ui.update_navset("main_nav", "Innovation Details")
+        ui.update_navset("main_nav", "Product Details")
+
+    @reactive.Effect
+    @reactive.event(input.clear_filters)
+    def _():
+        clear_trigger.set(clear_trigger.get() + 1)
 
     return selected_innovation

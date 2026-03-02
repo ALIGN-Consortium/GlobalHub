@@ -1,4 +1,5 @@
 from shiny import ui, reactive, req as shiny_req
+from shiny.ui import popover
 from shiny.express import render
 import pandas as pd
 import plotly.graph_objects as go
@@ -70,7 +71,7 @@ def innovation_details_ui(id):
         # Innovation Explorer table
         ui.div(
             ui.div(
-                ui.span("Innovation explorer", class_="fw-semibold"),
+                ui.span("Product explorer", class_="fw-semibold"),
                 class_="card-header",
             ),
             ui.div(
@@ -102,7 +103,7 @@ def innovation_details_ui(id):
             ui.div(
                 ui.div(
                     ui.div(
-                        "Projected timeline for the innovation selected",
+                        "Projected timeline for the product selected",
                         class_="card-header",
                     ),
                     ui.div(
@@ -127,13 +128,13 @@ def innovation_details_ui(id):
             ui.div(
                 ui.div(
                     ui.div(
-                        ui.output_ui("impact_potential_box"),
+                        ui.output_ui("impact_potential_box", class_="row g-3 mt-1"),
                         class_="card-body",
                     ),
                     class_="card bg-light border-0",
                 ),
             ),
-            class_="card",
+            class_="row g-4 g-3",
             min_height="600px",
         ),
         # Introduction Readiness - Broken down by section
@@ -216,10 +217,10 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         df_filtered = innovation_df
         req(not df_filtered.empty)
 
-            # Removing Phase 1 only
+        # Removing Phase 1 only
         df_filtered = df_filtered[df_filtered["trial_status"] != "Phase 1"]
-        # Removing items with proj date <= today 
-        
+        # Removing items with proj date <= today
+
         df_filtered = df_filtered[
             df_filtered["proj_date_lmic_20_uptake"].notna()
             & (df_filtered["proj_date_lmic_20_uptake"] >= pd.Timestamp("2025-01-01"))
@@ -232,7 +233,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                 ].dt.strftime("%Y-%m-%d")
             ).rename(
                 columns={
-                    "innovation": "Innovation",
+                    "innovation": "Product",
                     "category": "Category",
                     "trial_status": "Status",
                     "proj_date_lmic_20_uptake": "Projected Date of 20% Market Uptake",
@@ -240,7 +241,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                 }
             )[
                 [
-                    "Innovation",
+                    "Product",
                     "Disease Area",
                     "Category",
                     "Status",
@@ -264,6 +265,12 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         idx = input.pipeline_tbl_details_selected_rows()[0]
 
         df_filtered = innovation_df
+        df_filtered = df_filtered[df_filtered["trial_status"] != "Phase 1"]
+
+        df_filtered = df_filtered[
+            df_filtered["proj_date_lmic_20_uptake"].notna()
+            & (df_filtered["proj_date_lmic_20_uptake"] >= pd.Timestamp("2025-01-01"))
+        ]
 
         selected_id = df_filtered.iloc[idx]["innovation"]
         selected_innovation.set(selected_id)
@@ -367,7 +374,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
     def detail_summary():
         row = detail_row()
         return ui.div(
-            ui.p(ui.tags.b("Innovation: "), str(row.get("innovation", "N/A"))),
+            ui.p(ui.tags.b("Product: "), str(row.get("innovation", "N/A"))),
             ui.p(ui.tags.b("Disease: "), str(row.get("disease", "N/A"))),
             ui.p(ui.tags.b("Indication: "), str(row.get("indication", "N/A"))),
             ui.p(
@@ -427,13 +434,13 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             real_col = event["real"]
 
             proj_date = row.get(proj_col) if proj_col in row.index else None
-            real_date = row.get(real_col) if real_col and real_col in row.index else None
+            real_date = (
+                row.get(real_col) if real_col and real_col in row.index else None
+            )
 
             if pd.notna(proj_date):
                 event_type = (
-                    "Collected"
-                    if real_col and pd.notna(real_date)
-                    else "Projection"
+                    "Collected" if real_col and pd.notna(real_date) else "Projection"
                 )
 
                 all_events.append(
@@ -444,7 +451,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                     }
                 )
 
-        # Part fixed 
+        # Part fixed
         # Add Regulatory Approval as "Collected" - temporary solution
         # reg_date = row.get("proj_date_first_regulatory")
         # if pd.notna(reg_date):
@@ -589,44 +596,139 @@ def innovation_details_server(id, selected_innovation, input, output, session):
     def impact_potential_box():
         row = detail_row()
 
-        # Aligned with goals - logic using probability of success or readiness
-        align_val = row.get("readiness", 0)
-        align_str = "Yes" if align_val > 50 else "No"
+        def safe_number(val, default=0):
+            try:
+                if pd.notna(val):
+                    return val
+            except Exception:
+                pass
+            return default
 
-        # Determine the label for population (use description if available)
-        pop_label = str(row.get("pop_description", "People at Risk"))
-        if pop_label == "nan" or not pop_label:
-            pop_label = "People at Risk"
+        def safe_text(val, default="Not available"):
+            if pd.isna(val) or str(val).strip().lower() == "nan":
+                return default
+            return val
 
-        return ui.div(
+        pop_label = safe_text(row.get("pop_description"), "People at Risk")
+
+        readiness_val = safe_number(row.get("readiness"), 0)
+        align_str = (
+            "Yes" if readiness_val >= 50 else "No"
+        )  # keep for later if you want to display
+
+        return ui.TagList(
+            # Population at Risk
             ui.div(
-                format_value_box(
-                    pop_label,
-                    row.get("people_at_risk", 0),
-                    is_percent=False,
-                    check_threshold=False,
+                ui.value_box(
+                    ui.div(
+                        ui.tags.span(pop_label, class_="vb-title-text"),
+                        ui.tags.span(
+                            popover(
+                                ui.tags.i(
+                                    class_="fa-solid fa-circle-info text-muted",
+                                    style="cursor:pointer;",
+                                ),
+                                ui.div(
+                                    ui.p("Estimated number of individuals at risk."),
+                                    ui.tags.a(
+                                        "Learn more",
+                                        href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+                                        target="_blank",
+                                        class_="fw-semibold",
+                                    ),
+                                ),
+                                title="Methodology",
+                            ),
+                            class_="vb-title-icon",
+                        ),
+                        class_="vb-title",
+                    ),
+                    ui.tags.span(
+                        safe_number(row.get("people_at_risk")),
+                        class_="fs-5 fw-semibold",
+                    ),
+                    fill=True,
+                    class_="h-100 shadow-sm border",
                 ),
                 class_="col-12 col-md-2",
+                style="height: 200px;",
             ),
+            # DALYs Value Box
             ui.div(
-                format_value_box(
-                    "DALYs",
-                    row.get("dalys", 0),
-                    is_percent=False,
-                    check_threshold=False,
+                ui.value_box(
+                    ui.div(
+                        ui.tags.span("DALYs", class_="vb-title-text"),
+                        ui.tags.span(
+                            popover(
+                                ui.tags.i(
+                                    class_="fa-solid fa-circle-info text-muted",
+                                    style="cursor:pointer;",
+                                ),
+                                ui.div(
+                                    ui.p(
+                                        "Disability-adjusted life years attributable to the condition."
+                                    ),
+                                    ui.tags.a(
+                                        "Learn more",
+                                        href="https://github.com/ALIGN-Consortium/GlobalHub/blob/main/docs/Disease_DALYs_Methods_and_Reference_Values.md",
+                                        target="_blank",
+                                        class_="fw-semibold",
+                                    ),
+                                ),
+                                title="Methodology",
+                            ),
+                            class_="vb-title-icon",
+                        ),
+                        class_="vb-title",
+                    ),
+                    ui.tags.span(
+                        safe_number(row.get("dalys")),
+                        class_="fs-5 fw-semibold",
+                    ),
+                    fill=True,
+                    class_="h-100 shadow-sm border",
                 ),
                 class_="col-12 col-md-2",
+                style="height: 200px;",
             ),
-            ui.div(
-                format_value_box(
-                    "Efficacy",
-                    row.get("efficacy", "Not available"),
-                    is_percent=False,
-                    check_threshold=False,
-                ),
-                class_="col-12 col-md-2",
-            ),
-            class_="row g-3",
+            # Efficacy
+            # ui.div(
+            #     ui.value_box(
+            #         ui.div(
+            #             ui.tags.span("Efficacy", class_="vb-title-text"),
+            #             ui.tags.span(
+            #                 popover(
+            #                     ui.tags.i(
+            #                         class_="fa-solid fa-circle-info text-muted",
+            #                         style="cursor:pointer;",
+            #                     ),
+            #                     ui.div(
+            #                         ui.p(
+            #                             "Best available efficacy/effectiveness estimate (and context), ideally quantitative but can be summarized when early-stage."
+            #                         ),
+            #                         ui.tags.a(
+            #                             "Learn more",
+            #                             href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+            #                             target="_blank",
+            #                             class_="fw-semibold",
+            #                         ),
+            #                     ),
+            #                     title="Methodology",
+            #                 ),
+            #                 class_="vb-title-icon",
+            #             ),
+            #             class_="vb-title",
+            #         ),
+            #         ui.tags.span(
+            #             safe_text(row.get("efficacy")),
+            #             class_="fs-5 fw-semibold",
+            #         ),
+            #         fill=True,
+            #         class_="h-100 shadow-sm border",
+            #     ),
+            #     class_="col-12 col-md-2",
+            #     style="height: 200px;",
+            # )
         )
 
     @render.ui
@@ -634,24 +736,101 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         row = detail_row()
 
         return ui.TagList(
+            # Probability of Success
             ui.div(
-                format_value_box(
-                    "Prob. of Success",
-                    row.get("prob_success", 0),
-                    check_threshold=False,
-                    is_percent=True,
+                ui.value_box(
+                    ui.div(
+                        ui.tags.span("Probability of Success", class_="vb-title-text"),
+                        ui.tags.span(
+                            popover(
+                                ui.tags.i(
+                                    class_="fa-solid fa-circle-info text-muted",
+                                    style="cursor:pointer;",
+                                ),
+                                ui.div(
+                                    ui.p(
+                                        "Derived from R&D estimates according to ",
+                                        ui.tags.strong(
+                                            "Funding global health product R&D: the Portfolio-to-Impact (P2I) model."
+                                        ),
+                                        ui.tags.em(
+                                            " Terry RF, Gardner CA, Dieleman JL, et al. Health Policy Plan. 2018."
+                                        ),
+                                    ),
+                                    ui.tags.a(
+                                        "Learn more",
+                                        href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+                                        target="_blank",
+                                        class_="fw-semibold",
+                                    ),
+                                ),
+                                title="Methodology",
+                            ),
+                            class_="vb-title-icon",
+                        ),
+                        class_="vb-title",
+                    ),
+                    ui.tags.span(
+                        "Not available"
+                        if pd.isna(row.get("prob_success"))
+                        else f"{row.get('prob_success')}%",
+                        class_="fs-5 fw-semibold",
+                    ),
+                    fill=True,
+                    class_="h-100 shadow-sm border",
                 ),
                 class_="col-12 col-md-6",
+                style="height: 200px;",
             ),
+            # Health System Costs
             ui.div(
-                format_value_box(
-                    "Health System Costs (Million USD)",
-                    row.get("hs_costs", 0),
-                    display_text=str(row.get("financing", 0)),
-                    is_percent=False,
-                    check_threshold=False,
+                ui.value_box(
+                    ui.div(
+                        ui.tags.span("HS Costs", class_="vb-title-text"),
+                        ui.tags.span(
+                            popover(
+                                ui.tags.i(
+                                    class_="fa-solid fa-circle-info text-muted",
+                                    style="cursor:pointer;",
+                                ),
+                                ui.div(
+                                    ui.p(
+                                        "Estimated health system costs in million USD."
+                                    ),
+                                    ui.p(
+                                        "Derived from R&D estimates according to ",
+                                        ui.tags.strong(
+                                            "Funding global health product R&D: the Portfolio-to-Impact (P2I) model."
+                                        ),
+                                        ui.tags.em(
+                                            " Terry RF, Gardner CA, Dieleman JL, et al. Health Policy Plan. 2018."
+                                        ),
+                                    ),
+                                    ui.tags.a(
+                                        "Learn more",
+                                        href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+                                        target="_blank",
+                                        class_="fw-semibold",
+                                    ),
+                                ),
+                                title="Methodology",
+                            ),
+                            class_="vb-title-icon",
+                        ),
+                        class_="vb-title",
+                    ),
+                    ui.tags.span(
+                        "Not available"
+                        if pd.isna(row.get("hs_costs"))
+                        else row.get("hs_costs"),
+                        class_="fs-5 fw-semibold",
+                    ),
+                    ui.tags.div("Million USD"),
+                    fill=True,
+                    class_="h-100 shadow-sm border",
                 ),
                 class_="col-12 col-md-6",
+                style="height: 200px;",
             ),
         )
 
@@ -661,48 +840,164 @@ def innovation_details_server(id, selected_innovation, input, output, session):
 
         def format_date(d):
             if pd.notna(d):
-                if hasattr(d, "strftime"):
-                    return d.strftime("%Y-%m-%d")
-                return str(d)
-            return "N/A"
+                return pd.to_datetime(d).strftime("%Y-%m-%d")
+            return "Not available"
 
         return ui.TagList(
+            # 20% Market Uptake
             ui.div(
-                format_value_box(
-                    "Projected Date of 20% Market Uptake",
-                    format_date(row.get("proj_date_lmic_20_uptake")),
-                    is_percent=False,
-                    check_threshold=False,
+                ui.value_box(
+                    ui.div(
+                        ui.tags.span(
+                            "Date of 20% Market Uptake", class_="vb-title-text"
+                        ),
+                        ui.tags.span(
+                            popover(
+                                ui.tags.i(
+                                    class_="fa-solid fa-circle-info text-muted",
+                                    style="cursor:pointer;",
+                                ),
+                                ui.div(
+                                    ui.p(
+                                        "Projected date the product will reach 20% market uptake in an LMIC."
+                                    ),
+                                    ui.tags.a(
+                                        "Learn more",
+                                        href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+                                        target="_blank",
+                                        class_="fw-semibold",
+                                    ),
+                                ),
+                                title="Methodology",
+                            ),
+                            class_="vb-title-icon",
+                        ),
+                        class_="vb-title",
+                    ),
+                    ui.tags.span(
+                        format_date(row.get("proj_date_lmic_20_uptake")),
+                        class_="fs-5 fw-semibold",
+                    ),
+                    fill=True,
+                    class_="h-100 shadow-sm border",
                 ),
                 class_="col-12 col-md-3",
+                style="height: 200px;",
             ),
-            ui.div(
-                format_value_box(
-                    "Supply Readiness",
-                    row.get("country_supply", "N/A"),
-                    is_percent=False,
-                    check_threshold=False,
-                ),
-                class_="col-12 col-md-3",
-            ),
-            ui.div(
-                format_value_box(
-                    "Distribution",
-                    row.get("distribution", "N/A"),
-                    is_percent=False,
-                    check_threshold=False,
-                ),
-                class_="col-12 col-md-3",
-            ),
-            ui.div(
-                format_value_box(
-                    "Delivery model",
-                    row.get("delivery_model", "N/A"),
-                    is_percent=False,
-                    check_threshold=False,
-                ),
-                class_="col-12 col-md-3",
-            ),
+            # Supply Readiness
+            # ui.div(
+            #     ui.value_box(
+            #         ui.div(
+            #             ui.tags.span("Supply Readiness", class_="vb-title-text"),
+            #             ui.tags.span(
+            #                 popover(
+            #                     ui.tags.i(
+            #                         class_="fa-solid fa-circle-info text-muted",
+            #                         style="cursor:pointer;",
+            #                     ),
+            #                     ui.div(
+            #                         ui.p("Local manufacturing or supply availability."),
+            #                         ui.tags.a(
+            #                             "Learn more",
+            #                             href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+            #                             target="_blank",
+            #                             class_="fw-semibold",
+            #                         ),
+            #                     ),
+            #                     title="Methodology",
+            #                 ),
+            #                 class_="vb-title-icon",
+            #             ),
+            #             class_="vb-title",
+            #         ),
+            #         ui.tags.span(
+            #             "Not available"
+            #             if pd.isna(row.get("country_supply"))
+            #             else row.get("country_supply"),
+            #             class_="fs-5 fw-semibold",
+            #         ),
+            #         fill=True,
+            #         class_="h-100 shadow-sm border",
+            #     ),
+            #     class_="col-12 col-md-3",
+            #     style="height: 200px;",
+            # ),
+            # Distribution
+            # ui.div(
+            #     ui.value_box(
+            #         ui.div(
+            #             ui.tags.span("Distribution", class_="vb-title-text"),
+            #             ui.tags.span(
+            #                 popover(
+            #                     ui.tags.i(
+            #                         class_="fa-solid fa-circle-info text-muted",
+            #                         style="cursor:pointer;",
+            #                     ),
+            #                     ui.div(
+            #                         ui.p("Distribution channel and constraints."),
+            #                         ui.tags.a(
+            #                             "Learn more",
+            #                             href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+            #                             target="_blank",
+            #                             class_="fw-semibold",
+            #                         ),
+            #                     ),
+            #                     title="Methodology",
+            #                 ),
+            #                 class_="vb-title-icon",
+            #             ),
+            #             class_="vb-title",
+            #         ),
+            #         ui.tags.span(
+            #             "Not available"
+            #             if pd.isna(row.get("distribution"))
+            #             else row.get("distribution"),
+            #             class_="fs-5 fw-semibold",
+            #         ),
+            #         fill=True,
+            #         class_="h-100 shadow-sm border",
+            #     ),
+            #     class_="col-12 col-md-3",
+            #     style="height: 200px;",
+            # ),
+            # Delivery Model
+            # ui.div(
+            #     ui.value_box(
+            #         ui.div(
+            #             ui.tags.span("Delivery Model", class_="vb-title-text"),
+            #             ui.tags.span(
+            #                 popover(
+            #                     ui.tags.i(
+            #                         class_="fa-solid fa-circle-info text-muted",
+            #                         style="cursor:pointer;",
+            #                     ),
+            #                     ui.div(
+            #                         ui.p("Clinical or programmatic delivery pathway."),
+            #                         ui.tags.a(
+            #                             "Learn more",
+            #                             href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+            #                             target="_blank",
+            #                             class_="fw-semibold",
+            #                         ),
+            #                     ),
+            #                     title="Methodology",
+            #                 ),
+            #                 class_="vb-title-icon",
+            #             ),
+            #             class_="vb-title",
+            #         ),
+            #         ui.tags.span(
+            #             "Not available"
+            #             if pd.isna(row.get("delivery_model"))
+            #             else row.get("delivery_model"),
+            #             class_="fs-5 fw-semibold",
+            #         ),
+            #         fill=True,
+            #         class_="h-100 shadow-sm border",
+            #     ),
+            #     class_="col-12 col-md-3",
+            #     style="height: 200px;",
+            # ),
         )
 
     @render.ui
@@ -710,36 +1005,324 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         row = detail_row()
 
         return ui.TagList(
+            # Kenya NRA
             ui.div(
-                format_value_box(
-                    "National Approval", row.get("nra", "No"), is_percent=False
+                ui.value_box(
+                    ui.div(
+                        ui.tags.span("Kenya National Approval", class_="vb-title-text"),
+                        ui.tags.span(
+                            popover(
+                                ui.tags.i(
+                                    class_="fa-solid fa-circle-info text-muted",
+                                    style="cursor:pointer;",
+                                ),
+                                ui.div(
+                                    ui.p(
+                                        "Status of national regulatory approval in Kenya."
+                                    ),
+                                    ui.tags.a(
+                                        "Learn more",
+                                        href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+                                        target="_blank",
+                                        class_="fw-semibold",
+                                    ),
+                                ),
+                                title="Methodology",
+                            ),
+                            class_="vb-title-icon",
+                        ),
+                        class_="vb-title",
+                    ),
+                    ui.tags.span(
+                        "Not available"
+                        if pd.isna(row.get("Kenya_nra"))
+                        else row.get("Kenya_nra"),
+                        class_="fs-5 fw-semibold",
+                    ),
+                    fill=True,
+                    class_="h-100 shadow-sm border",
                 ),
                 class_="col-12 col-md-2",
+                style="height: 200px;",
             ),
+            # Senegal NRA
             ui.div(
-                format_value_box(
-                    "Global Approval", row.get("gra", "No"), is_percent=False
+                ui.value_box(
+                    ui.div(
+                        ui.tags.span(
+                            "Senegal National Approval", class_="vb-title-text"
+                        ),
+                        ui.tags.span(
+                            popover(
+                                ui.tags.i(
+                                    class_="fa-solid fa-circle-info text-muted",
+                                    style="cursor:pointer;",
+                                ),
+                                ui.div(
+                                    ui.p(
+                                        "Status of national regulatory approval in Senegal."
+                                    ),
+                                    ui.tags.a(
+                                        "Learn more",
+                                        href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+                                        target="_blank",
+                                        class_="fw-semibold",
+                                    ),
+                                ),
+                                title="Methodology",
+                            ),
+                            class_="vb-title-icon",
+                        ),
+                        class_="vb-title",
+                    ),
+                    ui.tags.span(
+                        "Not available"
+                        if pd.isna(row.get("Senegal_nra"))
+                        else row.get("Senegal_nra"),
+                        class_="fs-5 fw-semibold",
+                    ),
+                    fill=True,
+                    class_="h-100 shadow-sm border",
                 ),
                 class_="col-12 col-md-2",
+                style="height: 200px;",
             ),
+            # South Africa NRA
             ui.div(
-                format_value_box("EML Listed", row.get("eml", "No"), is_percent=False),
-                class_="col-12 col-md-2",
-            ),
-            ui.div(
-                format_value_box(
-                    "Policy Readiness",
-                    row.get("policy_readiness", "N/A"),
-                    is_percent=False,
+                ui.value_box(
+                    ui.div(
+                        ui.tags.span(
+                            "South Africa National Approval", class_="vb-title-text"
+                        ),
+                        ui.tags.span(
+                            popover(
+                                ui.tags.i(
+                                    class_="fa-solid fa-circle-info text-muted",
+                                    style="cursor:pointer;",
+                                ),
+                                ui.div(
+                                    ui.p(
+                                        "Status of national regulatory approval in South Africa."
+                                    ),
+                                    ui.tags.a(
+                                        "Learn more",
+                                        href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+                                        target="_blank",
+                                        class_="fw-semibold",
+                                    ),
+                                ),
+                                title="Methodology",
+                            ),
+                            class_="vb-title-icon",
+                        ),
+                        class_="vb-title",
+                    ),
+                    ui.tags.span(
+                        "Not available"
+                        if pd.isna(row.get("South Africa_nra"))
+                        else row.get("South Africa_nra"),
+                        class_="fs-5 fw-semibold",
+                    ),
+                    fill=True,
+                    class_="h-100 shadow-sm border",
                 ),
                 class_="col-12 col-md-2",
+                style="height: 200px;",
             ),
+            # National Approval - removed for now
+            # ui.div(
+            #     ui.value_box(
+            #         ui.div(
+            #             ui.tags.span("National Approval", class_="vb-title-text"),
+            #             ui.tags.span(
+            #                 popover(
+            #                     ui.tags.i(
+            #                         class_="fa-solid fa-circle-info text-muted",
+            #                         style="cursor:pointer;",
+            #                     ),
+            #                     ui.div(
+            #                         ui.p(
+            #                             "Placeholder: Status of national regulatory approval."
+            #                         ),
+            #                         ui.tags.a(
+            #                             "Learn more",
+            #                             href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+            #                             target="_blank",
+            #                             class_="fw-semibold",
+            #                         ),
+            #                     ),
+            #                     title="Methodology",
+            #                 ),
+            #                 class_="vb-title-icon",
+            #             ),
+            #             class_="vb-title",
+            #         ),
+            #         ui.tags.span(
+            #             "Not available"
+            #             if pd.isna(row.get("nra"))
+            #             else row.get("nra"),
+            #             class_="fs-5 fw-semibold",
+            #         ),
+            #         fill=True,
+            #         class_="h-100 shadow-sm border",
+            #     ),
+            #     class_="col-12 col-md-2",
+            #     style="height: 200px;",
+            # ),
+            # Global Approval
             ui.div(
-                format_value_box(
-                    "Policy Implemented",
-                    row.get("policy_implemented", "No"),
-                    is_percent=False,
+                ui.value_box(
+                    ui.div(
+                        ui.tags.span("Global Approval", class_="vb-title-text"),
+                        ui.tags.span(
+                            popover(
+                                ui.tags.i(
+                                    class_="fa-solid fa-circle-info text-muted",
+                                    style="cursor:pointer;",
+                                ),
+                                ui.div(
+                                    ui.p(
+                                        "Whether the product has approval/authorization/prequalification by a global body. Includes WHO PQ, FDA, EMA, or other global approval."
+                                    ),
+                                    ui.tags.a(
+                                        "Learn more",
+                                        href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+                                        target="_blank",
+                                        class_="fw-semibold",
+                                    ),
+                                ),
+                                title="Methodology",
+                            ),
+                            class_="vb-title-icon",
+                        ),
+                        class_="vb-title",
+                    ),
+                    ui.tags.span(
+                        "Not available" if pd.isna(row.get("gra")) else row.get("gra"),
+                        class_="fs-5 fw-semibold",
+                    ),
+                    fill=True,
+                    class_="h-100 shadow-sm border",
                 ),
                 class_="col-12 col-md-2",
+                style="height: 200px;",
             ),
+            # EML Listed
+            ui.div(
+                ui.value_box(
+                    ui.div(
+                        ui.tags.span("EML Listed", class_="vb-title-text"),
+                        ui.tags.span(
+                            popover(
+                                ui.tags.i(
+                                    class_="fa-solid fa-circle-info text-muted",
+                                    style="cursor:pointer;",
+                                ),
+                                ui.div(
+                                    ui.p(
+                                        "Whether the product is listed on WHO Essential Medicines List."
+                                    ),
+                                    ui.tags.a(
+                                        "Learn more",
+                                        href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+                                        target="_blank",
+                                        class_="fw-semibold",
+                                    ),
+                                ),
+                                title="Methodology",
+                            ),
+                            class_="vb-title-icon",
+                        ),
+                        class_="vb-title",
+                    ),
+                    ui.tags.span(
+                        "Not available" if pd.isna(row.get("eml")) else row.get("eml"),
+                        class_="fs-5 fw-semibold",
+                    ),
+                    fill=True,
+                    class_="h-100 shadow-sm border",
+                ),
+                class_="col-12 col-md-2",
+                style="height: 200px;",
+            ),
+            # Policy Readiness
+            # ui.div(
+            #     ui.value_box(
+            #         ui.div(
+            #             ui.tags.span("Policy Readiness", class_="vb-title-text"),
+            #             ui.tags.span(
+            #                 popover(
+            #                     ui.tags.i(
+            #                         class_="fa-solid fa-circle-info text-muted",
+            #                         style="cursor:pointer;",
+            #                     ),
+            #                     ui.div(
+            #                         ui.p(
+            #                             "Degree to which policies and strategies support adoption (WHO-level for global or national strategies including reimbursement, prioritization)."
+            #                         ),
+            #                         ui.tags.a(
+            #                             "Learn more",
+            #                             href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+            #                             target="_blank",
+            #                             class_="fw-semibold",
+            #                         ),
+            #                     ),
+            #                     title="Methodology",
+            #                 ),
+            #                 class_="vb-title-icon",
+            #             ),
+            #             class_="vb-title",
+            #         ),
+            #         ui.tags.span(
+            #             "Not available"
+            #             if pd.isna(row.get("policy_readiness"))
+            #             else row.get("policy_readiness"),
+            #             class_="fs-5 fw-semibold",
+            #         ),
+            #         fill=True,
+            #         class_="h-100 shadow-sm border",
+            #     ),
+            #     class_="col-12 col-md-2",
+            #     style="height: 200px;",
+            # ),
+            # Policy Implementation
+            # ui.div(
+            #     ui.value_box(
+            #         ui.div(
+            #             ui.tags.span("Policy Implemented", class_="vb-title-text"),
+            #             ui.tags.span(
+            #                 popover(
+            #                     ui.tags.i(
+            #                         class_="fa-solid fa-circle-info text-muted",
+            #                         style="cursor:pointer;",
+            #                     ),
+            #                     ui.div(
+            #                         ui.p(
+            #                             "Whether relevant policies are actively implemented, including programmatic coverage."
+            #                         ),
+            #                         ui.tags.a(
+            #                             "Learn more",
+            #                             href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
+            #                             target="_blank",
+            #                             class_="fw-semibold",
+            #                         ),
+            #                     ),
+            #                     title="Methodology",
+            #                 ),
+            #                 class_="vb-title-icon",
+            #             ),
+            #             class_="vb-title",
+            #         ),
+            #         ui.tags.span(
+            #             "Not available"
+            #             if pd.isna(row.get("policy_implemented"))
+            #             else row.get("policy_implemented"),
+            #             class_="fs-5 fw-semibold",
+            #         ),
+            #         fill=True,
+            #         class_="h-100 shadow-sm border",
+            #     ),
+            #     class_="col-12 col-md-2",
+            #     style="height: 200px;",
+            # ),
         )

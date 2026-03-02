@@ -34,13 +34,13 @@ def comparison_ui(id):
         ui.div(
             ui.h2("Product Comparison", class_="mb-1"),
             ui.p(
-                "Select multiple innovations to compare their key metrics.",
+                "Select multiple products to compare their key metrics.",
                 class_="text-muted",
             ),
             ui.div(
                 ui.input_selectize(
                     "selected_innovations_compare",
-                    "Select Innovations to Compare",
+                    "Select Products to Compare",
                     choices=[],  # Will be populated dynamically
                     multiple=True,
                     width="100%",
@@ -69,7 +69,7 @@ def comparison_ui(id):
                     ui.div("Time to Approval/Market", class_="card-header"),
                     ui.div(
                         output_widget("time_to_market_plot", height="auto"),
-                        id="timeline_card_body",  
+                        id="timeline_card_body",
                         class_="card-body",
                     ),
                     class_="card mb-4",
@@ -108,7 +108,11 @@ def comparison_server(id, input, output, session):
     @reactive.Effect
     def _():
         # currently not allowing the user to chose innovations without dates forecasted.
-        choices = horizon_df[horizon_df["proj_date_lmic_20_uptake"].notna()]["innovation"].unique().tolist()
+        choices = (
+            horizon_df[horizon_df["proj_date_lmic_20_uptake"].notna()]["innovation"]
+            .unique()
+            .tolist()
+        )
         ui.update_selectize("selected_innovations_compare", choices=choices)
 
     @reactive.Calc
@@ -130,19 +134,21 @@ def comparison_server(id, input, output, session):
         """
         selected_ids = input.selected_innovations_compare()
         if not selected_ids:
-            return pd.DataFrame({"Message": ["Select innovations to compare"]})
+            return pd.DataFrame({"Message": ["Select products to compare"]})
 
         # Filter the main dataframe for the selected innovations
-        df_filtered = horizon_df[horizon_df["scope"] == "WHO"][horizon_df["innovation"].isin(selected_ids)].assign(
-            proj_date_lmic_20_uptake=lambda d: d["proj_date_lmic_20_uptake"].dt.strftime(
-                "%Y-%m-%d"
-            )
+        df_filtered = horizon_df[horizon_df["scope"] == "WHO"][
+            horizon_df["innovation"].isin(selected_ids)
+        ].assign(
+            proj_date_lmic_20_uptake=lambda d: d[
+                "proj_date_lmic_20_uptake"
+            ].dt.strftime("%Y-%m-%d")
         )
 
         # Define the metrics we want to compare using real data columns
         # Map Display Name -> Column Name
         metrics_map = {
-            "Innovation": "innovation",
+            "Product": "innovation",
             "Disease": "disease",
             "Stage": "trial_status",
             "Probability of Success": "prob_success",
@@ -159,7 +165,7 @@ def comparison_server(id, input, output, session):
         # Create a new DataFrame with selected columns
         compare_df = pd.DataFrame()
 
-        # Build DataFrame with Innovation as Rows (default from extraction)
+        # Build DataFrame with Product as Rows (default from extraction)
         # Columns will be the Display Labels
         for label, col in metrics_map.items():
             if col in df_filtered.columns:
@@ -254,10 +260,22 @@ def comparison_server(id, input, output, session):
         # IMPORTANT: Only include columns that actually exist in your dataset.
         event_map = [
             # If you do NOT have proj_date_proof_of_concept, delete this block or map proj to date_proof_of_concept.
-            {"label": "Proof of Concept", "real": "date_proof_of_concept", "proj": "date_proof_of_concept"},
-            {"label": "Regulatory Approval",   "real": "date_first_regulatory",   "proj": "proj_date_first_regulatory"},
-            {"label": "First Launch",          "real": "date_first_launch",       "proj": "proj_date_first_launch"},
-            {"label": "Market Entry",          "real": None,                      "proj": "proj_date_lmic_20_uptake"},
+            {
+                "label": "Proof of Concept",
+                "real": "date_proof_of_concept",
+                "proj": "date_proof_of_concept",
+            },
+            {
+                "label": "Regulatory Approval",
+                "real": "date_first_regulatory",
+                "proj": "proj_date_first_regulatory",
+            },
+            {
+                "label": "First Launch",
+                "real": "date_first_launch",
+                "proj": "proj_date_first_launch",
+            },
+            {"label": "Market Entry", "real": None, "proj": "proj_date_lmic_20_uptake"},
         ]
 
         # 2) Iterate the selected innovations (NOT rows)
@@ -286,11 +304,19 @@ def comparison_server(id, input, output, session):
                     continue
 
                 proj_date = row.get(proj_col)
-                real_date = row.get(real_col) if real_col and real_col in row.index else None
+                real_date = (
+                    row.get(real_col) if real_col and real_col in row.index else None
+                )
 
                 if pd.notna(proj_date):
-                    event_type = "Collected" if (real_col and pd.notna(real_date)) else "Projection"
-                    events.append({"name": event["label"], "date": proj_date, "type": event_type})
+                    event_type = (
+                        "Collected"
+                        if (real_col and pd.notna(real_date))
+                        else "Projection"
+                    )
+                    events.append(
+                        {"name": event["label"], "date": proj_date, "type": event_type}
+                    )
                     all_dates_flat.append(proj_date)
 
             # If this innovation has no events, skip adding a trace
@@ -308,11 +334,16 @@ def comparison_server(id, input, output, session):
                     y=[innovation] * len(dates),
                     mode="lines+markers+text",
                     line=dict(color="#000000", width=3),
-                    marker=dict(size=12, color=marker_colors, line=dict(width=2, color="white")),
+                    marker=dict(
+                        size=12, color=marker_colors, line=dict(width=2, color="white")
+                    ),
                     # text=labels,
                     textposition="top center",
                     hoverinfo="text+x+name",
-                    hovertext=[f"{e['name']} ({e['type']})<br>{e['date'].strftime('%Y-%m-%d')}" for e in events],
+                    hovertext=[
+                        f"{e['name']} ({e['type']})<br>{e['date'].strftime('%Y-%m-%d')}"
+                        for e in events
+                    ],
                     showlegend=False,
                 )
             )
@@ -322,7 +353,16 @@ def comparison_server(id, input, output, session):
             fig.update_layout(
                 xaxis=dict(visible=False),
                 yaxis=dict(visible=False),
-                annotations=[dict(text="No timeline data available", showarrow=False, xref="paper", yref="paper", x=0.5, y=0.5)],
+                annotations=[
+                    dict(
+                        text="No timeline data available",
+                        showarrow=False,
+                        xref="paper",
+                        yref="paper",
+                        x=0.5,
+                        y=0.5,
+                    )
+                ],
                 height=300,
             )
             return fig
@@ -331,7 +371,8 @@ def comparison_server(id, input, output, session):
         for name, color in data_type_colors.items():
             fig.add_trace(
                 go.Scatter(
-                    x=[None], y=[None],
+                    x=[None],
+                    y=[None],
                     mode="markers",
                     marker=dict(size=10, color=color),
                     name=name,
@@ -350,8 +391,10 @@ def comparison_server(id, input, output, session):
             legend=dict(
                 title=dict(text="Data Type", font=dict(size=12)),
                 orientation="h",
-                yanchor="bottom", y=1.02,
-                xanchor="right", x=1,
+                yanchor="bottom",
+                y=1.02,
+                xanchor="right",
+                x=1,
             ),
             margin=dict(l=20, r=20, t=50, b=50),
             xaxis=dict(
@@ -375,12 +418,8 @@ def comparison_server(id, input, output, session):
             paper_bgcolor="white",
         )
 
-        fig.update_xaxes(
-            automargin=True
-        )
+        fig.update_xaxes(automargin=True)
 
-        fig.update_yaxes(
-            automargin=True
-        )
+        fig.update_yaxes(automargin=True)
 
         return fig

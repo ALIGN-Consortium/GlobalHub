@@ -1,4 +1,5 @@
 import pandas as pd
+import numpy as np
 from datetime import timedelta
 from .config import DATA_PATH, POP_DATA_PATH, COLORS
 
@@ -25,7 +26,7 @@ def _load_csv(path: str) -> pd.DataFrame:
         df = pd.read_csv(path, encoding="utf-8-sig")
         return df
     except FileNotFoundError:
-        # Fallback logic if specific file not found is handled in load_data usually, 
+        # Fallback logic if specific file not found is handled in load_data usually,
         # but for _load_csv we raise
         raise FileNotFoundError(
             f"Data file not found at {path}. Please check the path."
@@ -71,7 +72,7 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
         "date_first_launch",
         "proj_date_first_regulatory",
         "proj_date_first_launch",
-        "proj_date_lmic_20_uptake"
+        "proj_date_lmic_20_uptake",
     ]
 
     for col in date_cols:
@@ -101,7 +102,7 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
         # "time_approval_to_first_launch",
         # "time_launch_to_20lmic",
         "impact_potential",
-        "introduction_readiness"
+        "introduction_readiness",
     ]
 
     # for col in numeric_cols:
@@ -135,11 +136,11 @@ def _process_pipeline(df: pd.DataFrame) -> pd.DataFrame:
     pipeline_raw = df.groupby(["market_year", "category"]).size().unstack(fill_value=0)
 
     # Determine timeline range
-    min_year = 2025 #?
+    min_year = 2025  # ?
     max_year = (
         int(pipeline_raw.index.max())
         if not pipeline_raw.empty and not pd.isna(pipeline_raw.index.max())
-        else 2035 #?
+        else 2035  # ?
     )
     all_years = range(min_year, max_year + 1)
 
@@ -194,17 +195,17 @@ def _process_readiness(df: pd.DataFrame) -> pd.DataFrame:
         "Not in trials",
         "Unknown",
     ]
-    
+
     base_colors = [
-        "#94a3b8", # Preclinical (Grey)
-        "#60a5fa", # Phase 1 (Blue)
-        "#3b82f6", # Phase 2 (Darker Blue)
-        "#2563eb", # Phase 3 (Even Darker Blue)
-        "#1d4ed8", # Phase 4 (Deep Blue)
-        "#a78bfa", # Observational (Purple)
-        "#10b981", # Implementation/Pilot (Green)
-        "#f43f5e", # Not in trials (Red)
-        "#cbd5e1"  # Unknown (Light Grey)
+        "#94a3b8",  # Preclinical (Grey)
+        "#60a5fa",  # Phase 1 (Blue)
+        "#3b82f6",  # Phase 2 (Darker Blue)
+        "#2563eb",  # Phase 3 (Even Darker Blue)
+        "#1d4ed8",  # Phase 4 (Deep Blue)
+        "#a78bfa",  # Observational (Purple)
+        "#10b981",  # Implementation/Pilot (Green)
+        "#f43f5e",  # Not in trials (Red)
+        "#cbd5e1",  # Unknown (Light Grey)
     ]
     color_map = dict(zip(categories, base_colors))
 
@@ -241,7 +242,7 @@ def load_data() -> dict:
             - "innovation_df": DataFrame with distinct innovations (Overall country).
             - "country_regulatory_df": DataFrame with country-specific rows.
     """
-    
+
     try:
         raw_df = _load_csv(DATA_PATH)
     except Exception as e:
@@ -255,6 +256,22 @@ def load_data() -> dict:
     # horizon_df is the master dataframe.
     horizon_df = df.copy()
 
+    horizon_wide = (
+        horizon_df.loc[
+            (horizon_df["nra"] == "Yes") & (horizon_df["scope"] != "WHO"),
+            ["innovation", "scope"],
+        ]
+        .assign(scope_nra=lambda d: d["scope"] + "_nra", value="Yes")
+        .pivot_table(
+            index="innovation", columns="scope_nra", values="value", aggfunc="first"
+        )
+        .fillna("No")
+        .rename_axis(columns=None)
+        .reset_index()
+        .assign(scope="WHO")
+    )
+
+    horizon_df = horizon_df.merge(horizon_wide, on=["innovation", "scope"], how="left")
     # innovation_df: The aggregate/global view (country="Overall")
     if "scope" in horizon_df.columns:
         innovation_df = horizon_df[horizon_df["scope"] == "WHO"].copy()
@@ -277,14 +294,18 @@ def load_data() -> dict:
         )
 
         # Rename the merged 'targeted_population' column to 'people_at_risk' for internal consistency
-        horizon_df = horizon_df.rename(columns={"targeted_population": "people_at_risk"})
+        horizon_df = horizon_df.rename(
+            columns={"targeted_population": "people_at_risk"}
+        )
 
         # Priority Logic:
         # 1. 'people_at_risk' (from PopulationData.csv) is the default.
         # 2. If that is NaN (merge failed/no match), fill it with 'target_population' from the original data if available.
         # Note: Original CSV has 'target_population' column, not 'targeted_population' (checked from header).
         if "target_population" in horizon_df.columns:
-             horizon_df["people_at_risk"] = horizon_df["people_at_risk"].fillna(horizon_df["target_population"])
+            horizon_df["people_at_risk"] = horizon_df["people_at_risk"].fillna(
+                horizon_df["target_population"]
+            )
 
     except Exception as e:
         print(f"Warning: Could not load or merge population data: {e}")
