@@ -1,5 +1,5 @@
 from shiny import ui, reactive, req as shiny_req
-from shiny.express import render
+from shiny.express import render, input
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
@@ -126,81 +126,155 @@ def comparison_server(id, input, output, session):
             return pd.DataFrame()
         return horizon_df[horizon_df["innovation"].isin(selected_ids)]
 
+    # ## PD HEATMAP
+    # @render.table
+    # def comparison_heatmap():
+    #     """
+    #     Renders the side-by-side comparison table.
+    #     Applies color coding (Heatmap style) to numeric rows based on performance.
+    #     """
+    #     selected_ids = input.selected_innovations_compare()
+    #     if not selected_ids:
+    #         return pd.DataFrame({"Message": ["Select products to compare"]})
+
+    #     # Filter the main dataframe for the selected innovations
+    #     df_filtered = horizon_df[horizon_df["scope"] == "WHO"][
+    #         horizon_df["innovation"].isin(selected_ids)
+    #     ].assign(
+    #         proj_date_first_launch=lambda d: d[
+    #             "proj_date_first_launch"
+    #         ].dt.strftime("%Y-%m-%d")
+    #     )
+
+    #     # Define the metrics we want to compare using real data columns
+    #     # Map Display Name -> Column Name
+    #     metrics_map = {
+    #         "Product": "innovation",
+    #         "Disease": "disease",
+    #         "Stage": "trial_status",
+    #         # "Probability of Success": "prob_success",
+    #         # "Financing Score": "financing",
+    #         # "Readiness Score": "readiness",
+    #         # "DALYs Averted": "dalys_averted",
+    #         # "Efficacy": "efficacy",
+    #         "Projected first launch": "proj_date_first_launch",
+    #         # "Policy Implemented": "policy_implemented",
+    #         "Market approval": "nra",
+    #         "Global Mkt Authorization": "gra",
+    #     }
+
+    #     # Create a new DataFrame with selected columns
+    #     compare_df = pd.DataFrame()
+
+    #     # Build DataFrame with Product as Rows (default from extraction)
+    #     # Columns will be the Display Labels
+    #     for label, col in metrics_map.items():
+    #         if col in df_filtered.columns:
+    #             compare_df[label] = df_filtered[col].values
+    #         else:
+    #             compare_df[label] = "N/A"
+
+    #     # Styling function to restore heatmap look
+    #     def color_cells(val):
+    #         """Returns CSS styles based on the numeric value and type."""
+    #         if pd.isna(val) or val == "N/A":
+    #             return "background-color: #e9ecef; color: #6c757d"  # Gray for missing
+
+    #         try:
+    #             v = float(val)
+    #             # Heuristic logic for coloring (Green for high performance, Red for low)
+    #             if v <= 1.0:  # Probabilities
+    #                 if v > 0.5:
+    #                     return "background-color: #d1fae5; color: #065f46"
+    #                 else:
+    #                     return "background-color: #fee2e2; color: #991b1b"
+    #             elif v <= 2.0:  # Financing score (0-2)
+    #                 if v > 1:
+    #                     return "background-color: #d1fae5; color: #065f46"
+    #                 else:
+    #                     return "background-color: #fee2e2; color: #991b1b"
+    #             else:  # Scores 0-100 or Counts
+    #                 if v > 50:
+    #                     return "background-color: #d1fae5; color: #065f46"
+    #                 else:
+    #                     return "background-color: #fee2e2; color: #991b1b"
+    #         except:
+    #             return ""
+
+    #     # Specify which columns to apply heatmap styling to
+    #     numeric_cols = [
+    #         "Probability of Success",
+    #         "Financing Score",
+    #         "Readiness Score",
+    #         "Efficacy",
+    #     ]
+
+    #     # Apply styling using Pandas Styler
+    #     styler = compare_df.style.hide(axis="index")
+    #     cols_to_style = [c for c in numeric_cols if c in compare_df.columns]
+
+    #     if hasattr(styler, "map"):
+    #         styler = styler.map(color_cells, subset=cols_to_style)
+    #     else:
+    #         styler = styler.applymap(color_cells, subset=cols_to_style)
+
+    #     return styler.format(precision=2, na_rep="N/A", subset=cols_to_style)
+
+    # def fmt_yesno(val, na_text="Not available"):
+    #     if val is None or pd.isna(val):
+    #         return na_text
+    #     s = str(val).strip()
+    #     if s == "" or s.lower() == "nan":
+    #         return na_text
+    #     if s.lower() == "yes":
+    #         return "Yes"
+    #     if s.lower() == "no":
+    #         return "No"
+    #     return s  # pass through other statuses if you have them
+
+    ## PD HEATMAP
     @render.table
     def comparison_heatmap():
-        """
-        Renders the side-by-side comparison table.
-        Applies color coding (Heatmap style) to numeric rows based on performance.
-        """
+
         selected_ids = input.selected_innovations_compare()
+
         if not selected_ids:
             return pd.DataFrame({"Message": ["Select products to compare"]})
 
-        # Filter the main dataframe for the selected innovations
-        df_filtered = horizon_df[horizon_df["scope"] == "WHO"][
-            horizon_df["innovation"].isin(selected_ids)
+        # Filter dataframe
+        df_filtered = horizon_df.loc[
+            (horizon_df["scope"] == "WHO")
+            & (horizon_df["innovation"].isin(selected_ids))
         ].assign(
-            proj_date_lmic_20_uptake=lambda d: d[
-                "proj_date_lmic_20_uptake"
-            ].dt.strftime("%Y-%m-%d")
-        )
+            proj_date_first_launch=lambda d: d["proj_date_first_launch"].dt.strftime(
+                "%Y-%m-%d"
+            ))
 
-        # Define the metrics we want to compare using real data columns
-        # Map Display Name -> Column Name
         metrics_map = {
             "Product": "innovation",
             "Disease": "disease",
             "Stage": "trial_status",
-            "Probability of Success": "prob_success",
-            "Financing Score": "financing",
-            "Readiness Score": "readiness",
-            "DALYs Averted": "dalys_averted",
-            "Efficacy": "efficacy",
-            "Expected Market Date": "proj_date_lmic_20_uptake",
-            "Policy Implemented": "policy_implemented",
-            "NRA Approved": "nra",
-            "WHO PQ / Global": "gra",
+            "Projected first launch": "proj_date_first_launch",
+            # NEW: separate country approvals as columns in the table
+            "Kenya market authorization": "Kenya_nra",
+            "Senegal market authorization": "Senegal_nra",
+            "South Africa market authorization": "South Africa_nra",
+            # Optional: global signals
+            "Global Mkt Authorization": "gra",
+            "WHO EML listed": "eml",
         }
 
-        # Create a new DataFrame with selected columns
+        # Build comparison dataframe
         compare_df = pd.DataFrame()
 
-        # Build DataFrame with Product as Rows (default from extraction)
-        # Columns will be the Display Labels
         for label, col in metrics_map.items():
             if col in df_filtered.columns:
                 compare_df[label] = df_filtered[col].values
             else:
                 compare_df[label] = "N/A"
 
-        # Styling function to restore heatmap look
-        def color_cells(val):
-            """Returns CSS styles based on the numeric value and type."""
-            if pd.isna(val) or val == "N/A":
-                return "background-color: #e9ecef; color: #6c757d"  # Gray for missing
+        # ---------- STYLING ---------- #
 
-            try:
-                v = float(val)
-                # Heuristic logic for coloring (Green for high performance, Red for low)
-                if v <= 1.0:  # Probabilities
-                    if v > 0.5:
-                        return "background-color: #d1fae5; color: #065f46"
-                    else:
-                        return "background-color: #fee2e2; color: #991b1b"
-                elif v <= 2.0:  # Financing score (0-2)
-                    if v > 1:
-                        return "background-color: #d1fae5; color: #065f46"
-                    else:
-                        return "background-color: #fee2e2; color: #991b1b"
-                else:  # Scores 0-100 or Counts
-                    if v > 50:
-                        return "background-color: #d1fae5; color: #065f46"
-                    else:
-                        return "background-color: #fee2e2; color: #991b1b"
-            except:
-                return ""
-
-        # Specify which columns to apply heatmap styling to
         numeric_cols = [
             "Probability of Success",
             "Financing Score",
@@ -208,32 +282,159 @@ def comparison_server(id, input, output, session):
             "Efficacy",
         ]
 
-        # Apply styling using Pandas Styler
-        styler = compare_df.style.hide(axis="index")
-        cols_to_style = [c for c in numeric_cols if c in compare_df.columns]
+        def color_cells(val):
+            if pd.isna(val) or val == "N/A":
+                return "background-color:#f8f9fa;color:#6c757d"
 
-        if hasattr(styler, "map"):
-            styler = styler.map(color_cells, subset=cols_to_style)
-        else:
-            styler = styler.applymap(color_cells, subset=cols_to_style)
+            # --- YES / NO LOGIC ---
+            if isinstance(val, str):
+                v = val.strip().lower()
 
-        return styler.format(precision=2, na_rep="N/A", subset=cols_to_style)
+                if v in ["yes", "YES",]:
+                    return "background-color:#d1fae5;color:#065f46;font-weight:600"
 
-    # @reactive.Effect
-    # def _adjust_timeline_height():
-    #     selected = input.selected_innovations_compare()
-    #     n = len(selected) if selected else 0
+                if v in ["no", "NO"]:
+                    return "background-color:#fee2e2;color:#991b1b;font-weight:600"
 
-    #     # Base height
-    #     base = 400
+            # --- NUMERIC LOGIC ---
+            try:
+                v = float(val)
 
-    #     # Add 60px per innovation
-    #     dynamic_height = base + max(0, n - 5) * 60
+                if v <= 1:
+                    if v > 0.5:
+                        return "background-color:#d1fae5;color:#065f46"
+                    else:
+                        return "background-color:#fee2e2;color:#991b1b"
 
-    #     ui.update_ui(
-    #         id="timeline_card_body",
-    #         style=f"min-height: {dynamic_height}px;"
+                elif v <= 2:
+                    if v > 1:
+                        return "background-color:#d1fae5;color:#065f46"
+                    else:
+                        return "background-color:#fee2e2;color:#991b1b"
+
+                else:
+                    if v > 50:
+                        return "background-color:#d1fae5;color:#065f46"
+                    else:
+                        return "background-color:#fee2e2;color:#991b1b"
+
+            except:
+                return ""
+
+        yes_no_cols = [
+            "Kenya market authorization",
+            "Senegal market authorization",
+            "South Africa market authorization",
+            "Global Mkt Authorization",
+            "WHO EML listed",
+        ]
+
+        cols_to_style = [
+            c for c in numeric_cols + yes_no_cols if c in compare_df.columns
+        ]
+        styler = (
+            compare_df.style
+            .hide(axis="index")
+            .set_table_attributes(
+                'class="table table-striped table-hover table-sm"'
+            )
+            .set_properties(**{
+                "text-align": "center",
+                "vertical-align": "middle",
+                "font-size": "0.9rem",
+                "padding": "6px"
+            })
+            .set_table_styles([
+                {
+                    "selector": "th",
+                    "props": [
+                        ("background-color", "#012169"),
+                        ("color", "white"),
+                        ("font-weight", "600"),
+                        ("text-align", "center"),
+                    ],
+                },
+                {
+                    "selector": "td",
+                    "props": [
+                        ("border", "1px solid #dee2e6"),
+                    ],
+                },
+            ])
+        )
+
+        if cols_to_style:
+            if hasattr(styler, "map"):
+                styler = styler.map(color_cells, subset=cols_to_style)
+            else:
+                styler = styler.applymap(color_cells, subset=cols_to_style)
+
+        styler = styler.format(na_rep="—")
+
+        return styler
+
+   
+    # @render.data_frame
+    # def comparison_heatmap():
+    #     """
+    #     Renders the side-by-side comparison table as a DataGrid.
+    #     Note: DataGrid does not render Pandas Styler, so heatmap styling is not applied here.
+    #     """
+    #     selected_ids = input.selected_innovations_compare()
+    #     if not selected_ids:
+    #         return render.DataGrid(
+    #             pd.DataFrame({"Message": ["Select products to compare"]}),
+    #             width="100%",
+    #         )
+
+    #     df_filtered = (
+    #         horizon_df.loc[(horizon_df["scope"] == "WHO") & (horizon_df["innovation"].isin(selected_ids))]
+    #         .assign(
+    #             proj_date_first_launch=lambda d: pd.to_datetime(d["proj_date_first_launch"], errors="coerce").dt.strftime("%Y-%m-%d")
+    #         )
     #     )
+
+    #     metrics_map = {
+    #         "Product": "innovation",
+    #         "Disease": "disease",
+    #         "Stage": "trial_status",
+    #         "Projected first launch": "proj_date_first_launch",
+    #         "Policy Implemented": "policy_implemented",
+    #         "WHO PQ / Global approval": "gra",
+    #     }
+
+    #     compare_df = pd.DataFrame()
+    #     for label, col in metrics_map.items():
+    #         if col in df_filtered.columns:
+    #             compare_df[label] = df_filtered[col].values
+    #         else:
+    #             compare_df[label] = "N/A"
+
+    #     # optional: show one row per selected product, add an index column if useful
+    #     # compare_df.insert(0, "Selected order", range(1, len(compare_df) + 1))
+
+    #     return render.DataGrid(
+    #         compare_df,
+    #         width="100%",
+    #         filters=True,
+    #         selection_mode="none",
+    #     )
+
+        @reactive.Effect
+        def _adjust_timeline_height():
+            selected = input.selected_innovations_compare()
+            n = len(selected) if selected else 0
+
+            # Base height
+            base = 400
+
+            # Add 60px per innovation
+            dynamic_height = base + max(0, n - 5) * 60
+
+            ui.update_ui(
+                id="timeline_card_body",
+                style=f"min-height: {dynamic_height}px;"
+            )
 
     @render_widget(
         height=lambda: f"{max(400, 150 + len(input.selected_innovations_compare() or []) * 60)}px"

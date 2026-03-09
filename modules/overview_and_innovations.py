@@ -1,16 +1,36 @@
-from shiny import ui, reactive, req as shiny_req
-from shiny.ui import popover
+# modules/innovation_page.py
+#
+# Innovation Page (single page) = Overview + Innovation Details
+# - ONE pipeline / innovation explorer table (DataGrid)
+# - Selecting a row updates ALL detail boxes, charts, and summaries below
+# - Keeps ALL existing commented code blocks (for future implementation)
+# - Preserves ALL popovers (no removals)
+# - Does NOT change themes (theme is set in app.py; this module only uses existing classes)
+#
+# Usage in app.py:
+#   from modules.innovation_page import innovation_page_ui, innovation_page_server
+#   ...
+#   nav_panel("Innovation Page", innovation_page_ui("innovation_page"))
+#   ...
+#   innovation_page_server("innovation_page")
+#
+# If you keep the old Overview + Innovation Details tabs at the same time,
+# you should namespace their inputs/outputs too; otherwise you can remove them.
+
+from shiny import ui, reactive, module
 from shiny.express import render
-import pandas as pd
+from shiny.render import DataGrid
+from shiny.ui import popover
 import plotly.graph_objects as go
+import pandas as pd
 from shinywidgets import output_widget, render_widget
 from utils.data_loader import load_data
-from shiny.express import render
 
 
 def req(condition):
     """
     Helper to stop execution if a condition is not met (similar to R Shiny's req).
+    Useful for preventing errors when data is momentarily empty during reactivity.
     """
     import pandas as pd
 
@@ -54,246 +74,666 @@ def progress_row(label, value):
     )
 
 
-def innovation_details_ui(id):
+@module.ui
+def innovation_page_ui():
     """
-    Defines the User Interface for the Innovation Details module.
-
-    Layout:
-    1. Innovation Explorer: Table to select an innovation.
-    2. Summary Card: Title and key metadata.
-    3. Two-Column Layout:
-       - Left: Overall domain readiness bars.
-       - Right: Project timeline visualization.
-    4. Impact Potential: Value boxes for impact metrics.
-    5. Introduction Readiness: Detailed breakdown (Financing, Uptake, Policy).
+    UI for a single combined page:
+      - Hero + KPIs
+      - Market overview (trend + donut)
+      - Product explorer table (single DataGrid)
+      - Detail section (title/summary + readiness + timeline)
+      - Impact potential
+      - Introduction readiness (Financing + Uptake/Delivery + Policy)
     """
     return ui.div(
-        # Innovation Explorer table
         ui.div(
+            # =====================================================
+            # HERO HEADER
+            # =====================================================
             ui.div(
-                ui.span("Product explorer", class_="fw-semibold"),
-                class_="card-header",
-            ),
-            ui.div(
-                ui.output_data_frame("pipeline_tbl_details"),
-                class_="card-body",
-            ),
-            class_="card mb-4",
-            min_height="500px",
-        ),
-        # Title & summary
-        ui.div(
-            ui.div(ui.output_text("detail_title"), class_="card-header"),
-            ui.div(ui.output_ui("detail_summary"), class_="card-body"),
-            class_="card",
-            min_height="400px",
-        ),
-        # Two-column layout
-        ui.div(
-            # Left column
-            ui.div(
-                ui.div(
-                    ui.div(
-                        ui.div(
-                            ui.tags.span("Overall product readiness"),
-                            ui.tags.span(
-                                popover(
-                                    ui.tags.i(
-                                        class_="fa-solid fa-circle-info text-muted",
-                                        style="cursor:pointer;",
-                                    ),
-                                    ui.div(
-                                        ui.p(
-                                            ui.p("Impact potential: coming soon"),
-                                            ui.p("Introduction readiness: coming soon"),
-                                        ),
-                                        ui.tags.a(
-                                            "Learn more",
-                                            href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00062-2/fulltext",
-                                            target="_blank",
-                                            class_="fw-semibold",
-                                        ),
-                                    ),
-                                    title="Methodology",
-                                ),
-                                class_="ms-2",
-                            ),
-                            class_="d-flex align-items-center gap-1",
-                        ),
-                        # ui.div("Overall product readiness",
-                        class_="card-header",
-                    ),
-                    ui.div(ui.output_ui("domain_summary_bars"), class_="card-body"),
-                    class_="card h-100",
+                ui.h1("ALIGN GlobalHub", class_="fw-bold display-5 mb-1"),
+                ui.p(
+                    "Market Intelligence Hub for Global Health Innovation",
+                    class_="lead text-muted mb-3",
                 ),
-                class_="col-12 col-lg-4",
+                ui.hr(class_="mb-4"),
             ),
-            # Right column
+            # =====================================================
+            # KPI CARDS
+            # =====================================================
+            ui.div(
+                ui.div(ui.output_ui("kpi_tb"), class_="col-md-3"),
+                ui.div(ui.output_ui("kpi_hiv"), class_="col-md-3"),
+                ui.div(ui.output_ui("kpi_malaria"), class_="col-md-3"),
+                ui.div(ui.output_ui("kpi_mnch"), class_="col-md-3"),
+                class_="row mb-4 g-3",
+            ),
+            # =====================================================
+            # MARKET OVERVIEW
+            # =====================================================
             ui.div(
                 ui.div(
                     ui.div(
+                        ui.span("Market overview", class_="fw-semibold"),
+                        ui.input_select(
+                            "disease_selector",
+                            None,
+                            choices=[
+                                "Overall"
+                            ],  # filled by server via ui.update_select
+                            selected="Overall",
+                            width="220px",
+                        ),
+                        class_="card-header d-flex align-items-center justify-content-between flex-wrap gap-2",
+                    ),
+                    ui.div(
                         ui.div(
-                            ui.tags.span("Forecast of products coming to market"),
-                            ui.tags.span(
-                                popover(
-                                    ui.tags.i(
-                                        class_="fa-solid fa-circle-info text-muted",
-                                        style="cursor:pointer;",
-                                    ),
+                            ui.div(
+                                ui.div(
                                     ui.div(
-                                        ui.p(
-                                            "Timeline of product development. ",
-                                            ui.p(
-                                                "Calculated based on the method by: ",
-                                                ui.tags.em(
-                                                    "Mao, Wenhui et al. Development, launch, and scale-up of health products in low-income and middle-income countries: a retrospective analysis on 59 health products. The Lancet Global Health, Volume 13, Issue 6, e1132 - e1139"
+                                        ui.tags.span(
+                                            "Products cmoing to market in the next 3 years"
+                                        ),
+                                        # ui.tags.span(
+                                        #     "Forecast of products coming to market"
+                                        # ),
+                                        ui.tags.span(
+                                            popover(
+                                                ui.tags.i(
+                                                    class_="fa-solid fa-circle-info text-muted",
+                                                    style="cursor:pointer;",
                                                 ),
+                                                ui.div(
+                                                    ui.p(
+                                                        "Projected date of first country-level launch, calculated from expected market approval date based on the method by Mao, Wenhui et al. Development, launch, and scale-up of health products in low-income and middle-income countries: a retrospective analysis on 59 health products. The Lancet Global Health, Volume 13, Issue 6, e1132 - e1139"
+                                                    ),
+                                                    ui.tags.a(
+                                                        "Learn more",
+                                                        href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00062-2/fulltext",
+                                                        target="_blank",
+                                                        class_="fw-semibold",
+                                                    ),
+                                                ),
+                                                title="Methodology",
+                                            ),
+                                            class_="ms-2",
+                                        ),
+                                        class_="d-flex align-items-center gap-1",
+                                    ),
+                                    class_="card-header d-flex align-items-center",
+                                ),
+                                # ui.div(
+                                #     output_widget("trend_chart", height="360px"),
+                                #     class_="card-body",
+                                # ),
+                                class_="card",
+                            ),
+                            class_="col-md-7",
+                        ),
+                        ui.div(
+                            ui.div(
+                                ui.div("Development status", class_="card-header"),
+                                ui.div(
+                                    output_widget("pie_chart", height="360px"),
+                                    class_="card-body",
+                                ),
+                                class_="card",
+                            ),
+                            class_="col-md-5",
+                        ),
+                        class_="row g-3",
+                    ),
+                    class_="card mb-4",
+                ),
+                class_="col-12",
+            ),
+            # =====================================================
+            # AVERAGE TIMELINE (kept commented as in your original)
+            # =====================================================
+            # ui.div(
+            #     ui.div(
+            #         ui.div(
+            #             ui.span("Average innovation development time", class_="fw-semibold"),
+            #             ui.input_select(
+            #                 "timeline_scope_selector",
+            #                 None,
+            #                 choices=["Overall", "Kenya", "Senegal", "South Africa"],
+            #                 selected="Overall",
+            #                 width="220px",
+            #             ),
+            #             class_="card-header d-flex align-items-center justify-content-between flex-wrap gap-2",
+            #         ),
+            #         ui.div(
+            #             ui.div(
+            #                 output_widget("avg_timeline_plot", height="300px"),
+            #                 style="width: 100%; display: block;",
+            #             ),
+            #             class_="card-body",
+            #         ),
+            #         class_="card col-12",
+            #     ),
+            #     class_="row g-3 mb-4",
+            # ),
+            # =====================================================
+            # PRODUCT EXPLORER (single table)
+            # =====================================================
+            ui.div(
+                ui.div(
+                    ui.div(
+                        ui.span("Product explorer", class_="fw-semibold"),
+                        ui.input_action_button(
+                            "clear_filters",
+                            ui.tags.span(
+                                ui.tags.i(class_="fa-solid fa-rotate-left me-1"),
+                                "Clear filters",
+                            ),
+                            class_="btn btn-sm btn-outline-secondary",
+                        ),
+                        class_="d-flex justify-content-between align-items-center w-100",
+                    ),
+                    class_="card-header",
+                ),
+                ui.div(
+                    ui.output_data_frame("pipeline_tbl"),
+                    class_="card-body p-0",
+                ),
+                class_="card mb-4",
+                min_height="500px",
+            ),
+            # =====================================================
+            # DETAIL TITLE & SUMMARY
+            # =====================================================
+            ui.div(
+                ui.div(ui.output_text("detail_title"), class_="card-header"),
+                ui.div(ui.output_ui("detail_summary"), class_="card-body"),
+                class_="card mb-4",
+                min_height="400px",
+            ),
+            # =====================================================
+            # DETAIL: readiness + timeline
+            # =====================================================
+            ui.div(
+                # Left column
+                ui.div(
+                    ui.div(
+                        ui.div(
+                            ui.div(
+                                ui.tags.span("Overall product readiness"),
+                                ui.tags.span(
+                                    popover(
+                                        ui.tags.i(
+                                            class_="fa-solid fa-circle-info text-muted",
+                                            style="cursor:pointer;",
+                                        ),
+                                        ui.div(
+                                            ui.p(ui.p("Impact potential: coming soon")),
+                                            ui.p("Introduction readiness: coming soon"),
+                                            ui.tags.a(
+                                                "Learn more",
+                                                href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00062-2/fulltext",
+                                                target="_blank",
+                                                class_="fw-semibold",
                                             ),
                                         ),
-                                        ui.tags.a(
-                                            "Learn more",
-                                            href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00062-2/fulltext",
-                                            target="_blank",
-                                            class_="fw-semibold",
-                                        ),
+                                        title="Methodology",
                                     ),
-                                    title="Methodology",
+                                    class_="ms-2",
                                 ),
-                                class_="ms-2",
+                                class_="d-flex align-items-center gap-1",
                             ),
-                            class_="d-flex align-items-center gap-1",
+                            class_="card-header",
                         ),
-                        class_="card-header d-flex align-items-center",
+                        ui.div(ui.output_ui("domain_summary_bars"), class_="card-body"),
+                        class_="card h-100",
                     ),
-                    # ui.div(
-                    #     "Projected timeline for the product selected",
-                    #     class_="card-header",
-                    # ),
-                    ui.div(
-                        output_widget("timeline_plot", height="200px"),
-                        class_="card-body d-flex align-items-center justify-content-center",
-                    ),
-                    class_="card h-100",
+                    class_="col-12 col-lg-4",
                 ),
-                class_="col-12 col-lg-8",
-            ),
-            class_="row g-4 g-3",
-        ),
-        # Impact Potential
-        ui.div(
-            ui.div(
-                ui.div(
-                    ui.span("Impact potential", class_="fw-semibold"),
-                    class_="d-flex align-items-center justify-content-between flex-wrap gap-2",
-                ),
-                class_="card-header",
-            ),
-            ui.div(
-                ui.div(
-                    ui.div(
-                        ui.output_ui("impact_potential_box", class_="row g-3 mt-1"),
-                        class_="card-body",
-                    ),
-                    class_="card bg-light border-0",
-                ),
-            ),
-            class_="row g-4 g-3",
-            min_height="600px",
-        ),
-        # Introduction Readiness - Broken down by section
-        ui.div(
-            ui.div(
-                ui.div(
-                    ui.span("Introduction readiness", class_="fw-semibold"),
-                    class_="d-flex align-items-center justify-content-between flex-wrap gap-2",
-                ),
-                class_="card-header",
-            ),
-            ui.div(
+                # Right column
                 ui.div(
                     ui.div(
                         ui.div(
-                            ui.span("Financing", class_="fw-semibold card-header"),
                             ui.div(
-                                ui.output_ui("financing_box", class_="row g-3 mt-1"),
-                                class_="card-body",
-                            ),
-                            class_="card h-100 bg-light border-0",
-                        ),
-                        class_="col-md-6",
-                    ),
-                    ui.div(
-                        ui.div(
-                            ui.span(
-                                "Uptake/Delivery", class_="fw-semibold card-header"
-                            ),
-                            ui.div(
-                                ui.output_ui(
-                                    "uptake_delivery_box", class_="row g-3 mt-1"
+                                ui.tags.span("Forecast of products coming to market"),
+                                ui.tags.span(
+                                    popover(
+                                        ui.tags.i(
+                                            class_="fa-solid fa-circle-info text-muted",
+                                            style="cursor:pointer;",
+                                        ),
+                                        ui.div(
+                                            ui.p(
+                                                "Timeline of product development. ",
+                                                ui.p(
+                                                    "Calculated based on the method by: ",
+                                                    ui.tags.em(
+                                                        "Mao, Wenhui et al. Development, launch, and scale-up of health products in low-income and middle-income countries: a retrospective analysis on 59 health products. The Lancet Global Health, Volume 13, Issue 6, e1132 - e1139"
+                                                    ),
+                                                ),
+                                            ),
+                                            ui.tags.a(
+                                                "Learn more",
+                                                href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00062-2/fulltext",
+                                                target="_blank",
+                                                class_="fw-semibold",
+                                            ),
+                                        ),
+                                        title="Methodology",
+                                    ),
+                                    class_="ms-2",
                                 ),
-                                class_="card-body",
+                                class_="d-flex align-items-center gap-1",
                             ),
-                            class_="card h-100 bg-light border-0",
+                            class_="card-header d-flex align-items-center",
                         ),
-                        class_="col-md-6",
+                        ui.div(
+                            output_widget("timeline_plot", height="200px"),
+                            class_="card-body d-flex align-items-center justify-content-center",
+                        ),
+                        class_="card h-100",
                     ),
-                    class_="row g-3",
+                    class_="col-12 col-lg-8",
+                ),
+                # IMPORTANT: class_ goes last (after positional children)
+                class_="row g-4 g-3 mb-4",
+            ),
+            # =====================================================
+            # IMPACT POTENTIAL
+            # =====================================================
+            ui.div(
+                ui.div(
+                    ui.div(
+                        ui.span("Impact potential", class_="fw-semibold"),
+                        class_="d-flex align-items-center justify-content-between flex-wrap gap-2",
+                    ),
+                    class_="card-header",
                 ),
                 ui.div(
                     ui.div(
-                        ui.span("Policy", class_="fw-semibold card-header"),
                         ui.div(
-                            ui.output_ui("policy_box", class_="row g-3 mt-1"),
+                            ui.output_ui("impact_potential_box", class_="row g-3 mt-1"),
                             class_="card-body",
                         ),
                         class_="card bg-light border-0",
                     ),
-                    class_="mt-3",
                 ),
-                class_="card-body",
+                class_="card mb-4",
+                min_height="600px",
             ),
-            class_="card",
-            min_height="600px",
-        ),
-        id=id,
+            # =====================================================
+            # INTRODUCTION READINESS
+            # =====================================================
+            ui.div(
+                ui.div(
+                    ui.div(
+                        ui.span("Introduction readiness", class_="fw-semibold"),
+                        class_="d-flex align-items-center justify-content-between flex-wrap gap-2",
+                    ),
+                    class_="card-header",
+                ),
+                ui.div(
+                    ui.div(
+                        ui.div(
+                            ui.div(
+                                ui.span("Financing", class_="fw-semibold card-header"),
+                                ui.div(
+                                    ui.output_ui(
+                                        "financing_box", class_="row g-3 mt-1"
+                                    ),
+                                    class_="card-body",
+                                ),
+                                class_="card h-100 bg-light border-0",
+                            ),
+                            class_="col-md-6",
+                        ),
+                        ui.div(
+                            ui.div(
+                                ui.span(
+                                    "Uptake/Delivery", class_="fw-semibold card-header"
+                                ),
+                                ui.div(
+                                    ui.output_ui(
+                                        "uptake_delivery_box", class_="row g-3 mt-1"
+                                    ),
+                                    class_="card-body",
+                                ),
+                                class_="card h-100 bg-light border-0",
+                            ),
+                            class_="col-md-6",
+                        ),
+                        class_="row g-3",
+                    ),
+                    ui.div(
+                        ui.div(
+                            ui.span("Policy", class_="fw-semibold card-header"),
+                            ui.div(
+                                ui.output_ui("policy_box", class_="row g-3 mt-1"),
+                                class_="card-body",
+                            ),
+                            class_="card bg-light border-0",
+                        ),
+                        class_="mt-3",
+                    ),
+                    class_="card-body",
+                ),
+                class_="card",
+                min_height="600px",
+            ),
+            class_="container-fluid px-3 py-3",
+        )
     )
 
 
-def innovation_details_server(id, selected_innovation, input, output, session):
+@module.server
+def innovation_page_server(input, output, session):
     """
-    Server logic for the Innovation Details module.
+    Server for combined Innovation Page.
+    - Single DataGrid controls the selected_innovation reactive value
+    - All detail outputs use selected_innovation
+    """
+    clear_trigger = reactive.Value(0)
+    layout_ready = reactive.Value(False)
 
-    Handles:
-    - Displaying detailed metrics for a selected innovation.
-    - Synchronizing selection with the Overview module via `selected_innovation`.
-    - Rendering detailed value boxes and timelines using real data.
-    """
     data = load_data()
     horizon_df = data["horizon"]
     innovation_df = data["innovation_df"]
 
-    @render.data_frame
-    def pipeline_tbl_details():
-        """
-        Renders the table in the Details tab, allowing independent selection.
-        """
-        df_filtered = innovation_df
-        req(not df_filtered.empty)
+    # ---------------------------------------------------------
+    # Populate disease dropdown choices (from horizon)
+    # ---------------------------------------------------------
+    diseases = ["Overall"] + sorted(horizon_df["disease"].dropna().unique().tolist())
 
-        # Removing Phase 1 only
-        df_filtered = df_filtered[df_filtered["trial_status"] != "Phase 1"]
-        # Removing items with proj date <= today
+    @reactive.Effect
+    def _update_disease_choices():
+        ui.update_select(
+            "disease_selector",
+            choices=diseases,
+            selected="Overall",
+        )
 
-        df_filtered = df_filtered[
-            df_filtered["proj_date_lmic_20_uptake"].notna()
-            & (df_filtered["proj_date_lmic_20_uptake"] >= pd.Timestamp("2025-01-01"))
+    # ---------------------------------------------------------
+    # KPI helper
+    # ---------------------------------------------------------
+    def kpi_card(value, label, sub, icon):
+        return ui.div(
+            ui.div(
+                ui.h3(value, class_="text-primary mb-1"),
+                ui.p(label, class_="mb-1 fw-bold text-dark"),
+                ui.tags.small(sub, class_="text-success"),
+            ),
+            ui.div(ui.tags.i(class_=f"fa-solid fa-{icon} fa-2x text-primary opacity-50")),
+            class_="d-flex justify-content-between align-items-center p-3",
+        )
+
+    def count_innovations(diseases_list):
+        if isinstance(diseases_list, str):
+            diseases_list = [diseases_list]
+        return len(horizon_df[horizon_df["disease"].isin(diseases_list)]["innovation"].unique())
+
+    @render.ui
+    def kpi_tb():
+        return ui.card(kpi_card(str(count_innovations(["Tuberculosis"])), "Tuberculosis", "Products", "lungs-virus"))
+
+    @render.ui
+    def kpi_hiv():
+        return ui.card(kpi_card(str(count_innovations(["HIV"])), "HIV/AIDS", "Products", "ribbon"))
+
+    @render.ui
+    def kpi_malaria():
+        return ui.card(kpi_card(str(count_innovations(["Malaria"])), "Malaria", "Products", "mosquito"))
+
+    @render.ui
+    def kpi_mnch():
+        return ui.card(kpi_card(str(count_innovations(["MNCH"])), "MNCH", "Products", "person-breastfeeding"))
+
+    # ---------------------------------------------------------
+    # Data filtering used by the single table + selection mapping
+    # IMPORTANT: keep consistent everywhere.
+    # ---------------------------------------------------------
+    def filtered_innovation_df_for_table(df: pd.DataFrame) -> pd.DataFrame:
+        out = df.copy()
+
+        # Does not show Trial Phase 1
+        out = out[out["trial_status"] != "Phase 1"]
+
+        # Removes empty time stamps or time stamps way too in the past
+        out = out[
+            out["proj_date_lmic_20_uptake"].notna()
+            & (out["proj_date_lmic_20_uptake"] >= pd.Timestamp("2025-01-01"))
         ]
 
+        return out
+
+    df0 = filtered_innovation_df_for_table(innovation_df)
+    default_innovation_id = df0["innovation"].iloc[0] if not df0.empty else None
+    selected_innovation = reactive.Value(default_innovation_id)
+
+    # ---------------------------------------------------------
+    # Layout settle delay
+    # ---------------------------------------------------------
+    @reactive.Effect
+    def _layout_delay():
+        reactive.invalidate_later(0.5)
+        layout_ready.set(True)
+
+    # ---------------------------------------------------------
+    # Trend chart
+    # ---------------------------------------------------------
+    @render_widget
+    def trend_chart():
+        disease = input.disease_selector()
+
+        # Use only unique innovations (scope="WHO") for global counts
+        df_unique = horizon_df[horizon_df["scope"] == "WHO"]
+
+        if disease == "Overall":
+            df_f = df_unique
+        else:
+            df_f = df_unique[df_unique["disease"] == disease]
+
+        df_f = df_f[(df_f["market_year"] >= 2025) & (df_f["market_year"] <= 2050)]
+
+        if df_f.empty:
+            return go.FigureWidget()
+
+        pipeline_raw = df_f.groupby(["market_year", "category"]).size().unstack(fill_value=0)
+
+        min_year = 2025
+        max_year = int(pipeline_raw.index.max()) if not pipeline_raw.empty and not pd.isna(pipeline_raw.index.max()) else 2035
+        max_year = min(max_year, 2050)
+        all_years = range(min_year, max_year + 1)
+
+        if not pipeline_raw.empty:
+            pipeline_raw.index = pipeline_raw.index.astype(int)
+
+        pipeline_reindexed = pipeline_raw.reindex(all_years, fill_value=0)
+        pipeline = pipeline_reindexed.cumsum().reset_index()
+        pipeline = pipeline.rename(columns={"index": "year", "market_year": "year"})
+        dfm = pipeline.melt(id_vars="year", var_name="category", value_name="count")
+        req(not dfm.empty)
+
+        fig = go.FigureWidget()
+        for category in dfm["category"].unique():
+            category_df = dfm[dfm["category"] == category]
+            fig.add_trace(
+                go.Scatter(
+                    x=category_df["year"].astype(str),
+                    y=category_df["count"],
+                    name=category,
+                    mode="lines+markers",
+                    line=dict(width=3),
+                    marker=dict(size=6),
+                )
+            )
+
+        fig.update_layout(
+            hovermode="x unified",
+            legend=dict(orientation="h", y=1.02, yanchor="bottom"),
+            margin=dict(l=0, r=0, t=0, b=0),
+            yaxis_title="Cumulative Number of Products",
+            xaxis=dict(showticklabels=True, dtick=1, tickangle=-45, type="category"),
+            yaxis=dict(range=[0, None], fixedrange=True),
+            plot_bgcolor="rgba(0,0,0,0)",
+            paper_bgcolor="rgba(0,0,0,0)",
+            annotations=[
+                dict(
+                    text="Data is cumulative",
+                    xref="paper",
+                    yref="paper",
+                    x=0.02,
+                    y=0.95,
+                    showarrow=False,
+                    font=dict(size=10, color="gray"),
+                )
+            ],
+        )
+        return fig
+
+    # ---------------------------------------------------------
+    # Pie (donut) chart
+    # ---------------------------------------------------------
+    @render_widget
+    def pie_chart():
+        df_unique = horizon_df[horizon_df["scope"] == "WHO"][
+            horizon_df["trial_status"] != "Phase 1"
+        ]
+
+        stage_counts = df_unique["trial_status"].value_counts().reset_index()
+        stage_counts.columns = ["status", "count"]
+        total_innovations = len(df_unique)
+        stage_counts["pct"] = (stage_counts["count"] / total_innovations * 100).round(1)
+
+        categories = [
+            "Preclinical",
+            "Phase 1",
+            "Phase 2",
+            "Phase 3",
+            "Phase 4",
+            "Observational",
+            "Implementation/Pilot",
+            "Approved / Marketed",
+            "Unknown",
+        ]
+
+        base_colors = [
+            "#94a3b8",
+            "#60a5fa",
+            "#3b82f6",
+            "#2563eb",
+            "#1d4ed8",
+            "#a78bfa",
+            "#10b981",
+            "#f43f5e",
+            "#cbd5e1",
+        ]
+        color_map = dict(zip(categories, base_colors))
+
+        stage_counts["colors"] = stage_counts["status"].map(color_map).fillna("#cbd5e1")
+        readiness = stage_counts
+        req(not readiness.empty)
+
+        fig = go.FigureWidget(
+            data=[
+                go.Pie(
+                    labels=readiness["status"],
+                    values=readiness["pct"],
+                    hole=0.4,
+                    marker=dict(colors=readiness["colors"], line=dict(color="#FFFFFF", width=2)),
+                    textinfo="label+percent",
+                    textposition="outside",
+                )
+            ]
+        )
+        fig.update_layout(showlegend=True, margin=dict(l=0, r=0, t=0, b=0))
+        return fig
+
+    # ---------------------------------------------------------
+    # Average Timeline (kept here for future; UI is commented)
+    # ---------------------------------------------------------
+    # @render_widget
+    # def avg_timeline_plot():
+    #     req(layout_ready())
+    #     disease = input.disease_selector()
+    #     scope = input.timeline_scope_selector()
+    #
+    #     df_f = horizon_df.copy()
+    #     if disease != "Overall":
+    #         df_f = df_f[df_f["disease"] == disease]
+    #     if scope != "Overall":
+    #         df_f = df_f[df_f["scope"] == scope]
+    #
+    #     date_cols = [
+    #         "date_proof_of_concept",
+    #         "date_first_regulatory",
+    #         "date_first_launch",
+    #         "proj_date_lmic_20_uptake",
+    #     ]
+    #     for c in date_cols:
+    #         if c in df_f.columns:
+    #             df_f[c] = pd.to_datetime(df_f[c], errors="coerce")
+    #
+    #     df_f["t1"] = (df_f["date_first_regulatory"] - df_f["date_proof_of_concept"]).dt.days / 365.25
+    #     df_f["t2"] = (df_f["date_first_launch"] - df_f["date_first_regulatory"]).dt.days / 365.25
+    #     df_f["t3"] = (df_f["proj_date_lmic_20_uptake"] - df_f["date_first_launch"]).dt.days / 365.25
+    #
+    #     t1 = df_f["t1"].dropna().mean()
+    #     t2 = df_f["t2"].dropna().mean()
+    #     t3 = df_f["t3"].dropna().mean()
+    #
+    #     t1 = 0 if pd.isna(t1) else t1
+    #     t2 = 0 if pd.isna(t2) else t2
+    #     t3 = 0 if pd.isna(t3) else t3
+    #
+    #     x_vals = [0, t1, t1 + t2, t1 + t2 + t3]
+    #     labels = ["Start", "Regulatory approval", "First country launch", "20% Market uptake"]
+    #     text_vals = [f"{x:.1f} yrs" for x in x_vals]
+    #     text_positions = ["bottom center", "top center", "bottom center", "top center"]
+    #
+    #     fig = go.FigureWidget()
+    #     fig.add_trace(
+    #         go.Scatter(
+    #             x=x_vals,
+    #             y=[0] * len(x_vals),
+    #             mode="lines+markers+text",
+    #             line=dict(color="red", width=3),
+    #             marker=dict(size=14, color="red", line=dict(width=2, color="white")),
+    #             text=[f"<b>{l}</b><br>{v}" for l, v in zip(labels, text_vals)],
+    #             textposition=text_positions,
+    #             hoverinfo="text",
+    #             showlegend=False,
+    #         )
+    #     )
+    #     fig.update_layout(
+    #         height=300,
+    #         margin=dict(l=40, r=40, t=40, b=40),
+    #         xaxis=dict(
+    #             showgrid=False,
+    #             zeroline=False,
+    #             showline=True,
+    #             linecolor="#BFBBBB",
+    #             title="Years from Project Start",
+    #             dtick=1,
+    #         ),
+    #         yaxis=dict(visible=False, range=[-1.5, 1.5], fixedrange=True),
+    #         plot_bgcolor="white",
+    #         paper_bgcolor="white",
+    #     )
+    #     return fig
+
+    # ---------------------------------------------------------
+    # SINGLE PIPELINE TABLE (DataGrid)
+    # ---------------------------------------------------------
+    @render.data_frame
+    def pipeline_tbl():
+        clear_trigger.get()
+
+        df_f = filtered_innovation_df_for_table(innovation_df)
+        req(not df_f.empty)
+
+        # NOTE: keep the same column mapping as your existing code
+        # You used proj_date_first_launch in the table display, but filtered on proj_date_lmic_20_uptake.
         return render.DataGrid(
-            df_filtered.assign(
-                proj_date_first_launch=lambda d: d[
-                    "proj_date_first_launch"
-                ].dt.strftime("%Y-%m-%d")
+            df_f.assign(
+                proj_date_first_launch=lambda d: d["proj_date_first_launch"].dt.strftime("%Y-%m-%d")
             ).rename(
                 columns={
                     "innovation": "Product",
@@ -317,117 +757,43 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         )
 
     @reactive.Effect
-    @reactive.event(input.pipeline_tbl_details_selected_rows)
-    def _():
-        """
-        Event Handler: Updates the shared `selected_innovation` reactive value
-        when a row is clicked in the details table.
-        """
-        if not input.pipeline_tbl_details_selected_rows():
+    @reactive.event(input.pipeline_tbl_selected_rows)
+    def _on_row_select():
+        if not input.pipeline_tbl_selected_rows():
             return
-        idx = input.pipeline_tbl_details_selected_rows()[0]
 
-        df_filtered = innovation_df
-        df_filtered = df_filtered[df_filtered["trial_status"] != "Phase 1"]
+        idx = input.pipeline_tbl_selected_rows()[0]
 
-        df_filtered = df_filtered[
-            df_filtered["proj_date_lmic_20_uptake"].notna()
-            & (df_filtered["proj_date_lmic_20_uptake"] >= pd.Timestamp("2025-01-01"))
-        ]
+        df_f = filtered_innovation_df_for_table(innovation_df)
+        req(not df_f.empty)
 
-        selected_id = df_filtered.iloc[idx]["innovation"]
+        # Map the selected row index back into the filtered DF used to render the table
+        selected_id = df_f.iloc[idx]["innovation"]
         selected_innovation.set(selected_id)
 
+    @reactive.Effect
+    @reactive.event(input.clear_filters)
+    def _clear_filters():
+        clear_trigger.set(clear_trigger.get() + 1)
+
+    # ---------------------------------------------------------
+    # Selected row helpers
+    # ---------------------------------------------------------
     @reactive.Calc
     def get_selected_id():
-        """Returns the ID of the currently selected innovation."""
         return selected_innovation()
 
     @reactive.Calc
     def detail_row():
-        """
-        Retrieves the full data row for the selected innovation.
-        """
         selected_id = get_selected_id()
-        req(selected_id)  # Ensure selected_id is not None
+        req(selected_id)
         row = innovation_df[innovation_df["innovation"] == selected_id]
-        req(not row.empty)  # Ensure row is not empty
+        req(not row.empty)
         return row.iloc[0]
 
-    def format_value_box(
-        title,
-        value,
-        height="200px",
-        is_percent=True,
-        check_threshold=True,
-        display_text=None,
-    ):
-        """Helper to format value boxes with consistent styling and logic."""
-
-        # Handle numpy types
-        if hasattr(value, "item"):
-            value = value.item()
-
-        numeric_val = 0
-        is_missing = pd.isna(value) or value is None
-
-        # NEW: detect yes/true strings
-        is_yes = isinstance(value, str) and value.strip().lower() == "yes"
-
-        if is_missing:
-            display_val = "Not available"
-        elif isinstance(value, (int, float)):
-            numeric_val = value
-            if display_text is not None:
-                display_val = display_text
-            elif is_percent:
-                display_val = f"{int(value)}%"
-            else:
-                display_val = f"{int(value):,}"
-        else:
-            display_val = str(value)
-
-        theme_class = ""
-        icon = None
-        val_class = "mb-1"
-
-        if is_missing:
-            theme_class = "bg-white text-muted border"
-            val_class += " fs-4"
-
-        elif check_threshold:
-            # NEW: Yes/yes → green
-            if is_yes:
-                theme_class = "bg-success-subtle text-success-emphasis"
-                icon = ui.tags.i(
-                    class_="fa-solid fa-circle-check fs-4 position-absolute top-0 end-0 m-3 text-success"
-                )
-
-            elif numeric_val > 50:
-                theme_class = "bg-success-subtle text-success-emphasis"
-                icon = ui.tags.i(
-                    class_="fa-solid fa-circle-check fs-4 position-absolute top-0 end-0 m-3 text-success"
-                )
-            else:
-                theme_class = "bg-danger-subtle text-danger-emphasis"
-                icon = ui.tags.i(
-                    class_="fa-solid fa-circle-xmark fs-4 position-absolute top-0 end-0 m-3 text-danger"
-                )
-
-        return ui.div(
-            ui.div(
-                icon,
-                ui.h2(str(display_val), class_=val_class),
-                ui.p(title, class_="fs-6 mb-0 text-muted"),
-                class_=(
-                    "card-body d-flex flex-column justify-content-center "
-                    f"h-100 position-relative {theme_class}"
-                ),
-            ),
-            class_="card h-100 border-0 shadow-sm",
-            style=f"height: {height};",
-        )
-
+    # ---------------------------------------------------------
+    # Detail title + summary
+    # ---------------------------------------------------------
     @render.text
     def detail_title():
         row = detail_row()
@@ -440,22 +806,17 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             ui.p(ui.tags.b("Product: "), str(row.get("innovation", "N/A"))),
             ui.p(ui.tags.b("Disease: "), str(row.get("disease", "N/A"))),
             ui.p(ui.tags.b("Indication: "), str(row.get("indication", "N/A"))),
-            ui.p(
-                ui.tags.b("Target population: "),
-                str(row.get("targeted_population", "N/A")),
-            ),
+            ui.p(ui.tags.b("Target population: "), str(row.get("targeted_population", "N/A"))),
             ui.p(ui.tags.b("Technology: "), str(row.get("technology", "N/A"))),
             ui.p(ui.tags.b("Stage: "), str(row.get("trial_status", "N/A"))),
         )
 
+    # ---------------------------------------------------------
+    # Timeline plot (per-product)
+    # ---------------------------------------------------------
     @render_widget
     def timeline_plot():
-        """
-        Renders a timeline showing Collected (Trial) vs Projected (launch) dates.
-        """
         row = detail_row()
-
-        # Prepare data for the timeline
         all_events = []
 
         # Add Trial Completion as "Collected" - Commented because of lack of trial completion date
@@ -467,9 +828,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
         #     else:
         #         label = f"{stage} (Trial End)"
         #     all_events.append({"name": label, "date": trial_date, "type": "Collected"})
-        # Define paired real + projected dates
 
-        # Define paired real + projected dates
         event_map = [
             {
                 "label": "Proof of concept",
@@ -488,47 +847,33 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             },
             {
                 "label": "20% Market uptake",
-                "real": None,  # no collected equivalent
+                "real": None,
                 "proj": "proj_date_lmic_20_uptake",
             },
         ]
+
         for event in event_map:
             proj_col = event["proj"]
             real_col = event["real"]
 
             proj_date = row.get(proj_col) if proj_col in row.index else None
-            real_date = (
-                row.get(real_col) if real_col and real_col in row.index else None
-            )
+            real_date = row.get(real_col) if real_col and real_col in row.index else None
 
             if pd.notna(proj_date):
-                event_type = (
-                    "Collected" if real_col and pd.notna(real_date) else "Projection"
-                )
-
-                all_events.append(
-                    {
-                        "name": event["label"],
-                        "date": proj_date,
-                        "type": event_type,
-                    }
-                )
+                event_type = "Collected" if real_col and pd.notna(real_date) else "Projection"
+                all_events.append({"name": event["label"], "date": proj_date, "type": event_type})
 
         # Part fixed
         # Add Regulatory approval as "Collected" - temporary solution
         # reg_date = row.get("proj_date_first_regulatory")
         # if pd.notna(reg_date):
-        #     all_events.append(
-        #         {"name": "Regulatory approval", "date": reg_date, "type": "Collected"}
-        #     )
+        #     all_events.append({"name": "Regulatory approval", "date": reg_date, "type": "Collected"})
 
         # # Add other dates as "Projection"
         # projections = {
-        #     # "Regulatory approval": row.get("proj_date_first_regulatory"),
         #     "First country launch": row.get("proj_date_first_launch"),
         #     "20% Market uptake": row.get("proj_date_lmic_20_uptake"),
         # }
-
         # for name, date in projections.items():
         #     if pd.notna(date):
         #         all_events.append({"name": name, "date": date, "type": "Projection"})
@@ -554,22 +899,15 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             )
             return fig
 
-        # Sort all events by date
         all_events.sort(key=lambda x: x["date"])
-
         dates = [e["date"] for e in all_events]
         names = [e["name"] for e in all_events]
         types = [e["type"] for e in all_events]
         colors = ["#00539B" if t == "Collected" else "#BFBBBB" for t in types]
 
-        # Determine text positions (alternate)
-        text_positions = []
-        for i in range(len(dates)):
-            text_positions.append("top center" if i % 2 == 0 else "bottom center")
+        text_positions = ["top center" if i % 2 == 0 else "bottom center" for i in range(len(dates))]
 
         fig = go.FigureWidget()
-
-        # Add trace for the timeline line
         fig.add_trace(
             go.Scatter(
                 x=dates,
@@ -580,14 +918,11 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                 text=names,
                 textposition=text_positions,
                 hoverinfo="text+x",
-                hovertext=[
-                    f"{n}<br>{d.strftime('%Y-%m-%d')}" for n, d in zip(names, dates)
-                ],
+                hovertext=[f"{n}<br>{pd.to_datetime(d).strftime('%Y-%m-%d')}" for n, d in zip(names, dates)],
                 showlegend=False,
             )
         )
 
-        # Add dummy traces for legend
         fig.add_trace(
             go.Scatter(
                 x=[None],
@@ -607,11 +942,9 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             )
         )
 
-        # Calculate range padding (1 year)
-        start_range = min(dates) - pd.DateOffset(years=1)
-        end_range = max(dates) + pd.DateOffset(years=1)
+        start_range = min(pd.to_datetime(dates)) - pd.DateOffset(years=1)
+        end_range = max(pd.to_datetime(dates)) + pd.DateOffset(years=1)
 
-        # Update layout
         fig.update_layout(
             height=200,
             margin=dict(l=20, r=20, t=30, b=30),
@@ -638,14 +971,14 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             plot_bgcolor="white",
             paper_bgcolor="white",
         )
-
         return fig
 
+    # ---------------------------------------------------------
+    # Domain summary bars
+    # ---------------------------------------------------------
     @render.ui
     def domain_summary_bars():
         row = detail_row()
-
-        # Calculate summary scores for domains using real data
         impact_score = row.get("impact_potential", 0)
         intro_score = row.get("introduction_readiness", 0)
 
@@ -655,11 +988,14 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             class_="d-flex flex-column gap-3",
         )
 
+    # ---------------------------------------------------------
+    # IMPACT POTENTIAL BOXES (popovers preserved)
+    # ---------------------------------------------------------
     @render.ui
     def impact_potential_box():
         row = detail_row()
 
-        def safe_number(val, default=0):
+        def safe_number(val, default="Not available"):
             try:
                 if pd.notna(val):
                     return val
@@ -674,10 +1010,9 @@ def innovation_details_server(id, selected_innovation, input, output, session):
 
         pop_label = safe_text(row.get("pop_description"), "People at Risk")
 
-        readiness_val = safe_number(row.get("readiness"), 0)
-        align_str = (
-            "Yes" if readiness_val >= 50 else "No"
-        )  # keep for later if you want to display
+        readiness_val = row.get("readiness", None)
+        align_str = "Yes" if (pd.notna(readiness_val) and float(readiness_val) >= 50) else "No"
+        # keep for later if you want to display
 
         return ui.TagList(
             # Population at Risk
@@ -728,9 +1063,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                                     style="cursor:pointer;",
                                 ),
                                 ui.div(
-                                    ui.p(
-                                        "Disability-adjusted life years attributable to the condition."
-                                    ),
+                                    ui.p("Disability-adjusted life years attributable to the condition."),
                                     ui.tags.a(
                                         "Learn more",
                                         href="https://github.com/ALIGN-Consortium/GlobalHub/blob/main/docs/Disease_DALYs_Methods_and_Reference_Values.md",
@@ -794,6 +1127,9 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             # )
         )
 
+    # ---------------------------------------------------------
+    # FINANCING BOXES (popovers preserved)
+    # ---------------------------------------------------------
     @render.ui
     def financing_box():
         row = detail_row()
@@ -806,19 +1142,12 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                         ui.tags.span("Probability of success", class_="vb-title-text"),
                         ui.tags.span(
                             popover(
-                                ui.tags.i(
-                                    class_="fa-solid fa-circle-info text-muted",
-                                    style="cursor:pointer;",
-                                ),
+                                ui.tags.i(class_="fa-solid fa-circle-info text-muted", style="cursor:pointer;"),
                                 ui.div(
                                     ui.p(
                                         "Derived from R&D estimates according to ",
-                                        ui.tags.strong(
-                                            "Funding global health product R&D: the Portfolio-to-Impact (P2I) model."
-                                        ),
-                                        ui.tags.em(
-                                            " Terry RF, Gardner CA, Dieleman JL, et al. Health Policy Plan. 2018."
-                                        ),
+                                        ui.tags.strong("Funding global health product R&D: the Portfolio-to-Impact (P2I) model."),
+                                        ui.tags.em(" Terry RF, Gardner CA, Dieleman JL, et al. Health Policy Plan. 2018."),
                                     ),
                                     ui.tags.a(
                                         "Learn more",
@@ -834,9 +1163,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                         class_="vb-title",
                     ),
                     ui.tags.span(
-                        "Not available"
-                        if pd.isna(row.get("prob_success"))
-                        else f"{row.get('prob_success')}%",
+                        "Not available" if pd.isna(row.get("prob_success")) else f"{row.get('prob_success')}%",
                         class_="fs-5 fw-semibold",
                     ),
                     fill=True,
@@ -852,22 +1179,13 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                         ui.tags.span("Healthsystem costs", class_="vb-title-text"),
                         ui.tags.span(
                             popover(
-                                ui.tags.i(
-                                    class_="fa-solid fa-circle-info text-muted",
-                                    style="cursor:pointer;",
-                                ),
+                                ui.tags.i(class_="fa-solid fa-circle-info text-muted", style="cursor:pointer;"),
                                 ui.div(
-                                    ui.p(
-                                        "Estimated health system costs in million USD."
-                                    ),
+                                    ui.p("Estimated health system costs in million USD."),
                                     ui.p(
                                         "Derived from R&D estimates according to ",
-                                        ui.tags.strong(
-                                            "Funding global health product R&D: the Portfolio-to-Impact (P2I) model."
-                                        ),
-                                        ui.tags.em(
-                                            " Terry RF, Gardner CA, Dieleman JL, et al. Health Policy Plan. 2018."
-                                        ),
+                                        ui.tags.strong("Funding global health product R&D: the Portfolio-to-Impact (P2I) model."),
+                                        ui.tags.em(" Terry RF, Gardner CA, Dieleman JL, et al. Health Policy Plan. 2018."),
                                     ),
                                     ui.tags.a(
                                         "Learn more",
@@ -883,9 +1201,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                         class_="vb-title",
                     ),
                     ui.tags.span(
-                        "Not available"
-                        if pd.isna(row.get("hs_costs"))
-                        else row.get("hs_costs"),
+                        "Not available" if pd.isna(row.get("hs_costs")) else row.get("hs_costs"),
                         class_="fs-5 fw-semibold",
                     ),
                     ui.tags.div("Million USD"),
@@ -897,6 +1213,9 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             ),
         )
 
+    # ---------------------------------------------------------
+    # UPTAKE/DELIVERY BOXES (popovers preserved; commented blocks kept)
+    # ---------------------------------------------------------
     @render.ui
     def uptake_delivery_box():
         row = detail_row()
@@ -911,19 +1230,12 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             ui.div(
                 ui.value_box(
                     ui.div(
-                        ui.tags.span(
-                            "Date of launch", class_="vb-title-text"
-                        ),
+                        ui.tags.span("Date of launch", class_="vb-title-text"),
                         ui.tags.span(
                             popover(
-                                ui.tags.i(
-                                    class_="fa-solid fa-circle-info text-muted",
-                                    style="cursor:pointer;",
-                                ),
+                                ui.tags.i(class_="fa-solid fa-circle-info text-muted", style="cursor:pointer;"),
                                 ui.div(
-                                    ui.p(
-                                        "Projected date the product will be launched in an LMIC."
-                                    ),
+                                    ui.p("Projected date the product will be launched in an LMIC."),
                                     ui.tags.a(
                                         "Learn more",
                                         href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
@@ -937,10 +1249,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
                         ),
                         class_="vb-title",
                     ),
-                    ui.tags.span(
-                        format_date(row.get("proj_date_first_launch")),
-                        class_="fs-5 fw-semibold",
-                    ),
+                    ui.tags.span(format_date(row.get("proj_date_first_launch")), class_="fs-5 fw-semibold"),
                     fill=True,
                     class_="h-100 shadow-sm border",
                 ),
@@ -1063,6 +1372,9 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             # ),
         )
 
+    # ---------------------------------------------------------
+    # POLICY BOXES (popovers preserved; commented blocks kept)
+    # ---------------------------------------------------------
     @render.ui
     def policy_box():
         row = detail_row()
@@ -1072,7 +1384,9 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             ui.div(
                 ui.value_box(
                     ui.div(
-                        ui.tags.span("Kenya market authorization", class_="vb-title-text"),
+                        ui.tags.span(
+                            "Kenya market authorization", class_="vb-title-text"
+                        ),
                         ui.tags.span(
                             popover(
                                 ui.tags.i(
@@ -1112,7 +1426,9 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             ui.div(
                 ui.value_box(
                     ui.div(
-                        ui.tags.span("Senegal market authorization", class_="vb-title-text"),
+                        ui.tags.span(
+                            "Senegal market authorization", class_="vb-title-text"
+                        ),
                         ui.tags.span(
                             popover(
                                 ui.tags.i(
@@ -1152,7 +1468,9 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             ui.div(
                 ui.value_box(
                     ui.div(
-                        ui.tags.span("South Africa market authorization", class_="vb-title-text"),
+                        ui.tags.span(
+                            "South Africa market authorization", class_="vb-title-text"
+                        ),
                         ui.tags.span(
                             popover(
                                 ui.tags.i(
@@ -1200,9 +1518,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             #                         style="cursor:pointer;",
             #                     ),
             #                     ui.div(
-            #                         ui.p(
-            #                             "Placeholder: Status of national regulatory approval."
-            #                         ),
+            #                         ui.p("Placeholder: Status of national regulatory approval."),
             #                         ui.tags.a(
             #                             "Learn more",
             #                             href="https://github.com/ALIGN-Consortium/GlobalHub/tree/main/docs",
@@ -1217,9 +1533,7 @@ def innovation_details_server(id, selected_innovation, input, output, session):
             #             class_="vb-title",
             #         ),
             #         ui.tags.span(
-            #             "Not available"
-            #             if pd.isna(row.get("nra"))
-            #             else row.get("nra"),
+            #             "Not available" if pd.isna(row.get("nra")) else row.get("nra"),
             #             class_="fs-5 fw-semibold",
             #         ),
             #         fill=True,

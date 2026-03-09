@@ -1,6 +1,7 @@
 from shiny import ui, reactive
 from shiny.express import render, input
 from shiny.render import DataGrid
+from shiny.ui import popover
 import plotly.graph_objects as go
 import pandas as pd
 from utils.data_loader import load_data
@@ -113,7 +114,7 @@ def overview_ui(id):
             ui.div(
                 ui.div(
                     ui.div(
-                        ui.span("Market Overview", class_="fw-semibold"),
+                        ui.span("Market overview", class_="fw-semibold"),
                         ui.input_select(
                             "disease_selector",
                             None,
@@ -127,8 +128,34 @@ def overview_ui(id):
                         ui.div(
                             ui.div(
                                 ui.div(
-                                    "Forecast of products coming to market",
-                                    class_="card-header",
+                                    ui.div(
+                                        ui.tags.span(
+                                            "Forecast of products coming to market"
+                                        ),
+                                        ui.tags.span(
+                                            popover(
+                                                ui.tags.i(
+                                                    class_="fa-solid fa-circle-info text-muted",
+                                                    style="cursor:pointer;",
+                                                ),
+                                                ui.div(
+                                                    ui.p(
+                                                        "Projected date of first country-level launch, calculated from expected market approval date based on the method by Mao, Wenhui et al. Development, launch, and scale-up of health products in low-income and middle-income countries: a retrospective analysis on 59 health products. The Lancet Global Health, Volume 13, Issue 6, e1132 - e1139"
+                                                    ),
+                                                    ui.tags.a(
+                                                        "Learn more",
+                                                        href="https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00062-2/fulltext",
+                                                        target="_blank",
+                                                        class_="fw-semibold",
+                                                    ),
+                                                ),
+                                                title="Methodology",
+                                            ),
+                                            class_="ms-2",
+                                        ),
+                                        class_="d-flex align-items-center gap-1",
+                                    ),
+                                    class_="card-header d-flex align-items-center",
                                 ),
                                 ui.div(
                                     output_widget("trend_chart", height="360px"),
@@ -140,7 +167,7 @@ def overview_ui(id):
                         ),
                         ui.div(
                             ui.div(
-                                ui.div("Development Status", class_="card-header"),
+                                ui.div("Development status", class_="card-header"),
                                 ui.div(
                                     output_widget("pie_chart", height="360px"),
                                     class_="card-body",
@@ -186,7 +213,7 @@ def overview_ui(id):
             ui.div(
                 ui.div(
                     ui.div(
-                        ui.span("Product Explorer", class_="fw-semibold"),
+                        ui.span("Product explorer", class_="fw-semibold"),
                         ui.input_action_button(
                             "clear_filters",
                             ui.tags.span(
@@ -434,7 +461,7 @@ def overview_server(id, input, output, session):
             "date_proof_of_concept",
             "date_first_regulatory",
             "date_first_launch",
-            "proj_date_lmic_20_uptake",
+            "proj_date_first_launch",
         ]
 
         for c in date_cols:
@@ -507,6 +534,7 @@ def overview_server(id, input, output, session):
         )
         return fig
 
+    
     @render.data_frame
     def pipeline_tbl():
         """
@@ -528,24 +556,24 @@ def overview_server(id, input, output, session):
 
         return render.DataGrid(
             df_filtered.assign(
-                proj_date_lmic_20_uptake=lambda d: d[
-                    "proj_date_lmic_20_uptake"
+                proj_date_first_launch=lambda d: d[
+                    "proj_date_first_launch"
                 ].dt.strftime("%Y-%m-%d")
             ).rename(
                 columns={
                     "innovation": "Product",
                     "category": "Category",
                     "trial_status": "Status",
-                    "proj_date_lmic_20_uptake": "Projected Date of 20% Market Uptake",
-                    "disease": "Disease Area",
+                    "proj_date_first_launch": "Projected date of launch",
+                    "disease": "Disease area",
                 }
             )[
                 [
                     "Product",
-                    "Disease Area",
+                    "Disease area",
                     "Category",
                     "Status",
-                    "Projected Date of 20% Market Uptake",
+                    "Projected date of launch",
                 ]
             ],
             selection_mode="row",

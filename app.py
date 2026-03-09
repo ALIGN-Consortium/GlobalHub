@@ -3,6 +3,7 @@ from shiny import App, ui
 from shiny.ui import nav_panel
 from modules.about import about_ui
 from modules.overview import overview_ui, overview_server
+from modules.overview_and_innovations import innovation_page_ui, innovation_page_server
 from modules.innovation_details import innovation_details_ui, innovation_details_server
 from modules.comparison import comparison_ui, comparison_server
 from utils.theme import create_theme
@@ -13,18 +14,22 @@ app_ui = ui.page_navbar(
         "About",
         about_ui("about"),
     ),
+    # nav_panel(
+    #     "Overview",
+    #     overview_ui("overview"),
+    # ),
     nav_panel(
         "Overview",
-        overview_ui("overview"),
-    ),
-    nav_panel(
-        "Innovation Details",
-        innovation_details_ui("innovation_details"),
+        innovation_page_ui("innovation_page"),
     ),
     # nav_panel(
-    #     "Product Comparison",
-    #     comparison_ui("comparison"),
+    #     "Innovation Details",
+    #     innovation_details_ui("innovation_details"),
     # ),
+    nav_panel(
+        "Product Comparison",
+        comparison_ui("comparison"),
+    ),
     id="main_nav",
     title=ui.tags.div(
         ui.tags.img(src="logo/without_partners.png", height="100px"),
@@ -73,16 +78,15 @@ app_ui = ui.page_navbar(
     ),
 )
 
-
 def server(input, output, session):
     """
     Main server function that orchestrates module servers.
     """
-    selected_innovation = overview_server("overview", input, output, session)
-    innovation_details_server(
-        "innovation_details", selected_innovation, input, output, session
-    )
+    # selected_innovation = overview_server("overview", input, output, session)
+    # innovation_details_server("innovation_details", selected_innovation, input, output, session)
     comparison_server("comparison", input, output, session)
+    # innovation_page_server("innovation_page", input, output, session)
+    innovation_page_server("innovation_page")
 
 
 app = App(app_ui, server, static_assets=os.path.join(os.path.dirname(__file__), "www"))

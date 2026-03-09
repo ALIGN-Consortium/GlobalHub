@@ -83,31 +83,9 @@ def _preprocess_data(df: pd.DataFrame) -> pd.DataFrame:
 
     # Market Year Generation
     # Used for the "Forecast of products" trend chart in Overview
-    if "proj_date_lmic_20_uptake" in df.columns:
-        df["market_year"] = df["proj_date_lmic_20_uptake"].dt.year
+    if "proj_date_first_launch" in df.columns:
+        df["market_year"] = df["proj_date_first_launch"].dt.year
 
-    #  Numeric Conversions
-    # Ensures all metric columns are actual numbers for plotting/calculations
-    numeric_cols = [
-        # "prob_success",
-        "readiness",
-        "financing",
-        # "dalys",
-        "dalys_averted",
-        "deaths_averted",
-        "yll",
-        # "hs_costs",
-        "dalys_monetized",
-        # "time_to_regulatory_approval",
-        # "time_approval_to_first_launch",
-        # "time_launch_to_20lmic",
-        "impact_potential",
-        "introduction_readiness",
-    ]
-
-    # for col in numeric_cols:
-    #     if col in df.columns:
-    #         df[col] = pd.to_numeric(df[col], errors="coerce")
     return df
 
 
