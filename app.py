@@ -14,18 +14,10 @@ app_ui = ui.page_navbar(
         "About",
         about_ui("about"),
     ),
-    # nav_panel(
-    #     "Overview",
-    #     overview_ui("overview"),
-    # ),
     nav_panel(
         "Overview",
         innovation_page_ui("innovation_page"),
     ),
-    # nav_panel(
-    #     "Innovation Details",
-    #     innovation_details_ui("innovation_details"),
-    # ),
     nav_panel(
         "Product Comparison",
         comparison_ui("comparison"),
@@ -82,10 +74,7 @@ def server(input, output, session):
     """
     Main server function that orchestrates module servers.
     """
-    # selected_innovation = overview_server("overview", input, output, session)
-    # innovation_details_server("innovation_details", selected_innovation, input, output, session)
     comparison_server("comparison", input, output, session)
-    # innovation_page_server("innovation_page", input, output, session)
     innovation_page_server("innovation_page")
 
 
