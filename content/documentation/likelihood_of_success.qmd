@@ -16,10 +16,12 @@ Developing and introducing new health products is inherently risky. The ALIGN Gl
 The Hub applies a multi-dimensional framework to assess the probability of a product reaching the market and achieving impact.
 
 ### 1. Technical and Regulatory Success
+
 - **Definition:** The probability that a product will successfully complete clinical trials and receive regulatory approval.
 - **Assessment:** Based on historical success rates for the product's development archetype (e.g., using the P2I model).
 
 ### 2. Market and Policy Success
+
 - **Definition:** The probability that an approved product will be successfully procured, introduced into guidelines, and achieve significant market uptake.
 - **Assessment:** Based on signals such as inclusion in WHO EMLs, funding commitments from major donors (e.g., Global Fund, Gavi), and manufacturer capacity.
 

@@ -29,33 +29,37 @@ The ALIGN Global Hub integrates structured data across pharmaceutical R&D, regul
 ## Database Profiles (Key Examples)
 
 ### Impact Global Health R&D Tracker
+
 - **Function:** Tracks R&D funding for neglected diseases, including malaria, TB, and HIV.
 - **Coverage:** Global.
 - **Products:** 142 records.
-- **URL:** [https://www.impactglobalhealth.org/data/infectious-disease](https://www.impactglobalhealth.org/data/infectious-disease)
+- **URL:** [https://www.impactglobalhealth.org/data/infectious-disease](https://www.impactglobalhealth.org/data/infectious-disease){target="_blank"}
 - **Profile:** Provides insights into funding commitments and developer landscapes for major infectious diseases.
 
 ### FIND DxConnect Test Directory
+
 - **Function:** Comprehensive directory for global diagnostics.
 - **Coverage:** Global.
 - **Products:** 221 records.
-- **URL:** [https://finddx.org/](https://finddx.org/)
+- **URL:** [https://finddx.org/](https://finddx.org/){target="_blank"}
 - **Profile:** Key source for point-of-care and laboratory-based diagnostic tools for HIV, TB, and malaria.
 
 ### MMV (Medicines for Malaria Venture) Pipeline
+
 - **Function:** Tracks development of new antimalarial drugs.
 - **Coverage:** Global.
 - **Products:** 117 records.
-- **URL:** [https://www.mmv.org/](https://www.mmv.org/)
+- **URL:** [https://www.mmv.org/](https://www.mmv.org/){target="_blank"}
 - **Profile:** High-quality data on the current state of clinical and preclinical antimalarial therapeutics.
 
 ### DNDi (Drugs for Neglected Diseases initiative) Portfolio
+
 - **Function:** R&D portfolio for neglected diseases.
 - **Coverage:** Global.
 - **Products:** Various therapeutics.
-- **URL:** [https://dndi.org/](https://dndi.org/)
+- **URL:** [https://dndi.org/](https://dndi.org/){target="_blank"}
 - **Profile:** Focuses on patient-centric drug development for diseases that primarily affect LMICs.
 
 ## Integration Methods
 
-For technical details on how these databases are harmonized into a single registry, refer to the [Source Integration Methods](source_methods.html).
+For technical details on how these databases are harmonized into a single registry, refer to the [Source Integration Methods](source_methods.html){target="_blank"}.

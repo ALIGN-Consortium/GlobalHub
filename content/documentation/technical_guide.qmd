@@ -31,6 +31,7 @@ A **shared reactive cart** is implemented in the main `server` function in `app.
 
 ### 3. Unified Reactive Filtering
 The application uses a **tiered reactive data strategy** to ensure data consistency across multiple UI components (tables, charts, and projections).
+
 - **`base_df()`**: Core data for the page.
 - **`disease_df()`**: Filters the data based on the user-selected disease area.
 - **`page_df()`**: Consumes all active filters (e.g., dropdowns and plot clicks) to provide a final dataset for visual components.
@@ -40,6 +41,7 @@ The dashboard uses Plotly for interactive charts (Treemaps, Pie charts). These c
 
 ### 5. Data Harmonization Pipeline
 The `utils/data_loader.py` script orchestrates the loading and processing of data. It handles:
+
 - **Date Normalization:** Using `pd.to_datetime` with `dayfirst=True` and `format='mixed'`.
 - **Numeric Coercion:** Ensuring all metrics (scores, DALYs, costs) are correctly typed.
 - **Data Merging:** Integrating external `PopulationData.csv` into the main product registry.
@@ -48,6 +50,7 @@ The `utils/data_loader.py` script orchestrates the loading and processing of dat
 
 ### Design System
 The application follows a consistent design system defined in `BRAND.md` and `www/styles.css`.
+
 - **Primary Color:** `#012169` (Primary Blue)
 - **Accent Color:** `#00539B` (Accent Blue)
 - **Typography:** 'Inter Tight' for headers and 'Inter' for body text.
@@ -61,4 +64,5 @@ The project uses `uv` for Python dependency management. To run the application l
 ```bash
 uv run shiny run app.py
 ```
-For more information on the development environment and prerequisites, refer to the [README.md](../../README.md).
+
+For more information on the development environment and prerequisites, refer to the [README.md](../../README.md){target="_blank"}.

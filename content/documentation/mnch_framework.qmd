@@ -24,18 +24,21 @@ The Hub covers a wide range of health products designed to improve outcomes for 
 MNCH products are categorized based on their intended use and the clinical conditions they address:
 
 ### 1. Maternal Disorders
+
 - Hypertensive disorders of pregnancy (e.g., Pre-eclampsia, Eclampsia)
 - Maternal hemorrhage
 - Maternal sepsis and other maternal infections
 - Obstructed labor and uterine rupture
 
 ### 2. Neonatal Disorders
+
 - Preterm birth complications
 - Neonatal encephalopathy (birth asphyxia and trauma)
 - Neonatal sepsis and other infections
 - Hemolytic disease and other neonatal jaundice
 
 ### 3. Child Health and Nutrition
+
 - Nutritional deficiencies (e.g., Vitamin A deficiency, Anemia)
 - Diarrheal diseases
 - Lower respiratory infections (e.g., Pneumonia)
@@ -44,6 +47,7 @@ MNCH products are categorized based on their intended use and the clinical condi
 ## Data Sources for MNCH
 
 MNCH data is integrated from several key sources, including:
+
 - **Impact Global Health:** Maternal health products and gynecological products trackers.
 - **WHO Global Health Estimates:** For disease burden and prevalence data.
 - **UNICEF Supply Catalogue:** For procurement signals and product availability.

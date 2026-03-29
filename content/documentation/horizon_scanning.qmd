@@ -14,6 +14,7 @@ The Global Hub builds on ALIGN’s comprehensive horizon scanning system. This r
 ## Horizon Scanning Goals
 
 The primary goals of the ALIGN horizon scanning system are to:
+
 - **Identify** emerging health products and technologies.
 - **Track** development and regulatory progress over time.
 - **Anticipate** market entry and potential system bottlenecks.
@@ -38,4 +39,4 @@ For a detailed analysis of the current global health product landscape, includin
 
 ## Methodology Reference
 
-For information on how the horizon scan is performed and how data is integrated, see the [Project Methodology](methodology.html) and [Source Integration Methods](source_methods.html) documents.
+For information on how the horizon scan is performed and how data is integrated, see the [Project Methodology](methodology.html){target="_blank"} and [Source Integration Methods](source_methods.html){target="_blank"} documents.

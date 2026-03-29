@@ -16,20 +16,23 @@ The ALIGN Global Hub maintains a structured registry of health products and inno
 To be included in the Global Hub, a health product must meet the following criteria:
 
 ### 1. Disease Area
+
 The product must target one or more of the following high-priority disease areas:
+
 - **HIV/AIDS**
 - **Tuberculosis (TB)**
 - **Malaria**
 - **Maternal, Newborn, and Child Health (MNCH)**
 
 ### 2. Development Stage
+
 The Hub focuses on products that are in advanced development or already available in the market. A product is typically included if it has reached:
+
 - **Phase 2 Clinical Trials** or later.
-- **Phase 3** or **Phase 4** trials.
-- **Market Authorization** or **WHO Prequalification**.
-- *Note:* While some earlier-stage products may be present if they are of high strategic importance, the primary focus is on the advanced pipeline.
+- Not have achieved **Market Authorization** in at least one of the partner countries (Senegal, South Africa, or Kenya).
 
 ### 3. Innovation Category
+
 The Hub tracks innovations across several categories:
 - **Diagnostics** (e.g., assays, point-of-care tests)
 - **Therapeutics** (e.g., drugs, biologics)
@@ -40,6 +43,7 @@ The Hub tracks innovations across several categories:
 ## Product Exclusion Criteria
 
 Products are excluded from the Hub if:
+
 - They target diseases outside the scope of ALIGN (e.g., non-communicable diseases not related to MNCH).
 - They are in the very early stages of development (Preclinical or Phase 1), unless they represent a major technological breakthrough.
 - Development has been officially terminated or "on hold" for more than 5 years without update.
@@ -50,6 +54,7 @@ ALIGN integrates multiple external databases to provide a comprehensive view of 
 
 ### Inclusion Rationale
 Databases are selected based on:
+
 - **Relevance:** High coverage of the priority disease areas.
 - **Credibility:** Maintained by reputable global health organizations, regulatory bodies, or research institutions.
 - **Data Structure:** Availability of structured data (API, CSV exports) that allows for automated or semi-automated integration.
@@ -57,6 +62,7 @@ Databases are selected based on:
 
 ### Exclusion Rationale
 Databases may be excluded if:
+
 - They require high-cost proprietary licenses that limit public dissemination.
 - The data is excessively fragmented or lacks sufficient identifiers (e.g., manufacturer name, product name) to allow for deduplication.
 - The source has not been updated for more than 2 years.

@@ -15,6 +15,7 @@ The accuracy and reliability of the ALIGN Global Hub depend on a rigorous data v
 
 ### 1. Automated Data Quality Checks
 Upon every update of the data integration pipeline, the following automated checks are performed:
+
 - **Schema Validation:** Ensuring all columns are present and contain data of the correct type.
 - **Range Checks:** Identifying dates that are logically inconsistent (e.g., a launch date that occurs before a trial start date).
 - **Duplicate Detection:** Flagging potential duplicate records for manual review.
@@ -24,6 +25,7 @@ When a product is present in multiple integrated databases, the Hub automaticall
 
 ### 3. Subject Matter Expert (SME) Review
 Periodically, the ALIGN consortium partners (Duke GHIC, SAMRC, Keprecon, ENDA Santé) perform manual reviews of the product registry, focusing on:
+
 - **High-Priority Products:** Ensuring the most recent and accurate data for products near market entry.
 - **New Disease Areas:** Validating the initial data load for newly added disease applications.
 

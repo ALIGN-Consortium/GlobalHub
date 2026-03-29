@@ -16,29 +16,34 @@ Tracking the journey of a health product from development to introduction is ess
 The Hub monitors the following critical points in a product's lifecycle:
 
 ### 1. Proof of Concept
+
 - **Definition:** The point at which a product has demonstrated its intended effect in a relevant model (e.g., animal model or early human trials).
 - **Significance:** Marks the transition from discovery to formal development.
 
 ### 2. Marketing Authorization
+
 - **Definition:** Formal approval from a National Regulatory Authority (NRA) or a global body (e.g., WHO PQ, US FDA) to market and sell the product.
 - **Significance:** A prerequisite for procurement and large-scale introduction.
 
 ### 3. First Launch in LMICs
+
 - **Definition:** The first time the product is commercially available or introduced through a public health program in a Low- or Middle-Income Country.
 - **Significance:** A key indicator of global access and equitable introduction.
 
 ### 4. 20% Market Uptake
+
 - **Definition:** The milestone at which the product has reached 20% of its target population in LMIC markets.
 - **Significance:** Indicates that the product has successfully moved beyond initial introduction into a scaling phase.
 
 ## Data and Projections
 
 - **Observed Milestones:** Dates for milestones that have already occurred are captured from clinical trial registries, regulatory databases, and manufacturer announcements.
-- **Projected Milestones:** For products still in development, the Hub provides estimated dates based on the [Mao et al. (2025) forecasting methodology](forecasting.html).
+- **Projected Milestones:** For products still in development, the Hub provides estimated dates based on the [Mao et al. (2025) forecasting methodology](forecasting.html){target="_blank"}.
 
 ## Use Cases
 
 These milestones support several decision points:
+
 - **Prioritization:** Identifying which products are closest to market.
 - **Sequencing:** Planning the order of product introductions based on expected timelines.
 - **Financing Alignment:** Aligning budget cycles with projected procurement dates.

@@ -29,4 +29,4 @@ This glossary provides definitions for the common terms and acronyms used throug
 
 ## Further Reading
 
-For more detailed information on specific fields and data sources, refer to the [Data Dictionary](data_dictionary.html) and [Integrated Horizon Scanning Sources](horizon_sources.html).
+For more detailed information on specific fields and data sources, refer to the [Data Dictionary](data_dictionary.html){target="_blank"} and [Integrated Horizon Scanning Sources](horizon_sources.html){target="_blank"}.

@@ -2780,7 +2780,12 @@ margin: 1.5rem 0;
 </section>
 <section id="unified-reactive-filtering" class="level3">
 <h3 class="anchored" data-anchor-id="unified-reactive-filtering">3. Unified Reactive Filtering</h3>
-<p>The application uses a <strong>tiered reactive data strategy</strong> to ensure data consistency across multiple UI components (tables, charts, and projections). - <strong><code>base_df()</code></strong>: Core data for the page. - <strong><code>disease_df()</code></strong>: Filters the data based on the user-selected disease area. - <strong><code>page_df()</code></strong>: Consumes all active filters (e.g., dropdowns and plot clicks) to provide a final dataset for visual components.</p>
+<p>The application uses a <strong>tiered reactive data strategy</strong> to ensure data consistency across multiple UI components (tables, charts, and projections).</p>
+<ul>
+<li><strong><code>base_df()</code></strong>: Core data for the page.</li>
+<li><strong><code>disease_df()</code></strong>: Filters the data based on the user-selected disease area.</li>
+<li><strong><code>page_df()</code></strong>: Consumes all active filters (e.g., dropdowns and plot clicks) to provide a final dataset for visual components.</li>
+</ul>
 </section>
 <section id="cross-filtering-with-plotly" class="level3">
 <h3 class="anchored" data-anchor-id="cross-filtering-with-plotly">4. Cross-Filtering with Plotly</h3>
@@ -2788,14 +2793,24 @@ margin: 1.5rem 0;
 </section>
 <section id="data-harmonization-pipeline" class="level3">
 <h3 class="anchored" data-anchor-id="data-harmonization-pipeline">5. Data Harmonization Pipeline</h3>
-<p>The <code>utils/data_loader.py</code> script orchestrates the loading and processing of data. It handles: - <strong>Date Normalization:</strong> Using <code>pd.to_datetime</code> with <code>dayfirst=True</code> and <code>format=&#39;mixed&#39;</code>. - <strong>Numeric Coercion:</strong> Ensuring all metrics (scores, DALYs, costs) are correctly typed. - <strong>Data Merging:</strong> Integrating external <code>PopulationData.csv</code> into the main product registry.</p>
+<p>The <code>utils/data_loader.py</code> script orchestrates the loading and processing of data. It handles:</p>
+<ul>
+<li><strong>Date Normalization:</strong> Using <code>pd.to_datetime</code> with <code>dayfirst=True</code> and <code>format=&#39;mixed&#39;</code>.</li>
+<li><strong>Numeric Coercion:</strong> Ensuring all metrics (scores, DALYs, costs) are correctly typed.</li>
+<li><strong>Data Merging:</strong> Integrating external <code>PopulationData.csv</code> into the main product registry.</li>
+</ul>
 </section>
 </section>
 <section id="ui-and-ux-standards" class="level2">
 <h2 class="anchored" data-anchor-id="ui-and-ux-standards">UI and UX Standards</h2>
 <section id="design-system" class="level3">
 <h3 class="anchored" data-anchor-id="design-system">Design System</h3>
-<p>The application follows a consistent design system defined in <code>BRAND.md</code> and <code>www/styles.css</code>. - <strong>Primary Color:</strong> <code>#012169</code> (Primary Blue) - <strong>Accent Color:</strong> <code>#00539B</code> (Accent Blue) - <strong>Typography:</strong> ‘Inter Tight’ for headers and ‘Inter’ for body text.</p>
+<p>The application follows a consistent design system defined in <code>BRAND.md</code> and <code>www/styles.css</code>.</p>
+<ul>
+<li><strong>Primary Color:</strong> <code>#012169</code> (Primary Blue)</li>
+<li><strong>Accent Color:</strong> <code>#00539B</code> (Accent Blue)</li>
+<li><strong>Typography:</strong> ‘Inter Tight’ for headers and ‘Inter’ for body text.</li>
+</ul>
 </section>
 <section id="accessibility" class="level3">
 <h3 class="anchored" data-anchor-id="accessibility">Accessibility</h3>
@@ -2806,7 +2821,7 @@ margin: 1.5rem 0;
 <h2 class="anchored" data-anchor-id="development-and-deployment">Development and Deployment</h2>
 <p>The project uses <code>uv</code> for Python dependency management. To run the application locally, use:</p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode bash code-with-copy"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="ex">uv</span> run shiny run app.py</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>For more information on the development environment and prerequisites, refer to the <a href="../../README.md">README.md</a>.</p>
+<p>For more information on the development environment and prerequisites, refer to the <a href="../../README.md" target="_blank">README.md</a>.</p>
 </section>
 
 </main>

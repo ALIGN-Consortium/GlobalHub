@@ -18,11 +18,13 @@ Cost-effectiveness data is gathered from peer-reviewed literature, health techno
 
 ### 2. Standardized Metrics
 Where possible, the Hub uses standardized metrics to allow for cross-product comparison:
+
 - **Cost per DALY Averted:** The cost required to avoid one Disability-Adjusted Life Year.
 - **Cost per Case Averted:** The cost required to prevent one case of the target disease.
 
 ### 3. Data Presentation
 In the Global Hub, cost-effectiveness is typically represented as:
+
 - **Comparative Benchmarks:** Showing how a product's cost-effectiveness compares to existing standards of care.
 - **Categorical Ratings:** High, Medium, or Low cost-effectiveness based on established thresholds (e.g., WHO-CHOICE thresholds).
 

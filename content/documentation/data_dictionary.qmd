@@ -15,14 +15,17 @@ This Data Dictionary defines the fields and terms used in the ALIGN Global Hub. 
 
 ### Global Regulatory Approval (GRA)
 The **Global Regulatory Approval** field indicates whether a health product has received authorization or prequalification by a global body.
+
 - **Includes:** WHO Prequalification (PQ), US FDA approval, EMA approval, or other approvals from Stringent Regulatory Authorities (SRA).
 - **Emergency Use:** Includes Emergency Use Authorizations (EUA) where applicable for public health emergencies.
 - **Values:** `Yes`, `No`, `Under Review`.
 
 ### Trial Phase
 The development stage of the product based on clinical trial activity.
+
 - **Rule:** If a product is in multiple phases simultaneously (e.g., Phase 2/3), the **highest phase** is recorded.
 - **Values:**
+
     - `Phase 1`: Initial human safety testing.
     - `Phase 2`: Efficacy and safety testing in target populations.
     - `Phase 3`: Large-scale confirmatory testing.
@@ -31,10 +34,12 @@ The development stage of the product based on clinical trial activity.
 
 ### National Regulatory Authority (NRA)
 Indicates the status of national marketing authorization in specific countries (e.g., Kenya, Senegal, South Africa).
+
 - **Values:** `Yes`, `No`, `Under Review`.
 
 ### WHO Essential Medicines List (EML)
 Indicates if the product is listed on the WHO Model List of Essential Medicines or the Model List of Essential Diagnostics.
+
 - **Values:** `Yes`, `No`.
 
 ## Field Definitions
@@ -55,6 +60,7 @@ Indicates if the product is listed on the WHO Model List of Essential Medicines 
 ## Methodology References
 
 For detailed information on how projected dates and readiness scores are calculated, please refer to the following documents:
+
 - [Forecasting Methods (Mao et al. 2025)](forecasting.html)
 - [Methodology Report](methodology.html)
 - [Product Milestones](product_milestones.html)

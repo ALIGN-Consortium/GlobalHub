@@ -2724,15 +2724,29 @@ margin: 1.5rem 0;
 </section>
 <section id="standardization" class="level3">
 <h3 class="anchored" data-anchor-id="standardization">2. Standardization</h3>
-<p>Field names and values are mapped to a common schema. - <strong>Date Standardization:</strong> All dates are converted to a standard ISO format (YYYY-MM-DD). - <strong>Categorical Mapping:</strong> Product types (e.g., “Diagnostic Test”, “Assay”) are mapped to a set of controlled vocabularies (e.g., “Diagnostic”).</p>
+<p>Field names and values are mapped to a common schema.</p>
+<ul>
+<li><strong>Date Standardization:</strong> All dates are converted to a standard ISO format (YYYY-MM-DD).</li>
+<li><strong>Categorical Mapping:</strong> Product types (e.g., “Diagnostic Test”, “Assay”) are mapped to a set of controlled vocabularies (e.g., “Diagnostic”).</li>
+</ul>
 </section>
 <section id="record-linking-and-deduplication" class="level3">
 <h3 class="anchored" data-anchor-id="record-linking-and-deduplication">3. Record Linking and Deduplication</h3>
-<p>The Hub uses a combination of automated and manual methods to link records across sources: - <strong>Exact Match:</strong> Matching on product name and manufacturer. - <strong>Fuzzy Match:</strong> Handling variations in spelling, synonyms, and brand names. - <strong>Identifier Match:</strong> Using unique IDs like ClinicalTrials.gov (NCT) numbers or WHO Prequalification IDs.</p>
+<p>The Hub uses a combination of automated and manual methods to link records across sources:</p>
+<ul>
+<li><strong>Exact Match:</strong> Matching on product name and manufacturer.</li>
+<li><strong>Fuzzy Match:</strong> Handling variations in spelling, synonyms, and brand names.</li>
+<li><strong>Identifier Match:</strong> Using unique IDs like ClinicalTrials.gov (NCT) numbers or WHO Prequalification IDs.</li>
+</ul>
 </section>
 <section id="rule-based-reconciliation" class="level3">
 <h3 class="anchored" data-anchor-id="rule-based-reconciliation">4. Rule-Based Reconciliation</h3>
-<p>When multiple sources provide information on the same product, the following rules are applied: - <strong>Trial Phase:</strong> The highest (most advanced) phase is recorded. - <strong>Approval Status:</strong> If any source indicates a “Yes” for regulatory approval (e.g., WHO PQ, US FDA), the product is marked as approved. - <strong>Projected Dates:</strong> Dates from the most recent data extraction are prioritized.</p>
+<p>When multiple sources provide information on the same product, the following rules are applied:</p>
+<ul>
+<li><strong>Trial Phase:</strong> The highest (most advanced) phase is recorded.</li>
+<li><strong>Approval Status:</strong> If any source indicates a “Yes” for regulatory approval (e.g., WHO PQ, US FDA), the product is marked as approved.</li>
+<li><strong>Projected Dates:</strong> Dates from the most recent data extraction are prioritized.</li>
+</ul>
 </section>
 </section>
 <section id="quality-control" class="level2">

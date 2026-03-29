@@ -18,17 +18,20 @@ Data is extracted from external databases (e.g., CSV, Excel, API) and loaded int
 
 ### 2. Standardization
 Field names and values are mapped to a common schema.
+
 - **Date Standardization:** All dates are converted to a standard ISO format (YYYY-MM-DD).
 - **Categorical Mapping:** Product types (e.g., "Diagnostic Test", "Assay") are mapped to a set of controlled vocabularies (e.g., "Diagnostic").
 
 ### 3. Record Linking and Deduplication
 The Hub uses a combination of automated and manual methods to link records across sources:
+
 - **Exact Match:** Matching on product name and manufacturer.
 - **Fuzzy Match:** Handling variations in spelling, synonyms, and brand names.
 - **Identifier Match:** Using unique IDs like ClinicalTrials.gov (NCT) numbers or WHO Prequalification IDs.
 
 ### 4. Rule-Based Reconciliation
 When multiple sources provide information on the same product, the following rules are applied:
+
 - **Trial Phase:** The highest (most advanced) phase is recorded.
 - **Approval Status:** If any source indicates a "Yes" for regulatory approval (e.g., WHO PQ, US FDA), the product is marked as approved.
 - **Projected Dates:** Dates from the most recent data extraction are prioritized.
