@@ -1,5 +1,4 @@
-from shiny import ui, reactive, req as shiny_req
-from shiny.express import render, input
+from shiny import ui, reactive, module, render, req as shiny_req
 import pandas as pd
 import numpy as np
 import plotly.graph_objects as go
@@ -11,8 +10,6 @@ def req(condition):
     """
     Helper to stop execution if a condition is not met (similar to R Shiny's req).
     """
-    import pandas as pd
-
     if isinstance(condition, (pd.DataFrame, pd.Series)):
         if condition.empty:
             shiny_req(False)
@@ -21,31 +18,62 @@ def req(condition):
         shiny_req(False)
 
 
-def comparison_ui(id):
+@module.ui
+def comparison_ui():
     """
     Defines the User Interface for the Product Comparison module.
-
-    Layout:
-    1. Innovation Selector: Selectize input for choosing multiple products.
-    2. Impact & Readiness Heatmap: A comparison table with conditional formatting.
-    3. Time to Approval/Market: A comparative horizontal timeline of milestones.
     """
     return ui.div(
         ui.div(
-            ui.h2("Product Comparison", class_="mb-1"),
-            ui.p(
-                "Select multiple products to compare their key metrics.",
-                class_="text-muted",
+            ui.div(
+                ui.div(
+                        ui.h2("Product comparison", class_="mb-1"),
+                    ui.p(
+                        "Review and compare the products you added to your list.",
+                        class_="text-muted",
+                    ),
+                    class_="col-md-8",
+                ),
+                ui.div(
+                    ui.input_selectize(
+                        "product_search_comp",
+                        "Add more products:",
+                        choices=[],  # Filled by server
+                        multiple=True,
+                        width="100%",
+                    ),
+                    ui.input_action_button(
+                        "add_search_to_cart_comp",
+                        ui.tags.span(
+                            ui.tags.i(class_="fa-solid fa-plus me-1"), "Add to list"
+                        ),
+                        class_="btn btn-primary btn-sm w-100 mt-2",
+                    ),
+                    class_="col-md-4 card p-3",
+                ),
+                class_="row mb-4 align-items-center",
             ),
             ui.div(
-                ui.input_selectize(
-                    "selected_innovations_compare",
-                    "Select Products to Compare",
-                    choices=[],  # Will be populated dynamically
-                    multiple=True,
-                    width="100%",
+                ui.div(
+                    ui.div(
+                        ui.span("Products in Your List", class_="fw-semibold"),
+                        ui.input_action_button(
+                            "remove_selected_from_cart_comp",
+                            ui.tags.span(
+                                ui.tags.i(class_="fa-solid fa-trash me-1"), "Remove from list"
+                            ),
+                            class_="btn btn-sm btn-outline-danger",
+                        ),
+                        class_="d-flex justify-content-between align-items-center w-100",
+                    ),
+                    class_="card-header",
                 ),
-                class_="card p-3 shadow-sm bg-light border-0 mb-4",
+                ui.div(
+                    ui.output_data_frame("pipeline_compare"),
+                    class_="card-body p-0",
+                ),
+                class_="card mb-4",
+                style="min-height:350px;",
             ),
             class_="mb-4",
         ),
@@ -66,7 +94,7 @@ def comparison_ui(id):
         ui.div(
             ui.div(
                 ui.div(
-                    ui.div("Time to Approval/Market", class_="card-header"),
+                    ui.div("Speedometer Introduction Milestone Tracking", class_="card-header"),
                     ui.div(
                         output_widget("time_to_market_plot", height="auto"),
                         id="timeline_card_body",
@@ -78,202 +106,183 @@ def comparison_ui(id):
             ),
             class_="row g-4",
         ),
-        id=id,
     )
 
 
-def comparison_server(id, input, output, session):
+@module.server
+def comparison_server(input, output, session, cart):
     """
     Server logic for the Product Comparison module.
-
-    Handles:
-    - Populating the innovation selector with unique product names.
-    - Generating a comparison table with color-coded heatmap logic.
-    - Plotting a comparative timeline of product milestones.
     """
     data = load_data()
-    horizon_df = data["horizon"]
+    horizon_df = data["horizon"].copy()
+    selected_comp_innovation = reactive.Value(None)
 
-    # Define colors for the plots
-    colors = [
-        "#00539B",
-        "#228B22",
-        "#DC143C",
-        "#FFD700",
-        "#012169",
-        "#BFBBBB",
-    ]  # ALGIN colors
+    def comparison_base_df():
+        """
+        Returns only products currently in the cart.
+        """
+        items = list(cart.get())
+        out = horizon_df[horizon_df["innovation"].isin(items)].copy()
 
-    # Populate selectize input choices
-    @reactive.Effect
-    def _():
-        # currently not allowing the user to chose innovations without dates forecasted.
-        choices = (
-            horizon_df[horizon_df["proj_date_lmic_20_uptake"].notna()]["innovation"]
-            .unique()
-            .tolist()
+        return (
+            out.loc[out["scope"] == "WHO"].copy().reset_index(drop=True)
         )
-        ui.update_selectize("selected_innovations_compare", choices=choices)
+
+
+        # out = horizon_df[horizon_df["trial_status"] != "Phase 1"].copy()
+
+        # # Removes empty time stamps or time stamps way too in the past
+        # out = out[
+        #     out["proj_date_lmic_20_uptake"].notna()
+        #     & (out["proj_date_lmic_20_uptake"] >= pd.Timestamp("2025-01-01"))
+        # ]
+        # return (
+        #     out.loc[out["scope"] == "WHO"].copy().reset_index(drop=True)
+        # )
+
+    def selected_rows_as_list():
+        rows = input.pipeline_compare_selected_rows()
+
+        if rows is None or rows == []:
+            return []
+
+        return np.atleast_1d(rows).tolist()
+
+    @reactive.Calc
+    def selected_innovation_ids():
+        # In the new logic, all products in comparison_base_df (i.e. in cart) are compared
+        base = comparison_base_df()
+        if base.empty:
+            return []
+        return base["innovation"].tolist()
+
+    @render.data_frame
+    def pipeline_compare():
+        df = comparison_base_df().assign(
+            proj_date_first_launch=lambda d: pd.to_datetime(
+                d["proj_date_first_launch"], errors="coerce"
+            ).dt.strftime("%Y-%m-%d")
+        )
+
+        return render.DataGrid(
+            df.rename(
+                columns={
+                    "innovation": "Product",
+                    "disease": "Disease",
+                    "trial_status": "Stage",
+                    "proj_date_first_launch": "Projected launch",
+                }
+            )[["Product", "Disease", "Stage", "Projected launch"]],
+            selection_mode="row",
+            filters=False,
+            summary=False,
+            width="100%",
+        )
+
+    @reactive.Effect
+    @reactive.event(input.pipeline_compare_selected_rows)
+    def _on_row_select_comp():
+        if not input.pipeline_compare_selected_rows():
+            selected_comp_innovation.set(None)
+            return
+
+        idx = input.pipeline_compare_selected_rows()[0]
+        df_f = comparison_base_df()
+        if not df_f.empty and idx < len(df_f):
+            selected_id = df_f.iloc[idx]["innovation"]
+            selected_comp_innovation.set(selected_id)
+
+    @reactive.Effect
+    def _update_comp_search():
+        all_products = sorted(horizon_df["innovation"].dropna().unique().tolist())
+        ui.update_selectize(
+            "product_search_comp",
+            choices=all_products,
+            selected=None,
+            server=True
+        )
+
+    @reactive.Effect
+    @reactive.event(input.add_search_to_cart_comp)
+    def _add_search_to_cart_comp():
+        searched = input.product_search_comp()
+        if searched:
+            current = cart.get()
+            new_cart = current.copy()
+            for prod in searched:
+                new_cart.add(prod)
+            cart.set(new_cart)
+            ui.update_selectize("product_search_comp", selected=[])
+
+    @reactive.Effect
+    @reactive.event(input.remove_selected_from_cart_comp)
+    def _remove_selected_from_cart_comp():
+        selected_id = selected_comp_innovation.get()
+        if selected_id:
+            current = cart.get()
+            if selected_id in current:
+                new_cart = current.copy()
+                new_cart.remove(selected_id)
+                cart.set(new_cart)
+                ui.notification_show(f"Removed {selected_id} from comparison list", type="message")
+                selected_comp_innovation.set(None)
+        else:
+            ui.notification_show("Please select a product to remove from the list", type="warning")
+
+    @reactive.Effect
+    def _sync_selection():
+        current_cart = cart.get()
+        selected_id = selected_comp_innovation.get()
+        if selected_id and selected_id not in current_cart:
+            selected_comp_innovation.set(None)
 
     @reactive.Calc
     def selected_innovations_data():
-        """
-        Reactive calculation that returns the subset of horizon_df
-        containing only the innovations selected by the user.
-        """
-        selected_ids = input.selected_innovations_compare()
+        selected_ids = selected_innovation_ids()
+
         if not selected_ids:
             return pd.DataFrame()
-        return horizon_df[horizon_df["innovation"].isin(selected_ids)]
 
-    # ## PD HEATMAP
-    # @render.table
-    # def comparison_heatmap():
-    #     """
-    #     Renders the side-by-side comparison table.
-    #     Applies color coding (Heatmap style) to numeric rows based on performance.
-    #     """
-    #     selected_ids = input.selected_innovations_compare()
-    #     if not selected_ids:
-    #         return pd.DataFrame({"Message": ["Select products to compare"]})
+        return horizon_df[horizon_df["innovation"].isin(selected_ids)].copy()
 
-    #     # Filter the main dataframe for the selected innovations
-    #     df_filtered = horizon_df[horizon_df["scope"] == "WHO"][
-    #         horizon_df["innovation"].isin(selected_ids)
-    #     ].assign(
-    #         proj_date_first_launch=lambda d: d[
-    #             "proj_date_first_launch"
-    #         ].dt.strftime("%Y-%m-%d")
-    #     )
-
-    #     # Define the metrics we want to compare using real data columns
-    #     # Map Display Name -> Column Name
-    #     metrics_map = {
-    #         "Product": "innovation",
-    #         "Disease": "disease",
-    #         "Stage": "trial_status",
-    #         # "Probability of Success": "prob_success",
-    #         # "Financing Score": "financing",
-    #         # "Readiness Score": "readiness",
-    #         # "DALYs Averted": "dalys_averted",
-    #         # "Efficacy": "efficacy",
-    #         "Projected first launch": "proj_date_first_launch",
-    #         # "Policy Implemented": "policy_implemented",
-    #         "Market approval": "nra",
-    #         "Global Mkt Authorization": "gra",
-    #     }
-
-    #     # Create a new DataFrame with selected columns
-    #     compare_df = pd.DataFrame()
-
-    #     # Build DataFrame with Product as Rows (default from extraction)
-    #     # Columns will be the Display Labels
-    #     for label, col in metrics_map.items():
-    #         if col in df_filtered.columns:
-    #             compare_df[label] = df_filtered[col].values
-    #         else:
-    #             compare_df[label] = "N/A"
-
-    #     # Styling function to restore heatmap look
-    #     def color_cells(val):
-    #         """Returns CSS styles based on the numeric value and type."""
-    #         if pd.isna(val) or val == "N/A":
-    #             return "background-color: #e9ecef; color: #6c757d"  # Gray for missing
-
-    #         try:
-    #             v = float(val)
-    #             # Heuristic logic for coloring (Green for high performance, Red for low)
-    #             if v <= 1.0:  # Probabilities
-    #                 if v > 0.5:
-    #                     return "background-color: #d1fae5; color: #065f46"
-    #                 else:
-    #                     return "background-color: #fee2e2; color: #991b1b"
-    #             elif v <= 2.0:  # Financing score (0-2)
-    #                 if v > 1:
-    #                     return "background-color: #d1fae5; color: #065f46"
-    #                 else:
-    #                     return "background-color: #fee2e2; color: #991b1b"
-    #             else:  # Scores 0-100 or Counts
-    #                 if v > 50:
-    #                     return "background-color: #d1fae5; color: #065f46"
-    #                 else:
-    #                     return "background-color: #fee2e2; color: #991b1b"
-    #         except:
-    #             return ""
-
-    #     # Specify which columns to apply heatmap styling to
-    #     numeric_cols = [
-    #         "Probability of Success",
-    #         "Financing Score",
-    #         "Readiness Score",
-    #         "Efficacy",
-    #     ]
-
-    #     # Apply styling using Pandas Styler
-    #     styler = compare_df.style.hide(axis="index")
-    #     cols_to_style = [c for c in numeric_cols if c in compare_df.columns]
-
-    #     if hasattr(styler, "map"):
-    #         styler = styler.map(color_cells, subset=cols_to_style)
-    #     else:
-    #         styler = styler.applymap(color_cells, subset=cols_to_style)
-
-    #     return styler.format(precision=2, na_rep="N/A", subset=cols_to_style)
-
-    # def fmt_yesno(val, na_text="Not available"):
-    #     if val is None or pd.isna(val):
-    #         return na_text
-    #     s = str(val).strip()
-    #     if s == "" or s.lower() == "nan":
-    #         return na_text
-    #     if s.lower() == "yes":
-    #         return "Yes"
-    #     if s.lower() == "no":
-    #         return "No"
-    #     return s  # pass through other statuses if you have them
-
-    ## PD HEATMAP
     @render.table
     def comparison_heatmap():
-
-        selected_ids = input.selected_innovations_compare()
+        selected_ids = selected_innovation_ids()
 
         if not selected_ids:
             return pd.DataFrame({"Message": ["Select products to compare"]})
-
-        # Filter dataframe
-        df_filtered = horizon_df.loc[
-            (horizon_df["scope"] == "WHO")
-            & (horizon_df["innovation"].isin(selected_ids))
-        ].assign(
-            proj_date_first_launch=lambda d: d["proj_date_first_launch"].dt.strftime(
-                "%Y-%m-%d"
-            ))
+        df_filtered = (
+            horizon_df.loc[
+                (horizon_df["scope"] == "WHO")
+                & (horizon_df["innovation"].isin(selected_ids))
+            ]
+            .copy()
+            .assign(
+                proj_date_first_launch=lambda d: pd.to_datetime(
+                    d["proj_date_first_launch"], errors="coerce"
+                ).dt.strftime("%Y-%m-%d")
+            )
+        )
 
         metrics_map = {
             "Product": "innovation",
             "Disease": "disease",
             "Stage": "trial_status",
             "Projected first launch": "proj_date_first_launch",
-            # NEW: separate country approvals as columns in the table
             "Kenya market authorization": "Kenya_nra",
             "Senegal market authorization": "Senegal_nra",
             "South Africa market authorization": "South Africa_nra",
-            # Optional: global signals
-            "Global Mkt Authorization": "gra",
+            "Global market authorization": "gra",
             "WHO EML listed": "eml",
         }
 
-        # Build comparison dataframe
         compare_df = pd.DataFrame()
-
         for label, col in metrics_map.items():
             if col in df_filtered.columns:
                 compare_df[label] = df_filtered[col].values
             else:
                 compare_df[label] = "N/A"
-
-        # ---------- STYLING ---------- #
 
         numeric_cols = [
             "Probability of Success",
@@ -281,45 +290,6 @@ def comparison_server(id, input, output, session):
             "Readiness Score",
             "Efficacy",
         ]
-
-        def color_cells(val):
-            if pd.isna(val) or val == "N/A":
-                return "background-color:#f8f9fa;color:#6c757d"
-
-            # --- YES / NO LOGIC ---
-            if isinstance(val, str):
-                v = val.strip().lower()
-
-                if v in ["yes", "YES",]:
-                    return "background-color:#d1fae5;color:#065f46;font-weight:600"
-
-                if v in ["no", "NO"]:
-                    return "background-color:#fee2e2;color:#991b1b;font-weight:600"
-
-            # --- NUMERIC LOGIC ---
-            try:
-                v = float(val)
-
-                if v <= 1:
-                    if v > 0.5:
-                        return "background-color:#d1fae5;color:#065f46"
-                    else:
-                        return "background-color:#fee2e2;color:#991b1b"
-
-                elif v <= 2:
-                    if v > 1:
-                        return "background-color:#d1fae5;color:#065f46"
-                    else:
-                        return "background-color:#fee2e2;color:#991b1b"
-
-                else:
-                    if v > 50:
-                        return "background-color:#d1fae5;color:#065f46"
-                    else:
-                        return "background-color:#fee2e2;color:#991b1b"
-
-            except:
-                return ""
 
         yes_no_cols = [
             "Kenya market authorization",
@@ -329,38 +299,77 @@ def comparison_server(id, input, output, session):
             "WHO EML listed",
         ]
 
+        def color_cells(val):
+            if pd.isna(val) or val == "N/A":
+                return "background-color:#f8f9fa;color:#BFBBBB" # Neutral Gray
+
+            if isinstance(val, str):
+                v = val.strip().lower()
+
+                if v == "yes":
+                    return "background-color:rgba(34, 139, 34, 0.1);color:#228B22;font-weight:700" # Success Green
+
+                if v == "no":
+                    return "background-color:rgba(220, 20, 60, 0.1);color:#DC143C;font-weight:700" # Error Red
+
+            try:
+                v = float(val)
+
+                if v <= 1:
+                    return (
+                        "background-color:rgba(34, 139, 34, 0.1);color:#228B22"
+                        if v > 0.5
+                        else "background-color:rgba(220, 20, 60, 0.1);color:#DC143C"
+                    )
+                elif v <= 2:
+                    return (
+                        "background-color:rgba(34, 139, 34, 0.1);color:#228B22"
+                        if v > 1
+                        else "background-color:rgba(220, 20, 60, 0.1);color:#DC143C"
+                    )
+                else:
+                    return (
+                        "background-color:rgba(34, 139, 34, 0.1);color:#228B22"
+                        if v > 50
+                        else "background-color:rgba(220, 20, 60, 0.1);color:#DC143C"
+                    )
+            except Exception:
+                return ""
+
         cols_to_style = [
             c for c in numeric_cols + yes_no_cols if c in compare_df.columns
         ]
+
         styler = (
-            compare_df.style
-            .hide(axis="index")
-            .set_table_attributes(
-                'class="table table-striped table-hover table-sm"'
+            compare_df.style.hide(axis="index")
+            .set_table_attributes('class="table table-striped table-hover table-sm"')
+            .set_properties(
+                **{
+                    "text-align": "center",
+                    "vertical-align": "middle",
+                    "font-size": "0.9rem",
+                    "padding": "6px",
+                }
             )
-            .set_properties(**{
-                "text-align": "center",
-                "vertical-align": "middle",
-                "font-size": "0.9rem",
-                "padding": "6px"
-            })
-            .set_table_styles([
-                {
-                    "selector": "th",
-                    "props": [
-                        ("background-color", "#012169"),
-                        ("color", "white"),
-                        ("font-weight", "600"),
-                        ("text-align", "center"),
-                    ],
-                },
-                {
-                    "selector": "td",
-                    "props": [
-                        ("border", "1px solid #dee2e6"),
-                    ],
-                },
-            ])
+            .set_table_styles(
+                [
+                    {
+                        "selector": "th",
+                        "props": [
+                            ("background-color", "#012169"),
+                            ("color", "white"),
+                            ("font-weight", "600"),
+                            ("text-align", "center"),
+                        ],
+                    },
+                    {
+                        "selector": "td",
+                        "props": [
+                            ("border", "1px solid #dee2e6"),
+                        ],
+                    },
+                ]
+            )
         )
 
         if cols_to_style:
@@ -369,125 +378,79 @@ def comparison_server(id, input, output, session):
             else:
                 styler = styler.applymap(color_cells, subset=cols_to_style)
 
-        styler = styler.format(na_rep="—")
-
-        return styler
-
-   
-    # @render.data_frame
-    # def comparison_heatmap():
-    #     """
-    #     Renders the side-by-side comparison table as a DataGrid.
-    #     Note: DataGrid does not render Pandas Styler, so heatmap styling is not applied here.
-    #     """
-    #     selected_ids = input.selected_innovations_compare()
-    #     if not selected_ids:
-    #         return render.DataGrid(
-    #             pd.DataFrame({"Message": ["Select products to compare"]}),
-    #             width="100%",
-    #         )
-
-    #     df_filtered = (
-    #         horizon_df.loc[(horizon_df["scope"] == "WHO") & (horizon_df["innovation"].isin(selected_ids))]
-    #         .assign(
-    #             proj_date_first_launch=lambda d: pd.to_datetime(d["proj_date_first_launch"], errors="coerce").dt.strftime("%Y-%m-%d")
-    #         )
-    #     )
-
-    #     metrics_map = {
-    #         "Product": "innovation",
-    #         "Disease": "disease",
-    #         "Stage": "trial_status",
-    #         "Projected first launch": "proj_date_first_launch",
-    #         "Policy Implemented": "policy_implemented",
-    #         "WHO PQ / Global approval": "gra",
-    #     }
-
-    #     compare_df = pd.DataFrame()
-    #     for label, col in metrics_map.items():
-    #         if col in df_filtered.columns:
-    #             compare_df[label] = df_filtered[col].values
-    #         else:
-    #             compare_df[label] = "N/A"
-
-    #     # optional: show one row per selected product, add an index column if useful
-    #     # compare_df.insert(0, "Selected order", range(1, len(compare_df) + 1))
-
-    #     return render.DataGrid(
-    #         compare_df,
-    #         width="100%",
-    #         filters=True,
-    #         selection_mode="none",
-    #     )
-
-        @reactive.Effect
-        def _adjust_timeline_height():
-            selected = input.selected_innovations_compare()
-            n = len(selected) if selected else 0
-
-            # Base height
-            base = 400
-
-            # Add 60px per innovation
-            dynamic_height = base + max(0, n - 5) * 60
-
-            ui.update_ui(
-                id="timeline_card_body",
-                style=f"min-height: {dynamic_height}px;"
-            )
+        return styler.format(na_rep="—")
 
     @render_widget(
-        height=lambda: f"{max(400, 150 + len(input.selected_innovations_compare() or []) * 60)}px"
-    )
+    height=lambda: f"{max(400, 150 + len(list(cart.get())) * 60)}px"
+)
     def time_to_market_plot():
-        selected_ids = input.selected_innovations_compare()
-        if not selected_ids:
-            return go.Figure()
+        selected_ids = selected_innovation_ids()
 
-        # 1) Restrict to the canonical rows you want to plot
-        # If WHO is your global row, keep this. If not, remove scope filter.
-        base = horizon_df[horizon_df["scope"] == "WHO"].copy()
+        if not selected_ids:
+            fig = go.Figure()
+            fig.update_layout(
+                xaxis=dict(visible=False),
+                yaxis=dict(visible=False),
+                annotations=[
+                    dict(
+                        text="Select products to compare",
+                        showarrow=False,
+                        xref="paper",
+                        yref="paper",
+                        x=0.5,
+                        y=0.5,
+                    )
+                ],
+                height=300,
+                plot_bgcolor="white",
+                paper_bgcolor="white",
+            )
+            return fig
+
+        base = comparison_base_df()
 
         fig = go.Figure()
         all_dates_flat = []
 
-        # Colors represent DATA TYPE (collected vs projection)
-        data_type_colors = {
-            "Collected": "#00539B",
-            "Projection": "#BFBBBB",
+        # Milestone colors
+        event_colors = {
+            "Proof of Concept": "#00539B",      # Accent Blue
+            "Marketing Authorization": "#012169", # Primary Blue
+            "First Country Launch": "#228B22",    # Success Green
+            "20% Market Uptake": "#8b5cf6",
         }
 
-        # Milestone mapping: plot proj_* but classify based on corresponding date_*
-        # IMPORTANT: Only include columns that actually exist in your dataset.
         event_map = [
-            # If you do NOT have proj_date_proof_of_concept, delete this block or map proj to date_proof_of_concept.
             {
                 "label": "Proof of Concept",
                 "real": "date_proof_of_concept",
                 "proj": "date_proof_of_concept",
             },
             {
-                "label": "Regulatory Approval",
+                "label": "Marketing Authorization",
                 "real": "date_first_regulatory",
                 "proj": "proj_date_first_regulatory",
             },
             {
-                "label": "First Launch",
+                "label": "First Country Launch",
                 "real": "date_first_launch",
                 "proj": "proj_date_first_launch",
             },
-            {"label": "Market Entry", "real": None, "proj": "proj_date_lmic_20_uptake"},
+            {
+                "label": "20% Market Uptake",
+                "real": None,
+                "proj": "proj_date_lmic_20_uptake",
+            },
         ]
 
-        # 2) Iterate the selected innovations (NOT rows)
         for innovation in selected_ids:
             sub = base[base["innovation"] == innovation]
 
             if sub.empty:
                 continue
 
-            # 3) Choose the "best" row for this innovation (most milestone dates present)
             proj_cols = [e["proj"] for e in event_map if e["proj"] in sub.columns]
+
             if proj_cols:
                 completeness = sub[proj_cols].notna().sum(axis=1)
                 row = sub.loc[completeness.idxmax()]
@@ -500,7 +463,6 @@ def comparison_server(id, input, output, session):
                 proj_col = event["proj"]
                 real_col = event["real"]
 
-                # Skip if projected column doesn't exist at all
                 if proj_col not in row.index:
                     continue
 
@@ -511,45 +473,53 @@ def comparison_server(id, input, output, session):
 
                 if pd.notna(proj_date):
                     event_type = (
-                        "Collected"
+                        "Actual"
                         if (real_col and pd.notna(real_date))
                         else "Projection"
                     )
+
                     events.append(
-                        {"name": event["label"], "date": proj_date, "type": event_type}
+                        {
+                            "name": event["label"],
+                            "date": proj_date,
+                            "type": event_type,
+                        }
                     )
+
                     all_dates_flat.append(proj_date)
 
-            # If this innovation has no events, skip adding a trace
             if not events:
                 continue
 
             events.sort(key=lambda x: x["date"])
+
             dates = [e["date"] for e in events]
-            labels = [e["name"] for e in events]
-            marker_colors = [data_type_colors[e["type"]] for e in events]
+            names = [e["name"] for e in events]
+            marker_colors = [event_colors[e["name"]] for e in events]
+            types = [e["type"] for e in events]
 
             fig.add_trace(
                 go.Scatter(
                     x=dates,
                     y=[innovation] * len(dates),
-                    mode="lines+markers+text",
+                    mode="lines+markers",
                     line=dict(color="#000000", width=3),
                     marker=dict(
-                        size=12, color=marker_colors, line=dict(width=2, color="white")
+                        size=12,
+                        color=marker_colors,
+                        line=dict(width=2, color="white"),
                     ),
-                    # text=labels,
-                    textposition="top center",
-                    hoverinfo="text+x+name",
-                    hovertext=[
-                        f"{e['name']} ({e['type']})<br>{e['date'].strftime('%Y-%m-%d')}"
-                        for e in events
-                    ],
+                    text=names,
+                    customdata=types,
+                    hovertemplate=(
+                        "<b>%{text}</b><br>"
+                        "Date: %{x|%Y-%m-%d}<br>"
+                        "Source: %{customdata}<extra></extra>"
+                    ),
                     showlegend=False,
                 )
             )
 
-        # Nothing to show
         if not all_dates_flat:
             fig.update_layout(
                 xaxis=dict(visible=False),
@@ -565,32 +535,31 @@ def comparison_server(id, input, output, session):
                     )
                 ],
                 height=300,
+                plot_bgcolor="white",
+                paper_bgcolor="white",
             )
             return fig
 
-        # Legend for data type (Collected vs Projection)
-        for name, color in data_type_colors.items():
+        # Legend entries for milestones
+        for label, color in event_colors.items():
             fig.add_trace(
                 go.Scatter(
                     x=[None],
                     y=[None],
                     mode="markers",
-                    marker=dict(size=10, color=color),
-                    name=name,
+                    marker=dict(size=12, color=color),
+                    name=label,
                 )
             )
 
-        # Axis ranges
         start_range = min(all_dates_flat) - pd.DateOffset(years=1)
         end_range = max(all_dates_flat) + pd.DateOffset(years=1)
 
-        # Make sure all selected innovations appear on Y axis in selection order
-        # Plotly's category axis uses categoryarray; reverse because autorange="reversed"
         fig.update_layout(
             height=max(400, 150 + (len(selected_ids) * 50)),
             showlegend=True,
             legend=dict(
-                title=dict(text="Data Type", font=dict(size=12)),
+                title=dict(text="Milestones", font=dict(size=12)),
                 orientation="h",
                 yanchor="bottom",
                 y=1.02,
@@ -620,7 +589,6 @@ def comparison_server(id, input, output, session):
         )
 
         fig.update_xaxes(automargin=True)
-
         fig.update_yaxes(automargin=True)
 
         return fig

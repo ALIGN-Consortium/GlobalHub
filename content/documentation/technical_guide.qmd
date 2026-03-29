@@ -1,0 +1,64 @@
+---
+title: "Technical Architecture Guide"
+format:
+  html:
+    theme: flatly
+    css: ../../www/styles.css
+    toc: true
+---
+
+## Overview
+
+The ALIGN Global Hub is a Python-based Shiny application designed for high-performance interactive data visualization. This guide provides a technical overview of the application's architecture and design patterns.
+
+## Application Structure
+
+The repository is organized into several modules for maintainability:
+
+- **`app.py`**: The main entry point of the Shiny application. It initializes the UI and server logic.
+- **`modules/`**: Contains page-specific logic (e.g., `overview_and_innovations.py`, `comparison.py`, `about.py`).
+- **`utils/`**: Helper functions for data loading, UI components, and theme configuration.
+- **`www/`**: Static assets, CSS, and data files (e.g., `ALIGN_health_product_data_horizon.csv`).
+- **`scripts/`**: Data processing scripts used to clean and harmonize the raw datasets.
+
+## Core Architecture and Design Patterns
+
+### 1. Modular Shiny Components
+The application uses the `@module.ui` and `@module.server` decorators to namespace components. This prevents ID collisions and allows for easier testing of individual pages.
+
+### 2. Reactive State Management
+A **shared reactive cart** is implemented in the main `server` function in `app.py`. This state is passed to the module servers as an argument, enabling seamless communication between pages (e.g., adding a product to the cart on the Overview page and viewing it on the Comparison page).
+
+### 3. Unified Reactive Filtering
+The application uses a **tiered reactive data strategy** to ensure data consistency across multiple UI components (tables, charts, and projections).
+- **`base_df()`**: Core data for the page.
+- **`disease_df()`**: Filters the data based on the user-selected disease area.
+- **`page_df()`**: Consumes all active filters (e.g., dropdowns and plot clicks) to provide a final dataset for visual components.
+
+### 4. Cross-Filtering with Plotly
+The dashboard uses Plotly for interactive charts (Treemaps, Pie charts). These charts capture `on_click` events to update a `reactive.Value`, which then propagates the selection to other page components like the Product Explorer table.
+
+### 5. Data Harmonization Pipeline
+The `utils/data_loader.py` script orchestrates the loading and processing of data. It handles:
+- **Date Normalization:** Using `pd.to_datetime` with `dayfirst=True` and `format='mixed'`.
+- **Numeric Coercion:** Ensuring all metrics (scores, DALYs, costs) are correctly typed.
+- **Data Merging:** Integrating external `PopulationData.csv` into the main product registry.
+
+## UI and UX Standards
+
+### Design System
+The application follows a consistent design system defined in `BRAND.md` and `www/styles.css`.
+- **Primary Color:** `#012169` (Primary Blue)
+- **Accent Color:** `#00539B` (Accent Blue)
+- **Typography:** 'Inter Tight' for headers and 'Inter' for body text.
+
+### Accessibility
+Standardized information tooltips are used throughout the application to provide context. The `utils/ui_helpers.py` module provides helper functions like `with_tooltip` and `info_tooltip` for this purpose.
+
+## Development and Deployment
+
+The project uses `uv` for Python dependency management. To run the application locally, use:
+```bash
+uv run shiny run app.py
+```
+For more information on the development environment and prerequisites, refer to the [README.md](../../README.md).

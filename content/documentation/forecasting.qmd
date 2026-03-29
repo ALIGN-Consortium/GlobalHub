@@ -1,0 +1,43 @@
+---
+title: "Forecasting and Projection Methods"
+format:
+  html:
+    theme: flatly
+    css: ../../www/styles.css
+    toc: true
+---
+
+## Overview
+
+The ALIGN Global Hub utilizes advanced forecasting models to estimate the development timelines and market entry of health products. This document explains the primary methodology used for these projections.
+
+## Mao et al. (2025) Methodology
+
+The core of our forecasting engine is based on the methodology published by **Mao, Wenhui et al.** in *The Lancet Global Health* (2025). This research analyzed historical data from 59 health products to establish patterns in the development, launch, and scale-up of innovations in Low- and Middle-Income Countries (LMICs).
+
+### Key Projections
+
+#### 1. Date of First Country-Level Launch
+- **Definition:** The projected date when a product is expected to be launched in its first country after receiving regulatory approval.
+- **Calculation:** The model uses median time intervals from historical data, adjusted for the product's category (e.g., vaccine, drug, diagnostic) and its current development phase.
+
+#### 2. 20% Market Uptake in LMICs
+- **Definition:** The projected date when a product reaches a 20% uptake rate across its target population in LMIC markets.
+- **Calculation:** Based on historical "uptake curves" of similar products, considering factors like financing availability, system readiness, and public health priority.
+
+## Reference
+
+> **Mao, Wenhui et al.** Development, launch, and scale-up of health products in low-income and middle-income countries: a retrospective analysis on 59 health products. *The Lancet Global Health*, Volume 13, Issue 6, e1132 - e1139.
+
+[Read the Full Article](https://www.thelancet.com/journals/langlo/article/PIIS2214-109X(25)00062-2/fulltext)
+
+## Speedometer Projections
+
+In the Global Hub dashboard, these projections are often displayed alongside a **"Speedometer Projection"** indicator. This informs the user that the date is an estimate based on the Mao et al. framework, rather than an observed event.
+
+### Interpreting Projections
+
+Users should keep in mind:
+- Projected timelines are estimates and are subject to change as new data becomes available.
+- Projections reflect general historical patterns and may not account for unique challenges or breakthroughs specific to a single product.
+- Projections should be used to support strategic planning, but should be interpreted in conjunction with national priorities and system capacity.

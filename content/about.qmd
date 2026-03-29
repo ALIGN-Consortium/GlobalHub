@@ -1,0 +1,330 @@
+---
+format:
+  html:
+    toc: false
+    theme: flatly
+    css: ../www/styles.css
+    self-contained: true
+params:
+  last_updated: "2026-03-27"
+---
+
+<div class="about-meta">
+Last updated: `r params$last_updated`
+</div>
+
+---
+
+## What is ALIGN?
+
+The **Advancing Country-Led Innovation Introduction through Government Engagement and EvideNce (ALIGN) Consortium** aims to improve health outcomes by strengthening how health products are prioritized and introduced within countries.
+
+ALIGN brings together the Duke Global Health Innovation Center, the South African Medical Research Council (SAMRC), Keprecon, and ENDA Santé to support governments in Kenya, Senegal, and South Africa across:
+
+- Whole-of-government coordination and capacity strengthening  
+- Data-driven decision-making  
+- Whole-of-market engagement (national, regional, global)  
+- Portfolio-based planning  
+
+**Resources**:
+
+[ALIGN website](https://dukeghic.org/projects/align-consortium/)
+
+[ALIGN Substack](https://alignconsortium.substack.com/)
+
+## What is the ALIGN Global Hub?
+
+The ALIGN Global Hub is a **market intelligence platform** designed to support prioritization and introduction decisions for health products.
+
+It aggregates fragmented data across clinical development, regulatory systems, procurement platforms, and policy frameworks into a single, structured view.
+
+This tool enables users to:
+
+- Compare products across pipelines and applications  
+- Anticipate what is coming to market  
+- Support evidence-informed prioritization decisions  
+
+---
+
+::: {.callout-note collapse="true"}
+## Why does this Hub exist?
+
+Health product data are fragmented across multiple systems:
+
+- Clinical trial registries  
+- Regulatory agencies  
+- Procurement databases  
+- Policy lists  
+
+This fragmentation limits the ability to:
+
+- Compare products across applications and timelines  
+- Identify what is coming to market  
+- Prioritize introduction decisions  
+- Align financing, procurement, and delivery planning
+
+**ALIGN’s theory of change:**  
+Integrating fragmented data → enabling comparison → improving prioritization → accelerating equitable product introduction.
+
+**Resources:**
+- [ALIGN Theory of Change (coming soon)]()
+- [Evidence Brief: Data Fragmentation (coming soon)]()
+:::
+
+---
+
+::: {.callout-note collapse="true"}
+## What decisions this tool supports
+
+The Global Hub is designed to support key decision points in health product introduction:
+
+- **Prioritization**  
+  Which products should be considered given national needs and constraints?
+
+- **Sequencing**  
+  When should products be introduced relative to others in the pipeline?
+
+- **Financing alignment**  
+  How do projected timelines align with budget cycles and funding availability?
+
+- **System readiness**  
+  Are delivery systems prepared for introduction and scale?
+
+These decisions are typically made with incomplete or fragmented data - The Global Hub aims to make them more structured and comparable.
+:::
+
+---
+
+::: {.callout-note collapse="true"}
+## How the Hub can help you
+
+##### How to use the tool
+
+The Hub supports a simple workflow: explore → compare → interpret → decide
+
+**Explore** : Use the *Overview page* to filter by application, development stage, or geography  
+
+**Compare**
+
+- Add products to the comparison cart  
+- View them in the *Product Comparison page*  
+
+**Interpret** : Review projected vs actual milestone timelines  
+
+
+##### Common users
+
+- **Policy-makers** → prioritize products for introduction  
+- **Donors** → align investments with pipeline gaps  
+- **Researchers** → analyze development and regulatory trends  
+
+
+
+##### User guides
+  
+- [Quick Start Guide (coming soon)](dist/content/documentation/technical_guide.html)  
+- [Full User Manual (coming soon)]()  
+- [Video walkthrough (coming soon)]()  
+
+:::
+
+---
+
+::: {.callout-note collapse="true"}
+## Scope of data
+
+The current version of the Global Hub focuses on selected **high-priority** health applications::
+
+- HIV/AIDS,
+- Tuberculosis (TB),  
+- Malaria, 
+- Maternal, newborn, and child health (MNCH)  
+
+Health products are categorized by:
+
+- **Type**: therapeutics, vaccines, diagnostics, medical devices
+- **Indication**: specific diseases or conditions
+
+**Documentation:**
+
+- [Applications & Inclusion Criteria](dist/content/documentation/inclusion_criteria.html)
+- [MNCH Definitions](dist/content/documentation/mnch_framework.html)
+- [Data Dictionary](dist/content/documentation/data_dictionary.html)
+:::
+
+---
+
+::: {.callout-note collapse="true"}
+## Data sources
+
+ALIGN integrates structured data across pharmaceutical R&D, regulatory systems, procurement platforms, and policy frameworks to create a comprehensive view of the health product landscape.
+
+Data sources are integrated in phases.
+
+- **Completed** → fully available in the current version  
+- **In-progress** → partially integrated or under active development  
+- **Planned** → scheduled for future releases based on priority and feasibility  
+
+
+| Database | Domain | Scope | Status | Timeline |
+|----------|--------|-------|--------|----------|
+| Impact Global Health R&D tracker; G-finder financial commitments | R&D Funding | Global | Completed | — |
+| MMV antimalarial pipeline | R&D Pipeline | Global | Completed | — |
+| DNDi portfolio | R&D Portfolio | Global | Completed | — |
+| FIND DxConnect Test Directory | Diagnostic directory | Global | Completed | — |
+| Clinicaltrials.gov | Clinical Trials | Global | In-progress | Q2 2026 |
+| AVAC clinical trials database | Clinical Trials | Global | In-progress | Q2 2026 |
+| MPP LAPaL | Licensing | Global | In-progress | Q2 2026 |
+| MPP MedsPaL | IP/Patents | Global | In-progress | Q2 2026 |
+| International Clinical Trials registry platform (ICTRP) | Clinical Trials | Global | On-hold | Q2–Q3 2026 |
+| China’s ChiCTR | Clinical Trials | China | Not started | Q2 2026 |
+| Africa’s PACTR | Clinical Trials | Africa | Not started | Q2 2026 |
+| Brazil’s ReBEC | Clinical Trials | Brazil | Not started | Q2 2026 |
+| European Union trials registry | Clinical Trials | Europe |  | Q2 2026 |
+| EMA (European Medicines Agency) | Regulatory | EU | Not started | Q3 2026 |
+| SAHPRA | Regulatory | South Africa | Not started | Q3 2026 |
+| WHO Drug Regulatory Status | Regulatory | Global | Not started | Q3 2026 |
+| WHO Prequalification list (PQ) | Pre-qualification | Global | Not started | Q3 2026 |
+| Global EML | EML (Comparative) | Global |  | Q3 2026 |
+| WHO Global Price Reporting System | Pricing | Global | Not started | Q4 2026 |
+| GF price list | Pricing | Global | Not started | Q4 2026 |
+| GF ARV procurement | Procurement | Global | Not started | Q4 2026 |
+| GF HIV Transactions | Transactions | Global | Not started | Q4 2026 |
+| GF data Explorer | Portfolio/spend | Global | Not started | Q4 2026 |
+| GF annual reports | Reporting | Global | Not started | Q4 2026 |
+| PEPFAR database | Spend/Procurement | Global | Not started | Q4 2026 |
+| UNICEF Supply Catalogue | Catalogue/Pricing | Global | Not started | Q4 2026 |
+| UNICEF supply market reports | Market intelligence | Global | Not started | Q4 2026 |
+| WHO ARV and diagnostics demand: forecasting market trends | Demand/Forecast | Global |  | 2027 |
+| Impact Global Health – Maternal health products | R&D Pipeline | Global | Not started | 2027 |
+| Impact Global Health – Gynecological products | R&D Pipeline | Global | Not started | 2027 |
+| GHIT fund portfolio | R&D Portfolio | Global | Not started | 2027 |
+| PATH diagnostic manufacturing | Manufacturing directory | Global | Not started | 2027 |
+| CHAI local vaccine manufacturing database | Manufacturing | Global | Not started | 2027 |
+| SD Biosensor | Manufacturing | Global | Not started | 2027 |
+| Walvax | Manufacturing | China/Global | Not started | 2027 |
+| Zhifei Biological | Manufacturing | China/Global | Not started | 2027 |
+| GSK pipeline | Company pipeline | Global | Not started | 2027 |
+| Pfizer pipeline | Company pipeline | Global | Not started | 2027 |
+| Merck pipeline | Company pipeline | Global | Not started | 2027 |
+| Janssen R&D pipeline | Company pipeline | Global | Not started | 2027 |
+
+**Full documentation:**
+- [Full Horizon Scanning Database List](dist/content/documentation/horizon_sources.html)
+- [Source Integration Methods](dist/content/documentation/source_methods.html)
+:::
+
+---
+
+::: {.callout-note collapse="true"}
+## How to interpret the data
+
+- Projected timelines are estimates based on observed patterns and available data  
+- Status reflects data availability, not certainty of outcomes  
+- Comparisons are intended to support decision-making, not replace contextual judgment  
+
+Users should interpret outputs in conjunction with national priorities, financing constraints, and system capacity.
+:::
+
+---
+
+::: {.callout-note collapse="true"}
+## Methodology
+
+The Hub transforms fragmented data into **decision-ready insights** through structured integration, validation, and projection methods.
+
+##### Data integration
+
+Data are harmonized into a unified product registry using:
+
+- Name and synonym matching  
+- Identifier mapping  
+- Cross-source validation  
+
+→ [Data Integration Pipeline](dist/content/documentation/integration_pipeline.html)
+
+
+##### Key metrics
+
+**Milestones tracked:**
+
+- Proof of concept  
+- Marketing authorization  
+- First launch in LMICs
+
+[Product introduction milestones](dist/content/documentation/product_milestones.html)
+
+**Cost-effectiveness analysis:**
+
+[Cost-effectiveness analysis](dist/content/documentation/cost_effectiveness.html)
+
+**Likelihood of success analysis:**
+
+[Likelihood of success analysis](dist/content/documentation/likelihood_of_success.html)
+
+##### Full documentation
+
+- [Full Methodology Report](dist/content/documentation/methodology.html)
+- [Forecasting Methods](dist/content/documentation/forecasting.html)
+- [Validation Protocol](dist/content/documentation/validation.html)
+- [Technical Architecture Guide](dist/content/documentation/technical_guide.html)
+:::
+
+---
+
+::: {.callout-note collapse="true"}
+## Previous work: Integrated Horizon Scanning
+
+The Global Hub builds on ALIGN’s horizon scanning system, integrating:
+
+- R&D pipelines  
+- Regulatory approvals  
+- Procurement signals  
+
+This enables tracking from development → introduction.
+
+→ [Horizon Scanning Report](dist/content/documentation/horizon_scanning.html)
+:::
+
+---
+
+## Definitions and documentation
+
+- [Pipeline Definitions & Terms (coming soon)]()  
+- [ALIGN Data Dictionary](dist/content/documentation/data_dictionary.html)
+- [Glossary](dist/content/documentation/glossary.html)
+
+---
+
+::: {.callout-warning collapse="true"}
+## Roadmap
+
+The roadmap reflects planned expansions in data coverage, analytical capabilities, and decision-support functionality.
+
+**Q3 2026**
+
+- National Hub pilots (Kenya, South Africa and Senegal)  
+- Expanded application coverage  
+
+**Q4 2026**
+  
+- Advanced forecasting models  
+- Portfolio prioritization tools  
+
+**Q1 2027**
+
+- Multi-country rollout  
+- Demand + delivery data integration  
+:::
+
+---
+
+::: {.callout-important collapse="true"}
+## Current limitations
+
+- Some metrics are still under development  
+- Coverage is partial  
+- Projections may change as data updates  
+
+Future releases will expand scope, improve accuracy, and enhance usability.
+:::

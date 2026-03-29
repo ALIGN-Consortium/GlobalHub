@@ -1,0 +1,53 @@
+---
+title: "Project Methodology"
+format:
+  html:
+    theme: flatly
+    css: ../../www/styles.css
+    toc: true
+---
+
+## Overview
+
+The ALIGN Global Hub transforms fragmented data into decision-ready insights through structured integration, validation, and projection methods. This report outlines the overarching methodology for the project.
+
+## Data Integration Pipeline
+
+The Global Hub follows a multi-stage data processing pipeline:
+
+### 1. Data Collection
+- Identification of high-priority health applications: **HIV/AIDS, Tuberculosis (TB), Malaria, and MNCH**.
+- Continuous scanning of global clinical trials, regulatory approvals, and procurement signals.
+- Regular updates from key integrated databases (e.g., Impact Global Health, MMV, FIND).
+
+### 2. Harmonization and Deduplication
+- **Name Matching:** Standardization of product names across sources (e.g., brand names vs. generic names).
+- **Identifier Mapping:** Use of unique IDs (e.g., NCT trial numbers, WHO PQ IDs) to link records.
+- **Record Reconciliation:** When conflicting data exists (e.g., different trial phases across sources), the Hub applies rule-based logic (e.g., keep the most advanced phase).
+
+### 3. Quantitative Reference Framework
+- **Disease Burden:** Integration of Disability-Adjusted Life Years (DALYs) from the Global Burden of Disease (GBD) study.
+- **Population Impact:** Calculation of potential impact based on prevalence and target population size.
+- **Cost-Effectiveness:** Standardized analysis using published data or comparative benchmarks.
+
+### 4. Projection and Forecasting
+- Application of the **Mao et al. (2025)** methodology to estimate launch timelines and market uptake in LMICs based on historical patterns of similar products.
+
+### 5. Validation Protocol
+- Data validation is performed through internal reviews and cross-source comparisons to ensure high-quality and reliable outputs.
+
+## Decision Support Workflow
+
+The Hub supports a simple but robust decision-making workflow:
+
+1. **Explore:** Use the Overview page to filter by application, development stage, or geography.
+2. **Compare:** Add products to the comparison cart and view them on the Product Comparison page.
+3. **Interpret:** Review projected vs. actual milestone timelines and readiness scores.
+4. **Decide:** Use the structured data to support evidence-informed prioritization and introduction decisions.
+
+## Future Roadmap
+
+The methodology will continue to evolve as more data sources are integrated and forecasting models are refined. Upcoming enhancements include:
+- Advanced forecasting models.
+- Portfolio prioritization tools.
+- Multi-country rollout with demand and delivery data integration.

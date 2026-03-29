@@ -1,0 +1,36 @@
+---
+title: "Cost-Effectiveness Analysis"
+format:
+  html:
+    theme: flatly
+    css: ../../www/styles.css
+    toc: true
+---
+
+## Overview
+
+Cost-effectiveness is a key factor in the prioritization of health products. This document outlines how cost-effectiveness data is captured and displayed in the ALIGN Global Hub.
+
+## Methodology
+
+### 1. Data Collection
+Cost-effectiveness data is gathered from peer-reviewed literature, health technology assessment (HTA) reports, and global health organization publications.
+
+### 2. Standardized Metrics
+Where possible, the Hub uses standardized metrics to allow for cross-product comparison:
+- **Cost per DALY Averted:** The cost required to avoid one Disability-Adjusted Life Year.
+- **Cost per Case Averted:** The cost required to prevent one case of the target disease.
+
+### 3. Data Presentation
+In the Global Hub, cost-effectiveness is typically represented as:
+- **Comparative Benchmarks:** Showing how a product's cost-effectiveness compares to existing standards of care.
+- **Categorical Ratings:** High, Medium, or Low cost-effectiveness based on established thresholds (e.g., WHO-CHOICE thresholds).
+
+## Current Limitations
+
+- **Data Fragmentation:** Cost-effectiveness data is often not available for products in early development.
+- **Context Specificity:** Cost-effectiveness can vary significantly across different geographic and health system contexts.
+
+## Future Enhancements
+
+ALIGN is working to integrate more dynamic cost-effectiveness modeling tools into the Hub, allowing users to estimate impact based on country-specific cost and epidemiological parameters.

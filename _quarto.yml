@@ -1,0 +1,19 @@
+project:
+  type: default
+  output-dir: dist
+
+render:
+  - content/about.qmd
+  - content/documentation/*.qmd
+
+format:
+  html:
+    toc: true
+    number-sections: false
+    theme: default
+    embed-resources: true
+
+execute:
+  echo: false
+  warning: false
+  message: false

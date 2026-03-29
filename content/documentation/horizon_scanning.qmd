@@ -1,0 +1,41 @@
+---
+title: "Integrated Horizon Scanning Report"
+format:
+  html:
+    theme: flatly
+    css: ../../www/styles.css
+    toc: true
+---
+
+## Overview
+
+The Global Hub builds on ALIGN’s comprehensive horizon scanning system. This report provides a high-level summary of the horizon scanning activities and their findings.
+
+## Horizon Scanning Goals
+
+The primary goals of the ALIGN horizon scanning system are to:
+- **Identify** emerging health products and technologies.
+- **Track** development and regulatory progress over time.
+- **Anticipate** market entry and potential system bottlenecks.
+- **Support** country-led prioritization and introduction planning.
+
+## Key Findings (Summary)
+
+Based on the most recent data extraction (February 2026):
+
+### 1. Robust Pipeline for Infectious Diseases
+The pipeline for HIV, TB, and malaria remains strong, with a significant number of products in Phase 2 and Phase 3 development.
+
+### 2. Growth in Diagnostic Innovations
+There is a notable increase in the development of point-of-care and laboratory-based diagnostics, particularly for TB and malaria.
+
+### 3. MNCH Expansion
+The Hub has successfully integrated initial datasets for maternal, newborn, and child health, revealing a growing portfolio of medical devices and therapeutics targeting maternal disorders.
+
+## Full Report
+
+For a detailed analysis of the current global health product landscape, including deep-dives into specific disease areas and geographic trends, please refer to the full **Horizon Scanning Report** (available for download in PDF format from the project website).
+
+## Methodology Reference
+
+For information on how the horizon scan is performed and how data is integrated, see the [Project Methodology](methodology.html) and [Source Integration Methods](source_methods.html) documents.

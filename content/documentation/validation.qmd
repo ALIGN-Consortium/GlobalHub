@@ -1,0 +1,35 @@
+---
+title: "Validation Protocol"
+format:
+  html:
+    theme: flatly
+    css: ../../www/styles.css
+    toc: true
+---
+
+## Overview
+
+The accuracy and reliability of the ALIGN Global Hub depend on a rigorous data validation protocol. This document outlines the steps taken to ensure the quality of the data presented in the platform.
+
+## Validation Steps
+
+### 1. Automated Data Quality Checks
+Upon every update of the data integration pipeline, the following automated checks are performed:
+- **Schema Validation:** Ensuring all columns are present and contain data of the correct type.
+- **Range Checks:** Identifying dates that are logically inconsistent (e.g., a launch date that occurs before a trial start date).
+- **Duplicate Detection:** Flagging potential duplicate records for manual review.
+
+### 2. Cross-Source Comparison
+When a product is present in multiple integrated databases, the Hub automatically compares key fields (e.g., Trial Phase, Manufacturer). Significant discrepancies are flagged for investigation.
+
+### 3. Subject Matter Expert (SME) Review
+Periodically, the ALIGN consortium partners (Duke GHIC, SAMRC, Keprecon, ENDA Santé) perform manual reviews of the product registry, focusing on:
+- **High-Priority Products:** Ensuring the most recent and accurate data for products near market entry.
+- **New Disease Areas:** Validating the initial data load for newly added disease applications.
+
+### 4. User Feedback Loop
+The Hub includes a mechanism for users to report data errors or provide updates directly to the ALIGN team. These reports are reviewed and incorporated into the next data update cycle.
+
+## Versioning and Transparency
+
+Each release of the Global Hub is versioned, and the "Last Updated" date is clearly displayed on the About page. This ensures that users are aware of the temporal scope of the data they are viewing.

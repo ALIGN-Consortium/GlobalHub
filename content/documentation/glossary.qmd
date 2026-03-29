@@ -1,0 +1,32 @@
+---
+title: "Glossary of Terms"
+format:
+  html:
+    theme: flatly
+    css: ../../www/styles.css
+    toc: true
+---
+
+## Overview
+
+This glossary provides definitions for the common terms and acronyms used throughout the ALIGN Global Hub.
+
+## Terms and Acronyms
+
+| Term / Acronym | Definition |
+|----------------|------------|
+| **ALIGN** | Advancing Country-Led Innovation Introduction through Government Engagement and EvideNce. |
+| **DALY** | Disability-Adjusted Life Year. A measure of overall disease burden, expressed as the number of years lost due to ill-health, disability, or early death. |
+| **EML** | Essential Medicines List. A list of medicines that satisfy the priority health care needs of a population, maintained by the WHO and national governments. |
+| **GBD** | Global Burden of Disease. A comprehensive regional and global research program of disease burden that assesses mortality and disability from major diseases, injuries, and risk factors. |
+| **GRA** | Global Regulatory Approval. Refers to approval or prequalification by a global body such as the WHO, US FDA, or EMA. |
+| **IHME** | Institute for Health Metrics and Evaluation. |
+| **LMIC** | Low- and Middle-Income Country. |
+| **MNCH** | Maternal, Newborn, and Child Health. |
+| **NRA** | National Regulatory Authority. The government body responsible for regulating health products at the country level. |
+| **P2I** | Portfolio-to-Impact. A model used to estimate development costs, timelines, and probabilities of success for health product portfolios. |
+| **WHO PQ** | World Health Organization Prequalification. A service that ensures health products meet global standards of quality, safety, and efficacy. |
+
+## Further Reading
+
+For more detailed information on specific fields and data sources, refer to the [Data Dictionary](data_dictionary.html) and [Integrated Horizon Scanning Sources](horizon_sources.html).

@@ -1,0 +1,666 @@
+---
+title: "Untitled"
+format: html
+---
+
+
+```{r}
+library(tidyverse)
+horizon <- read_csv(
+  "www/ALIGN_health_product_data_horizon.csv",
+  # "www/horizon_temporary_products.csv",
+  n_max = 300,
+  na = c("", "NA", "na", "Unknown", "unknown"),
+) |>
+  mutate(
+    # parsing date format for phases
+    phase_1_date = parse_date_time(
+      phase_1_date,
+      orders = c("d-b-y", "d-b-Y", "m/d/y", "m/d/Y"),
+      exact = FALSE
+    ) |>
+      as_date(),
+    phase_2_date = parse_date_time(
+      phase_2_date,
+      orders = c("d-b-y", "d-b-Y", "m/d/y", "m/d/Y"),
+      exact = FALSE
+    ) |>
+      as_date(),
+    phase_3_date = parse_date_time(
+      phase_3_date,
+      orders = c("d-b-y", "d-b-Y", "m/d/y", "m/d/Y"),
+      exact = FALSE
+    ) |>
+      as_date(),
+    phase_4_date = parse_date_time(
+      phase_4_date,
+      orders = c("d-b-y", "d-b-Y", "m/d/y", "m/d/Y"),
+      exact = FALSE
+    ) |>
+      as_date(),
+    # convert all *_eml_date columns (year only) to full Date
+    across(
+      contains("eml_date"),
+      ~ {
+        # if entire column is missing, return as-is
+        if (all(is.na(.x))) {
+          return(.x)
+        }
+
+        # otherwise convert year → Date
+        year <- suppressWarnings(as.integer(.x))
+        make_date(year, 1L, 1L)
+      }
+    ),
+    trial_status = ifelse(
+      trial_status == "Approved / Marketed",
+      "Marketing authorization",
+      trial_status
+    )
+  )
+
+
+horizon |>
+  count(innovation) |>
+  filter(n > 1) |>
+  pull(innovation)
+# removing duplicate rows, but selecting the one that has more data filled
+
+horizon <- horizon |>
+  mutate(
+    n_missing = rowSums(is.na(across(-c(innovation, disease))))
+  ) |>
+  group_by(innovation, disease) |>
+  slice_min(n_missing, n = 1, with_ties = FALSE) |>
+  ungroup() |>
+  select(-n_missing)
+
+gra_body_issues <- c(
+  "Center for Drug standard control organization (CDSCO), India",
+  "China Medical Products Administration (NMPA)",
+  "Drug Regulatory Authority of Pakistan",
+  "European Medical Agency",
+  "Japan",
+  "Korea MFDS;CE-IVDD;WHO recommended",
+  "Korean Ministry of Food and Drug Safety",
+  "Medicines and Healthcare products Regulatory Agency (MHRA) of the United Kingdom (UK)"
+)
+horizon <- horizon |>
+  mutate(
+    # for cases where the gra_body variable had data referring to national level not from
+    other_nra = case_when(
+      gra_body %in% gra_body_issues ~ gra_body,
+      TRUE ~ other_nra
+    ),
+    gra_body = case_when(
+      gra_body %in% gra_body_issues ~ NA_character_,
+      (is.na(gra_body) | gra_body == "No") & startsWith(gra_note, "CE") ~ "CE", # european
+      # trial status misscollected as PQ or CE
+      trial_status == "WHO_PQ" & is.na(gra_body) ~ "WHO PQ",
+      trial_status == "CE Marked" & is.na(gra) ~ "CE",
+      TRUE ~ gra_body
+    ),
+    # If there is something in gra_note, gra should be Yes - unless if it starts with "Phase 2 was terminated"
+    gra = case_when(
+      startsWith(gra_note, "Phase 2 was t") ~ gra,
+      !is.na(gra_note) & gra == "No" ~ "Yes",
+      !is.na(gra_note) & is.na(gra) ~ "Yes",
+      !is.na(gra_body) & is.na(gra) ~ "Yes",
+      !is.na(gra_body) & gra == "No" ~ "Yes",
+      trial_status == "WHO_PQ" & (is.na(gra) | gra == "No") ~ "Yes",
+      trial_status == "CE Marked" & (is.na(gra) | gra == "No") ~ "Yes",
+      TRUE ~ gra
+    ),
+    # Trial status fix categories
+    trial_status = case_when(
+      trial_status %in%
+        c(
+          "CE Marked",
+          "WHO_PQ"
+        ) ~ "Phase 4",
+      TRUE ~ trial_status
+    ),
+    phase_1_status = case_when(
+      is.na(phase_1_status) & !is.na(phase_1_date) ~ "Completed",
+      is.na(phase_1_status) & trial_status == "Phase 1" ~ "Completed",
+      TRUE ~ phase_1_status
+    ),
+    phase_2_status = case_when(
+      is.na(phase_2_status) & !is.na(phase_2_date) ~ "Completed",
+      is.na(phase_2_status) & trial_status == "Phase 2" ~ "Completed",
+      TRUE ~ phase_2_status
+    ),
+    phase_3_status = case_when(
+      is.na(phase_3_status) & !is.na(phase_3_date) ~ "Completed",
+      phase_3_status %in% c('Yes', 'Yes_Completed') ~ "Completed",
+      is.na(phase_3_status) & trial_status == "Phase 3" ~ "Completed",
+      TRUE ~ phase_3_status
+    ),
+    phase_4_status = case_when(
+      is.na(phase_4_status) & !is.na(phase_4_date) ~ "Completed",
+      phase_4_status %in% c('Yes', 'Yes_Completed') ~ "Completed",
+      is.na(phase_4_status) & trial_status == "Phase 4" ~ "Completed",
+      TRUE ~ phase_4_status
+    ),
+    date_trial_status = parse_date_time(
+      date_trial_status,
+      orders = c("d-b-y", "d-b-Y", "m/d/y", "m/d/Y"),
+      exact = FALSE
+    ) |>
+      as_date(),
+    # Date for trial phases
+    phase_1_date = if_else(
+      is.na(phase_1_date) &
+        trial_status == "Phase 1" &
+        !is.na(date_trial_status),
+      date_trial_status,
+      phase_1_date
+    ),
+    phase_2_date = if_else(
+      is.na(phase_2_date) &
+        trial_status == "Phase 2" &
+        !is.na(date_trial_status),
+      date_trial_status,
+      phase_2_date
+    ),
+    phase_3_date = if_else(
+      is.na(phase_3_date) &
+        trial_status == "Phase 3" &
+        !is.na(date_trial_status),
+      date_trial_status,
+      phase_3_date
+    ) |>
+      as_date(),
+    phase_4_date = if_else(
+      is.na(phase_4_date) &
+        trial_status == "Phase 4" &
+        !is.na(date_trial_status),
+      date_trial_status,
+      phase_4_date
+    ),
+    # Archetype
+    archetype = case_when(
+      archetype %in%
+        c(
+          "Diagnostics ‚Äî Assay development",
+          "Diagnostics — Assay development"
+        ) ~ "Diagnostics — Assay development",
+      archetype %in%
+        c(
+          "New Chemical Entity ‚Äî Simple",
+          "NEW Chemical Entity"
+        ) ~ "New Chemical Entity",
+      archetype %in%
+        c(
+          "Unclassified / Insufficient information",
+          "Unclassified"
+        ) ~ NA_character_,
+      archetype == "Vaccine — Simple" ~ "Vaccine",
+      archetype == "repurposed" ~ "Repurposed",
+      TRUE ~ archetype
+    )
+  )
+```
+
+"Archetype" and "Indication" does not work.
+
+```{r}
+# horizon.columns
+nra <- horizon |>
+  pivot_longer(
+    cols = c("south_africa_nra", "kenya_nra", "senegal_nra"),
+    names_to = "scope",
+    values_to = "nra"
+  ) |>
+  mutate(
+    scope = recode(
+      scope,
+      "kenya_nra" = "Kenya",
+      "south_africa_nra" = "South Africa",
+      "senegal_nra" = "Senegal"
+    )
+  ) |>
+  select(innovation, nra, scope, disease)
+
+nra_date <- horizon |>
+  pivot_longer(
+    cols = c(
+      "south_africa_nra_date",
+      "kenya_nra_date",
+      "senegal_nra_date",
+      "other_nra_date"
+    ),
+    names_to = "scope",
+    values_to = "nra_date"
+  ) |>
+  mutate(
+    scope = recode(
+      scope,
+      "kenya_nra_date" = "Kenya",
+      "south_africa_nra_date" = "South Africa",
+      "senegal_nra_date" = "Senegal",
+      "other_nra_date" = "Other"
+    )
+  ) |>
+  select(innovation, scope, nra_date, disease) 
+
+
+## GRA
+gra <- horizon |>
+  select(innovation, gra, gra_date, gra_body, disease) |>
+  # Many typos, many errors, many fields with issues
+  mutate(
+    gra_body = gra_body,
+    gra_body = gra_body |>
+      str_replace_all("\n", ";") |>
+      str_to_upper() |>
+      str_trim(),
+    gra_body = gra_body |>
+      str_replace_all("US FDA|FDA_US|USFDA", "US_FDA") |>
+      str_replace_all("WHO-PQ|WHO RECOMMENDED", "WHO_PQ") |>
+      str_replace_all("CE-IVDD|CE-IVD MARK|CE-IVD|^CE$", "CE_IVD") |>
+      str_replace_all("CE-IVDR", "CE_IVDR") |>
+      str_replace_all("ANVISA", "ANVISA_BR") |>
+      str_replace_all(
+        "NMPA|CHINA MEDICAL PRODUCTS ADMINISTRATION",
+        "NMPA_CN"
+      ) |>
+      str_replace_all("KOREAN MINISTRY.*|KMFDS|KOREA MFDS", "MFDS_KR") |>
+      str_replace_all("CDSCO", "CDSCO_IN"),
+    gra = ifelse(!is.na(gra_body), "Yes", gra),
+    # Fixing GRA Date
+    # Standardize blank / "NA" strings
+    gra_date = na_if(str_trim(gra_date), "NA"),
+    # Parse multiple formats
+    gra_date = parse_date_time(
+      gra_date,
+      orders = c("d-b-y", "d-b-Y", "m/d/y", "m/d/Y"),
+      exact = FALSE
+    ) |>
+      as_date()
+  )
+
+## EML
+eml <- horizon |>
+  pivot_longer(
+    cols = c("kenya_eml", "senegal_eml", "south_africa_eml", "who_eml"),
+    values_to = "eml",
+    names_to = "scope"
+  ) |>
+  select(innovation, eml, scope, disease) |>
+  mutate(
+    scope = recode(
+      scope,
+      "kenya_eml" = "Kenya",
+      "senegal_eml" = "Senegal",
+      "south_africa_eml" = "South Africa",
+      "who_eml" = "WHO"
+    )
+  )
+
+eml_date <- horizon |>
+  pivot_longer(
+    cols = c(
+      "kenya_eml_date",
+      "senegal_eml_date",
+      "south_africa_eml_date",
+      "who_eml_date"
+    ),
+    names_to = "scope",
+    values_to = "eml_date"
+  ) |>
+  select(innovation, eml_date, scope, disease) |>
+  mutate(
+    scope = recode(
+      scope,
+      "kenya_eml_date" = "Kenya",
+      "senegal_eml_date" = "Senegal",
+      "south_africa_eml_date" = "South Africa",
+      "who_eml_date" = "WHO"
+    )
+  )
+```
+
+## Merging
+
+```{r}
+glue::glue(
+  "Horizon {nrow(horizon)}; EML {nrow(eml)}; EML Date {nrow(eml_date)};NRA {nrow(nra)}; NRA Date {nrow(nra)}; GRA {nrow(gra)}"
+)
+
+cleaned_horizon <- eml |>
+  left_join(
+    eml_date,
+    by = join_by(innovation == innovation, scope == scope, disease == disease)
+  ) |>
+  left_join(
+    nra |>
+      filter(!is.na(nra)),
+    by = join_by(innovation == innovation, scope == scope, disease == disease)
+  ) |>
+  left_join(
+    nra_date,
+    by = join_by(innovation == innovation, scope == scope, disease == disease)
+  ) |>
+  mutate(nra_date = NA) |>
+  # the GRA data is not scoped, so it will be a many to many relation
+  left_join(
+    gra |>
+      filter(!is.na(gra)),
+    by = join_by(innovation == innovation, disease == disease)
+  ) |>
+  left_join(
+    horizon |>
+      select(
+        -matches("nra|eml|gra")
+      ),
+    by = join_by(innovation == innovation, disease == disease)
+  )
+
+```
+
+# calculating time to introduction metrics
+
+```{r}
+stage_levels <- c(
+  "Phase 1",
+  "Phase 2",
+  "Phase 3",
+  "Phase 4"
+  # "Approved / Marketed"
+)
+
+cleaned_horizon <- cleaned_horizon |>
+  mutate(
+    trial_status = factor(trial_status, levels = stage_levels, ordered = TRUE),
+
+    # -------------------------
+    # Core derived dates
+    # -------------------------
+    date_proof_of_concept = case_when(
+      !is.na(phase_2_date) ~ phase_2_date,
+      trial_status != "Phase 1" ~ date_trial_status,
+      TRUE ~ NA_Date_
+    ),
+
+    date_first_regulatory = case_when(
+      !is.na(nra_date) ~ nra_date,
+      !is.na(gra_date) ~ gra_date,
+      trial_status == "Approved / Marketed" ~ date_trial_status,
+      TRUE ~ NA_Date_
+    ),
+
+    date_first_launch = coalesce(
+      eml_date,
+      date_first_regulatory
+    ),
+
+    # -------------------------
+    # Observed flags
+    # -------------------------
+    date_proof_of_concept_observed_y_n = if_else(
+      !is.na(date_proof_of_concept),
+      "Y",
+      "N"
+    ),
+    date_first_regulatory_observed_y_n = if_else(
+      !is.na(date_first_regulatory),
+      "Y",
+      "N"
+    ),
+    date_first_launch_observed_y_n = if_else(
+      !is.na(date_first_launch),
+      "Y",
+      "N"
+    ),
+
+    # -------------------------
+    # Regulatory projections
+    # -------------------------
+    proj_date_first_regulatory = coalesce(
+      date_first_regulatory,
+      date_proof_of_concept + dyears(2.62)
+    ),
+
+    proj_date_first_regulatory_25 = case_when(
+      !is.na(date_proof_of_concept) ~ date_proof_of_concept + dyears(0.56),
+      TRUE ~ NA_Date_
+    ),
+
+    proj_date_first_regulatory_75 = case_when(
+      !is.na(date_proof_of_concept) ~ date_proof_of_concept + dyears(4.41),
+      TRUE ~ NA_Date_
+    ),
+
+    # -------------------------
+    # Launch projections
+    # -------------------------
+    proj_date_first_launch = coalesce(
+      date_first_launch,
+      proj_date_first_regulatory + dyears(0.32)
+    ),
+
+    proj_date_first_launch_25 = case_when(
+      !is.na(proj_date_first_regulatory_25) ~ proj_date_first_regulatory_25 +
+        dyears(0.15),
+      !is.na(proj_date_first_regulatory) ~ proj_date_first_regulatory +
+        dyears(0.15),
+      TRUE ~ NA_Date_
+    ),
+
+    proj_date_first_launch_75 = case_when(
+      !is.na(proj_date_first_regulatory_75) ~ proj_date_first_regulatory_75 +
+        dyears(0.98),
+      !is.na(proj_date_first_regulatory) ~ proj_date_first_regulatory +
+        dyears(0.98),
+      TRUE ~ NA_Date_
+    ),
+
+    # -------------------------
+    # LMIC uptake projections
+    # -------------------------
+    proj_date_lmic_20_uptake = case_when(
+      !is.na(proj_date_first_launch) ~ proj_date_first_launch + dyears(5),
+      TRUE ~ NA_Date_
+    ),
+
+    proj_date_lmic_20_uptake_25 = case_when(
+      !is.na(proj_date_first_launch_25) ~ proj_date_first_launch_25 +
+        dyears(3.5),
+      !is.na(proj_date_first_launch) ~ proj_date_first_launch + dyears(3.5),
+      TRUE ~ NA_Date_
+    ),
+
+    proj_date_lmic_20_uptake_75 = case_when(
+      !is.na(proj_date_first_launch_75) ~ proj_date_first_launch_75 +
+        dyears(21),
+      !is.na(proj_date_first_launch) ~ proj_date_first_launch + dyears(21),
+      TRUE ~ NA_Date_
+    ),
+    # =========================
+    # BACKWARD: Regulatory
+    # =========================
+    proj_date_first_regulatory = coalesce(
+      proj_date_first_regulatory,
+      date_first_launch - dyears(0.32),
+      proj_date_first_launch - dyears(0.32)
+    ),
+
+    proj_date_first_regulatory_25 = coalesce(
+      proj_date_first_regulatory_25,
+      proj_date_first_launch_25 - dyears(0.15),
+      proj_date_first_launch - dyears(0.15)
+    ),
+
+    proj_date_first_regulatory_75 = coalesce(
+      proj_date_first_regulatory_75,
+      proj_date_first_launch_75 - dyears(0.98),
+      proj_date_first_launch - dyears(0.98)
+    ),
+
+    # =========================
+    # BACKWARD: Proof of Concept
+    # =========================
+    date_proof_of_concept = coalesce(
+      date_proof_of_concept,
+      date_first_regulatory - dyears(2.62),
+      proj_date_first_regulatory - dyears(2.62)
+    ),
+
+    proj_date_first_regulatory_25 = coalesce(
+      proj_date_first_regulatory_25,
+      date_proof_of_concept + dyears(0.56)
+    ),
+
+    proj_date_first_regulatory_75 = coalesce(
+      proj_date_first_regulatory_75,
+      date_proof_of_concept + dyears(4.41)
+    ),
+
+    # =========================
+    # Forward consistency after backfill
+    # =========================
+    proj_date_first_launch = coalesce(
+      proj_date_first_launch,
+      proj_date_first_regulatory + dyears(0.32)
+    )
+  )
+  
+cleaned_horizon <- cleaned_horizon |>
+  mutate(across(
+    c(
+      date_proof_of_concept,
+      date_first_regulatory,
+      date_first_launch,
+      starts_with("proj_date_")
+    ),
+    as.Date
+  ))
+```
+
+# Transforming back to wide again
+
+```{r}
+final_wide <- cleaned_horizon |>
+  pivot_wider(
+    names_from = scope,
+    values_from = c(eml, eml_date, nra, nra_date),
+    names_glue = "{scope}_{.value}"
+  )
+
+final_wide <- final_wide |>
+  left_join(
+    horizon |>
+      select(
+        other_nra,
+        other_nra_date,
+        nra_other_body,
+        gra_note,
+        innovation,
+        disease
+      )
+  )
+
+cols <- c(
+  "innovation",
+  "dose",
+  "form",
+  "alternative_names",
+  "category",
+  "technology",
+  "disease",
+  "target_population",
+  "indication",
+  "archetype",
+  "phase_1_status",
+  "phase_1_date",
+  "phase_2_status",
+  "phase_2_date",
+  "phase_3_status",
+  "phase_3_date",
+  "phase_4_status",
+  "phase_4_date",
+  "trial_status",
+  "trial_status_notes",
+  "date_trial_status",
+  "kenya_nra",
+  "kenya_nra_date",
+  "senegal_nra",
+  "senegal_nra_date",
+  "south_africa_nra",
+  "south_africa_nra_date",
+  "other_nra",
+  "other_nra_date",
+  "nra_other_body",
+  "kenya_eml",
+  "kenya_eml_date",
+  "senegal_eml",
+  "senegal_eml_date",
+  "south_africa_eml",
+  "south_africa_eml_date",
+  "who_eml",
+  "who_eml_date",
+  "gra",
+  "gra_date",
+  "gra_body",
+  "gra_note",
+  "manufacturer",
+  "dalys",
+  "disease_prevalence",
+  "improvement",
+  "dalys_averted",
+  "deaths_averted",
+  "yll",
+  "hs_costs",
+  "dalys_monetized",
+  "prob_success",
+  "procurement",
+  "reg_approval",
+  "policy_readiness",
+  "social_context",
+  "guidelines",
+  "policy_implemented",
+  "date_market",
+  "country_supply",
+  "distribution",
+  "delivery_model",
+  "efficacy",
+  "date_proof_of_concept",
+  "date_proof_of_concept_observed_y_n",
+  "date_first_regulatory",
+  "date_first_regulatory_observed_y_n",
+  "date_first_launch",
+  "date_first_launch_observed_y_n",
+  "proj_date_first_regulatory",
+  "proj_date_first_regulatory_25",
+  "proj_date_first_regulatory_75",
+  "proj_date_first_launch",
+  "proj_date_first_launch_25",
+  "proj_date_first_launch_75",
+  "proj_date_lmic_20_uptake",
+  "proj_date_lmic_20_uptake_25",
+  "proj_date_lmic_20_uptake_75",
+  "readiness",
+  "financing",
+  "impact_potential",
+  "introduction_readiness",
+  "data_source"
+)
+
+
+final_wide <- final_wide |>
+  rename_with(tolower) |>
+  select(-c(who_nra)) |>
+  rename_with(~ str_replace_all(.x, " ", "_")) |> 
+  select(any_of(cols))
+
+final_wide |> 
+  write_csv("www/ALIGN_health_product_data_horizon_wide.csv")
+```
+
+
+# Saving
+```{r}
+cleaned_horizon |> 
+  write_csv("www/ALIGN_health_product_data_horizon_cleaned.csv")
+```

@@ -1,0 +1,36 @@
+---
+title: "Likelihood of Success Analysis"
+format:
+  html:
+    theme: flatly
+    css: ../../www/styles.css
+    toc: true
+---
+
+## Overview
+
+Developing and introducing new health products is inherently risky. The ALIGN Global Hub provides insights into the "Likelihood of Success" for products in the pipeline.
+
+## Success Probability Framework
+
+The Hub applies a multi-dimensional framework to assess the probability of a product reaching the market and achieving impact.
+
+### 1. Technical and Regulatory Success
+- **Definition:** The probability that a product will successfully complete clinical trials and receive regulatory approval.
+- **Assessment:** Based on historical success rates for the product's development archetype (e.g., using the P2I model).
+
+### 2. Market and Policy Success
+- **Definition:** The probability that an approved product will be successfully procured, introduced into guidelines, and achieve significant market uptake.
+- **Assessment:** Based on signals such as inclusion in WHO EMLs, funding commitments from major donors (e.g., Global Fund, Gavi), and manufacturer capacity.
+
+## Portfolio-to-Impact (P2I) Model
+
+The Hub utilizes the **Portfolio-to-Impact (P2I)** model to estimate these probabilities. The P2I model uses a rule-based approach to assign "archetypes" to products, which then drive the estimated success rates and development costs.
+
+## Interpreting Success Scores
+
+- **High Probability:** Products with strong clinical data, clear regulatory pathways, and high public health demand.
+- **Moderate Probability:** Products in mid-stage development with promising but incomplete data.
+- **Low Probability:** Early-stage innovations or products targeting particularly challenging technical areas.
+
+*Note:* Success scores are intended for strategic portfolio planning and should not be used as the sole basis for individual product decisions.

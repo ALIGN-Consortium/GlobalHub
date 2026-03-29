@@ -1,0 +1,60 @@
+---
+title: "Data Dictionary"
+format:
+  html:
+    theme: flatly
+    css: ../../www/styles.css
+    toc: true
+---
+
+## Overview
+
+This Data Dictionary defines the fields and terms used in the ALIGN Global Hub. It provides clarity on the source, definition, and possible values for each metric displayed in the dashboard.
+
+## Key Terminology
+
+### Global Regulatory Approval (GRA)
+The **Global Regulatory Approval** field indicates whether a health product has received authorization or prequalification by a global body.
+- **Includes:** WHO Prequalification (PQ), US FDA approval, EMA approval, or other approvals from Stringent Regulatory Authorities (SRA).
+- **Emergency Use:** Includes Emergency Use Authorizations (EUA) where applicable for public health emergencies.
+- **Values:** `Yes`, `No`, `Under Review`.
+
+### Trial Phase
+The development stage of the product based on clinical trial activity.
+- **Rule:** If a product is in multiple phases simultaneously (e.g., Phase 2/3), the **highest phase** is recorded.
+- **Values:**
+    - `Phase 1`: Initial human safety testing.
+    - `Phase 2`: Efficacy and safety testing in target populations.
+    - `Phase 3`: Large-scale confirmatory testing.
+    - `Phase 4`: Post-marketing surveillance.
+    - `Approved / Marketed`: Formally approved for use.
+
+### National Regulatory Authority (NRA)
+Indicates the status of national marketing authorization in specific countries (e.g., Kenya, Senegal, South Africa).
+- **Values:** `Yes`, `No`, `Under Review`.
+
+### WHO Essential Medicines List (EML)
+Indicates if the product is listed on the WHO Model List of Essential Medicines or the Model List of Essential Diagnostics.
+- **Values:** `Yes`, `No`.
+
+## Field Definitions
+
+| Field Name | Description | Source |
+|------------|-------------|--------|
+| `innovation` | The primary name of the product or innovation. | Aggregated |
+| `manufacturer` | The primary manufacturer or lead developer of the product. | Aggregated |
+| `disease` | The target disease area (HIV, TB, Malaria, MNCH). | Aggregated |
+| `category` | The type of product (Diagnostic, Therapeutic, Vaccine, etc.). | Aggregated |
+| `trial_status` | The current clinical development stage. | Aggregated |
+| `proj_date_first_launch` | The projected or observed date of first country-level launch. | Mao et al. (2025) Method |
+| `proj_date_lmic_20_uptake`| The projected date for 20% market uptake in LMICs. | Mao et al. (2025) Method |
+| `people_at_risk` | Estimated number of individuals at risk for the disease. | Population Data (GBD/WHO) |
+| `dalys` | Disability-Adjusted Life Years attributable to the disease. | IHME / GBD |
+| `readiness` | A composite score (0-100) indicating introduction readiness. | ALIGN Assessment |
+
+## Methodology References
+
+For detailed information on how projected dates and readiness scores are calculated, please refer to the following documents:
+- [Forecasting Methods (Mao et al. 2025)](forecasting.html)
+- [Methodology Report](methodology.html)
+- [Product Milestones](product_milestones.html)

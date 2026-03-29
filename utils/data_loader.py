@@ -234,20 +234,44 @@ def load_data() -> dict:
     # horizon_df is the master dataframe.
     horizon_df = df.copy()
 
+    all_scopes = (
+    horizon_df.loc[horizon_df["scope"] != "WHO", "scope"]
+    .dropna()
+    .unique()
+    )
+
+    expected_cols = [f"{s}_nra" for s in all_scopes]
+
     horizon_wide = (
-        horizon_df.loc[
-            (horizon_df["nra"] == "Yes") & (horizon_df["scope"] != "WHO"),
-            ["innovation", "scope"],
-        ]
-        .assign(scope_nra=lambda d: d["scope"] + "_nra", value="Yes")
+        horizon_df.loc[horizon_df["scope"] != "WHO", ["innovation", "scope", "nra"]]
+        .assign(scope_nra=lambda d: d["scope"] + "_nra")
         .pivot_table(
-            index="innovation", columns="scope_nra", values="value", aggfunc="first"
+            index="innovation",
+            columns="scope_nra",
+            values="nra",
+            aggfunc="first",
         )
+        .reindex(columns=expected_cols)
         .fillna("No")
         .rename_axis(columns=None)
         .reset_index()
         .assign(scope="WHO")
     )
+
+    # horizon_wide = (
+    #     horizon_df.loc[
+    #         (horizon_df["nra"] == "Yes") & (horizon_df["scope"] != "WHO"),
+    #         ["innovation", "scope"],
+    #     ]
+    #     .assign(scope_nra=lambda d: d["scope"] + "_nra", value="Yes")
+    #     .pivot_table(
+    #         index="innovation", columns="scope_nra", values="value", aggfunc="first"
+    #     )
+    #     .fillna("No")
+    #     .rename_axis(columns=None)
+    #     .reset_index()
+    #     .assign(scope="WHO")
+    # )
 
     horizon_df = horizon_df.merge(horizon_wide, on=["innovation", "scope"], how="left")
     # innovation_df: The aggregate/global view (country="Overall")
@@ -274,6 +298,11 @@ def load_data() -> dict:
         # Rename the merged 'targeted_population' column to 'people_at_risk' for internal consistency
         horizon_df = horizon_df.rename(
             columns={"targeted_population": "people_at_risk"}
+        )
+
+        horizon_df["innovation"] = horizon_df["innovation"].replace(
+            "Emtricitabine/Ethinylestradiol/Levonorgestrel/Tenofovir disoproxil fumarate Tablet, Film-coated + Emtricitabine/Tenofovir disoproxil fumarate",
+            "Dual Prevention Pill",
         )
 
         # Priority Logic:

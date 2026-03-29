@@ -1,0 +1,61 @@
+---
+title: "Integrated Horizon Scanning Sources"
+format:
+  html:
+    theme: flatly
+    css: ../../www/styles.css
+    toc: true
+---
+
+## Overview
+
+The ALIGN Global Hub integrates structured data across pharmaceutical R&D, regulatory systems, procurement platforms, and policy frameworks. This document profiles the key databases that contribute to the Hub.
+
+## Data Sources Integration Status
+
+| Database | Domain | Scope | Status | Timeline |
+|----------|--------|-------|--------|----------|
+| Impact Global Health R&D tracker | R&D Funding | Global | Completed | — |
+| MMV antimalarial pipeline | R&D Pipeline | Global | Completed | — |
+| DNDi portfolio | R&D Portfolio | Global | Completed | — |
+| FIND DxConnect Test Directory | Diagnostic directory | Global | Completed | — |
+| Clinicaltrials.gov | Clinical Trials | Global | In-progress | Q2 2026 |
+| AVAC clinical trials database | Clinical Trials | Global | In-progress | Q2 2026 |
+| MPP LAPaL | Licensing | Global | In-progress | Q2 2026 |
+| MPP MedsPaL | IP/Patents | Global | In-progress | Q2 2026 |
+| WHO Prequalification list (PQ) | Pre-qualification | Global | Not started | Q3 2026 |
+| Global EML | EML (Comparative) | Global |  | Q3 2026 |
+
+## Database Profiles (Key Examples)
+
+### Impact Global Health R&D Tracker
+- **Function:** Tracks R&D funding for neglected diseases, including malaria, TB, and HIV.
+- **Coverage:** Global.
+- **Products:** 142 records.
+- **URL:** [https://www.impactglobalhealth.org/data/infectious-disease](https://www.impactglobalhealth.org/data/infectious-disease)
+- **Profile:** Provides insights into funding commitments and developer landscapes for major infectious diseases.
+
+### FIND DxConnect Test Directory
+- **Function:** Comprehensive directory for global diagnostics.
+- **Coverage:** Global.
+- **Products:** 221 records.
+- **URL:** [https://finddx.org/](https://finddx.org/)
+- **Profile:** Key source for point-of-care and laboratory-based diagnostic tools for HIV, TB, and malaria.
+
+### MMV (Medicines for Malaria Venture) Pipeline
+- **Function:** Tracks development of new antimalarial drugs.
+- **Coverage:** Global.
+- **Products:** 117 records.
+- **URL:** [https://www.mmv.org/](https://www.mmv.org/)
+- **Profile:** High-quality data on the current state of clinical and preclinical antimalarial therapeutics.
+
+### DNDi (Drugs for Neglected Diseases initiative) Portfolio
+- **Function:** R&D portfolio for neglected diseases.
+- **Coverage:** Global.
+- **Products:** Various therapeutics.
+- **URL:** [https://dndi.org/](https://dndi.org/)
+- **Profile:** Focuses on patient-centric drug development for diseases that primarily affect LMICs.
+
+## Integration Methods
+
+For technical details on how these databases are harmonized into a single registry, refer to the [Source Integration Methods](source_methods.html).

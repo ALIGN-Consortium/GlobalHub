@@ -1,0 +1,45 @@
+---
+title: "Data Integration Pipeline"
+format:
+  html:
+    theme: flatly
+    css: ../../www/styles.css
+    toc: true
+---
+
+## Overview
+
+The Data Integration Pipeline is the technical engine that powers the ALIGN Global Hub. It automates the collection, cleaning, and harmonization of data from multiple external sources.
+
+## Pipeline Architecture
+
+The pipeline consists of several key stages:
+
+### 1. Source Data Ingestion
+- **Automated Downloads:** Scripts to fetch the latest CSV or Excel exports from integrated databases.
+- **API Integration:** Direct connection to external APIs (where available) to retrieve structured records.
+
+### 2. Cleaning and Transformation
+- **Data Typing:** Coercing fields to their correct types (e.g., numeric, date, boolean).
+- **String Cleaning:** Removing special characters, extra whitespace, and standardizing case.
+- **Null Handling:** Filling missing values with standardized placeholders (e.g., "Not available").
+
+### 3. Harmonization Engine
+- **Vocabulary Mapping:** Translating source-specific terms into the ALIGN controlled vocabulary.
+- **Deduplication Logic:** Identifying and merging records that represent the same physical product.
+
+### 4. Enrichment
+- **Population Data Merge:** Linking product records to disease burden and population-at-risk data from `PopulationData.csv`.
+- **Projection Calculation:** Applying the Mao et al. (2025) forecasting logic to estimate launch and uptake dates.
+
+### 5. Output Generation
+- **Master Registry:** Generation of the final `ALIGN_health_product_data_horizon.csv` used by the Shiny application.
+- **Audit Logs:** Creation of logs that track changes and potential errors during the integration process.
+
+## Maintenance and Updates
+
+The pipeline is maintained as a set of Python and R scripts located in the `scripts/` directory of the repository.
+- **`data_harmonizer.py`**: The primary Python script for cleaning and merging data.
+- **`data_conversion_horizon.R`**: R scripts used for specific data transformation tasks.
+
+For more information on the technical implementation, refer to the [Technical Architecture Guide](technical_guide.html).

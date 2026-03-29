@@ -1,0 +1,53 @@
+---
+title: "MNCH Definitions and Framework"
+format:
+  html:
+    theme: flatly
+    css: ../../www/styles.css
+    toc: true
+---
+
+## Overview
+
+Maternal, Newborn, and Child Health (MNCH) is a critical area of focus for the ALIGN Global Hub. This document defines the scope and framework used to categorize MNCH products.
+
+## MNCH Scope
+
+The Hub covers a wide range of health products designed to improve outcomes for mothers, newborns, and children. This includes:
+
+- **Maternal Health:** Products for pregnancy, childbirth, and the postpartum period (e.g., uterotonics, iron supplements, blood pressure monitors).
+- **Newborn Health:** Products for the first 28 days of life (e.g., resuscitation devices, chlorhexidine for cord care, specialized feeding equipment).
+- **Child Health:** Products for infants and children up to age 5 (e.g., oral rehydration salts, zinc, point-of-care diagnostics for common childhood illnesses).
+
+## Categorization Framework
+
+MNCH products are categorized based on their intended use and the clinical conditions they address:
+
+### 1. Maternal Disorders
+- Hypertensive disorders of pregnancy (e.g., Pre-eclampsia, Eclampsia)
+- Maternal hemorrhage
+- Maternal sepsis and other maternal infections
+- Obstructed labor and uterine rupture
+
+### 2. Neonatal Disorders
+- Preterm birth complications
+- Neonatal encephalopathy (birth asphyxia and trauma)
+- Neonatal sepsis and other infections
+- Hemolytic disease and other neonatal jaundice
+
+### 3. Child Health and Nutrition
+- Nutritional deficiencies (e.g., Vitamin A deficiency, Anemia)
+- Diarrheal diseases
+- Lower respiratory infections (e.g., Pneumonia)
+- Vaccine-preventable diseases
+
+## Data Sources for MNCH
+
+MNCH data is integrated from several key sources, including:
+- **Impact Global Health:** Maternal health products and gynecological products trackers.
+- **WHO Global Health Estimates:** For disease burden and prevalence data.
+- **UNICEF Supply Catalogue:** For procurement signals and product availability.
+
+## Future Expansion
+
+ALIGN is committed to continuously expanding the coverage of MNCH products in the Global Hub. Future updates will include more granular data on medical devices and digital health innovations specifically designed for MNCH in LMIC contexts.
