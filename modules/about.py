@@ -33,7 +33,7 @@ def load_html(path):
 # LOAD CONTENT (CACHE AT IMPORT)
 # =========================================================
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-ABOUT_PATH = os.path.join(BASE_DIR, "dist", "content", "about.html")
+ABOUT_PATH = os.path.join(BASE_DIR, "docs", "content", "about.html")
 
 ABOUT_HTML = load_html(ABOUT_PATH)
 

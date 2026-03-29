@@ -122,7 +122,7 @@ The Hub supports a simple workflow: explore → compare → interpret → decide
 
 ##### User guides
   
-- [Quick Start Guide (coming soon)](dist/content/documentation/technical_guide.html)  
+- [Quick Start Guide (coming soon)](docs/content/documentation/technical_guide.html)  
 - [Full User Manual (coming soon)]()  
 - [Video walkthrough (coming soon)]()  
 
@@ -147,9 +147,9 @@ Health products are categorized by:
 
 **Documentation:**
 
-- [Applications & Inclusion Criteria](dist/content/documentation/inclusion_criteria.html)
-- [MNCH Definitions](dist/content/documentation/mnch_framework.html)
-- [Data Dictionary](dist/content/documentation/data_dictionary.html)
+- [Applications & Inclusion Criteria](docs/content/documentation/inclusion_criteria.html)
+- [MNCH Definitions](docs/content/documentation/mnch_framework.html)
+- [Data Dictionary](docs/content/documentation/data_dictionary.html)
 :::
 
 ---
@@ -210,8 +210,8 @@ Data sources are integrated in phases.
 | Janssen R&D pipeline | Company pipeline | Global | Not started | 2027 |
 
 **Full documentation:**
-- [Full Horizon Scanning Database List](dist/content/documentation/horizon_sources.html)
-- [Source Integration Methods](dist/content/documentation/source_methods.html)
+- [Full Horizon Scanning Database List](docs/content/documentation/horizon_sources.html)
+- [Source Integration Methods](docs/content/documentation/source_methods.html)
 :::
 
 ---
@@ -241,7 +241,7 @@ Data are harmonized into a unified product registry using:
 - Identifier mapping  
 - Cross-source validation  
 
-→ [Data Integration Pipeline](dist/content/documentation/integration_pipeline.html)
+→ [Data Integration Pipeline](docs/content/documentation/integration_pipeline.html)
 
 
 ##### Key metrics
@@ -252,22 +252,22 @@ Data are harmonized into a unified product registry using:
 - Marketing authorization  
 - First launch in LMICs
 
-[Product introduction milestones](dist/content/documentation/product_milestones.html)
+[Product introduction milestones](docs/content/documentation/product_milestones.html)
 
 **Cost-effectiveness analysis:**
 
-[Cost-effectiveness analysis](dist/content/documentation/cost_effectiveness.html)
+[Cost-effectiveness analysis](docs/content/documentation/cost_effectiveness.html)
 
 **Likelihood of success analysis:**
 
-[Likelihood of success analysis](dist/content/documentation/likelihood_of_success.html)
+[Likelihood of success analysis](docs/content/documentation/likelihood_of_success.html)
 
 ##### Full documentation
 
-- [Full Methodology Report](dist/content/documentation/methodology.html)
-- [Forecasting Methods](dist/content/documentation/forecasting.html)
-- [Validation Protocol](dist/content/documentation/validation.html)
-- [Technical Architecture Guide](dist/content/documentation/technical_guide.html)
+- [Full Methodology Report](docs/content/documentation/methodology.html)
+- [Forecasting Methods](docs/content/documentation/forecasting.html)
+- [Validation Protocol](docs/content/documentation/validation.html)
+- [Technical Architecture Guide](docs/content/documentation/technical_guide.html)
 :::
 
 ---
@@ -283,7 +283,7 @@ The Global Hub builds on ALIGN’s horizon scanning system, integrating:
 
 This enables tracking from development → introduction.
 
-→ [Horizon Scanning Report](dist/content/documentation/horizon_scanning.html)
+→ [Horizon Scanning Report](docs/content/documentation/horizon_scanning.html)
 :::
 
 ---
@@ -291,8 +291,8 @@ This enables tracking from development → introduction.
 ## Definitions and documentation
 
 - [Pipeline Definitions & Terms (coming soon)]()  
-- [ALIGN Data Dictionary](dist/content/documentation/data_dictionary.html)
-- [Glossary](dist/content/documentation/glossary.html)
+- [ALIGN Data Dictionary](docs/content/documentation/data_dictionary.html)
+- [Glossary](docs/content/documentation/glossary.html)
 
 ---
 
